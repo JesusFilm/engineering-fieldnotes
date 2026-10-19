@@ -1,0 +1,68 @@
+[
+  {
+    "src": "pilots/load-balancing/01.mp4",
+    "sha256": "f07b1c85301dfd26e884fdc6fed0bdf4d4f5fd7e5a9db3f03f46436f16843321",
+    "duration": 32,
+    "bytes": 338111,
+    "peakDb": -9.3,
+    "decode": true,
+    "faststart": true,
+    "audio": "analysed, not listened to",
+    "loop": false
+  },
+  {
+    "src": "pilots/load-balancing/02.mp4",
+    "sha256": "7eaa944b610ee00cd9b24977c777a01b311c08d21442085317149791359fd7ce",
+    "duration": 34,
+    "bytes": 408650,
+    "peakDb": -4.9,
+    "decode": true,
+    "faststart": true,
+    "audio": "analysed, not listened to",
+    "loop": false
+  },
+  {
+    "src": "pilots/load-balancing/03.mp4",
+    "sha256": "b28c9dd560c51f0890a0c6fb0d02bd253c9d53b9c12bd0f39c13611fff1cf623",
+    "duration": 36,
+    "bytes": 462640,
+    "peakDb": -9.1,
+    "decode": true,
+    "faststart": true,
+    "audio": "analysed, not listened to",
+    "loop": false
+  },
+  {
+    "src": "pilots/load-balancing/04.mp4",
+    "sha256": "d1b343fcad83d4598b16565c52da04315aabdaeb65a48709d06213497c76e0eb",
+    "duration": 38,
+    "bytes": 566654,
+    "peakDb": -8.1,
+    "decode": true,
+    "faststart": true,
+    "audio": "analysed, not listened to",
+    "loop": false
+  },
+  {
+    "src": "pilots/load-balancing/05.mp4",
+    "sha256": "a0b1bdf7dc01a0fae80974afece3d021396eecb096c39626cb7a23c6c38cf50d",
+    "duration": 36,
+    "bytes": 422847,
+    "peakDb": -9.0,
+    "decode": true,
+    "faststart": true,
+    "audio": "analysed, not listened to",
+    "loop": false
+  },
+  {
+    "src": "pilots/load-balancing/06.mp4",
+    "sha256": "83e529a4ff9b94ddc1c11ac8220ea4011b285638ba1366c577442e7b2a20497f",
+    "duration": 38,
+    "bytes": 525057,
+    "peakDb": -9.3,
+    "decode": true,
+    "faststart": true,
+    "audio": "analysed, not listened to",
+    "loop": false
+  }
+]

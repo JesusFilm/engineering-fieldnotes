@@ -63,3 +63,48 @@ for (const video of videos) {
   video.addEventListener('error', showMediaError);
   video.querySelector('source')?.addEventListener('error', showMediaError);
 }
+
+// With no JavaScript, all lessons and their anchor links remain usable.
+for (const sequence of document.querySelectorAll('.lesson-sequence')) {
+  const panels = [...sequence.querySelectorAll('.lesson-panel')];
+  const links = [...sequence.querySelectorAll('[data-lesson-link]')];
+  const status = sequence.querySelector('.lesson-status');
+  function show(id, focus = false) {
+    const selected = panels.find(panel => panel.id === id) || panels[0];
+    for (const panel of panels) {
+      const current = panel === selected;
+      panel.hidden = !current;
+      if (!current) panel.querySelector('video').pause();
+    }
+    for (const link of links) {
+      if (link.hash === '#' + selected.id) link.setAttribute('aria-current', 'step');
+      else link.removeAttribute('aria-current');
+    }
+    const number = panels.indexOf(selected) + 1;
+    status.hidden = false;
+    status.textContent = `Lesson ${number} of ${panels.length}: ${selected.querySelector('h3').textContent}`;
+    if (focus) {
+      selected.querySelector('h3').focus({preventScroll: true});
+      selected.scrollIntoView({block: 'start', behavior: 'instant'});
+    }
+  }
+  for (const link of links) link.addEventListener('click', event => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    history.pushState(null, '', link.hash);
+    show(link.hash.slice(1), true);
+  });
+  for (const panel of panels) {
+    const video = panel.querySelector('video');
+    video.addEventListener('ended', () => {
+      panel.querySelector('.lesson-ended').hidden = false;
+      status.textContent = `${panel.querySelector('h3').textContent} finished. ${panel === panels.at(-1) ? 'Sequence complete. Continue with the guide when ready.' : 'Continue to the next lesson when ready.'}`;
+    });
+    video.addEventListener('play', () => { panel.querySelector('.lesson-ended').hidden = true; });
+  }
+  window.addEventListener('hashchange', () => {
+    if (panels.some(panel => '#' + panel.id === location.hash)) show(location.hash.slice(1));
+  });
+  window.addEventListener('popstate', () => show(location.hash.slice(1)));
+  show(location.hash.slice(1));
+}

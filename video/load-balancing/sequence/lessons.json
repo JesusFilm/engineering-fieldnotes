@@ -1,0 +1,202 @@
+[
+  {
+    "title": "One request",
+    "duration": 32,
+    "intro": "An application asks a server to do something. The server runs the work and returns a response. Here the request asks for a user profile.",
+    "takeaway": "A request is the ask. A response is the result. The server does work between them.",
+    "question": "What is the server doing while the application waits?",
+    "answer": "It is processing the request. The response travels back only after that work finishes.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Meet the application and server."
+      },
+      {
+        "time": 5,
+        "text": "The application sends a request."
+      },
+      {
+        "time": 10,
+        "text": "The server processes the request."
+      },
+      {
+        "time": 19,
+        "text": "The server sends a response."
+      },
+      {
+        "time": 25,
+        "text": "The application receives the result."
+      }
+    ],
+    "src": "pilots/load-balancing/01.mp4",
+    "poster": "pilots/load-balancing/01.jpg"
+  },
+  {
+    "title": "Share the work",
+    "duration": 34,
+    "intro": "A server has finite capacity. A second server can run the same service, so separate requests can be handled at the same time. This simplified example gives each server one work slot.",
+    "takeaway": "More servers can provide more capacity when requests can be handled independently. Someone still needs to choose a server.",
+    "question": "Does adding a second server make one request run twice as fast?",
+    "answer": "No. Here it lets two separate requests run at once. Each request still takes its own processing time.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Two servers can run the same service."
+      },
+      {
+        "time": 6,
+        "text": "The first request starts on server A."
+      },
+      {
+        "time": 12,
+        "text": "A second request starts on server B while A works."
+      },
+      {
+        "time": 24,
+        "text": "Both finish independently."
+      },
+      {
+        "time": 29,
+        "text": "Separate requests use separate capacity."
+      }
+    ],
+    "src": "pilots/load-balancing/02.mp4",
+    "poster": "pilots/load-balancing/02.jpg"
+  },
+  {
+    "title": "Take turns",
+    "duration": 36,
+    "intro": "A load balancer receives a request and selects a server. Round robin is a selection rule: take turns between eligible servers. Here both servers have the same configured weight.",
+    "takeaway": "Round robin rotates through servers: A, B, A, B. A request goes to one selected server.",
+    "question": "After A, B, A, which server gets the next request?",
+    "answer": "B, provided both servers remain eligible and equally weighted.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Introduce the load balancer."
+      },
+      {
+        "time": 5,
+        "text": "Request 1 routes to A."
+      },
+      {
+        "time": 13,
+        "text": "Request 2 routes to B."
+      },
+      {
+        "time": 21,
+        "text": "Request 3 routes to A."
+      },
+      {
+        "time": 29,
+        "text": "The rule repeats A, B, A, B."
+      }
+    ],
+    "src": "pilots/load-balancing/03.mp4",
+    "poster": "pilots/load-balancing/03.jpg"
+  },
+  {
+    "title": "Unequal work",
+    "duration": 38,
+    "intro": "Taking turns balances the number of assigned requests, but requests can take different amounts of work. Watch a slow report on A and a short lookup on B. This example allows one running request per server.",
+    "takeaway": "Equal request counts do not imply equal remaining work. Round robin can choose a busy server even while another is idle.",
+    "question": "Why does request 3 wait even though B is ready?",
+    "answer": "The round-robin rule selects A next. In this one-slot example A is still working, so the new request waits there.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Some requests take longer."
+      },
+      {
+        "time": 4,
+        "text": "A receives a slow request."
+      },
+      {
+        "time": 10,
+        "text": "B receives a quick request."
+      },
+      {
+        "time": 18,
+        "text": "B is ready while A remains busy."
+      },
+      {
+        "time": 22,
+        "text": "Round robin selects A and request 3 waits."
+      },
+      {
+        "time": 31,
+        "text": "A finishes and the waiting request starts."
+      }
+    ],
+    "src": "pilots/load-balancing/04.mp4",
+    "poster": "pilots/load-balancing/04.jpg"
+  },
+  {
+    "title": "Look at active work",
+    "duration": 36,
+    "intro": "Another rule is least requests: choose a server with fewer requests still in progress. We start with the same imbalance as before: A has one long-running request and B has none. Counts are useful signals, not perfect measurements of cost.",
+    "takeaway": "Least requests uses current active-request counts when choosing where new work goes. It does not move existing work.",
+    "question": "Does choosing B move the long-running request away from A?",
+    "answer": "No. A keeps its existing request. Only the new request goes to B.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A has one active request; B has none."
+      },
+      {
+        "time": 8,
+        "text": "Compare current active counts."
+      },
+      {
+        "time": 14,
+        "text": "The new request goes to B."
+      },
+      {
+        "time": 23,
+        "text": "B finishes while A continues."
+      },
+      {
+        "time": 29,
+        "text": "Selection changes new assignments only."
+      }
+    ],
+    "src": "pilots/load-balancing/05.mp4",
+    "poster": "pilots/load-balancing/05.jpg"
+  },
+  {
+    "title": "Avoid a failed server",
+    "duration": 38,
+    "intro": "A selection rule also needs to know which servers are eligible. In this example a periodic health probe gets no successful response from A. After its configured timeout, the balancer marks A unavailable and sends new requests to B.",
+    "takeaway": "Health checks can remove a failed server from new routing decisions after detection. They do not instantly detect every failure or rescue requests already sent.",
+    "question": "If A fails just after a successful check, is the failure detected immediately?",
+    "answer": "No. Detection depends on the next checks, their timeouts, and configured thresholds. A request already sent can still fail.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A stops responding."
+      },
+      {
+        "time": 6,
+        "text": "The balancer sends a health probe."
+      },
+      {
+        "time": 13,
+        "text": "The probe times out."
+      },
+      {
+        "time": 18,
+        "text": "A is excluded from new selection."
+      },
+      {
+        "time": 23,
+        "text": "A new request routes to B."
+      },
+      {
+        "time": 31,
+        "text": "B returns its response through the balancer."
+      }
+    ],
+    "src": "pilots/load-balancing/06.mp4",
+    "poster": "pilots/load-balancing/06.jpg"
+  }
+]

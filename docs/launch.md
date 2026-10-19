@@ -21,3 +21,13 @@ The 3D experiences were removed following user review on 20 October 2026: their 
 All 18 written and comparative reviews are complete, with 54 validated videos. The independent alternatives use Astra plus Fable for 13 concepts and Astra plus Sol for five. See [the editorial release report](../reviews/launch-review.md) and [UI review](../reviews/ui.md).
 
 The original prototype remains intact at source commit `f74bc99beef23a4aaff8081344e70cb8a82d852d`. The user confirmed JesusFilm on 19 October 2026. The public repository is https://github.com/JesusFilm/engineering-fieldnotes and workflow-based Pages is configured at https://jesusfilm.github.io/engineering-fieldnotes/. Deployment succeeded in [GitHub Actions run 39180635517](https://github.com/JesusFilm/engineering-fieldnotes/actions/runs/39180635517). Live browser verification covered all 18 chapter defaults and all 54 comparison videos, plus search, six-entry reference filtering, empty-state recovery, keyboard skip navigation, phone reading and a missing deep path. The evidence is in [live-browser-checks.json](../reviews/live-browser-checks.json).
+
+## Sequential-video experiment — 20 October 2026
+
+- [x] Remove all 3D runtime assets, scene sources, UI and build checks; deploy removal (`c327d1c`, Actions run 39325272787).
+- [x] Prepare a load-balancing-only draft with six focused clips, written introductions, takeaways, comprehension checks and ordered navigation.
+- [x] Check encoded media, caption timing, desktop/phone layout, playback handoff, keyboard/deep-link/back navigation and no-JavaScript fallback.
+- [ ] Jaco reviews the sequence and navigation for teaching value.
+- [ ] Decide refinements and whether to promote this pilot or extend the format to other concepts.
+
+The local branch is `codex/load-balancing-sequence`. Use `python3 scripts/build.py --draft` to view the experiment. A normal build excludes pilot assets and retains the released video defaults. The review record is `reviews/sequences/load-balancing/review.md`; reproduction instructions are `video/load-balancing/sequence/README.md`.

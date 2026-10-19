@@ -1,0 +1,50 @@
+import puppeteer from 'puppeteer-core';
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const output = 'reviews/sequences/load-balancing/scratch';
+fs.mkdirSync(output, {recursive:true});
+const browser = await puppeteer.launch({executablePath: process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--disable-gpu']});
+const page = await browser.newPage();
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+const mediaRequests=[];page.on('request',r=>{if(r.url().includes('.mp4'))mediaRequests.push(r.url());});
+const base=process.env.SEQUENCE_URL || 'http://localhost:4174/concepts/load-balancing/';
+try {
+ await page.setViewport({width:1440,height:1050});
+ await page.goto(base,{waitUntil:'networkidle0'});
+ assert.equal(mediaRequests.length,0,'No video fetch before play');
+ assert.equal(await page.$$eval('.lesson-panel:not([hidden])',x=>x.length),1);
+ await page.$eval('.lesson-sequence',x=>x.scrollIntoView());
+ await page.screenshot({path:output+'/desktop.png'});
+ await page.$eval('#lesson-1 video',async v=>{v.muted=true;await v.play();});
+ await page.waitForFunction(()=>document.querySelector('#lesson-1 video').currentTime>0);
+ await page.click('#lesson-1 .lesson-actions a');
+ assert.equal(await page.$eval('#lesson-1 video',v=>v.paused),true);
+ assert.equal(await page.$eval('#lesson-2',x=>x.hidden),false);
+ assert.equal(await page.evaluate(()=>document.activeElement.id),'lesson-title-2');
+ assert.equal(await page.$eval('#lesson-2 video',v=>v.paused),true,'New lesson awaits play');
+ await page.goBack();
+ await page.waitForFunction(()=>!document.querySelector('#lesson-1').hidden);
+ await page.goto(base+'#lesson-6');
+ await page.waitForFunction(()=>!document.querySelector('#lesson-6').hidden);
+ await page.$eval('#lesson-6 video',async v=>{v.muted=true;await v.play();});
+ await page.waitForFunction(()=>document.querySelector('#lesson-6 video').readyState>=2);
+ await page.$eval('#lesson-6 video',v=>{v.playbackRate=16;});
+ await page.waitForFunction(()=>!document.querySelector('#lesson-6 .lesson-ended').hidden);
+ assert.match(await page.$eval('.lesson-status',x=>x.textContent),/Sequence complete/);
+ for (const width of [390,350]) {
+  await page.setViewport({width,height:844});
+  await page.goto(base+'#lesson-1',{waitUntil:'networkidle0'});
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'No horizontal overflow');
+  await page.$eval('.lesson-sequence',x=>x.scrollIntoView());
+  await page.screenshot({path:output+`/phone-${width}.png`});
+  await page.$eval('#lesson-1',x=>x.scrollIntoView());
+  await page.screenshot({path:output+`/phone-player-${width}.png`});
+  await page.focus('#lesson-1 .lesson-actions a');await page.keyboard.press('Enter');
+  await page.waitForFunction(()=>!document.querySelector('#lesson-2').hidden);
+ }
+ await page.setJavaScriptEnabled(false);await page.goto(base);
+ assert.equal(await page.$$eval('.lesson-panel',x=>x.filter(p=>getComputedStyle(p).display!=='none').length),6,'All lessons usable without JS');
+ assert.deepEqual(errors,[]);
+ fs.writeFileSync('reviews/sequences/load-balancing/browser-checks.json',JSON.stringify({passed:true,checks:['no eager MP4 requests','one visible lesson','playback starts','previous player paused on navigation','focus follows lesson','new lesson paused','browser back restores prior lesson','deep link lesson 6','real ended event and sequence completion','350px and 390px no overflow','keyboard navigation','all six lessons without JS'],errors},null,2)+'\n');
+ console.log('Sequence browser checks passed');
+} finally {await browser.close();}
