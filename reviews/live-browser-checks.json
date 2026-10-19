@@ -1,0 +1,1996 @@
+{
+  "date": "2026-10-19",
+  "site": "https://jesusfilm.github.io/engineering-fieldnotes/",
+  "deployment": "https://github.com/JesusFilm/engineering-fieldnotes/actions/runs/39180635517",
+  "scope": "Native playback start, buffered readiness and exclusive playback; full media decode is checked separately. Fresh page snapshots are used after pending network loads.",
+  "concepts": [
+    {
+      "id": "harness-engineering",
+      "chapter": {
+        "heading": "Harness engineering",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/harness-engineering/compare/"
+        ],
+        "source": "../../media/harness-engineering/astra.mp4?v=91cc732764f5"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/harness-engineering/baseline.mp4?v=a23465f7ff72"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/harness-engineering/astra.mp4?v=91cc732764f5"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/harness-engineering/fable.mp4?v=4c7af02db22c"
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Harness engineering: Resume work",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.145727,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 0,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 0
+            },
+            {
+              "buffered": 0,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 0
+            }
+          ]
+        },
+        {
+          "cut": "Harness engineering: Prove the patch",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.231606,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.238986,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 0,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 0
+            }
+          ]
+        },
+        {
+          "cut": "Harness engineering: Done means verified",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.231606,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.36146,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.094609,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loop-engineering",
+      "chapter": {
+        "heading": "Loop engineering",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/loop-engineering/compare/"
+        ],
+        "source": "../../media/loop-engineering/astra.mp4?v=a1da4bd5a241"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/loop-engineering/baseline.mp4?v=157e1d6e4bbb"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/loop-engineering/astra.mp4?v=a1da4bd5a241"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/loop-engineering/fable.mp4?v=501ab63133e1"
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Loop engineering: Bounded runs",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.120369,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 0,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 0
+            },
+            {
+              "buffered": 0,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 0
+            }
+          ]
+        },
+        {
+          "cut": "Loop engineering: Evidence first",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.230797,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.175899,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 0,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 0
+            }
+          ]
+        },
+        {
+          "cut": "Loop engineering: Repeated evidence reaches a limit",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.230797,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.348659,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.182503,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "context-engineering",
+      "chapter": {
+        "heading": "Context engineering",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/context-engineering/compare/"
+        ],
+        "source": "../../media/context-engineering/astra.mp4?v=a56bb2d0a3ae"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/context-engineering/baseline.mp4?v=00cb76dc9211"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/context-engineering/astra.mp4?v=a56bb2d0a3ae"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/context-engineering/fable.mp4?v=6051b9707ed9"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Context engineering: Compact logs, retain the constraint",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.574754,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.349368,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.172753,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Context engineering: Keep the contract",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.731418,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.59629,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.172753,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Context engineering: Load the trace and one module, fetch the rest on demand",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.731418,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.760299,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.478097,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tool-design",
+      "chapter": {
+        "heading": "Tool design",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/tool-design/compare/"
+        ],
+        "source": "../../media/tool-design/astra.mp4?v=3000737b0dd9"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/tool-design/baseline.mp4?v=b3945a299489"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/tool-design/astra.mp4?v=3000737b0dd9"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/tool-design/fable.mp4?v=ba146481711b"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Tool design: Original explanation",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.976365,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 13.038958,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Tool design: Empty ≠ failed",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 1.187492,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.189177,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 13.038958,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Tool design: Bound the result inside the tool",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 1.187492,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.406796,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 13.332339,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "memory-architecture",
+      "chapter": {
+        "heading": "Memory architecture",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/memory-architecture/compare/"
+        ],
+        "source": "../../media/memory-architecture/astra.mp4?v=0b89eef6dece"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/memory-architecture/baseline.mp4?v=1850aa670eac"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/memory-architecture/astra.mp4?v=0b89eef6dece"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/memory-architecture/fable.mp4?v=d991bdd4cf86"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Memory architecture: Scope and explicit refresh",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 1.301483,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 2.932114,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Memory architecture: Recall is not current",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 1.545533,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.193981,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 2.932114,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Memory architecture: Gate what gets written",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 1.545533,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.307317,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.149489,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orchestration-patterns",
+      "chapter": {
+        "heading": "Orchestration patterns",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/orchestration-patterns/compare/"
+        ],
+        "source": "../../media/orchestration-patterns/astra.mp4?v=0ef2aaa0ee3c"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/orchestration-patterns/baseline.mp4?v=69f31971fbfb"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/orchestration-patterns/astra.mp4?v=0ef2aaa0ee3c"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/orchestration-patterns/fable.mp4?v=31d44cdbdb8a"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Orchestration patterns: Original explanation",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.439604,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.215521,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Orchestration patterns: Join the checks",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.619208,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.221929,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.215521,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Orchestration patterns: Split by dependency",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.619208,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.335682,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.427557,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guardrails-and-permissions",
+      "chapter": {
+        "heading": "Guardrails and permissions",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/guardrails-and-permissions/compare/"
+        ],
+        "source": "../../media/guardrails-and-permissions/astra.mp4?v=0c6d12bff02a"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/guardrails-and-permissions/baseline.mp4?v=05322c294135"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/guardrails-and-permissions/astra.mp4?v=0c6d12bff02a"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/guardrails-and-permissions/fable.mp4?v=6b637eace864"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Guardrails and permissions: Original explanation",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 1.24718,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.608518,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.791501,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Guardrails and permissions: Separate authority",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 1.944397,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.920759,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.791501,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Guardrails and permissions: Poisoned tool result meets a read-only grant",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 1.944397,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 1.624385,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 5.11921,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agent-evals",
+      "chapter": {
+        "heading": "Agent evals",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/agent-evals/compare/"
+        ],
+        "source": "../../media/agent-evals/astra.mp4?v=5bd6298b918d"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/agent-evals/baseline.mp4?v=0a548cda494c"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/agent-evals/astra.mp4?v=5bd6298b918d"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/agent-evals/fable.mp4?v=43eda35a86a8"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Agent evals: Original explanation",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.467341,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.350863,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.962434,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Agent evals: Test the fix",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.559991,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.632224,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.962434,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Agent evals: Assert what must not change",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.559991,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.824077,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.216845,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "human-in-the-loop",
+      "chapter": {
+        "heading": "Human-in-the-loop",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/human-in-the-loop/compare/"
+        ],
+        "source": "../../media/human-in-the-loop/astra.mp4?v=a1aa02083b41"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/human-in-the-loop/baseline.mp4?v=26aca59394fe"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/human-in-the-loop/astra.mp4?v=a1aa02083b41"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/human-in-the-loop/fable.mp4?v=49781e18e05a"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Human-in-the-loop: Original explanation",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.168465,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.016698,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 5.777002,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Human-in-the-loop: Approve the artifact",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.359887,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.292081,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 5.777002,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Human-in-the-loop: Put side effects after the approval",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.359887,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.421019,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 6.0595,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "observability-and-tracing",
+      "chapter": {
+        "heading": "Observability and tracing",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/observability-and-tracing/compare/"
+        ],
+        "source": "../../media/observability-and-tracing/astra.mp4?v=6541372dd637"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/observability-and-tracing/baseline.mp4?v=417c0becf919"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/observability-and-tracing/astra.mp4?v=6541372dd637"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/observability-and-tracing/fable.mp4?v=fe9cf7f4cd23"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Observability and tracing: Inspect the retry cost",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.258252,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.276358,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Observability and tracing: Follow the tool",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.380445,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.156299,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.276358,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Observability and tracing: Carry the trace into the tool call",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.380445,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.363775,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.582595,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "load-balancing",
+      "chapter": {
+        "heading": "Load balancing",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/load-balancing/compare/"
+        ],
+        "source": "../../media/load-balancing/astra.mp4?v=7fc1e430c459"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/load-balancing/baseline.mp4?v=8f084c7b4806"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/load-balancing/astra.mp4?v=7fc1e430c459"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/load-balancing/fable.mp4?v=2bf51a13222e"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Load balancing: Original explanation",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.272496,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.958798,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Load balancing: Unequal work",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.538669,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.179559,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.958798,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Load balancing: Route on in-flight load, not request count",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.538669,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.445057,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 5.146207,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cache-aside",
+      "chapter": {
+        "heading": "Cache-aside",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/cache-aside/compare/"
+        ],
+        "source": "../../media/cache-aside/astra.mp4?v=67c0dbb92269"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/cache-aside/baseline.mp4?v=552d6ff43a87"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/cache-aside/astra.mp4?v=67c0dbb92269"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/cache-aside/fable.mp4?v=e32266cea78e"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Cache-aside: Miss, hit and expiry",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.273195,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 1.901373,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Cache-aside: A hit can be stale",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.500214,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.185835,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 1.901373,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Cache-aside: Invalidation can lose a race",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.500214,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.342388,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 2.109234,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "queues-and-backpressure",
+      "chapter": {
+        "heading": "Queues and backpressure",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/queues-and-backpressure/compare/"
+        ],
+        "source": "../../media/queues-and-backpressure/astra.mp4?v=f0a19b81c366"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/queues-and-backpressure/baseline.mp4?v=eef1690fc5a0"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/queues-and-backpressure/astra.mp4?v=f0a19b81c366"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/queues-and-backpressure/sol.mp4?v=373288fdc6cd"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Queues and backpressure: Backpressure — bounded queue",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.19067,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.826044,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Queues and backpressure: Queued ≠ complete",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.358515,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.128478,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.826044,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Queues and backpressure: Bound the backlog",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.358515,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.255622,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.084102,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "idempotency",
+      "chapter": {
+        "heading": "Idempotency",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/idempotency/compare/"
+        ],
+        "source": "../../media/idempotency/astra.mp4?v=9a8054364cb8"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/idempotency/baseline.mp4?v=80a8836c247a"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/idempotency/astra.mp4?v=9a8054364cb8"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/idempotency/fable.mp4?v=6104b22418cb"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Idempotency: Original explanation",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.211754,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.563908,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Idempotency: Retry the intent",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.348769,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.212064,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.563908,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Idempotency: A blind retry acts twice",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.348769,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.379968,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.827848,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "replication-and-consistency",
+      "chapter": {
+        "heading": "Replication and consistency",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/replication-and-consistency/compare/"
+        ],
+        "source": "../../media/replication-and-consistency/astra.mp4?v=89c73865b893"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/replication-and-consistency/baseline.mp4?v=038ec8ae21a0"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/replication-and-consistency/astra.mp4?v=89c73865b893"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/replication-and-consistency/sol.mp4?v=5b10e3ffe179"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Replication and consistency: Original explanation",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.219481,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.022878,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.476154,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Replication and consistency: Verify the write",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.347657,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.205854,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.476154,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Replication and consistency: Read your write",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.347657,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.379051,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 3.709222,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "timeouts-and-retries",
+      "chapter": {
+        "heading": "Timeouts and retries",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/timeouts-and-retries/compare/"
+        ],
+        "source": "../../media/timeouts-and-retries/astra.mp4?v=4b44dbe3e40a"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/timeouts-and-retries/baseline.mp4?v=89da1fe90323"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/timeouts-and-retries/astra.mp4?v=4b44dbe3e40a"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/timeouts-and-retries/sol.mp4?v=15e7ece8b04a"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Timeouts and retries: Timeout does not cancel work",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.3749,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.637237,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Timeouts and retries: Retry budget",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.575385,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.125215,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.637237,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Timeouts and retries: One retry owner",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.575385,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.28158,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.861279,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canary-deployments",
+      "chapter": {
+        "heading": "Canary deployments",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/canary-deployments/compare/"
+        ],
+        "source": "../../media/canary-deployments/astra.mp4?v=d70bf4b17107"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/canary-deployments/baseline.mp4?v=421cba6f41c8"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/canary-deployments/astra.mp4?v=d70bf4b17107"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/canary-deployments/sol.mp4?v=58d27f9edd46"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "Canary deployments: Original explanation",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.287933,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.417768,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Canary deployments: Split the signal",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.44857,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.193625,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.417768,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "Canary deployments: Canary the outcome",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.44857,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.320429,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 4.597875,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oauth-pkce",
+      "chapter": {
+        "heading": "OAuth PKCE",
+        "links": [
+          "https://jesusfilm.github.io/engineering-fieldnotes/concepts/oauth-pkce/compare/"
+        ],
+        "source": "../../media/oauth-pkce/sol.mp4?v=3adea70acc68"
+      },
+      "initial": [
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/oauth-pkce/baseline.mp4?v=2eedd4158dbe"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/oauth-pkce/astra.mp4?v=8d18fe05d761"
+        },
+        {
+          "buffered": 0,
+          "readyState": 0,
+          "source": "../../../media/oauth-pkce/sol.mp4?v=3adea70acc68"
+        }
+      ],
+      "loaded": [
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        },
+        {
+          "buffered": 1,
+          "readyState": 4
+        }
+      ],
+      "playback": [
+        {
+          "cut": "OAuth PKCE: Code interception protection",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 0.283143,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.598626,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 6.829861,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "OAuth PKCE: One login, one verifier",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 1.016659,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 0.90632,
+              "paused": false,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 6.829861,
+              "paused": true,
+              "readyState": 4
+            }
+          ]
+        },
+        {
+          "cut": "OAuth PKCE: One attempt, one verifier",
+          "states": [
+            {
+              "buffered": 1,
+              "currentTime": 1.016659,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 1.593115,
+              "paused": true,
+              "readyState": 4
+            },
+            {
+              "buffered": 1,
+              "currentTime": 7.182546,
+              "paused": false,
+              "readyState": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -39,7 +39,7 @@ Every concept received corrections to a video, transcript or supporting lesson. 
 - All 54 MP4s passed full decode, codec/dimension/frame-rate, faststart, audio-headroom and exact loop-boundary checks. All 54 portrait posters are present and hash-bound to review evidence.
 - Index, CSS, JavaScript and three local fonts total 131,947 bytes uncompressed, within the 220 KB budget. Each video is below 3 MB; native controls use no autoplay and preload none.
 - Local desktop, tablet and phone checks covered reading layout, keyboard skip links, comparison playback, one-player-at-a-time behaviour, empty/reset states and missing-media recovery. See [UI review](ui.md).
-- Public deployment and live browser checks are pending in [the launch checklist](../docs/launch.md).
+- Public deployment passed [GitHub Actions run 39180635517](https://github.com/JesusFilm/engineering-fieldnotes/actions/runs/39180635517). All 18 hosted chapter defaults and all 54 native video playback controls passed the [live browser checks](live-browser-checks.json); search, reference filtering, empty-state reset, skip navigation and unknown deep paths were also verified.
 
 ## Limits
 
