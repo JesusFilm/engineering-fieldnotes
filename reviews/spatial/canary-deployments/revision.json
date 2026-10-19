@@ -1,0 +1,63 @@
+{
+  "concept": "canary-deployments",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "anthropic/claude-opus-5-5",
+  "provenanceSource": "Launched explicitly with model anthropic/claude-opus-5-5; no contrary runtime evidence observed. Codex/GPT-6 text in the session system prompt is product boilerplate and is not treated as model identity.",
+  "priorRevision": "revision-prior-gpt6.json (executed by GPT-6 Codex, preserved unchanged)",
+  "completedAt": "2026-10-19T09:12:38.861300+00:00",
+  "critiqueSha256": "dbf5260f97f4eb634ea6503c412e88959373d1d8307176f0f22453a1b0a0a31f",
+  "changes": [
+    "Moved the 0/40/100% rate gauge from 0.6 units in front of the v2 export column to flush against that column's right face. At the default camera, the old placement made the 40% amber top appear level with the 100% tick through parallax. v2 export never moves, so the gauge stays aligned in every state and orbit.",
+    "Changed the initial caption and reset caption to say the pooled failures form a 0.4% hairline at the base, because no amber is visible at panel size in the default state.",
+    "Fixed gauge label overlap: percentage labels now turn 45 degrees to face the default camera diagonal, start 0.3 units clear of the bar, and sit centred on their ticks (0% raised just above the plinth). Ticks extend to just before each label so value and height stay attached from any orbit angle; the bar no longer crosses any digit.",
+    "Re-ran build_scene.py, regenerating scene.blend, scene.glb and poster.png. Rendered all four split states from the rebuilt blend at 840x600 (2x of a 420px panel) to captures/opus-pass/ as author evidence; those renders are not runtime captures."
+  ],
+  "analysis": "Independent assessment: accept. The footprint encodes request count across two orthogonal horizontal axes (version, operation), height encodes rate, and amber volume equals the fixed 40 failures. Each split axis is a physical seam the reader can open independently, so the reader can choose either single split (4%, a visibly thin band) and the intersection (40%, a block), while the recommended video jumps from pooled to version-filtered exports. The relationship is carried by geometry (volume conserved while the footprint shrinks), and the labels only clarify it. GPT-6 fixes for the four Astra findings were checked in source and with verify.mjs and hold: exact footprints, removed combs, rate-representation captions, and tween replacement.",
+  "addressedFindings": [
+    {
+      "findingIndex": 0,
+      "issue": "The geometry redistributes amber into healthy subgroups when joined, but captions describe failures as physically spread across v2. This can imply changing which requests failed.",
+      "disposition": "verified (GPT-6 fix retained)",
+      "response": "describe() and captions present amber as an aggregate rate of fixed failures; FAILED counts are unchanged in every state."
+    },
+    {
+      "findingIndex": 1,
+      "issue": "Decorative combs and unlabeled gauges consume the front edges while the causal scale and 100-request cell meaning are absent from the visible explanation.",
+      "disposition": "implemented further this pass",
+      "response": "Combs remain removed. The gauge now sits flush beside the stationary v2 export amber face, which removes the parallax misreading GPT-6's placement introduced."
+    },
+    {
+      "findingIndex": 2,
+      "issue": "The claimed conserved amber volume is only approximate in the authored geometry.",
+      "disposition": "verified (GPT-6 fix retained)",
+      "response": "Amber footprints are exact; verify.mjs measures 0.15 transformed GLB volume within 1e-6 in all four states after rebuild."
+    },
+    {
+      "findingIndex": 3,
+      "issue": "Repeated control input can leave concurrent tweens writing the same positions and heights.",
+      "disposition": "verified (GPT-6 fix retained)",
+      "response": "apply() clears queued tweens and starts from the interpolated pose; verify.mjs exercises interrupted input, both orders and reset mid-tween."
+    }
+  ],
+  "remainingLimitations": [
+    "The pooled 0.4% layer is effectively invisible at 420px, so the caption carries that one state.",
+    "Gauge labels are 0.17-unit engraved text angled toward the default camera; legibility at the actual 420px browser panel still needs coordinator confirmation.",
+    "update() both returns true and calls invalidate() every frame. This is valid under the contract and relies on the host's corrected at-most-one-frame scheduling (the coordinator reported the canary freeze during split came from the host's duplicate RAF scheduling).",
+    "Single observation window; no browser runtime capture by author."
+  ],
+  "recommendation": "accept",
+  "verification": [
+    "Blender 5.1.2 --threads 2: build_scene.py exit 0, no errors (build-opus-pass.log).",
+    "node --check and node spatial/canary-deployments/verify.mjs pass for both reduced-motion settings.",
+    "GLB inspected: required nodes present, no cameras or lights.",
+    "Poster and four state renders visually inspected.",
+    "Gauge close-up and four state renders from the rebuilt blend (captures/opus-pass/) show no bar or tick crossing any label digit and the 40% amber top meeting the 40% tick."
+  ],
+  "recommendationScope": "Author recommendation only; coordinator owns final browser QA, integration and omission decisions.",
+  "hashes": {
+    "scene.glb": "bff3bd1df465c39b21324cfca330c3587cf4297ad07bd5e1f98e46d3d1d30842",
+    "scene.json": "c70d795504cf011b1037def2e0b48d0ae4d9ade498f694cdfa79a74e146eb269",
+    "interaction.js": "546fd34b804e748bc18b3bcc2e6ccbd7c55014d05649c8e73523e809a4009d8d",
+    "poster.png": "3c09115ea84dda9d30c4227db1fa773eb3019e2285b8e1e647bc3643288a08ba"
+  }
+}

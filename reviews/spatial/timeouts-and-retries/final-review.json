@@ -1,0 +1,59 @@
+{
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "reviewScope": "Read-only final editorial gate against current intent, revision, review, build source, interaction source, guide, video metadata/comparison and inspected poster. No browser, rebuild, source edits or independent runtime execution.",
+  "verdict": "omit",
+  "qualifiesForBrowserQA": false,
+  "threshold": "A useful 3D explanation need not be impossible in 2D. Depth should materially assist inspection of the mechanism; crafted thickness and interactive topology alone do not meet this user's spatial-teaching requirement.",
+  "limitations": [
+    "Posters were visually inspected; dynamic outcomes were assessed from source and author reports, not independently executed.",
+    "GLB files were hashed but not independently loaded. Video comparison uses transcripts and existing comparative reviews, not fresh playback."
+  ],
+  "concept": "timeouts-and-retries",
+  "rationale": "Omit this rebuilt 3D candidate. The exposed manifold and subtree dimming substantially improve readability, and comparing runtime pegs with downstream slips is useful. However, its meaningful relationships remain a front-facing branching tree plus two counters. Orbiting reveals pipe thickness and fittings, without materially improving understanding of retry ownership, multiplication or trace visibility.",
+  "spatialBenefitAssessment": "All explanatory pipe centre lines lie at Blender Y=0; bands sit behind them and cup/peg protrusions encode counts. A flat tree with the same valve controls, dimmed subtrees and runtime/service counts retains the four policies and their causal attribution. Depth gives the apparatus tangible form but supplies no consequential crossing, containment, clearance or alternative observational relationship to inspect. This is an assessment of this geometry, not a requirement that 3D teach something literally impossible in 2D.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "The rebuild remains a raised flat diagram.",
+      "evidence": "build_scene.py places runtime and library pipes in one plane; interaction.js arrived(), requests() and traced() derive outputs solely from two booleans. The inspected poster exposes both three-outlet groups clearly, but another viewpoint contributes no additional retry relationship.",
+      "recommendation": "Omit from the optional 3D release; the policy comparison is suitable for a flat interactive."
+    },
+    {
+      "severity": "info",
+      "issue": "Prior count and branch-state corrections are substantive.",
+      "evidence": "Source produces both=6 requests/2 traced attempts, library only=3/1, runtime only=2/2, neither=1/1. Branch_rt_2 includes downstream library handles, and dimmed meshes suppress raycasting. Captions now describe policy maxima and distinguish attempts from retries. These are source findings, not browser verification."
+    },
+    {
+      "severity": "medium",
+      "issue": "Trace invisibility remains too absolute in the object caption.",
+      "evidence": "The trace pick says library retries \"never appear here\". The intended model can omit lower-layer spans, but putting the peg board above the library does not enforce an instrumentation boundary; the guide asks readers to inspect actual downstream calls.",
+      "recommendation": "If reused, identify this explicitly as a runtime-only attempt trace with library attempts uninstrumented; do not imply all runtime traces necessarily hide them."
+    },
+    {
+      "severity": "info",
+      "issue": "Reader choice adds beyond-video value, but not enough spatial value.",
+      "evidence": "Astra teaches deadline exhaustion; the existing Sol comparison already teaches six downstream attempts and one retry owner. Four reversible policies plus a runtime/service count comparison add agency, not an explanatory role for depth."
+    }
+  ],
+  "hashes": {
+    "scene.glb": "dad0cb572137f857464e3bc330038b70310e7dbcdf580688f32e9cae8f271f88",
+    "scene.json": "76d8e230b4de204d0b28a15360f15db4dfea15be2ceaeeb10f33f3f60d07a206",
+    "interaction.js": "2fa762e8c37724529b6ef67497c7c6b654b3b1242e66160f52e84b6c9d39477d",
+    "poster.png": "f347169a703ccfdca01a49cd5d49455ec8892c9081eefbc813859f8d2146fa68"
+  },
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/timeouts-and-retries.json",
+    "reviews/comparisons/timeouts-and-retries.json",
+    "video/timeouts-and-retries/astra/variant.json",
+    "reviews/spatial/timeouts-and-retries/intent.json",
+    "reviews/spatial/timeouts-and-retries/revision.json",
+    "reviews/spatial/timeouts-and-retries/review.json",
+    "spatial/timeouts-and-retries/build_scene.py",
+    "public/spatial/timeouts-and-retries/scene.json",
+    "public/spatial/timeouts-and-retries/interaction.js",
+    "public/spatial/timeouts-and-retries/poster.png"
+  ]
+}

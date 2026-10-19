@@ -1,0 +1,59 @@
+{
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "reviewScope": "Read-only final editorial gate against current intent, revision, review, build source, interaction source, guide, video metadata/comparison and inspected poster. No browser, rebuild, source edits or independent runtime execution.",
+  "verdict": "omit",
+  "qualifiesForBrowserQA": false,
+  "threshold": "A useful 3D explanation need not be impossible in 2D. Depth should materially assist inspection of the mechanism; crafted thickness and interactive topology alone do not meet this user's spatial-teaching requirement.",
+  "limitations": [
+    "Posters were visually inspected; dynamic outcomes were assessed from source and author reports, not independently executed.",
+    "GLB files were hashed but not independently loaded. Video comparison uses transcripts and existing comparative reviews, not fresh playback."
+  ],
+  "concept": "idempotency",
+  "rationale": "Omit this new 3D candidate. Concurrent arbitration is a worthwhile new lesson beyond the recommended lost-reply video, and open service state plus separate reply trays fixes the old concealment problem. Yet the pivoting arms implement a planar shared-destination versus separate-destinations comparison. Inspection of depth does not expose the unique-claim or transaction boundary that actually decides correctness.",
+  "spatialBenefitAssessment": "The source rotates both arms around the vertical axis on one plinth. The same-key socket is a meaningful exclusivity metaphor, but its capacity is asserted by a fixed WAIT endpoint and scripted result, not made inspectable through a significant depth relationship. Planar converging paths, an occupied key marker and one/two records communicate the same mechanism. No physical simulation is required; the issue is the lack of a useful depth affordance, not the use of scripted animation.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "Changing planar topology supplies the lesson; 3D inspection adds little.",
+      "evidence": "build_scene.py rotates Arm_L/Arm_R in the ground plane toward a shared point or straight docks. interaction.js chooses WAIT versus WIN and one versus two tickets directly from mode. The poster shows rails meeting in front of the claim block, with no inspectable coupling between the socket and ticket slot. Height mainly raises pegs and displays result cards.",
+      "recommendation": "Omit from the optional 3D release. Preserve the concurrent-claim comparison as a potential flat interactive."
+    },
+    {
+      "severity": "medium",
+      "issue": "The atomicity explanation under-specifies the actual arbitration guarantee.",
+      "evidence": "The guide requires a composite non-deferrable unique constraint plus claim and ticket in one transaction. scene.json fallback attributes the single result to claim and ticket sharing a transaction; the split design depicts two k7 rows without explicitly saying shared uniqueness is absent. A transaction alone does not prevent two concurrent checks and inserts; retaining the unique constraint would not permit the depicted two successful duplicate claims.",
+      "recommendation": "For any reuse, label the socket as an enforced unique claim scoped to caller, operation and key, with claim plus ticket committed atomically. Label the unsafe design as check-then-write without that shared uniqueness enforcement, and present two tickets as the illustrated race outcome rather than an inevitable result of separate statements."
+    },
+    {
+      "severity": "info",
+      "issue": "The chosen successful arbitration sequence is consistent with the guide within its stated limits.",
+      "evidence": "Both attempts carry k7/v1; the losing attempt stops, one ticket appears, and both trays receive #47 only after the ticket stage. The source does not return a saved result before it exists. Sequential claim seating and ticket creation can represent internal steps of one transaction; they need not be simultaneous. Rollback/fresh-read, bounded waits, winner abort and alternate winner are not depicted, so this does not demonstrate those paths."
+    },
+    {
+      "severity": "info",
+      "issue": "The redesign addresses the old critique but does not automatically satisfy the final spatial gate.",
+      "evidence": "No concealed hall or automatic camera reveal remains. Caller reply trays are separate from service records. Existing video comparisons explicitly omit concurrent arbitration, so the subject adds value; however, implementing the prior suggested shared-claim concept still needs a meaningful spatial teaching mechanism."
+    }
+  ],
+  "hashes": {
+    "scene.glb": "67c4bf6de16443e5c57bab6e4f2f1d3a76e16a91ccd727b24390ffe92eb5572a",
+    "scene.json": "9a99bba78edc5a35483ff28278ffd3115add2080ef0c4e0a240fe4deabbbf602",
+    "interaction.js": "375c351604d52be8dd4b972e5921f4901c06f46a615bff817f81b10d23478a8e",
+    "poster.png": "d4de90b0747016cc454cf1a3e5956c2937aa4b52f43a25cef3412bc94f3017ea"
+  },
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/idempotency.json",
+    "reviews/comparisons/idempotency.json",
+    "video/idempotency/astra/variant.json",
+    "reviews/spatial/idempotency/intent.json",
+    "reviews/spatial/idempotency/revision.json",
+    "reviews/spatial/idempotency/review.json",
+    "spatial/idempotency/build_scene.py",
+    "public/spatial/idempotency/scene.json",
+    "public/spatial/idempotency/interaction.js",
+    "public/spatial/idempotency/poster.png"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "concept": "orchestration-patterns",
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "verdict": "omit",
+  "spatialBenefitAssessment": "The current spatial rationale is misleading. The guide gives both reviewers the relevant API schema and migration; specialization does not arise from standing on opposite sides of an opaque block. Report freshness is a state/identity rule already taught by the recommended video, and dispatch/edit simply replay its sequence. Tiny decorative ridge comparisons and forced side views do not establish additional explanatory value. Omit this candidate; retry only around an inspectable dependency/freshness counterfactual.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "The main spatial claim contradicts shared-input review: each worker supposedly can only see one face, making extra workers necessary because of artificial concealment.",
+      "requestedChange": "Remove the booths and only-one-face rationale. A genuinely different candidate could expose one artifact with shared dependency connectors and independently replaceable reports; let readers substitute a stale or missing report and inspect which required connections remain unsatisfied. Keep shared evidence accessible to both roles and describe conservative rerun-both as this exercise’s policy.",
+      "evidence": "Guide walkthrough 1 gives both reviewers API schema, migration and checklist. scene.json fallback says each can only see one side, so both reports are needed; intent calls this its strongest spatial benefit."
+    },
+    {
+      "severity": "high",
+      "issue": "The claimed dropped-column repair is not supported by visible geometry. Both versions keep the same outside row extent; v1 merely extends the dark row farther inward. No callers or existing-row dependency establishes a dropped-column defect.",
+      "requestedChange": "If retrying, model an actual missing support/field connection linked to existing consumers and restore that connection on repair. Do not treat a color stripe as evidence of migration correctness.",
+      "evidence": "build_scene.py snapshot(): row min X is BW/2-depth and max X remains BW/2+0.06 for both versions; depth=0.12 only adds inward thickness. Poster shows a dark stripe, not a missing column. dispatch caption asserts a column dropped under rows still in use."
+    },
+    {
+      "severity": "high",
+      "issue": "Essential local-perspective inspection is pointer-only, while the two keyboard actions only dispatch and edit. The alleged window view also bypasses the booth rather than looking through it.",
+      "requestedChange": "For a redesigned mechanism, make every essential comparison reachable through the two primary controls, with clicking only a shortcut. Remove the window claim; if a viewing aperture remains, verify its actual sightline and material instead of placing the camera outside it.",
+      "evidence": "onPick exclusively invokes viewpoint changes. eye is snapshot center +/-2.3 X, while booths sit at +/-2.75 with inner edge +/-2.375; eye lies outside the booth. Glass uses opaque STONE material in build_scene.py."
+    },
+    {
+      "severity": "medium",
+      "issue": "Report profiles are ornamental copies, not a demonstrated fit check; stale reports are moved automatically and gate outcome is chosen by version. Blocking evidence remains behind the same gate that visually separates the engineer.",
+      "requestedChange": "If retrying, make stale/fresh report selection user-controlled and acceptance depend explicitly on completeness, identity and blocker fields. Align profile comparisons at one scale and keep a failing report visibly accessible to the engineer even when approval remains blocked.",
+      "evidence": "dispatch branches on version===1 versus version 2; both reports arrive together. editPatch automatically parks both. Cradle has no reference ridge or matching negative, as source comment confirms. Recommended video explicitly delivers failing evidence to the human at 13.8–17.5s."
+    },
+    {
+      "severity": "medium",
+      "issue": "Overview spends most space on plinth and booths while snapshot ports, report ridges and migration details are tiny; no alternate browser captures demonstrate those comparisons.",
+      "requestedChange": "For any replacement, frame the artifact and report interface tightly, remove non-explanatory architecture, and capture matching/mismatching report states at 420px before claiming legibility.",
+      "evidence": "poster.png and captures/initial.png show large blank base, opaque booths and small central details; only initial browser capture is present."
+    }
+  ],
+  "requiredVerification": [
+    "Coordinator: reject the current local-visibility rationale; require a new beyond-video demonstration before acceptance.",
+    "If redesigned, browser-check missing, stale, blocking and fresh reports, edit-before-dispatch, reset during transitions, reduced motion, keyboard parity and nearest-visible-surface picking. Verify failing evidence remains accessible without implying approval.",
+    "Inspect 420px and desktop settled states and camera/pointer occlusion. This review did not execute the interaction module in a browser or verify its animation."
+  ],
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/orchestration-patterns.json",
+    "public/spatial/orchestration-patterns/scene.json",
+    "public/spatial/orchestration-patterns/interaction.js",
+    "public/spatial/orchestration-patterns/scene.glb",
+    "public/spatial/orchestration-patterns/poster.png",
+    "spatial/orchestration-patterns/build_scene.py",
+    "reviews/spatial/orchestration-patterns/intent.json",
+    "reviews/comparisons/orchestration-patterns.json",
+    "video/orchestration-patterns/astra/variant.json",
+    "reviews/spatial/orchestration-patterns/captures/initial.png"
+  ],
+  "hashes": {
+    "scene.glb": "09ad6f12ef2350e5ad6ba0d72f304b5083fac75d213e6b2ac8a9265d9aeafbbc",
+    "scene.json": "54436c747c32b37a994f302ad8bcc8a7456dc1217e1edb96c2a037cfd3e154c2",
+    "interaction.js": "c3145887f6e44d6a63fae12ec1dcf4fe3e04a587907d63ff8a8b1bc70d9f018b",
+    "poster.png": "3d8d506eaaad251701f6bd85b92138ea6f4f85d2d56cfbcd755f829c16ee8494"
+  }
+}

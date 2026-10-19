@@ -1,0 +1,58 @@
+{
+  "concept": "queues-and-backpressure",
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "verdict": "omit",
+  "spatialBenefitAssessment": "Recommend omitting this 3D candidate. Changing the queue bound is a legitimate counterfactual beyond the fixed-three-place video, but the current experience remains run/pause playback along a one-dimensional strip. The hopper physically hides some queue cells without explaining an additional relationship, and the tool conceals active work. The author also identifies the spatial benefit as marginal. Preserve the useful bound comparison as a compact 2D interactive if desired; do not ship this miniature merely because it is rendered.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "The scene does not earn the added 3D complexity; arbitrary concealment and token transport carry a temporal explanation already clearer in the video.",
+      "requestedChange": "Omit the current spatial candidate. A genuinely different optional mechanism would freeze the slow-worker state and let a movable admission boundary transfer the same conserved backlog between producer and waiting queue while the active job remains fixed and visible; compare bounds immediately, without replay. Prefer a 2D strip unless a further spatial relationship is demonstrated.",
+      "evidence": "intent.json explicitly describes modest spatial benefit and gain from user control rather than 3D. Poster shows a seven-cell strip and a hopper sitting over cell 4; cells 5-7 remain visible behind it, so the geometry does not clearly show a three-place bound."
+    },
+    {
+      "severity": "high",
+      "issue": "Remaining hopper jobs do not settle down after the bottom job leaves.",
+      "requestedChange": "If the candidate is retained for another attempt, interpolate each remaining tile from its actual captured position to hopperPos(j,x). Do not use hopperPos(j+k,x); verify each settled stack is contiguous and starts at floorY, including after changing capacity.",
+      "evidence": "In tick after S.hopper.shift(), rest.forEach uses hopperPos(j+k,x). At k=0 the new bottom jumps to floorY; at k=1 it ends at floorY+TILE_GAP, leaving the bottom slot empty. moveProducer later uses hopperPos(j,x), causing another discontinuity. This is source inspection, not a reproduced browser test."
+    },
+    {
+      "severity": "high",
+      "issue": "Active job identity is concealed by the tool building, undermining queued versus running versus completed.",
+      "requestedChange": "If reattempted, remove the front wall/roof over the execution socket and put the progress dial beside the visible job. Ensure the producer latch is visible from the default view and does not require clicking through the hopper frame.",
+      "evidence": "Poster shows an opaque tool facade. build_scene.py locates Station inside ToolWallS/ToolWallN and under ToolRoof; identity therefore depends on caption rather than visible execution geometry."
+    },
+    {
+      "severity": "medium",
+      "issue": "The equal-finish-step conclusion needs its finite-workload boundary exposed, and runtime evidence is absent.",
+      "requestedChange": "State that queue sizes finish at the same simulation step for this fixed single-worker batch. Do not imply identical wall-clock duration: animation lengths differ. If retaining, capture full/held, expanded-bound and final states before reconsideration.",
+      "evidence": "Only poster.png is available; no captures or browser-initial.json were found. Completion caption generalizes that queue length did not finish work sooner; simulation ticks contain differing numbers/durations of visual steps."
+    }
+  ],
+  "requiredVerification": [
+    "No browser interaction or runtime tests were performed by this reviewer; poster is evidence of initial geometry only.",
+    "If reattempted, independently run both capacities and verify eight jobs complete once, queue never exceeds its bound, active work remains one, and the producer resumes after dequeue.",
+    "Verify stack interpolation, deferred capacity changes while paused, shrink refusal above three waiting, pointer occlusion, 420px framing and reduced motion. Coordinator retains final verification and omission/integration decisions."
+  ],
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/queues-and-backpressure.json",
+    "public/spatial/queues-and-backpressure/scene.json",
+    "public/spatial/queues-and-backpressure/interaction.js",
+    "public/spatial/queues-and-backpressure/scene.glb",
+    "public/spatial/queues-and-backpressure/poster.png",
+    "reviews/spatial/queues-and-backpressure/intent.json",
+    "reviews/comparisons/queues-and-backpressure.json",
+    "video/queues-and-backpressure/astra/variant.json",
+    "spatial/queues-and-backpressure/build_scene.py",
+    "reviews/spatial/queues-and-backpressure/captures/initial.png"
+  ],
+  "hashes": {
+    "scene.glb": "0cd410613bd14e7cb871a291b61e6e1427929064502ef4b1703005bbc2efa81e",
+    "scene.json": "dd4b3a23849e28ccd0b1b5b20600b951a8acb1d6650c2cdb9e83bd30dbb6d90b",
+    "interaction.js": "ba01f7328d35b7a03fe22439d0de9826fd33c94990e6c69bef5c06c8ae0b944c",
+    "poster.png": "d464b46abc4dfe00e3f2ddff1e589c51f5ad81d6ac530a661bd3bad1053e535c"
+  }
+}

@@ -16,6 +16,12 @@ The original prototype remains intact. Its October 18 review verified one cut pe
 
 ## Current work
 
+An optional spatial-investigation change is prepared on
+`codex/spatial-investigations` for review. Four of eighteen Blender attempts pass
+the spatial gate: context engineering, loop engineering, load balancing and
+canary deployments. See [the spatial release review](../reviews/spatial-release.md).
+The public release described below is unchanged until that change is merged.
+
 All 18 written and comparative reviews are complete, with 54 validated videos. The independent alternatives use Astra plus Fable for 13 concepts and Astra plus Sol for five. See [the editorial release report](../reviews/launch-review.md) and [UI review](../reviews/ui.md).
 
 The original prototype remains intact at source commit `f74bc99beef23a4aaff8081344e70cb8a82d852d`. The user confirmed JesusFilm on 19 October 2026. The public repository is https://github.com/JesusFilm/engineering-fieldnotes and workflow-based Pages is configured at https://jesusfilm.github.io/engineering-fieldnotes/. Deployment succeeded in [GitHub Actions run 39180635517](https://github.com/JesusFilm/engineering-fieldnotes/actions/runs/39180635517). Live browser verification covered all 18 chapter defaults and all 54 comparison videos, plus search, six-entry reference filtering, empty-state recovery, keyboard skip navigation, phone reading and a missing deep path. The evidence is in [live-browser-checks.json](../reviews/live-browser-checks.json).

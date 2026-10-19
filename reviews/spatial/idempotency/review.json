@@ -1,0 +1,50 @@
+{
+  "concept": "idempotency",
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "verdict": "omit",
+  "spatialBenefitAssessment": "Omit the current candidate. The primary discovery is an existing key-to-ticket diagram concealed behind a service wall. Orbiting reveals information solely because the illustration hides it; that is not the caller obtaining evidence. Same-key/new-key controls offer a useful state comparison, but the moving numbered cards and rack do not establish a convincing spatial mechanism beyond the recommended video’s committed-write/lost-response/replay explanation. A different investigation could warrant a new candidate.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "The core mechanism is arbitrary concealment, followed by automatic revelation.",
+      "requestedChange": "Remove this candidate from release consideration. If reattempting, replace the hall with an always-open shared commit boundary: two competing requests enter one scoped unique-key claim, and the reader compares atomic claim-plus-write with an unsafe split check/write. Use two controls, e.g. atomicity mode and submit concurrent pair; physical convergence on one claim must determine whether one or two records commit. Do not just animate the same cards through a room.",
+      "evidence": "scene.json invites walking around a sealed service; revealSection() turns the camera on retry; initial.png shows a blank service wall, while poster.png reveals a flat ledger/cord/ticket arrangement."
+    },
+    {
+      "severity": "medium",
+      "issue": "The geometry suggests privileged camera access resolves caller uncertainty, and the same-key contract is underqualified.",
+      "requestedChange": "If retained during redesign, show caller knowledge separately from server state in the same view. Explicitly preserve k7 plus v1 and identify the retained-record, single-database illustrative contract; discovery by the reader must not imply reconciliation by the runner.",
+      "evidence": "Guide example requires k7 with v1 and rejects k7 with v2. sameKey() always returns #47; the numbered rack omits parameter and scope checking."
+    },
+    {
+      "severity": "medium",
+      "issue": "Evidence does not show the revised initial copy or any interactive outcome in the runtime.",
+      "requestedChange": "Capture the current initial state and meaningful same-key/new-key states with a consistent viewpoint; at phone width ensure key, effect and response are distinguishable without tiny floating text. Keep walls and roof from intercepting meaningful picks.",
+      "evidence": "initial.png caption differs from current INITIAL; only one runtime capture exists. Poster is an open-side render, not proof of retry state or pointer behavior."
+    }
+  ],
+  "requiredVerification": [
+    "If redesigned, coordinator must verify duplicate arbitration against the guide, both outcomes, reset and rapid input, keyboard controls and reduced motion.",
+    "Capture initial, repeated same-key and fresh-key results at desktop and 420px; verify old tickets remain after new ones and the replay returns #47 even after new-key writes.",
+    "No runtime execution or browser tests were performed by this reviewer; current omission recommendation is based on source, guide, transcript and supplied images."
+  ],
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/idempotency.json",
+    "public/spatial/idempotency/scene.json",
+    "public/spatial/idempotency/interaction.js",
+    "reviews/spatial/idempotency/intent.json",
+    "reviews/comparisons/idempotency.json",
+    "video/idempotency/astra/variant.json",
+    "public/spatial/idempotency/poster.png",
+    "reviews/spatial/idempotency/captures/initial.png"
+  ],
+  "hashes": {
+    "scene.glb": "3ead166aeae90b1c28226c497af375a6b22872aed633f780e444f3f4d2fffdff",
+    "scene.json": "95d483ce7eb65589452645a307c016907d40a41939dbdc3188995ac0a9154875",
+    "interaction.js": "4ef3a7229c489a2b5cf2df6438de934d16330f87f4f0eb90520b5ee5d4a4a7c7",
+    "poster.png": "223640dfacaa93347695dfaa7e560f6b54ade10a37d4d99edb923b9fcc59089c"
+  }
+}

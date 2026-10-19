@@ -1,0 +1,18 @@
+{
+  "checks": [
+    "Initial still scene loads",
+    "Run new test then Cut section",
+    "Run existing login test reaches Checks complete and regression caption",
+    "Reset restores closed houses and Run new test"
+  ],
+  "observations": [
+    "Final lifted roofs and flag tops exceed upper frame edge; inspect camera framing in review.",
+    "Cutaway reveals A wall across both lanes and B gate at one lane.",
+    "Two buttons and reset; no forms or sidebars."
+  ],
+  "screenshots": [
+    "initial.png",
+    "cutaway-new-test.png",
+    "both-tests.png"
+  ]
+}

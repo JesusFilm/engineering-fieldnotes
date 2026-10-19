@@ -1,0 +1,69 @@
+{
+  "concept": "human-in-the-loop",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "anthropic/claude-opus-5-5",
+  "provenanceNote": "This pass was executed by anthropic/claude-opus-5-5, launched explicitly with that model. The original candidate was authored under the requested Opus label; the previous post-critique revision (revision-prior-gpt6.json) was executed by a GPT-6-based Codex session after a model switch and is preserved unedited. No runtime evidence contradicts the Opus launch; the only contrary text is generic 'GPT-6' system boilerplate, which the explicit model switch overrides.",
+  "priorRevision": "revision-prior-gpt6.json (GPT-6 Codex execution, preserved)",
+  "completedAt": "2026-10-19T09:09:17+00:00",
+  "critiqueSha256": "d0715e98d105566c8f6f350dd6f52d65a996a9a18ec9a8c8e1e64908cba9a2ea",
+  "analysis": [
+    "Independently agreed with Astra's omit verdict. Approval binds an exact (artifact, target) pair; that is two equality checks, best shown as a four-cell table. The recommended video already plays the A-approved, B-mismatched, B-reviewed sequence.",
+    "The keyed keel/plate metaphor is worse than neutral: one-sided clearance suggests a smaller profile could pass, which contradicts exact identity. Interlocks for artifact and target would be arbitrary geometry around the same table.",
+    "Verified the prior pass's fixes in interaction.js: both controls disable while any tween or recut is active and re-enable when motion settles; the denial caption claims a pre-execution mismatch, not contact."
+  ],
+  "changes": [
+    "Reassessed spatial value independently against the contract and the recommended video; confirmed omission.",
+    "Rewrote intent.json provenance honestly and recorded this Opus pass; preserved the GPT-6 revision as revision-prior-gpt6.json.",
+    "No runtime or geometry change: GLB, Blender source and poster retained because the candidate is omitted."
+  ],
+  "addressedFindings": [
+    {
+      "finding": 1,
+      "issue": "The key/lock metaphor repeats the video and hides an arbitrary encoding under the crates.",
+      "status": "resolved-by-omission",
+      "note": "Scope binding is a 2 × 2 table; no spatial mechanism justified."
+    },
+    {
+      "finding": 2,
+      "issue": "Enabled buttons silently discard input while animations run.",
+      "status": "addressed",
+      "note": "Busy-state disabling verified in interaction.js refresh() and update()."
+    },
+    {
+      "finding": 3,
+      "issue": "The default view does not expose the alleged physical fit; the authored blocked stop actually leaves a gap before contact.",
+      "status": "partially-addressed",
+      "note": "Contact claim removed from caption; default framing and stop geometry left as is in the omitted candidate."
+    },
+    {
+      "finding": 4,
+      "issue": "A clearance profile encodes one-sided fit, not exact identity; approval identity is asserted by strings independently of the geometry.",
+      "status": "resolved-by-omission",
+      "note": "One-sided clearance cannot encode exact identity; not repaired cosmetically."
+    }
+  ],
+  "remainingLimitations": [
+    "The keel stands for an immutable artifact digest plus target; the target is not shown separately.",
+    "Pause and resume durability, duplicate resumption and rejection paths from the guide are not depicted.",
+    "The plate recut is an animation of recording a new decision; it does not show the authenticated reviewer or where the decision is stored.",
+    "Teeth differences are clearest from low and end-on angles; from the default overview they are visible but subtle.",
+    "One-sided clearance does not faithfully encode exact identity; deliberately not cosmetically repaired because the candidate is omitted.",
+    "Old framing and gate-pick keyboard limitations remain in this unpublished candidate."
+  ],
+  "recommendation": "omit",
+  "reason": "Omit. Exact (artifact, target) approval is a four-cell table; the recommended video already shows the A/B sequence. Physical interlocks would be arbitrary geometry with no spatial relationship.",
+  "verification": [
+    "Read AGENTS.md, docs/spatial-contract.json, docs/editorial-workflow.md, review.json, intent.json and prior revision.json.",
+    "Inspected interaction.js, scene.json and poster.png.",
+    "Runtime modules pass node --check as ES modules; asset hashes below recomputed after this pass."
+  ],
+  "verificationGaps": [
+    "No browser QA; coordinator owns final browser review. No geometry regenerated because none changed."
+  ],
+  "hashes": {
+    "scene.glb": "71e668e9cb7d52980306d0196baa4f44cb64e6fe25465da4e9ad25a2dead1291",
+    "scene.json": "c8e513c6d566b652cb489d16dd19459780e99134c1cc3dd6491b9daef62f9f53",
+    "interaction.js": "6cda206efa0e2c2f8f53e23d7b96a1cdb4a0406cad013d35f509d0a71f1a746b",
+    "poster.png": "15dc3b77bfe2845913a3cc76b6c37c217aabff9fa45483307e393093d6ef0703"
+  }
+}

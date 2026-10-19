@@ -1,0 +1,53 @@
+{
+  "concept": "orchestration-patterns",
+  "status": "unsuitable",
+  "mechanism": "Local perspectives plus a physical identity check. One frozen snapshot block sits on a pedestal between two glazed reviewer booths. The compatibility booth's window faces the snapshot's API side (call ports); the migration booth faces the table side, where a recessed charcoal row shows a column dropped under rows still in use. A key ridge on top of the snapshot is its identifier, and each report tablet carries a copy of the ridge it read. Editing the patch swaps in a snapshot with a different ridge; the old tablets no longer match and move to a stale tray, and the gate to the engineer only rises when both reports match the current ridge and neither blocks.",
+  "spatialBenefit": "Why two workers rather than one is a matter of what each can see from where it stands: neither window shows the whole block. Clicking a booth moves the camera to that reviewer's viewpoint so the reader sees only one face. The stale-report rule shows as a mismatch between two physical profiles the reader can compare by eye.",
+  "beyondVideoTest": "Pass, the strongest of the three. Seeing the snapshot from each reviewer's position, then orbiting to see what each misses, is a comparison of local perspectives that a video can only assert. Comparing the tablet ridges against the new snapshot's ridge is inspection the reader does on their own.",
+  "interaction": {
+    "buttons": [
+      "Send both reviewers",
+      "Edit the patch (once; then disabled as \"Patch edited\")"
+    ],
+    "pick": "Clicking a booth views the snapshot from that reviewer's side; clicking the snapshot views its key ridge.",
+    "reset": "Host Reset restores snapshot v1, parks reports and lowers the gate.",
+    "reducedMotion": "Steps jump to end states; pick views are host camera changes."
+  },
+  "expectedObservations": [
+    "Sending reviewers on v1: both tablets reach the cradle with matching ridges; the migration tablet carries an amber blocker and the gate stays shut.",
+    "Editing the patch: the snapshot sinks and v2 rises with a different ridge; both old tablets move to the stale tray.",
+    "Sending again: new tablets match v2, no blocker, the gate arm rises toward the engineer.",
+    "Editing before sending also works and produces a clean v2 run."
+  ],
+  "sourceGuide": "content/concepts/orchestration-patterns.json (API/migration review on one frozen snapshot; join, invalidation)",
+  "limitations": [
+    "Teaching metaphor: the booths are read-only by construction (glazing), which illustrates but does not model runtime permission configuration.",
+    "Timeouts, retries, and disagreement between reports are not shown; the blocker is authored.",
+    "The \"only one face is visible\" claim relies on the pick views; the default overview shows both faces, which is intended for comparison.",
+    "Version 2 snapshot sinks partly below the plinth during the swap and is hidden with visibility while parked."
+  ],
+  "authorModel": "anthropic/claude-opus-5-5",
+  "files": {
+    "source": "spatial/orchestration-patterns/build_scene.py",
+    "blend": "spatial/orchestration-patterns/scene.blend",
+    "runtime": [
+      "public/spatial/orchestration-patterns/scene.glb",
+      "public/spatial/orchestration-patterns/scene.json",
+      "public/spatial/orchestration-patterns/interaction.js",
+      "public/spatial/orchestration-patterns/poster.png"
+    ]
+  },
+  "rebuild": "cd spatial/orchestration-patterns && /opt/homebrew/bin/blender --background --threads 2 --python build_scene.py",
+  "finalDecision": "Recommend omission. The reviewed booth candidate is retained unchanged for provenance only and should not ship: its premise that each reviewer can see only one face of the snapshot contradicts the guide, where both reviewers get the same schema and migration.",
+  "alternativesConsidered": [
+    {
+      "mechanism": "Pin-tumbler join: a lock cylinder in section whose pins reach the shear line only when both reports carry the current snapshot key and neither carries a blocker; editing the patch re-keys the lock.",
+      "rejectedBecause": "Snapshot identity becomes a key cut the reader must decode, which is the same authored-code problem the critique found in the ridges. The section must be opened to see the pins, an uncovering pattern the critique already rejected. Two buttons cannot cover edit, rerun-one and rerun-both without turning into staged playback."
+    },
+    {
+      "mechanism": "Connector board: one artifact with dependency sockets; reports plug in through pin patterns tied to the snapshot; the reader swaps fresh, stale or missing reports and sees which connections stay open.",
+      "rejectedBecause": "Two reports and one snapshot make a two-node join whose rule (same snapshot, both complete, no blocker) is a logical predicate. Its spatial form would be a labelled wiring diagram in 3D, and the recommended video already teaches missing, stale and blocking reports."
+    }
+  ],
+  "evidenceForOmission": "The concept's lessons are dependency order, result contracts and invalidation on change. None of them depends on position, occlusion or a physical contact the reader could inspect, and every honest encoding found reduces to comparing identifiers. The critique's finding that specialisation does not come from viewpoint removes the only spatial claim the previous candidate had."
+}

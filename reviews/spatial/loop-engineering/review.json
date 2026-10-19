@@ -1,0 +1,58 @@
+{
+  "concept": "loop-engineering",
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "verdict": "revise",
+  "spatialBenefitAssessment": "The selector/pin alignment is a plausible user-controlled counterfactual: identical patch, different selected evidence, different allowed route. It is not yet a pass. Most screen area and interaction time are spent replaying the repair train, already explained by Evidence first; the meaningful contact state is transient and largely occluded. Salvage by making a persistent, inspectable selection-versus-execution mechanism the main scene, or omit if this remains a theatrical flowchart.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "The advertised stopped-probe gap cannot be inspected at the settled state: runTests retracts the head before routing, and the successful repair clears its evidence automatically.",
+      "requestedChange": "Remove the long perimeter train journey and hold the mechanism at contact after execution. Keep selected pins, executed count and failed pin visible until the next explicit action. Make the two controls Change selection and Evaluate current patch, with repair represented as a deliberate next state rather than a long automatic lap.",
+      "evidence": "interaction.js runTests lowers head, updates count, then raises head before the switch; loop branch calls clearEvidence before returning. Intent claims the reader can inspect where plungers stopped. Astra transcript already shows repair/review/handoff."
+    },
+    {
+      "severity": "high",
+      "issue": "Selector changes are queued while selectorOK flips immediately; Run tests and further selector clicks remain enabled during those transitions, allowing decisions to diverge from queued geometry.",
+      "requestedChange": "Lock both controls and selector picking during a selector transition, or cancel/coalesce it and compute the run from the final committed selector state. Do not let a later toggle change pin animation for a route already captured by runTests.",
+      "evidence": "toggleSelector leaves phase ready, flips selectorOK and queues a tween. runTests captures route/reach but its apply callback reads live selectorOK. Static code finding; not reproduced in browser."
+    },
+    {
+      "severity": "medium",
+      "issue": "The small selector gap and count are subordinate to rails, gantry and decorative budget rack. The initial view hides much of the test bed; counter ticks are not readable as zero versus twelve at compact size.",
+      "requestedChange": "Enlarge the test bed to dominate the frame, cut away the near rail/head housing, reduce the unused track and remove the third-patch budget prop unless budget exhaustion is actually modeled. Add only endpoint engravings 0 and 12 to the counter. Preserve nearest-surface picking; do not make the plate clickable through the head.",
+      "evidence": "initial.png and poster show the large track around a small partially covered mechanism. build_scene.py includes Patch_3; runtime only swaps Patch_1 and Patch_2. Only initial browser capture exists."
+    },
+    {
+      "severity": "medium",
+      "issue": "The zero-selection caption says Nothing failed without the guide’s repair-only policy qualification, and the mechanism can suggest selection failure itself universally dictates a human handoff.",
+      "requestedChange": "State No assertions ran; this repair-only workflow hands off command and logs. Keep discovered tests visibly present but unselected, and explicitly retain the distinction between review and merge.",
+      "evidence": "content guide example and walkthrough distinguish discovered/deselected tests and a team-specific repair-only policy; interaction.js handoff caption says Nothing failed and fallback makes the route unconditional."
+    }
+  ],
+  "requiredVerification": [
+    "Coordinator: capture aligned failure, aligned pass, blocked selection on patch 1, and blocked selection after repair at 420px and desktop; prove the causal contact state remains inspectable while idle.",
+    "Exercise rapid selector toggles followed immediately by Run, reset in every phase, reduced motion and keyboard-only use. Check pins/plate do not intersect implausibly and camera exposes contact without picking through solid geometry.",
+    "Only code, GLB hierarchy, poster and supplied initial capture were inspected; no runtime test or alternate-state browser verification was performed."
+  ],
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/loop-engineering.json",
+    "public/spatial/loop-engineering/scene.json",
+    "public/spatial/loop-engineering/interaction.js",
+    "public/spatial/loop-engineering/scene.glb",
+    "public/spatial/loop-engineering/poster.png",
+    "spatial/loop-engineering/build_scene.py",
+    "reviews/spatial/loop-engineering/intent.json",
+    "reviews/comparisons/loop-engineering.json",
+    "video/loop-engineering/astra/variant.json",
+    "reviews/spatial/loop-engineering/captures/initial.png"
+  ],
+  "hashes": {
+    "scene.glb": "12fd90a0a894e895637313779528860a15c0fef224b8612f9d2e39fe6e0bc677",
+    "scene.json": "41541dac0e290c52fec29b1f8cc9efd6ed82d648577bfa7c3b9c0cf7aa1ae9a8",
+    "interaction.js": "3643efb46aae43f3abb2253311d9d894e5f43445cbaf576d34d2ed449847a91a",
+    "poster.png": "68badf25c18bd0b6952aadc6decf2d224383d91ecd0c7b32495e2922dbf994aa"
+  }
+}

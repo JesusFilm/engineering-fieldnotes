@@ -1,0 +1,19 @@
+{
+  "title": "Queues and backpressure: where waiting goes",
+  "description": "Run a batch with a slow job through a queue of 3 or 7 places and see whether the waiting builds up in the queue or at the producer.",
+  "camera": {
+    "position": [
+      0.6,
+      5.6,
+      9.8
+    ],
+    "target": [
+      -0.2,
+      0.3,
+      0.0
+    ]
+  },
+  "initialCaption": "Eight jobs wait in the producer. The queue in front of it has 3 places; job B is slow.",
+  "interactionHint": "Drag to look around · scroll to zoom",
+  "fallback": "While a slow job holds the single tool, waiting jobs fill the queue. With 3 places the producer cannot hand over the fourth job and is held; with 7 places the jobs wait in the queue instead. Either way the batch finishes at the same step, because the queue changes where work waits, not how fast the tool runs."
+}

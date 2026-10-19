@@ -1,0 +1,24 @@
+BOUNDS min -4.50,-0.18,-2.00 max 4.50,2.46,3.50
+CAMERA {"position":[5,7,12],"target":[0,0.6,0.6]} distance 14.00
+TOP NODES Plinth Lane_A LaneLabel_A Slot_A0 Slot_A1 Slot_A2 Slot_A3 Lane_B LaneLabel_B Slot_B0 Slot_B1 Slot_B2 Slot_B3 Work_Q1 Base_Q1 Work_Q2 Base_Q2 Work_Q3 Base_Q3 Work_Q4 Base_Q4 Work_Q5 Base_Q5 Work_Q6 Base_Q6
+  VIEW [ 5, 7, 12 ] [ 0, 0.6, 0.6 ]
+IDLE AT START true | After step 0. A: 0 outstanding / 0 work; B: 0 outstanding / 0 work.
+  VIEW [ 5, 7, 12 ] [ 0, 0.6, 0.6 ]
+  VIEW [ 5, 7, 12 ] [ 0, 0.6, 0.6 ]
+PASS post-critique state assertions, reducedMotion=true
+(node:30377) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/public/spatial/load-balancing/interaction.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+BOUNDS min -4.50,-0.18,-2.00 max 4.50,2.46,3.50
+CAMERA {"position":[5,7,12],"target":[0,0.6,0.6]} distance 14.00
+TOP NODES Plinth Lane_A LaneLabel_A Slot_A0 Slot_A1 Slot_A2 Slot_A3 Lane_B LaneLabel_B Slot_B0 Slot_B1 Slot_B2 Slot_B3 Work_Q1 Base_Q1 Work_Q2 Base_Q2 Work_Q3 Base_Q3 Work_Q4 Base_Q4 Work_Q5 Base_Q5 Work_Q6 Base_Q6
+  VIEW [ 5, 7, 12 ] [ 0, 0.6, 0.6 ]
+IDLE AT START true | After step 0. A: 0 outstanding / 0 work; B: 0 outstanding / 0 work.
+  VIEW [ 5, 7, 12 ] [ 0, 0.6, 0.6 ]
+  VIEW [ 5, 7, 12 ] [ 0, 0.6, 0.6 ]
+PASS post-critique state assertions, reducedMotion=false
+(node:30378) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/public/spatial/load-balancing/interaction.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)

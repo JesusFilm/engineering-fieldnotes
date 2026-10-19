@@ -1,0 +1,66 @@
+{
+  "concept": "orchestration-patterns",
+  "executionModel": "anthropic/claude-opus-5-5",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "modelProvenance": "Revision decision authored in a Codex session whose active model was anthropic/claude-opus-5-5 (coordinator verified turn_context).",
+  "critique": {
+    "path": "reviews/spatial/orchestration-patterns/review.json",
+    "critiqueSha256": "38730ec21270d5183bc1497263605bcbfc0c7e91d135ba5b99dbcd01bf46c46e",
+    "reviewerModel": "gpt-6-astra",
+    "verdict": "omit"
+  },
+  "critiqueSha256": "38730ec21270d5183bc1497263605bcbfc0c7e91d135ba5b99dbcd01bf46c46e",
+  "summary": "Honest omission. Two replacement mechanisms were designed and rejected (see intent.json alternativesConsidered); none clears the beyond-video gate without decoding identifiers or uncovering authored answers.",
+  "changes": [
+    "intent.json: status set to unsuitable; added finalDecision, alternativesConsidered and evidenceForOmission.",
+    "No geometry or runtime changes. The four runtime assets are byte-identical to the reviewed versions (hashes below match review.json) so the omitted candidate keeps its provenance."
+  ],
+  "addressedFindings": [
+    {
+      "severity": "high",
+      "finding": "Only-one-face rationale contradicts shared-input review.",
+      "response": "Accepted; this is the reason for omission. Any retry must give both reviewers shared evidence, and neither alternative found a spatial gain once that is done."
+    },
+    {
+      "severity": "high",
+      "finding": "Dropped-column repair not supported by geometry.",
+      "response": "Accepted. Not repaired, because the candidate is omitted."
+    },
+    {
+      "severity": "high",
+      "finding": "Essential perspective inspection is pointer-only.",
+      "response": "Accepted. Not repaired, because the candidate is omitted."
+    },
+    {
+      "severity": "medium",
+      "finding": "Ornamental report profiles; automatic stale handling.",
+      "response": "Accepted. The pin-tumbler alternative was rejected for the same ornamental-identity reason."
+    },
+    {
+      "severity": "medium",
+      "finding": "Tiny details in a large base.",
+      "response": "Accepted. Not repaired, because the candidate is omitted."
+    }
+  ],
+  "remainingLimitations": [
+    "The shipped files still contain the misleading booth rationale (scene.json fallback and captions); they must not be published.",
+    "If the coordinator wants a spatial piece for this concept, a better route is the dependency structure across several workflows (chain, parallel, evaluator loop), which goes beyond this guide's single example."
+  ],
+  "recommendation": "omit",
+  "verification": [
+    "Runtime hashes recomputed and compared with review.json hashes: match"
+  ],
+  "runtimeHashes": {
+    "scene.glb": "09ad6f12ef2350e5ad6ba0d72f304b5083fac75d213e6b2ac8a9265d9aeafbbc",
+    "scene.json": "54436c747c32b37a994f302ad8bcc8a7456dc1217e1edb96c2a037cfd3e154c2",
+    "interaction.js": "c3145887f6e44d6a63fae12ec1dcf4fe3e04a587907d63ff8a8b1bc70d9f018b",
+    "poster.png": "3d8d506eaaad251701f6bd85b92138ea6f4f85d2d56cfbcd755f829c16ee8494"
+  },
+  "hashes": {
+    "scene.glb": "09ad6f12ef2350e5ad6ba0d72f304b5083fac75d213e6b2ac8a9265d9aeafbbc",
+    "scene.json": "54436c747c32b37a994f302ad8bcc8a7456dc1217e1edb96c2a037cfd3e154c2",
+    "interaction.js": "c3145887f6e44d6a63fae12ec1dcf4fe3e04a587907d63ff8a8b1bc70d9f018b",
+    "poster.png": "3d8d506eaaad251701f6bd85b92138ea6f4f85d2d56cfbcd755f829c16ee8494"
+  },
+  "schemaNormalization": "Coordinator copied runtimeHashes into canonical hashes; values unchanged and checked against disk."
+}

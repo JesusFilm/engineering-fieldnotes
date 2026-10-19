@@ -1,0 +1,69 @@
+{
+  "concept": "tool-design",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "anthropic/claude-opus-5-5",
+  "provenanceNote": "This pass was executed by anthropic/claude-opus-5-5, launched explicitly with that model. The original candidate was authored under the requested Opus label; the previous post-critique revision (revision-prior-gpt6.json) was executed by a GPT-6-based Codex session after a model switch and is preserved unedited. No runtime evidence contradicts the Opus launch; the only contrary text is generic 'GPT-6' system boilerplate, which the explicit model switch overrides.",
+  "priorRevision": "revision-prior-gpt6.json (GPT-6 Codex execution, preserved)",
+  "completedAt": "2026-10-19T09:09:17+00:00",
+  "critiqueSha256": "29994b0ed1303ed89eed5f39ad2d76d6bbfe6ef386136a9d14e10de016f38e29",
+  "analysis": [
+    "Independently agreed with Astra's omit verdict. The guide's point is that an empty list without status, coverage or cursor is ambiguous. That is a property of the returned record; it has no spatial structure.",
+    "The current scene supplies the investigation by concealment: opening a lid reveals a preset timeline. Orbiting the model reveals nothing the caption and a three-row table do not already state.",
+    "Astra's suggested replacement (requested scope intersected with available partitions) is two categorical axes. It is an ordinary 2D coverage grid; extruding it into a volume would be an extruded diagram, so no replacement was built.",
+    "Confirmed the prior pass's scan-budget correction is present in scene.json fallback, interaction.js lane captions and intent.json mechanism; no result-count claim remains."
+  ],
+  "changes": [
+    "Reassessed spatial value independently against the contract and the recommended Astra video; confirmed omission.",
+    "Rewrote intent.json provenance honestly and recorded this Opus pass; preserved the GPT-6 revision as revision-prior-gpt6.json.",
+    "No runtime or geometry change: GLB, Blender source and poster retained because the candidate is omitted."
+  ],
+  "addressedFindings": [
+    {
+      "finding": 1,
+      "issue": "Arbitrary concealment supplies the investigation; the underlying explanation remains three flat timelines.",
+      "status": "resolved-by-omission",
+      "note": "No honest spatial mechanism exists; the replacement axes form a 2D grid."
+    },
+    {
+      "finding": 2,
+      "issue": "An empty search purportedly hits a result-count limit before finding any incidents. This conflates result count with scan/coverage budget.",
+      "status": "addressed",
+      "note": "Scan-budget wording verified in caption, fallback and intent (corrected in the prior pass, checked again here)."
+    },
+    {
+      "finding": 3,
+      "issue": "The open lids are clipped, while tiny front-facing result labels and near-identical charcoal markers carry the distinction.",
+      "status": "resolved-by-omission",
+      "note": "Lid clipping and small markers are not repaired in an unpublished candidate."
+    },
+    {
+      "finding": 4,
+      "issue": "The claimed agent-view comparison and individually narrated lanes lack equivalent primary-control access.",
+      "status": "resolved-by-omission",
+      "note": "Pointer-only agent view is not repaired in an unpublished candidate."
+    }
+  ],
+  "remainingLimitations": [
+    "The tray markers are metaphors for status, coverage and cursor fields; they are illustrative application fields, not MCP requirements, matching the guide.",
+    "A client-side transport timeout that yields no tool result at all is not depicted.",
+    "Retry budgets and argument validation from the guide are outside this scene.",
+    "Lane order is fixed, so a reader may learn the lanes’ meaning by position. The lane coverage words engraved on the counter appear only after coverage is returned.",
+    "Opened lids are tall and can occlude parts of the scene from low rear angles."
+  ],
+  "recommendation": "omit",
+  "reason": "Omit. The recommended video already distinguishes complete-empty from timeout. Scope × partition coverage is a 2D grid; a 3D volume would be an extruded diagram, and lids add effort without evidence.",
+  "verification": [
+    "Read AGENTS.md, docs/spatial-contract.json, docs/editorial-workflow.md, review.json, intent.json and prior revision.json.",
+    "Inspected interaction.js, scene.json and poster.png.",
+    "Runtime modules pass node --check as ES modules; asset hashes below recomputed after this pass."
+  ],
+  "verificationGaps": [
+    "No browser QA; coordinator owns final browser review. No geometry regenerated because none changed."
+  ],
+  "hashes": {
+    "scene.glb": "e29bf1ec8e84b887e1ccdc6d639c7eb8218fc9eaea9c97bce2294d8447febf1b",
+    "scene.json": "07918892bb3973a5be33f27541f2300a93e94ca434f001d80ae0b7e211ff7d60",
+    "interaction.js": "eb76b30d554844a967427a91ae676c80a30007d02c6d0c568c120772261ccf9d",
+    "poster.png": "e1ad5c7ceb273bd53ecb08602c7d91d77c9b4c1931a43d162803f1a6b7000ed6"
+  }
+}

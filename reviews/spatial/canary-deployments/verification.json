@@ -1,0 +1,40 @@
+{
+  "concept": "canary-deployments",
+  "spatialGate": "pass",
+  "spatialBenefitObserved": "Two independently opened cohort seams expose a height/area/volume relationship: fixed failure volume is concentrated from 0.4% pooled to 4% on either single dimension and 40% at their intersection.",
+  "browserChecks": [
+    "Observed all four states in the real viewer, including 4% version-only and operation-only captions and 40% intersection.",
+    "Rapid sequential seam toggles settle without freezing after scheduler fix.",
+    "Keyboard Enter operates seam; arrow key visibly orbits; Home returns view; Reset restores pooled state.",
+    "420px viewport retains core geometry, gauge, caption and all controls.",
+    "Production chapter has zero iframes before selecting 3D; selection creates one and expands media stage.",
+    "390px chapter has no horizontal overflow; controls and caption remain visible.",
+    "Returning to Video removes iframe, hides spatial panel, and leaves video paused.",
+    "Reopened after shared lifecycle/error-fallback patch and repeated critical interaction; final-host.png records result. Back navigation reloaded successfully; cached lifecycle path additionally tested against real handler source.",
+    "Final production chapter loaded the final assets and shared viewer; chapter-final.png records the larger stage after last framing patch."
+  ],
+  "screenshots": [
+    "reviews/spatial/canary-deployments/evidence/chapter-desktop.png",
+    "reviews/spatial/canary-deployments/evidence/chapter-final.png",
+    "reviews/spatial/canary-deployments/evidence/chapter-phone.png",
+    "reviews/spatial/canary-deployments/evidence/final-host.png",
+    "reviews/spatial/canary-deployments/evidence/intersection.png",
+    "reviews/spatial/canary-deployments/evidence/narrow.png",
+    "reviews/spatial/canary-deployments/evidence/operation.png",
+    "reviews/spatial/canary-deployments/evidence/pooled.png",
+    "reviews/spatial/canary-deployments/evidence/version.png"
+  ],
+  "hashes": {
+    "scene.glb": "bff3bd1df465c39b21324cfca330c3587cf4297ad07bd5e1f98e46d3d1d30842",
+    "scene.json": "c70d795504cf011b1037def2e0b48d0ae4d9ade498f694cdfa79a74e146eb269",
+    "interaction.js": "546fd34b804e748bc18b3bcc2e6ccbd7c55014d05649c8e73523e809a4009d8d",
+    "poster.png": "3c09115ea84dda9d30c4227db1fa773eb3019e2285b8e1e647bc3643288a08ba"
+  },
+  "viewerHash": "cfffe79d815737a54e2795cd122d4d31d490d812929923b529542ccd41ba2803",
+  "limitations": [
+    "Engraved labels are small at phone width; the caption carries precise counts and zoom remains available.",
+    "Amber represents aggregate rates, not failures moving between requests."
+  ],
+  "reviewer": "Coordinator, actual in-app browser observations",
+  "date": "2026-10-19"
+}

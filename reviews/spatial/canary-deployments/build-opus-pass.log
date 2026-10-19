@@ -1,0 +1,127 @@
+/Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/spatial/canary-deployments/build_scene.py:26: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+BlenderMCP addon registered
+BlenderMCP addon unregistered
+Info: Saved as "scene.blend"
+INFO Draco mesh compression is available, use library at /Applications/Blender.app/Contents/Resources/5.1/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+22:12:25 | INFO: Starting glTF 2.0 export
+22:12:25 | INFO: Extracting primitive: Plinth
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Fail
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Fill
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_X_1
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_X_2
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_X_3
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_X_4
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_X_5
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_X_6
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_X_7
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_X_8
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_Y_2
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_Y_3
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_Y_4
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_Y_5
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_Y_6
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_Y_7
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_Y_8
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_other_Grid_Y_9
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Knob_Version
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Knob_Version_Cap
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_export_Fail
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_export_Fill
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_export_Grid_X_1
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_export_Grid_X_2
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_export_Grid_X_3
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_export_Grid_X_4
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_export_Grid_X_5
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_export_Grid_X_6
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_export_Grid_X_7
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v1_export_Grid_X_8
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Knob_Operation
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Knob_Operation_Cap
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_other_Fail
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_other_Fill
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_other_Grid_Y_2
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_other_Grid_Y_3
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_other_Grid_Y_4
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_other_Grid_Y_5
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_other_Grid_Y_6
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_other_Grid_Y_7
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_other_Grid_Y_8
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_other_Grid_Y_9
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_export_Fail
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: v2_export_Fill
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: RateGauge
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Tick0%
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Scale0%_curve
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Tick40%
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Scale40%_curve
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Tick100%
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Scale100%_curve
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: CellLegend_curve
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Label_v1_curve
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Label_v2_curve
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Label_Export_curve
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Extracting primitive: Label_Other_curve
+22:12:25 | INFO: Primitives created: 1
+22:12:25 | INFO: Finished glTF 2.0 export in 0.03963494300842285 s
+00:00.664  render           | Saved: '/Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/public/spatial/canary-deployments/poster.png'
+
+Blender 5.1.2 (hash ec6e62d40fa9 built 2026-05-19 01:30:33)
+
+Blender quit

@@ -1,0 +1,57 @@
+{
+  "concept": "oauth-pkce",
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "verdict": "omit",
+  "spatialBenefitAssessment": "Omit this lock-based candidate. Callback order is a temporal storage bug already explained by the recommended Sol video. Choosing overlap is a useful counterfactual, but inspecting pin offsets adds a false cryptographic explanation: the geometry encodes the verifier directly in the challenge-side lock. The current extra spatial detail makes the lesson less accurate. Consider a new transaction-storage investigation only if the association itself becomes inspectable without a lock or text-card choreography.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "The cut-open lock implies a recoverable verifier shape in the challenge.",
+      "requestedChange": "Remove complementary key teeth and pin lengths. For a reattempt, center physical isolation of transaction storage: compare a shared overwriteable compartment with separate transaction compartments, and let callback A retrieve from each. Represent S256 as a one-way derivation of a distinct public fingerprint, compared for equality with code A’s stored public challenge. Never suggest the challenge is secret, contains recoverable verifier teeth, or has degrees of partial match.",
+      "evidence": "build_scene.py sets kl = SHEAR - (SHAFT_HI + tA); interaction.js lifts pins by KEYWAY + TEETH[letter][i]. Inspecting the pins therefore exposes the verifier shape, unlike guide walkthrough S256. Key caption says \"Its teeth are its secret; the lock only knows A’s challenge\"."
+    },
+    {
+      "severity": "high",
+      "issue": "Successful PKCE is presented as sufficient to issue a token, with other OAuth checks following issuance.",
+      "requestedChange": "Replace rising TOKEN with a PKCE-check-passed indicator that precedes remaining OAuth validation, or explicitly condition any token depiction on all other checks already passing. Correct both successful callback captions and the token pick caption.",
+      "evidence": "sendA() says \"both checks issue a token\" and raises token solely on zero pin misses; token click says \"normal OAuth checks and tool permissions still follow\". Guide and Sol transcript put remaining OAuth validation before issuance."
+    },
+    {
+      "severity": "medium",
+      "issue": "Immediate callback during login-B animation can produce conflicting writes to the same key position.",
+      "requestedChange": "Serialize the state transition or cancel/finish placement tweens before starting callback insertion. Preserve user selection without concurrent B1/K1 transforms; do not rely on a slow click cadence.",
+      "evidence": "startB() schedules B1/B2 and A1; sendA() remains enabled and schedules K1/K2. With overlap, B1 and K1 can both write L1_Key_B position. This is a static-code risk, not a reproduced runtime failure."
+    },
+    {
+      "severity": "medium",
+      "issue": "Tiny pin differences are the purported evidence but are not demonstrated in runtime captures.",
+      "requestedChange": "Do not approve on the poster. Any replacement needs initial and both counterfactual result captures at 420px, with storage identity and retrieved association readable from the default camera. Remove lock housings rather than adding zoom-dependent detail or extra UI.",
+      "evidence": "Only initial.png is present; scene is a wide, shallow pair of lanes occupying a small vertical portion of the viewer. Black lock faces can obstruct pins and intercept pointer inspection from oblique views."
+    }
+  ],
+  "requiredVerification": [
+    "Coordinator: verify callback without B and callback after B, plus immediate B-to-callback input, reset mid-animation and reduced motion; confirm key storage and retrieval remain consistent.",
+    "Verify no challenge secrecy, reversibility, partial hash matching, or unconditional token issuance is implied by geometry, captions or fallback text.",
+    "Require actual runtime alternate-state and integrated phone evidence; this reviewer inspected supplied images and source only and did not run browser or OAuth tests."
+  ],
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/oauth-pkce.json",
+    "public/spatial/oauth-pkce/scene.json",
+    "public/spatial/oauth-pkce/interaction.js",
+    "reviews/spatial/oauth-pkce/intent.json",
+    "reviews/comparisons/oauth-pkce.json",
+    "video/oauth-pkce/sol/variant.json",
+    "public/spatial/oauth-pkce/poster.png",
+    "reviews/spatial/oauth-pkce/captures/initial.png",
+    "spatial/oauth-pkce/build_scene.py"
+  ],
+  "hashes": {
+    "scene.glb": "2cbe3fc2ed6350d4189996287bafc29260371267844e7f117d0c3242f0a137da",
+    "scene.json": "328d90175bb828e189a8768d2a34d737f45be7433120280829f6f8794ed9d120",
+    "interaction.js": "29cd6ea3169e68fef48597f71b29f02733edd8cba3a5a8d4ce35baf5a77a3014",
+    "poster.png": "3f6cff652360dd741c87fa2deb95ed8c05d8c528058dc827deb43ea65a6cb70e"
+  }
+}

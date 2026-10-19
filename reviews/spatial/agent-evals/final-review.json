@@ -1,0 +1,57 @@
+{
+  "concept": "agent-evals",
+  "reviewerModel": "GPT-6 (exact model identifier not exposed to this reviewer)",
+  "reasoningEffort": "not exposed",
+  "reviewScope": "Read-only source and final-poster critique; no browser, source edits, rebuild, or independent runtime execution. Video comparison uses current Astra transcripts and comparative review evidence, not fresh playback. Acceptance is editorial, not integrated UI QA approval.",
+  "verdict": "omit",
+  "rationale": "Substantively better than the rejected gatehouses, and a valid coverage interactive, but still below the meaningful spatial-affordance threshold for an optional 3D companion. Independent patch/coverage choices add agency beyond the video; depth and camera inspection add little to the explanation beyond a flat two-lane interactive.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "The added value comes from controls, not spatial inspection.",
+      "evidence": "interaction.js change() independently selects patch and coverage; runProbe() casts a straight ray at fixed nose height against the active wall. build_scene.py fixes both lane positions and supplies only bricked, barrier, or open bays. A top-down blocked/open lane view preserves all four combinations, unprobed VALID, and every outcome without losing a relevant relationship. Orbit reveals architectural surfaces and the far side of the same binary obstruction, not an additional coverage relationship.",
+      "recommendation": "Omit this 3D candidate; retain the interaction idea if a flat companion is wanted. Raycast implementation is not itself evidence of spatial teaching value."
+    },
+    {
+      "severity": "info",
+      "issue": "The revision genuinely resolves the prior interaction objection.",
+      "evidence": "No lid reveal or sequential stage progression remains. Coverage can be removed and patch choice reversed; the unused probe stays on the rack. Astra already teaches new-test pass/existing-test failure and revised-patch review at 0\u201328s, while this adds reader-chosen B+new-only comparison. That is a real interactive improvement, but does not by itself justify depth."
+    },
+    {
+      "severity": "medium",
+      "issue": "The final poster clips the alternative wall and weakens probe identification.",
+      "evidence": "In the inspected 1200x900 poster, B extends past the right edge; its right pier and cornice are cropped. The valid key is nearly edge-on on its rack. EMPTY and VALID read clearly at native size, but the camera allocates substantial space to parking and architecture. This is current poster evidence, not a claim about responsive browser rendering.",
+      "recommendation": "If retained despite the editorial verdict, reframe both wall extremes and show the key silhouette clearly before coordinator UI QA."
+    },
+    {
+      "severity": "info",
+      "issue": "Faithful as a bounded test-grading metaphor.",
+      "evidence": "Empty expects stop and valid expects through; failure flags compare observed intersection with those expectations. The both-pass caption explicitly says two probes support review, not release. No repeated trials, general reliability, authentication implementation, or complete coverage is demonstrated. These limits agree with the guide."
+    }
+  ],
+  "hashes": {
+    "scene.glb": "64016a03245084d6308b0864936b6bc5efbd00381b151d5b434be80c95a4b0a6",
+    "scene.json": "5f24db3ca6b06d1a864104544ad36a90fb24c26afff6a9f72a9e6e515258aaf4",
+    "interaction.js": "a7b553312964100aba0a0a24bf2d24893a8cfc93c65520e87bcc54c5ddc8b7b8",
+    "poster.png": "8044115e188eda9b9bd2a0797b02acbd41a78dbaa04bbe031131b5845e499cee"
+  },
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/agent-evals.json",
+    "reviews/concepts/agent-evals/review.md",
+    "reviews/comparisons/agent-evals.json",
+    "video/agent-evals/astra/variant.json",
+    "reviews/spatial/agent-evals/intent.json",
+    "reviews/spatial/agent-evals/review.json",
+    "reviews/spatial/agent-evals/revision.json",
+    "spatial/agent-evals/build_scene.py",
+    "public/spatial/agent-evals/scene.json",
+    "public/spatial/agent-evals/interaction.js",
+    "public/spatial/agent-evals/poster.png"
+  ],
+  "limitations": [
+    "GLB bytes were hashed; Blender build source was inspected, but scene.blend and GLB geometry were not independently loaded.",
+    "Author-reported headless harness results were read, not rerun. No browser or alternate-state renders were generated."
+  ]
+}

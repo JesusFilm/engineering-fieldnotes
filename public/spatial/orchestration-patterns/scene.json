@@ -1,0 +1,19 @@
+{
+  "title": "Two windows, one snapshot",
+  "description": "Send two read-only reviewers to the same frozen snapshot, then edit the patch and see which reports still fit.",
+  "camera": {
+    "position": [
+      5.6,
+      7.0,
+      8.0
+    ],
+    "target": [
+      0,
+      -0.15,
+      0.4
+    ]
+  },
+  "initialCaption": "Each reviewer’s window faces one side of the same frozen snapshot.",
+  "interactionHint": "Drag to look around · scroll to zoom",
+  "fallback": "The compatibility reviewer can only see the API side and the migration reviewer only the table side, so the join needs both reports. Each report carries the key profile of the snapshot it read; after the patch changes, the old reports no longer match and the gate stays closed until both reviewers report on the new snapshot."
+}

@@ -1,5 +1,30 @@
 # Reading and interaction review — 19 October 2026
 
+## Optional spatial investigations (local branch review)
+
+Four scenes pass the new spatial gate; fourteen attempts are excluded from the
+production build. Video stays selected initially and no iframe exists until the
+reader chooses Explore in 3D. Switching back removes the iframe and leaves video
+paused. The index identifies qualifying chapters with a quiet 3D label.
+
+Actual browser review covered each accepted scene's causal states, keyboard
+controls, reset and 420px framing. The chapter layout was tested at 390px with
+no horizontal overflow. Enlarged the desktop stage and corrected narrow camera
+framing for the bridge and test bed. Small engravings remain secondary to the
+geometry and caption; zoom is useful on a phone.
+
+The viewer's animation queue could multiply when a scene invalidated during an
+update. Fixed it to keep one pending frame, reproduced the previously stalled
+canary interaction successfully, and added a regression using the actual host
+functions. Also fixed cached-page disposal and added a module-independent load
+failure fallback. A missing-module fixture visibly showed the fallback and was
+removed afterward. Back navigation worked; the cached lifecycle branch has a
+source-based test. These checks are not a complete accessibility audit.
+
+Per-scene screenshots and observations are under `reviews/spatial/<concept>/`;
+the [release review](spatial-release.md) records all decisions and limitations.
+These additions are locally verified, not claims of a new public deployment.
+
 The local release review is complete: all 18 guides and 54 videos passed the full release checker. The public deployment and live checks also passed.
 
 ## Design reference

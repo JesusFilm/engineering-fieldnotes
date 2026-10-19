@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "Read on miss pauses a revision-1 copy in lower tunnel",
+    "Publish revision2 deletes cache while in-flight copy remains revision1",
+    "Finish fill resumes paused copy"
+  ],
+  "observations": [
+    "Layer separation makes in-flight stale copy distinct from clean upper cache; Astra must judge whether this adds enough beyond video."
+  ],
+  "screenshots": [
+    "initial.png",
+    "in-flight-invalidation.png"
+  ]
+}

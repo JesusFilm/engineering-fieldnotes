@@ -1,0 +1,27 @@
+{
+  "concept": "canary-deployments",
+  "status": "revised-candidate",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "revisionExecutionModel": "GPT-6 (Codex)",
+  "provenanceNote": "authorModel retains the requested attribution; this post-critique revision was executed by the current GPT-6 Codex session, not an Opus invocation.",
+  "mechanism": "Two independent aggregation seams change the denominator for a fixed dataset. Exact footprint represents request count; amber height represents the current aggregate error rate. Same 40 v2-export failures, constant amber volume of 0.15 cubic scene units across all selections. Splitting both seams exposes 40%, versus 4% for either seam alone and 0.4% pooled.",
+  "spatialBenefit": "Area-times-height makes denominator dilution visible; independent seams allow either slicing order and the intersection.",
+  "beyondVideoTest": "Try version only, operation only and both: only the intersection exposes 40%. Underlying counts and amber volume remain fixed throughout.",
+  "interaction": {
+    "primaryActions": [
+      "Split / join versions",
+      "Split / join operations"
+    ],
+    "motion": "0.9s replaceable tween; reduced motion instant; reset cancels motion."
+  },
+  "expectedObservations": [
+    "Pooled 0.4%; version only 4%; operation only 4%; v2 exports 40%, v1 exports 0/900."
+  ],
+  "sourceGuide": "content/concepts/canary-deployments.json",
+  "limitations": [
+    "Pooled layer is intentionally 0.4% tall and may be subpixel at 420px.",
+    "Rate aggregation redistributes the visual layer, never the fixed underlying failed requests. Only one observation window is represented.",
+    "Coordinator must check all four browser states, scale text readability, pointer occlusion and whether a reader understands why either single split still dilutes failures."
+  ],
+  "revisionNoteOpus": "Opus 5.5 pass: gauge moved flush to the v2 export column with angled, clear labels on extended ticks; initial caption names the pooled hairline. Recommendation remains accept."
+}

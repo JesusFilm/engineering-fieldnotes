@@ -1,0 +1,34 @@
+{
+  "concept": "guardrails-and-permissions",
+  "mechanism": "Open architectural floor plan with independent direct and shell paths. Inspect route cycles the selected route; protection cycles guard-only, direct execution entrance, both execution entrances. Round investigator credential is denied by active execution checks, while square deployer credential remains authorized. Agent endpoint and release lever reflect the selected path and checks immediately.",
+  "spatialBenefit": "None sufficient. Route reachability and check placement are planar graph relationships; the model is an extruded floor plan, and orbiting reveals nothing a 2D route diagram does not.",
+  "beyondVideoTest": "Omit. The alternate shell route is useful content beyond the video, but it belongs in a 2D diagram or the guide text. The 3D candidate adds walls and occlusion; its outcomes are carried by captions, and enforcement changes are confounded with the guard decision.",
+  "interaction": {
+    "primaryActions": [
+      "Inspect direct / shell route",
+      "Protect direct / both entrances / use guard only"
+    ],
+    "pickTargets": [],
+    "motion": "All states change instantly on explicit action; initial state and idle update are still, including reduced motion."
+  },
+  "expectedObservations": [
+    "Guard only: direct refused, shell writes r42.",
+    "Direct entrance protected: direct credential denied, shell still writes r42.",
+    "Both entrances protected: either route denies investigator and preserves r41.",
+    "Every selection is a new r41 fixture, never a rollback."
+  ],
+  "sourceGuide": "content/concepts/guardrails-and-permissions.json (overview, walkthrough steps 2 and 4, pitfall about shared shell credentials)",
+  "limitations": [
+    "Doorways metaphorically represent server-side execution checks, not physical security or prompt instructions.",
+    "Authorized deployer is visibly distinguished and permitted by the modeled policy, but its deployment is not an independently animated/tested route.",
+    "Guard-only and permission trials deliberately differ in the guard decision so the execution checks can be exercised.",
+    "Connectivity can also be shown in 2D; value is simultaneous inspection of the miniature, not an exclusive need for depth.",
+    "Coordinator must verify narrow host framing, labels, focus and screenshots.",
+    "Selecting execution protection also lifts the guard barrier, changing two variables in one control.",
+    "Identity labels are small; the deployer label is clipped by a wall at the authored camera."
+  ],
+  "candidateStatus": "unsuitable",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "recommendation": "omit",
+  "revisionProvenance": "This pass was executed by anthropic/claude-opus-5-5, launched explicitly with that model. The original candidate was authored under the requested Opus label; the previous post-critique revision (revision-prior-gpt6.json) was executed by a GPT-6-based Codex session after a model switch and is preserved unedited. No runtime evidence contradicts the Opus launch; the only contrary text is generic 'GPT-6' system boilerplate, which the explicit model switch overrides."
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Is the tool part of this trace?",
+  "description": "Spans laid out along time on stepped trace lanes; look past the timeline and propagate context to see which spans belong to the agent task's trace.",
+  "camera": {
+    "position": [
+      -0.8,
+      2.2,
+      8.4
+    ],
+    "target": [
+      0.1,
+      0.6,
+      -0.6
+    ]
+  },
+  "initialCaption": "The 2.4 s test tool seems to fill the task. Is it part of this trace?",
+  "interactionHint": "Drag to look around · scroll to zoom",
+  "fallback": "Along the time axis the tool span appears nested under the agent task, but it sits in a separate trace with no parent link. Propagating context joins it to the task's trace; its 2.4 s duration and the 3.0 s total do not change."
+}

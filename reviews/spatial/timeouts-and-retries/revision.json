@@ -1,0 +1,78 @@
+{
+  "concept": "timeouts-and-retries",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "anthropic/claude-opus-5-5",
+  "requestedModel": "anthropic/claude-opus-5-5 (Opus 5.5)",
+  "provenanceNote": "Execution model taken from this session's model configuration and confirmed by the coordinator's turn_context check. Model identity records provenance, not quality.",
+  "critique": "reviews/spatial/timeouts-and-retries/review.json",
+  "critiqueReviewer": "gpt-6-astra (low)",
+  "critiqueVerdict": "revise",
+  "critiqueSha256": "e082518ea34b84057e455c33b897b0ee11170104a7b7e1c223ffb7b8c6fc1f0e",
+  "changes": [
+    "Rebuilt the Blender asset as an open frame: removed side casing, back wall and shelf slabs; layer bands sit behind the pipes with layer names on their front faces.",
+    "Separated the two three-outlet groups (centres at x = -2.2 and +2.2) and labelled each cup first/retry/retry on the bench front.",
+    "Grouped geometry under Branch_rt_2 and Tail_a_l empties; closing the runtime retry now dims its entire downstream subtree (riser, tee, library valves and handles, outlets); closing library retries dims only the outlets below the valves.",
+    "Dimmed meshes no longer accept pointer rays, so they cannot intercept picks meant for objects behind them.",
+    "Added a runtime trace peg board on the runtime band (2 pegs, 1 when the runtime retry is off) to make the visibility difference inspectable.",
+    "Rewrote captions, scene.json description and fallback as a policy comparison for one call whose attempts all fail: 'up to' counts, '3 library attempts (first try plus two retries)', and a qualified runtime-trace statement.",
+    "Reframed the default camera so all six outputs and both branches fill the panel at desktop and 420px."
+  ],
+  "addressedFindings": [
+    {
+      "severity": "high",
+      "finding": "Attempt and retry counts conflated; visibility overstated",
+      "resolution": "Captions now say 2 runtime attempts x 3 library attempts (first try plus two retries), 'up to' a maximum for a call whose attempts all fail, and 'the runtime trace shows' 2 or 1 attempts; fallback matches."
+    },
+    {
+      "severity": "medium",
+      "finding": "Inactive right subtree still looks live",
+      "resolution": "Whole Branch_rt_2 subtree, including library handles and upper risers, dims to 16% opacity and is unpickable; active paths stay solid."
+    },
+    {
+      "severity": "medium",
+      "finding": "Cabinet hides continuity; labels behind pipes; poor framing",
+      "resolution": "Casing and shelves removed; labels on band faces clear of pipes; groups separated; camera reframed. Two toggles plus Reset retained."
+    },
+    {
+      "severity": "medium",
+      "finding": "Captions read as accumulated history",
+      "resolution": "Initial caption sets up 'suppose every attempt of one tool call fails'; state captions describe a policy ('Runtime owns retries: up to 2 service requests'), never requests that 'reached' and were undone."
+    }
+  ],
+  "authorVerification": {
+    "blender": "/opt/homebrew/bin/blender --background --threads 2 --python spatial/timeouts-and-retries/build_scene.py: regenerated scene.blend, scene.glb and poster.png without errors.",
+    "syntax": "node --check on an .mjs copy of interaction.js passed.",
+    "privateHeadlessChrome": "Author-run puppeteer-core with a separate headless Chrome against a local static server of public/ (not the shared browser): viewer loaded with no page errors (one 404, likely favicon); all four policy states, button labels and Reset verified at 1000x720 and 420x640; reduced-motion static state verified; pick checks: click on a dimmed library valve did not toggle, cup/trace clicks returned the matching counts, active library handle toggled.",
+    "captures": [
+      "revision-tr-desk-initial.png",
+      "revision-tr-desk-0-1.png",
+      "revision-tr-desk-1-2.png",
+      "revision-tr-desk-0-3.png",
+      "revision-tr-phone-initial.png",
+      "revision-tr2-phone-0-3.png"
+    ],
+    "capturesNote": "Author evidence in the ignored captures/ directory; coordinator browser QA and tracked evidence/ remain required."
+  },
+  "remainingLimitations": [
+    "Counts are an illustrative maximum when every attempt fails with a retryable error (2 runtime attempts x 3 library attempts: first try plus two retries); real calls often succeed early, and lower layers such as gRPC may retry transparently or by error class.",
+    "Each control compares policies for the same failing call; switching a valve does not undo requests already sent.",
+    "The scene shows attempt multiplication and trace visibility, not the shared deadline or backoff timing; those remain in the guide and video.",
+    "Pipes and valves are a metaphor, not a model of network behaviour.",
+    "Rapid alternating toggles and keyboard-only navigation were exercised only through button clicks in headless Chrome; coordinator should confirm in the integrated host."
+  ],
+  "recommendation": "accept",
+  "recommendationRationale": "Reader-selected retry ownership with a visible service count beside the runtime trace is a spatial counterfactual the recommended video cannot offer; the revision removes the occluding cabinet and the semantic errors. Requires renewed independent critique before promotion.",
+  "assetSha256": {
+    "scene.glb": "dad0cb572137f857464e3bc330038b70310e7dbcdf580688f32e9cae8f271f88",
+    "scene.json": "76d8e230b4de204d0b28a15360f15db4dfea15be2ceaeeb10f33f3f60d07a206",
+    "interaction.js": "2fa762e8c37724529b6ef67497c7c6b654b3b1242e66160f52e84b6c9d39477d",
+    "poster.png": "f347169a703ccfdca01a49cd5d49455ec8892c9081eefbc813859f8d2146fa68"
+  },
+  "hashes": {
+    "scene.glb": "dad0cb572137f857464e3bc330038b70310e7dbcdf580688f32e9cae8f271f88",
+    "scene.json": "76d8e230b4de204d0b28a15360f15db4dfea15be2ceaeeb10f33f3f60d07a206",
+    "interaction.js": "2fa762e8c37724529b6ef67497c7c6b654b3b1242e66160f52e84b6c9d39477d",
+    "poster.png": "f347169a703ccfdca01a49cd5d49455ec8892c9081eefbc813859f8d2146fa68"
+  },
+  "schemaNormalization": "Coordinator copied assetSha256 into canonical hashes; values unchanged and checked against disk."
+}

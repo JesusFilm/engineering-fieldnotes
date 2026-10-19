@@ -1,0 +1,18 @@
+BOUNDS min -5.40,-0.55,-1.60 max 5.10,2.26,1.80
+CAMERA {"position":[0.6,5.6,9.8],"target":[-0.2,0.3,0]} distance 11.17
+TOP NODES Plinth Queue_Trough Slot_0 Slot_1 Slot_2 Slot_3 Slot_4 Slot_5 Slot_6 Producer Job_A Job_B Job_C Job_D Job_E Job_F Job_G Job_H Tool Worker_Needle Station Done_Tray Done_0
+IDLE AT START true | Eight jobs wait in the producer. The queue in front of it has 3 places; job B is slow.
+PASS post-critique state assertions, reducedMotion=true
+(node:30379) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/public/spatial/queues-and-backpressure/interaction.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+BOUNDS min -5.40,-0.55,-1.60 max 5.10,2.26,1.80
+CAMERA {"position":[0.6,5.6,9.8],"target":[-0.2,0.3,0]} distance 11.17
+TOP NODES Plinth Queue_Trough Slot_0 Slot_1 Slot_2 Slot_3 Slot_4 Slot_5 Slot_6 Producer Job_A Job_B Job_C Job_D Job_E Job_F Job_G Job_H Tool Worker_Needle Station Done_Tray Done_0
+IDLE AT START true | Eight jobs wait in the producer. The queue in front of it has 3 places; job B is slow.
+PASS post-critique state assertions, reducedMotion=false
+(node:30380) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/public/spatial/queues-and-backpressure/interaction.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
