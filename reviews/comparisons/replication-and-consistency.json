@@ -1,0 +1,53 @@
+{
+  "id": "replication-and-consistency",
+  "recommended": "astra",
+  "rationale": "Start with Verify the write: it keeps the acknowledged revision, stale observation and unchanged write count visible together, making the decision not to repeat a successful mutation explicit. The original is the simplest picture of asynchronous copying and stale reads. Read your write adds a useful next step: a wrapper holds a dependent action and releases it after verification, at the cost of a busier five-node diagram.",
+  "findings": [
+    "Baseline 5.7\u201310.6s, Astra 6.2\u201312.6s, Sol 7.4\u201313.1s: all show acknowledgement before replica catch-up. Astra retains expected and observed revisions together; Sol retains the saved receipt above the failed check. Baseline replaces its ACK badge with the stale value, requiring more memory from the viewer.",
+    "Astra 12.6\u201318.4s: HOLD, v7 \u2260 v8 and Writes: 1 make the safe response concrete. Verification succeeds while the replica is still v7; baseline 13\u201314.6s shows the same read-route change without explicitly teaching the no-repeat decision.",
+    "Sol 13.1\u201319.4s: the downstream tool remains HELD until the primary read passes. Its revised green delivery path makes the release more tangible than Astra\u2019s VERIFIED status, while adding two actors and more eye travel.",
+    "Baseline 17\u201322.1s, Astra 22\u201324s, Sol 21.2\u201328.3s: copying is separate from the earlier successful write. Baseline and Sol confirm recovery with another replica read; Astra ends with the replica applied and the write count still one. Sol\u2019s later step now visibly waits before that final check.",
+    "At 350px, Astra\u2019s 12.6s mismatch and 18.4s equality are the easiest comparisons to read. Baseline has the cleanest topology; Sol\u2019s formerly crowded delivery at 4.5/19.0/27.9s is now a compact version chip on a dedicated green path, with the crossing copy wire hidden during delivery.",
+    "Endings: baseline holds its final response from 22.1 to the 24.8s fade; Astra holds applied v8 from 24s and fades at 28s; Sol releases the later step at 28.3s and fades at 30.3s. These are deliberate reading holds, not timing guarantees. All exact first/last decoded frames match; none of the cuts demonstrates synchronous acknowledgement modes, failover or snapshot isolation."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 3,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "sol": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "038ec8ae21a0d0591d793744a2fab979001ddb0fd424794dcf827b00337036f4",
+    "astra": "89c73865b893097c6691f8f9fd87cd4a5510921705096952ac0cd7abea34d441",
+    "sol": "5b10e3ffe179678a1650614b355b33003b1596e9b798b6aeada72d01dcef85fa"
+  },
+  "contentVerdict": "Keep as reference. The guide changes tool-contract and verification decisions when agents read replicas, caches or derived indexes, and its one-write exercise has observable success criteria. It need not precede basic tool design or retry safety for every adopting team. PostgreSQL 18 primary documents support the lag, acknowledgement and snapshot distinctions; the guide preserves single-writer and fresh-query assumptions and now explicitly distinguishes a revision check from an atomic precondition on a later action.",
+  "verified": true,
+  "defectsFixed": [
+    "Sol 4.1\u20135.9s, 18.6\u201320.4s and 27.5\u201329.3s: removed the visual ambiguity between application version delivery and the crossing database-copy link; compact vN chips follow a green check-to-tool wire. Re-rendered and re-inspected the encoded result.",
+    "Sol 24.5\u201328.3s: reset the later tool step to waiting before its own verification so the final delivery causes a visible state change; updated transcript and beat sheet. Original gpt-6.1-sol provenance is retained with separate comparative-editor attribution.",
+    "Guide: pinned the three PostgreSQL sources to version 18 with retrieval dates, defined WAL, and added the execution-time concurrency boundary for a later action."
+  ],
+  "limitations": [
+    "Audio was analysed through decoded cue windows, spectrograms and peak measurements, not heard. All scheduled cue windows contain signal, which does not establish subjective sound quality or perceptual separation of simultaneous cues.",
+    "Visual review used decoded contact sheets, full-size beat and busy frames, 350px beat frames, transition samples and exact endpoints; it was not continuous audiovisual playback or manual inspection of every encoded frame. Full-file decoding passed separately.",
+    "All scenes are illustrative single-writer examples with fresh post-commit reads and no intervening cache. They abstract WAL transport/replay and do not demonstrate failover, competing writers, synchronous modes, permission enforcement or external deployment completion.",
+    "Baseline transcript timestamps are approximate beat ranges (the stale request starts at 9.0s and the primary response lands at 14.6s). Sequence content was checked against frames and source.",
+    "The exercise was assessed for observable criteria; no live database experiment or team learning study was performed. Scores and the recommendation are reviewer judgement; human editorial promotion remains separate.",
+    "This review is confined to the three released cuts for this topic. Shared manifests, shared build output and full-library release checks are outside its write scope; chapter/comparison previews are built in the review scratch directory."
+  ]
+}

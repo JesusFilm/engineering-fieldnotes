@@ -1,0 +1,72 @@
+{
+  "file": "media/idempotency/fable.mp4",
+  "poster": "media/idempotency/fable.jpg",
+  "checks": {
+    "container": {
+      "codec": "h264",
+      "pix_fmt": "yuv420p",
+      "width": 1080,
+      "height": 1920,
+      "fps": "30/1",
+      "audio": "aac",
+      "audio_rate": "44100",
+      "duration": 29.7,
+      "frames": 891,
+      "bytes": 1279155,
+      "faststart_flags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100"
+      }
+    },
+    "container_ok": true,
+    "boundary": {
+      "frames_extracted": 2,
+      "first_sha256": "c1fca384d6ec0241eb8705f3e1ae036124a13d34512ddba8e1d8302da7439810",
+      "last_sha256": "c1fca384d6ec0241eb8705f3e1ae036124a13d34512ddba8e1d8302da7439810"
+    },
+    "boundary_ok": true,
+    "decode": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "decode_ok": true,
+    "audio": {
+      "max_volume_dbfs": -1.8,
+      "mean_volume_dbfs": -27.7
+    },
+    "audio_ok": true,
+    "faststart_ok": true,
+    "boxes": {
+      "ftyp": 0,
+      "moov": 32,
+      "free": 32652,
+      "mdat": 32660
+    },
+    "poster": {
+      "codec": "mjpeg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 82058,
+      "time": 27.0
+    },
+    "poster_ok": true,
+    "cue_alignment": {
+      "cues": 51,
+      "onsets_detected": 58,
+      "matched": 50,
+      "unmatched": [
+        {
+          "t": 28.77,
+          "name": "rewind",
+          "onset_within_60ms": false
+        }
+      ]
+    },
+    "sha256": "eafa637ee3de5bcef6aef0eeec5de7e2816b7ca8aae8c05d55393b8ac981bad8",
+    "poster_sha256": "7c215bf50eb1e00810e12aaa29a36d0a07e9899988961997807a50eec5558775"
+  },
+  "ok": true,
+  "listening": "Audio analysed numerically (peak, spectrogram, onset alignment); not physically listened to."
+}

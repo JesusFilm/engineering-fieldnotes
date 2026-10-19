@@ -1,0 +1,150 @@
+{
+  "duration_seconds": 28,
+  "bytes": 450891,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "video_codec": "h264",
+  "pixel_format": "yuv420p",
+  "audio_codec": "aac",
+  "decoded_frames": 840,
+  "full_decode": "pass",
+  "first_frame_md5": "eb31442608984c1aa5939de6decc4443",
+  "last_frame_md5": "eb31442608984c1aa5939de6decc4443",
+  "exact_first_last_equal": true,
+  "audio_peak_dbfs": -4.4,
+  "audio_listened": false,
+  "faststart": true,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "size": 31212
+    },
+    {
+      "type": "free",
+      "offset": 31244,
+      "size": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 31252,
+      "size": 419639
+    }
+  ],
+  "cues": [
+    {
+      "time": 0.5,
+      "preset": "arrive",
+      "peak_dbfs_first_220ms": -16.93
+    },
+    {
+      "time": 1.2,
+      "preset": "send",
+      "peak_dbfs_first_220ms": -25.66
+    },
+    {
+      "time": 2,
+      "preset": "store",
+      "peak_dbfs_first_220ms": -16.07
+    },
+    {
+      "time": 3,
+      "preset": "send",
+      "peak_dbfs_first_220ms": -25.67
+    },
+    {
+      "time": 3.8,
+      "preset": "arrive",
+      "peak_dbfs_first_220ms": -13.4
+    },
+    {
+      "time": 6.2,
+      "preset": "store",
+      "peak_dbfs_first_220ms": -16.02
+    },
+    {
+      "time": 8.3,
+      "preset": "poof",
+      "peak_dbfs_first_220ms": -17.24
+    },
+    {
+      "time": 10.5,
+      "preset": "send",
+      "peak_dbfs_first_220ms": -25.71
+    },
+    {
+      "time": 11.3,
+      "preset": "hit",
+      "peak_dbfs_first_220ms": -13.91
+    },
+    {
+      "time": 12.5,
+      "preset": "send",
+      "peak_dbfs_first_220ms": -23.3
+    },
+    {
+      "time": 13.8,
+      "preset": "crash",
+      "peak_dbfs_first_220ms": -4.39
+    },
+    {
+      "time": 16,
+      "preset": "poof",
+      "peak_dbfs_first_220ms": -18.53
+    },
+    {
+      "time": 17,
+      "preset": "send",
+      "peak_dbfs_first_220ms": -25.81
+    },
+    {
+      "time": 18,
+      "preset": "store",
+      "peak_dbfs_first_220ms": -16.1
+    },
+    {
+      "time": 19.2,
+      "preset": "send",
+      "peak_dbfs_first_220ms": -25.74
+    },
+    {
+      "time": 20.2,
+      "preset": "recover",
+      "peak_dbfs_first_220ms": -19.25
+    },
+    {
+      "time": 22,
+      "preset": "work",
+      "peak_dbfs_first_220ms": -18.38
+    },
+    {
+      "time": 22.3,
+      "preset": "work",
+      "peak_dbfs_first_220ms": -18.68
+    },
+    {
+      "time": 22.6,
+      "preset": "work",
+      "peak_dbfs_first_220ms": -18.31
+    },
+    {
+      "time": 23.2,
+      "preset": "chime",
+      "peak_dbfs_first_220ms": -14.03
+    },
+    {
+      "time": 26.2,
+      "preset": "poof",
+      "peak_dbfs_first_220ms": -23.43
+    }
+  ],
+  "sha256": "0b89eef6decee8b4b8fe97db8817f88de426dc4955f4e8d5a7b400c09aa4f576"
+}

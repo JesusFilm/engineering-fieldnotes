@@ -1,0 +1,102 @@
+{
+  "method": "Topic-only generated chapter and comparison using the repository build functions, isolated output; related chapter titles are placeholders and their destinations were not tested.",
+  "audioHeard": false,
+  "results": [
+    {
+      "kind": "chapter",
+      "width": 350,
+      "scrollWidth": 350,
+      "media": [
+        {
+          "src": "http://127.0.0.1:8797/media/queues-and-backpressure/astra.mp4?v=f0a19b81c366",
+          "duration": 30,
+          "width": 1080,
+          "height": 1920,
+          "advanced": true,
+          "muted": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "kind": "compare",
+      "width": 350,
+      "scrollWidth": 350,
+      "media": [
+        {
+          "src": "http://127.0.0.1:8797/media/queues-and-backpressure/baseline.mp4?v=eef1690fc5a0",
+          "duration": 26,
+          "width": 1080,
+          "height": 1920,
+          "advanced": true,
+          "muted": true
+        },
+        {
+          "src": "http://127.0.0.1:8797/media/queues-and-backpressure/astra.mp4?v=f0a19b81c366",
+          "duration": 30,
+          "width": 1080,
+          "height": 1920,
+          "advanced": true,
+          "muted": true
+        },
+        {
+          "src": "http://127.0.0.1:8797/media/queues-and-backpressure/sol.mp4?v=373288fdc6cd",
+          "duration": 30,
+          "width": 1080,
+          "height": 1920,
+          "advanced": true,
+          "muted": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "kind": "chapter",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "media": [
+        {
+          "src": "http://127.0.0.1:8797/media/queues-and-backpressure/astra.mp4?v=f0a19b81c366",
+          "duration": 30,
+          "width": 1080,
+          "height": 1920,
+          "advanced": true,
+          "muted": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "kind": "compare",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "media": [
+        {
+          "src": "http://127.0.0.1:8797/media/queues-and-backpressure/baseline.mp4?v=eef1690fc5a0",
+          "duration": 26,
+          "width": 1080,
+          "height": 1920,
+          "advanced": true,
+          "muted": true
+        },
+        {
+          "src": "http://127.0.0.1:8797/media/queues-and-backpressure/astra.mp4?v=f0a19b81c366",
+          "duration": 30,
+          "width": 1080,
+          "height": 1920,
+          "advanced": true,
+          "muted": true
+        },
+        {
+          "src": "http://127.0.0.1:8797/media/queues-and-backpressure/sol.mp4?v=373288fdc6cd",
+          "duration": 30,
+          "width": 1080,
+          "height": 1920,
+          "advanced": true,
+          "muted": true
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,551 @@
+{
+  "meta": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 28,
+    "title": "Evidence first",
+    "subtitle": "LOOP ENGINEERING",
+    "speed": 1,
+    "titleY": 290,
+    "titleSize": 98,
+    "subtitleY": 380,
+    "subtitleSize": 38,
+    "subtitleSpacing": 4,
+    "fullFade": true,
+    "author": "gpt-6-astra",
+    "reasoning": "high",
+    "events": [
+      {
+        "t": 0.2,
+        "sound": "arrive",
+        "note": "C5",
+        "target": "agent",
+        "meaning": "Stage opens: task A"
+      },
+      {
+        "t": 1,
+        "sound": "send",
+        "note": "C6",
+        "target": "agent.bottom",
+        "meaning": "Run task A tests"
+      },
+      {
+        "t": 1.7,
+        "sound": "work",
+        "note": "E5",
+        "target": "tests",
+        "meaning": "Runner starts"
+      },
+      {
+        "t": 2.5,
+        "sound": "thump",
+        "note": "E4",
+        "target": "tests",
+        "meaning": "Assertion failure observed"
+      },
+      {
+        "t": 3.2,
+        "sound": "send",
+        "note": "C6",
+        "target": "tests.bottom",
+        "meaning": "Failure result reaches gate"
+      },
+      {
+        "t": 3.8,
+        "sound": "arrive",
+        "note": "G5",
+        "target": "gate",
+        "meaning": "Gate permits bounded repair"
+      },
+      {
+        "t": 4.5,
+        "sound": "send",
+        "note": "C6",
+        "target": "gate.left",
+        "meaning": "Feedback returns to repair agent"
+      },
+      {
+        "t": 5.7,
+        "sound": "work",
+        "note": "C5",
+        "target": "agent",
+        "meaning": "One repair patch is created"
+      },
+      {
+        "t": 7.5,
+        "sound": "send",
+        "note": "C6",
+        "target": "agent.bottom",
+        "meaning": "Run tests on patch 1"
+      },
+      {
+        "t": 8.2,
+        "sound": "work",
+        "note": "E5",
+        "target": "tests",
+        "meaning": "Validate updated code"
+      },
+      {
+        "t": 9,
+        "sound": "chime",
+        "note": "E5",
+        "target": "tests",
+        "meaning": "Selected tests pass"
+      },
+      {
+        "t": 9.8,
+        "sound": "send",
+        "note": "C6",
+        "target": "tests.bottom",
+        "meaning": "Pass result reaches gate"
+      },
+      {
+        "t": 10.4,
+        "sound": "arrive",
+        "note": "G5",
+        "target": "gate",
+        "meaning": "Gate exits edit loop"
+      },
+      {
+        "t": 11.1,
+        "sound": "send",
+        "note": "C6",
+        "target": "gate.bottom",
+        "meaning": "Patch and evidence handed to engineer"
+      },
+      {
+        "t": 11.8,
+        "sound": "store",
+        "note": "C6",
+        "target": "human",
+        "meaning": "Engineer receives patch for review"
+      },
+      {
+        "t": 14.2,
+        "sound": "arrive",
+        "note": "C5",
+        "target": "agent",
+        "meaning": "New task begins"
+      },
+      {
+        "t": 15.3,
+        "sound": "send",
+        "note": "C6",
+        "target": "agent.bottom",
+        "meaning": "Run task B tests"
+      },
+      {
+        "t": 16,
+        "sound": "work",
+        "note": "E5",
+        "target": "tests",
+        "meaning": "Runner starts task B"
+      },
+      {
+        "t": 16.8,
+        "sound": "crash",
+        "note": "E3",
+        "target": "tests",
+        "meaning": "No tests selected: evidence missing"
+      },
+      {
+        "t": 18,
+        "sound": "send",
+        "note": "C6",
+        "target": "tests.bottom",
+        "meaning": "No-tests result reaches gate"
+      },
+      {
+        "t": 18.6,
+        "sound": "thump",
+        "note": "G3",
+        "target": "gate",
+        "meaning": "Gate refuses further product edits"
+      },
+      {
+        "t": 20.2,
+        "sound": "send",
+        "note": "C6",
+        "target": "gate.bottom",
+        "meaning": "Command and logs handed to engineer"
+      },
+      {
+        "t": 21.2,
+        "sound": "deliver",
+        "note": "C5",
+        "target": "human",
+        "meaning": "Engineer receives blocker evidence"
+      },
+      {
+        "t": 22.5,
+        "sound": "ack",
+        "note": "G4",
+        "target": "gate",
+        "meaning": "Stopped status persists; patch 0 remains unchanged"
+      },
+      {
+        "t": 25.5,
+        "sound": "poof",
+        "note": "C4",
+        "target": "gate",
+        "meaning": "Fade to matching boundary"
+      }
+    ],
+    "renderDuration": 28
+  },
+  "events": [
+    {
+      "t": 0.2,
+      "sound": "arrive",
+      "note": "C5",
+      "target": "agent",
+      "meaning": "Stage opens: task A"
+    },
+    {
+      "t": 1,
+      "sound": "send",
+      "note": "C6",
+      "target": "agent.bottom",
+      "meaning": "Run task A tests"
+    },
+    {
+      "t": 1.7,
+      "sound": "work",
+      "note": "E5",
+      "target": "tests",
+      "meaning": "Runner starts"
+    },
+    {
+      "t": 2.5,
+      "sound": "thump",
+      "note": "E4",
+      "target": "tests",
+      "meaning": "Assertion failure observed"
+    },
+    {
+      "t": 3.2,
+      "sound": "send",
+      "note": "C6",
+      "target": "tests.bottom",
+      "meaning": "Failure result reaches gate"
+    },
+    {
+      "t": 3.8,
+      "sound": "arrive",
+      "note": "G5",
+      "target": "gate",
+      "meaning": "Gate permits bounded repair"
+    },
+    {
+      "t": 4.5,
+      "sound": "send",
+      "note": "C6",
+      "target": "gate.left",
+      "meaning": "Feedback returns to repair agent"
+    },
+    {
+      "t": 5.7,
+      "sound": "work",
+      "note": "C5",
+      "target": "agent",
+      "meaning": "One repair patch is created"
+    },
+    {
+      "t": 7.5,
+      "sound": "send",
+      "note": "C6",
+      "target": "agent.bottom",
+      "meaning": "Run tests on patch 1"
+    },
+    {
+      "t": 8.2,
+      "sound": "work",
+      "note": "E5",
+      "target": "tests",
+      "meaning": "Validate updated code"
+    },
+    {
+      "t": 9,
+      "sound": "chime",
+      "note": "E5",
+      "target": "tests",
+      "meaning": "Selected tests pass"
+    },
+    {
+      "t": 9.8,
+      "sound": "send",
+      "note": "C6",
+      "target": "tests.bottom",
+      "meaning": "Pass result reaches gate"
+    },
+    {
+      "t": 10.4,
+      "sound": "arrive",
+      "note": "G5",
+      "target": "gate",
+      "meaning": "Gate exits edit loop"
+    },
+    {
+      "t": 11.1,
+      "sound": "send",
+      "note": "C6",
+      "target": "gate.bottom",
+      "meaning": "Patch and evidence handed to engineer"
+    },
+    {
+      "t": 11.8,
+      "sound": "store",
+      "note": "C6",
+      "target": "human",
+      "meaning": "Engineer receives patch for review"
+    },
+    {
+      "t": 14.2,
+      "sound": "arrive",
+      "note": "C5",
+      "target": "agent",
+      "meaning": "New task begins"
+    },
+    {
+      "t": 15.3,
+      "sound": "send",
+      "note": "C6",
+      "target": "agent.bottom",
+      "meaning": "Run task B tests"
+    },
+    {
+      "t": 16,
+      "sound": "work",
+      "note": "E5",
+      "target": "tests",
+      "meaning": "Runner starts task B"
+    },
+    {
+      "t": 16.8,
+      "sound": "crash",
+      "note": "E3",
+      "target": "tests",
+      "meaning": "No tests selected: evidence missing"
+    },
+    {
+      "t": 18,
+      "sound": "send",
+      "note": "C6",
+      "target": "tests.bottom",
+      "meaning": "No-tests result reaches gate"
+    },
+    {
+      "t": 18.6,
+      "sound": "thump",
+      "note": "G3",
+      "target": "gate",
+      "meaning": "Gate refuses further product edits"
+    },
+    {
+      "t": 20.2,
+      "sound": "send",
+      "note": "C6",
+      "target": "gate.bottom",
+      "meaning": "Command and logs handed to engineer"
+    },
+    {
+      "t": 21.2,
+      "sound": "deliver",
+      "note": "C5",
+      "target": "human",
+      "meaning": "Engineer receives blocker evidence"
+    },
+    {
+      "t": 22.5,
+      "sound": "ack",
+      "note": "G4",
+      "target": "gate",
+      "meaning": "Stopped status persists; patch 0 remains unchanged"
+    },
+    {
+      "t": 25.5,
+      "sound": "poof",
+      "note": "C4",
+      "target": "gate",
+      "meaning": "Fade to matching boundary"
+    }
+  ],
+  "cues": [
+    {
+      "t": 0.2,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0.03333333333333333,
+      "gain": 0.25
+    },
+    {
+      "t": 1,
+      "name": "send",
+      "note": "C6",
+      "pan": 0.03333333333333333,
+      "gain": 0.35
+    },
+    {
+      "t": 1.7,
+      "name": "work",
+      "note": "E5",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 2.5,
+      "name": "thump",
+      "note": "E4",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 3.2,
+      "name": "send",
+      "note": "C6",
+      "pan": 0.03333333333333333,
+      "gain": 0.35
+    },
+    {
+      "t": 3.8,
+      "name": "arrive",
+      "note": "G5",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 4.5,
+      "name": "send",
+      "note": "C6",
+      "pan": -0.31777777777777777,
+      "gain": 0.35
+    },
+    {
+      "t": 5.7,
+      "name": "work",
+      "note": "C5",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 7.5,
+      "name": "send",
+      "note": "C6",
+      "pan": 0.03333333333333333,
+      "gain": 0.35
+    },
+    {
+      "t": 8.2,
+      "name": "work",
+      "note": "E5",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 9,
+      "name": "chime",
+      "note": "E5",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 9.8,
+      "name": "send",
+      "note": "C6",
+      "pan": 0.03333333333333333,
+      "gain": 0.35
+    },
+    {
+      "t": 10.4,
+      "name": "arrive",
+      "note": "G5",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 11.1,
+      "name": "send",
+      "note": "C6",
+      "pan": 0.03333333333333333,
+      "gain": 0.35
+    },
+    {
+      "t": 11.8,
+      "name": "store",
+      "note": "C6",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 14.2,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 15.3,
+      "name": "send",
+      "note": "C6",
+      "pan": 0.03333333333333333,
+      "gain": 0.35
+    },
+    {
+      "t": 16,
+      "name": "work",
+      "note": "E5",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 16.8,
+      "name": "crash",
+      "note": "E3",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 18,
+      "name": "send",
+      "note": "C6",
+      "pan": 0.03333333333333333,
+      "gain": 0.35
+    },
+    {
+      "t": 18.6,
+      "name": "thump",
+      "note": "G3",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 20.2,
+      "name": "send",
+      "note": "C6",
+      "pan": 0.03333333333333333,
+      "gain": 0.35
+    },
+    {
+      "t": 21.2,
+      "name": "deliver",
+      "note": "C5",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 22.5,
+      "name": "ack",
+      "note": "G4",
+      "pan": 0.03333333333333333,
+      "gain": 0.6
+    },
+    {
+      "t": 25.5,
+      "name": "poof",
+      "note": "C4",
+      "pan": 0.03333333333333333,
+      "gain": 0.2
+    }
+  ]
+}

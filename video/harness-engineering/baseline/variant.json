@@ -1,0 +1,38 @@
+{
+  "id": "baseline",
+  "concept": "harness-engineering",
+  "title": "Resume work",
+  "model": "Original prototype; model not recorded",
+  "lesson": "A saved workspace and verified progress record let a fresh session resume pending work after startup checks.",
+  "src": "media/harness-engineering/baseline.mp4",
+  "poster": "media/harness-engineering/baseline.jpg",
+  "duration": 26,
+  "verified": true,
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "time": "00:00–00:26",
+      "change": "Added a visible Resume work title and topic subtitle; full-frame fade preserves matching bookends. Original causal sequence and sound timing retained."
+    },
+    {
+      "time": "00:09–00:26",
+      "change": "Matched transcript boundaries to the interruption at 9s and resumed work at 17s; distinguished saved prior results from new regression evidence."
+    }
+  ],
+  "transcript": [
+    "0–9s: Resume work. Session 1 changes task A, runs its check, and records A as verified; B remains pending.",
+    "9–17s: Session 1 ends. Its workspace and progress record survive. Session 2 reads the record, identifies B as pending, initializes the workspace, and runs a startup smoke check. This check does not establish complete regression coverage.",
+    "17–26s: Session 2 changes B, runs its check, and records B as verified. A remains recorded from the earlier run; B is not evidence that all of A was retested. Both recorded results hold, then the whole frame fades to black."
+  ],
+  "limitations": [
+    "Original model was not recorded; comparative editing is not original authorship.",
+    "Illustrative session handoff. A startup smoke check is not comprehensive feature revalidation; saved progress can become stale after subsequent edits.",
+    "Audio analysed, not heard. Phone legibility checked on 350px decoded frames, not a physical device."
+  ],
+  "comparativeVerification": {
+    "reviewer": "gpt-6-astra comparative review",
+    "report": "reviews/comparisons/harness-engineering.json",
+    "evidence": "reviews/comparisons/harness-engineering/verification.json",
+    "sha256": "a23465f7ff728bee14967fc08fceedd5c62bb94dfc42bbedfcc9a92d89a1e372"
+  }
+}

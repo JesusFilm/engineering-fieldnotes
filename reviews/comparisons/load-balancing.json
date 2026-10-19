@@ -1,0 +1,54 @@
+{
+  "id": "load-balancing",
+  "recommended": "astra",
+  "rationale": "Start with Astra: one continuous two-worker example makes the idle-worker problem and the fate of an already queued call easy to follow. Its later calls use the free worker twice while the original call stays queued, showing exactly what a new routing policy changes. Baseline is a useful companion about health-based eligibility; Fable adds live counts and client response timing, but its denser three-replica animation and different before/after schedules require more explanation.",
+  "findings": [
+    "Astra 11.85–14.25s shows Q4 waiting behind L1 while B is idle; 16.35–20.9s sends Q5 and Q6 to B, and 22–24.5s finally runs Q4 on A. Keeping the same queue visible teaches new-request routing without implying migration.",
+    "Baseline 7.05–12s removes the failed middle server while the outer servers continue; 12.4–14.87s separates recovery, a passed health check and resumed traffic. This complements the other cuts but says little about unequal request cost; failure detection is compressed into the crash beat.",
+    "Astra 4.5–26.4s now labels historical totals as assigned, distinct from its running indicators. Fable 11.4–15.75s supplies live unfinished counts, including the queued call: those counts are more explicit, but require tracking three replicas and a separate client outcome.",
+    "Fable 13.5–15.25s now makes waiting explicit with WAIT and an empty bar; its 16.65s response badge reads 4.5 s demo elapsed versus 2.8 s for the clear path. The figures measure this illustrative animation, not a production benchmark or a controlled comparison of routing policies.",
+    "Fable 20.25–25.25s breaks ties among idle replicas, then selects Replica 1 for two successive small requests. The second choice genuinely breaks rotation, but token chips, counters, transport and return traffic compete for attention; Astra is easier to follow at 350px.",
+    "Baseline 17.5–20s, Astra 24.5–26.4s and Fable 28.9–30.65s all hold resolved states before their loop boundary. All exact first/last decoded frames match; the additional runtime in Fable buys response and load-signal detail rather than a stronger main-entry explanation."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 3,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "8f084c7b4806ddcc4a08475572cdda74d894d11c0e491d945f2d088c351c3858",
+    "astra": "7fc1e430c45993bbabd78d63c568aacecb4b8e25daada622c8eb8920f94a00ee",
+    "fable": "2bf51a13222ef1ed1780dbc141b0ad8e74b08251bdb7c0c8e4aca832615dff9a"
+  },
+  "contentVerdict": "Keep as reference. The guide changes a concrete decision when concurrent agents share replicated tool services and traces reveal uneven waiting; tool contracts, bounded concurrency and evaluation are earlier priorities for a team starting delegation. Its fixed-arrival FIFO exercise has observable completion, waiting and no-migration checks. Primary sources support the connection/request distinction, imperfect load signals, sampled least-request selection and separate drain/admission controls; neither core placement nor deferral is justified.",
+  "verified": true,
+  "defectsFixed": [
+    "Astra: replaced ambiguous cumulative calls labels with assigned, and clarified the transcript.",
+    "Fable: replaced unsourced 180 ms / 2.5 s outcome badges with animation-derived 2.8 s / 4.5 s demo elapsed values and an on-screen illustrative qualifier.",
+    "Fable: made the local queued state unambiguous with WAIT, zero progress until execution and a start cue; enlarged the policy subtitle.",
+    "Fable local renderer: fixed raster dropouts reproduced during preflight using software rendering, fresh canvas frames and synchronous readback; applied explicit FFmpeg filter thread limits.",
+    "Corrected Fable transcript tie timing and source attribution, documented the toy counter boundaries and different schedules, and retained both authors’ original provenance and reports. Updated local reproduction instructions and Astra’s renderer dependency pin."
+  ],
+  "limitations": [
+    "Audio was analysed through decoded peaks, scheduled cue windows and spectrograms, not heard. Energy in overlapping cue windows does not prove each individual sound is perceptually distinct.",
+    "Visual review used whole-duration contact sheets plus dense decoded causal-beat, busy-state, ending and boundary frames at native and 350px sizes. Pacing was assessed from these timed sequences, not uninterrupted real-time listening/playback.",
+    "All cuts are toy schedules. One-slot workers, perfect load visibility and health-check timing are simplifications; Fable token counts do not determine runtime, and its two phases are not a controlled replay.",
+    "Fable’s live signal counts backend-arrived unfinished work and excludes request/response travel. Neither alternative implements Envoy’s complete sampling/weighting policy, retry safety, admission control or draining.",
+    "Browser verification is scoped to this chapter and comparison in an isolated local build. No whole-library build, publication, git operation or other-topic change was performed."
+  ]
+}

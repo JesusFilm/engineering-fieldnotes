@@ -1,0 +1,101 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "kind": "chapter",
+      "overflow": false,
+      "fonts": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "Libre Caslon Display",
+          "status": "loaded"
+        }
+      ],
+      "videos": [
+        null
+      ],
+      "hasCorrectedTranscript": false
+    },
+    {
+      "width": 1440,
+      "kind": "compare",
+      "overflow": false,
+      "fonts": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "Libre Caslon Display",
+          "status": "loaded"
+        }
+      ],
+      "videos": [
+        null,
+        null,
+        null
+      ],
+      "hasCorrectedTranscript": true
+    },
+    {
+      "width": 390,
+      "kind": "chapter",
+      "overflow": false,
+      "fonts": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "Libre Caslon Display",
+          "status": "loaded"
+        }
+      ],
+      "videos": [
+        null
+      ],
+      "hasCorrectedTranscript": false
+    },
+    {
+      "width": 390,
+      "kind": "compare",
+      "overflow": false,
+      "fonts": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "Libre Caslon Display",
+          "status": "loaded"
+        }
+      ],
+      "videos": [
+        null,
+        null,
+        null
+      ],
+      "hasCorrectedTranscript": true
+    }
+  ],
+  "failedResources": []
+}

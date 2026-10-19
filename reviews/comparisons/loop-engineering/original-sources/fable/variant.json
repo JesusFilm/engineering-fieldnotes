@@ -1,0 +1,46 @@
+{
+  "id": "fable",
+  "concept": "loop-engineering",
+  "title": "Stop when the result stops changing",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "Each loop cycle records an observed result; when the failing-test count stops falling, the harness stops the loop and hands the task to a person instead of spending the remaining iterations.",
+  "src": "media/loop-engineering/fable.mp4",
+  "poster": "media/loop-engineering/fable.jpg",
+  "duration": 30.77,
+  "verified": true,
+  "transcript": [
+    {
+      "time": "0:00",
+      "text": "An agent box and a tests box sit on a ring. The agent sends EDIT 1 round to the tests; they run and return 5 FAIL, which is recorded as the first row of a run log with a full red bar."
+    },
+    {
+      "time": "0:04",
+      "text": "EDIT 2 returns 2 FAIL. The second row has a shorter bar and a green tick rings beside it: the failing count fell, so progress is measurable and the loop continues."
+    },
+    {
+      "time": "0:08",
+      "text": "EDIT 3 returns PASS. The third row turns green, the agent turns green and a DONE badge pops in the middle of the ring. The stage fades out and back in for a new task."
+    },
+    {
+      "time": "0:15",
+      "text": "On the new task EDIT 1 returns 3 FAIL, then EDIT 2 returns 3 FAIL again. An orange cross rings beside the second row and both rows turn orange: no change since last time."
+    },
+    {
+      "time": "0:22",
+      "text": "EDIT 3 returns 3 FAIL a third time. The log turns red and shakes with an alarm, and a red NO PROGRESS badge appears in the ring. The agent, tests and ring dim."
+    },
+    {
+      "time": "0:26",
+      "text": "A HAND OFF chip travels from the run log down to a laptop labelled Human, which lights green with a chime. The scene holds, then fades to black."
+    }
+  ],
+  "limitations": [
+    "The three-identical-results rule and the failing-test count are an illustration of a progress signal and threshold; teams choose their own, and a flat count can hide different tests failing each time.",
+    "The check is shown on the run log to suggest harness code; a prompt instruction such as \"stop if you are not making progress\" does not enforce a stopping rule, and the video cannot show that distinction on its own.",
+    "Iteration budgets are not shown; the baseline cut covers that half of the stopping rule.",
+    "Audio was verified by level analysis, onset timing and spectrogram, not by listening.",
+    "Not yet comparatively reviewed against the other cuts; the model field records provenance, not quality."
+  ]
+}
+

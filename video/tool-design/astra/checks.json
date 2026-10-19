@@ -1,0 +1,274 @@
+{
+  "author": "gpt-6-astra",
+  "date": "2026-10-19",
+  "duration": 30,
+  "bytes": 626145,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "frames": 900,
+  "video": "h264",
+  "pixelFormat": "yuv420p",
+  "audio": "aac",
+  "fullDecode": "pass",
+  "exactDecodedFirstLastEquality": true,
+  "firstLastMD5": "eb31442608984c1aa5939de6decc4443",
+  "audioMaxDbfs": -2.2,
+  "audioReferenceLagMs": 0.0,
+  "audioCueCount": 44,
+  "cues": [
+    {
+      "time": 0.4,
+      "sound": "recover",
+      "rms_first_120ms_dbfs": -27.98
+    },
+    {
+      "time": 1.3,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -31.03
+    },
+    {
+      "time": 1.9,
+      "sound": "arrive",
+      "rms_first_120ms_dbfs": -16.24
+    },
+    {
+      "time": 2.2,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -31.03
+    },
+    {
+      "time": 2.8,
+      "sound": "arrive",
+      "rms_first_120ms_dbfs": -17.22
+    },
+    {
+      "time": 3.1,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -31.0
+    },
+    {
+      "time": 3.7,
+      "sound": "arrive",
+      "rms_first_120ms_dbfs": -16.23
+    },
+    {
+      "time": 4,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.65
+    },
+    {
+      "time": 4.6,
+      "sound": "deliver",
+      "rms_first_120ms_dbfs": -18.15
+    },
+    {
+      "time": 6.8,
+      "sound": "store",
+      "rms_first_120ms_dbfs": -25.56
+    },
+    {
+      "time": 7,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.93
+    },
+    {
+      "time": 7.6,
+      "sound": "arrive",
+      "rms_first_120ms_dbfs": -16.22
+    },
+    {
+      "time": 7.9,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.61
+    },
+    {
+      "time": 8.5,
+      "sound": "crash",
+      "rms_first_120ms_dbfs": -12.52
+    },
+    {
+      "time": 9,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.91
+    },
+    {
+      "time": 9.6,
+      "sound": "thump",
+      "rms_first_120ms_dbfs": -15.85
+    },
+    {
+      "time": 10,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -31.15
+    },
+    {
+      "time": 10.6,
+      "sound": "thump",
+      "rms_first_120ms_dbfs": -15.88
+    },
+    {
+      "time": 12.8,
+      "sound": "store",
+      "rms_first_120ms_dbfs": -22.13
+    },
+    {
+      "time": 12.8,
+      "sound": "recover",
+      "rms_first_120ms_dbfs": -22.13
+    },
+    {
+      "time": 14,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -31.54
+    },
+    {
+      "time": 14.6,
+      "sound": "arrive",
+      "rms_first_120ms_dbfs": -16.25
+    },
+    {
+      "time": 14.9,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.89
+    },
+    {
+      "time": 15.5,
+      "sound": "thump",
+      "rms_first_120ms_dbfs": -18.92
+    },
+    {
+      "time": 15.9,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.88
+    },
+    {
+      "time": 16.5,
+      "sound": "thump",
+      "rms_first_120ms_dbfs": -15.88
+    },
+    {
+      "time": 16.9,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.85
+    },
+    {
+      "time": 17.5,
+      "sound": "deliver",
+      "rms_first_120ms_dbfs": -18.15
+    },
+    {
+      "time": 19.7,
+      "sound": "store",
+      "rms_first_120ms_dbfs": -25.43
+    },
+    {
+      "time": 19.7,
+      "sound": "clock",
+      "rms_first_120ms_dbfs": -25.43
+    },
+    {
+      "time": 20.1,
+      "sound": "clock",
+      "rms_first_120ms_dbfs": -40.74
+    },
+    {
+      "time": 20.5,
+      "sound": "clock",
+      "rms_first_120ms_dbfs": -40.71
+    },
+    {
+      "time": 20.9,
+      "sound": "clock",
+      "rms_first_120ms_dbfs": -31.57
+    },
+    {
+      "time": 21,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.84
+    },
+    {
+      "time": 21.6,
+      "sound": "arrive",
+      "rms_first_120ms_dbfs": -16.25
+    },
+    {
+      "time": 21.9,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.49
+    },
+    {
+      "time": 22,
+      "sound": "recover",
+      "rms_first_120ms_dbfs": -24.78
+    },
+    {
+      "time": 22.5,
+      "sound": "hit",
+      "rms_first_120ms_dbfs": -18.41
+    },
+    {
+      "time": 22.9,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.58
+    },
+    {
+      "time": 23.5,
+      "sound": "store",
+      "rms_first_120ms_dbfs": -21.88
+    },
+    {
+      "time": 23.9,
+      "sound": "send",
+      "rms_first_120ms_dbfs": -30.86
+    },
+    {
+      "time": 24.5,
+      "sound": "chime",
+      "rms_first_120ms_dbfs": -16.98
+    },
+    {
+      "time": 24.5,
+      "sound": "store",
+      "rms_first_120ms_dbfs": -16.98
+    },
+    {
+      "time": 27.2,
+      "sound": "poof",
+      "rms_first_120ms_dbfs": -30.81
+    }
+  ],
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "size": 32692
+    },
+    {
+      "type": "free",
+      "offset": 32724,
+      "size": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 32732,
+      "size": 593413
+    }
+  ],
+  "faststart": true,
+  "sha256": "b0b85fc7a289c0612b87535481752e71211619eace8729c5c84c308223a56620",
+  "listening": "Not physically heard; waveform, peak, spectrogram and cue timing analysed.",
+  "visualInspection": "Pass: author inspected final encoded contact sheet, all five beats at full resolution and 350px, boundary sheet, moving payload and spectrogram via view_image; see review.md.",
+  "sourceSha256": {
+    "scene.js": "867536b2a2cff332ca45838978bed183cd6b56db26b5b12e707ef14ec0451c2d",
+    "engine/render.mjs": "f45bf9da010506f51000874a2cc2f648bf3375b5f1002dd732da6b6fc839e8f8",
+    "engine/flow-engine.js": "fd3299ad79de5254c0c0a1645fc1b2ea49a78da21654efca7d401c5251588a25",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/package-lock.json": "19da6534990609a24be850e76c76eb67c2a22c4cf03eed38deaefa55603b0c16"
+  }
+}

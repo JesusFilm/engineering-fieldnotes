@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-18T23:50:17.044Z",
+  "method": "Unchanged shared builder imported with review-local output; only idempotency chapter and comparison generated. Headless Chrome at 1280px and 350px; muted playback smoke check, one-video-at-a-time interaction, expanded transcripts and recommendation, overflow and screenshot checks. Screenshots visually reviewed separately.",
+  "errors": [],
+  "report": [
+    {
+      "kind": "chapter",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "heading": "Idempotency",
+      "videoCount": 1,
+      "srcs": [
+        "../../media/idempotency/astra.mp4?v=9a8054364cb8"
+      ],
+      "items": [
+        {
+          "width": 1080,
+          "height": 1920,
+          "duration": 30,
+          "playing": true,
+          "currentTime": 0.076757
+        }
+      ],
+      "onePlaying": true,
+      "expandedContentNoOverflow": true
+    },
+    {
+      "kind": "comparison",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "heading": "Idempotency",
+      "videoCount": 3,
+      "srcs": [
+        "../../../media/idempotency/baseline.mp4?v=80a8836c247a",
+        "../../../media/idempotency/astra.mp4?v=9a8054364cb8",
+        "../../../media/idempotency/fable.mp4?v=6104b22418cb"
+      ],
+      "items": [
+        {
+          "width": 1080,
+          "height": 1920,
+          "duration": 26.006009,
+          "playing": true,
+          "currentTime": 0.081142
+        },
+        {
+          "width": 1080,
+          "height": 1920,
+          "duration": 30,
+          "playing": true,
+          "currentTime": 0.076152
+        },
+        {
+          "width": 1080,
+          "height": 1920,
+          "duration": 29.7,
+          "playing": true,
+          "currentTime": 0.081299
+        }
+      ],
+      "onePlaying": true,
+      "expandedContentNoOverflow": true
+    },
+    {
+      "kind": "chapter",
+      "width": 350,
+      "scrollWidth": 350,
+      "heading": "Idempotency",
+      "videoCount": 1,
+      "srcs": [
+        "../../media/idempotency/astra.mp4?v=9a8054364cb8"
+      ],
+      "items": [
+        {
+          "width": 1080,
+          "height": 1920,
+          "duration": 30,
+          "playing": true,
+          "currentTime": 0.080565
+        }
+      ],
+      "onePlaying": true,
+      "expandedContentNoOverflow": true
+    },
+    {
+      "kind": "comparison",
+      "width": 350,
+      "scrollWidth": 350,
+      "heading": "Idempotency",
+      "videoCount": 3,
+      "srcs": [
+        "../../../media/idempotency/baseline.mp4?v=80a8836c247a",
+        "../../../media/idempotency/astra.mp4?v=9a8054364cb8",
+        "../../../media/idempotency/fable.mp4?v=6104b22418cb"
+      ],
+      "items": [
+        {
+          "width": 1080,
+          "height": 1920,
+          "duration": 26.006009,
+          "playing": true,
+          "currentTime": 0.075965
+        },
+        {
+          "width": 1080,
+          "height": 1920,
+          "duration": 30,
+          "playing": true,
+          "currentTime": 0.082652
+        },
+        {
+          "width": 1080,
+          "height": 1920,
+          "duration": 29.7,
+          "playing": true,
+          "currentTime": 0.072021
+        }
+      ],
+      "onePlaying": true,
+      "expandedContentNoOverflow": true
+    }
+  ]
+}

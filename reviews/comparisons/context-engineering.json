@@ -1,0 +1,57 @@
+{
+  "id": "context-engineering",
+  "recommended": "astra",
+  "rationale": "Keep the contract is the strongest chapter entry because it shows a lost requirement cause a concrete compatibility failure, then requires a fresh fixture check after the handoff is repaired. Baseline complements it by separating log compaction from caller retrieval while retaining a constraint. Fable adds the most useful iterative retrieval loop, but its denser rows and smaller details take more effort to follow at phone width.",
+  "findings": [
+    "Astra 6.3–13.8s makes the missing total_cents constraint visible before amount fails the same v1 fixture; baseline 7.7–11s shows only successful retention, and fable 7.3–9.8s shows stale advice influencing an unverified candidate.",
+    "Baseline 7.7–15.3s most clearly separates compaction from retrieval: repeated logs become a summary, then caller.ts is fetched. Corrected illustrative totals of 9k and 11k preserve the original 8k packet consistently.",
+    "Fable 16.1–19.9s uniquely shows an initial model invocation discover the need for users.ts and request more evidence. This is a useful complement to the single retrieval in baseline 12.2–15.3s and contract reinspection in astra 16–21s.",
+    "Astra 21–26s reruns the fixture before PASS and leaves Human review pending. Baseline 19.1–22.9s and fable 21.7–24.7s now end on amber candidates because neither demonstrates a test; no cut establishes a timeout improvement.",
+    "At 350px, astra 10.3–25.5s has the clearest labels and least reading competition. Baseline 8.5–15.5s is also readable; fable 3.5–9.8s remains denser despite enlarged rows and corrected packet routes, and benefits from replay.",
+    "Fable 6.1–22.2s no longer presents invented 41s/9s timing as evidence. Baseline holds its candidate from 19.1s before fading at 23s; astra is longer at 30s but gives the loss, failure and recovery distinct reading time."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 3,
+      "visual": 3
+    }
+  },
+  "hashes": {
+    "baseline": "00cb76dc9211fde7120d769f43137bc3c5bc48a6a361f581266a10b43cc5485d",
+    "astra": "a56bb2d0a3aefc569b46893e5428a6b7cb5f9c51740493146e88ae8b361519e1",
+    "fable": "6051b9707ed991fa28d77eb3b407712ed2b89b2d90f30216ea355e0e05c393e9"
+  },
+  "contentVerdict": "Keep as core. A team beginning agentic engineering immediately needs inspectable task packets, authoritative source retrieval and fresh verification across sessions. The guide gives an actionable handoff exercise without forcing an agent failure, distinguishes model/task-specific research from universal claims, and now explicitly separates compatibility from performance and contextual instructions from enforced permissions. The alternative videos add compaction and incremental retrieval mechanisms rather than duplicating the main handoff lesson.",
+  "verified": true,
+  "defectsFixed": [
+    "Baseline: corrected inconsistent post-compaction token totals (5k/7k to 9k/11k) and replaced an unsupported green check with Patch?.",
+    "Fable: removed unmeasured 41s/9s latency comparison and overlapping timing badge; made processing pulses visible.",
+    "Fable: exposed stale note content, changed high occupancy to amber, and replaced untested failure/success verdicts with candidate locations.",
+    "Fable: enlarged store rows, routed departing file chips clear of Repository, and reduced the final ripple to clear the meter.",
+    "Updated edited-cut transcripts, posters and provenance-preserving corrections metadata; retained original source/media records.",
+    "Guide: clarified separate performance verification and external permission enforcement; refreshed retrieval dates after checking all four listed primary sources."
+  ],
+  "limitations": [
+    "Audio was analyzed for decoded sample peaks, event energy and spectral timing, not heard; perceived mix quality was not assessed.",
+    "Visual review used decoded contact sheets and exact full-size/350px beat frames across each complete timeline, not continuous playback or manual inspection of every frame.",
+    "All examples are schematic, not recorded agent runs. Token counts are illustrative; no general latency, correctness or omission-failure rate is established.",
+    "Fable retains small secondary details and higher phone-width reading density. Baseline shows successful compaction without demonstrating a summary audit.",
+    "Astra demonstrates only the illustrated compatibility fixture; timeout performance and human acceptance remain unproven.",
+    "The four guide sources were opened and relevant claims checked; the historical Fable author record’s Chroma citation was not independently checked.",
+    "Supplied filenames exposed variant names; scenes, transcripts, scores, author reviews and provenance records were withheld until the blind findings were saved."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "oauth-pkce",
+  "title": "OAuth PKCE",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "PKCE binds an OAuth authorization code to a secret generated for that authorization attempt.",
+  "overview": "The client sends an S256 challenge derived from a fresh random verifier in the authorization request. At token exchange, the server checks the supplied verifier against that challenge before issuing tokens.",
+  "why": "An intercepted authorization code alone should not let an attacker obtain tokens.",
+  "example": "A mobile app retains a verifier during browser authorization, then submits it with the returned code to the token endpoint.",
+  "judgment": "Choose a maintained OAuth library and verify redirect handling, transaction binding, and verifier protection; PKCE does not replace authorization policy.",
+  "next": "Does our authorization server reject a token exchange with a missing or incorrect verifier?",
+  "sources": [
+    {
+      "title": "RFC 7636: Proof Key for Code Exchange",
+      "url": "https://www.rfc-editor.org/rfc/rfc7636"
+    },
+    {
+      "title": "RFC 9700: Best Current Practice for OAuth 2.0 Security",
+      "url": "https://www.rfc-editor.org/rfc/rfc9700"
+    }
+  ],
+  "related": [
+    "guardrails-and-permissions",
+    "tool-design",
+    "observability-and-tracing"
+  ]
+}

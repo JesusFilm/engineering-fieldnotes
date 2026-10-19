@@ -1,0 +1,28 @@
+{
+  "id": "observability-and-tracing",
+  "placement": "core",
+  "verifiedSources": [
+    "https://opentelemetry.io/docs/concepts/signals/traces/",
+    "https://opentelemetry.io/docs/concepts/context-propagation/",
+    "https://www.w3.org/TR/trace-context/",
+    "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-spans.md",
+    "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md",
+    "https://opentelemetry.io/docs/security/handling-sensitive-data/",
+    "https://opentelemetry.io/docs/concepts/sampling/"
+  ],
+  "changes": [
+    "Replaced the short overview with a 783-word guide for engineers adopting agent delegation; preserved identity and taxonomy.",
+    "Defined trace IDs, span IDs, parent relationships and propagation; separated boundary timing from root-cause proof.",
+    "Replaced the billing-retry anecdote with an explicitly illustrative coding/test-tool task and a new execution after repair.",
+    "Added before/after/human workflow, observable outcomes, four-step walkthrough, pitfalls and a sandbox propagation exercise.",
+    "Added data minimization and sampling limits; separated tracing from evaluation and authorization.",
+    "Verified seven primary-source pages, followed the GenAI relocation, and recorded unsuccessful initial retrievals honestly.",
+    "Authored independent gpt-6-astra video, poster, accessible transcript, reproducible local renderer, and encoded verification."
+  ],
+  "limitations": [
+    "The sandbox exercise was designed, not executed against a real agent SDK or production platform.",
+    "Live GenAI conventions are evolving; instrumentation-version support is not asserted.",
+    "Scenario latencies are authored examples, not empirical results.",
+    "Video sound was measured but not physically listened to; self-review is not comparative evaluation."
+  ]
+}

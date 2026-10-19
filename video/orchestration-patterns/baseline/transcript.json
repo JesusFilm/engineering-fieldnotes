@@ -1,0 +1,5 @@
+[
+  "0\u201311.5s: Independent API and database reviews are scheduled serially. Reconciliation begins at 10.7s after both results arrive and completes at 11.5s.",
+  "12.8\u201318.95s: The same illustrative tasks reset and run in parallel from 14.3s. The first report leaves Reconcile at 1/2; the second arrives at 18.95s.",
+  "19.2\u201323.3s: Reconciliation runs and completes at 20s. Success holds until the fade starts at 22.5s; the remaining tail is blank. Timing illustrates scheduling, not measured speedup or review correctness."
+]

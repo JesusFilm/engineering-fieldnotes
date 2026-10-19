@@ -1,0 +1,26 @@
+{
+  "id": "loop-engineering",
+  "title": "Loop engineering",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Loop engineering defines how an agent acts, checks feedback, and decides whether to continue.",
+  "overview": "Here, the term means designing the repeated model-and-tool cycle. Each cycle needs observed results and a stopping rule.",
+  "why": "Unchecked repetition can consume resources without making progress.",
+  "example": "A repair agent edits code, runs a failing test, and stops after three unsuccessful attempts.",
+  "judgment": "Choose measurable progress signals, iteration limits, and escalation conditions.",
+  "next": "Which repeated tool failures should end the run immediately?",
+  "sources": [
+    {
+      "title": "Building effective agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents"
+    }
+  ],
+  "related": [
+    "harness-engineering",
+    "timeouts-and-retries",
+    "human-in-the-loop"
+  ]
+}

@@ -1,0 +1,5 @@
+[
+  "0–6.5s: A bounded incident lookup returns an empty list. The agent receives a successful empty result.",
+  "7–14.5s: A second lookup times out. The agent receives an explicit error and chooses one retry.",
+  "15–24s: The retry returns incident INC-42 as a successful nonempty result."
+]

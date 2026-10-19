@@ -1,0 +1,49 @@
+{
+  "checks": {
+    "dimensions": true,
+    "fps": true,
+    "codec": true,
+    "pixelFormat": true,
+    "audioCodec": true,
+    "under2MB": true,
+    "duration": true,
+    "fullDecode": true,
+    "frameCount": true,
+    "exactLoopEquality": true,
+    "audioPeak": true,
+    "cueEnergy": true,
+    "cueSync": true,
+    "faststart": true
+  },
+  "bytes": 1121081,
+  "duration": 28.0,
+  "frameCount": 840,
+  "firstFrameMD5": "9b2c4088acb2c896d5d79adbe4b893ac",
+  "lastFrameMD5": "9b2c4088acb2c896d5d79adbe4b893ac",
+  "audioPeakDbFS": -11.0357,
+  "audioCues": 25,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "size": 31260
+    },
+    {
+      "type": "free",
+      "offset": 31292,
+      "size": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 31300,
+      "size": 1089781
+    }
+  ],
+  "sha256": "6541372dd63774fd44ba11334a77e25797a4448767ca4f6529eb0d6e2132a768",
+  "physicalListening": false
+}

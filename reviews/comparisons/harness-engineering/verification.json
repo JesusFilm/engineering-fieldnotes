@@ -1,0 +1,887 @@
+{
+  "reviewedAt": "2026-10-18T22:56:13.108790+00:00",
+  "reviewer": "gpt-6-astra comparative review",
+  "media": {
+    "baseline": {
+      "variant": "baseline",
+      "sha256": "a23465f7ff728bee14967fc08fceedd5c62bb94dfc42bbedfcc9a92d89a1e372",
+      "video": {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "pix_fmt": "yuv420p",
+        "duration": "26.000000",
+        "nb_frames": "780"
+      },
+      "audioCodec": "aac",
+      "maxAudioDBFS": -4.8,
+      "decodeExit": 0,
+      "boundaryEqual": true,
+      "firstExtrema": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "lastExtrema": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0
+        },
+        {
+          "type": "moov",
+          "offset": 32
+        },
+        {
+          "type": "free",
+          "offset": 28952
+        },
+        {
+          "type": "mdat",
+          "offset": 28960
+        }
+      ]
+    },
+    "astra": {
+      "variant": "astra",
+      "sha256": "91cc732764f54ad514cb601c021ead21c72b0181533013cdd16fb22432697482",
+      "video": {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "pix_fmt": "yuv420p",
+        "duration": "28.000000",
+        "nb_frames": "840"
+      },
+      "audioCodec": "aac",
+      "maxAudioDBFS": -4.6,
+      "decodeExit": 0,
+      "boundaryEqual": true,
+      "firstExtrema": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "lastExtrema": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0
+        },
+        {
+          "type": "moov",
+          "offset": 32
+        },
+        {
+          "type": "free",
+          "offset": 31444
+        },
+        {
+          "type": "mdat",
+          "offset": 31452
+        }
+      ]
+    },
+    "fable": {
+      "variant": "fable",
+      "sha256": "4c7af02db22cd50897e53e6a743f758a4c5d224a1114ac91c84b84d11dfcc711",
+      "video": {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1",
+        "pix_fmt": "yuv420p",
+        "duration": "28.100000",
+        "nb_frames": "843"
+      },
+      "audioCodec": "aac",
+      "maxAudioDBFS": -6.6,
+      "decodeExit": 0,
+      "boundaryEqual": true,
+      "firstExtrema": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "lastExtrema": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0
+        },
+        {
+          "type": "moov",
+          "offset": 32
+        },
+        {
+          "type": "free",
+          "offset": 30520
+        },
+        {
+          "type": "mdat",
+          "offset": 30528
+        }
+      ]
+    }
+  },
+  "physicalListening": false,
+  "audioMethod": "Decoded PCM peak/energy analysis, visually inspected spectrograms, and source cue windows; every scheduled cue window contains energy. Overlapping cues cannot be independently distinguished by this check.",
+  "visualMethod": "Blind decoded contact sheets followed by individually viewed full-size and 350px causal-beat frames; final encoded contact sheets, updated-cut full-size frames, all three 350px beat sequences, posters, and exact first/last decoded frames.",
+  "audioCueEnergy": {
+    "baseline": {
+      "method": "Decoded mono PCM; -15ms/+120ms around source cue. Energy supports cue presence, not distinct audibility or isolation from neighbouring cues. Audio not heard.",
+      "cues": [
+        {
+          "t": 1,
+          "cue": "send",
+          "windowPeakDBFS": -19.87,
+          "windowRmsDBFS": -32.96
+        },
+        {
+          "t": 1.7,
+          "cue": "arrive",
+          "windowPeakDBFS": -8.13,
+          "windowRmsDBFS": -17.97
+        },
+        {
+          "t": 2,
+          "cue": "send",
+          "windowPeakDBFS": -20.24,
+          "windowRmsDBFS": -32.95
+        },
+        {
+          "t": 2.7,
+          "cue": "arrive",
+          "windowPeakDBFS": -8.59,
+          "windowRmsDBFS": -17.0
+        },
+        {
+          "t": 3.5,
+          "cue": "send",
+          "windowPeakDBFS": -19.84,
+          "windowRmsDBFS": -33.01
+        },
+        {
+          "t": 4.2,
+          "cue": "arrive",
+          "windowPeakDBFS": -8.31,
+          "windowRmsDBFS": -17.82
+        },
+        {
+          "t": 4.5,
+          "cue": "work",
+          "windowPeakDBFS": -9.84,
+          "windowRmsDBFS": -26.72
+        },
+        {
+          "t": 5,
+          "cue": "hit",
+          "windowPeakDBFS": -6.87,
+          "windowRmsDBFS": -16.56
+        },
+        {
+          "t": 5.7,
+          "cue": "send",
+          "windowPeakDBFS": -20.1,
+          "windowRmsDBFS": -33.2
+        },
+        {
+          "t": 6.4,
+          "cue": "arrive",
+          "windowPeakDBFS": -4.53,
+          "windowRmsDBFS": -15.62
+        },
+        {
+          "t": 6.4,
+          "cue": "store",
+          "windowPeakDBFS": -4.53,
+          "windowRmsDBFS": -15.62
+        },
+        {
+          "t": 9,
+          "cue": "thump",
+          "windowPeakDBFS": -2.88,
+          "windowRmsDBFS": -14.27
+        },
+        {
+          "t": 11,
+          "cue": "recover",
+          "windowPeakDBFS": -15.02,
+          "windowRmsDBFS": -22.28
+        },
+        {
+          "t": 12,
+          "cue": "send",
+          "windowPeakDBFS": -20.05,
+          "windowRmsDBFS": -33.12
+        },
+        {
+          "t": 12.7,
+          "cue": "arrive",
+          "windowPeakDBFS": -8.52,
+          "windowRmsDBFS": -16.85
+        },
+        {
+          "t": 13,
+          "cue": "send",
+          "windowPeakDBFS": -18.14,
+          "windowRmsDBFS": -32.05
+        },
+        {
+          "t": 13.7,
+          "cue": "arrive",
+          "windowPeakDBFS": -8.15,
+          "windowRmsDBFS": -17.97
+        },
+        {
+          "t": 14,
+          "cue": "send",
+          "windowPeakDBFS": -20.29,
+          "windowRmsDBFS": -32.99
+        },
+        {
+          "t": 14.7,
+          "cue": "arrive",
+          "windowPeakDBFS": -8.62,
+          "windowRmsDBFS": -17.0
+        },
+        {
+          "t": 15,
+          "cue": "send",
+          "windowPeakDBFS": -19.15,
+          "windowRmsDBFS": -32.3
+        },
+        {
+          "t": 15.7,
+          "cue": "arrive",
+          "windowPeakDBFS": -3.51,
+          "windowRmsDBFS": -12.25
+        },
+        {
+          "t": 15.7,
+          "cue": "hit",
+          "windowPeakDBFS": -3.51,
+          "windowRmsDBFS": -12.25
+        },
+        {
+          "t": 17,
+          "cue": "send",
+          "windowPeakDBFS": -19.96,
+          "windowRmsDBFS": -32.96
+        },
+        {
+          "t": 17.7,
+          "cue": "arrive",
+          "windowPeakDBFS": -8.17,
+          "windowRmsDBFS": -17.97
+        },
+        {
+          "t": 18,
+          "cue": "send",
+          "windowPeakDBFS": -20.28,
+          "windowRmsDBFS": -32.94
+        },
+        {
+          "t": 18.7,
+          "cue": "arrive",
+          "windowPeakDBFS": -8.58,
+          "windowRmsDBFS": -17.0
+        },
+        {
+          "t": 19.5,
+          "cue": "send",
+          "windowPeakDBFS": -19.91,
+          "windowRmsDBFS": -33.01
+        },
+        {
+          "t": 20.2,
+          "cue": "arrive",
+          "windowPeakDBFS": -8.36,
+          "windowRmsDBFS": -17.84
+        },
+        {
+          "t": 20.5,
+          "cue": "work",
+          "windowPeakDBFS": -10.14,
+          "windowRmsDBFS": -26.77
+        },
+        {
+          "t": 21,
+          "cue": "hit",
+          "windowPeakDBFS": -6.87,
+          "windowRmsDBFS": -16.55
+        },
+        {
+          "t": 21.7,
+          "cue": "send",
+          "windowPeakDBFS": -20.11,
+          "windowRmsDBFS": -33.21
+        },
+        {
+          "t": 22.4,
+          "cue": "arrive",
+          "windowPeakDBFS": -4.53,
+          "windowRmsDBFS": -15.66
+        },
+        {
+          "t": 22.4,
+          "cue": "store",
+          "windowPeakDBFS": -4.53,
+          "windowRmsDBFS": -15.66
+        }
+      ],
+      "silentWindowsBelowMinus80dBFS": []
+    },
+    "astra": {
+      "method": "Decoded mono PCM; -15ms/+120ms around source cue. Energy supports cue presence, not distinct audibility or isolation from neighbouring cues. Audio not heard.",
+      "cues": [
+        {
+          "t": 0.5,
+          "cue": "recover",
+          "windowPeakDBFS": -23.0,
+          "windowRmsDBFS": -30.22
+        },
+        {
+          "t": 1.8,
+          "cue": "send",
+          "windowPeakDBFS": -24.03,
+          "windowRmsDBFS": -37.03
+        },
+        {
+          "t": 2.55,
+          "cue": "arrive",
+          "windowPeakDBFS": -12.89,
+          "windowRmsDBFS": -21.35
+        },
+        {
+          "t": 5,
+          "cue": "send",
+          "windowPeakDBFS": -23.58,
+          "windowRmsDBFS": -36.75
+        },
+        {
+          "t": 5.75,
+          "cue": "crash",
+          "windowPeakDBFS": -2.61,
+          "windowRmsDBFS": -12.81
+        },
+        {
+          "t": 6.6,
+          "cue": "thump",
+          "windowPeakDBFS": -10.62,
+          "windowRmsDBFS": -20.84
+        },
+        {
+          "t": 9.2,
+          "cue": "send",
+          "windowPeakDBFS": -24.37,
+          "windowRmsDBFS": -37.37
+        },
+        {
+          "t": 10.4,
+          "cue": "arrive",
+          "windowPeakDBFS": -12.65,
+          "windowRmsDBFS": -22.35
+        },
+        {
+          "t": 11.4,
+          "cue": "work",
+          "windowPeakDBFS": -16.65,
+          "windowRmsDBFS": -30.16
+        },
+        {
+          "t": 11.4,
+          "cue": "poof",
+          "windowPeakDBFS": -16.65,
+          "windowRmsDBFS": -30.16
+        },
+        {
+          "t": 15,
+          "cue": "send",
+          "windowPeakDBFS": -23.63,
+          "windowRmsDBFS": -36.74
+        },
+        {
+          "t": 15.75,
+          "cue": "arrive",
+          "windowPeakDBFS": -12.89,
+          "windowRmsDBFS": -21.36
+        },
+        {
+          "t": 17.4,
+          "cue": "send",
+          "windowPeakDBFS": -23.48,
+          "windowRmsDBFS": -36.7
+        },
+        {
+          "t": 18.15,
+          "cue": "arrive",
+          "windowPeakDBFS": -12.85,
+          "windowRmsDBFS": -21.31
+        },
+        {
+          "t": 21,
+          "cue": "send",
+          "windowPeakDBFS": -23.53,
+          "windowRmsDBFS": -36.71
+        },
+        {
+          "t": 21.75,
+          "cue": "chime",
+          "windowPeakDBFS": -14.48,
+          "windowRmsDBFS": -22.94
+        },
+        {
+          "t": 25.5,
+          "cue": "poof",
+          "windowPeakDBFS": -23.92,
+          "windowRmsDBFS": -37.3
+        }
+      ],
+      "silentWindowsBelowMinus80dBFS": []
+    },
+    "fable": {
+      "method": "Decoded mono PCM; -15ms/+120ms around source cue. Energy supports cue presence, not distinct audibility or isolation from neighbouring cues. Audio not heard.",
+      "cues": [
+        {
+          "t": 0.8,
+          "cue": "work",
+          "windowPeakDBFS": -10.01,
+          "windowRmsDBFS": -26.69
+        },
+        {
+          "t": 1.02,
+          "cue": "work",
+          "windowPeakDBFS": -10.08,
+          "windowRmsDBFS": -26.59
+        },
+        {
+          "t": 1.24,
+          "cue": "work",
+          "windowPeakDBFS": -10.14,
+          "windowRmsDBFS": -26.51
+        },
+        {
+          "t": 1.46,
+          "cue": "work",
+          "windowPeakDBFS": -10.01,
+          "windowRmsDBFS": -26.58
+        },
+        {
+          "t": 1.68,
+          "cue": "work",
+          "windowPeakDBFS": -9.85,
+          "windowRmsDBFS": -26.69
+        },
+        {
+          "t": 2.25,
+          "cue": "send",
+          "windowPeakDBFS": -24.23,
+          "windowRmsDBFS": -37.39
+        },
+        {
+          "t": 2.8,
+          "cue": "arrive",
+          "windowPeakDBFS": -10.19,
+          "windowRmsDBFS": -20.06
+        },
+        {
+          "t": 2.85,
+          "cue": "ack",
+          "windowPeakDBFS": -14.91,
+          "windowRmsDBFS": -24.57
+        },
+        {
+          "t": 3.75,
+          "cue": "arrive",
+          "windowPeakDBFS": -11.49,
+          "windowRmsDBFS": -20.92
+        },
+        {
+          "t": 4,
+          "cue": "clock",
+          "windowPeakDBFS": -28.49,
+          "windowRmsDBFS": -47.0
+        },
+        {
+          "t": 4.18,
+          "cue": "clock",
+          "windowPeakDBFS": -30.95,
+          "windowRmsDBFS": -53.59
+        },
+        {
+          "t": 4.36,
+          "cue": "clock",
+          "windowPeakDBFS": -28.63,
+          "windowRmsDBFS": -52.4
+        },
+        {
+          "t": 4.54,
+          "cue": "clock",
+          "windowPeakDBFS": -29.5,
+          "windowRmsDBFS": -52.91
+        },
+        {
+          "t": 4.72,
+          "cue": "clock",
+          "windowPeakDBFS": -30.68,
+          "windowRmsDBFS": -52.96
+        },
+        {
+          "t": 4.9,
+          "cue": "clock",
+          "windowPeakDBFS": -30.43,
+          "windowRmsDBFS": -53.0
+        },
+        {
+          "t": 5.08,
+          "cue": "clock",
+          "windowPeakDBFS": -8.59,
+          "windowRmsDBFS": -20.59
+        },
+        {
+          "t": 5.15,
+          "cue": "hit",
+          "windowPeakDBFS": -6.79,
+          "windowRmsDBFS": -16.3
+        },
+        {
+          "t": 6.15,
+          "cue": "arrive",
+          "windowPeakDBFS": -12.01,
+          "windowRmsDBFS": -21.76
+        },
+        {
+          "t": 7.1,
+          "cue": "store",
+          "windowPeakDBFS": -8.31,
+          "windowRmsDBFS": -19.57
+        },
+        {
+          "t": 9.4,
+          "cue": "work",
+          "windowPeakDBFS": -10.85,
+          "windowRmsDBFS": -26.63
+        },
+        {
+          "t": 9.62,
+          "cue": "work",
+          "windowPeakDBFS": -9.84,
+          "windowRmsDBFS": -26.54
+        },
+        {
+          "t": 9.84,
+          "cue": "work",
+          "windowPeakDBFS": -9.55,
+          "windowRmsDBFS": -26.58
+        },
+        {
+          "t": 10.06,
+          "cue": "work",
+          "windowPeakDBFS": -10.47,
+          "windowRmsDBFS": -26.62
+        },
+        {
+          "t": 10.28,
+          "cue": "work",
+          "windowPeakDBFS": -10.6,
+          "windowRmsDBFS": -26.59
+        },
+        {
+          "t": 10.85,
+          "cue": "send",
+          "windowPeakDBFS": -24.26,
+          "windowRmsDBFS": -37.38
+        },
+        {
+          "t": 11.4,
+          "cue": "arrive",
+          "windowPeakDBFS": -10.32,
+          "windowRmsDBFS": -20.04
+        },
+        {
+          "t": 11.45,
+          "cue": "ack",
+          "windowPeakDBFS": -14.94,
+          "windowRmsDBFS": -24.56
+        },
+        {
+          "t": 12.35,
+          "cue": "arrive",
+          "windowPeakDBFS": -11.32,
+          "windowRmsDBFS": -20.92
+        },
+        {
+          "t": 12.6,
+          "cue": "clock",
+          "windowPeakDBFS": -28.92,
+          "windowRmsDBFS": -47.02
+        },
+        {
+          "t": 12.78,
+          "cue": "clock",
+          "windowPeakDBFS": -30.05,
+          "windowRmsDBFS": -52.84
+        },
+        {
+          "t": 12.96,
+          "cue": "clock",
+          "windowPeakDBFS": -30.32,
+          "windowRmsDBFS": -52.82
+        },
+        {
+          "t": 13.14,
+          "cue": "clock",
+          "windowPeakDBFS": -30.96,
+          "windowRmsDBFS": -52.81
+        },
+        {
+          "t": 13.32,
+          "cue": "clock",
+          "windowPeakDBFS": -29.45,
+          "windowRmsDBFS": -53.55
+        },
+        {
+          "t": 13.5,
+          "cue": "clock",
+          "windowPeakDBFS": -29.55,
+          "windowRmsDBFS": -52.74
+        },
+        {
+          "t": 13.68,
+          "cue": "clock",
+          "windowPeakDBFS": -24.59,
+          "windowRmsDBFS": -35.13
+        },
+        {
+          "t": 13.75,
+          "cue": "miss",
+          "windowPeakDBFS": -24.45,
+          "windowRmsDBFS": -32.37
+        },
+        {
+          "t": 14.8,
+          "cue": "arrive",
+          "windowPeakDBFS": -5.23,
+          "windowRmsDBFS": -17.83
+        },
+        {
+          "t": 14.9,
+          "cue": "thump",
+          "windowPeakDBFS": -5.23,
+          "windowRmsDBFS": -16.47
+        },
+        {
+          "t": 15.85,
+          "cue": "thump",
+          "windowPeakDBFS": -6.02,
+          "windowRmsDBFS": -17.66
+        },
+        {
+          "t": 17.85,
+          "cue": "work",
+          "windowPeakDBFS": -9.39,
+          "windowRmsDBFS": -26.59
+        },
+        {
+          "t": 18.07,
+          "cue": "work",
+          "windowPeakDBFS": -10.27,
+          "windowRmsDBFS": -26.52
+        },
+        {
+          "t": 18.29,
+          "cue": "work",
+          "windowPeakDBFS": -10.65,
+          "windowRmsDBFS": -26.59
+        },
+        {
+          "t": 18.51,
+          "cue": "work",
+          "windowPeakDBFS": -10.33,
+          "windowRmsDBFS": -26.58
+        },
+        {
+          "t": 18.73,
+          "cue": "work",
+          "windowPeakDBFS": -10.28,
+          "windowRmsDBFS": -26.6
+        },
+        {
+          "t": 18.95,
+          "cue": "work",
+          "windowPeakDBFS": -10.36,
+          "windowRmsDBFS": -26.71
+        },
+        {
+          "t": 19.17,
+          "cue": "work",
+          "windowPeakDBFS": -10.96,
+          "windowRmsDBFS": -26.6
+        },
+        {
+          "t": 19.74,
+          "cue": "send",
+          "windowPeakDBFS": -24.25,
+          "windowRmsDBFS": -37.38
+        },
+        {
+          "t": 20.29,
+          "cue": "arrive",
+          "windowPeakDBFS": -10.17,
+          "windowRmsDBFS": -20.04
+        },
+        {
+          "t": 20.34,
+          "cue": "ack",
+          "windowPeakDBFS": -14.93,
+          "windowRmsDBFS": -24.56
+        },
+        {
+          "t": 21.24,
+          "cue": "arrive",
+          "windowPeakDBFS": -11.34,
+          "windowRmsDBFS": -20.92
+        },
+        {
+          "t": 21.49,
+          "cue": "clock",
+          "windowPeakDBFS": -28.32,
+          "windowRmsDBFS": -47.04
+        },
+        {
+          "t": 21.67,
+          "cue": "clock",
+          "windowPeakDBFS": -30.01,
+          "windowRmsDBFS": -52.91
+        },
+        {
+          "t": 21.85,
+          "cue": "clock",
+          "windowPeakDBFS": -31.11,
+          "windowRmsDBFS": -53.37
+        },
+        {
+          "t": 22.03,
+          "cue": "clock",
+          "windowPeakDBFS": -30.7,
+          "windowRmsDBFS": -53.11
+        },
+        {
+          "t": 22.21,
+          "cue": "clock",
+          "windowPeakDBFS": -27.05,
+          "windowRmsDBFS": -52.5
+        },
+        {
+          "t": 22.39,
+          "cue": "clock",
+          "windowPeakDBFS": -28.94,
+          "windowRmsDBFS": -53.02
+        },
+        {
+          "t": 22.57,
+          "cue": "clock",
+          "windowPeakDBFS": -8.57,
+          "windowRmsDBFS": -20.58
+        },
+        {
+          "t": 22.64,
+          "cue": "hit",
+          "windowPeakDBFS": -6.81,
+          "windowRmsDBFS": -16.29
+        },
+        {
+          "t": 23.64,
+          "cue": "arrive",
+          "windowPeakDBFS": -12.01,
+          "windowRmsDBFS": -21.76
+        },
+        {
+          "t": 24.59,
+          "cue": "store",
+          "windowPeakDBFS": -8.2,
+          "windowRmsDBFS": -19.59
+        },
+        {
+          "t": 24.89,
+          "cue": "chime",
+          "windowPeakDBFS": -5.42,
+          "windowRmsDBFS": -15.37
+        }
+      ],
+      "silentWindowsBelowMinus80dBFS": []
+    }
+  },
+  "sourceCheck": "source-check.md",
+  "blindFindings": "before.md",
+  "scoresAre": "Editorial judgments of final cuts, not experimental learner outcomes."
+}

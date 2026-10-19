@@ -1,0 +1,10 @@
+{
+  "node": "24.3.0",
+  "puppeteer-core": "25.14.0 (repository-root pinned dependency)",
+  "chrome": "155.0.8059.84",
+  "ffmpeg": "8.0.1 (libx264, AAC)",
+  "python": "3.9.6",
+  "ffmpegThreadsMaximum": 2,
+  "dependenciesCommitted": "Only copied renderer, synthesizer and preview source; no node_modules.",
+  "reproduction": "See beat-sheet.md; run portable relative commands from repository root."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "fable",
+  "concept": "memory-architecture",
+  "title": "Gate what gets written",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "An unreviewed guess can repeatedly steer later runs to skip tests. An application write gate rejects that guess, keeps it in the current thread, and accepts a correction from an approved source for future retrieval.",
+  "src": "media/memory-architecture/fable.mp4",
+  "poster": "media/memory-architecture/fable.jpg",
+  "duration": 32.2,
+  "verified": true,
+  "transcript": [
+    "0–5.6s: Run 1 puts retry x3 in Thread 1, reads lint: strict @r12 from durable memory and shows an illustrative OK. The display then switches to Run 2 and a new empty Thread 2; this does not imply that saved checkpoints were deleted.",
+    "5.6–10.2s: Run 2 writes flaky: ci to its thread, then writes the unsourced tests: skip ? directly into durable memory. The record remains when Run 3 starts.",
+    "10.2–19.8s: Runs 3, 4 and 5 retrieve skip ? and show NO TESTS. Three red dots mark these illustrative skipped-test outcomes, not a claim of deterministic agent behaviour or failing test execution.",
+    "20.3–23.6s: A write gate and approved TESTS.md r13 source appear. The agent’s unsourced guess stops above the gate, bounces back and is kept in Thread 6.",
+    "24.1–27s: A green tests: run @r13 record travels from the approved source to the gate, passes, and replaces the old memory row. SAVED marks the completed write; it does not report an executed test.",
+    "27–32.2s: Run 7 and Thread 7 appear. The new run retrieves run @r13, then shows RUN TESTS. The result is held before the complete image fades to black."
+  ],
+  "limitations": [
+    "Illustrative application logic: source/revision metadata alone does not prove approval or enforce permissions. The displayed source is assumed to have been reviewed.",
+    "Three repeated skipped-test outcomes illustrate risk, not a model capability or guaranteed failure rate. No actual agent integration or tests were executed.",
+    "The animation switches between threads. Older thread checkpoints may persist; deletion and retention are not demonstrated.",
+    "The gate blocks future writes; the already stored bad entry remains until the explicit replacement at 25.45s.",
+    "Audio was checked by decoded peak levels, scheduled-cue window energy and spectrogram, not listened to. Comparative evidence is in reviews/comparisons/memory-architecture/."
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    "21.6–24.7s: move packet entry, exit and rejection marks away from gate labels.",
+    "20.3–25.45s: show approved TESTS.md r13 as the correction source, then pass its record through the write gate.",
+    "11.6/15.3/18.5s: replace ambiguous FAIL badges with NO TESTS; 25.9s says SAVED and 29s says RUN TESTS.",
+    "Label each new thread separately; enlarge small record and gate text and widen thread rows.",
+    "Fade the complete image for identical opening/closing frames; preserve the original seven-run story."
+  ],
+  "verification": {
+    "review": "reviews/comparisons/memory-architecture/after.md",
+    "sha256": "d991bdd4cf8650a7480a801f75ab4e9e5d387da44109461eaa0c7137fc3fccef",
+    "audioHeard": false
+  }
+}

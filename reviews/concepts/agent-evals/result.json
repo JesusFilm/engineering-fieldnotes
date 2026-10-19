@@ -1,0 +1,25 @@
+{
+  "id": "agent-evals",
+  "placement": "core",
+  "verifiedSources": [
+    "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+    "https://www.anthropic.com/engineering/writing-tools-for-agents",
+    "https://www.swebench.com/SWE-bench/guides/evaluation/"
+  ],
+  "changes": [
+    "Fresh claim-by-claim review by gpt-6-astra with high reasoning; keep as core and revise.",
+    "Expanded to a standalone 734-word guide with observable outcomes, workflow, walkthrough, pitfalls and exercise.",
+    "Replaced ticket illustration with a concrete coding-agent authentication regression example.",
+    "Added clean fixtures, repeated trials, held-out tasks, independent grading and distinction between environment and agent failure.",
+    "Preserved id/title/category/roles/related; added reviewed date 2026-10-19.",
+    "Created independent Astra video showing new-test pass, regression failure, block, revision and human review."
+  ],
+  "limitations": [
+    "Sources are primary engineering guidance; no team-specific improvement has been measured.",
+    "The exercise and authentication patches are illustrative, not executed agent trials.",
+    "Three trials do not estimate production reliability; two checks do not establish authentication security.",
+    "Evaluation measures behavior; runtime controls must enforce permissions.",
+    "This self-review does not select a recommended video across models."
+  ]
+}

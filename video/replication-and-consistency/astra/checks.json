@@ -1,0 +1,62 @@
+{
+  "author": "gpt-6-astra",
+  "reasoning": "high",
+  "date": "2026-10-19",
+  "sha256": "89c73865b893097c6691f8f9fd87cd4a5510921705096952ac0cd7abea34d441",
+  "bytes": 495065,
+  "duration": 30,
+  "frames": 900,
+  "video": "H264 1080x1920 30fps yuv420p",
+  "audio": "AAC stereo 44100Hz",
+  "fullDecode": true,
+  "exactFirstLastEquality": true,
+  "boundaryMD5": "eb31442608984c1aa5939de6decc4443",
+  "maxVolumeDbfs": -6.4,
+  "faststart": true,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "bytes": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "bytes": 33124
+    },
+    {
+      "type": "free",
+      "offset": 33156,
+      "bytes": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 33164,
+      "bytes": 461901
+    }
+  ],
+  "cueCount": 28,
+  "allCuesHaveDecodedEnergy": true,
+  "maxCueFrameGridErrorMs": 0.0,
+  "physicalListening": false,
+  "poster": {
+    "sha256": "10622f704f5bde15ac1454907f2225216c5afbba1ae5b4cf8638afac59f1600b",
+    "bytes": 106104,
+    "width": 1080,
+    "height": 1920
+  },
+  "visualReview": {
+    "encodedContactSheet": true,
+    "phoneBeatTimes": [
+      4,
+      8.8,
+      13.7,
+      19.6,
+      24.8
+    ],
+    "phoneWidth": 350,
+    "spectrogram": true,
+    "reviewer": "gpt-6-astra",
+    "independent": false
+  }
+}

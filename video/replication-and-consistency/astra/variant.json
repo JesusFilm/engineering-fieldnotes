@@ -1,0 +1,47 @@
+{
+  "id": "astra",
+  "concept": "replication-and-consistency",
+  "title": "Verify the write",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "A stale verification read is not proof that a write failed: check the committed revision through a fresh authoritative read before taking another action.",
+  "src": "media/replication-and-consistency/astra.mp4",
+  "poster": "media/replication-and-consistency/astra.jpg",
+  "duration": 30,
+  "verified": true,
+  "limitations": [
+    "Illustrative single-writer sequence; timings are not measured replica lag.",
+    "Primary verification assumes a fresh post-commit query, no intervening cache, and an available primary.",
+    "Application revisions and HOLD policy are proposed tool design, not automatic model or database guarantees.",
+    "Does not demonstrate failover, concurrent writers, synchronous replication modes, external deployment completion, or permission enforcement.",
+    "Audio was analyzed numerically and visually, not physically listened to.",
+    "Self-reviewed; independent comparative ranking and editorial promotion remain separate."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5.4,
+      "text": "An agent tool reads a caught-up replica. Version 7 returns and matches the current state; no write has been made."
+    },
+    {
+      "start": 5.4,
+      "end": 10.4,
+      "text": "One write commits version 8 on the primary. The acknowledgement makes the agent expect version 8, while the replica still holds version 7."
+    },
+    {
+      "start": 10.4,
+      "end": 16.2,
+      "text": "Verification reads the replica and receives version 7. The tool shows the mismatch and holds further action; it does not repeat the write. Attention shifts to the primary."
+    },
+    {
+      "start": 16.2,
+      "end": 21,
+      "text": "A fresh primary read returns version 8, matching the acknowledged revision. Verification succeeds even though the replica is still behind. This example assumes one writer and no intervening cache."
+    },
+    {
+      "start": 21,
+      "end": 30,
+      "text": "Replication later applies version 8 on the replica. The write count remains one. The scene fades to its matching dark endpoint; the illustrated delay is not a latency guarantee."
+    }
+  ]
+}

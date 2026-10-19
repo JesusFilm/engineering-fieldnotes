@@ -1,0 +1,381 @@
+{
+  "checked_at_utc": "2026-10-18T23:51:57.290574+00:00",
+  "movie_sha256": "15e7ece8b04a262106ed9bcd984d4beffc42de956784af3911de42bb22463cc9",
+  "poster_sha256": "2f576c3564fd523c8f67a97c3a3240d55ade32630de70bedf4d916ed62d563fc",
+  "scene_sha256": "c8869746269705e410f2bf4e2499ea82a83101e5b23c7213c32ece5cbbd6020c",
+  "movie_bytes": 987182,
+  "poster_bytes": 111507,
+  "duration": 32.0,
+  "frames": 960,
+  "video": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "30/1"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "44100",
+    "channels": 2,
+    "bit_rate": "42415"
+  },
+  "max_volume_dbfs": -5.8,
+  "full_decode": "passed",
+  "first_last_exact_rgb_equality": true,
+  "first_last_rgb_sha256": "1f56bd4f609fab80a2b9cce7487d5c08de2768476849e1353881ca748d8d3b6a",
+  "top_level_atoms": [
+    "ftyp",
+    "moov",
+    "free",
+    "mdat"
+  ],
+  "faststart": true,
+  "sound_cues": 56,
+  "cue_window_checks": [
+    {
+      "time": 0.2,
+      "preset": "recover",
+      "rms_180ms_dbfs": -34.06,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 0.75,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.45,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 1.2,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -26.65,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 1.4,
+      "preset": "send",
+      "rms_180ms_dbfs": -35.12,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 1.8499999999999999,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -22.93,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 1.85,
+      "preset": "hit",
+      "rms_180ms_dbfs": -22.93,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 2.25,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.22,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 2.7,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -28.18,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 2.95,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.65,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 3.4000000000000004,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -22.94,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 3.4,
+      "preset": "chime",
+      "rms_180ms_dbfs": -22.94,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 5.3,
+      "preset": "crash",
+      "rms_180ms_dbfs": -16.88,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 5.9,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.38,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 6.3500000000000005,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -26.33,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 6.5,
+      "preset": "send",
+      "rms_180ms_dbfs": -32.94,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 6.9,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -28.21,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 7.35,
+      "preset": "thump",
+      "rms_180ms_dbfs": -23.13,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 7.65,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.4,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 8.05,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -28.19,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 8.5,
+      "preset": "thump",
+      "rms_180ms_dbfs": -23.12,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 8.8,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.74,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 9.200000000000001,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -28.2,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 9.65,
+      "preset": "thump",
+      "rms_180ms_dbfs": -23.12,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 9.85,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.13,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 10.25,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -26.28,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 10.4,
+      "preset": "send",
+      "rms_180ms_dbfs": -32.67,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 10.85,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -26.46,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 11,
+      "preset": "send",
+      "rms_180ms_dbfs": -32.94,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 11.4,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -28.47,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 11.85,
+      "preset": "thump",
+      "rms_180ms_dbfs": -23.19,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 12.15,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.37,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 12.55,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -28.17,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 13,
+      "preset": "thump",
+      "rms_180ms_dbfs": -23.15,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 13.3,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.4,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 13.700000000000001,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -28.21,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 14.15,
+      "preset": "thump",
+      "rms_180ms_dbfs": -22.71,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 14.15,
+      "preset": "miss",
+      "rms_180ms_dbfs": -22.71,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 16,
+      "preset": "store",
+      "rms_180ms_dbfs": -28.23,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 17.5,
+      "preset": "clock",
+      "rms_180ms_dbfs": -51.67,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 18.4,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.33,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 18.849999999999998,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -26.66,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 19.1,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.33,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 19.5,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -28.18,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 20.1,
+      "preset": "thump",
+      "rms_180ms_dbfs": -23.13,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 20.1,
+      "preset": "clock",
+      "rms_180ms_dbfs": -23.13,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 21.4,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.37,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 21.799999999999997,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -28.18,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 22.4,
+      "preset": "thump",
+      "rms_180ms_dbfs": -23.07,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 22.4,
+      "preset": "clock",
+      "rms_180ms_dbfs": -23.07,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 24.2,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.36,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 24.599999999999998,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -28.19,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 25.1,
+      "preset": "thump",
+      "rms_180ms_dbfs": -23.24,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 25.8,
+      "preset": "send",
+      "rms_180ms_dbfs": -36.34,
+      "nearest_frame_delta_ms": 0.0
+    },
+    {
+      "time": 26.35,
+      "preset": "arrive",
+      "rms_180ms_dbfs": -22.77,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 26.35,
+      "preset": "deliver",
+      "rms_180ms_dbfs": -22.77,
+      "nearest_frame_delta_ms": 16.667
+    },
+    {
+      "time": 29.6,
+      "preset": "poof",
+      "rms_180ms_dbfs": -37.1,
+      "nearest_frame_delta_ms": 0.0
+    }
+  ],
+  "physical_listening": false,
+  "manual_visual_review": "Recorded separately in review.md",
+  "source_files_sha256": {
+    "engine/flow-engine.js": "2d05d00b133217fa84ff85b7e9081f39920f5e12b7e023b6de32581548620254",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "engine/render.mjs": "b7f11a86a2bf724751b01455b1f75c603023793e211f563c6ea69b564620cf8f",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e"
+  }
+}

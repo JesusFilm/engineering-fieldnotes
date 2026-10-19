@@ -1,0 +1,26 @@
+{
+  "id": "human-in-the-loop",
+  "title": "Human-in-the-loop",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Tech lead"
+  ],
+  "summary": "Human-in-the-loop systems pause execution where a person must supply judgment or authorization.",
+  "overview": "A durable checkpoint preserves the proposed action while the system waits. Resumption must account for changed state and any code that the runtime executes again.",
+  "why": "An approval is useful only when the reviewer can understand the action being approved.",
+  "example": "Before applying a database migration, show the exact migration and target environment, persist the decision, and recheck prerequisites on resume.",
+  "judgment": "Choose approval boundaries and invalidate approval when the proposed action materially changes.",
+  "next": "What happens if the target schema changes while a migration awaits review?",
+  "sources": [
+    {
+      "title": "Interrupts \u2014 LangGraph",
+      "url": "https://docs.langchain.com/oss/python/langgraph/interrupts"
+    }
+  ],
+  "related": [
+    "guardrails-and-permissions",
+    "idempotency",
+    "loop-engineering"
+  ]
+}

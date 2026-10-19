@@ -1,0 +1,7 @@
+[
+  "0\u20138.35s: Task 7 calls charge() and receives 200 from the Billing API. The agent records invoke_agent and execute_tool under trace 4bf9; the service records POST /charge 200 under trace 91c0. Another caller adds trace a7e3. The task succeeds despite the missing trace connection.",
+  "8.35\u201317.56s: Task 8 receives a downstream 500. Its agent trace is c3a1, while the service failure is recorded under 0d12. A red dashed join appears at 13.85s, the service rows are scanned, and a question mark appears at 15.26s: none matches c3a1.",
+  "17.56\u201319.96s: The old agent trace clears. At 18.26s charge() gains + traceparent with a blue pulse, representing propagation configured for subsequent requests.",
+  "19.96\u201325.36s: New task 9 starts under trace 7e2d. A blue traceparent 7e2d chip crosses to the service around 22.01\u201322.56s. The API still returns 500; its new recorded span has trace 7e2d, matching the agent trace.",
+  "25.36\u201329.57s: A blue flowing dotted join routes to the matching 7e2d API row. Unrelated rows dim, the matching error row gains a blue selection outline while retaining its red failure status, and the question mark becomes a check. The linked failure holds until 28.56s, then the stage fades to the opening title card. Correlation is repaired; the API failure remains."
+]

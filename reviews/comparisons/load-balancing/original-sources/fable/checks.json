@@ -1,0 +1,80 @@
+{
+  "file": "../../../public/media/load-balancing/fable.mp4",
+  "checks": {
+    "format": {
+      "ok": true,
+      "detail": {
+        "video": [
+          "h264",
+          "yuv420p",
+          1080,
+          1920,
+          "30/1"
+        ],
+        "audio": "aac",
+        "duration": 31.766667,
+        "bytes": 1759025
+      }
+    },
+    "durationRange": {
+      "ok": true,
+      "detail": 31.766667
+    },
+    "sizeUnder2MB": {
+      "ok": true,
+      "detail": 1759025
+    },
+    "fullDecode": {
+      "ok": true,
+      "detail": "clean"
+    },
+    "boundaryFramesIdentical": {
+      "ok": true,
+      "detail": {
+        "bytesDiffering": 0
+      }
+    },
+    "faststart": {
+      "ok": true,
+      "detail": {
+        "ftyp": 0,
+        "moov": 32,
+        "free": 34059,
+        "mdat": 34067
+      }
+    },
+    "audioPeak": {
+      "ok": true,
+      "detail": {
+        "maxDbfs": -1,
+        "meanDbfs": -24.2
+      }
+    },
+    "cueSync": {
+      "ok": true,
+      "detail": {
+        "cues": 106,
+        "window": "60-70 ms after cue vs 80 ms before",
+        "unconfirmed": []
+      }
+    },
+    "poster": {
+      "ok": true,
+      "detail": {
+        "codec": "mjpeg",
+        "width": 1080,
+        "height": 1920,
+        "bytes": 86190
+      }
+    }
+  },
+  "ok": true,
+  "duration": 31.766667,
+  "bytes": 1759025,
+  "frames": 953,
+  "audioPeakDbfs": -1,
+  "cues": 106,
+  "sha256": "7894be7ad4ac5fcc52930ca4bf5b92f3a0975a8c542159d2a1ab935266bd4d80",
+  "audioHeard": false,
+  "checkedAt": "2026-10-18T23:19:16.145Z"
+}

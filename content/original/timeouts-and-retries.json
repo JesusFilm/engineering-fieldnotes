@@ -1,0 +1,26 @@
+{
+  "id": "timeouts-and-retries",
+  "title": "Timeouts and retries",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Timeouts bound waiting, while controlled retries recover from some transient failures.",
+  "overview": "A timed-out request may already have changed remote state. Retries therefore need safe operation semantics, bounded attempts, and backoff with jitter to avoid synchronized load.",
+  "why": "Aggressive retries can amplify an outage rather than recover from it.",
+  "example": "A checkout client retries a transient connection failure using the same idempotency key, with randomized delay and an overall deadline.",
+  "judgment": "Choose retryable failures, latency budgets, and which layer owns retries.",
+  "next": "How many downstream attempts can one user request generate across all retrying layers?",
+  "sources": [
+    {
+      "title": "Timeouts, retries, and backoff with jitter \u2014 AWS",
+      "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+    }
+  ],
+  "related": [
+    "idempotency",
+    "queues-and-backpressure",
+    "loop-engineering"
+  ]
+}

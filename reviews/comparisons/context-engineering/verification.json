@@ -1,0 +1,144 @@
+{
+  "id": "context-engineering",
+  "date": "2026-10-19",
+  "media": {
+    "baseline": {
+      "path": "public/media/context-engineering/baseline.mp4",
+      "sha256": "00cb76dc9211fde7120d769f43137bc3c5bc48a6a361f581266a10b43cc5485d",
+      "duration": 25.0,
+      "videoDuration": 25.0,
+      "frames": 750,
+      "codec": "h264",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "sampleRate": 44100,
+      "maxAudioDbfs": -10.478425025939941,
+      "fullDecodePassed": true,
+      "exactEndpointsEqual": true,
+      "firstFrameRGBSHA256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+      "lastFrameRGBSHA256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+      "faststart": true,
+      "boxes": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 28280
+        },
+        {
+          "type": "free",
+          "offset": 28312,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 28320,
+          "size": 597294
+        }
+      ],
+      "audioHeard": false
+    },
+    "astra": {
+      "path": "public/media/context-engineering/astra.mp4",
+      "sha256": "a56bb2d0a3aefc569b46893e5428a6b7cb5f9c51740493146e88ae8b361519e1",
+      "duration": 30.0,
+      "videoDuration": 30.0,
+      "frames": 900,
+      "codec": "h264",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "sampleRate": 44100,
+      "maxAudioDbfs": -1.9596199989318848,
+      "fullDecodePassed": true,
+      "exactEndpointsEqual": true,
+      "firstFrameRGBSHA256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+      "lastFrameRGBSHA256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+      "faststart": true,
+      "boxes": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 33324
+        },
+        {
+          "type": "free",
+          "offset": 33356,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 33364,
+          "size": 467261
+        }
+      ],
+      "audioHeard": false
+    },
+    "fable": {
+      "path": "public/media/context-engineering/fable.mp4",
+      "sha256": "6051b9707ed991fa28d77eb3b407712ed2b89b2d90f30216ea355e0e05c393e9",
+      "duration": 25.777007,
+      "videoDuration": 25.766667,
+      "frames": 773,
+      "codec": "h264",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "pixelFormat": "yuv420p",
+      "audioCodec": "aac",
+      "sampleRate": 44100,
+      "maxAudioDbfs": -4.086205959320068,
+      "fullDecodePassed": true,
+      "exactEndpointsEqual": true,
+      "firstFrameRGBSHA256": "4af165389447a6b69021e2e88b45a4ce4b0f9fddfd31876f57999b2cf3a4d658",
+      "lastFrameRGBSHA256": "4af165389447a6b69021e2e88b45a4ce4b0f9fddfd31876f57999b2cf3a4d658",
+      "faststart": true,
+      "boxes": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 27644
+        },
+        {
+          "type": "free",
+          "offset": 27676,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 27684,
+          "size": 1492898
+        }
+      ],
+      "audioHeard": false
+    }
+  },
+  "inspection": {
+    "visual": "Decoded contact sheets across each complete cut, native 1080px and 350px frames at causal beats, crowded transitions and endings; revised encodes rechecked. Whole streams decoded; not every frame manually inspected.",
+    "audio": "Decoded AAC sample peak, RMS event windows matched to scene cue schedule, volumedetect and spectrogram inspection. Audio not heard.",
+    "audioHeard": false,
+    "sources": "sources.md",
+    "blindFindings": "before.md",
+    "finalFindings": "after.md",
+    "ffmpegThreadLimit": 2
+  }
+}

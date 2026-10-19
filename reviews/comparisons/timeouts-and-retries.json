@@ -1,0 +1,53 @@
+{
+  "id": "timeouts-and-retries",
+  "recommended": "astra",
+  "rationale": "Start with Retry budget: its clock keeps draining through the wait and second attempt, then runtime code blocks another request and returns STATUS UNKNOWN. One retry owner makes the complementary cost of nested retries concrete by counting six downstream calls before reducing them to three. The revised original is the clearest demonstration that a service can finish after its caller times out, but it does not show an overall deadline or exhaustion.",
+  "findings": [
+    "Astra 08–20s shows a single twelve-second budget: five seconds waiting, two seconds backoff, then at most five seconds for the last attempt. Its 20–23s unknown result and blocked repeat make the runtime stopping rule more explicit than either alternative.",
+    "Sol 05.3–16s makes two agent invocations × three tool attempts visible as six persistent call slots. At 19.1–25.1s one retry owner uses three attempts within six seconds, including two waits; the deadline cuts the third response wait short.",
+    "Baseline 10–13.4s uniquely keeps the remote service working after local TIMEOUT, then rejects its late response. Its successful retry at 14.5–17.1s is useful contrast, but cannot substitute for Astra’s exhausted-budget ending.",
+    "At 350px, Astra has the clearest actor/state hierarchy. Baseline’s enlarged labels now communicate the late-response mechanism, though its dispersed layout requires more eye movement; Sol’s call slots preserve the count when individual timeout labels change quickly at 06–14s.",
+    "Baseline’s sampled backoff is now 4.5 seconds (10–14.5s), with the stale success state reset before retry and the delay indicator removed. Astra’s long countdown buys arithmetic clarity; Sol’s 26.4–29.6s final hold is readable but slightly slack.",
+    "None of the three depicts many clients, safe write retries, or confirmed remote cancellation. Baseline 10–14.5s and Sol 20.1–24.2s illustrate sampled waits, not proof of fleet-level jitter; the guide supplies these boundaries."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "sol": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "89da1fe9032322631818afb5305e00e7acd15dc4b315211c783f346884ff1077",
+    "astra": "4b44dbe3e40a7e2c82f86a7f3b08524463e78629987c9abaed28d9860751c0db",
+    "sol": "15e7ece8b04a262106ed9bcd984d4beffc42de956784af3911de42bb22463cc9"
+  },
+  "contentVerdict": "Keep as core after tool design. An unattended agent needs executable limits on waiting, attempts, repeated logical operations, and uncertainty before it can safely use remote tools. The guide connects familiar reliability concepts to an observable fault-injection exercise; provider-specific idempotency and transport retry details remain supporting references. Clarified new-task versus repeated-operation budgets, cooperative cancellation, runtime overhead, hidden retries, and late completion without expanding the chapter into a reliability survey.",
+  "verified": true,
+  "defectsFixed": [
+    "Baseline: improved 350px state/packet/limit legibility and cleared moving-chip/caption spacing; shortened idle backoff; reset stale success before retry; cleared spent delay; changed full-frame fade; rerendered the 21s MP4 and poster and matched its transcript.",
+    "Sol: corrected transcript/limitations to distinguish failed tool result from unknown remote execution, and identify the third response wait as the interval truncated by the deadline. Encoded media and GPT-6.1 Sol provenance remain unchanged.",
+    "Guide: clarified operation identity and legitimate fresh budgets, cooperative cancellation without rollback guarantees, remaining-time arithmetic, hidden retry accounting, and four fault-injection modes with observable late-completion/non-retryable outcomes."
+  ],
+  "limitations": [
+    "Audio was analysed using full decode, peaks, spectrograms and cue-window energy; it was not physically heard. Overlapping energy is not proof of perceptual separation or pleasantness.",
+    "Visual review used decoded contact sheets and selected exact full-resolution/350px causal, busy, transition and ending frames, not a claim of human real-time playback or inspection of every frame.",
+    "File identifiers and user-supplied provenance were already visible; before.md records a source/review-blind comparison, not perfect model blinding.",
+    "Illustrative timing and attempt limits are not production defaults. A sampled delay does not demonstrate fleet desynchronisation, and read examples do not establish write safety.",
+    "All three final media files were fully decoded and hash-bound. Whole-library release build/checks and publication are outside this topic-only review; shared verification manifests were not modified.",
+    "Desktop/phone chapter and comparison checks used a scoped preview. Native paused-player controls temporarily cover the lowest auxiliary captions; unrelated navigation and live hosting were not tested."
+  ]
+}

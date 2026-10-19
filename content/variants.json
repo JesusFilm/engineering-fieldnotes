@@ -1,0 +1,92 @@
+{
+  "harness-engineering": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "loop-engineering": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "context-engineering": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "tool-design": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "memory-architecture": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "orchestration-patterns": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "guardrails-and-permissions": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "agent-evals": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "human-in-the-loop": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "observability-and-tracing": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "load-balancing": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "cache-aside": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "queues-and-backpressure": [
+    "baseline",
+    "astra",
+    "sol"
+  ],
+  "idempotency": [
+    "baseline",
+    "astra",
+    "fable"
+  ],
+  "replication-and-consistency": [
+    "baseline",
+    "astra",
+    "sol"
+  ],
+  "timeouts-and-retries": [
+    "baseline",
+    "astra",
+    "sol"
+  ],
+  "canary-deployments": [
+    "baseline",
+    "astra",
+    "sol"
+  ],
+  "oauth-pkce": [
+    "baseline",
+    "astra",
+    "sol"
+  ]
+}

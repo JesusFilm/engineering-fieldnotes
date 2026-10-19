@@ -1,0 +1,85 @@
+{
+  "id": "tool-design",
+  "title": "Tool design",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Design tool contracts that let an agent distinguish evidence, absence, and failure before it acts.",
+  "overview": "A tool is an executable interface the model can request: an operation with documented inputs, results, and errors. The application executes it. MCP, the Model Context Protocol, specifies one way to expose these interfaces. A valid response shape does not establish that the underlying data is complete or correct.",
+  "why": "During manual incident triage, an engineer notices a failed dashboard request and investigates. When an agent receives only the adapter’s output, that distinction must survive the interface. Returning an empty list after a timeout can turn missing evidence into a confident claim that nothing happened. Start with one read-only workflow before delegating operational changes.",
+  "example": "An engineer asks whether payments had incidents during the last hour. Propose search_incidents(service, start_time, end_time, limit, cursor). Return incident IDs, short summaries, the searched interval, and a continuation cursor. A completed empty search returns status=ok with items=[]; a backend timeout returns status=error with code=TIMEOUT. These are illustrative application fields, not mandatory MCP fields. With MCP, report execution failure using isError=true. A client-side transport timeout may produce no tool result at all; the caller must preserve that failure too.",
+  "judgment": "Choose granularity around a useful task and its failure boundaries. Searching and fetching one incident can be separate; searching, deciding, and closing an incident should not be one opaque action. Keep IDs for follow-up reads. Evaluate concise output without omitting uncertainty, pagination, or evidence.",
+  "next": "Can your agent distinguish a complete empty search, a partial result, and a failed lookup in recorded runs, without help from a person reading backend logs?",
+  "sources": [
+    {
+      "title": "Anthropic engineering: Writing effective tools for agents",
+      "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "MCP specification 2025-11-25: Tools, results, errors and security",
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "JSON Schema: Object properties and validation",
+      "url": "https://json-schema.org/understanding-json-schema/reference/object",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "AWS Builders’ Library: Timeouts, retries, and backoff with jitter",
+      "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "context-engineering",
+    "guardrails-and-permissions",
+    "agent-evals"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Teams adopting agents already know API design, but now a model selects operations and interprets their results. Making uncertainty explicit gives the team a small, observable improvement to implement before expanding autonomy.",
+    "prerequisites": [],
+    "outcomes": [
+      "Specify a bounded incident-search interface with useful follow-up identifiers.",
+      "Demonstrate separate successful-empty, partial, and execution-error results.",
+      "Evaluate the agent’s conclusion and enforce a retry budget in application code."
+    ],
+    "workflow": {
+      "before": "An engineer searches dashboards, notices failed requests, reads incident records, and writes a triage note.",
+      "after": "An agent requests a bounded search, fetches relevant records, and drafts a note citing the returned IDs and unresolved gaps.",
+      "human": "The engineer defines access and retry policies, checks evidence, and owns incident decisions and production changes."
+    },
+    "walkthrough": [
+      "1. Write the decision first: identify incidents for payments within an explicit UTC interval. Define inclusive start and exclusive end, a maximum result count, and what a continuation cursor means. State that this operation reads records and does not close incidents. These choices are a proposed team contract.",
+      "2. Validate arguments before the backend call. JSON Schema properties alone do not make fields required or forbid extra keys; declare those constraints deliberately. Validate the interval and authorize the caller against the requested service in server code. Tool names, descriptions, annotations, and persistent prompts are not access controls.",
+      "3. Preserve what happened. Return successful empty results only after the specified search completed. Expose more available results through a cursor; if coverage is incomplete, return that limitation explicitly. Model a timeout as an error, not an empty collection. Publish and validate structured results where your integration supports them. A result-count limit does not bound bytes or tokens when individual records are large; cap or summarize record fields and expose any omitted coverage.",
+      "4. Define the next safe action outside the model. For this read-only exercise, allow one delayed retry for a transient timeout; otherwise report the lookup as unresolved. The application counts attempts. Production policies should account for backend load, deadlines, backoff, and jitter; retrying writes additionally requires safe side-effect handling.",
+      "5. Inspect recorded requests, responses, and final answers across repeated runs. Compare whether the agent reports uncertainty and cites real records, then assess tool calls and output size. A cleaner schema is a hypothesis until the task outcomes improve; successful retrieval still does not establish an incident’s root cause."
+    ],
+    "pitfalls": [
+      "Catching every exception and returning [] hides an outage as a clean search.",
+      "Dropping pagination or coverage fields makes a short result look exhaustive.",
+      "Relying on a retry hint in text leaves the actual call budget unenforced.",
+      "Treating an incident summary as an instruction lets retrieved text steer actions."
+    ],
+    "exercise": {
+      "title": "Make an incident lookup fail honestly",
+      "steps": [
+        "Stub four responses: one incident, completed empty, partial results, and timeout.",
+        "Add argument validation, explicit outcomes, and an application-enforced retry limit.",
+        "Run the same triage request against each fixture several times; capture calls and answers.",
+        "Review incorrect conclusions with a teammate and revise the contract or caller."
+      ],
+      "success": [
+        "Timeout and partial fixtures never produce an unqualified “no incidents” conclusion in the recorded runs.",
+        "Successful answers cite fixture IDs; the timeout case stays within the configured attempt budget.",
+        "Invalid intervals and unauthorized service requests are rejected before backend execution."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Flow video preview</title>
+<style>
+ html,body{margin:0;background:#111;color:#ccc;font:14px -apple-system,sans-serif;height:100%}
+ #wrap{display:flex;flex-direction:column;align-items:center;height:100%}
+ canvas{height:calc(100% - 56px);aspect-ratio:9/16;background:#000}
+ #bar{display:flex;gap:10px;align-items:center;padding:10px;width:min(620px,96%)}
+ input[type=range]{flex:1}
+</style></head>
+<body><div id="wrap"><canvas id="c"></canvas>
+<div id="bar"><button id="pp">Play ▶ (sound)</button><input id="seek" type="range" min="0" max="1000" value="0"><span id="tc">0.00s</span>
+<label>speed <select id="spd"><option>0.6</option><option>0.7</option><option>0.8</option><option>0.9</option><option selected>1</option><option>1.2</option></select></label></div></div>
+<script src="flow-engine.js"></script>
+<script src="sfx.js"></script>
+<script>
+  // ?scene=<path to scene .js>  &speed=0.8  &render=1 (used by render.mjs; no autoplay)
+  const q = new URLSearchParams(location.search);
+  const el = document.createElement('script');
+  el.src = q.get('scene');
+  el.onload = async () => {
+    await document.fonts.ready;
+    const def = window.__sceneDef;
+    if (q.get('speed')) def.metaOverride = { speed: +q.get('speed') };
+    const sc = FlowVideo.createScene(def);
+    const cv = document.getElementById('c');
+    cv.width = sc.meta.width; cv.height = sc.meta.height;
+    const ctx = cv.getContext('2d', {willReadFrequently: true});
+    const D = sc.meta.renderDuration;
+    window.__meta = sc.meta;
+    window.__audio = () => ({ cues: sc.audioCues(), sounds: sc.sounds, duration: D });
+    window.__frame = (t) => { sc.draw(ctx, t); return cv.toDataURL('image/png'); };
+    window.__ready = true;
+    if (q.get('render')) { document.getElementById('bar').style.display = 'none'; return; }
+    const spd = document.getElementById('spd'); spd.value = String(sc.meta.speed);
+    spd.onchange = () => { q.set('speed', spd.value); location.search = q.toString(); };
+    // Audio: synthesise the whole track once, play it in sync with the timeline.
+    let actx = null, buf = null, src = null;
+    function ensureAudio() {
+      if (actx) return;
+      actx = new AudioContext();
+      const a = SFX.render(sc.audioCues(), D, { sampleRate: actx.sampleRate, presets: sc.sounds });
+      buf = actx.createBuffer(2, a.left.length, a.sampleRate); buf.copyToChannel(a.left, 0); buf.copyToChannel(a.right, 1);
+    }
+    function startAudio(at) { stopAudio(); if (!actx) return; src = actx.createBufferSource(); src.buffer = buf; src.loop = true; src.connect(actx.destination); src.start(0, at % D); }
+    function stopAudio() { if (src) { try { src.stop(); } catch (e) {} src = null; } }
+    let playing = false, t0 = performance.now(), t = 0;
+    const pp = document.getElementById('pp'), seek = document.getElementById('seek'), tc = document.getElementById('tc');
+    function setPlaying(v) { playing = v; pp.textContent = v ? 'Pause' : 'Play ▶ (sound)'; t0 = performance.now() - t * 1000; if (v) { ensureAudio(); startAudio(t); } else stopAudio(); }
+    pp.onclick = () => setPlaying(!playing);
+    seek.oninput = () => { t = seek.value / 1000 * D; t0 = performance.now() - t * 1000; if (playing) startAudio(t); };
+    document.onkeydown = (e) => { if (e.key === ' ') { e.preventDefault(); pp.click(); } if (e.key === 'ArrowRight') { setPlaying(false); t = Math.min(D, t + 1 / sc.meta.fps); } if (e.key === 'ArrowLeft') { setPlaying(false); t = Math.max(0, t - 1 / sc.meta.fps); } };
+    (function loop() {
+      if (playing) t = ((performance.now() - t0) / 1000) % D;
+      sc.draw(ctx, t); seek.value = t / D * 1000; tc.textContent = t.toFixed(2) + 's';
+      requestAnimationFrame(loop);
+    })();
+  };
+  document.body.appendChild(el);
+</script></body></html>
+

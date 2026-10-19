@@ -1,0 +1,34 @@
+{
+  "id": "baseline",
+  "concept": "cache-aside",
+  "title": "Miss, hit and expiry",
+  "model": "Original prototype; model not recorded",
+  "editedBy": "gpt-6-astra comparative review",
+  "lesson": "The application owns lookup, database read and cache fill. A hit avoids a source read, while expiration causes a later miss.",
+  "src": "media/cache-aside/baseline.mp4",
+  "poster": "media/cache-aside/baseline.jpg",
+  "duration": 24,
+  "verified": true,
+  "transcript": [
+    "0–8s: The caller asks the application for data. A cache miss causes a database read, cache fill and response. The TTL bar begins draining immediately when the entry is stored.",
+    "8.5–15.5s: A later request hits without a database read or TTL renewal. The bar keeps draining, the clock marks the approaching expiry, and the entry expires at 14.5s.",
+    "16–24s: A new request misses and repeats the source read and cache fill. The caller receives the result before the stage fades; the title remains at both loop boundaries."
+  ],
+  "corrections": [
+    "Added topic title, caller label and TTL label.",
+    "The TTL bar now drains continuously from each fill, including across the hit, instead of remaining full until a late countdown.",
+    "Used the topic-local normalized encoder with deterministic first/last frames and two-thread limits."
+  ],
+  "limitations": [
+    "Illustrative timing; no performance benchmark or recommended TTL.",
+    "No source writes or concurrency are shown; a hit or unexpired entry does not prove freshness.",
+    "Audio analysed, not listened to."
+  ],
+  "originalSha256": "3e4f4ad2069aa1b86d9f46450937b07eec3f593a8256386356a4d0ecdda8c51e",
+  "verification": {
+    "record": "video/cache-aside/baseline/verification.json",
+    "comparativeReview": "reviews/comparisons/cache-aside/after.md",
+    "sha256": "552d6ff43a879b40776fcf5e0a58bd8cb54c1302d067340e674ebb6fefc8ec8c",
+    "audioHeard": false
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "astra",
+  "concept": "cache-aside",
+  "title": "A hit can be stale",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Recognize a stale runbook cache hit and trace explicit invalidation followed by a tool-managed source read and refill.",
+  "src": "media/cache-aside/astra.mp4",
+  "poster": "media/cache-aside/astra.jpg",
+  "duration": 31.0,
+  "verified": true,
+  "limitations": [
+    "Illustrative serialized recovery; invalidation does not guarantee consistency under concurrent writes, stale fills or failed deletion.",
+    "Red highlighting shows the viewer a revision mismatch; the tool does not automatically detect stale data.",
+    "The editor and invalidation trigger are abstracted; the application layer owns deletion and refill.",
+    "TTL, permissions, outages and deployment execution are outside this cut; prompts do not enforce permissions.",
+    "Sound analyzed, not physically listened to; self-reviewed without a comparative recommendation."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 6.4,
+      "text": "The agent asks a read tool for a runbook. The tool finds revision 1 in the cache and returns it without reading the source. Both stored copies currently match."
+    },
+    {
+      "start": 6.4,
+      "end": 14.1,
+      "text": "An independent edit commits revision 2 to the source. The next request still gets revision 1 from the cache. Red highlighting reveals the mismatch to the viewer; it does not represent automatic freshness detection."
+    },
+    {
+      "start": 14.1,
+      "end": 17,
+      "text": "An explicit recovery action deletes the cached guide after the source edit. The cache entry becomes empty. The agent still holds its previously returned revision 1."
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "text": "The next lookup misses. The tool reads revision 2 from the source, writes it into the cache, and returns it to the agent. This example assumes those operations succeed without concurrent writes."
+    },
+    {
+      "start": 25,
+      "end": 31,
+      "text": "A repeat request now uses cached revision 2. The matching revisions hold on screen before a fade to black. This demonstrates reuse after recovery, not a guarantee that future reads remain fresh."
+    }
+  ]
+}

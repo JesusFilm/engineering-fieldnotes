@@ -1,0 +1,227 @@
+[
+  {
+    "t": 0.4,
+    "name": "recover",
+    "rmsNext0To220msDbfs": -34.38
+  },
+  {
+    "t": 1.2,
+    "name": "send",
+    "rmsNext0To220msDbfs": -59.29
+  },
+  {
+    "t": 2.1,
+    "name": "send",
+    "rmsNext0To220msDbfs": -59.93
+  },
+  {
+    "t": 3,
+    "name": "send",
+    "rmsNext0To220msDbfs": -59.99
+  },
+  {
+    "t": 3.3,
+    "name": "chime",
+    "rmsNext0To220msDbfs": -27.29
+  },
+  {
+    "t": 5.5,
+    "name": "store",
+    "rmsNext0To220msDbfs": -29.81
+  },
+  {
+    "t": 6,
+    "name": "work",
+    "rmsNext0To220msDbfs": -38.96
+  },
+  {
+    "t": 6.7,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.07
+  },
+  {
+    "t": 6.99,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.06
+  },
+  {
+    "t": 7.28,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.07
+  },
+  {
+    "t": 7.57,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.04
+  },
+  {
+    "t": 7.86,
+    "name": "send",
+    "rmsNext0To220msDbfs": -59.97
+  },
+  {
+    "t": 8.15,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.05
+  },
+  {
+    "t": 8.44,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.04
+  },
+  {
+    "t": 8.73,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.03
+  },
+  {
+    "t": 9.02,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.06
+  },
+  {
+    "t": 9.31,
+    "name": "send",
+    "rmsNext0To220msDbfs": -48.96
+  },
+  {
+    "t": 9.56,
+    "name": "arrive",
+    "rmsNext0To220msDbfs": -27.95
+  },
+  {
+    "t": 9.6,
+    "name": "send",
+    "rmsNext0To220msDbfs": -30.32
+  },
+  {
+    "t": 9.89,
+    "name": "send",
+    "rmsNext0To220msDbfs": -55.56
+  },
+  {
+    "t": 10.18,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.12
+  },
+  {
+    "t": 10.469999999999999,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.01
+  },
+  {
+    "t": 10.76,
+    "name": "send",
+    "rmsNext0To220msDbfs": -59.96
+  },
+  {
+    "t": 11.05,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.03
+  },
+  {
+    "t": 11.34,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.0
+  },
+  {
+    "t": 11.629999999999999,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.04
+  },
+  {
+    "t": 11.92,
+    "name": "send",
+    "rmsNext0To220msDbfs": -59.99
+  },
+  {
+    "t": 12.21,
+    "name": "send",
+    "rmsNext0To220msDbfs": -49.0
+  },
+  {
+    "t": 12.46,
+    "name": "arrive",
+    "rmsNext0To220msDbfs": -27.96
+  },
+  {
+    "t": 13,
+    "name": "clock",
+    "rmsNext0To220msDbfs": -52.98
+  },
+  {
+    "t": 14.5,
+    "name": "clock",
+    "rmsNext0To220msDbfs": -56.12
+  },
+  {
+    "t": 16.8,
+    "name": "send",
+    "rmsNext0To220msDbfs": -29.58
+  },
+  {
+    "t": 16.4,
+    "name": "work",
+    "rmsNext0To220msDbfs": -38.29
+  },
+  {
+    "t": 17,
+    "name": "arrive",
+    "rmsNext0To220msDbfs": -26.0
+  },
+  {
+    "t": 17.7,
+    "name": "crash",
+    "rmsNext0To220msDbfs": -15.8
+  },
+  {
+    "t": 18.1,
+    "name": "thump",
+    "rmsNext0To220msDbfs": -24.4
+  },
+  {
+    "t": 20,
+    "name": "send",
+    "rmsNext0To220msDbfs": -45.1
+  },
+  {
+    "t": 20.45,
+    "name": "thump",
+    "rmsNext0To220msDbfs": -22.25
+  },
+  {
+    "t": 22.6,
+    "name": "recover",
+    "rmsNext0To220msDbfs": -26.09
+  },
+  {
+    "t": 23.1,
+    "name": "chime",
+    "rmsNext0To220msDbfs": -24.5
+  },
+  {
+    "t": 23.6,
+    "name": "send",
+    "rmsNext0To220msDbfs": -59.54
+  },
+  {
+    "t": 24.5,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.05
+  },
+  {
+    "t": 25.4,
+    "name": "send",
+    "rmsNext0To220msDbfs": -60.01
+  },
+  {
+    "t": 25.65,
+    "name": "arrive",
+    "rmsNext0To220msDbfs": -26.83
+  },
+  {
+    "t": 28.6,
+    "name": "poof",
+    "rmsNext0To220msDbfs": -43.29
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "id": "queues-and-backpressure",
+  "recommended": "astra",
+  "rationale": "Use Astra as the chapter entry: it follows F from blocked submission through admission, execution and completion in the guide’s documentation-check/search-tool setting. Baseline offers a spare producer–worker view and now visibly continues service at the end, while Sol adds the complementary refusal-and-resubmission policy with acknowledgement-controlled delivery credit. Astra’s larger queue cells and explicit Done 6/6 ending make admission versus completion easiest to verify on a phone.",
+  "findings": [
+    "Normal before overload: Astra completes A at 4.6s and Sol at 5.5s before showing a slower B. Baseline spends roughly 3–15s on its first slow job, making the mechanism sparse but giving readers less evidence of normal service before the stall.",
+    "Full means different upstream policies: baseline holds E at its paused producer around 9.8–14.6s; Astra holds F around 11.6–15s. Sol refuses F at 17.25s, returns it by 18.45s and deliberately resubmits it at 24s. Sol is a useful policy alternative, not the guide’s exact await-put sequence.",
+    "Capacity is freed by removal: baseline dequeues B at 15s and later admits E; Astra dequeues C at 15s and admits F at 17.2s. Sol separates B’s completion at 21s, the returning acknowledgement, C’s dequeue at 22.2s and F’s admission at 25.3s. Its extra mechanism needs the guide’s distinction between delivery credit and ready backlog.",
+    "Execution and acknowledgement now agree: Sol shows ACTIVE 0/1 at A’s 5.5s and B’s 21s completion while the acknowledgement is still returning. This repairs the original DONE/ACTIVE 1 contradiction without conflating completion with release of delivery credit; baseline and Astra do not attempt to teach acknowledgement transport.",
+    "Endings support different claims: revised baseline dispatches D at 23.8s and shows it running at 24.8s with E still waiting. Sol shows C running and D/E/F waiting at 27.5s, demonstrating bounded continued demand. Astra dispatches F at 25s and completes it at 27s, then shows an empty queue and Done 6/6—the strongest closure for the finite-batch exercise.",
+    "Phone review at 350px: Astra’s 10.8–12.5s full-queue scene and 25.7–27.5s ending have the clearest task states and counters. Baseline’s 9.8s capacity pills are smaller but its sparse drawing is easy to follow. Sol’s 17.6–25.5s gate, feedback path, acknowledgement and phase labels demand more attention; all three remain readable, with Astra’s final drain compressed and Sol’s slow-B interval comparatively long."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 3,
+      "visual": 3
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "sol": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 3,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "eef1690fc5a0689b60bb35451c4225b3053da3430bceaa4a6092baccad45b4ed",
+    "astra": "f0a19b81c3661c36c06c5061ab2ef2b7c62627091d7d3cfee33f8184e94eebbf",
+    "sol": "373288fdc6cd6df84a0a8faa2f043e3a335393696f8a5918e15bbd2bf7dc314a"
+  },
+  "contentVerdict": "Keep as reference. This chapter changes a concrete engineering decision when an established agent workflow starts batch work, tool fan-out or contention for a constrained service; it is unnecessary infrastructure for a first supervised sequential task. The guide correctly distinguishes waiting capacity, active work, acknowledgement credit, rate limits and completion, includes a runnable bounded-producer exercise, and states retry, memory and durability limits. Tool design and timeouts/retries are appropriate prerequisites; primary-document checks support the existing claims.",
+  "verified": true,
+  "defectsFixed": [
+    "Baseline: replace the stopped-consumer ending with D dispatch and execution while E waits; update both transcripts and preserve the unknown original model provenance.",
+    "Baseline renderer: bound FFmpeg input/filter/encoder stages to at most two threads and add audio headroom; rerender MP4 and poster.",
+    "Sol: set active execution to zero at completion independently of the acknowledgement; replace the stale phase at dequeue with SPACE FREED.",
+    "Sol: keep C’s progress incomplete while it remains RUNNING, stop work cues before the fade, rerender MP4/poster and align the transcript. Original gpt-6.1-sol provenance is retained; corrections are attributed to gpt-6-astra comparative review.",
+    "Guide: add actual source retrieval dates and the RabbitMQ reliability reference supporting duplicate-safe effects; retain valid existing claims and reference classification."
+  ],
+  "limitations": [
+    "Audio was analysed through full decoding, PCM peaks, cue-window energy and spectrograms; it was not physically listened to. Coincident cues can contribute to a measured window.",
+    "Visual review used decoded whole-cut contact sheets, native-resolution beat frames and 350px frames. These are illustrative animations, not measured production traces or a user comprehension study.",
+    "Blind findings were recorded before source, transcript, metadata or author-assessment inspection. Filenames and the user’s Sol provenance statement were already known, so this was source/assessment blindness rather than perfect model-identity concealment.",
+    "Primary documentation and a local asyncio exercise were checked. No live RabbitMQ integration, model tool execution, concurrent-producer race or recovery test was performed.",
+    "Review and corrections cover this topic only. Whole-library release checks and human editorial promotion remain outside this assignment; no Git or publication operations were performed."
+  ]
+}

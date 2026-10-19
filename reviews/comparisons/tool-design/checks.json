@@ -1,0 +1,131 @@
+{
+  "baseline": {
+    "sha256": "b3945a2994895bb21907d2b4c032da68c6816d113248141a6ebadacfe6995924",
+    "bytes": 409544,
+    "duration": 25.008005,
+    "decodedFrames": 750,
+    "video": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "r_frame_rate": "30/1",
+      "pix_fmt": "yuv420p"
+    },
+    "audioCodec": "aac",
+    "fullDecode": true,
+    "firstFrameMD5": "eb31442608984c1aa5939de6decc4443",
+    "lastFrameMD5": "eb31442608984c1aa5939de6decc4443",
+    "exactEndpointsEqual": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 28047
+      },
+      {
+        "type": "free",
+        "offset": 28079,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 28087,
+        "size": 381457
+      }
+    ],
+    "faststart": true,
+    "maxAudioDBFS": -5.0,
+    "audioHeard": false
+  },
+  "astra": {
+    "sha256": "3000737b0dd9032416739734d8fcb8aa2efd991207a886e4406ab3f3d281a904",
+    "bytes": 629511,
+    "duration": 30.0,
+    "decodedFrames": 900,
+    "video": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "r_frame_rate": "30/1",
+      "pix_fmt": "yuv420p"
+    },
+    "audioCodec": "aac",
+    "fullDecode": true,
+    "firstFrameMD5": "eb31442608984c1aa5939de6decc4443",
+    "lastFrameMD5": "eb31442608984c1aa5939de6decc4443",
+    "exactEndpointsEqual": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 32924
+      },
+      {
+        "type": "free",
+        "offset": 32956,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 32964,
+        "size": 596547
+      }
+    ],
+    "faststart": true,
+    "maxAudioDBFS": -2.2,
+    "audioHeard": false
+  },
+  "fable": {
+    "sha256": "ba146481711bb07493d14593085e8aaabd773cf88754683b26e9b31f36306f6c",
+    "bytes": 1379305,
+    "duration": 29.633333,
+    "decodedFrames": 889,
+    "video": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "r_frame_rate": "30/1",
+      "pix_fmt": "yuv420p"
+    },
+    "audioCodec": "aac",
+    "fullDecode": true,
+    "firstFrameMD5": "94202f2b8b173bbe5236c067a8d6df24",
+    "lastFrameMD5": "94202f2b8b173bbe5236c067a8d6df24",
+    "exactEndpointsEqual": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 32572
+      },
+      {
+        "type": "free",
+        "offset": 32604,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 32612,
+        "size": 1346693
+      }
+    ],
+    "faststart": true,
+    "maxAudioDBFS": -1.8,
+    "audioHeard": false
+  }
+}

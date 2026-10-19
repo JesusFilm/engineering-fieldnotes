@@ -1,0 +1,22 @@
+[
+  {
+    "start": 0,
+    "end": 9.7,
+    "text": "Run A has a three-call budget. Three agent-to-tool cycles consume it. Amber RETRY results return feedback; they do not mean the task has succeeded."
+  },
+  {
+    "start": 9.7,
+    "end": 13.2,
+    "text": "With no calls remaining, the run routes to Stop. The stage fades to separate this exhausted task from the next example."
+  },
+  {
+    "start": 13.2,
+    "end": 19.6,
+    "text": "An independent run B starts with its own three-call budget. After one continuing result, a second tool result becomes PASS and travels to Review with one call left."
+  },
+  {
+    "start": 19.6,
+    "end": 24,
+    "text": "The edit loop dims and Review remains active. The run has ended successfully for review; the animation does not show merge approval. A full-frame fade closes the loop."
+  }
+]

@@ -1,0 +1,460 @@
+{
+  "baselineCommit": "f74bc99beef23a4aaff8081344e70cb8a82d852d",
+  "reviewed": 18,
+  "fixed": [],
+  "kept": [
+    "harness-engineering",
+    "loop-engineering",
+    "context-engineering",
+    "tool-design",
+    "memory-architecture",
+    "orchestration-patterns",
+    "guardrails-and-permissions",
+    "agent-evals",
+    "human-in-the-loop",
+    "observability-and-tracing",
+    "load-balancing",
+    "cache-aside",
+    "queues-and-backpressure",
+    "idempotency",
+    "replication-and-consistency",
+    "timeouts-and-retries",
+    "canary-deployments",
+    "oauth-pkce"
+  ],
+  "results": [
+    {
+      "id": "harness-engineering",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26,
+      "verified": true,
+      "limitations": [
+        "Audio assessed analytically; no physical listening.",
+        "Timed-frame and 350px review; no real-device playback.",
+        "Deployment outside topic-only assignment."
+      ],
+      "title": "Harness engineering",
+      "sha256": "703cb3ce8590e9c9a2015bc7bdd5cfc498a1b6cba1efada40a21d167588150d3",
+      "changed": false
+    },
+    {
+      "id": "loop-engineering",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 25.008005,
+      "verified": true,
+      "limitations": [
+        "Audio assessed analytically; no physical listening.",
+        "Publication delegated to parent workflow."
+      ],
+      "title": "Loop engineering",
+      "sha256": "b58b18bf9404df1d3bdfbcfe225714908451577558129fc87736cd9dead7fc13",
+      "changed": false
+    },
+    {
+      "id": "context-engineering",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 25.008005,
+      "verified": true,
+      "limitations": [
+        "Audio judged analytically; no physical listening."
+      ],
+      "title": "Context engineering",
+      "sha256": "2109931d08ed3466de94350508859fca4cc508984cfd54d08adc5ed0b657b2ee",
+      "changed": false
+    },
+    {
+      "id": "tool-design",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 25,
+      "verified": true,
+      "limitations": [
+        "Audio evaluated analytically; no physical listening."
+      ],
+      "title": "Tool design",
+      "sha256": "b3945a2994895bb21907d2b4c032da68c6816d113248141a6ebadacfe6995924",
+      "changed": false
+    },
+    {
+      "id": "memory-architecture",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26,
+      "verified": true,
+      "limitations": [
+        "Audio assessed analytically through encoded levels, spectrum and cue timings; no physical listening.",
+        "Review used encoded timed frames rather than real-time playback."
+      ],
+      "title": "Memory architecture",
+      "sha256": "936b8aaf2a8961d08580a2c85932b8074efc9e87f4cd245bd9fdf23852df0920",
+      "changed": false
+    },
+    {
+      "id": "orchestration-patterns",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26,
+      "verified": true,
+      "limitations": [
+        "Audio judged analytically; no physical listening.",
+        "Visual review used encoded timed frames and contact sheet, not real-time playback."
+      ],
+      "title": "Orchestration patterns",
+      "sha256": "69f31971fbfbab339a619113de71185bb189420957d50078057e051d17b6af7a",
+      "changed": false
+    },
+    {
+      "id": "guardrails-and-permissions",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 5,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 5,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 24,
+      "verified": true,
+      "limitations": [
+        "Audio judged analytically; no physical listening.",
+        "Timed decoded frames reviewed, not live browser playback.",
+        "Shared-site publication is left to the coordinating task."
+      ],
+      "title": "Guardrails and permissions",
+      "sha256": "05322c29413559b7ae3c8ac8a90e134240f161b320fd072cbaa345634d668a9f",
+      "changed": false
+    },
+    {
+      "id": "agent-evals",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 5,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 5,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26,
+      "verified": true,
+      "limitations": [
+        "Sampled encoded frames rather than continuous human playback.",
+        "Audio judged analytically; no physical listening."
+      ],
+      "title": "Agent evals",
+      "sha256": "0a548cda494c61984807a3143766c413324c5c387cfb32d8404a52657c3343a4",
+      "changed": false
+    },
+    {
+      "id": "human-in-the-loop",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26,
+      "verified": true,
+      "limitations": [
+        "Audio judged analytically; no physical listening.",
+        "Visual review uses encoded contact sheet and timed full-size/350px frames, not real-time playback."
+      ],
+      "title": "Human-in-the-loop",
+      "sha256": "26aca59394fe7d953402cf2f9e3a341fe305a390bafccf5b6e63f9fffd85f44d",
+      "changed": false
+    },
+    {
+      "id": "observability-and-tracing",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26,
+      "verified": true,
+      "limitations": [
+        "Audio assessed analytically; no physical listening.",
+        "Visual review used encoded timed frames and contact sheet rather than continuous human playback."
+      ],
+      "title": "Observability and tracing",
+      "sha256": "cc2c78e69620b0eb44f3466fcb9dd814bbe48c931b5cd40da6dbaf49db08c945",
+      "changed": false
+    },
+    {
+      "id": "load-balancing",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 21,
+      "verified": true,
+      "limitations": [
+        "Reviewed encoded frames and analytical audio evidence; no physical listening or continuous real-time playback.",
+        "Hub publication is handled by the coordinating task."
+      ],
+      "title": "Load balancing",
+      "sha256": "8f084c7b4806ddcc4a08475572cdda74d894d11c0e491d945f2d088c351c3858",
+      "changed": false
+    },
+    {
+      "id": "cache-aside",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 24,
+      "verified": true,
+      "limitations": [
+        "Audio judged analytically; no physical listening.",
+        "Visual review used dense encoded frames and beat stills, not continuous audiovisual playback."
+      ],
+      "title": "Cache-aside",
+      "sha256": "3e4f4ad2069aa1b86d9f46450937b07eec3f593a8256386356a4d0ecdda8c51e",
+      "changed": false
+    },
+    {
+      "id": "queues-and-backpressure",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 5,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 5,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26,
+      "verified": true,
+      "limitations": [
+        "Audio judged analytically; no physical listening."
+      ],
+      "title": "Queues and backpressure",
+      "sha256": "9e445f576a7414ca6206875a385dfe042de676bb4a2d3d02e5b510a1f45f29f3",
+      "changed": false
+    },
+    {
+      "id": "idempotency",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 5,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 5,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26,
+      "verified": true,
+      "limitations": [
+        "Audio assessed analytically; no physical listening.",
+        "Encoded timed-frame review rather than continuous real-time playback."
+      ],
+      "title": "Idempotency",
+      "sha256": "80a8836c247a348910a733151970208625b57aea542f5c8d55b80bf8e2057889",
+      "changed": false
+    },
+    {
+      "id": "replication-and-consistency",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 5,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 5,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26.006009,
+      "verified": true,
+      "limitations": [
+        "Audio assessed analytically; no physical listening.",
+        "Visual assessment used encoded timed frames and contact sheets, not continuous playback.",
+        "Publication remains with the coordinating task."
+      ],
+      "title": "Replication and consistency",
+      "sha256": "038ec8ae21a0d0591d793744a2fab979001ddb0fd424794dcf827b00337036f4",
+      "changed": false
+    },
+    {
+      "id": "timeouts-and-retries",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 24.009002,
+      "verified": true,
+      "limitations": [
+        "Audio assessed analytically, not physically listened to.",
+        "Single retry illustrates delayed bounded retries, not jitter distribution or retry exhaustion."
+      ],
+      "title": "Timeouts and retries",
+      "sha256": "9b96cbfc0d18b5eefb6a44ee7d1ba19921e9201037a91c72f9cf47be168827f1",
+      "changed": false
+    },
+    {
+      "id": "canary-deployments",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26,
+      "verified": true,
+      "limitations": [
+        "Audio assessed analytically; no physical listening.",
+        "Compressed representative traffic does not constitute a real percentile sample.",
+        "Publication remains with the coordinating task."
+      ],
+      "title": "Canary deployments",
+      "sha256": "421cba6f41c861b2e710ac1816cd08a3bb357c6317cdb62ce4c4dfcab30d50e8",
+      "changed": false
+    },
+    {
+      "id": "oauth-pkce",
+      "verdict": "kept",
+      "beforeScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "afterScores": {
+        "clarity": 4,
+        "pacing": 4,
+        "visual": 4
+      },
+      "fixes": [],
+      "duration": 26.006009,
+      "verified": true,
+      "limitations": [
+        "Audio assessed analytically; no physical listening.",
+        "Frame-based visual review rather than real-time playback."
+      ],
+      "title": "OAuth PKCE",
+      "sha256": "c24864059ea398c791cedb01144efc96d0d4d6c92192ffbd34fc1a7cfb2b5d99",
+      "changed": false
+    }
+  ]
+}

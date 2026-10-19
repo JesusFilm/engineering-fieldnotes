@@ -1,0 +1,63 @@
+{
+  "id": "sol",
+  "concept": "replication-and-consistency",
+  "title": "Read your write",
+  "model": "gpt-6.1-sol",
+  "reasoning": "high",
+  "lesson": "Before an agent tool step uses a just-saved plan, check the returned revision and route a stale dependent read to the current primary.",
+  "src": "media/replication-and-consistency/sol.mp4",
+  "poster": "media/replication-and-consistency/sol.jpg",
+  "duration": 32,
+  "verified": true,
+  "limitations": [
+    "The version check and primary retry are illustrative wrapper code, not behavior guaranteed by an agent or PostgreSQL; prompts do not enforce freshness or permissions.",
+    "Assumes one available current primary, a fresh read snapshot after commit, and no competing writers or caches. A revision check is not authorization or an atomic guard against later changes.",
+    "Plan revisions and replication delays are illustrative; elapsed time does not guarantee freshness. WAL transport and replay are abstracted into one copy event.",
+    "Audio was analysed, not physically heard. A separate comparative review is saved under reviews/comparisons/replication-and-consistency.json; human editorial promotion remains separate."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 6.5,
+      "text": "The agent needs plan version 1. A read from the replica returns version 1, the wrapper check passes, and the tool step uses that plan."
+    },
+    {
+      "start": 6.5,
+      "end": 10.8,
+      "text": "The agent saves plan version 2 on the primary and receives a successful acknowledgement. Its next step now requires version 2, but the replica still has version 1."
+    },
+    {
+      "start": 10.8,
+      "end": 15.4,
+      "text": "The replica returns version 1 again. The implemented wrapper detects that this is older than the required version 2 and holds the dependent tool step."
+    },
+    {
+      "start": 15.4,
+      "end": 21.2,
+      "text": "The wrapper retries the read on the current primary. Version 2 passes the check and the tool uses it while the replica still has version 1. This assumes a fresh query after the commit."
+    },
+    {
+      "start": 21.2,
+      "end": 24.5,
+      "text": "Asynchronous replication catches up and the replica becomes version 2. The animated delay is illustrative, not a promised maximum wait."
+    },
+    {
+      "start": 24.5,
+      "end": 32,
+      "text": "A later tool step waits while a fresh replica read returns version 2. The same check passes and sends the approved version down the green gate to the tool step. The resolved state holds, then fades out for the loop. The check controls plan freshness, not permissions."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "timestamps": "4.1\u20135.9, 18.6\u201320.4, 27.5\u201329.3",
+      "change": "Show a dedicated green wrapper-to-tool gate during approved-version delivery; hide the crossing replication wire and shorten USE vN to vN to keep the packet clear of database boxes."
+    },
+    {
+      "date": "2026-10-19",
+      "timestamps": "24.5\u201328.3",
+      "change": "Reset the later dependent tool step to waiting before its separate replica verification, so the final release visibly changes state."
+    }
+  ]
+}

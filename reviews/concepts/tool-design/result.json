@@ -1,0 +1,23 @@
+{
+  "id": "tool-design",
+  "placement": "core",
+  "verifiedSources": [
+    "https://www.anthropic.com/engineering/writing-tools-for-agents",
+    "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+    "https://json-schema.org/understanding-json-schema/reference/object",
+    "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+  ],
+  "changes": [
+    "Reassessed every original assertion against primary pages retrieved 2026-10-19.",
+    "Replaced generic advice with an incident-search contract separating empty, partial and failed results.",
+    "Added application-enforced validation, access and retry responsibilities without implying prompt enforcement.",
+    "Added observable outcomes, manual-to-agent workflow, walkthrough, pitfalls and a failure-injection exercise.",
+    "Preserved id, title, category, roles and related; authored by gpt-6-astra with high reasoning."
+  ],
+  "limitations": [
+    "Illustrative contract and proposed exercise; no live agent evaluation was run.",
+    "Anthropic observations are first-party engineering experience, not universal performance guarantees.",
+    "The fixed MCP revision is cited explicitly; no claim of automatic runtime conformance.",
+    "Comparative video selection and curriculum promotion remain editorial decisions."
+  ]
+}

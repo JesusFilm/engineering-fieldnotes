@@ -1,0 +1,26 @@
+{
+  "id": "load-balancing",
+  "title": "Load balancing",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Load balancing distributes requests across service instances according to a routing policy.",
+  "overview": "A balancer chooses eligible backends using health and load signals. Equal request counts do not imply equal work when request costs differ.",
+  "why": "Uneven routing can overload one instance while others have spare capacity.",
+  "example": "An API pool drains an instance before shutdown and routes new requests to healthy instances with available capacity.",
+  "judgment": "Choose a policy that fits request cost, connection behavior, and health-check limitations.",
+  "next": "Do long-lived connections prevent our traffic from spreading across newly added instances?",
+  "sources": [
+    {
+      "title": "Load Balancing in the Datacenter \u2014 Google SRE",
+      "url": "https://sre.google/sre-book/load-balancing-datacenter/"
+    }
+  ],
+  "related": [
+    "queues-and-backpressure",
+    "timeouts-and-retries",
+    "canary-deployments"
+  ]
+}

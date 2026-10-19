@@ -1,0 +1,27 @@
+{
+  "id": "canary-deployments",
+  "title": "Canary deployments",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform",
+    "Tech lead"
+  ],
+  "summary": "A canary deployment exposes a change to limited production traffic before expanding its rollout.",
+  "overview": "Compare the candidate with a control using signals tied to user impact. The evaluation must drive a decision to promote, pause, or roll back.",
+  "why": "Small exposure can reveal production-only failures before they affect everyone.",
+  "example": "Route five percent of API traffic to a new release and compare error rate and latency by version before increasing traffic.",
+  "judgment": "Choose representative traffic, sufficient observation time, failure thresholds, and a viable rollback path.",
+  "next": "Could a low-volume but critical endpoint fail without appearing in our canary metrics?",
+  "sources": [
+    {
+      "title": "Canarying Releases \u2014 Google SRE Workbook",
+      "url": "https://sre.google/workbook/canarying-releases/"
+    }
+  ],
+  "related": [
+    "load-balancing",
+    "observability-and-tracing",
+    "agent-evals"
+  ]
+}

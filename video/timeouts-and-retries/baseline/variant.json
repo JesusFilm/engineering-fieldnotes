@@ -1,0 +1,61 @@
+{
+  "id": "baseline",
+  "concept": "timeouts-and-retries",
+  "title": "Timeout does not cancel work",
+  "model": "Original prototype; model not recorded",
+  "editedBy": "gpt-6-astra comparative review",
+  "lesson": "A read can finish remotely after its caller times out; a bounded retry waits, then makes a new attempt.",
+  "src": "media/timeouts-and-retries/baseline.mp4",
+  "poster": "media/timeouts-and-retries/baseline.jpg",
+  "duration": 21,
+  "verified": true,
+  "transcript": [
+    {
+      "start": 0,
+      "end": 6,
+      "text": "A normal read receives a response before the attempt timeout. The caller accepts it."
+    },
+    {
+      "start": 6,
+      "end": 10,
+      "text": "A separate read starts at 7s. The caller waits three seconds, then times out while the service keeps working."
+    },
+    {
+      "start": 10,
+      "end": 14.5,
+      "text": "During a sampled 4.5-second backoff, the service completes at 12s. Its late response arrives at 13.2s and is rejected by the expired attempt. Timeout did not cancel the work."
+    },
+    {
+      "start": 14.5,
+      "end": 17.1,
+      "text": "The delay indicator clears and the caller uses the second and final permitted attempt. This read succeeds."
+    },
+    {
+      "start": 17.1,
+      "end": 21,
+      "text": "The accepted result and two-attempt limit hold, then fade to black. This cut illustrates per-attempt waiting and late responses; it does not show an overall deadline, retry exhaustion, or fleet-level jitter."
+    }
+  ],
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "editor": "gpt-6-astra comparative review",
+      "changes": [
+        "Shortened sampled backoff from six to 4.5 seconds, preserving the late response and its rejection.",
+        "Enlarged states, packet chips, attempt count, and bar labels for 350px viewing.",
+        "Cleared stale server success before retry, and removed the completed delay indicator.",
+        "Retimed transcript and added explicit scope limits.",
+        "Made the fade cover the entire frame, including title, so the exact encoded first and last frames match.",
+        "Moved the attempt-limit caption above its counter to keep enlarged moving request chips clear."
+      ],
+      "originalSources": "reviews/comparisons/timeouts-and-retries/original-sources/baseline/"
+    }
+  ],
+  "limitations": [
+    "Read-only request; write safety requires documented idempotency or reconciliation.",
+    "Per-attempt timeout and a two-attempt limit are shown; operation-wide deadline and retry exhaustion are not.",
+    "One sampled delay does not demonstrate fleet-level jitter. Timing is illustrative.",
+    "Audio analysed, not physically heard."
+  ],
+  "sha256": "89da1fe9032322631818afb5305e00e7acd15dc4b315211c783f346884ff1077"
+}

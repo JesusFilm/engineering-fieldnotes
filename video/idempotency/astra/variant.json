@@ -1,0 +1,45 @@
+{
+  "id": "astra",
+  "concept": "idempotency",
+  "title": "Retry the intent",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Preserve one operation key and its arguments when an agent retries a lost response; reject changed intent rather than silently repeating or changing the effect.",
+  "src": "media/idempotency/astra.mp4",
+  "poster": "media/idempotency/astra.jpg",
+  "duration": 30,
+  "verified": true,
+  "limitations": [
+    "Illustrative in-house ticket tool: key record and ticket share one database transaction; not a commercial tracker feature claim.",
+    "Assumes valid permissions and retained keys; concurrent calls, expiry, and external effects require the guide and service-specific tests.",
+    "Audio was analysed for level and synchronization but not physically listened to.",
+    "Self-reviewed by gpt-6-astra; no independent comparative ranking or default-cut promotion."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 6.2,
+      "text": "A release agent asks an illustrative ticket tool to create a ticket for release v1 using operation key k7. One database commit saves both ticket #47 and the key-to-ticket record; the count becomes one."
+    },
+    {
+      "start": 6.2,
+      "end": 11.2,
+      "text": "The reply carrying ticket #47 is lost. The agent does not know the outcome, but the database still contains the ticket. The runner prepares another attempt with the same key and release data."
+    },
+    {
+      "start": 11.2,
+      "end": 19,
+      "text": "The retry looks up k7 and returns the existing ticket #47. No second write occurs, and the agent receives the identifier while the ticket count stays at one."
+    },
+    {
+      "start": 19,
+      "end": 25,
+      "text": "The caller changes the release data to v2 while keeping k7. This tool\u2019s contract detects a parameter mismatch and rejects the request; it neither changes ticket #47 nor creates another ticket."
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "text": "The unchanged v1 ticket and count of one remain in focus, then the scene fades. This illustrates a service-enforced contract; an agent prompt alone does not supply persistence or permissions."
+    }
+  ]
+}

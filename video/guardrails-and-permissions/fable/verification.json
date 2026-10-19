@@ -1,0 +1,70 @@
+{
+  "file": "public/media/guardrails-and-permissions/fable.mp4",
+  "poster": "public/media/guardrails-and-permissions/fable.jpg",
+  "duration": 25.41,
+  "size": 1638716,
+  "audio_max_dbfs": -1.4,
+  "audio_mean_dbfs": -28.8,
+  "frames": 762,
+  "cues": 30,
+  "checks": {
+    "video_codec": {
+      "ok": true,
+      "detail": "h264 yuv420p"
+    },
+    "geometry": {
+      "ok": true,
+      "detail": "1080x1920 @ 30/1"
+    },
+    "audio_stream": {
+      "ok": true,
+      "detail": "aac"
+    },
+    "duration_22_35s": {
+      "ok": true,
+      "detail": "25.41s"
+    },
+    "size_under_2MB": {
+      "ok": true,
+      "detail": "1638716 bytes"
+    },
+    "faststart": {
+      "ok": true,
+      "detail": "moov atom before mdat"
+    },
+    "poster_exists": {
+      "ok": true,
+      "detail": "89248 bytes"
+    },
+    "full_decode_clean": {
+      "ok": true,
+      "detail": "no decoder errors"
+    },
+    "frame_count": {
+      "ok": true,
+      "detail": "762 frames"
+    },
+    "audio_peak_le_-0.5dBFS": {
+      "ok": true,
+      "detail": "max -1.4 dB, mean -28.8 dB"
+    },
+    "first_last_frames_identical": {
+      "ok": true,
+      "detail": "byte-identical decoded RGB"
+    },
+    "cues_within_duration": {
+      "ok": true,
+      "detail": "30 cues, last at 22s of 25.41s"
+    },
+    "render_duration_matches": {
+      "ok": true,
+      "detail": "scene 25.41s vs file 25.41s"
+    },
+    "every_cue_has_visible_change": {
+      "ok": true,
+      "detail": "all cues paired with a frame change"
+    }
+  },
+  "audio_heard": false,
+  "note": "Audio was analysed (volumedetect, spectrogram, cue schedule), not listened to."
+}

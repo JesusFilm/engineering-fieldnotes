@@ -1,0 +1,736 @@
+{
+  "method": "Full FFmpeg decode; byte-identical first/last RGB; ffprobe; MP4 atoms; volumedetect; 1ms RMS onset comparison to source synthesis in -40/+120ms windows; rendered frame review recorded separately. Audio analysed, not heard.",
+  "cuts": {
+    "baseline": {
+      "sha256": "80a8836c247a348910a733151970208625b57aea542f5c8d55b80bf8e2057889",
+      "posterSha256": "7738cd76fea4e6abbd4eba468f08f975d1a870f936280f39cf2b71cd087f3185",
+      "bytes": 503332,
+      "duration": 26.0,
+      "frames": 780,
+      "video": "H.264 1080x1920 30fps yuv420p",
+      "audio": "AAC",
+      "audioPeakDbfs": -4.0,
+      "fullDecode": true,
+      "matchingBoundaryFrames": true,
+      "boundarySha256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+      "faststart": true,
+      "atoms": {
+        "ftyp": 0,
+        "moov": 32,
+        "free": 28887,
+        "mdat": 28895
+      },
+      "cueSync": [
+        {
+          "t": 1.2,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1656.66
+        },
+        {
+          "t": 1.9,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 5044.48
+        },
+        {
+          "t": 2.2,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1352.42
+        },
+        {
+          "t": 2.9,
+          "name": "miss",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1083.9
+        },
+        {
+          "t": 3.5,
+          "name": "work",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 2575.48
+        },
+        {
+          "t": 4.2,
+          "name": "store",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4504.86
+        },
+        {
+          "t": 6.3,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1293.11
+        },
+        {
+          "t": 7,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4651.92
+        },
+        {
+          "t": 7.2,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1894.02
+        },
+        {
+          "t": 7.7,
+          "name": "crash",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 9362.46
+        },
+        {
+          "t": 10,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1649.38
+        },
+        {
+          "t": 10.7,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 5038.52
+        },
+        {
+          "t": 11,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1350.82
+        },
+        {
+          "t": 11.7,
+          "name": "hit",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4403.77
+        },
+        {
+          "t": 12.5,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1312.47
+        },
+        {
+          "t": 13.2,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4266.84
+        },
+        {
+          "t": 13.4,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1728.38
+        },
+        {
+          "t": 14.1,
+          "name": "deliver",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4496.65
+        },
+        {
+          "t": 17,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1638.06
+        },
+        {
+          "t": 17.7,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 5046.88
+        },
+        {
+          "t": 18,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1429.53
+        },
+        {
+          "t": 18.7,
+          "name": "thump",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 9773.91
+        },
+        {
+          "t": 19.5,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1606.16
+        },
+        {
+          "t": 20.2,
+          "name": "thump",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 9893.87
+        },
+        {
+          "t": 22.1,
+          "name": "chime",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3508.24
+        }
+      ],
+      "maxOnsetDeltaMs": 0.0,
+      "beatFrames": [
+        1.5,
+        2.9,
+        4.3,
+        7.8,
+        10.3,
+        11.8,
+        14.3,
+        17.3,
+        18.8,
+        20.4,
+        22.3,
+        24.7,
+        25.96
+      ],
+      "audioHeard": false
+    },
+    "astra": {
+      "sha256": "9a8054364cb8b8378690d675f4100549fb9f17e389290956875584031efd5248",
+      "posterSha256": "d30e82d921041d42dd61c6df50d29df068d3cc6886096dc3af9eccb2f19728dc",
+      "bytes": 640221,
+      "duration": 30.0,
+      "frames": 900,
+      "video": "H.264 1080x1920 30fps yuv420p",
+      "audio": "AAC",
+      "audioPeakDbfs": -7.1,
+      "fullDecode": true,
+      "matchingBoundaryFrames": true,
+      "boundarySha256": "1df06ad5fc2492dec05305694e51f45ca76110ca4460dd21321267df8e1ae49a",
+      "faststart": true,
+      "atoms": {
+        "ftyp": 0,
+        "moov": 32,
+        "free": 33352,
+        "mdat": 33360
+      },
+      "cueSync": [
+        {
+          "t": 0.3,
+          "name": "ack",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 782.92
+        },
+        {
+          "t": 1.5,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1207.26
+        },
+        {
+          "t": 2.3,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4079.68
+        },
+        {
+          "t": 3.1,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1225.31
+        },
+        {
+          "t": 3.8,
+          "name": "store",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3278.14
+        },
+        {
+          "t": 5.7,
+          "name": "ack",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 967.7
+        },
+        {
+          "t": 6.2,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1198.08
+        },
+        {
+          "t": 6.9,
+          "name": "crash",
+          "onsetDeltaMs": -1.0,
+          "windowPeakRms": 10227.41
+        },
+        {
+          "t": 9.8,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 292.08
+        },
+        {
+          "t": 11.2,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1230.53
+        },
+        {
+          "t": 12,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4085.13
+        },
+        {
+          "t": 12.8,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1219.13
+        },
+        {
+          "t": 13.6,
+          "name": "hit",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3507.18
+        },
+        {
+          "t": 14.4,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1204.04
+        },
+        {
+          "t": 15.2,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4067.96
+        },
+        {
+          "t": 16,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1218.41
+        },
+        {
+          "t": 16.8,
+          "name": "deliver",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3219.2
+        },
+        {
+          "t": 19,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 375.42
+        },
+        {
+          "t": 20,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1228.65
+        },
+        {
+          "t": 20.8,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4090.04
+        },
+        {
+          "t": 21.6,
+          "name": "thump",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 8725.28
+        },
+        {
+          "t": 22.5,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1207.13
+        },
+        {
+          "t": 23.3,
+          "name": "thump",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 7534.49
+        },
+        {
+          "t": 25,
+          "name": "chime",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3009.64
+        },
+        {
+          "t": 28.7,
+          "name": "poof",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 642.84
+        }
+      ],
+      "maxOnsetDeltaMs": 1.0,
+      "beatFrames": [
+        1.8,
+        3.9,
+        6.95,
+        9.9,
+        11.5,
+        13.7,
+        16.9,
+        19.3,
+        21.7,
+        23.4,
+        25.3,
+        28.7,
+        29.96
+      ],
+      "audioHeard": false
+    },
+    "fable": {
+      "sha256": "6104b22418cb8c8f7b2661aa1bcf84bd3ea6fcec3166781c7cffc46417e53fac",
+      "posterSha256": "83b4daf36b48e87d13d1c655cfdf6f5138620f8a55c4d5b4017f08a77ebdad7f",
+      "bytes": 1324259,
+      "duration": 29.7,
+      "frames": 891,
+      "video": "H.264 1080x1920 30fps yuv420p",
+      "audio": "AAC",
+      "audioPeakDbfs": -1.8,
+      "fullDecode": true,
+      "matchingBoundaryFrames": true,
+      "boundarySha256": "c1fca384d6ec0241eb8705f3e1ae036124a13d34512ddba8e1d8302da7439810",
+      "faststart": true,
+      "atoms": {
+        "ftyp": 0,
+        "moov": 32,
+        "free": 32676,
+        "mdat": 32684
+      },
+      "cueSync": [
+        {
+          "t": 1.2,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3662.04
+        },
+        {
+          "t": 1.75,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 8471.31
+        },
+        {
+          "t": 2,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4697.37
+        },
+        {
+          "t": 2.4,
+          "name": "store",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 6513.96
+        },
+        {
+          "t": 2.6999999999999997,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 2444.23
+        },
+        {
+          "t": 3.25,
+          "name": "deliver",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 6222.66
+        },
+        {
+          "t": 5,
+          "name": "ack",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4068.65
+        },
+        {
+          "t": 5.6,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3708.83
+        },
+        {
+          "t": 6.1499999999999995,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 8468.49
+        },
+        {
+          "t": 6.3999999999999995,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4672.97
+        },
+        {
+          "t": 6.8,
+          "name": "store",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 6455.35
+        },
+        {
+          "t": 7.1,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 2345.34
+        },
+        {
+          "t": 7.46,
+          "name": "lost",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 15273.22
+        },
+        {
+          "t": 7.71,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1124.02
+        },
+        {
+          "t": 8.26,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1426.83
+        },
+        {
+          "t": 8.71,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1043.71
+        },
+        {
+          "t": 9.06,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1185.43
+        },
+        {
+          "t": 9.31,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1315.06
+        },
+        {
+          "t": 9.61,
+          "name": "miss",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3771.87
+        },
+        {
+          "t": 10.809999999999999,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3709.52
+        },
+        {
+          "t": 11.36,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 8583.12
+        },
+        {
+          "t": 11.61,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4688.07
+        },
+        {
+          "t": 12.01,
+          "name": "store",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 6454.0
+        },
+        {
+          "t": 12.31,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 2426.05
+        },
+        {
+          "t": 12.860000000000001,
+          "name": "deliver",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 6215.12
+        },
+        {
+          "t": 13.46,
+          "name": "crash",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 14745.76
+        },
+        {
+          "t": 13.71,
+          "name": "thump",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 13736.07
+        },
+        {
+          "t": 15.860000000000001,
+          "name": "rewind",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1455.32
+        },
+        {
+          "t": 16.66,
+          "name": "recover",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3267.49
+        },
+        {
+          "t": 17.36,
+          "name": "ack",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4228.79
+        },
+        {
+          "t": 18.06,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3653.75
+        },
+        {
+          "t": 18.61,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 8367.61
+        },
+        {
+          "t": 18.86,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4686.5
+        },
+        {
+          "t": 19.259999999999998,
+          "name": "store",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 7066.56
+        },
+        {
+          "t": 19.56,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 2413.19
+        },
+        {
+          "t": 19.919999999999998,
+          "name": "lost",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 15397.63
+        },
+        {
+          "t": 20.169999999999998,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1189.94
+        },
+        {
+          "t": 20.719999999999995,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1066.37
+        },
+        {
+          "t": 21.169999999999998,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 868.14
+        },
+        {
+          "t": 21.519999999999996,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1178.24
+        },
+        {
+          "t": 21.769999999999996,
+          "name": "clock",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 1071.49
+        },
+        {
+          "t": 22.069999999999997,
+          "name": "miss",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3721.87
+        },
+        {
+          "t": 23.169999999999998,
+          "name": "ack",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4279.75
+        },
+        {
+          "t": 23.369999999999997,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 3690.27
+        },
+        {
+          "t": 23.919999999999998,
+          "name": "arrive",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 8503.87
+        },
+        {
+          "t": 24.169999999999998,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 4688.26
+        },
+        {
+          "t": 24.569999999999997,
+          "name": "hit",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 6163.88
+        },
+        {
+          "t": 24.919999999999998,
+          "name": "send",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 2377.87
+        },
+        {
+          "t": 25.47,
+          "name": "chime",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 7317.93
+        },
+        {
+          "t": 26.07,
+          "name": "chime",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 6484.71
+        },
+        {
+          "t": 28.77,
+          "name": "rewind",
+          "onsetDeltaMs": 0.0,
+          "windowPeakRms": 652.47
+        }
+      ],
+      "maxOnsetDeltaMs": 0.0,
+      "beatFrames": [
+        2.5,
+        5.7,
+        7.5,
+        9.7,
+        10.9,
+        12.1,
+        13.9,
+        15.9,
+        16.3,
+        16.6,
+        17.2,
+        17.6,
+        19.5,
+        20.1,
+        22.1,
+        23.6,
+        24.7,
+        25.7,
+        26.5,
+        28.8,
+        29.66
+      ],
+      "audioHeard": false
+    }
+  }
+}

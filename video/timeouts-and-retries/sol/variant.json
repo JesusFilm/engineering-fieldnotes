@@ -1,0 +1,58 @@
+{
+  "id": "sol",
+  "concept": "timeouts-and-retries",
+  "title": "One retry owner",
+  "model": "gpt-6.1-sol",
+  "reasoning": "high",
+  "lesson": "An agent's retry loop can multiply a tool's retries; one code-enforced policy bounds attempts and total waiting.",
+  "src": "media/timeouts-and-retries/sol.mp4",
+  "poster": "media/timeouts-and-retries/sol.jpg",
+  "duration": 32,
+  "verified": true,
+  "limitations": [
+    "Illustrative read-only code search; timing and attempt limits are examples, not production recommendations or recovery guarantees.",
+    "The two waits show one sampled jittered-backoff sequence; many-client de-synchronization is not demonstrated.",
+    "One six-second downstream budget includes calls and backoff waits; the third attempt’s response wait ends early at that deadline. Client stopping does not cancel already running remote work.",
+    "Retry limits and permissions require harness/tool enforcement with SDK retries accounted for; persistent prompts alone do not enforce them.",
+    "Audio was analyzed for levels, cue timing and spectrum, not physically listened to; no comparative quality recommendation is claimed."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5.3,
+      "text": "A code-search request passes from the agent through a read tool to the code index. One service call succeeds and the result returns."
+    },
+    {
+      "start": 5.3,
+      "end": 16,
+      "text": "The index becomes unresponsive. The agent invokes the tool twice, and the tool makes three attempts each time. Six service calls accumulate as the waits time out."
+    },
+    {
+      "start": 16,
+      "end": 19.1,
+      "text": "The policy changes in the orchestration code: the agent may invoke the tool once, and the tool alone owns up to three total service attempts, including the initial call. A six-second budget appears."
+    },
+    {
+      "start": 19.1,
+      "end": 25.1,
+      "text": "The tool makes three reads with two sampled backoff waits of 1.3 and 1.8 seconds. The same time budget drains during calls and waits. These timings illustrate one scenario, not a guarantee."
+    },
+    {
+      "start": 25.1,
+      "end": 32,
+      "text": "The overall budget expires before the last call can use its full individual timeout. The tool stops at three calls and returns a failed tool result; the agent hands off without restarting the read. The index still shows Unresponsive: no result was observed, which does not establish whether remote execution stopped. The result holds, then the screen fades to black."
+    }
+  ],
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "editor": "gpt-6-astra comparative review",
+      "scope": "transcript and limitation wording only; scene and encoded media unchanged",
+      "changes": [
+        "Distinguished a failed tool result from evidence about the remote outcome; replaced an unsupported unavailable assertion.",
+        "Clarified that the third response wait, not a third backoff, is cut short."
+      ]
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review"
+}

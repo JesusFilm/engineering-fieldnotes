@@ -1,0 +1,236 @@
+{
+  "media": "public/media/timeouts-and-retries/astra.mp4",
+  "sha256": "4b44dbe3e40a7e2c82f86a7f3b08524463e78629987c9abaed28d9860751c0db",
+  "posterSha256": "072cd4766760f0a196bac64ff81275c1509c9882b22dd69eb232722c7465c949",
+  "bytes": 1163088,
+  "duration": 26.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": "30/1",
+  "codec": "h264",
+  "pixelFormat": "yuv420p",
+  "audioCodec": "aac",
+  "frames": 780,
+  "fullDecode": true,
+  "firstLastExact": true,
+  "firstFrameMd5": "eb31442608984c1aa5939de6decc4443",
+  "lastFrameMd5": "eb31442608984c1aa5939de6decc4443",
+  "faststart": true,
+  "atoms": [
+    [
+      "ftyp",
+      0,
+      32
+    ],
+    [
+      "moov",
+      32,
+      29320
+    ],
+    [
+      "free",
+      29352,
+      8
+    ],
+    [
+      "mdat",
+      29360,
+      1133728
+    ]
+  ],
+  "maxVolumeDbFS": -5.6,
+  "decodedAudioReferenceCorrelationZeroLag": 0.990364104856262,
+  "cues": [
+    {
+      "t": 0.2,
+      "preset": "recover",
+      "peakWithin150msDbFS": -26.31
+    },
+    {
+      "t": 3.6,
+      "preset": "clock",
+      "peakWithin150msDbFS": -16.23
+    },
+    {
+      "t": 1,
+      "preset": "send",
+      "peakWithin150msDbFS": -23.73
+    },
+    {
+      "t": 1.6,
+      "preset": "arrive",
+      "peakWithin150msDbFS": -16.14
+    },
+    {
+      "t": 2,
+      "preset": "send",
+      "peakWithin150msDbFS": -23.42
+    },
+    {
+      "t": 2.6,
+      "preset": "arrive",
+      "peakWithin150msDbFS": -16.24
+    },
+    {
+      "t": 3.1,
+      "preset": "send",
+      "peakWithin150msDbFS": -23.62
+    },
+    {
+      "t": 3.7,
+      "preset": "arrive",
+      "peakWithin150msDbFS": -16.23
+    },
+    {
+      "t": 4,
+      "preset": "send",
+      "peakWithin150msDbFS": -23.67
+    },
+    {
+      "t": 4.6,
+      "preset": "arrive",
+      "peakWithin150msDbFS": -11.62
+    },
+    {
+      "t": 4.6,
+      "preset": "chime",
+      "peakWithin150msDbFS": -11.62
+    },
+    {
+      "t": 7,
+      "preset": "store",
+      "peakWithin150msDbFS": -17.67
+    },
+    {
+      "t": 7.4,
+      "preset": "send",
+      "peakWithin150msDbFS": -23.6
+    },
+    {
+      "t": 8,
+      "preset": "arrive",
+      "peakWithin150msDbFS": -13.63
+    },
+    {
+      "t": 8,
+      "preset": "send",
+      "peakWithin150msDbFS": -13.63
+    },
+    {
+      "t": 8.6,
+      "preset": "arrive",
+      "peakWithin150msDbFS": -16.08
+    },
+    {
+      "t": 9,
+      "preset": "clock",
+      "peakWithin150msDbFS": -24.57
+    },
+    {
+      "t": 10,
+      "preset": "clock",
+      "peakWithin150msDbFS": -22.51
+    },
+    {
+      "t": 11,
+      "preset": "clock",
+      "peakWithin150msDbFS": -23.88
+    },
+    {
+      "t": 12,
+      "preset": "clock",
+      "peakWithin150msDbFS": -23.89
+    },
+    {
+      "t": 13,
+      "preset": "clock",
+      "peakWithin150msDbFS": -8.83
+    },
+    {
+      "t": 14,
+      "preset": "clock",
+      "peakWithin150msDbFS": -23.87
+    },
+    {
+      "t": 15,
+      "preset": "clock",
+      "peakWithin150msDbFS": -19.13
+    },
+    {
+      "t": 16,
+      "preset": "clock",
+      "peakWithin150msDbFS": -25.26
+    },
+    {
+      "t": 17,
+      "preset": "clock",
+      "peakWithin150msDbFS": -27.14
+    },
+    {
+      "t": 18,
+      "preset": "clock",
+      "peakWithin150msDbFS": -24.72
+    },
+    {
+      "t": 19,
+      "preset": "clock",
+      "peakWithin150msDbFS": -22.77
+    },
+    {
+      "t": 13,
+      "preset": "thump",
+      "peakWithin150msDbFS": -8.83
+    },
+    {
+      "t": 15,
+      "preset": "send",
+      "peakWithin150msDbFS": -19.13
+    },
+    {
+      "t": 15.6,
+      "preset": "arrive",
+      "peakWithin150msDbFS": -16.24
+    },
+    {
+      "t": 20,
+      "preset": "crash",
+      "peakWithin150msDbFS": -5.58
+    },
+    {
+      "t": 20.5,
+      "preset": "send",
+      "peakWithin150msDbFS": -22.97
+    },
+    {
+      "t": 21.1,
+      "preset": "arrive",
+      "peakWithin150msDbFS": -12.15
+    },
+    {
+      "t": 21.1,
+      "preset": "deliver",
+      "peakWithin150msDbFS": -12.15
+    },
+    {
+      "t": 22,
+      "preset": "send",
+      "peakWithin150msDbFS": -23.57
+    },
+    {
+      "t": 22.6,
+      "preset": "arrive",
+      "peakWithin150msDbFS": -8.1
+    },
+    {
+      "t": 22.6,
+      "preset": "thump",
+      "peakWithin150msDbFS": -8.1
+    },
+    {
+      "t": 24.8,
+      "preset": "poof",
+      "peakWithin150msDbFS": -21.57
+    }
+  ],
+  "audioPhysicallyHeard": false
+}

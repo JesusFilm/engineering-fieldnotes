@@ -1,0 +1,51 @@
+{
+  "id": "astra",
+  "concept": "queues-and-backpressure",
+  "title": "Queued ≠ complete",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "A full queue can delay an agent tool submission; a free place admits the job, but admission is not successful tool completion.",
+  "src": "media/queues-and-backpressure/astra.mp4",
+  "poster": "media/queues-and-backpressure/astra.jpg",
+  "duration": 30.0,
+  "verified": true,
+  "limitations": [
+    "Illustrative finite batch with one worker and three waiting places; job durations are not benchmarks.",
+    "FULL and SPACE visualize local admission feedback, not RabbitMQ protocol messages or acknowledgements.",
+    "Bounding waiting items does not guarantee bounded memory, request rate, deadlines, permissions, durability or exactly-once effects.",
+    "Audio was checked by waveform, spectrum, cue timing and encoded peak analysis; it was not physically listened to.",
+    "This is an author-reviewed alternative, not a comparative recommendation."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5.5,
+      "text": "A documentation-check agent submits search job A. It passes through the queue, runs on the single tool worker, and completes normally."
+    },
+    {
+      "start": 5.5,
+      "end": 10.8,
+      "text": "Search job B runs slowly. C, D and E fill all three waiting places while B continues."
+    },
+    {
+      "start": 10.8,
+      "end": 15,
+      "text": "The full-queue signal pauses the agent with job F held outside the queue. F has not been admitted; existing tool work continues."
+    },
+    {
+      "start": 15,
+      "end": 19.8,
+      "text": "After B completes, removing C frees a place. The agent resumes and submits F. F is now queued, while C is running; admission has not completed F."
+    },
+    {
+      "start": 19.8,
+      "end": 25.6,
+      "text": "F stays queued while earlier search jobs finish. Only after D and E have run does F leave its waiting place for the tool worker."
+    },
+    {
+      "start": 25.6,
+      "end": 30,
+      "text": "F runs and its progress bar fills. Its state changes to complete only after execution finishes. The queue is empty and all six jobs have outcomes. This finite example is not a delivery or timing guarantee."
+    }
+  ]
+}

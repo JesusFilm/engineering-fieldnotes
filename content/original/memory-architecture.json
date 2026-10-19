@@ -1,0 +1,27 @@
+{
+  "id": "memory-architecture",
+  "title": "Memory architecture",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform",
+    "Tech lead"
+  ],
+  "summary": "Memory architecture determines what an agent retains and how it retrieves that information later.",
+  "overview": "Thread state supports continuity within a task, while durable memory can span sessions. Storage structure and update timing affect retrieval quality and freshness.",
+  "why": "Persisting a mistaken inference can make future runs consistently wrong.",
+  "example": "An assistant stores an approved repository convention with its source and revision, while keeping temporary debugging notes in task state.",
+  "judgment": "Decide who can write memory, its scope and retention, and how corrections replace stale entries.",
+  "next": "How will a corrected team convention invalidate earlier memories across active sessions?",
+  "sources": [
+    {
+      "title": "Memory overview \u2014 LangChain",
+      "url": "https://docs.langchain.com/oss/python/concepts/memory"
+    }
+  ],
+  "related": [
+    "context-engineering",
+    "replication-and-consistency",
+    "cache-aside"
+  ]
+}

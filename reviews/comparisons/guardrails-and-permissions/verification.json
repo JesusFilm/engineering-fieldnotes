@@ -1,0 +1,661 @@
+{
+  "reviewed": "2026-10-19",
+  "audioHeard": false,
+  "method": "Full decode, decoded frame inspection at 1080px and 350px, exact indexed RGB endpoints, MP4 atom parsing, audio peaks, viewed spectrograms, audio cue energy and decoded visual-change checks.",
+  "variants": {
+    "baseline": {
+      "path": "public/media/guardrails-and-permissions/baseline.mp4",
+      "sha256": "05322c29413559b7ae3c8ac8a90e134240f161b320fd072cbaa345634d668a9f",
+      "duration": "24.000000",
+      "videoFrames": 720,
+      "video": {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1"
+      },
+      "audioCodec": "aac",
+      "maxAudioDBFS": -6.5,
+      "atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 26963
+        },
+        {
+          "type": "free",
+          "offset": 26995,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 27003,
+          "size": 358681
+        }
+      ],
+      "checks": {
+        "format": true,
+        "frameCount": true,
+        "faststart": true,
+        "fullDecode": true,
+        "audioPeak": true,
+        "exactEndpointMatch": true,
+        "cueWindowsHaveAudio": true,
+        "cueWindowsHaveVisualChanges": true
+      },
+      "cueAudioEnergy": [
+        {
+          "t": 1,
+          "name": "send",
+          "rmsDBFS": -34.67
+        },
+        {
+          "t": 1.75,
+          "name": "hit",
+          "rmsDBFS": -20.91
+        },
+        {
+          "t": 4,
+          "name": "send",
+          "rmsDBFS": -34.66
+        },
+        {
+          "t": 4.75,
+          "name": "arrive",
+          "rmsDBFS": -19.32
+        },
+        {
+          "t": 6.5,
+          "name": "send",
+          "rmsDBFS": -34.7
+        },
+        {
+          "t": 7.25,
+          "name": "store",
+          "rmsDBFS": -24.99
+        },
+        {
+          "t": 8.2,
+          "name": "send",
+          "rmsDBFS": -34.65
+        },
+        {
+          "t": 8.95,
+          "name": "deliver",
+          "rmsDBFS": -20.78
+        },
+        {
+          "t": 11.5,
+          "name": "send",
+          "rmsDBFS": -34.67
+        },
+        {
+          "t": 12.25,
+          "name": "hit",
+          "rmsDBFS": -20.91
+        },
+        {
+          "t": 14.5,
+          "name": "send",
+          "rmsDBFS": -34.66
+        },
+        {
+          "t": 15.25,
+          "name": "thump",
+          "rmsDBFS": -15.11
+        },
+        {
+          "t": 17.5,
+          "name": "send",
+          "rmsDBFS": -34.66
+        },
+        {
+          "t": 18.25,
+          "name": "deliver",
+          "rmsDBFS": -19.94
+        },
+        {
+          "t": 20.5,
+          "name": "ack",
+          "rmsDBFS": -34.13
+        }
+      ],
+      "audioHeard": false,
+      "allPassed": true,
+      "cueVisualChanges": [
+        {
+          "t": 1,
+          "cue": "send",
+          "changedPixels": 742
+        },
+        {
+          "t": 1.75,
+          "cue": "hit",
+          "changedPixels": 1355
+        },
+        {
+          "t": 4,
+          "cue": "send",
+          "changedPixels": 776
+        },
+        {
+          "t": 4.75,
+          "cue": "arrive",
+          "changedPixels": 1256
+        },
+        {
+          "t": 6.5,
+          "cue": "send",
+          "changedPixels": 548
+        },
+        {
+          "t": 7.25,
+          "cue": "store",
+          "changedPixels": 1044
+        },
+        {
+          "t": 8.2,
+          "cue": "send",
+          "changedPixels": 416
+        },
+        {
+          "t": 8.95,
+          "cue": "deliver",
+          "changedPixels": 969
+        },
+        {
+          "t": 11.5,
+          "cue": "send",
+          "changedPixels": 470
+        },
+        {
+          "t": 12.25,
+          "cue": "hit",
+          "changedPixels": 922
+        },
+        {
+          "t": 14.5,
+          "cue": "send",
+          "changedPixels": 486
+        },
+        {
+          "t": 15.25,
+          "cue": "thump",
+          "changedPixels": 2893
+        },
+        {
+          "t": 17.5,
+          "cue": "send",
+          "changedPixels": 388
+        },
+        {
+          "t": 18.25,
+          "cue": "deliver",
+          "changedPixels": 800
+        },
+        {
+          "t": 20.5,
+          "cue": "ack",
+          "changedPixels": 2798
+        }
+      ]
+    },
+    "astra": {
+      "path": "public/media/guardrails-and-permissions/astra.mp4",
+      "sha256": "0c6d12bff02ab48135b0222201f3201265092b98212239352f4a06943f1c43ad",
+      "duration": "28.000000",
+      "videoFrames": 840,
+      "video": {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1"
+      },
+      "audioCodec": "aac",
+      "maxAudioDBFS": -6.3,
+      "atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 31300
+        },
+        {
+          "type": "free",
+          "offset": 31332,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 31340,
+          "size": 436364
+        }
+      ],
+      "checks": {
+        "format": true,
+        "frameCount": true,
+        "faststart": true,
+        "fullDecode": true,
+        "audioPeak": true,
+        "exactEndpointMatch": true,
+        "cueWindowsHaveAudio": true,
+        "cueWindowsHaveVisualChanges": true
+      },
+      "cueAudioEnergy": [
+        {
+          "t": 0.4,
+          "name": "recover",
+          "rmsDBFS": -33.73
+        },
+        {
+          "t": 1.3,
+          "name": "send",
+          "rmsDBFS": -35.23
+        },
+        {
+          "t": 2.1,
+          "name": "hit",
+          "rmsDBFS": -23.58
+        },
+        {
+          "t": 2.9,
+          "name": "send",
+          "rmsDBFS": -35.08
+        },
+        {
+          "t": 3.7,
+          "name": "deliver",
+          "rmsDBFS": -24.08
+        },
+        {
+          "t": 5.7,
+          "name": "send",
+          "rmsDBFS": -35.05
+        },
+        {
+          "t": 6.5,
+          "name": "thump",
+          "rmsDBFS": -16.38
+        },
+        {
+          "t": 9.5,
+          "name": "send",
+          "rmsDBFS": -35.05
+        },
+        {
+          "t": 10.3,
+          "name": "arrive",
+          "rmsDBFS": -21.63
+        },
+        {
+          "t": 12.6,
+          "name": "chime",
+          "rmsDBFS": -22.54
+        },
+        {
+          "t": 14.8,
+          "name": "send",
+          "rmsDBFS": -35.05
+        },
+        {
+          "t": 15.6,
+          "name": "arrive",
+          "rmsDBFS": -23.31
+        },
+        {
+          "t": 17.7,
+          "name": "send",
+          "rmsDBFS": -35.06
+        },
+        {
+          "t": 18.5,
+          "name": "store",
+          "rmsDBFS": -28.1
+        },
+        {
+          "t": 21,
+          "name": "send",
+          "rmsDBFS": -35.04
+        },
+        {
+          "t": 21.8,
+          "name": "thump",
+          "rmsDBFS": -16.36
+        },
+        {
+          "t": 23.3,
+          "name": "send",
+          "rmsDBFS": -35.05
+        },
+        {
+          "t": 24.1,
+          "name": "hit",
+          "rmsDBFS": -23.57
+        },
+        {
+          "t": 26.4,
+          "name": "poof",
+          "rmsDBFS": -43.24
+        }
+      ],
+      "audioHeard": false,
+      "allPassed": true,
+      "cueVisualChanges": [
+        {
+          "t": 0.4,
+          "cue": "recover",
+          "changedPixels": 6435,
+          "windowAfterSeconds": 0.5,
+          "reason": "Fade transition: measure inside the visible fade, not its near-black start."
+        },
+        {
+          "t": 1.3,
+          "cue": "send",
+          "changedPixels": 433
+        },
+        {
+          "t": 2.1,
+          "cue": "hit",
+          "changedPixels": 414
+        },
+        {
+          "t": 2.9,
+          "cue": "send",
+          "changedPixels": 406
+        },
+        {
+          "t": 3.7,
+          "cue": "deliver",
+          "changedPixels": 1314
+        },
+        {
+          "t": 5.7,
+          "cue": "send",
+          "changedPixels": 1463
+        },
+        {
+          "t": 6.5,
+          "cue": "thump",
+          "changedPixels": 1692
+        },
+        {
+          "t": 9.5,
+          "cue": "send",
+          "changedPixels": 1154
+        },
+        {
+          "t": 10.3,
+          "cue": "arrive",
+          "changedPixels": 1178
+        },
+        {
+          "t": 12.6,
+          "cue": "chime",
+          "changedPixels": 519
+        },
+        {
+          "t": 14.8,
+          "cue": "send",
+          "changedPixels": 239
+        },
+        {
+          "t": 15.6,
+          "cue": "arrive",
+          "changedPixels": 1411
+        },
+        {
+          "t": 17.7,
+          "cue": "send",
+          "changedPixels": 1003
+        },
+        {
+          "t": 18.5,
+          "cue": "store",
+          "changedPixels": 349
+        },
+        {
+          "t": 21,
+          "cue": "send",
+          "changedPixels": 618
+        },
+        {
+          "t": 21.8,
+          "cue": "thump",
+          "changedPixels": 2405
+        },
+        {
+          "t": 23.3,
+          "cue": "send",
+          "changedPixels": 435
+        },
+        {
+          "t": 24.1,
+          "cue": "hit",
+          "changedPixels": 1218
+        },
+        {
+          "t": 26.4,
+          "cue": "poof",
+          "changedPixels": 8225,
+          "windowAfterSeconds": 0.5,
+          "reason": "Fade transition: measure inside the visible fade, not its near-black start."
+        }
+      ]
+    },
+    "fable": {
+      "path": "public/media/guardrails-and-permissions/fable.mp4",
+      "sha256": "6b637eace864ba90e374e2519d55ab580ea5daf9e4095db60b87536a4ac861a2",
+      "duration": "25.410998",
+      "videoFrames": 762,
+      "video": {
+        "codec_name": "h264",
+        "width": 1080,
+        "height": 1920,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1",
+        "avg_frame_rate": "30/1"
+      },
+      "audioCodec": "aac",
+      "maxAudioDBFS": -1.4,
+      "atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size": 27788
+        },
+        {
+          "type": "free",
+          "offset": 27820,
+          "size": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 27828,
+          "size": 1610888
+        }
+      ],
+      "checks": {
+        "format": true,
+        "frameCount": true,
+        "faststart": true,
+        "fullDecode": true,
+        "audioPeak": true,
+        "exactEndpointMatch": true,
+        "cueWindowsHaveAudio": true,
+        "cueWindowsHaveVisualChanges": true
+      },
+      "cueAudioEnergy": [
+        {
+          "t": 0.824,
+          "name": "send",
+          "rmsDBFS": -28.65
+        },
+        {
+          "t": 1.529,
+          "name": "arrive",
+          "rmsDBFS": -20.87
+        },
+        {
+          "t": 1.882,
+          "name": "send",
+          "rmsDBFS": -29.58
+        },
+        {
+          "t": 2.529,
+          "name": "arrive",
+          "rmsDBFS": -19.72
+        },
+        {
+          "t": 2.824,
+          "name": "hit",
+          "rmsDBFS": -19.14
+        },
+        {
+          "t": 3.824,
+          "name": "arrive",
+          "rmsDBFS": -17.96
+        },
+        {
+          "t": 3.882,
+          "name": "store",
+          "rmsDBFS": -19.4
+        },
+        {
+          "t": 4.765,
+          "name": "arrive",
+          "rmsDBFS": -22.48
+        },
+        {
+          "t": 5.471,
+          "name": "arrive",
+          "rmsDBFS": -22.41
+        },
+        {
+          "t": 5.824,
+          "name": "send",
+          "rmsDBFS": -30.61
+        },
+        {
+          "t": 6.471,
+          "name": "deliver",
+          "rmsDBFS": -17.17
+        },
+        {
+          "t": 8.706,
+          "name": "send",
+          "rmsDBFS": -28.65
+        },
+        {
+          "t": 9.412,
+          "name": "arrive",
+          "rmsDBFS": -20.85
+        },
+        {
+          "t": 9.765,
+          "name": "send",
+          "rmsDBFS": -29.59
+        },
+        {
+          "t": 10.412,
+          "name": "arrive",
+          "rmsDBFS": -19.73
+        },
+        {
+          "t": 10.706,
+          "name": "hit",
+          "rmsDBFS": -19.13
+        },
+        {
+          "t": 11.706,
+          "name": "arrive",
+          "rmsDBFS": -18.81
+        },
+        {
+          "t": 11.765,
+          "name": "store",
+          "rmsDBFS": -20.62
+        },
+        {
+          "t": 12.647,
+          "name": "arrive",
+          "rmsDBFS": -22.49
+        },
+        {
+          "t": 13.353,
+          "name": "inject",
+          "rmsDBFS": -16.34
+        },
+        {
+          "t": 15.235,
+          "name": "send",
+          "rmsDBFS": -29.59
+        },
+        {
+          "t": 15.882,
+          "name": "arrive",
+          "rmsDBFS": -19.74
+        },
+        {
+          "t": 16.235,
+          "name": "deny",
+          "rmsDBFS": -12.24
+        },
+        {
+          "t": 17.294,
+          "name": "arrive",
+          "rmsDBFS": -21.49
+        },
+        {
+          "t": 18.941,
+          "name": "send",
+          "rmsDBFS": -29.56
+        },
+        {
+          "t": 19.588,
+          "name": "arrive",
+          "rmsDBFS": -19.73
+        },
+        {
+          "t": 19.941,
+          "name": "deny",
+          "rmsDBFS": -13.81
+        },
+        {
+          "t": 21.0,
+          "name": "arrive",
+          "rmsDBFS": -21.47
+        },
+        {
+          "t": 21.353,
+          "name": "send",
+          "rmsDBFS": -30.57
+        },
+        {
+          "t": 22.0,
+          "name": "deliver",
+          "rmsDBFS": -16.46
+        }
+      ],
+      "audioHeard": false,
+      "allPassed": true
+    }
+  }
+}

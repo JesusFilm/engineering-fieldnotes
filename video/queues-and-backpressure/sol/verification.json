@@ -1,0 +1,422 @@
+{
+  "verifiedAt": "2026-10-18T23:47:47.773039+00:00",
+  "sha256": "c5e6125c6a1eb3ab8a1d83308f3e0966b6caa4da04bf88270e083279df62990b",
+  "posterSha256": "b6541023899d1215fc0129e053b7a56810583c4d6d50bd78c945d0c5107dd3fd",
+  "sourceSha256": {
+    "scene.js": "77952067c1d72734a7858fa68a91ce43326763c63bd00fdd6509bbf4dddba9cd",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "c203cd7f8d2a807aa060219335a820c462de201ee13769a5274ad5fb78fb3a86",
+    "engine/flow-engine.js": "d86e5a3eafec5d15b1be5265ec45727f44a974f14d269d38113afc16dbd97759"
+  },
+  "duration": 30.0,
+  "bytes": 746640,
+  "frames": 900,
+  "video": "h264 yuv420p 1080x1920 30fps",
+  "audio": "aac",
+  "audioPeakDbfs": -8.3,
+  "fullDecode": true,
+  "faststart": true,
+  "matchingBoundaryFrames": true,
+  "boundaryRgbSha256": "b0b1b5d12b71256a20693a87ad1e3a5512930d9647be591d3c75bff011152bbd",
+  "audioCues": 69,
+  "allCueWindowsNonSilent": true,
+  "decodedAudioAlignment": [
+    {
+      "eventTime": 0.6,
+      "offsetMs": 0.0,
+      "correlation": 0.99986
+    },
+    {
+      "eventTime": 5.5,
+      "offsetMs": 0.0,
+      "correlation": 0.99994
+    },
+    {
+      "eventTime": 15,
+      "offsetMs": 0.0,
+      "correlation": 0.99977
+    },
+    {
+      "eventTime": 17.25,
+      "offsetMs": 0.0,
+      "correlation": 0.99963
+    },
+    {
+      "eventTime": 21,
+      "offsetMs": 0.0,
+      "correlation": 0.99993
+    },
+    {
+      "eventTime": 22.2,
+      "offsetMs": 0.0,
+      "correlation": 0.99853
+    },
+    {
+      "eventTime": 25.3,
+      "offsetMs": 0.0,
+      "correlation": 0.99951
+    },
+    {
+      "eventTime": 28,
+      "offsetMs": 0.0,
+      "correlation": 0.9627
+    }
+  ],
+  "cueWindows": [
+    {
+      "t": 0.6,
+      "sound": "recover",
+      "windowRmsDbfs": -35.51
+    },
+    {
+      "t": 1.5,
+      "sound": "send",
+      "windowRmsDbfs": -38.85
+    },
+    {
+      "t": 2.15,
+      "sound": "ack",
+      "windowRmsDbfs": -34.77
+    },
+    {
+      "t": 2.15,
+      "sound": "send",
+      "windowRmsDbfs": -34.77
+    },
+    {
+      "t": 2.8,
+      "sound": "store",
+      "windowRmsDbfs": -31.84
+    },
+    {
+      "t": 3.1,
+      "sound": "store",
+      "windowRmsDbfs": -31.0
+    },
+    {
+      "t": 3.1,
+      "sound": "send",
+      "windowRmsDbfs": -31.0
+    },
+    {
+      "t": 3.85,
+      "sound": "arrive",
+      "windowRmsDbfs": -23.98
+    },
+    {
+      "t": 4.55,
+      "sound": "work",
+      "windowRmsDbfs": -40.55
+    },
+    {
+      "t": 5.5,
+      "sound": "chime",
+      "windowRmsDbfs": -23.9
+    },
+    {
+      "t": 5.85,
+      "sound": "ack",
+      "windowRmsDbfs": -37.07
+    },
+    {
+      "t": 6.65,
+      "sound": "arrive",
+      "windowRmsDbfs": -25.93
+    },
+    {
+      "t": 7.4,
+      "sound": "clock",
+      "windowRmsDbfs": -38.77
+    },
+    {
+      "t": 7.6,
+      "sound": "send",
+      "windowRmsDbfs": -38.81
+    },
+    {
+      "t": 8.25,
+      "sound": "ack",
+      "windowRmsDbfs": -34.76
+    },
+    {
+      "t": 8.25,
+      "sound": "send",
+      "windowRmsDbfs": -34.76
+    },
+    {
+      "t": 8.9,
+      "sound": "store",
+      "windowRmsDbfs": -28.37
+    },
+    {
+      "t": 9.05,
+      "sound": "store",
+      "windowRmsDbfs": -30.88
+    },
+    {
+      "t": 9.05,
+      "sound": "send",
+      "windowRmsDbfs": -30.88
+    },
+    {
+      "t": 9.8,
+      "sound": "arrive",
+      "windowRmsDbfs": -24.0
+    },
+    {
+      "t": 10.5,
+      "sound": "work",
+      "windowRmsDbfs": -40.65
+    },
+    {
+      "t": 11.4,
+      "sound": "work",
+      "windowRmsDbfs": -31.26
+    },
+    {
+      "t": 12.3,
+      "sound": "work",
+      "windowRmsDbfs": -40.62
+    },
+    {
+      "t": 13.2,
+      "sound": "work",
+      "windowRmsDbfs": -31.26
+    },
+    {
+      "t": 14.1,
+      "sound": "work",
+      "windowRmsDbfs": -40.36
+    },
+    {
+      "t": 15.0,
+      "sound": "work",
+      "windowRmsDbfs": -22.58
+    },
+    {
+      "t": 15.9,
+      "sound": "work",
+      "windowRmsDbfs": -40.57
+    },
+    {
+      "t": 16.8,
+      "sound": "work",
+      "windowRmsDbfs": -40.51
+    },
+    {
+      "t": 17.7,
+      "sound": "work",
+      "windowRmsDbfs": -38.78
+    },
+    {
+      "t": 18.6,
+      "sound": "work",
+      "windowRmsDbfs": -40.05
+    },
+    {
+      "t": 19.5,
+      "sound": "work",
+      "windowRmsDbfs": -40.55
+    },
+    {
+      "t": 20.4,
+      "sound": "work",
+      "windowRmsDbfs": -40.57
+    },
+    {
+      "t": 10.1,
+      "sound": "send",
+      "windowRmsDbfs": -38.89
+    },
+    {
+      "t": 10.75,
+      "sound": "ack",
+      "windowRmsDbfs": -34.79
+    },
+    {
+      "t": 10.75,
+      "sound": "send",
+      "windowRmsDbfs": -34.79
+    },
+    {
+      "t": 11.4,
+      "sound": "store",
+      "windowRmsDbfs": -31.26
+    },
+    {
+      "t": 11.9,
+      "sound": "send",
+      "windowRmsDbfs": -38.8
+    },
+    {
+      "t": 12.55,
+      "sound": "ack",
+      "windowRmsDbfs": -34.76
+    },
+    {
+      "t": 12.55,
+      "sound": "send",
+      "windowRmsDbfs": -34.76
+    },
+    {
+      "t": 13.2,
+      "sound": "store",
+      "windowRmsDbfs": -31.26
+    },
+    {
+      "t": 13.7,
+      "sound": "send",
+      "windowRmsDbfs": -38.83
+    },
+    {
+      "t": 14.35,
+      "sound": "ack",
+      "windowRmsDbfs": -34.78
+    },
+    {
+      "t": 14.35,
+      "sound": "send",
+      "windowRmsDbfs": -34.78
+    },
+    {
+      "t": 15,
+      "sound": "store",
+      "windowRmsDbfs": -22.58
+    },
+    {
+      "t": 15,
+      "sound": "thump",
+      "windowRmsDbfs": -22.58
+    },
+    {
+      "t": 16.6,
+      "sound": "send",
+      "windowRmsDbfs": -36.59
+    },
+    {
+      "t": 17.25,
+      "sound": "thump",
+      "windowRmsDbfs": -20.75
+    },
+    {
+      "t": 17.55,
+      "sound": "thump",
+      "windowRmsDbfs": -24.98
+    },
+    {
+      "t": 18.45,
+      "sound": "miss",
+      "windowRmsDbfs": -36.54
+    },
+    {
+      "t": 21,
+      "sound": "chime",
+      "windowRmsDbfs": -23.91
+    },
+    {
+      "t": 21.35,
+      "sound": "ack",
+      "windowRmsDbfs": -37.03
+    },
+    {
+      "t": 22.15,
+      "sound": "arrive",
+      "windowRmsDbfs": -22.98
+    },
+    {
+      "t": 22.2,
+      "sound": "store",
+      "windowRmsDbfs": -24.06
+    },
+    {
+      "t": 22.2,
+      "sound": "send",
+      "windowRmsDbfs": -24.06
+    },
+    {
+      "t": 22.95,
+      "sound": "arrive",
+      "windowRmsDbfs": -23.99
+    },
+    {
+      "t": 23.65,
+      "sound": "work",
+      "windowRmsDbfs": -40.42
+    },
+    {
+      "t": 24.55,
+      "sound": "work",
+      "windowRmsDbfs": -33.85
+    },
+    {
+      "t": 25.45,
+      "sound": "work",
+      "windowRmsDbfs": -39.03
+    },
+    {
+      "t": 26.35,
+      "sound": "work",
+      "windowRmsDbfs": -40.66
+    },
+    {
+      "t": 27.25,
+      "sound": "work",
+      "windowRmsDbfs": -40.57
+    },
+    {
+      "t": 28.15,
+      "sound": "work",
+      "windowRmsDbfs": -40.49
+    },
+    {
+      "t": 22.2,
+      "sound": "recover",
+      "windowRmsDbfs": -24.06
+    },
+    {
+      "t": 23.6,
+      "sound": "ack",
+      "windowRmsDbfs": -36.21
+    },
+    {
+      "t": 24,
+      "sound": "send",
+      "windowRmsDbfs": -38.83
+    },
+    {
+      "t": 24.65,
+      "sound": "ack",
+      "windowRmsDbfs": -34.9
+    },
+    {
+      "t": 24.65,
+      "sound": "send",
+      "windowRmsDbfs": -34.9
+    },
+    {
+      "t": 25.3,
+      "sound": "store",
+      "windowRmsDbfs": -23.76
+    },
+    {
+      "t": 25.3,
+      "sound": "thump",
+      "windowRmsDbfs": -23.76
+    },
+    {
+      "t": 28,
+      "sound": "poof",
+      "windowRmsDbfs": -37.65
+    }
+  ],
+  "physicallyListened": false,
+  "visualInspectionRequired": [
+    "contact-sheet.png",
+    "beat-sheet-350.png",
+    "beat-1-1080.png through beat-5-1080.png",
+    "transition frames",
+    "spectrogram.png"
+  ],
+  "visualReview": "See review.md; automated checks alone do not establish legibility or causal clarity."
+}

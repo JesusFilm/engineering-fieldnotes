@@ -1,0 +1,56 @@
+{
+  "id": "orchestration-patterns",
+  "recommended": "astra",
+  "rationale": "Choose Join the checks as the main entry: it makes incomplete and failed review joins, human-visible failure, and fresh evidence after a patch change concrete. Baseline clearly contrasts serial and parallel scheduling and gives reconciliation its own work interval, but it never shows failure or stale evidence. Split by dependency is the strongest complement: a field/handler mismatch exposes the cost of unsafe fan-out, and its corrected ending waits for the handler before running tests.",
+  "findings": [
+    "Astra 4.35–8.05s and 13.25–17.5s: the same join first permits a separate approval and then blocks a failure; the new red notice reaches REPAIR at 15.95s. Baseline 10.7–11.5s and 19.2–20s shows reconciliation work clearly but only in successful cases.",
+    "Fable 8.9–13.2s: amount versus total_cents makes the hidden dependency and rework tangible. Baseline 14.3–18.95s shows overlapping independent work; it does not teach how to decide whether that overlap is safe.",
+    "Astra 17.5–23.65s clears both reports for PATCH C before rerunning, closely matching the guide’s exercise. Fable 6.3–15.4s now marks old tests/docs stale through repair; the task completion pulse is not a validated approval.",
+    "Fable 22.8–26.9s now waits for the handler and its return before dispatching tests at 23.85s. The final validation join teaches a second real dependency; the original concurrent-tests solution contradicted its own lesson.",
+    "At 350px, Astra 13.25–16.15s has the clearest labels and status hierarchy. Fable 9.3–13.4s demands more reading across four code rows, worker tasks and a bracket; baseline 17.35–20s is simpler and its progress bars help make duration visible.",
+    "Baseline 23.3–26s has a long blank tail and no additional teaching. Astra’s first approved state lasts about 1.35s, while its final approval holds 26.3–28.6s; Fable’s revised final join holds 26.9–29.1s. All exact decoded opening/closing frames match, including Fable’s retained title."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 3,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 3
+    }
+  },
+  "hashes": {
+    "baseline": "69f31971fbfbab339a619113de71185bb189420957d50078057e051d17b6af7a",
+    "astra": "0ef2aaa0ee3cec7bad9a10146825f2f599600e6ffa289213ac3f40d1a6491fb3",
+    "fable": "31d44cdbdb8a50e3d67643b1b2d6d7a8b2cf7969787cc3d0f7e4a40e9b4ed81a"
+  },
+  "contentVerdict": "Keep as core after tool-design and agent-evals: explicit dependencies, snapshot-bound result contracts and acceptance rules change everyday delegation decisions. The guide has a concrete review exercise with missing, stale and contradictory reports and observable success criteria, and asks the team to measure against a single-agent baseline. Primary documents support the pattern definitions and GitHub dependency/token semantics; conservative invalidation, bounded retry and human acceptance are explicit engineering choices, not guaranteed model performance. Dynamic planning and routing are optional reference mechanisms within this core lesson.",
+  "verified": true,
+  "defectsFixed": [
+    "Fable: mark old tests/docs stale at 6.3s instead of preserving green validation over changed code.",
+    "Fable: sequence final tests after handler completion/report; extend to 30s with a readable success hold.",
+    "Fable: clear old worker labels/colors during the reset at 15.95s.",
+    "Astra: show failure notice reaching the human at 15.95s while approval remains blocked.",
+    "Align revised transcripts and posters with encoded frames; correct baseline transcript timing and Fable bracket description; preserve author model/reasoning and add explicit editor attribution.",
+    "Clarify guide boundaries: token permissions do not constrain local filesystem writes, and conditional expressions can override GitHub needs success defaults; record primary-source retrieval dates."
+  ],
+  "limitations": [
+    "Audio was analysed, not heard. Decoded sample peaks: baseline -9.196 dBFS, astra -6.304 dBFS, fable -1.908 dBFS. Spectrograms and cue-window signal checks cannot establish individual audibility under overlap or subjective sound quality.",
+    "These are illustrative workflows, not benchmarks or running acceptance implementations. Model PASS is not proof of correctness; schema validation, contradiction reconciliation, timeouts, retries and permission enforcement are not fully animated.",
+    "Astra’s rerun-both policy is conservative for the exercise; finer dependency-based invalidation may be valid. The actual engineer repair and evidence examination are abstracted.",
+    "Fable assumes the docs task is independent of the renamed field. API docs consuming that field also need sequencing. Separate rows do not establish that concurrent writes to one checkout are safe.",
+    "Baseline retains its 2.7s blank tail; Fable remains comparatively dense at phone size. All alternatives are retained for complementary teaching.",
+    "The recommendation is saved editorial evidence, not curriculum promotion or a change to shared application defaults. No Git, publication or other-topic operations were performed."
+  ]
+}

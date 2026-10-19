@@ -1,0 +1,26 @@
+{
+  "id": "context-engineering",
+  "title": "Context engineering",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Tech lead"
+  ],
+  "summary": "Context engineering selects the instructions and evidence available to the model at each step.",
+  "overview": "Context includes tool definitions, retrieved material, conversation history, and current task state. Retrieval, trimming, and compaction determine what fits and what remains visible.",
+  "why": "More input can add irrelevant or stale material while increasing cost and latency.",
+  "example": "A debugging agent loads the failing stack trace and relevant module first, then retrieves callers only when needed.",
+  "judgment": "Decide which constraints must survive compaction and which evidence the agent can retrieve later.",
+  "next": "What important constraint disappears first when we compact a long debugging session?",
+  "sources": [
+    {
+      "title": "Effective context engineering for AI agents",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents"
+    }
+  ],
+  "related": [
+    "memory-architecture",
+    "tool-design",
+    "harness-engineering"
+  ]
+}

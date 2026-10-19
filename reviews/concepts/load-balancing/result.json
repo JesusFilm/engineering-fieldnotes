@@ -1,0 +1,26 @@
+{
+  "id": "load-balancing",
+  "placement": "reference",
+  "verifiedSources": [
+    "https://sre.google/sre-book/load-balancing-datacenter/",
+    "https://grpc.io/blog/grpc-load-balancing/",
+    "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/load_balancing/load_balancers",
+    "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/operations/draining",
+    "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/circuit_breaking"
+  ],
+  "changes": [
+    "gpt-6-astra, high reasoning: independently reviewed every original assertion on 2026-10-19.",
+    "Preserved id, title, category, roles and related fields; revised the full guide with a concrete agent tool-service scenario.",
+    "Distinguished routing units, eligibility, cumulative assignments, executing work and outstanding calls.",
+    "Added adoption rationale, prerequisites, observable outcomes, manual/AI workflow, walkthrough, pitfalls and practical exercise.",
+    "Qualified least-request heuristics and draining; separated illustrative timings from guarantees.",
+    "Created an independent unequal-work film with a retained local queue and timestamped accessible transcript."
+  ],
+  "limitations": [
+    "Reference material for replicated tool services; not necessary for initial single-user agent adoption.",
+    "Dedicated Envoy health-check page could not be retrieved reliably and is not counted as verified.",
+    "Envoy latest pages were development documentation; deployed versions must be checked separately.",
+    "gRPC article is historical; only protocol architecture, not obsolete rollout recommendations, is used.",
+    "Examples are authored, not measurements of the team infrastructure; no production benchmark or physical audio listening."
+  ]
+}

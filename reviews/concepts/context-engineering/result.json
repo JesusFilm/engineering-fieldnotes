@@ -1,0 +1,24 @@
+{
+  "id": "context-engineering",
+  "placement": "core",
+  "verifiedSources": [
+    "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+    "https://arxiv.org/html/2307.03172v3",
+    "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+    "https://platform.claude.com/docs/en/build-with-claude/prompt-caching"
+  ],
+  "changes": [
+    "Expanded the original short entry into a 731-word practical guide with a concrete v1 compatibility example.",
+    "Preserved identity, category, roles, and related fields; recommended core placement with observable outcomes and restart exercise.",
+    "Qualified context-length findings to the tested models/tasks and cost/latency claims for caching and retrieval.",
+    "Added explicit constraint preservation, source retrieval, current-patch checks, and retained human acceptance.",
+    "Reviewed every original assertion and recorded primary-source mapping and retrieval date.",
+    "Authored by gpt-6-astra with high reasoning."
+  ],
+  "limitations": [
+    "The invoice scenario and video are illustrative, not measured agent experiments.",
+    "Vendor engineering reports are not independent comparisons; historical long-context research does not establish current-model failure rates.",
+    "A passing compatibility fixture does not prove full correctness, and written constraints do not enforce permissions.",
+    "Default-curriculum promotion and comparative video recommendation remain editorial decisions."
+  ]
+}

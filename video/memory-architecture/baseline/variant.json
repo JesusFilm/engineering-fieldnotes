@@ -1,0 +1,34 @@
+{
+  "id": "baseline",
+  "concept": "memory-architecture",
+  "title": "Scope and explicit refresh",
+  "model": "Original prototype; model not recorded",
+  "editedBy": "gpt-6-astra comparative review",
+  "lesson": "Keep thread notes separate from shared conventions, and explicitly retrieve a corrected record into an active context.",
+  "src": "media/memory-architecture/baseline.mp4",
+  "poster": "media/memory-architecture/baseline.jpg",
+  "duration": 26,
+  "verified": true,
+  "corrections": [
+    "Restore the Memory / SCOPE & REFRESH title.",
+    "17.4–21.3s: show the active r1 context in amber while storage is r2, then turn it green only on explicit retrieval.",
+    "Improve inactive thread visibility, use a complete fade, and normalise the soundtrack with a thread-limited topic-local renderer."
+  ],
+  "transcript": [
+    "0–9s: Thread-local notes remain separate from a durable convention stored with an approved source revision. Agent A retrieves that convention.",
+    "10–15s: Agent B starts with empty context and retrieves the durable convention rather than the other thread’s temporary notes.",
+    "16–22s: A source correction updates storage. B still has the old version until it retrieves the corrected value.",
+    "22–26s: Hold the refreshed active context at r2, then fade the complete image to black."
+  ],
+  "limitations": [
+    "Scope is separate from durability: Thread A can remain checkpointed while B is active.",
+    "Amber highlights version divergence for the viewer; this cut does not implement a freshness validator or permission check.",
+    "The approved source and correction are illustrative; no repository integration was executed.",
+    "Audio is measured analytically, not listened to."
+  ],
+  "verification": {
+    "review": "reviews/comparisons/memory-architecture/after.md",
+    "sha256": "1850aa670eac3f8e42a9ba641cad1c0f7d491bed58af91327f4ad50f4993d2f0",
+    "audioHeard": false
+  }
+}

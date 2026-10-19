@@ -1,0 +1,47 @@
+{
+  "id": "astra",
+  "concept": "context-engineering",
+  "title": "Keep the contract",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Preserve compatibility constraints across agent handoffs, reopen their source, and rerun the matching check before accepting a patch.",
+  "src": "media/context-engineering/astra.mp4",
+  "poster": "media/context-engineering/astra.jpg",
+  "duration": 30,
+  "verified": true,
+  "limitations": [
+    "The invoice example is an illustrative scenario, not a recorded agent run or a measured failure rate.",
+    "A missing requirement may be rediscovered, and restoring context does not guarantee compliance.",
+    "The v1 fixture checks only its covered behavior; human review remains pending.",
+    "Written or persistent instructions do not enforce permissions; authorization is outside this lesson.",
+    "Audio was analyzed for peak, timing, and spectral events, but was not physically listened to.",
+    "This is an independently authored alternative; no comparative winner is claimed."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 6.3,
+      "text": "In this illustrative invoice task, the agent receives a goal to fix a timeout and a requirement to keep the v1 response field total_cents. A compatible patch passes the v1 fixture, establishing the normal case."
+    },
+    {
+      "start": 6.3,
+      "end": 10.3,
+      "text": "A handoff keeps the timeout goal but drops the compatibility requirement. The missing row turns red and empties. This shows one possible loss of context, not an inevitable result of summarization."
+    },
+    {
+      "start": 10.3,
+      "end": 16,
+      "text": "A second agent session uses the incomplete handoff and returns the replacement field amount. The same v1 fixture now fails, making the incompatible change visible."
+    },
+    {
+      "start": 16,
+      "end": 21,
+      "text": "The v1 contract is reopened. Its total_cents requirement is loaded back into the checked handoff. The fixture remains failed until the patch is repaired and checked again."
+    },
+    {
+      "start": 21,
+      "end": 30,
+      "text": "The agent reads the repaired handoff, restores total_cents in its patch, and reruns the fixture. It passes this check, while human review remains pending. The outcome is illustrative: context does not guarantee compliance or enforce permissions."
+    }
+  ]
+}

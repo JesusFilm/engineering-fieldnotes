@@ -1,0 +1,40 @@
+{
+  "id": "baseline",
+  "concept": "context-engineering",
+  "title": "Compact logs, retain the constraint",
+  "model": "Original prototype; model not recorded",
+  "lesson": "Summarize redundant history while retaining requirements, then retrieve the evidence needed for the next model invocation. A generated patch still needs checking.",
+  "src": "media/context-engineering/baseline.mp4",
+  "poster": "media/context-engineering/baseline.jpg",
+  "duration": 25.0,
+  "verified": true,
+  "editedBy": "gpt-6-astra comparative review",
+  "transcript": [
+    "0.0–7.7s: KEEP API, the null-crash task and api.ts:42 trace occupy an illustrative 8k-token context. Three repeated logs raise the displayed count to 10k, 13k and 15k of 16k.",
+    "7.7–11.0s: Redundant logs fade and become summary: null input. The unchanged constraint, task and trace remain; with the summary the illustrative total is 9k. The constraint and trace are highlighted.",
+    "12.2–15.3s: A callers? request reaches Repository. caller.ts returns and is recorded as caller.ts:18; the context rises to 11k.",
+    "17.3–22.9s: The selected context reaches Model. After processing, an amber Patch? candidate appears. No test or correctness verdict is shown.",
+    "23.0–25.0s: The complete scene fades to black; the exact decoded first and last frames match."
+  ],
+  "limitations": [
+    "Token counts and 16k capacity are illustrative, not a named model configuration or measured compression ratio.",
+    "The example shows a successful selection of retained details; summaries can omit requirements. Inspect the summary against its sources.",
+    "The final Patch? is a candidate, not a tested result.",
+    "Audio was analyzed, not heard."
+  ],
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "timestamp": "9.0–15.3s",
+      "change": "Corrected 5k/7k totals to 9k/11k so retaining the original 8k plus a summary does not consume fewer tokens than the unchanged original."
+    },
+    {
+      "date": "2026-10-19",
+      "timestamp": "19.1–23.0s",
+      "change": "Replaced the unsupported green correctness tick with an amber Patch? candidate."
+    }
+  ],
+  "originalArtifacts": "reviews/comparisons/context-engineering/scratch/original-baseline",
+  "mediaSHA256": "00cb76dc9211fde7120d769f43137bc3c5bc48a6a361f581266a10b43cc5485d",
+  "verification": "reviews/comparisons/context-engineering/verification.json"
+}

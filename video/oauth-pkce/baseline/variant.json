@@ -1,0 +1,36 @@
+{
+  "id": "baseline",
+  "concept": "oauth-pkce",
+  "model": "Original prototype; model not recorded",
+  "title": "Code interception protection",
+  "lesson": "An intercepted authorization code cannot be redeemed without its private PKCE verifier.",
+  "duration": 26,
+  "src": "media/oauth-pkce/baseline.mp4",
+  "poster": "media/oauth-pkce/baseline.jpg",
+  "editedBy": "gpt-6-astra comparative review",
+  "verified": true,
+  "corrections": [
+    "At 13.1s replace the overly specific invalid_grant label for an absent verifier with NO TOKEN.",
+    "Fade the full frame at both endpoints; use bounded FFmpeg threads and attenuated AAC for reproducible delivery.",
+    "At 9.0–9.8s move the intercepted-code chip below the actor labels to avoid transient overlap."
+  ],
+  "transcript": [
+    "0–7s: The mobile app retains a verifier and sends its S256 challenge. The server binds a newly issued authorization code to that challenge.",
+    "8–15s: An interceptor gets the code but not the verifier. Its token request is rejected.",
+    "16–22s: The legitimate app supplies the verifier. The server checks the challenge, consumes the code and returns the access token."
+  ],
+  "limitations": [
+    "The mobile-app interception example complements the chapter’s agent-host concurrency example.",
+    "Browser consent, redirects, TLS and other OAuth checks are omitted. Token issuance assumes those checks pass.",
+    "The final legitimate redemption illustrates possession of the correct verifier; do not assume every server preserves a code after a rejected exchange. Start a fresh attempt when needed.",
+    "NO TOKEN describes rejection without prescribing a provider-specific missing-verifier error.",
+    "Audio analysed, not physically heard."
+  ],
+  "comparativeVerification": {
+    "reviewer": "gpt-6-astra comparative review",
+    "checkedAt": "2026-10-19T00:09:21.285868+00:00",
+    "sha256": "2eedd4158dbe9b4aa3ad541911720e37033fa2796a4e170977e6a5d8269b88da",
+    "evidence": "reviews/comparisons/oauth-pkce/verification.json",
+    "audioHeard": false
+  }
+}

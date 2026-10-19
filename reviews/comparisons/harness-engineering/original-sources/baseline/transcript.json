@@ -1,0 +1,5 @@
+[
+  "0–9s: The first session changes task A, runs tests and records A as verified; B remains pending.",
+  "10–17s: The session ends. The workspace and progress record survive, and a fresh session restores them and runs startup checks.",
+  "18–25s: The new session completes and verifies B without repeating A. Both results hold before the fade."
+]

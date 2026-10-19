@@ -1,0 +1,36 @@
+{
+  "id": "baseline",
+  "concept": "queues-and-backpressure",
+  "title": "Backpressure — bounded queue",
+  "model": "Original prototype; model not recorded",
+  "editedBy": "gpt-6-astra comparative review",
+  "duration": 26,
+  "verified": true,
+  "transcript": [
+    "0–9s: Worker A runs while B, C and D fill the bounded queue. A FULL signal travels to the producer.",
+    "10–14s: The producer pauses with E waiting outside the full queue; the worker continues.",
+    "15.5–19s: Taking B frees a slot. The producer resumes and admits E.",
+    "21–26s: C leaves the queue and completes. D then leaves and is still running as the scene fades, with E waiting and three jobs completed. This is continued service, not completion of the whole batch."
+  ],
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "originalMp4Sha256": "9e445f576a7414ca6206875a385dfe042de676bb4a2d3d02e5b510a1f45f29f3",
+      "changes": [
+        "Continue with D at 23.8s while E waits, replacing the misleading stopped worker ending.",
+        "Apply renderer thread bounds to input/filter stages and add audio headroom."
+      ]
+    }
+  ],
+  "limitations": [
+    "Generic finite producer/worker example; five jobs, three waiting slots and one worker.",
+    "Ends with work in progress; no delivery, durability, rate or deadline guarantee.",
+    "Original model was not recorded; this correction does not establish authorship.",
+    "Audio analysed, not listened to."
+  ],
+  "comparativeVerification": {
+    "review": "reviews/comparisons/queues-and-backpressure.json",
+    "sha256": "eef1690fc5a0689b60bb35451c4225b3053da3430bceaa4a6092baccad45b4ed",
+    "audioHeard": false
+  }
+}

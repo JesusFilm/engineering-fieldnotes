@@ -1,0 +1,82 @@
+{
+  "id": "astra",
+  "concept": "tool-design",
+  "title": "Empty ≠ failed",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Preserve the difference between a completed empty lookup and a failed tool call, then enforce a bounded retry in the application.",
+  "src": "media/tool-design/astra.mp4",
+  "poster": "media/tool-design/astra.jpg",
+  "duration": 30,
+  "verified": true,
+  "limitations": [
+    "Scripted incident-search scenario; typed results do not guarantee correct model interpretation or backend recovery.",
+    "The application enforces the illustrative one-retry budget; tool descriptions and persistent prompts do not enforce permissions or limits.",
+    "Partial coverage, authorization and permanent failure are discussed in the guide but not animated.",
+    "Audio analysed for peak, waveform timing and spectrum; not physically listened to.",
+    "Self-reviewed technical pass; no comparative recommendation or live agent evaluation is claimed."
+  ],
+  "transcript": [
+    {
+      "time": 0,
+      "text": "A read-only search for payments incidents completes successfully with no records. The empty list reaches the agent, which reports zero matches."
+    },
+    {
+      "time": 6.8,
+      "text": "The next lookup times out. A faulty tool adapter replaces the failure with an empty list, so the agent incorrectly reports zero matches; a red cross marks the mistake."
+    },
+    {
+      "time": 12.8,
+      "text": "The tool contract is changed to preserve execution errors. The index still times out, but an explicit error reaches the agent, which now treats the answer as unknown."
+    },
+    {
+      "time": 19.7,
+      "text": "An illustrative application policy waits with pulsing clock cues while App retries left stays at one. At dispatch the counter and its single segment drop to zero. In this scripted case the index recovers and returns INC-42; recovery is not guaranteed."
+    },
+    {
+      "time": 24.5,
+      "text": "The successful result and incident ID reach the agent, which reports the returned record. The scene holds, then fades to the same dark frame as the opening. Finding the record does not establish root cause."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "originalMP4SHA256": "b0b85fc7a289c0612b87535481752e71211619eace8729c5c84c308223a56620",
+      "changes": [
+        "Inset packet routes to clear node borders at arrival and departure.",
+        "Replace ambiguous continuous retry bar with a discrete application-owned 1-to-0 budget; pulse the waiting agent with clock cues.",
+        "Keep the final success border green after pulse restoration."
+      ],
+      "originalTranscript": [
+        {
+          "time": 0,
+          "text": "A read-only search for payments incidents completes successfully with no records. The empty list reaches the agent, which reports zero matches."
+        },
+        {
+          "time": 6.8,
+          "text": "The next lookup times out. A faulty tool adapter replaces the failure with an empty list, so the agent incorrectly reports zero matches; a red cross marks the mistake."
+        },
+        {
+          "time": 12.8,
+          "text": "The tool contract is changed to preserve execution errors. The index still times out, but an explicit error reaches the agent, which now treats the answer as unknown."
+        },
+        {
+          "time": 19.7,
+          "text": "An illustrative application policy waits and permits one retry. The displayed budget drops from one to zero at dispatch. In this scripted case the index recovers and returns incident INC-42; recovery is not guaranteed."
+        },
+        {
+          "time": 24.5,
+          "text": "The successful result and incident ID reach the agent, which reports the returned record. The scene holds, then fades to the same dark frame as the opening. Finding the record does not establish root cause."
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "gpt-6-astra comparative review",
+    "date": "2026-10-19",
+    "mp4SHA256": "3000737b0dd9032416739734d8fcb8aa2efd991207a886e4406ab3f3d281a904",
+    "report": "reviews/comparisons/tool-design/checks.json",
+    "audioHeard": false
+  }
+}

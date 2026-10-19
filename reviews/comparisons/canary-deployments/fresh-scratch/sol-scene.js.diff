@@ -1,0 +1,23 @@
+--- reviews/comparisons/canary-deployments/original-sources/sol/scene.js
++++ video/canary-deployments/sol/scene.js
+@@ -27,7 +27,7 @@
+     const cue=(t,name,id,note,gain=1)=>s.sfx(t,name,{note,gain,pan:id?s.panOf(id):0});
+     function value(t,id,v,color,icon=0,preset='ack',note='C5') {
+       s.set(t,id,'value',v,0);s.set(t,id,'color',color,0);s.set(t,id,'icon',icon,0);
+-      s.ripple(t,id,color,{r0:10,r1:48,dur:.45});cue(t,preset,id,note,.75);
++      s.pulse(t,id,undefined,.45);cue(t,preset,id,note,.75);
+     }
+     function session(t,id,minor=false,dur=.4) {
+       const x=id==='v1'?old:next;
+@@ -52,9 +52,9 @@
+     // 3. Transport stays green; the artifact check exposes the regression.
+     value(11.2,'oldApi','HTTP 200',C.ok,1,'ack','C6');
+     value(11.6,'newApi','HTTP 200',C.ok,1,'ack','E6');
+-    s.packet({route:['v1.bottom',[old,1418]],t:12.4,dur:.5,kind:'envelope',color:C.ok});cue(12.4,'send','v1','C6',.4);
++    s.packet({route:['v1.bottom',[old,1235],[540,1235],[540,1410],[old,1410]],t:12,dur:.9,kind:'envelope',color:C.ok});cue(12,'send','v1','C6',.4);
+     value(12.9,'oldTests','PASS',C.ok,1,'chime','C5');
+-    s.packet({route:['v2.bottom',[next,1418]],t:13.6,dur:.5,kind:'envelope',color:C.accent});cue(13.6,'send','v2','E6',.45);
++    s.packet({route:['v2.bottom',[next,1235],[540,1235],[540,1410],[next,1410]],t:13.2,dur:.9,kind:'envelope',color:C.accent});cue(13.2,'send','v2','E6',.45);
+     value(14.1,'newTests','FAIL',C.bad,-1,'crash','A4');
+     s.shake(14.1,'newTests',13,.45);
+     // 4. A configured gate acts on the failed required check, not the HTTP status.

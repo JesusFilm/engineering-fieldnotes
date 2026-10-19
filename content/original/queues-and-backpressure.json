@@ -1,0 +1,34 @@
+{
+  "id": "queues-and-backpressure",
+  "title": "Queues and backpressure",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Queues buffer work, while backpressure limits incoming work when consumers cannot keep up.",
+  "overview": "Consumer acknowledgements track processing progress, and prefetch limits bound unacknowledged deliveries. A queue alone cannot absorb sustained overload indefinitely; admission limits or shedding must bound backlog.",
+  "why": "Unbounded waiting turns a traffic spike into long delays and resource exhaustion.",
+  "example": "Image workers acknowledge completed jobs, cap in-flight deliveries, and reject new submissions when the oldest queued job exceeds the service\u2019s delay budget.",
+  "judgment": "Decide backlog limits, delivery guarantees, and how failed jobs leave the retry cycle.",
+  "next": "At peak arrival rates, how long until queue age exceeds the promised completion time?",
+  "sources": [
+    {
+      "title": "Consumer acknowledgements and publisher confirms \u2014 RabbitMQ",
+      "url": "https://www.rabbitmq.com/docs/confirms"
+    },
+    {
+      "title": "Consumer prefetch \u2014 RabbitMQ",
+      "url": "https://www.rabbitmq.com/docs/consumer-prefetch"
+    },
+    {
+      "title": "Handling Overload \u2014 Google SRE",
+      "url": "https://sre.google/sre-book/handling-overload/"
+    }
+  ],
+  "related": [
+    "idempotency",
+    "load-balancing",
+    "timeouts-and-retries"
+  ]
+}

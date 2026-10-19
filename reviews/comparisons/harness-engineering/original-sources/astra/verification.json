@@ -1,0 +1,128 @@
+{
+  "duration": 28.0,
+  "bytes": 424075,
+  "width": 1080,
+  "height": 1920,
+  "fps": "30/1",
+  "videoCodec": "h264",
+  "pixelFormat": "yuv420p",
+  "audioCodec": "aac",
+  "audioSampleRate": 44100,
+  "decodedFrames": 840,
+  "firstFrameMd5": "eb31442608984c1aa5939de6decc4443",
+  "lastFrameMd5": "eb31442608984c1aa5939de6decc4443",
+  "firstLastExactlyEqual": true,
+  "audioMaxDbfs": -4.6,
+  "faststart": true,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "size": 31412
+    },
+    {
+      "type": "free",
+      "offset": 31444,
+      "size": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 31452,
+      "size": 392623
+    }
+  ],
+  "cueMeasurements": [
+    {
+      "time": 0.5,
+      "sound": "recover",
+      "rmsFirst180msDbfs": -32.88
+    },
+    {
+      "time": 1.8,
+      "sound": "send",
+      "rmsFirst180msDbfs": -41.29
+    },
+    {
+      "time": 2.55,
+      "sound": "arrive",
+      "rmsFirst180msDbfs": -24.97
+    },
+    {
+      "time": 5,
+      "sound": "send",
+      "rmsFirst180msDbfs": -41.01
+    },
+    {
+      "time": 5.75,
+      "sound": "crash",
+      "rmsFirst180msDbfs": -16.54
+    },
+    {
+      "time": 6.6,
+      "sound": "thump",
+      "rmsFirst180msDbfs": -25.0
+    },
+    {
+      "time": 9.2,
+      "sound": "send",
+      "rmsFirst180msDbfs": -41.63
+    },
+    {
+      "time": 10.4,
+      "sound": "arrive",
+      "rmsFirst180msDbfs": -26.52
+    },
+    {
+      "time": 11.4,
+      "sound": "work",
+      "rmsFirst180msDbfs": -38.22
+    },
+    {
+      "time": 12.2,
+      "sound": "poof",
+      "rmsFirst180msDbfs": -37.77
+    },
+    {
+      "time": 15,
+      "sound": "send",
+      "rmsFirst180msDbfs": -41.0
+    },
+    {
+      "time": 15.75,
+      "sound": "arrive",
+      "rmsFirst180msDbfs": -24.98
+    },
+    {
+      "time": 17.4,
+      "sound": "send",
+      "rmsFirst180msDbfs": -40.96
+    },
+    {
+      "time": 18.15,
+      "sound": "arrive",
+      "rmsFirst180msDbfs": -24.95
+    },
+    {
+      "time": 21,
+      "sound": "send",
+      "rmsFirst180msDbfs": -40.97
+    },
+    {
+      "time": 21.75,
+      "sound": "chime",
+      "rmsFirst180msDbfs": -25.89
+    },
+    {
+      "time": 25.5,
+      "sound": "poof",
+      "rmsFirst180msDbfs": -41.45
+    }
+  ],
+  "physicalListening": false,
+  "sha256": "c5f47edf987d79acb93511b36757c69ace9d7f632a550de7b327c7ba1e104c5c"
+}

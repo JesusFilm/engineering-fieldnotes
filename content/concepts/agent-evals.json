@@ -1,0 +1,85 @@
+{
+  "id": "agent-evals",
+  "title": "Agent evals",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Tech lead"
+  ],
+  "summary": "Use repeatable tasks and explicit checks to decide whether an agent change improves useful work without breaking behavior the team already relies on.",
+  "overview": "An evaluation is a task plus evidence and grading rules. A trial is one attempt; a suite collects tasks. Evaluate the model together with its harness—the instructions, tools, and execution loop that let it act. A grader can inspect produced code, stored records, or a trace of tool interactions. Repeating a task measures variation; it does not make the agent deterministic.",
+  "why": "Manual spot checks work for exploration but leave a weak basis for changing models, prompts, or tools. A fluent completion message can hide an incorrect result. Turn acceptance criteria into inspectable evidence before delegating recurring engineering work.",
+  "example": "Illustration: ask a coding agent to fix an empty-password authentication bug. Patch A rejects every login. It passes the new empty-password test but fails an existing valid-password test. Patch B passes both. The second patch is ready for further review, not automatically safe to release. These two cases are deliberately incomplete authentication coverage.",
+  "judgment": "Make required correctness checks explicit. Use code to check concrete outcomes; use a rubric and human-calibrated model grading for subjective qualities such as explanation clarity. Do not average an authentication failure away with good prose. Passing a finite suite supports a bounded decision, not a general reliability guarantee.",
+  "next": "Which recent agent-assisted change looked successful but needed correction, and what observable check would have caught it?",
+  "sources": [
+    {
+      "title": "Anthropic: Demystifying evals for AI agents — tasks, trials, graders and isolated environments",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenAI: Evaluation best practices — representative cases and human calibration",
+      "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Anthropic: Writing effective tools for agents — held-out tasks and valid alternative paths",
+      "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "SWE-bench: Evaluation guide — execute generated patches and distinguish harness errors",
+      "url": "https://www.swebench.com/SWE-bench/guides/evaluation/",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "harness-engineering",
+    "observability-and-tracing",
+    "canary-deployments"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "A team adopting agents needs a shared definition of successful delegated work before expanding autonomy. Evals turn familiar acceptance tests and review habits into repeatable evidence for choosing prompts, tools, and models.",
+    "prerequisites": [
+      "harness-engineering"
+    ],
+    "outcomes": [
+      "Write a task with observable success criteria and at least one behavior that must remain unchanged.",
+      "Separate an agent failure from a broken test environment using retained evidence.",
+      "Compare two agent configurations across repeated trials without reporting only the best attempt."
+    ],
+    "workflow": {
+      "before": "An engineer implements a change, runs selected tests, and asks a colleague to review the patch and acceptance criteria.",
+      "after": "The team saves representative tasks, runs the agent from a clean starting state, and grades each produced artifact against retained acceptance and regression checks.",
+      "human": "Engineers own the task definition, grader quality, permissions, ambiguous failures, and the release decision."
+    },
+    "walkthrough": [
+      "1. Define the task before running the agent. For the authentication example, record the starting revision, synthetic users, expected login behavior, and a time budget. Keep grader tests outside the agent’s editable submission. Include valid login, empty input, and a separate unfamiliar case for later validation.",
+      "2. Run the actual configuration being considered: model, prompt, tool definitions, permissions, and harness version. Save the patch and tool trace. Start each trial from the same clean fixture so a previous attempt cannot leave a helpful file or changed database behind.",
+      "3. Grade the artifact with trusted checks. Apply the patch and execute both the new requirement and existing behavior tests. Confirm the checks actually ran: a missing dependency or timeout is not proof the patch is wrong. An agent exhausting its agreed time budget still failed that task attempt; distinguish that from a broken evaluation environment. Inspect traces to explain failures without demanding one exact tool sequence.",
+      "4. Compare the current and proposed configurations on the same tasks and budgets. Retain every attempt, including timeouts; report passes over attempts, failure categories, and time spent. Keep a separate set of tasks out of prompt tuning. Review unexpected results before accepting a change, then add newly discovered production failures to the suite."
+    ],
+    "pitfalls": [
+      "Optimizing only the new test rewards a patch that disables every login; preserve regression checks.",
+      "Reusing fixtures or cached grades can produce a false improvement; reset state and identify each run distinctly.",
+      "Letting an agent rewrite its own acceptance tests undermines the evidence; grade the submitted artifact independently.",
+      "Treating evaluation success as permission enforcement confuses measurement with access control; tool and runtime controls must enforce boundaries."
+    ],
+    "exercise": {
+      "title": "Catch a plausible but broken patch",
+      "steps": [
+        "Choose one small historical bug in a disposable copy and write the desired outcome plus an existing behavior to preserve.",
+        "Create a deliberately bad candidate that passes only the new requirement; confirm your grader rejects it.",
+        "Run two agent configurations three times each from clean fixtures, using identical tasks and limits.",
+        "Inspect all six results with a teammate and record the decision, uncertainty, and one missing case."
+      ],
+      "success": [
+        "The grader distinguishes the deliberately bad candidate from a candidate satisfying both checks.",
+        "A teammate can trace every recorded result to its artifact, configuration, and test output; three trials remain a learning exercise, not a reliability estimate."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

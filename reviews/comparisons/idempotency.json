@@ -1,0 +1,51 @@
+{
+  "id": "idempotency",
+  "recommended": "astra",
+  "rationale": "Astra makes the crucial distinction easiest to see: the ticket is committed while the agent still does not know the outcome, and retrying the same key and arguments returns that ticket. Its large saved mapping and visible v1/v2 comparison make it the strongest chapter introduction at phone width. Fable is a useful second watch because it first shows a bare retry creating a duplicate, then contrasts a keyed retry; the baseline gives a compact order-API example with parameter-mismatch rejection.",
+  "findings": [
+    "Baseline 4.2–7.7s and Astra 3.8–6.9s both commit before losing the reply. Astra's explicit unknown caller outcome and paired key/ticket records make the distinction between an operation's effect and knowledge of its result clearer.",
+    "Fable 7.46–13.46s uniquely shows an unkeyed retry creating #503 after #502 already exists. Its 24.57–26.07s keyed replay keeps the count at two, making the cost of unsafe retries more concrete than the other two cuts.",
+    "Baseline 17–20.2s and Astra 19–23.3s reject changed arguments under an existing key; Fable does not show that boundary. Astra keeps v1 and v2 available for comparison, whereas baseline relies more on the travelling cart label and mismatch badge.",
+    "Astra 13.6–16.8s has the most readable saved-key-to-ticket mapping at 350px. Baseline 11.7–14.1s is orderly but its result count is small; Fable 24.57–26.07s now has larger ticket rows and count, improving the decisive unchanged-state evidence.",
+    "Fable 15.86–17.16s now displays moving rewind triangles during the fade, clarifying that the reset from three tickets to one introduces an alternate run. It must not be read as idempotency deleting already committed duplicates.",
+    "Baseline 20.2–24.7s, including a 22.1s outcome pulse, and Astra 25–28.7s dwell longer than needed on their resolved outcomes. Fable's 26.07–28.77s close better fits its contrast; Astra's earlier 6.9–9.8s uncertainty hold does useful explanatory work."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 3,
+      "visual": 3
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 3,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "80a8836c247a348910a733151970208625b57aea542f5c8d55b80bf8e2057889",
+    "astra": "9a8054364cb8b8378690d675f4100549fb9f17e389290956875584031efd5248",
+    "fable": "6104b22418cb8c8f7b2661aa1bcf84bd3ea6fcec3166781c7cffc46417e53fac"
+  },
+  "contentVerdict": "Keep as core: teams must establish the retry contract before allowing agents to repeat writes with uncertain outcomes. Tool design and timeout/retry knowledge are appropriate prerequisites. The guide turns that decision into observable tests for dropped replies, concurrent requests, changed payloads, and retention limits; its one-database implementation can also serve as later reference. Primary-source checks support its distinctions between stable scoped identity, atomic durable recording plus uniqueness, authorization, finite retention, and uncoordinated external effects. No factual guide rewrite was needed.",
+  "verified": true,
+  "defectsFixed": [
+    "Fable: replaced an ambiguous fade-only counterfactual transition with a local animated rewind overlay at 15.86–17.16s; updated the transcript and beat sheet to distinguish an alternate run from rollback.",
+    "Fable: enlarged ticket-row type from 32 to 40 and count type from 30 to 46 for phone-width inspection; rerendered the MP4 and poster, retained the original model attribution, and added comparative-editor corrections metadata.",
+    "Fable: explicitly bounded the local renderer's FFmpeg codec and filter stages to two threads."
+  ],
+  "limitations": [
+    "Audio was analysed, not physically heard. Full-stream peak checks, spectrograms, and source/encoded cue-window onset comparisons passed; overlapping cues cannot be individually isolated by that analysis, and perceptual sound quality is not certified.",
+    "Visual review used decoded half-second contact sheets across every timeline, selected full-resolution and 350px causal/busy/ending frames, and exact boundary images. It was not a continuous human viewing or audience-learning study.",
+    "None of the cuts demonstrates concurrent-key arbitration, retention expiry, full caller scope, or coordination with external side effects. Read the guide for those boundaries; Fable's s2 is an illustrative operation name rather than a production key scheme.",
+    "Accuracy scores assess each cut's stated illustrative contract with the guide's boundaries, not proof that an implementation is race-free. The editorial recommendation does not constitute publication or human curriculum approval."
+  ]
+}

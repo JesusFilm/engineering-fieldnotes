@@ -1,0 +1,45 @@
+{
+  "id": "astra",
+  "concept": "timeouts-and-retries",
+  "title": "Retry budget",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "A retry consumes the existing tool-operation budget; when it expires, runtime code blocks further attempts and reports an unknown outcome.",
+  "src": "media/timeouts-and-retries/astra.mp4",
+  "poster": "media/timeouts-and-retries/astra.jpg",
+  "duration": 26.0,
+  "verified": true,
+  "limitations": [
+    "Illustrative CI read and runtime policy; 12 seconds, two attempts, and a two-second sampled delay are not production defaults.",
+    "The runtime gate must be implemented in code; persistent prompts do not enforce budgets or permissions.",
+    "The video does not demonstrate fleet-level jitter, write idempotency, or cancellation of remote work.",
+    "Audio analysed, not physically heard; self-reviewed, with no comparative ranking."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 7,
+      "text": "An agent asks for CI status. The runtime sends a read, receives a completed status, and returns a known result. This normal operation uses part of its own budget."
+    },
+    {
+      "start": 7,
+      "end": 13,
+      "text": "A new logical read begins. Its twelve-second shared budget starts at 00:08. The service does not reply, and the first attempt times out after five seconds."
+    },
+    {
+      "start": 13,
+      "end": 15,
+      "text": "The runtime waits two seconds before retrying. This is one illustrative sampled backoff; the shared budget continues shrinking from seven to five seconds."
+    },
+    {
+      "start": 15,
+      "end": 20,
+      "text": "The runtime sends its second and final allowed attempt. The retry uses the five seconds remaining in the original budget; the timer does not reset."
+    },
+    {
+      "start": 20,
+      "end": 26,
+      "text": "The deadline closes the runtime gate. The agent receives an unknown status. A repeated request is blocked before it reaches CI. This limits caller retries; it does not prove that remote work stopped."
+    }
+  ]
+}

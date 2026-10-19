@@ -1,0 +1,67 @@
+{
+  "id": "sol",
+  "concept": "queues-and-backpressure",
+  "title": "Bound the backlog",
+  "model": "gpt-6.1-sol",
+  "reasoning": "high",
+  "lesson": "Bound waiting agent work at intake as well as active deliveries; acknowledge completion before the next delivery, and resume admission when a waiting slot is free.",
+  "src": "media/queues-and-backpressure/sol.mp4",
+  "poster": "media/queues-and-backpressure/sol.jpg",
+  "duration": 30.0,
+  "verified": true,
+  "limitations": [
+    "Illustrative runtime policy: one active task and three waiting tasks are not performance measurements or recommended defaults.",
+    "The application admission gate is separate from RabbitMQ prefetch; enforce waiting capacity atomically in runtime code.",
+    "One producer and successful reliable delivery are assumed; failures, durable deferral, redelivery, deadlines and concurrent admission races are omitted.",
+    "Persistent prompts do not enforce queue bounds or tool permissions, and these limits do not guarantee output quality or completion time.",
+    "Audio was analysed for peak, cue energy and synchronization; it was not physically listened to."
+  ],
+  "transcript": [
+    {
+      "time": 0,
+      "end": 7.4,
+      "text": "Normal work: task A enters an empty queue, runs on one agent, finishes, and sends an acknowledgement back. The example uses illustrative limits of one active task and three waiting tasks. Active execution falls to zero on completion; acknowledgement releases delivery credit separately."
+    },
+    {
+      "time": 7.4,
+      "end": 15.3,
+      "text": "A burst arrives while task B runs slowly. Tasks C, D and E fill the three waiting slots. The runner still executes only one task, but its execution limit has not prevented the waiting queue from filling."
+    },
+    {
+      "time": 15.3,
+      "end": 21,
+      "text": "The full intake gate refuses task F and returns it to the caller. F remains deferred outside the queue, and the caller pauses new intake. The queued tasks remain visible while B continues running."
+    },
+    {
+      "time": 21,
+      "end": 23.6,
+      "text": "B completes, active execution falls to zero, and its acknowledgement returns to release delivery credit. C then leaves the first queue slot for the runner. Waiting work falls from three tasks to two, so the application intake gate reopens."
+    },
+    {
+      "time": 23.6,
+      "end": 30,
+      "text": "The caller deliberately resubmits F once. F occupies the free slot, the queue returns to three waiting tasks, and intake closes again while C runs. Work stays bounded even though demand remains. The stage fades to the opening title. Runtime code must enforce the limits; persistent prompts do not enforce permissions."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "changes": [
+        "At 5.5s and 21s, ACTIVE now falls to zero when execution completes; acknowledgement still releases delivery credit separately.",
+        "At 22.2s the phase changes to SPACE FREED alongside dequeue and gate reopening.",
+        "C remains in progress through the fade; its bar no longer reaches completion without a completed state.",
+        "Stop work ticks before the fade; recheck the final audio and encoded frames."
+      ],
+      "originalMp4Sha256": "c5e6125c6a1eb3ab8a1d83308f3e0966b6caa4da04bf88270e083279df62990b"
+    }
+  ],
+  "comparativeVerification": {
+    "review": "reviews/comparisons/queues-and-backpressure.json",
+    "sha256": "373288fdc6cd6df84a0a8faa2f043e3a335393696f8a5918e15bbd2bf7dc314a",
+    "audioHeard": false
+  },
+  "authorReviewLimitations": [
+    "Self-reviewed encoded frames; independent comparative editorial review has not been performed."
+  ]
+}

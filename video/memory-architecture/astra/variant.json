@@ -1,0 +1,46 @@
+{
+  "id": "astra",
+  "concept": "memory-architecture",
+  "title": "Recall is not current",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Check a remembered repository instruction against its source revision, then refresh both the stored record and the current context before acting.",
+  "src": "media/memory-architecture/astra.mp4",
+  "poster": "media/memory-architecture/astra.jpg",
+  "duration": 28,
+  "verified": true,
+  "limitations": [
+    "Revision checking and invalidation are illustrative application logic, not automatic store guarantees.",
+    "The passing test result is illustrative; no agent integration or real test migration was executed.",
+    "Persistent instructions do not enforce tool permissions.",
+    "Audio was analysed for levels and cue alignment, not physically listened to.",
+    "Self-reviewed; comparative selection and human editorial promotion remain separate."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 6.2,
+      "text": "An approved repository test command at revision r1 is saved, then recalled into session A. Both use npm test."
+    },
+    {
+      "start": 6.2,
+      "end": 10.5,
+      "text": "The repository changes to revision r2 and pnpm test. Saved memory still holds r1. A new session B opens without a command."
+    },
+    {
+      "start": 10.5,
+      "end": 16,
+      "text": "Session B recalls the old command successfully. A separately implemented source revision check detects r1 versus r2 and stops the candidate before execution."
+    },
+    {
+      "start": 16,
+      "end": 22,
+      "text": "The workflow clears the stale record and task candidate, reloads r2 from the repository into saved memory, and supplies r2 to session B."
+    },
+    {
+      "start": 22,
+      "end": 28,
+      "text": "Session B runs the current command and shows an illustrative passing result, then the picture fades. Correct memory does not guarantee passing tests or enforce permissions."
+    }
+  ]
+}

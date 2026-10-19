@@ -1,0 +1,191 @@
+{
+  "baseline": {
+    "sha256": "157e1d6e4bbba89948a5d735f32d535f85201545e6b06d020419816a6263d73d",
+    "duration": 24.0,
+    "frames": 720,
+    "video": "h264 1080x1920 30fps yuv420p",
+    "audio": "aac",
+    "maxAudioDBFS": -2.037264823913574,
+    "fullDecode": true,
+    "firstLastExact": true,
+    "boundaryMD5": "eb31442608984c1aa5939de6decc4443",
+    "faststart": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 26404
+      },
+      {
+        "type": "free",
+        "offset": 26436,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 26444,
+        "size": 1004072
+      }
+    ],
+    "titleROImaxMeanAbsoluteDifference": 0.12644444444444444,
+    "cueWindowsChecked": 48,
+    "audioHeard": false,
+    "inspectedFrameCandidates": [
+      0,
+      1.5,
+      3,
+      4.5,
+      6,
+      7.5,
+      9,
+      10.5,
+      12,
+      12.8,
+      13.7,
+      14.5,
+      16,
+      17.5,
+      19,
+      19.5,
+      20.5,
+      22,
+      23.5
+    ]
+  },
+  "astra": {
+    "sha256": "a1da4bd5a241ef482f40958e2265158084ec9a1984968d01f2b08211399140c9",
+    "duration": 28.0,
+    "frames": 840,
+    "video": "h264 1080x1920 30fps yuv420p",
+    "audio": "aac",
+    "maxAudioDBFS": -4.026360034942627,
+    "fullDecode": true,
+    "firstLastExact": true,
+    "boundaryMD5": "eb31442608984c1aa5939de6decc4443",
+    "faststart": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 31020
+      },
+      {
+        "type": "free",
+        "offset": 31052,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 31060,
+        "size": 773678
+      }
+    ],
+    "titleROImaxMeanAbsoluteDifference": 0.3714074074074074,
+    "cueWindowsChecked": 25,
+    "audioHeard": false,
+    "inspectedFrameCandidates": [
+      0,
+      1.4,
+      2,
+      3.5,
+      4.7,
+      5.8,
+      6.5,
+      8.5,
+      9.5,
+      10.7,
+      11.5,
+      12.5,
+      14,
+      14.5,
+      15.7,
+      17,
+      18.3,
+      19,
+      20.5,
+      21.5,
+      23,
+      25,
+      27.9
+    ]
+  },
+  "fable": {
+    "sha256": "501ab63133e1919cf8e553ba047ee6b5b1715a635eaaedfb32571fbdfd2034d6",
+    "duration": 30.766667,
+    "frames": 923,
+    "video": "h264 1080x1920 30fps yuv420p",
+    "audio": "aac",
+    "maxAudioDBFS": -2.711510181427002,
+    "fullDecode": true,
+    "firstLastExact": true,
+    "boundaryMD5": "eb31442608984c1aa5939de6decc4443",
+    "faststart": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 33448
+      },
+      {
+        "type": "free",
+        "offset": 33480,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 33488,
+        "size": 1695022
+      }
+    ],
+    "titleROImaxMeanAbsoluteDifference": 0.18037037037037038,
+    "cueWindowsChecked": 64,
+    "audioHeard": false,
+    "inspectedFrameCandidates": [
+      0,
+      0.9,
+      1.5,
+      2.7,
+      3.5,
+      4.7,
+      6.2,
+      7.2,
+      8.2,
+      9.8,
+      10.7,
+      11.5,
+      12.5,
+      13.5,
+      14.2,
+      15.5,
+      16.5,
+      17.2,
+      18,
+      19.2,
+      20.4,
+      21.8,
+      22.7,
+      24,
+      25.4,
+      26,
+      26.8,
+      27.5,
+      29,
+      30.7
+    ]
+  }
+}

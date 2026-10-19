@@ -1,0 +1,26 @@
+{
+  "id": "queues-and-backpressure",
+  "placement": "reference",
+  "verifiedSources": [
+    "https://docs.python.org/3/library/asyncio-queue.html",
+    "https://www.rabbitmq.com/docs/confirms",
+    "https://www.rabbitmq.com/docs/consumer-prefetch",
+    "https://www.rabbitmq.com/docs/maxlength",
+    "https://sre.google/sre-book/handling-overload/"
+  ],
+  "changes": [
+    "Reviewed every original assertion against primary pages on 2026-10-19; authored by gpt-6-astra with high reasoning.",
+    "Replaced image-worker note with a 741-word agent-tool guide and observable bounded-queue exercise.",
+    "Distinguished producer backpressure, waiting backlog, active concurrency, delivery prefetch and request rate.",
+    "Corrected acknowledgement/confirm wording and surfaced RabbitMQ ready-only queue limits and drop-oldest overflow default.",
+    "Added reference placement, prerequisites, outcomes, workflow, walkthrough, pitfalls and exercise; preserved identity and related fields.",
+    "Added independent local-queue video example with explicit illustrative boundaries.",
+    "Extended the independent video and guide to distinguish queued agent-tool work from successful completion; ran the local bounded-queue exercise."
+  ],
+  "limitations": [
+    "No live RabbitMQ integration or provider capacity benchmark was run.",
+    "Queue limits, ages and timings are illustrative; deployment-specific limits require measurement.",
+    "Live documentation URLs may change after retrieval.",
+    "Comparative video recommendation and shared-site integration are outside this assigned scope."
+  ]
+}

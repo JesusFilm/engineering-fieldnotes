@@ -1,0 +1,31 @@
+{
+  "id": "cache-aside",
+  "placement": "reference",
+  "verifiedSources": [
+    "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
+    "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Strategies.html",
+    "https://aws.amazon.com/builders-library/caching-challenges-and-strategies/",
+    "https://redis.io/docs/latest/commands/expire/",
+    "https://redis.io/docs/latest/commands/set/",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html"
+  ],
+  "changes": [
+    "Authored and reviewed by gpt-6-astra with high reasoning.",
+    "Replaced the short definition with an approximately 725-word standalone learning guide for engineers building agent tools.",
+    "Preserved identity, category, roles and related concepts.",
+    "Added explicit reference placement, a manual-to-agent workflow comparison, observable outcomes and retained human responsibilities.",
+    "Replaced the product-description example with an illustrative stale-runbook failure and serialized recovery.",
+    "Explained exact-key caching boundaries, TTL limits, per-request authorization and downstream load.",
+    "Turned the concurrency question into a four-step exercise and executed a deterministic stale-fill state model.",
+    "Audited every original assertion and mapped revised claims to six retrieved primary sources.",
+    "Produced an independent five-beat 31-second video, poster, accessible transcript and reproducible verification evidence."
+  ],
+  "limitations": [
+    "Example and timings are illustrative; no production deployment or performance benchmark was run.",
+    "The deterministic race demonstration is not a live Redis, integration, load or authorization test.",
+    "An authoritative revision comparison checks the instant of comparison; it does not make later deployment execution atomic.",
+    "Video omits concurrent stale fills, invalidation failures, replica lag, TTL expiry, authorization and outages.",
+    "Audio analyzed numerically and visually; not physically listened to.",
+    "Self-reviewed by gpt-6-astra; no blind comparative recommendation or learner validation."
+  ]
+}

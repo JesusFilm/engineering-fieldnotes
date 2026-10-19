@@ -1,0 +1,22 @@
+{
+  "author": "gpt-6-astra",
+  "reasoning": "high",
+  "retrieved": "2026-10-19",
+  "sources": [
+    {
+      "url": "https://www.postgresql.org/docs/current/warm-standby.html",
+      "opened": true,
+      "resolvedVersion": "PostgreSQL 18"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/runtime-config-wal.html",
+      "opened": true,
+      "resolvedVersion": "PostgreSQL 18"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/transaction-iso.html",
+      "opened": true,
+      "resolvedVersion": "PostgreSQL 18"
+    }
+  ]
+}

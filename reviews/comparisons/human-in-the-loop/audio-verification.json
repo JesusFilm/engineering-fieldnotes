@@ -1,0 +1,704 @@
+{
+  "baseline": {
+    "cues": [
+      {
+        "t": 1,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.67,
+        "present": true
+      },
+      {
+        "t": 1.7,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -25.02,
+        "present": true
+      },
+      {
+        "t": 2.1,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.62,
+        "present": true
+      },
+      {
+        "t": 2.8,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.27,
+        "present": true
+      },
+      {
+        "t": 4.8,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -22.71,
+        "present": true
+      },
+      {
+        "t": 5.05,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -29.5,
+        "present": true
+      },
+      {
+        "t": 5.75,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -25.09,
+        "present": true
+      },
+      {
+        "t": 6.4,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.65,
+        "present": true
+      },
+      {
+        "t": 7.1,
+        "name": "hit",
+        "max50msRmsDbfsNext300ms": -22.79,
+        "present": true
+      },
+      {
+        "t": 7.8,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.65,
+        "present": true
+      },
+      {
+        "t": 8.5,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -25.0,
+        "present": true
+      },
+      {
+        "t": 11,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.26,
+        "present": true
+      },
+      {
+        "t": 11.4,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.64,
+        "present": true
+      },
+      {
+        "t": 12.1,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -25.0,
+        "present": true
+      },
+      {
+        "t": 12.5,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.71,
+        "present": true
+      },
+      {
+        "t": 13.200000000000001,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.25,
+        "present": true
+      },
+      {
+        "t": 14.1,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -26.83,
+        "present": true
+      },
+      {
+        "t": 16,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -22.7,
+        "present": true
+      },
+      {
+        "t": 16.25,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -32.38,
+        "present": true
+      },
+      {
+        "t": 16.95,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -25.06,
+        "present": true
+      },
+      {
+        "t": 17.6,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.69,
+        "present": true
+      },
+      {
+        "t": 18.3,
+        "name": "thump",
+        "max50msRmsDbfsNext300ms": -15.11,
+        "present": true
+      },
+      {
+        "t": 20.4,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.71,
+        "present": true
+      },
+      {
+        "t": 21.1,
+        "name": "miss",
+        "max50msRmsDbfsNext300ms": -33.28,
+        "present": true
+      }
+    ],
+    "allCueWindowsHaveEnergy": true,
+    "heard": false
+  },
+  "astra": {
+    "cues": [
+      {
+        "t": 0.4,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -38.0,
+        "present": true
+      },
+      {
+        "t": 1,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -31.96,
+        "present": true
+      },
+      {
+        "t": 2.5,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -23.18,
+        "present": true
+      },
+      {
+        "t": 3.3,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.43,
+        "present": true
+      },
+      {
+        "t": 4.1,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -21.8,
+        "present": true
+      },
+      {
+        "t": 4.1,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -21.8,
+        "present": true
+      },
+      {
+        "t": 5.7,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.79,
+        "present": true
+      },
+      {
+        "t": 6.7,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -16.6,
+        "present": true
+      },
+      {
+        "t": 6.7,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -16.6,
+        "present": true
+      },
+      {
+        "t": 8.3,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -23.95,
+        "present": true
+      },
+      {
+        "t": 8.7,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -36.02,
+        "present": true
+      },
+      {
+        "t": 9.5,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.96,
+        "present": true
+      },
+      {
+        "t": 9.5,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -20.96,
+        "present": true
+      },
+      {
+        "t": 10.2,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -32.09,
+        "present": true
+      },
+      {
+        "t": 10.9,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -23.05,
+        "present": true
+      },
+      {
+        "t": 11,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -23.05,
+        "present": true
+      },
+      {
+        "t": 11.8,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -23.53,
+        "present": true
+      },
+      {
+        "t": 11.8,
+        "name": "miss",
+        "max50msRmsDbfsNext300ms": -23.53,
+        "present": true
+      },
+      {
+        "t": 12.7,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -29.99,
+        "present": true
+      },
+      {
+        "t": 13.5,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -14.09,
+        "present": true
+      },
+      {
+        "t": 12.7,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -29.99,
+        "present": true
+      },
+      {
+        "t": 13.5,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -14.09,
+        "present": true
+      },
+      {
+        "t": 13.5,
+        "name": "crash",
+        "max50msRmsDbfsNext300ms": -14.09,
+        "present": true
+      },
+      {
+        "t": 14.5,
+        "name": "thump",
+        "max50msRmsDbfsNext300ms": -19.97,
+        "present": true
+      },
+      {
+        "t": 17,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.76,
+        "present": true
+      },
+      {
+        "t": 18,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -16.57,
+        "present": true
+      },
+      {
+        "t": 18,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -16.57,
+        "present": true
+      },
+      {
+        "t": 20,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -23.83,
+        "present": true
+      },
+      {
+        "t": 20.5,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -36.06,
+        "present": true
+      },
+      {
+        "t": 21.3,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.61,
+        "present": true
+      },
+      {
+        "t": 21.3,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -20.61,
+        "present": true
+      },
+      {
+        "t": 21.3,
+        "name": "ack",
+        "max50msRmsDbfsNext300ms": -20.61,
+        "present": true
+      },
+      {
+        "t": 23,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -30.08,
+        "present": true
+      },
+      {
+        "t": 23.8,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -17.64,
+        "present": true
+      },
+      {
+        "t": 23,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -30.08,
+        "present": true
+      },
+      {
+        "t": 23.8,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -17.64,
+        "present": true
+      },
+      {
+        "t": 23.8,
+        "name": "recover",
+        "max50msRmsDbfsNext300ms": -17.64,
+        "present": true
+      },
+      {
+        "t": 24.6,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -35.76,
+        "present": true
+      },
+      {
+        "t": 25.6,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -21.07,
+        "present": true
+      },
+      {
+        "t": 25.6,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -21.07,
+        "present": true
+      },
+      {
+        "t": 28.5,
+        "name": "poof",
+        "max50msRmsDbfsNext300ms": -36.95,
+        "present": true
+      }
+    ],
+    "allCueWindowsHaveEnergy": true,
+    "heard": false
+  },
+  "fable": {
+    "cues": [
+      {
+        "t": 0.9500000000000001,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.54,
+        "present": true
+      },
+      {
+        "t": 1.3,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -37.8,
+        "present": true
+      },
+      {
+        "t": 2,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -19.38,
+        "present": true
+      },
+      {
+        "t": 2.8499999999999996,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.52,
+        "present": true
+      },
+      {
+        "t": 3.2,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -37.62,
+        "present": true
+      },
+      {
+        "t": 3.7,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -19.38,
+        "present": true
+      },
+      {
+        "t": 4,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -39.74,
+        "present": true
+      },
+      {
+        "t": 4.5,
+        "name": "deliver",
+        "max50msRmsDbfsNext300ms": -21.78,
+        "present": true
+      },
+      {
+        "t": 6.3,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -23.32,
+        "present": true
+      },
+      {
+        "t": 6.8999999999999995,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -19.36,
+        "present": true
+      },
+      {
+        "t": 7.2,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -37.77,
+        "present": true
+      },
+      {
+        "t": 7.699999999999999,
+        "name": "rewind",
+        "max50msRmsDbfsNext300ms": -17.72,
+        "present": true
+      },
+      {
+        "t": 8.35,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.48,
+        "present": true
+      },
+      {
+        "t": 8.7,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -37.81,
+        "present": true
+      },
+      {
+        "t": 9.399999999999999,
+        "name": "dup",
+        "max50msRmsDbfsNext300ms": -10.77,
+        "present": true
+      },
+      {
+        "t": 10.35,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.52,
+        "present": true
+      },
+      {
+        "t": 10.45,
+        "name": "hit",
+        "max50msRmsDbfsNext300ms": -22.66,
+        "present": true
+      },
+      {
+        "t": 11.25,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.53,
+        "present": true
+      },
+      {
+        "t": 11.599999999999998,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -37.83,
+        "present": true
+      },
+      {
+        "t": 12.349999999999998,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -35.66,
+        "present": true
+      },
+      {
+        "t": 12.549999999999997,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -35.64,
+        "present": true
+      },
+      {
+        "t": 12.749999999999998,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -35.64,
+        "present": true
+      },
+      {
+        "t": 12.949999999999998,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -24.2,
+        "present": true
+      },
+      {
+        "t": 13.099999999999998,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -24.2,
+        "present": true
+      },
+      {
+        "t": 14.6,
+        "name": "poof",
+        "max50msRmsDbfsNext300ms": -35.49,
+        "present": true
+      },
+      {
+        "t": 16.15,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -26.22,
+        "present": true
+      },
+      {
+        "t": 16.32,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -27.18,
+        "present": true
+      },
+      {
+        "t": 17.349999999999998,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.52,
+        "present": true
+      },
+      {
+        "t": 17.699999999999996,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -37.59,
+        "present": true
+      },
+      {
+        "t": 18.199999999999996,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -19.33,
+        "present": true
+      },
+      {
+        "t": 18.499999999999996,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -39.71,
+        "present": true
+      },
+      {
+        "t": 18.999999999999996,
+        "name": "deliver",
+        "max50msRmsDbfsNext300ms": -21.79,
+        "present": true
+      },
+      {
+        "t": 20.499999999999996,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -23.32,
+        "present": true
+      },
+      {
+        "t": 21.099999999999998,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -19.37,
+        "present": true
+      },
+      {
+        "t": 21.399999999999995,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -37.73,
+        "present": true
+      },
+      {
+        "t": 21.899999999999995,
+        "name": "rewind",
+        "max50msRmsDbfsNext300ms": -17.75,
+        "present": true
+      },
+      {
+        "t": 22.449999999999996,
+        "name": "hit",
+        "max50msRmsDbfsNext300ms": -25.4,
+        "present": true
+      },
+      {
+        "t": 23.249999999999996,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.53,
+        "present": true
+      },
+      {
+        "t": 23.599999999999994,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -37.8,
+        "present": true
+      },
+      {
+        "t": 24.299999999999994,
+        "name": "store",
+        "max50msRmsDbfsNext300ms": -19.38,
+        "present": true
+      },
+      {
+        "t": 24.499999999999993,
+        "name": "hit",
+        "max50msRmsDbfsNext300ms": -26.45,
+        "present": true
+      },
+      {
+        "t": 25.249999999999993,
+        "name": "arrive",
+        "max50msRmsDbfsNext300ms": -20.52,
+        "present": true
+      },
+      {
+        "t": 25.599999999999994,
+        "name": "send",
+        "max50msRmsDbfsNext300ms": -37.78,
+        "present": true
+      },
+      {
+        "t": 26.349999999999994,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -35.67,
+        "present": true
+      },
+      {
+        "t": 26.549999999999994,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -35.77,
+        "present": true
+      },
+      {
+        "t": 26.749999999999993,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -35.77,
+        "present": true
+      },
+      {
+        "t": 26.949999999999996,
+        "name": "work",
+        "max50msRmsDbfsNext300ms": -24.21,
+        "present": true
+      },
+      {
+        "t": 27.099999999999994,
+        "name": "chime",
+        "max50msRmsDbfsNext300ms": -24.21,
+        "present": true
+      },
+      {
+        "t": 29.099999999999994,
+        "name": "poof",
+        "max50msRmsDbfsNext300ms": -35.46,
+        "present": true
+      }
+    ],
+    "allCueWindowsHaveEnergy": true,
+    "heard": false
+  }
+}

@@ -1,0 +1,5 @@
+[
+  "1–11s: Migration A is checkpointed, approved, revalidated against schema v7, and applied as v8.",
+  "12–16s: Migration B waits for review while production advances from v8 to v9.",
+  "17–24s: The approved proposal still expects v8. Revalidation blocks stale execution and requests review again."
+]

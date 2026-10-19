@@ -1,0 +1,17 @@
+{
+  "editedBy": "gpt-6-astra comparative review",
+  "baseline": {
+    "reason": "Original transcript omitted the fixture reset and placed failure in 21–23s; encoded FAIL begins at 19.8s and is relabelled at 21.6s. Scene and MP4 unchanged.",
+    "original": [
+      "0–11s: An agent claims a ticket is done. A grader reads the ticket’s actual CLOSED state and records PASS.",
+      "13–19s: A second trial claims Done while the actual ticket is OPEN. The grader inspects that state.",
+      "21–23s: The second trial fails. The comparison separates a completion claim from evidence of the desired outcome."
+    ],
+    "revised": [
+      "0.0–8.0s: Trial 1 sends a close-ticket task to the agent and harness. Ticket #42 becomes CLOSED at 3.2s; the final message separately says Done at 4.65s. The grader reads CLOSED at 6.7–7.35s and records PASS at 8.0s.",
+      "8.0–13.0s: The pass holds. At 11.0s, trial 1 is retained as a PASS badge while the ticket resets to OPEN and the final message clears for trial 2.",
+      "13.0–19.8s: The second close attempt leaves the ticket OPEN. The final message still becomes Done at 16.45s. At 18.5–19.15s, the same state grader reads the actual OPEN state.",
+      "19.8–26.0s: The second trial fails at 19.8s. At 21.6s the result is labelled 2: FAIL beside 1: PASS. Both results hold until the full-frame fade starts at 24.0s; the final black frame matches the first."
+    ]
+  }
+}

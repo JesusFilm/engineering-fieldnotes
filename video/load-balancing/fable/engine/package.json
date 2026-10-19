@@ -1,0 +1,8 @@
+{
+  "name": "load-balancing-fable-renderer",
+  "private": true,
+  "description": "Local copy of the architecture-flow-video engine for the fable cut. node_modules is a relative symlink to the repository root (git-ignored); run npm install here if that link is missing.",
+  "dependencies": {
+    "puppeteer-core": "25.14.0"
+  }
+}

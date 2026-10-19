@@ -1,0 +1,38 @@
+{
+  "media/load-balancing/baseline.mp4": {
+    "schemaVersion": 2,
+    "sha256": "8f084c7b4806ddcc4a08475572cdda74d894d11c0e491d945f2d088c351c3858",
+    "posterSha256": "df7311cb0895291163cb2790567b0ef93a80316fb8ac7b3a73e028160902098a",
+    "duration": 21.0,
+    "bytes": 937296,
+    "frames": 630,
+    "audioPeakDbfs": -0.9,
+    "matchingBoundaryFrames": true,
+    "fullDecode": true,
+    "faststart": true
+  },
+  "media/load-balancing/astra.mp4": {
+    "schemaVersion": 2,
+    "sha256": "7fc1e430c45993bbabd78d63c568aacecb4b8e25daada622c8eb8920f94a00ee",
+    "posterSha256": "4bf5f7b2c22a89423e5eed30110dfd084d6915a5316a7f691a0496a28b105983",
+    "duration": 28.0,
+    "bytes": 644233,
+    "frames": 840,
+    "audioPeakDbfs": -4.7,
+    "matchingBoundaryFrames": true,
+    "fullDecode": true,
+    "faststart": true
+  },
+  "media/load-balancing/fable.mp4": {
+    "schemaVersion": 2,
+    "sha256": "2bf51a13222ef1ed1780dbc141b0ad8e74b08251bdb7c0c8e4aca832615dff9a",
+    "posterSha256": "d59da675a3021b925502050d35ac8ed7519f19dff07031122c2a514009bc1901",
+    "duration": 31.766667,
+    "bytes": 1756904,
+    "frames": 953,
+    "audioPeakDbfs": -1.2,
+    "matchingBoundaryFrames": true,
+    "fullDecode": true,
+    "faststart": true
+  }
+}

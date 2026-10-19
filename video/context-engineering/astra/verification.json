@@ -1,0 +1,248 @@
+{
+  "duration": 30,
+  "frames": 900,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "video": "h264",
+  "pixelFormat": "yuv420p",
+  "audio": "aac",
+  "bytes": 500625,
+  "decode": "passed (-xerror)",
+  "firstLastExact": true,
+  "firstLastSHA256": "6791b9ffe5c20ca33783b7d5b74e41797bc1461e569626bb2d8d55995718ded3",
+  "audioSamplePeakDbfs": -1.96,
+  "faststart": true,
+  "audioEnvelopeLagMs": 0,
+  "audioEnvelopeCorrelation": 0.99949,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "size": 33324
+    },
+    {
+      "type": "free",
+      "offset": 33356,
+      "size": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 33364,
+      "size": 467261
+    }
+  ],
+  "cues": [
+    {
+      "t": 0.4,
+      "name": "recover",
+      "note": "C5",
+      "gain": 0.4,
+      "pan": 0,
+      "decoded_rms_dbfs": -31.05
+    },
+    {
+      "t": 1.6,
+      "name": "send",
+      "note": "C5",
+      "gain": 1.2,
+      "pan": 0.26666666666666666,
+      "decoded_rms_dbfs": -31.61
+    },
+    {
+      "t": 2.4000000000000004,
+      "name": "arrive",
+      "note": "C5",
+      "gain": 0.9,
+      "pan": 0.26666666666666666,
+      "decoded_rms_dbfs": -22.06
+    },
+    {
+      "t": 3.2,
+      "name": "send",
+      "note": "E5",
+      "gain": 1.2,
+      "pan": 0.26666666666666666,
+      "decoded_rms_dbfs": -31.6
+    },
+    {
+      "t": 4,
+      "name": "arrive",
+      "note": "E5",
+      "gain": 0.9,
+      "pan": 0,
+      "decoded_rms_dbfs": -20.19
+    },
+    {
+      "t": 4.2,
+      "name": "chime",
+      "note": "G5",
+      "gain": 0.8,
+      "pan": 0,
+      "decoded_rms_dbfs": -22.0
+    },
+    {
+      "t": 6.3,
+      "name": "store",
+      "note": "C5",
+      "gain": 1,
+      "pan": 0,
+      "decoded_rms_dbfs": -25.54
+    },
+    {
+      "t": 7.4,
+      "name": "miss",
+      "note": "C3",
+      "gain": 1.2,
+      "pan": 0,
+      "decoded_rms_dbfs": -31.03
+    },
+    {
+      "t": 10.3,
+      "name": "clock",
+      "note": "E5",
+      "gain": 4,
+      "pan": 0.26666666666666666,
+      "decoded_rms_dbfs": -35.16
+    },
+    {
+      "t": 11.2,
+      "name": "send",
+      "note": "C5",
+      "gain": 1.2,
+      "pan": 0.26666666666666666,
+      "decoded_rms_dbfs": -31.57
+    },
+    {
+      "t": 12,
+      "name": "arrive",
+      "note": "C5",
+      "gain": 0.9,
+      "pan": 0.26666666666666666,
+      "decoded_rms_dbfs": -21.89
+    },
+    {
+      "t": 12.8,
+      "name": "send",
+      "note": "E5",
+      "gain": 1.2,
+      "pan": 0.26666666666666666,
+      "decoded_rms_dbfs": -31.58
+    },
+    {
+      "t": 13.600000000000001,
+      "name": "arrive",
+      "note": "E5",
+      "gain": 0.9,
+      "pan": 0,
+      "decoded_rms_dbfs": -20.18
+    },
+    {
+      "t": 13.8,
+      "name": "crash",
+      "note": "C3",
+      "gain": 1,
+      "pan": 0,
+      "decoded_rms_dbfs": -13.8
+    },
+    {
+      "t": 16,
+      "name": "recover",
+      "note": "C5",
+      "gain": 0.8,
+      "pan": -0.3055555555555556,
+      "decoded_rms_dbfs": -25.12
+    },
+    {
+      "t": 17.3,
+      "name": "send",
+      "note": "C5",
+      "gain": 1.2,
+      "pan": -0.3055555555555556,
+      "decoded_rms_dbfs": -32.27
+    },
+    {
+      "t": 18.1,
+      "name": "arrive",
+      "note": "C5",
+      "gain": 0.9,
+      "pan": -0.3055555555555556,
+      "decoded_rms_dbfs": -23.37
+    },
+    {
+      "t": 18.1,
+      "name": "store",
+      "note": "C5",
+      "gain": 0.8,
+      "pan": 0,
+      "decoded_rms_dbfs": -23.37
+    },
+    {
+      "t": 21,
+      "name": "send",
+      "note": "C5",
+      "gain": 1.2,
+      "pan": 0.26666666666666666,
+      "decoded_rms_dbfs": -31.58
+    },
+    {
+      "t": 21.8,
+      "name": "arrive",
+      "note": "C5",
+      "gain": 0.9,
+      "pan": 0.26666666666666666,
+      "decoded_rms_dbfs": -22.03
+    },
+    {
+      "t": 22.8,
+      "name": "send",
+      "note": "E5",
+      "gain": 1.2,
+      "pan": 0.26666666666666666,
+      "decoded_rms_dbfs": -31.58
+    },
+    {
+      "t": 23.6,
+      "name": "arrive",
+      "note": "E5",
+      "gain": 0.9,
+      "pan": 0,
+      "decoded_rms_dbfs": -20.22
+    },
+    {
+      "t": 23.8,
+      "name": "chime",
+      "note": "G5",
+      "gain": 0.8,
+      "pan": 0,
+      "decoded_rms_dbfs": -22.01
+    },
+    {
+      "t": 26,
+      "name": "ack",
+      "note": "G5",
+      "gain": 1.4,
+      "pan": 0,
+      "decoded_rms_dbfs": -29.5
+    },
+    {
+      "t": 28.6,
+      "name": "poof",
+      "note": "C5",
+      "gain": 0.3,
+      "pan": 0,
+      "decoded_rms_dbfs": -39.8
+    }
+  ],
+  "visualReview": "Passed manual view_image inspection of pre-render stills, encoded contact/boundary sheets, full-resolution frame, seven 350px beat images, spectrogram, and final poster; audio-only revision rechecked.",
+  "listened": false,
+  "mp4SHA256": "a56bb2d0a3aefc569b46893e5428a6b7cb5f9c51740493146e88ae8b361519e1",
+  "posterSHA256": "4b42b6bc40d4d05fbd1ea83181215c798fbb770a8874b0969cded106ba6cdd66"
+}

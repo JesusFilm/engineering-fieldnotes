@@ -1,0 +1,8 @@
+[
+  "0.0–4.5s: The subtitle names LangGraph node replay. The deploy node lists notify #ops, approve?, apply v8. A cursor enters at notify #ops and a v8 notice lands green in #ops. The cursor moves to approve?; approve v8? is checkpointed and sent to the human reviewer, then the node waits.",
+  "6.3–9.4s: The Reviewer answers yes. The Checkpoint row changes to 'approve v8? → yes' and a resume chip returns to the deploy node. The cursor slides back up to notify #ops with a rewind sound: the whole step restarts from its top. notify runs again and a second 'v8 notice' lands red in #ops with an × mark; a red badge reads 'sent ×2'.",
+  "10.3–13.1s: The cursor reaches approve?, which turns green at once because the stored answer is returned, then apply v8 runs and Production changes from schema v7 to schema v8.",
+  "14.6–16.8s: The stage fades out to separate the examples. A fresh demonstration begins with empty checkpoint and notification rows and schema v7. The first two operations then swap visibly so approve? comes before notify #ops; this is not a production rollback.",
+  "17.3–27.1s: The same pause and approval happen. On resume the step restarts at approve?, which returns the stored yes immediately; notify #ops then runs once (green row, badge 'sent ×1') and apply v8 sets schema v8.",
+  "27.1–30.2s: The resolved state holds, then the stage fades to the title-only frame that also opens the video."
+]

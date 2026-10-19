@@ -1,0 +1,5 @@
+[
+  "0\u20139s: Resume work. Session 1 changes task A, runs its check, and records A as verified; B remains pending.",
+  "9\u201317s: Session 1 ends. Its workspace and progress record survive. Session 2 reads the record, identifies B as pending, initializes the workspace, and runs a startup smoke check. This check does not establish complete regression coverage.",
+  "17\u201326s: Session 2 changes B, runs its check, and records B as verified. A remains recorded from the earlier run; B is not evidence that all of A was retested. Both recorded results hold, then the whole frame fades to black."
+]

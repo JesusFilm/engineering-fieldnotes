@@ -1,0 +1,59 @@
+{
+  "id": "sol",
+  "concept": "canary-deployments",
+  "title": "Canary the outcome",
+  "model": "gpt-6.1-sol",
+  "reasoning": "high",
+  "lesson": "Compare an agent prompt canary with a concurrent control using required artifact checks, and withdraw it on a configured failure even when API responses succeed.",
+  "src": "media/canary-deployments/sol.mp4",
+  "poster": "media/canary-deployments/sol.jpg",
+  "duration": 28,
+  "verified": false,
+  "limitations": [
+    "Illustrative PR-drafting scenario; 90/10 routing and compressed observation time are not rollout or statistical guarantees.",
+    "A preconfigured required-test failure gate is assumed; one failure does not establish a population failure rate or causality.",
+    "Passing tests do not prove complete task correctness; use representative work, sufficient observation and additional signals.",
+    "Withdrawal affects new sessions; existing work and side effects require separate cancellation, draining or remediation.",
+    "Permissions must be enforced by the harness; persistent prompt instructions do not enforce permissions.",
+    "Audio was analysed for signal presence, timing and peak level, but was not physically listened to.",
+    "Self-reviewed encoded frames; no independent comparison, real-device playback or website integration review."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5,
+      "text": "The current prompt drafts pull requests. Its API response succeeds and the resulting PR passes required tests."
+    },
+    {
+      "start": 5,
+      "end": 11,
+      "text": "A new prompt receives ten percent of new sessions while the current prompt remains the concurrent control. Three stylized nine-to-one traffic patterns illustrate the split."
+    },
+    {
+      "start": 11,
+      "end": 16.6,
+      "text": "Both prompt versions return HTTP 200. PR artifacts travel around the API status cards to the required checks. The control PR passes required tests at 12.9 seconds, but the candidate PR fails at 14.1 seconds: transport success has hidden a task failure."
+    },
+    {
+      "start": 16.6,
+      "end": 20.5,
+      "text": "The failed required check trips a configured rollout gate. A return signal changes routing to one hundred percent control and zero percent candidate."
+    },
+    {
+      "start": 20.5,
+      "end": 28,
+      "text": "New sessions use the current prompt and its PR tests pass. The candidate is withdrawn, while the failed candidate artifact remains failed. The scene fades out."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "scope": "Visual legibility; original authoring model, data, and lesson retained",
+      "changes": [
+        "Routed both PR artifacts around API response text in the centre gutter; send cues move to 12.00s and 13.20s and test results remain at 12.90s and 14.10s.",
+        "Replaced status-centred ripples with border emphasis so PASS, FAIL and HTTP values remain readable."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+[
+  "0\u20135.5s: A total duration of 2,400 ms leaves the slow operation unexplained.",
+  "5.5\u201313.5s: Inspection of a recorded trace progressively reveals the task span, a 200 ms retrieval, and a 2,000 ms billing operation.",
+  "13.5\u201318.4s: The billing operation contains a failed 1,200 ms first attempt, a 200 ms gap, and a successful 600 ms second attempt. The travelling chip says attempt 2: this is the first retry.",
+  "18.4\u201323s: The complete timeline holds, then the billing operation is selected for investigation. Its duration includes the failed attempt and the gap; it does not by itself prove why the remote service was slow.",
+  "23\u201326s: The scene fades to the matching black opening frame. Durations and identifiers are illustrative; the reveal is not retroactive instrumentation."
+]

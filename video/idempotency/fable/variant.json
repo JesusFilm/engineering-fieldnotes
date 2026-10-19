@@ -1,0 +1,65 @@
+{
+  "id": "fable",
+  "concept": "idempotency",
+  "title": "A blind retry acts twice",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "When an agent's side-effecting tool call times out after the tool already acted, a bare retry creates a second ticket; a stable key for the logical step, stored by the tool with its first result, lets the retry return that result instead.",
+  "src": "media/idempotency/fable.mp4",
+  "poster": "media/idempotency/fable.jpg",
+  "duration": 29.7,
+  "verified": true,
+  "limitations": [
+    "Illustrative scenario: the ticket tool is drawn as storing the key with the ticket atomically and checking it before writing. A key attached by a harness has no effect unless the tool or service implements it (as Stripe and EC2 ClientToken do); prompts or harness conventions do not enforce this on their own.",
+    "How the key is derived (run and step identity), that it must stay identical across retries and change for a new logical step, and finite key retention are not shown.",
+    "Concurrent duplicates (two identical keys in flight) and a reused key with different parameters are not shown; the baseline cut covers the parameter-mismatch conflict.",
+    "An editorial rewind separates two hypothetical runs; idempotency does not remove duplicates created by the earlier unkeyed run.",
+    "Audio was analysed but not physically listened to. Original self-review evidence is retained; the subsequent hash-bound comparative review is in reviews/comparisons/idempotency.json."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5,
+      "text": "Normal case. The agent, on step 1, asks the ticket tool to create a ticket. The tool writes ticket #501 into the store and returns #501 to the agent, which shows a green check. The counter reads 1 ticket."
+    },
+    {
+      "start": 5,
+      "end": 10.8,
+      "text": "The agent moves to step 2 and asks for another ticket. The tool writes #502, but the response is lost on the way back: a red cross appears on the wire and it turns red and dashed. A clock spins beside the agent, then a red TIMEOUT badge pops. The store already holds 2 tickets."
+    },
+    {
+      "start": 10.8,
+      "end": 15.9,
+      "text": "Blind retry. The agent sends the same create request again with nothing to identify it. The tool writes #503 and returns it; the agent shows a green check as if all is well. Then the store jolts with a crash sound: #502 and #503 turn red, the counter reads 3 tickets in red, and a DUPLICATE badge appears. One step produced two tickets."
+    },
+    {
+      "start": 15.9,
+      "end": 17.4,
+      "text": "Alternate take. Two outlined rewind triangles move left over the fading stage. The picture returns to the start of step 2 with only #501 in the store. This replays the situation with a key; it does not show an operation deleting or rolling back the duplicate tickets."
+    },
+    {
+      "start": 17.4,
+      "end": 23.2,
+      "text": "An orange \"key s2\" badge appears beside the agent: the harness names this step with a key. The request chip now reads \"create · key s2\". The tool stores #502 together with key s2. The response is lost again, the clock spins, and TIMEOUT pops again."
+    },
+    {
+      "start": 23.2,
+      "end": 29.7,
+      "text": "The key badge glows and the agent retries with the same key. The tool looks the key up: the \"#502 key s2\" row glows green with a check (a hit sound) and no new row is written. The tool returns #502 to the agent with a chime. The store turns green, the counter stays at 2 tickets, and a SAME TICKET badge appears. The stage fades to black."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "by": "gpt-6-astra comparative review",
+      "originalSha256": "eafa637ee3de5bcef6aef0eeec5de7e2816b7ca8aae8c05d55393b8ac981bad8",
+      "changes": [
+        "15.86–17.16s: animated rewind transport symbol survives the fade, distinguishing the alternate take from database rollback.",
+        "Ticket IDs and the count enlarged for 350px playback; original causal sequence and sounds retained.",
+        "All local render stages explicitly limit FFmpeg codecs and filters to two threads."
+      ],
+      "finalSha256": "6104b22418cb8c8f7b2661aa1bcf84bd3ea6fcec3166781c7cffc46417e53fac"
+    }
+  ]
+}

@@ -1,0 +1,427 @@
+{
+  "sha256": "e32266cea78e3908dd5ddf45385d3b27d2c35b5a31e95a50a5e28f6e40d218b2",
+  "duration": 31.566667,
+  "frames": 947,
+  "video": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "30/1"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "44100",
+    "channels": 2
+  },
+  "fullDecodeClean": true,
+  "firstLastDecodedPixelsIdentical": true,
+  "firstFrameTime": 0,
+  "lastFrameTime": 31.533333333333335,
+  "faststart": true,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0
+    },
+    {
+      "type": "moov",
+      "offset": 32
+    },
+    {
+      "type": "free",
+      "offset": 33828
+    },
+    {
+      "type": "mdat",
+      "offset": 33836
+    }
+  ],
+  "audioPeakDbFS": -1.8,
+  "cueEnergyChecks": [
+    {
+      "t": 0.6667,
+      "cue": "send",
+      "rmsDbFS": -31.31
+    },
+    {
+      "t": 1.1111,
+      "cue": "arrive",
+      "rmsDbFS": -26.12
+    },
+    {
+      "t": 1.5556,
+      "cue": "arrive",
+      "rmsDbFS": -21.8
+    },
+    {
+      "t": 1.6111,
+      "cue": "hit",
+      "rmsDbFS": -19.87
+    },
+    {
+      "t": 2.6111,
+      "cue": "deliver",
+      "rmsDbFS": -20.06
+    },
+    {
+      "t": 4.1667,
+      "cue": "send",
+      "rmsDbFS": -31.3
+    },
+    {
+      "t": 4.6111,
+      "cue": "arrive",
+      "rmsDbFS": -26.11
+    },
+    {
+      "t": 5.0556,
+      "cue": "store",
+      "rmsDbFS": -22.92
+    },
+    {
+      "t": 5.6111,
+      "cue": "poof",
+      "rmsDbFS": -27.73
+    },
+    {
+      "t": 6.7222,
+      "cue": "send",
+      "rmsDbFS": -31.29
+    },
+    {
+      "t": 7.1667,
+      "cue": "arrive",
+      "rmsDbFS": -26.11
+    },
+    {
+      "t": 7.6111,
+      "cue": "arrive",
+      "rmsDbFS": -25.42
+    },
+    {
+      "t": 7.6667,
+      "cue": "miss",
+      "rmsDbFS": -27.17
+    },
+    {
+      "t": 8.7222,
+      "cue": "arrive",
+      "rmsDbFS": -25.26
+    },
+    {
+      "t": 8.7778,
+      "cue": "work",
+      "rmsDbFS": -29.75
+    },
+    {
+      "t": 9.0,
+      "cue": "work",
+      "rmsDbFS": -32.87
+    },
+    {
+      "t": 9.2222,
+      "cue": "work",
+      "rmsDbFS": -32.73
+    },
+    {
+      "t": 9.7778,
+      "cue": "arrive",
+      "rmsDbFS": -27.13
+    },
+    {
+      "t": 10.1667,
+      "cue": "work",
+      "rmsDbFS": -36.96
+    },
+    {
+      "t": 10.5,
+      "cue": "work",
+      "rmsDbFS": -37.01
+    },
+    {
+      "t": 10.8333,
+      "cue": "work",
+      "rmsDbFS": -25.84
+    },
+    {
+      "t": 11.1667,
+      "cue": "work",
+      "rmsDbFS": -35.2
+    },
+    {
+      "t": 11.5,
+      "cue": "work",
+      "rmsDbFS": -37.12
+    },
+    {
+      "t": 11.8333,
+      "cue": "work",
+      "rmsDbFS": -22.47
+    },
+    {
+      "t": 12.1667,
+      "cue": "work",
+      "rmsDbFS": -37.01
+    },
+    {
+      "t": 10.3889,
+      "cue": "send",
+      "rmsDbFS": -30.63
+    },
+    {
+      "t": 10.8333,
+      "cue": "arrive",
+      "rmsDbFS": -25.84
+    },
+    {
+      "t": 11.2778,
+      "cue": "store",
+      "rmsDbFS": -22.96
+    },
+    {
+      "t": 11.8333,
+      "cue": "thump",
+      "rmsDbFS": -22.47
+    },
+    {
+      "t": 12.9444,
+      "cue": "crash",
+      "rmsDbFS": -12.82
+    },
+    {
+      "t": 13.5556,
+      "cue": "deliver",
+      "rmsDbFS": -19.75
+    },
+    {
+      "t": 15.0,
+      "cue": "send",
+      "rmsDbFS": -31.3
+    },
+    {
+      "t": 15.4444,
+      "cue": "arrive",
+      "rmsDbFS": -26.11
+    },
+    {
+      "t": 15.8889,
+      "cue": "arrive",
+      "rmsDbFS": -26.34
+    },
+    {
+      "t": 15.9444,
+      "cue": "hit",
+      "rmsDbFS": -27.81
+    },
+    {
+      "t": 16.9444,
+      "cue": "deliver",
+      "rmsDbFS": -18.48
+    },
+    {
+      "t": 17.0,
+      "cue": "thump",
+      "rmsDbFS": -20.56
+    },
+    {
+      "t": 18.5,
+      "cue": "send",
+      "rmsDbFS": -31.28
+    },
+    {
+      "t": 18.9444,
+      "cue": "arrive",
+      "rmsDbFS": -26.12
+    },
+    {
+      "t": 19.3889,
+      "cue": "arrive",
+      "rmsDbFS": -26.47
+    },
+    {
+      "t": 19.4444,
+      "cue": "hit",
+      "rmsDbFS": -28.11
+    },
+    {
+      "t": 20.4444,
+      "cue": "deliver",
+      "rmsDbFS": -18.5
+    },
+    {
+      "t": 20.5,
+      "cue": "thump",
+      "rmsDbFS": -20.58
+    },
+    {
+      "t": 21.3333,
+      "cue": "clock",
+      "rmsDbFS": -44.7
+    },
+    {
+      "t": 21.5778,
+      "cue": "clock",
+      "rmsDbFS": -44.55
+    },
+    {
+      "t": 21.7782,
+      "cue": "clock",
+      "rmsDbFS": -44.34
+    },
+    {
+      "t": 21.9426,
+      "cue": "clock",
+      "rmsDbFS": -44.01
+    },
+    {
+      "t": 22.0774,
+      "cue": "clock",
+      "rmsDbFS": -41.29
+    },
+    {
+      "t": 22.1879,
+      "cue": "clock",
+      "rmsDbFS": -40.95
+    },
+    {
+      "t": 22.2785,
+      "cue": "clock",
+      "rmsDbFS": -41.14
+    },
+    {
+      "t": 22.3563,
+      "cue": "clock",
+      "rmsDbFS": -41.39
+    },
+    {
+      "t": 22.4341,
+      "cue": "clock",
+      "rmsDbFS": -41.48
+    },
+    {
+      "t": 22.5118,
+      "cue": "clock",
+      "rmsDbFS": -41.62
+    },
+    {
+      "t": 22.5896,
+      "cue": "clock",
+      "rmsDbFS": -41.17
+    },
+    {
+      "t": 22.6674,
+      "cue": "clock",
+      "rmsDbFS": -41.03
+    },
+    {
+      "t": 22.7452,
+      "cue": "clock",
+      "rmsDbFS": -41.49
+    },
+    {
+      "t": 22.823,
+      "cue": "clock",
+      "rmsDbFS": -41.58
+    },
+    {
+      "t": 22.9007,
+      "cue": "clock",
+      "rmsDbFS": -27.7
+    },
+    {
+      "t": 22.9444,
+      "cue": "poof",
+      "rmsDbFS": -27.31
+    },
+    {
+      "t": 23.6111,
+      "cue": "send",
+      "rmsDbFS": -31.31
+    },
+    {
+      "t": 24.0556,
+      "cue": "arrive",
+      "rmsDbFS": -26.11
+    },
+    {
+      "t": 24.5,
+      "cue": "arrive",
+      "rmsDbFS": -25.43
+    },
+    {
+      "t": 24.5556,
+      "cue": "miss",
+      "rmsDbFS": -27.21
+    },
+    {
+      "t": 25.6111,
+      "cue": "arrive",
+      "rmsDbFS": -25.16
+    },
+    {
+      "t": 25.6667,
+      "cue": "work",
+      "rmsDbFS": -29.67
+    },
+    {
+      "t": 25.8889,
+      "cue": "work",
+      "rmsDbFS": -32.83
+    },
+    {
+      "t": 26.5556,
+      "cue": "arrive",
+      "rmsDbFS": -27.14
+    },
+    {
+      "t": 27.0556,
+      "cue": "store",
+      "rmsDbFS": -23.73
+    },
+    {
+      "t": 27.6667,
+      "cue": "deliver",
+      "rmsDbFS": -19.87
+    },
+    {
+      "t": 27.7778,
+      "cue": "chime",
+      "rmsDbFS": -20.99
+    }
+  ],
+  "audioHeard": false,
+  "exactBeatFrames": [
+    0.0,
+    1.8,
+    2.8,
+    4.4,
+    5.0,
+    5.8,
+    7.1,
+    7.8,
+    9.0,
+    10.5,
+    11.0,
+    11.6,
+    12.0,
+    12.7,
+    13.2,
+    14.0,
+    16.0,
+    17.1,
+    19.6,
+    20.6,
+    22.3,
+    23.1,
+    24.5,
+    25.7,
+    26.6,
+    27.2,
+    28.0,
+    30.2,
+    31.2,
+    31.533333333333335
+  ],
+  "technicalChecksPass": true
+}

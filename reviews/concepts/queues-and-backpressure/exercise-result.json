@@ -1,0 +1,179 @@
+{
+  "scenario": "six local stub jobs; one producer; one worker; queue capacity three",
+  "noExternalCalls": true,
+  "maxWaiting": 3,
+  "maxActive": 1,
+  "completed": 6,
+  "fBlockedSeconds": 0.2269,
+  "fAdmittedAfterCDequeued": true,
+  "events": [
+    {
+      "seconds": 0.0,
+      "event": "submission",
+      "job": "A",
+      "waiting": 0,
+      "active": 0
+    },
+    {
+      "seconds": 0.0,
+      "event": "admitted",
+      "job": "A",
+      "waiting": 1,
+      "active": 0
+    },
+    {
+      "seconds": 0.0001,
+      "event": "start",
+      "job": "A",
+      "waiting": 0,
+      "active": 1
+    },
+    {
+      "seconds": 0.0211,
+      "event": "submission",
+      "job": "B",
+      "waiting": 0,
+      "active": 1
+    },
+    {
+      "seconds": 0.0211,
+      "event": "admitted",
+      "job": "B",
+      "waiting": 1,
+      "active": 1
+    },
+    {
+      "seconds": 0.0311,
+      "event": "finish",
+      "job": "A",
+      "waiting": 1,
+      "active": 0
+    },
+    {
+      "seconds": 0.0312,
+      "event": "start",
+      "job": "B",
+      "waiting": 0,
+      "active": 1
+    },
+    {
+      "seconds": 0.0422,
+      "event": "submission",
+      "job": "C",
+      "waiting": 0,
+      "active": 1
+    },
+    {
+      "seconds": 0.0422,
+      "event": "admitted",
+      "job": "C",
+      "waiting": 1,
+      "active": 1
+    },
+    {
+      "seconds": 0.0633,
+      "event": "submission",
+      "job": "D",
+      "waiting": 1,
+      "active": 1
+    },
+    {
+      "seconds": 0.0633,
+      "event": "admitted",
+      "job": "D",
+      "waiting": 2,
+      "active": 1
+    },
+    {
+      "seconds": 0.0844,
+      "event": "submission",
+      "job": "E",
+      "waiting": 2,
+      "active": 1
+    },
+    {
+      "seconds": 0.0844,
+      "event": "admitted",
+      "job": "E",
+      "waiting": 3,
+      "active": 1
+    },
+    {
+      "seconds": 0.1046,
+      "event": "submission",
+      "job": "F",
+      "waiting": 3,
+      "active": 1
+    },
+    {
+      "seconds": 0.3314,
+      "event": "finish",
+      "job": "B",
+      "waiting": 3,
+      "active": 0
+    },
+    {
+      "seconds": 0.3314,
+      "event": "start",
+      "job": "C",
+      "waiting": 2,
+      "active": 1
+    },
+    {
+      "seconds": 0.3315,
+      "event": "admitted",
+      "job": "F",
+      "waiting": 3,
+      "active": 1
+    },
+    {
+      "seconds": 0.3621,
+      "event": "finish",
+      "job": "C",
+      "waiting": 3,
+      "active": 0
+    },
+    {
+      "seconds": 0.3621,
+      "event": "start",
+      "job": "D",
+      "waiting": 2,
+      "active": 1
+    },
+    {
+      "seconds": 0.3932,
+      "event": "finish",
+      "job": "D",
+      "waiting": 2,
+      "active": 0
+    },
+    {
+      "seconds": 0.3932,
+      "event": "start",
+      "job": "E",
+      "waiting": 1,
+      "active": 1
+    },
+    {
+      "seconds": 0.4243,
+      "event": "finish",
+      "job": "E",
+      "waiting": 1,
+      "active": 0
+    },
+    {
+      "seconds": 0.4243,
+      "event": "start",
+      "job": "F",
+      "waiting": 0,
+      "active": 1
+    },
+    {
+      "seconds": 0.4554,
+      "event": "finish",
+      "job": "F",
+      "waiting": 0,
+      "active": 0
+    }
+  ]
+}

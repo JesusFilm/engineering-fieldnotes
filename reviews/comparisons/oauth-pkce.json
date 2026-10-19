@@ -1,0 +1,55 @@
+{
+  "id": "oauth-pkce",
+  "recommended": "sol",
+  "rationale": "Sol establishes a successful code-and-verifier exchange before showing two overlapping sign-ins, the crossed pair, and recovery with a fresh attempt. That makes it the clearest entry into this chapter’s agent-host integration problem. Astra offers larger, less crowded labels for revisiting the concurrency failure, while the baseline adds the complementary reason PKCE exists: an intercepted code is insufficient without its verifier.",
+  "findings": [
+    "Sol 00:01–00:09 teaches the normal exchange before B/C overlap at 00:10–00:16; Astra introduces two attempts before its first success at 00:24–00:27. Sol gives a newcomer a working model to compare with the failure.",
+    "Astra 00:12.3–00:14.5 now retains verifier B in login A before sending the crossed pair. Sol 00:16–00:21 shows the comparable B/C substitution and returned invalid_grant, making the client mistake and server response especially explicit.",
+    "Baseline 00:09–00:15 demonstrates code interception while the verifier remains private; it complements the alternatives’ concurrency lesson. The rejection now says NO TOKEN because an absent verifier should not be conflated with the alternatives’ supplied-but-mismatched verifier.",
+    "At 350px, Astra’s two transaction rows at 00:07.5 and 00:14.5 are easiest to read. Sol’s four records at 00:15.5–00:20 are denser but retain the code/challenge associations; baseline’s formula at 00:02–00:03.5 is the smallest and needs the written guide.",
+    "Sol 00:22–00:30 and Astra 00:18–00:28 recover with fresh attempts. Baseline 00:16–00:22 instead illustrates correct possession using the same code; its documented limit warns that rejected codes may need replacement. All three omit the rest of OAuth validation and cannot establish tool permissions.",
+    "Baseline resolves by 00:20 and fades at 00:22.3–00:23.4; Astra resolves around 00:26 and Sol around 00:28. Their holds make the result readable, although Sol repeats the success mechanism and baseline leaves a longer black tail. All final first/last frames match."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 3
+    },
+    "astra": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "sol": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "2eedd4158dbe9b4aa3ad541911720e37033fa2796a4e170977e6a5d8269b88da",
+    "astra": "8d18fe05d761b07a7a5d9146c9ae223d7ceb3151354b3ced392aae577a598877",
+    "sol": "3adea70acc68e3b1bfe967696ce1e1f6a634009985e123f99b9c261ec4d82d8e"
+  },
+  "contentVerdict": "Keep as reference. Engineers owning an OAuth connector can use the transaction-binding review and crossed-pair exercise immediately; engineers using an already configured assistant do not need PKCE as an adoption prerequisite. The guide correctly separates code protection from tool authorization, recommends a maintained library, and now explicitly binds the transaction to its initiating client and browser session. Primary-source review supports these boundaries; the exercise is proposed, not claimed to have run against a provider.",
+  "verified": true,
+  "defectsFixed": [
+    "Baseline: replaced invalid_grant for an absent verifier with NO TOKEN; moved the intercepted-code chip below actor labels at 00:09–00:09.8; corrected the local engine’s full-frame endpoint fade. Rerendered with bounded FFmpeg threads and attenuated audio.",
+    "Astra: made the wrongly selected verifier persist visibly in login A at 00:12.3, and updated its sequence description.",
+    "Sol: changed Agent tool to Agent host in the encoded client label and sequence description, preserving gpt-6.1-sol provenance.",
+    "Guide: added explicit initiating-client/browser-session binding and retrieval dates for the verified primary sources.",
+    "All three revised cuts have regenerated posters, final hash-bound checks, preserved authorship, and comparative editor/correction metadata."
+  ],
+  "limitations": [
+    "Audio was decoded and analysed for peak levels and activity at cue windows, with spectrogram inspection; it was not physically heard. Perceptual sound quality is untested.",
+    "Visual assessment used full-duration decoded contact sheets, native and 350px beat frames, and exact boundaries; no continuous real-time playback review is claimed.",
+    "All three are narrow PKCE illustrations. Consent, redirects, TLS, issuer/client validation, resource binding, token storage and service-side permissions require the guide and implementation review.",
+    "The MCP source check covers the cited 2025-11-25 specification, not a claim that it is the newest version. No live OAuth provider integration test was performed.",
+    "The task disclosed Sol’s provenance before the blind pass; author scenes, transcripts, metadata and prior scores were withheld until the timestamped before.md was saved. Fable attempts were excluded.",
+    "Topic-only encoded and page checks were performed; whole-library release checks and publication are outside this review."
+  ]
+}

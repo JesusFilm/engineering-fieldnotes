@@ -1,0 +1,354 @@
+[
+  {
+    "t": 0.3,
+    "name": "ack",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -36.18
+  },
+  {
+    "t": 0.9,
+    "name": "store",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -29.33
+  },
+  {
+    "t": 2,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.67
+  },
+  {
+    "t": 2.7,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -24.85
+  },
+  {
+    "t": 3.6,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.66
+  },
+  {
+    "t": 4.3,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -24.83
+  },
+  {
+    "t": 5.3,
+    "name": "ack",
+    "note": "C5",
+    "gain": 0.5,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -38.4
+  },
+  {
+    "t": 5.6,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.66
+  },
+  {
+    "t": 6.3999999999999995,
+    "name": "work",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -36.25
+  },
+  {
+    "t": 6.85,
+    "name": "hit",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -24.37
+  },
+  {
+    "t": 7.3,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.55
+  },
+  {
+    "t": 8,
+    "name": "chime",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -24.23
+  },
+  {
+    "t": 10,
+    "name": "ack",
+    "note": "C5",
+    "gain": 0.5,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -38.41
+  },
+  {
+    "t": 10.25,
+    "name": "store",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -29.21
+  },
+  {
+    "t": 10.8,
+    "name": "store",
+    "note": "E5",
+    "gain": 0.65,
+    "pan": 0.2777777777777778,
+    "decodedWindowRmsDbfs": -29.39
+  },
+  {
+    "t": 11.4,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.65
+  },
+  {
+    "t": 12.1,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -24.8
+  },
+  {
+    "t": 12.3,
+    "name": "send",
+    "note": "E5",
+    "gain": 0.75,
+    "pan": 0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.25
+  },
+  {
+    "t": 13,
+    "name": "arrive",
+    "note": "E5",
+    "gain": 0.65,
+    "pan": 0.2777777777777778,
+    "decodedWindowRmsDbfs": -23.29
+  },
+  {
+    "t": 13.4,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.53
+  },
+  {
+    "t": 14.1,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -24.82
+  },
+  {
+    "t": 14.3,
+    "name": "send",
+    "note": "E5",
+    "gain": 0.75,
+    "pan": 0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.2
+  },
+  {
+    "t": 15,
+    "name": "arrive",
+    "note": "E5",
+    "gain": 0.65,
+    "pan": 0.2777777777777778,
+    "decodedWindowRmsDbfs": -23.41
+  },
+  {
+    "t": 16,
+    "name": "ack",
+    "note": "C5",
+    "gain": 0.5,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -34.79
+  },
+  {
+    "t": 16.1,
+    "name": "send",
+    "note": "E5",
+    "gain": 0.65,
+    "pan": 0.2777777777777778,
+    "decodedWindowRmsDbfs": -37.04
+  },
+  {
+    "t": 16.95,
+    "name": "miss",
+    "note": "C5",
+    "gain": 0.9,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -33.9
+  },
+  {
+    "t": 17.5,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.69
+  },
+  {
+    "t": 18.3,
+    "name": "work",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -36.32
+  },
+  {
+    "t": 18.75,
+    "name": "thump",
+    "note": "C5",
+    "gain": 1.1,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -18.85
+  },
+  {
+    "t": 19.6,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.67
+  },
+  {
+    "t": 20.3,
+    "name": "miss",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -36.8
+  },
+  {
+    "t": 22,
+    "name": "ack",
+    "note": "C5",
+    "gain": 0.5,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -32.33
+  },
+  {
+    "t": 22,
+    "name": "poof",
+    "note": "E5",
+    "gain": 0.65,
+    "pan": 0.2777777777777778,
+    "decodedWindowRmsDbfs": -32.33
+  },
+  {
+    "t": 22.2,
+    "name": "store",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -29.37
+  },
+  {
+    "t": 22.9,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.66
+  },
+  {
+    "t": 23.599999999999998,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -24.83
+  },
+  {
+    "t": 23.9,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -34.96
+  },
+  {
+    "t": 24.599999999999998,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -24.81
+  },
+  {
+    "t": 25,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.73
+  },
+  {
+    "t": 25.8,
+    "name": "work",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -36.26
+  },
+  {
+    "t": 26.25,
+    "name": "hit",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -24.33
+  },
+  {
+    "t": 26.9,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -35.7
+  },
+  {
+    "t": 27.599999999999998,
+    "name": "chime",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -24.27
+  },
+  {
+    "t": 30.5,
+    "name": "poof",
+    "note": "C5",
+    "gain": 0.4,
+    "pan": -0.2777777777777778,
+    "decodedWindowRmsDbfs": -37.42
+  }
+]

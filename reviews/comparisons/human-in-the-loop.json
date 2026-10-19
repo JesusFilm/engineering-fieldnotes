@@ -1,0 +1,55 @@
+{
+  "id": "human-in-the-loop",
+  "recommended": "astra",
+  "rationale": "Astra is the clearest chapter entry because it keeps artifact and approval side by side, blocks B with approval for A, then opens the executor only after B is reviewed. Baseline adds a different check: production prerequisites can change while an approved migration waits. Fable is a complementary LangGraph implementation lesson about repeated side effects on resume, best watched after the approval-boundary example.",
+  "findings": [
+    "Astra 00:09.5–00:14.5 directly demonstrates the guide’s artifact-substitution problem: B reaches an executor holding approval A and the barrier stays closed. Baseline 00:14.1–00:18.7 instead blocks a correctly identified migration because production changed from its expected v8 to v9; these mechanisms are complementary, not interchangeable.",
+    "Astra 00:17–00:25.6 completes recovery through fresh review, B = B, and visible deployment. Baseline 00:21.1–00:24.4 ends safely at REVIEW REQUIRED; that is an accurate unresolved handoff, but offers less guidance on completing the workflow.",
+    "Baseline 00:01–00:08.5 establishes a normal success and shows target/schema context in a durable checkpoint. Its checkpoint rows at 00:05.3 and 00:18.7 take more effort to read at 350px than Astra’s large artifact/approval pairing at 00:13.8; the cause of Baseline’s external state change remains implicit.",
+    "Fable 00:07.7–00:09.4 makes LangGraph node replay concrete with a returning cursor and two notification rows. Its reordered example at 00:21.9–00:24.5 shows one notification after approval; this is one ordinary resume, not an exactly-once guarantee across later failures or retries. Neither other cut teaches this implementation hazard.",
+    "Fable’s original packet/label collision near 00:08.8 and unexplained reset near 00:15 were corrected. The final cut keeps the node label clear, names LangGraph in the subtitle, and fades between examples at 00:14.6–00:15.9 before showing the operation reorder through 00:16.8; the reset no longer reads as a production rollback.",
+    "Astra spends roughly 00:00–00:04 on preparation before reaching its central approval comparison; Baseline’s blocked ending holds roughly 00:21.5–00:24.5. These are modest pacing costs, while Fable fits two denser sequences into 30.2 seconds and benefits most from pausing or replaying. All three provide readable settled outcomes and matching first/last frames."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "26aca59394fe7d953402cf2f9e3a341fe305a390bafccf5b6e63f9fffd85f44d",
+    "astra": "a1aa02083b41b0decc40300bc0263699596150a6973b3221b91f693cf238f3d9",
+    "fable": "49781e18e05a3f3a4aed01e2f7b272ccabc783f4eda66dc4c284a88eb8dc83c8"
+  },
+  "contentVerdict": "Keep as core. Teams expanding agent tool access need an enforced approval boundary and a reviewable artifact, target and evidence packet before consequential execution. The guide builds appropriately on guardrails-and-permissions and gives an observable sandbox exercise for stale approval and duplicate resumption. LangGraph replay is a useful implementation-specific reference within this core topic; it does not make the whole topic optional. The guide explicitly separates protected decisions, durable storage, execution-time revalidation and retry safety, and does not promise these from a prompt or framework alone.",
+  "verified": true,
+  "defectsFixed": [
+    "Fable: moved deploy-node label out of moving packet paths.",
+    "Fable: inserted an explicit fade between independent examples before clearing history and resetting schema; retained visible operation reorder.",
+    "Fable: scoped the subtitle and lesson to LangGraph node replay and recorded the later-retry limitation.",
+    "Fable: matched transcript and beat sheet to revised scene break and scope, retained original model provenance, and recorded editedBy and corrections with archived original sources.",
+    "Fable: rerendered with the local engine, capped FFmpeg/filter workers at two, verified final encoding, regenerated the poster, and kept reproduction scratch in the review folder.",
+    "Guide: corrected singular video wording to distinguish artifact substitution, changed production prerequisites and node replay; recorded primary-source retrieval dates."
+  ],
+  "limitations": [
+    "Audio was analysed using decoded floating-point peaks, spectrograms and energy around scheduled cues; it was not heard. Overlapping cue windows do not prove perceptual separation or quality.",
+    "Visual review used decoded contact sheets across the complete durations, full-resolution beat frames, 350px frames and exact first/last frames. No continuous real-time playback is claimed.",
+    "These are illustrative animations, not security or integration tests of a working executor. No cut depicts the complete authenticated-review, target-binding, concurrency, rejection/cancellation and retry contract; the guide carries those boundaries.",
+    "Scores apply to the final encoded cuts and their stated scope. A high accuracy score does not imply comprehensive coverage or production readiness.",
+    "The saved recommendation is an editorial recommendation; no shared default-selection, Git or publication operation was performed."
+  ]
+}

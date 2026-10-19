@@ -1,0 +1,91 @@
+{
+  "id": "loop-engineering",
+  "title": "Loop engineering",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Design the decision between tool calls: continue only with usable feedback, stop on success or a limit, and hand off blockers with evidence.",
+  "overview": "Here, loop engineering means designing the repeated action, observation, and decision cycle around a model. The harness—the software running the agent and its tools—must enforce boundaries. “Keep fixing it” leaves success, permitted actions, and stopping ambiguous; a persistent prompt does not enforce permissions.",
+  "why": "Delegating the keyboard delegates decisions engineers previously made themselves. Running no selected tests needs a different response from a failing assertion. Anthropic’s engineering guidance supports environment feedback, stopping conditions, and human checkpoints; it does not establish an optimal attempt count or promise convergence.",
+  "example": "An agent repairs a discount calculation. Task A runs 12 tests: one fails, a patch is made, then all pass. Task B uses a mistyped keyword selector and selects none (all discovered tests are deselected). Under this team’s repair-only policy, task B stops edits and sends the command and logs to an engineer.",
+  "judgment": "Enforce continuation in control logic. Require evidence for the current patch, preserve the test selection, and bound tool calls and elapsed time as well as edits. A passing selected suite permits review, not automatic merge. Three attempts is an illustrative policy to evaluate, not a universal recommendation.",
+  "next": "Choose one repair workflow: what evidence permits another edit, what ends it successfully, and what must be included when the run stops without a fix?",
+  "sources": [
+    {
+      "title": "Anthropic: feedback, stopping, and human review",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "pytest exit codes",
+      "url": "https://docs.pytest.org/en/stable/reference/exit-codes.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "pytest test selection and collection",
+      "url": "https://docs.pytest.org/en/stable/how-to/usage.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "pytest flaky tests",
+      "url": "https://docs.pytest.org/en/stable/explanation/flaky.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Amazon Builders’ Library: timeouts and retries",
+      "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "harness-engineering",
+    "timeouts-and-retries",
+    "human-in-the-loop"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Teams adopting coding agents need to make their existing judgment about feedback and stopping explicit before delegating repeated edits. Practising a small repair loop gives the team an inspectable contract they can reuse across agent tools.",
+    "prerequisites": [
+      "harness-engineering"
+    ],
+    "outcomes": [
+      "Classify a test result as usable failure, usable pass, or blocked validation.",
+      "Implement and demonstrate stop conditions that the model cannot override.",
+      "Produce a handoff tying the patch, command, results, and stop reason together."
+    ],
+    "workflow": {
+      "before": "An engineer reads a failing test, edits the discount function, reruns the selected tests, and decides whether the output warrants another edit.",
+      "after": "An agent proposes scoped edits while a harness runs the agreed command, records its evidence, and routes the result through enforced continuation rules.",
+      "human": "The engineer owns expected behaviour, test adequacy, edit scope, budget selection, and the decision to accept the patch or investigate a blocker."
+    },
+    "walkthrough": [
+      "Agree the contract. Work in a disposable checkout, select the discount tests, and confirm the intended cases are collected. Allow edits only to the calculation module. For this exercise, allow at most three patches, six test invocations, and five minutes overall; give each command a timeout. These are teaching values, not measured production defaults.",
+      "Record observations. Save each command, working directory, patch identifier, selected and executed test counts, exit code, and output. pytest documents exit 0 for success, 1 for test failures, and 5 for no tests collected. Use the runner’s report too: a numeric exit code alone cannot show that the intended checks actually ran. An unmatched -k selector can collect tests but deselect every one, also producing exit 5; distinguish collected, selected, executed, and skipped counts.",
+      "Route the outcome. For a reproduced assertion failure within scope and budget, provide the failure details for another patch. For the agreed tests passing on the current patch, stop and request review. For absent tests, command errors, or unavailable dependencies, preserve the evidence and stop this repair-only run; diagnostic automation would need its own explicit scope.",
+      "Evaluate the loop itself. Replay representative successful repairs and blocked runs. Check whether stops prevented wasted edits and whether handoffs let someone resume without guessing. Repeated identical evidence is a reason to investigate, not proof of progress; choose any no-progress threshold from observed team tasks. Compare failure identities and relevant assertion details under the same test selection; equal failure counts can hide entirely different failures."
+    ],
+    "pitfalls": [
+      "Treating a missing test selection or silently skipped coverage as a successful repair.",
+      "Accepting yesterday’s green result after another edit, or letting the agent weaken assertions to get green.",
+      "Rerunning a flaky test until it passes without investigating the uncontrolled state described in pytest’s guidance.",
+      "Retrying a timed-out publishing tool blindly: Amazon documents that failure does not prove side effects were absent."
+    ],
+    "exercise": {
+      "title": "Make the repair loop refuse missing evidence",
+      "steps": [
+        "Use a small disposable function and a known failing test; record the exact intended selection.",
+        "Wrap the test command with the three outcome routes and the exercise limits above.",
+        "Run a repair, then run a separate task with a keyword selector that matches no tests.",
+        "Compare the traces and inspect the patch and blocker handoffs with a teammate.",
+        "Force a budget to expire and verify that another edit or command is refused."
+      ],
+      "success": [
+        "The valid failure can lead to a patch and review; the no-tests run makes no product edit.",
+        "Each trace includes the selection, current patch, command, outcome, and stop reason; forced limit exhaustion also stops execution."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

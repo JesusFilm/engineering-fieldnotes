@@ -1,0 +1,128 @@
+{
+  "baseline": {
+    "sha256": "69f31971fbfbab339a619113de71185bb189420957d50078057e051d17b6af7a",
+    "duration": 26.0,
+    "frames": 780,
+    "video": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "pixelFormat": "yuv420p",
+    "audio": "aac",
+    "fullDecode": true,
+    "faststart": true,
+    "mp4Boxes": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 29039
+      },
+      {
+        "type": "free",
+        "offset": 29071,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 29079,
+        "size": 402356
+      }
+    ],
+    "maxAudioDbfs": -9.196400142263926,
+    "firstLastIdentical": true,
+    "firstFrameYuvSha256": "6791b9ffe5c20ca33783b7d5b74e41797bc1461e569626bb2d8d55995718ded3",
+    "lastFrameYuvSha256": "6791b9ffe5c20ca33783b7d5b74e41797bc1461e569626bb2d8d55995718ded3",
+    "cueCount": 39,
+    "allCueWindowsHaveSignal": true,
+    "physicalListening": false
+  },
+  "astra": {
+    "sha256": "0ef2aaa0ee3cec7bad9a10146825f2f599600e6ffa289213ac3f40d1a6491fb3",
+    "duration": 30.0,
+    "frames": 900,
+    "video": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "pixelFormat": "yuv420p",
+    "audio": "aac",
+    "fullDecode": true,
+    "faststart": true,
+    "mp4Boxes": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 32963
+      },
+      {
+        "type": "free",
+        "offset": 32995,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 33003,
+        "size": 577966
+      }
+    ],
+    "maxAudioDbfs": -6.30415773406763,
+    "firstLastIdentical": true,
+    "firstFrameYuvSha256": "6791b9ffe5c20ca33783b7d5b74e41797bc1461e569626bb2d8d55995718ded3",
+    "lastFrameYuvSha256": "6791b9ffe5c20ca33783b7d5b74e41797bc1461e569626bb2d8d55995718ded3",
+    "cueCount": 42,
+    "allCueWindowsHaveSignal": true,
+    "physicalListening": false
+  },
+  "fable": {
+    "sha256": "31d44cdbdb8a50e3d67643b1b2d6d7a8b2cf7969787cc3d0f7e4a40e9b4ed81a",
+    "duration": 30.0,
+    "frames": 900,
+    "video": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "pixelFormat": "yuv420p",
+    "audio": "aac",
+    "fullDecode": true,
+    "faststart": true,
+    "mp4Boxes": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 32296
+      },
+      {
+        "type": "free",
+        "offset": 32328,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 32336,
+        "size": 1862691
+      }
+    ],
+    "maxAudioDbfs": -1.90798686537617,
+    "firstLastIdentical": true,
+    "firstFrameYuvSha256": "50a3865fbf34c13f2d3aaac624010bccc1ae941157e643bc65e2c5d15620c533",
+    "lastFrameYuvSha256": "50a3865fbf34c13f2d3aaac624010bccc1ae941157e643bc65e2c5d15620c533",
+    "cueCount": 101,
+    "allCueWindowsHaveSignal": true,
+    "physicalListening": false
+  }
+}

@@ -1,0 +1,5 @@
+[
+  "0–8s: The application misses the empty cache, reads the database, fills the cache, and responds.",
+  "8.5–15.5s: A later request hits the cache without a database read. The cached value then expires.",
+  "16–22s: A fresh request misses and repeats the database-read and cache-fill path."
+]

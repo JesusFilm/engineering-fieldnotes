@@ -1,0 +1,94 @@
+[
+  {
+    "page": "chapter",
+    "width": 350,
+    "documentWidth": 350,
+    "videos": [
+      {
+        "src": "file://<project>/reviews/comparisons/replication-and-consistency/scratch/site/media/replication-and-consistency/astra.mp4?v=89c73865b893",
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      }
+    ],
+    "transcriptBeats": [
+      5
+    ]
+  },
+  {
+    "page": "compare/",
+    "width": 350,
+    "documentWidth": 350,
+    "videos": [
+      {
+        "src": "file://<project>/reviews/comparisons/replication-and-consistency/scratch/site/media/replication-and-consistency/baseline.mp4?v=038ec8ae21a0",
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      },
+      {
+        "src": "file://<project>/reviews/comparisons/replication-and-consistency/scratch/site/media/replication-and-consistency/astra.mp4?v=89c73865b893",
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      },
+      {
+        "src": "file://<project>/reviews/comparisons/replication-and-consistency/scratch/site/media/replication-and-consistency/sol.mp4?v=5b10e3ffe179",
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      }
+    ],
+    "transcriptBeats": [
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "page": "chapter",
+    "width": 1280,
+    "documentWidth": 1280,
+    "videos": [
+      {
+        "src": "file://<project>/reviews/comparisons/replication-and-consistency/scratch/site/media/replication-and-consistency/astra.mp4?v=89c73865b893",
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      }
+    ],
+    "transcriptBeats": [
+      5
+    ]
+  },
+  {
+    "page": "compare/",
+    "width": 1280,
+    "documentWidth": 1280,
+    "videos": [
+      {
+        "src": "file://<project>/reviews/comparisons/replication-and-consistency/scratch/site/media/replication-and-consistency/baseline.mp4?v=038ec8ae21a0",
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      },
+      {
+        "src": "file://<project>/reviews/comparisons/replication-and-consistency/scratch/site/media/replication-and-consistency/astra.mp4?v=89c73865b893",
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      },
+      {
+        "src": "file://<project>/reviews/comparisons/replication-and-consistency/scratch/site/media/replication-and-consistency/sol.mp4?v=5b10e3ffe179",
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      }
+    ],
+    "transcriptBeats": [
+      3,
+      5,
+      6
+    ]
+  }
+]

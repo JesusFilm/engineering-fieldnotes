@@ -1,0 +1,5 @@
+[
+  "0–5s: All traffic goes to the control release, whose illustrative p95 latency is 120 ms.",
+  "6–15s: A candidate receives 20 percent of traffic. Its p95 latency is 900 ms while the control stays at 120 ms.",
+  "16–23s: The latency regression triggers rollback; traffic returns to the control."
+]

@@ -1,0 +1,13 @@
+{
+  "comparisonSchema": "passed",
+  "finalMediaAndSourceHashes": "passed",
+  "provenanceAndEarlierCorrections": "preserved",
+  "transcripts": "unchanged since fresh blind inspection",
+  "fixtureRatesPercent": {
+    "pooled": 0.4,
+    "candidate": 4.0,
+    "candidateExport": 40.0,
+    "controlExport": 0.0
+  },
+  "beforeAndAfter": "saved"
+}

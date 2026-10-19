@@ -1,0 +1,82 @@
+{
+  "id": "replication-and-consistency",
+  "title": "Replication and consistency",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform",
+    "Tech lead"
+  ],
+  "summary": "A successful write and a fresh read are separate promises. Make agent tools explicit about both before letting an observation trigger another action.",
+  "overview": "Replication maintains copies of data. Consistency describes what reads may observe. PostgreSQL asynchronous streaming replication can leave a read replica behind the primary; failover can lose changes absent from the promoted standby. PostgreSQL ships its write-ahead log (WAL), the record used to replay database changes. A replication acknowledgement does not necessarily mean a query can see the change. These distinctions matter when an agent treats tool output as evidence.",
+  "why": "A person might pause after seeing an old dashboard value. An automated workflow needs an explicit decision rule: accept the observation, verify elsewhere, or stop. Otherwise a successful write followed by a stale read can become an unnecessary second mutation.",
+  "example": "An internal release assistant changes release R42 from draft to ready, producing application revision v8. Its verification tool reads a reporting replica still at v7. In this illustrative single-writer scenario, the write succeeded; the observation is stale. The tool reads the primary using a fresh query and compares the returned revision before the assistant continues.",
+  "judgment": "Use this as reference material when tools read replicas, caches, or derived indexes. Choose acceptable staleness, data-loss exposure, and verification cost per operation. Routing verification to a primary is one design choice, not a universal consistency guarantee; concurrent writers, caches, transaction snapshots, and failover still need explicit handling.",
+  "next": "Trace one write and its verification read. Which server and transaction snapshot answer the read, and what exactly must happen before the write tool reports success?",
+  "sources": [
+    {
+      "title": "PostgreSQL 18: Log-Shipping Standby Servers, \u00a7\u00a726.2.5 and 26.2.8",
+      "url": "https://www.postgresql.org/docs/18/warm-standby.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "PostgreSQL 18: Write Ahead Log, synchronous_commit and Table 19.1",
+      "url": "https://www.postgresql.org/docs/18/runtime-config-wal.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "PostgreSQL 18: Transaction Isolation, Read Committed and Repeatable Read",
+      "url": "https://www.postgresql.org/docs/18/transaction-iso.html",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "cache-aside",
+    "idempotency",
+    "timeouts-and-retries"
+  ],
+  "learning": {
+    "placement": "reference",
+    "relevance": "Teams adopting agents need this when an automated decision depends on a recently changed record exposed through multiple read paths. Keep it outside the first adoption lessons, but consult it while designing mutation tools and diagnosing contradictory verification results.",
+    "prerequisites": [
+      "tool-design",
+      "timeouts-and-retries"
+    ],
+    "outcomes": [
+      "Draw the actual write and verification paths for one tool.",
+      "Distinguish durable acknowledgement from query visibility.",
+      "Demonstrate that a stale observation does not trigger a second mutation."
+    ],
+    "workflow": {
+      "before": "An engineer saves a release, refreshes a dashboard, and manually checks the database if the status looks wrong.",
+      "after": "An assistant calls a mutation tool whose wrapper records the committed revision and uses an explicit verification route before proceeding.",
+      "human": "Engineers choose freshness requirements, implement routing and permissions, and review unresolved results. Persistent prompts alone do not enforce permissions or database guarantees."
+    },
+    "walkthrough": [
+      "1. Define evidence. For R42, specify that the write response includes the committed application revision. Log the operation ID, returned revision, and read endpoint. These are proposed tool-contract fields, not automatic PostgreSQL features; distinguish an accepted asynchronous job from a completed database transaction.",
+      "2. Expose the race. Hold a test replica response at v7 while the primary commits v8. Read through the reporting route. Compare the observed and expected revisions, label the mismatch unresolved, and preserve the successful write receipt. Do not infer that the mutation failed.",
+      "3. Resolve deliberately. Issue a fresh Read Committed query on the primary after commit. PostgreSQL takes a new snapshot for each such command; an older Repeatable Read transaction can retain an earlier view. Compare the intended fields as well as the revision. With concurrent writers, a newer revision needs separate reconciliation.",
+      "4. Review alternatives. With configured synchronous standbys, PostgreSQL synchronous_commit=on waits for durable standby WAL, while remote_apply also waits for replay. This applies to the acknowledging standbys, not every possible read target. Decide whether that commit wait is justified; a fixed sleep is not a freshness contract."
+    ],
+    "pitfalls": [
+      "Repeating the mutation because a replica returns an older revision; design retry safety separately.",
+      "Calling every replica consistent because one synchronous standby acknowledged.",
+      "Assuming a primary read proves external deployment completion or bypasses an application cache.",
+      "Treating a matching revision as an atomic guard for a later action; another writer can change the record after verification. Enforce any required revision precondition when the action executes."
+    ],
+    "exercise": {
+      "title": "Catch a false verification failure",
+      "steps": [
+        "Build a tiny fake tool service with a primary record and a separately advanced replica record.",
+        "Write R42 once from v7 to v8; keep the replica at v7 and record the write count.",
+        "Run verification against the replica, then implement a fresh primary verification path with an explicit unresolved result on failure.",
+        "Replay the scenario and finally advance the replica to v8. Save the tool trace for team review."
+      ],
+      "success": [
+        "The trace contains exactly one mutation and identifies which read returned v7.",
+        "Verification succeeds only after matching evidence, or returns unresolved when the primary cannot be checked."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "fable",
+  "concept": "observability-and-tracing",
+  "title": "Carry the trace into the tool call",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "A tool that calls another service must propagate the trace context (the traceparent header) or the service's spans land in a separate trace and a failed agent task cannot be followed into the dependency that failed.",
+  "src": "media/observability-and-tracing/fable.mp4",
+  "poster": "media/observability-and-tracing/fable.jpg",
+  "duration": 29.57,
+  "verified": true,
+  "transcript": [
+    "0.0–7.6s: Normal case. Task 7 goes from the user to the agent, the agent's charge() tool posts to the Billing API, and 200 returns. The agent trace panel records invoke_agent and execute_tool under trace 4bf9; the Billing API's own span list records POST /charge 200 under a different id, 91c0, and another caller's request adds a7e3. Nothing links the two lists, and nobody notices while everything succeeds.",
+    "7.6–15.3s: Problem. Task 8 follows the same path and the Billing API fails with 500. The agent trace shows execute_tool · ERROR under trace c3a1; the API list gains POST /charge 500 · 0d12. A dashed red link appears between the two panels, the API rows are scanned one by one, none carries c3a1, and a red ? badge marks that the failed task cannot be followed into the service.",
+    "15.3–18.3s: Fix. The agent trace clears and the charge() tool gains the sublabel + traceparent with a blue pulse: the tool now injects the W3C trace context header on its outgoing request.",
+    "18.3–24.8s: Resolution. Task 9 runs; the packet from the tool to the Billing API is now a blue traceparent 7e2d chip. The API fails again with 500, but its new span reads POST /charge 500 · 7e2d, the same id as the agent trace.",
+    "24.8–29.6s: The link between the panels becomes a solid blue flowing line and the ? becomes a ✓: one trace now spans the agent, its tool and the service, so the failed task can be followed end to end. The stage holds, then fades so the loop restarts on the opening frame."
+  ],
+  "limitations": [
+    "Illustrative scenario: three tasks, one tool and one service, with trace ids shortened to four hex characters; a real traceparent carries a 32-hex trace id and a 16-hex parent id, and a real backend holds many more spans.",
+    "Propagation is shown as enough for the service's span to join the trace; it also needs the receiving service to extract the header and export to the same backend, and sampling can drop either side. The header does not prevent the failure or change retries.",
+    "Agent span names (invoke_agent, execute_tool) follow the OpenTelemetry GenAI semantic conventions, which are marked Development and may change.",
+    "Audio was verified by analysis only (encoded peak -1.6 dBFS, spectrogram, cue timing against the scene); it was not listened to.",
+    "Self-reviewed only; no comparative review against the baseline or other cuts was made in this task."
+  ],
+  "sources": [
+    {
+      "title": "Context propagation — OpenTelemetry",
+      "url": "https://opentelemetry.io/docs/concepts/context-propagation/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Propagators API — OpenTelemetry specification",
+      "url": "https://opentelemetry.io/docs/specs/otel/context/api-propagators/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Trace Context — W3C",
+      "url": "https://www.w3.org/TR/trace-context/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Semantic conventions for GenAI agent and framework spans — OpenTelemetry",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "checks": {
+    "date": "2026-10-19",
+    "mediaSha256": "be47d610151bb9abac02dc178588ffd6b1989870a8bc4ddfd502bfd737ae177f",
+    "posterSha256": "08557b7d10f7c465a5bfe439b7699cca77faf22dc8937ed3f9e2141aa815ee58",
+    "stream": "h264 yuv420p 1080x1920 30fps + aac, faststart, 887 frames, 1562877 bytes",
+    "fullDecode": true,
+    "matchingBoundaryFrames": true,
+    "audioPeakDbfs": -1.6,
+    "audioHeard": false
+  }
+}

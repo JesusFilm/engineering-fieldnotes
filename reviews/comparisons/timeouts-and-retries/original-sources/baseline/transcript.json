@@ -1,0 +1,6 @@
+[
+  "1–5s: A normal request receives a successful response within its deadline.",
+  "7–13.5s: Another request times out while the API continues working. Its late response is ignored.",
+  "10–19s: The client waits through backoff, then uses the second and final attempt; that request succeeds.",
+  "19–22s: The successful result holds, with the attempt limit still visible."
+]

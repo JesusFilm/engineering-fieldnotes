@@ -1,0 +1,46 @@
+{
+  "id": "astra",
+  "concept": "guardrails-and-permissions",
+  "title": "Separate authority",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "An agent can investigate and propose a release while a separate authorized execution path deploys it; approving that release does not grant the agent deployment authority.",
+  "src": "media/guardrails-and-permissions/astra.mp4",
+  "poster": "media/guardrails-and-permissions/astra.jpg",
+  "duration": 28.0,
+  "verified": true,
+  "limitations": [
+    "Illustrative architecture: trusted execution checks enforce permissions; prompts and approval text do not.",
+    "The deploy tool abstracts a separate deployment identity; r42 abbreviates a release record binding artifact and target.",
+    "Authentication, token lifecycle, replay/race handling, compromised credentials, and rollback are not depicted.",
+    "Audio was analyzed for levels and synchronization but was not physically heard.",
+    "Self-reviewed independent cut; no comparative ranking or default recommendation."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5.7,
+      "text": "In this illustrative system, the incident agent has read-only authority. It requests service logs, the read succeeds, and the evidence returns to the agent."
+    },
+    {
+      "start": 5.7,
+      "end": 9.5,
+      "text": "The agent attempts to deploy. The deployment tool rejects its identity at the execution boundary, and production remains on release r41."
+    },
+    {
+      "start": 9.5,
+      "end": 14.8,
+      "text": "The agent instead proposes release r42 to a human reviewer. The reviewer checks and approves that specific release record through a trusted review path."
+    },
+    {
+      "start": 14.8,
+      "end": 21,
+      "text": "The approved r42 record reaches the deployment tool. A separately authorized execution path checks the release and deploys it; production changes to r42."
+    },
+    {
+      "start": 21,
+      "end": 28,
+      "text": "The agent tries a direct deployment again and is still denied. It can still read logs, and production stays on r42. Approval of a release did not expand the agent’s permissions. The stage fades to black."
+    }
+  ]
+}

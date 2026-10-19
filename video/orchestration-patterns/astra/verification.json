@@ -1,0 +1,42 @@
+{
+  "sha256": "0ef2aaa0ee3cec7bad9a10146825f2f599600e6ffa289213ac3f40d1a6491fb3",
+  "duration": 30.0,
+  "frames": 900,
+  "video": "h264",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "pixelFormat": "yuv420p",
+  "audio": "aac",
+  "fullDecode": true,
+  "faststart": true,
+  "mp4Boxes": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "size": 32963
+    },
+    {
+      "type": "free",
+      "offset": 32995,
+      "size": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 33003,
+      "size": 577966
+    }
+  ],
+  "maxAudioDbfs": -6.30415773406763,
+  "firstLastIdentical": true,
+  "firstFrameYuvSha256": "6791b9ffe5c20ca33783b7d5b74e41797bc1461e569626bb2d8d55995718ded3",
+  "lastFrameYuvSha256": "6791b9ffe5c20ca33783b7d5b74e41797bc1461e569626bb2d8d55995718ded3",
+  "cueCount": 42,
+  "allCueWindowsHaveSignal": true,
+  "physicalListening": false
+}

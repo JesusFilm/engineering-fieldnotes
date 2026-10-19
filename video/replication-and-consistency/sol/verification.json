@@ -1,0 +1,490 @@
+{
+  "sha256": "5b10e3ffe179678a1650614b355b33003b1596e9b798b6aeada72d01dcef85fa",
+  "posterSha256": "452f75fcb54ef3a9cd4969006de42f2ea9a90b683238a8b4d4eed262b0510936",
+  "frames": 960,
+  "duration": 32.0,
+  "codec": "H264 1080x1920 30fps yuv420p + AAC",
+  "fullDecode": true,
+  "matchingExactBoundaryFrames": true,
+  "boundaryRGBSHA256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+  "faststart": true,
+  "atomOffsets": {
+    "ftyp": 0,
+    "moov": 32,
+    "free": 35184,
+    "mdat": 35192
+  },
+  "peakDbfs": -8.8,
+  "audioHeard": false,
+  "audioCueChecks": [
+    {
+      "t": 0.4,
+      "name": "arrive",
+      "windowPeak": 0.15378202497959137
+    },
+    {
+      "t": 1.1,
+      "name": "send",
+      "windowPeak": 0.07569044828414917
+    },
+    {
+      "t": 1.9000000000000001,
+      "name": "arrive",
+      "windowPeak": 0.15924441814422607
+    },
+    {
+      "t": 2.6,
+      "name": "send",
+      "windowPeak": 0.0738179162144661
+    },
+    {
+      "t": 3.4000000000000004,
+      "name": "arrive",
+      "windowPeak": 0.30076104402542114
+    },
+    {
+      "t": 3.4,
+      "name": "hit",
+      "windowPeak": 0.30076104402542114
+    },
+    {
+      "t": 4.1,
+      "name": "send",
+      "windowPeak": 0.08412206172943115
+    },
+    {
+      "t": 4.8999999999999995,
+      "name": "arrive",
+      "windowPeak": 0.3169442415237427
+    },
+    {
+      "t": 4.8999999999999995,
+      "name": "chime",
+      "windowPeak": 0.3169442415237427
+    },
+    {
+      "t": 6.5,
+      "name": "store",
+      "windowPeak": 0.21784646809101105
+    },
+    {
+      "t": 6.5,
+      "name": "work",
+      "windowPeak": 0.21784646809101105
+    },
+    {
+      "t": 6.5,
+      "name": "send",
+      "windowPeak": 0.21784646809101105
+    },
+    {
+      "t": 7.4,
+      "name": "arrive",
+      "windowPeak": 0.1758878231048584
+    },
+    {
+      "t": 7.4,
+      "name": "store",
+      "windowPeak": 0.1758878231048584
+    },
+    {
+      "t": 8.1,
+      "name": "send",
+      "windowPeak": 0.07668037712574005
+    },
+    {
+      "t": 9,
+      "name": "arrive",
+      "windowPeak": 0.3103269934654236
+    },
+    {
+      "t": 9,
+      "name": "ack",
+      "windowPeak": 0.3103269934654236
+    },
+    {
+      "t": 9,
+      "name": "store",
+      "windowPeak": 0.3103269934654236
+    },
+    {
+      "t": 10.8,
+      "name": "send",
+      "windowPeak": 0.07515471428632736
+    },
+    {
+      "t": 11.600000000000001,
+      "name": "arrive",
+      "windowPeak": 0.15721209347248077
+    },
+    {
+      "t": 12.3,
+      "name": "send",
+      "windowPeak": 0.07632879167795181
+    },
+    {
+      "t": 13.100000000000001,
+      "name": "arrive",
+      "windowPeak": 0.43151557445526123
+    },
+    {
+      "t": 13.1,
+      "name": "thump",
+      "windowPeak": 0.43151557445526123
+    },
+    {
+      "t": 15.4,
+      "name": "send",
+      "windowPeak": 0.07736998796463013
+    },
+    {
+      "t": 16.2,
+      "name": "arrive",
+      "windowPeak": 0.15865452587604523
+    },
+    {
+      "t": 17,
+      "name": "send",
+      "windowPeak": 0.07551613450050354
+    },
+    {
+      "t": 17.8,
+      "name": "arrive",
+      "windowPeak": 0.3024705648422241
+    },
+    {
+      "t": 17.8,
+      "name": "hit",
+      "windowPeak": 0.3024705648422241
+    },
+    {
+      "t": 18.6,
+      "name": "send",
+      "windowPeak": 0.07705133408308029
+    },
+    {
+      "t": 19.400000000000002,
+      "name": "arrive",
+      "windowPeak": 0.31930023431777954
+    },
+    {
+      "t": 19.400000000000002,
+      "name": "chime",
+      "windowPeak": 0.31930023431777954
+    },
+    {
+      "t": 21.2,
+      "name": "send",
+      "windowPeak": 0.07848428189754486
+    },
+    {
+      "t": 22.7,
+      "name": "arrive",
+      "windowPeak": 0.18056347966194153
+    },
+    {
+      "t": 22.7,
+      "name": "store",
+      "windowPeak": 0.18056347966194153
+    },
+    {
+      "t": 24.5,
+      "name": "work",
+      "windowPeak": 0.18158872425556183
+    },
+    {
+      "t": 24.5,
+      "name": "send",
+      "windowPeak": 0.18158872425556183
+    },
+    {
+      "t": 25.3,
+      "name": "arrive",
+      "windowPeak": 0.15501044690608978
+    },
+    {
+      "t": 26.1,
+      "name": "send",
+      "windowPeak": 0.075965017080307
+    },
+    {
+      "t": 26.900000000000002,
+      "name": "arrive",
+      "windowPeak": 0.301202654838562
+    },
+    {
+      "t": 26.9,
+      "name": "hit",
+      "windowPeak": 0.301202654838562
+    },
+    {
+      "t": 27.5,
+      "name": "send",
+      "windowPeak": 0.06929439306259155
+    },
+    {
+      "t": 28.3,
+      "name": "arrive",
+      "windowPeak": 0.31772202253341675
+    },
+    {
+      "t": 28.3,
+      "name": "chime",
+      "windowPeak": 0.31772202253341675
+    },
+    {
+      "t": 30.3,
+      "name": "poof",
+      "windowPeak": 0.05778244137763977
+    }
+  ],
+  "reviewedBy": "gpt-6-astra comparative review",
+  "reviewMethod": "Decoded contact sheets, full-size and 350px beat/busy frames, exact endpoints; numerical audio checks and spectrograms; no listening.",
+  "authoredVerification": {
+    "sha256": "1b7fa8cb0ff6514ca35c237c756cdf31ff5e18d346ed69b27f83a6f8f45d6e5e",
+    "posterSha256": "452f75fcb54ef3a9cd4969006de42f2ea9a90b683238a8b4d4eed262b0510936",
+    "bytes": 1244111,
+    "duration": 32,
+    "frames": 960,
+    "video": "h264/yuv420p/1080x1920/30",
+    "audio": "aac",
+    "peakDbfs": -8.8,
+    "matchingBoundaryFrames": true,
+    "fullDecode": true,
+    "faststart": true,
+    "atomOffsets": {
+      "ftyp": 0,
+      "moov": 32,
+      "free": 35240,
+      "mdat": 35248
+    },
+    "audioCues": 43,
+    "cueEnergyChecks": [
+      {
+        "time": 0.4,
+        "preset": "arrive",
+        "peakWindow": 0.153782
+      },
+      {
+        "time": 1.1,
+        "preset": "send",
+        "peakWindow": 0.07569
+      },
+      {
+        "time": 1.9000000000000001,
+        "preset": "arrive",
+        "peakWindow": 0.159244
+      },
+      {
+        "time": 2.6,
+        "preset": "send",
+        "peakWindow": 0.073818
+      },
+      {
+        "time": 3.4000000000000004,
+        "preset": "arrive",
+        "peakWindow": 0.300761
+      },
+      {
+        "time": 3.4,
+        "preset": "hit",
+        "peakWindow": 0.300761
+      },
+      {
+        "time": 4.1,
+        "preset": "send",
+        "peakWindow": 0.084122
+      },
+      {
+        "time": 4.8999999999999995,
+        "preset": "arrive",
+        "peakWindow": 0.316944
+      },
+      {
+        "time": 4.8999999999999995,
+        "preset": "chime",
+        "peakWindow": 0.316944
+      },
+      {
+        "time": 6.5,
+        "preset": "store",
+        "peakWindow": 0.217846
+      },
+      {
+        "time": 6.5,
+        "preset": "work",
+        "peakWindow": 0.217846
+      },
+      {
+        "time": 6.5,
+        "preset": "send",
+        "peakWindow": 0.217846
+      },
+      {
+        "time": 7.4,
+        "preset": "arrive",
+        "peakWindow": 0.175888
+      },
+      {
+        "time": 7.4,
+        "preset": "store",
+        "peakWindow": 0.175888
+      },
+      {
+        "time": 8.1,
+        "preset": "send",
+        "peakWindow": 0.07668
+      },
+      {
+        "time": 9,
+        "preset": "arrive",
+        "peakWindow": 0.310327
+      },
+      {
+        "time": 9,
+        "preset": "ack",
+        "peakWindow": 0.310327
+      },
+      {
+        "time": 9,
+        "preset": "store",
+        "peakWindow": 0.310327
+      },
+      {
+        "time": 10.8,
+        "preset": "send",
+        "peakWindow": 0.075155
+      },
+      {
+        "time": 11.600000000000001,
+        "preset": "arrive",
+        "peakWindow": 0.157212
+      },
+      {
+        "time": 12.3,
+        "preset": "send",
+        "peakWindow": 0.076329
+      },
+      {
+        "time": 13.100000000000001,
+        "preset": "arrive",
+        "peakWindow": 0.431516
+      },
+      {
+        "time": 13.1,
+        "preset": "thump",
+        "peakWindow": 0.431516
+      },
+      {
+        "time": 15.4,
+        "preset": "send",
+        "peakWindow": 0.07737
+      },
+      {
+        "time": 16.2,
+        "preset": "arrive",
+        "peakWindow": 0.158655
+      },
+      {
+        "time": 17,
+        "preset": "send",
+        "peakWindow": 0.075516
+      },
+      {
+        "time": 17.8,
+        "preset": "arrive",
+        "peakWindow": 0.302471
+      },
+      {
+        "time": 17.8,
+        "preset": "hit",
+        "peakWindow": 0.302471
+      },
+      {
+        "time": 18.6,
+        "preset": "send",
+        "peakWindow": 0.077051
+      },
+      {
+        "time": 19.400000000000002,
+        "preset": "arrive",
+        "peakWindow": 0.3193
+      },
+      {
+        "time": 19.400000000000002,
+        "preset": "chime",
+        "peakWindow": 0.3193
+      },
+      {
+        "time": 21.2,
+        "preset": "send",
+        "peakWindow": 0.078484
+      },
+      {
+        "time": 22.7,
+        "preset": "arrive",
+        "peakWindow": 0.180563
+      },
+      {
+        "time": 22.7,
+        "preset": "store",
+        "peakWindow": 0.180563
+      },
+      {
+        "time": 24.5,
+        "preset": "send",
+        "peakWindow": 0.07599
+      },
+      {
+        "time": 25.3,
+        "preset": "arrive",
+        "peakWindow": 0.156055
+      },
+      {
+        "time": 26.1,
+        "preset": "send",
+        "peakWindow": 0.075965
+      },
+      {
+        "time": 26.900000000000002,
+        "preset": "arrive",
+        "peakWindow": 0.300034
+      },
+      {
+        "time": 26.9,
+        "preset": "hit",
+        "peakWindow": 0.300034
+      },
+      {
+        "time": 27.5,
+        "preset": "send",
+        "peakWindow": 0.069742
+      },
+      {
+        "time": 28.3,
+        "preset": "arrive",
+        "peakWindow": 0.317671
+      },
+      {
+        "time": 28.3,
+        "preset": "chime",
+        "peakWindow": 0.317671
+      },
+      {
+        "time": 30.3,
+        "preset": "poof",
+        "peakWindow": 0.060015
+      }
+    ],
+    "audioPhysicallyHeard": false,
+    "visualReviewTimes": [
+      4.95,
+      9.5,
+      13.7,
+      19.5,
+      23.2,
+      28.5
+    ],
+    "reviewMethod": "self-review of decoded frames at full resolution and 350 px, contact sheet, spectrogram; no physical listening"
+  }
+}

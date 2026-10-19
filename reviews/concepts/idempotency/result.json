@@ -1,0 +1,28 @@
+{
+  "id": "idempotency",
+  "placement": "core",
+  "verifiedSources": [
+    "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2",
+    "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+    "https://docs.stripe.com/api/idempotent_requests",
+    "https://www.postgresql.org/docs/current/tutorial-transactions.html",
+    "https://www.postgresql.org/docs/current/ddl-constraints.html",
+    "https://www.postgresql.org/docs/current/index-unique-checks.html"
+  ],
+  "changes": [
+    "Reframed idempotency as a core tool-contract decision for delegated writes.",
+    "Clarified intended effects versus equal responses and eventual success.",
+    "Replaced checkout with an explicitly illustrative release-ticket workflow.",
+    "Added version-specific Stripe limits without generalizing them.",
+    "Added PostgreSQL transaction, uniqueness, and concurrent-conflict recovery evidence.",
+    "Added observable outcomes, manual/agent workflow comparison, pitfalls, and a fault-injection exercise.",
+    "Preserved id, title, category, roles, and related fields."
+  ],
+  "limitations": [
+    "Authored and reviewed by gpt-6-astra with high reasoning on 2026-10-19; no independent reviewer.",
+    "The illustrative service and proposed exercise were not integration-tested.",
+    "No universal exactly-once, external-side-effect, retention, or permission guarantee is claimed.",
+    "All six primary pages were available at retrieval; current-version links can change.",
+    "Shared build, UI, and comparative promotion remain outside this assignment."
+  ]
+}

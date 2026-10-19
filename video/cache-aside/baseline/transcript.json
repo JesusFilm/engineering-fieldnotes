@@ -1,0 +1,5 @@
+[
+  "0\u20138s: The caller asks the application for data. A cache miss causes a database read, cache fill and response. The TTL bar begins draining immediately when the entry is stored.",
+  "8.5\u201315.5s: A later request hits without a database read or TTL renewal. The bar keeps draining, the clock marks the approaching expiry, and the entry expires at 14.5s.",
+  "16\u201324s: A new request misses and repeats the source read and cache fill. The caller receives the result before the stage fades; the title remains at both loop boundaries."
+]

@@ -1,0 +1,218 @@
+{
+  "baseline": {
+    "fullDecode": true,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "pixFmt": "yuv420p",
+    "audioCodec": "aac",
+    "duration": 26.0,
+    "frameCount": 780,
+    "faststart": true,
+    "firstLastPixelsEqual": true,
+    "volumedetectPeakDbFS": -1.5,
+    "decodedSamplePeakDbFS": -1.4977,
+    "cueCount": 23,
+    "allCueWindowsNonSilent": true,
+    "sha256": "1850aa670eac3f8e42a9ba641cad1c0f7d491bed58af91327f4ad50f4993d2f0",
+    "audioHeard": false,
+    "selectedFrames": [
+      0,
+      42,
+      66,
+      135,
+      156,
+      213,
+      234,
+      309,
+      372,
+      402,
+      426,
+      489,
+      510,
+      534,
+      570,
+      594,
+      627,
+      648,
+      720,
+      759,
+      779
+    ],
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 29052
+      },
+      {
+        "type": "free",
+        "offset": 29084,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 29092,
+        "size": 552903
+      }
+    ],
+    "passed": true
+  },
+  "astra": {
+    "fullDecode": true,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "pixFmt": "yuv420p",
+    "audioCodec": "aac",
+    "duration": 28.0,
+    "frameCount": 840,
+    "faststart": true,
+    "firstLastPixelsEqual": true,
+    "volumedetectPeakDbFS": -4.4,
+    "decodedSamplePeakDbFS": -4.3894,
+    "cueCount": 21,
+    "allCueWindowsNonSilent": true,
+    "sha256": "0b89eef6decee8b4b8fe97db8817f88de426dc4955f4e8d5a7b400c09aa4f576",
+    "audioHeard": false,
+    "selectedFrames": [
+      0,
+      48,
+      69,
+      102,
+      126,
+      195,
+      258,
+      327,
+      348,
+      393,
+      414,
+      432,
+      486,
+      525,
+      552,
+      588,
+      615,
+      672,
+      705,
+      765,
+      795,
+      839
+    ],
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 31212
+      },
+      {
+        "type": "free",
+        "offset": 31244,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 31252,
+        "size": 419639
+      }
+    ],
+    "passed": true
+  },
+  "fable": {
+    "fullDecode": true,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "pixFmt": "yuv420p",
+    "audioCodec": "aac",
+    "duration": 32.2,
+    "frameCount": 966,
+    "faststart": true,
+    "firstLastPixelsEqual": true,
+    "volumedetectPeakDbFS": -0.8,
+    "decodedSamplePeakDbFS": -0.7066,
+    "cueCount": 45,
+    "allCueWindowsNonSilent": true,
+    "sha256": "d991bdd4cf8650a7480a801f75ab4e9e5d387da44109461eaa0c7137fc3fccef",
+    "audioHeard": false,
+    "selectedFrames": [
+      0,
+      33,
+      48,
+      66,
+      84,
+      108,
+      144,
+      174,
+      195,
+      219,
+      240,
+      285,
+      315,
+      336,
+      354,
+      399,
+      429,
+      468,
+      498,
+      528,
+      564,
+      615,
+      654,
+      663,
+      672,
+      696,
+      714,
+      726,
+      730,
+      738,
+      747,
+      756,
+      771,
+      786,
+      819,
+      840,
+      855,
+      876,
+      915,
+      951,
+      965
+    ],
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 35072
+      },
+      {
+        "type": "free",
+        "offset": 35104,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 35112,
+        "size": 1588822
+      }
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "agent-evals",
+  "title": "Agent evals",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Tech lead"
+  ],
+  "summary": "Agent evals measure task outcomes and behavior using repeatable scenarios and explicit grading rules.",
+  "overview": "Evaluate the model and harness together across multiple trials. Check resulting system state as well as the transcript, using graders appropriate to the task.",
+  "why": "A convincing final message does not establish that the requested action succeeded.",
+  "example": "A ticket-resolution eval checks that the right ticket changed, required fields are present, and unrelated tickets remain untouched.",
+  "judgment": "Define representative tasks, unacceptable failures, and how human review calibrates subjective graders.",
+  "next": "Which recent production failure is missing from our regression scenarios?",
+  "sources": [
+    {
+      "title": "Demystifying evals for AI agents",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+    }
+  ],
+  "related": [
+    "harness-engineering",
+    "observability-and-tracing",
+    "canary-deployments"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "load-balancing",
+  "title": "Load balancing",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Choose where new work goes using signals that match the work; equal call counts can hide very unequal demand.",
+  "overview": "A load balancer selects a backend: one service instance able to handle a request. The routing unit matters. Transport-level balancing assigns connections; application-level balancing can assign individual requests or HTTP/2 streams. Round robin rotates through eligible instances without measuring their current workload. These distinctions are documented by gRPC and Envoy.",
+  "why": "An agent that fans out repository searches can expose bottlenecks in a shared tool service. Investigate per-worker waiting time, outstanding calls, resource use, and failures before adding replicas or changing models. Those measurements help distinguish routing imbalance from exhausted capacity.",
+  "example": "Imagine two identical repository-search workers, each with one execution slot. Short file lookups usually finish quickly; a full-tree scan takes longer. Round robin can send the next lookup behind that scan while the other worker is idle. The accompanying film is an illustrative schedule, not a benchmark or a production configuration.",
+  "judgment": "Use request-aware routing when uneven request cost is an observed problem. Google SRE explains why outstanding-request counts can still misrepresent capacity, especially with unseen traffic or fast failures. Envoy\u2019s equal-weight least-request policy samples candidates rather than necessarily scanning every host. Validate the deployed policy and version; neither algorithm promises optimal latency.",
+  "next": "Where is routing decided in our tool path, what is counted there, and can we demonstrate waiting on one worker while another is idle?",
+  "sources": [
+    {
+      "title": "Google SRE: Load Balancing in the Datacenter \u2014 unequal costs and imperfect load signals",
+      "url": "https://sre.google/sre-book/load-balancing-datacenter/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "gRPC: Load Balancing \u2014 connection versus request routing",
+      "url": "https://grpc.io/blog/grpc-load-balancing/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Envoy: Supported load balancers \u2014 round robin and least request",
+      "url": "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/load_balancing/load_balancers",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Envoy: Draining \u2014 explicit configuration and protocol-dependent shutdown",
+      "url": "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/operations/draining",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Envoy: Circuit breaking \u2014 outstanding-request, pending-request and retry limits",
+      "url": "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/circuit_breaking",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "queues-and-backpressure",
+    "timeouts-and-retries",
+    "canary-deployments"
+  ],
+  "learning": {
+    "placement": "reference",
+    "relevance": "Use this chapter when concurrent agents share replicated tool services and traces reveal uneven waiting or utilization. A team learning delegation on one workstation should prioritize tool contracts, bounded concurrency, and evaluation before introducing balancing infrastructure.",
+    "prerequisites": [
+      "tool-design",
+      "queues-and-backpressure",
+      "observability-and-tracing"
+    ],
+    "outcomes": [
+      "Identify whether a tool call is routed per connection or per request.",
+      "Use a trace to distinguish cumulative assignments, outstanding requests, and executing work.",
+      "Compare two routing policies under the same mixed-cost workload and explain a limitation."
+    ],
+    "workflow": {
+      "before": "An engineer launches searches sequentially and investigates slow jobs individually, with little simultaneous demand on the shared service.",
+      "after": "An agent launches bounded concurrent searches through a measured routing layer; engineers replay representative traffic before changing its policy.",
+      "human": "Own concurrency limits, service eligibility, permissions, rollback thresholds, and correctness checks. An instruction in an agent prompt does not enforce infrastructure limits or access control."
+    },
+    "walkthrough": [
+      "Map the real path from agent to tool client, proxy, and worker. Check whether multiple calls share a connection. gRPC documents how an application-aware proxy can distribute HTTP/2 streams; adding workers does not itself move an existing connection.",
+      "Replay a small workload with fixed arrivals: several short lookups and one long scan. Record assignment, execution start, completion, and backend. A request waiting at a worker remains outstanding to the caller even though it is not executing.",
+      "Compare round robin with a toy least-outstanding dispatcher. In the film, A has a running scan and queued Q4; B is idle. New Q5 and then Q6 go to B after the policy changes, visibly breaking rotation. Q4 stays on A until the scan finishes. Routing new work does not migrate existing work.",
+      "Compare waiting and completion times, errors, and resource saturation. If all workers fill, change admission limits or capacity. Envoy documents separate limits for pending requests, outstanding requests, and retries; balancing alone supplies none of that extra capacity.",
+      "Rehearse removing a worker before rollout. Envoy documents explicit drain controls and protocol-specific behavior, so test your shutdown sequence instead of assuming a successful health response or a termination signal guarantees a clean drain."
+    ],
+    "pitfalls": [
+      "Counting requests instead of measuring cost: equal assignments can conceal a long-running task.",
+      "Treating fewer outstanding calls as guaranteed spare capacity; fast errors or other clients can make that signal misleading.",
+      "Replaying state-changing tool calls to fix distribution; the demo uses read-only work and establishes no retry safety."
+    ],
+    "exercise": {
+      "title": "Find the idle worker",
+      "steps": [
+        "Create two local single-slot worker stubs with FIFO queues; use read-only simulated tasks.",
+        "Send six fixed arrivals, mixing 200 ms tasks with one 2 s task; log arrival, assignment, start, and finish.",
+        "Replay exactly that schedule with round robin and least outstanding, counting both running and queued calls.",
+        "Compare individual waits and maximum queue depth; repeat with both workers occupied and record why routing alone cannot remove all waiting."
+      ],
+      "success": [
+        "Show an actual trace where work waits while another worker is idle, or explain why your chosen arrivals never create that condition.",
+        "Explain one measured difference without claiming universal improvement; confirm every request completes once and existing work is never moved."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

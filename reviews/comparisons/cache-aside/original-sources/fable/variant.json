@@ -1,0 +1,45 @@
+{
+  "id": "fable",
+  "concept": "cache-aside",
+  "title": "Invalidation can lose a race",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "Updating the store and deleting the cache key keeps later readers fresh, except when a reader's refill lands after the delete and stores the old value; the entry's TTL then bounds how long stale answers last but does not prevent them.",
+  "src": "media/cache-aside/fable.mp4",
+  "poster": "media/cache-aside/fable.jpg",
+  "duration": 31.57,
+  "verified": true,
+  "transcript": [
+    "0.7–2.6s: The Agent asks for the refund policy. The cache holds 30d, answers HIT, and the Agent receives 30d while the database stays untouched.",
+    "4.2–5.6s: The Editor saves 14d. The app updates the database to 14d and deletes the cached refund entry while its TTL bar still had time left.",
+    "6.7–13.6s: The Agent's next read misses, reads 14d from the database, and the app holds the pending SET 14d. During that pause the Editor saves 7d: the database becomes 7d and the delete finds an empty cache. The held SET 14d then lands with a crash, storing the old value in red; the Agent receives 14d.",
+    "15.0–20.5s: Two later reads hit the stale entry. The Agent's badge reads STALE 14d while the database shows 7d in green. The STALE label is the video's annotation, not something a cache reports.",
+    "21.3–22.9s: A clock spins with accelerating ticks as the entry's TTL bar runs out; the stale entry disappears.",
+    "23.6–31.6s: The next read misses, reads 7d, stores it in green, and the Agent receives 7d with a chime. The resolved state holds, then the stage fades to black."
+  ],
+  "limitations": [
+    "Illustrative scenario: the pause between reading the database and setting the cache stands in for any reordering (pauses, retries, slow networks); no claim is made about how often it happens.",
+    "TTL bounds staleness only because nothing refreshes the stale entry in the meantime. Leases or conditional writes (Nishtala et al., NSDI 2013) prevent stale sets and are not shown.",
+    "The Agent, Editor and refund-policy values are an example; the mechanism applies to any cache-aside reader and writer. The STALE badge is an annotation, not a cache feature.",
+    "One key and one cache node; replicated caches and multi-node invalidation are out of scope.",
+    "Audio was checked by decoded peak level (-1.8 dBFS), per-cue onset energy and spectrogram, not listened to."
+  ],
+  "sources": [
+    {
+      "title": "Cache-Aside pattern — Azure Architecture Center",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Scaling Memcache at Facebook (NSDI 2013), §3.2.1 Leases",
+      "url": "https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final170_update.pdf",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "verification": {
+    "record": "video/cache-aside/fable/verification.json",
+    "review": "video/cache-aside/fable/review.md",
+    "sha256": "413a095a9291fa7e9da118a68f9617d2b8bf0fb2cebd6435e56d68016ee6ae55",
+    "audioHeard": false
+  }
+}

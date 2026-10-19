@@ -1,0 +1,88 @@
+{
+  "id": "timeouts-and-retries",
+  "title": "Timeouts and retries",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Give agent tool calls a shared deadline and a limited retry allowance; report uncertainty when either runs out.",
+  "overview": "A timeout limits how long a caller waits for an attempt. An overall deadline limits the whole operation, including retry delays. Neither proves that remote work was cancelled or rolled back. gRPC explicitly makes the server application responsible for stopping work it spawned. Treat a missing response as missing evidence, not evidence that nothing happened.",
+  "why": "An engineer can notice a stuck request and stop clicking. An unattended agent needs that stopping rule in executable tool code. Retries can recover transient failures, but they also consume capacity; independent retry loops at multiple layers multiply downstream attempts. Review the runtime, client library, and service policy together.",
+  "example": "A release assistant reads CI status before drafting a release summary. In an illustrative policy, the runtime allows two total attempts, five seconds each, within a twelve-second tool budget. The first times out; a sampled two-second backoff leaves five seconds for the retry. If that also expires, return status_unknown with the attempt history. A tool timeout must not become a claim that the build failed.",
+  "judgment": "Choose limits from measured dependency latency and the task’s tolerance for waiting. Identify one owner for application retries and inspect lower-layer behaviour: gRPC can transparently retry some failures even without an explicit retry policy. Count actual downstream calls, not only model-visible tool calls. These example numbers are teaching values, not production defaults.",
+  "next": "Can a model request the same logical operation again and accidentally receive a fresh deadline or attempt allowance?",
+  "sources": [
+    {
+      "title": "AWS Builders’ Library — Timeouts, retries, and backoff with jitter",
+      "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+    },
+    {
+      "title": "gRPC — Deadlines",
+      "url": "https://grpc.io/docs/guides/deadlines/"
+    },
+    {
+      "title": "gRPC — Retry policy, transparent retries, and metrics",
+      "url": "https://grpc.io/docs/guides/retry/"
+    },
+    {
+      "title": "RFC 9110 §9.2.2 — Idempotent methods",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2"
+    },
+    {
+      "title": "Stripe API — Idempotent requests",
+      "url": "https://docs.stripe.com/api/idempotent_requests"
+    },
+    {
+      "title": "AWS Architecture Blog — Exponential Backoff and Jitter",
+      "url": "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/"
+    }
+  ],
+  "related": [
+    "idempotency",
+    "queues-and-backpressure",
+    "loop-engineering"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Teams delegating remote tool use need a reliable stopping rule before leaving agents unattended. This chapter makes existing reliability knowledge actionable through a small runtime policy and a fault-injection exercise.",
+    "prerequisites": [
+      "tool-design"
+    ],
+    "outcomes": [
+      "Distinguish an attempt timeout from a shared operation deadline in a trace.",
+      "Implement one bounded retry policy for a read-only tool and demonstrate its stop condition.",
+      "Explain why a timed-out write needs reconciliation or documented idempotency before retrying."
+    ],
+    "workflow": {
+      "before": "An engineer refreshes CI, checks an outage dashboard, and decides whether to try again.",
+      "after": "An agent calls a typed status tool; runtime code owns the timer, retry classification, attempt counter, and terminal result.",
+      "human": "Engineers choose safe operations and limits, inspect failure traces, and decide how to handle unresolved outcomes."
+    },
+    "walkthrough": [
+      "1. Define the operation. Read CI status for a specific build ID. Keep that identity and the budget across repeated agent requests belonging to the same operation. Classify the endpoint by its documented semantics: RFC 9110 cautions against automatically retrying non-idempotent requests unless safety or non-application is known.",
+      "2. Set the deadline once using a monotonic clock. Before each attempt, compute remaining time; cap the attempt timeout by that remainder. Include connection setup, response reading, and sleeps in the budget. Check what your client’s timeout actually covers, especially streaming responses and connection establishment.",
+      "3. Retry only allowed transient failures. Sleep with a capped backoff and jitter, meaning randomized delay; identical delays can synchronize clients again. Check remaining time after sleeping and before sending. Honour server retry guidance when applicable; stop if waiting would exhaust the budget.",
+      "4. Finish with evidence. On success, return the observed status and build ID. On exhaustion, preserve the unknown outcome, deadline, and attempts in the trace. For a write, use the provider’s documented idempotency contract or reconcile the effect first. Stripe API v1, for example, can replay saved errors and permits pruning keys after at least 24 hours; a key is not a universal, permanent duplicate shield."
+    ],
+    "pitfalls": [
+      "Resetting the budget when the model rephrases the same tool request bypasses the intended limit.",
+      "Treating every error as transient retries invalid arguments or unchanged credentials without fixing the cause.",
+      "Assuming a timeout stopped server work can cause duplicate writes when a retry follows a lost acknowledgement."
+    ],
+    "exercise": {
+      "title": "Make a slow CI read stop predictably",
+      "steps": [
+        "Stub a read-only CI endpoint with success, delayed response, and persistent-failure modes; log each arrival.",
+        "Implement the illustrative two-attempt, twelve-second policy. Inject a clock and a fixed two-second delay for a deterministic test.",
+        "Run all three modes and record operation ID, attempt number, remaining budget, and terminal result.",
+        "Ask for the same logical read after exhaustion; verify the runtime rejects it without another downstream call."
+      ],
+      "success": [
+        "Success returns a real stub status; persistent failure returns an explicit unknown outcome within the budget plus a measured scheduling tolerance.",
+        "The failure trace shows at most two application attempts, one shared deadline, and no downstream call after closure."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

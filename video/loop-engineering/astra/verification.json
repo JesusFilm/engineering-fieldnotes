@@ -1,0 +1,64 @@
+{
+  "verifiedBy": "gpt-6-astra comparative review",
+  "originalVerification": "reviews/comparisons/loop-engineering/original-sources/astra/verification.json",
+  "sha256": "a1da4bd5a241ef482f40958e2265158084ec9a1984968d01f2b08211399140c9",
+  "duration": 28.0,
+  "frames": 840,
+  "video": "h264 1080x1920 30fps yuv420p",
+  "audio": "aac",
+  "maxAudioDBFS": -4.026360034942627,
+  "fullDecode": true,
+  "firstLastExact": true,
+  "boundaryMD5": "eb31442608984c1aa5939de6decc4443",
+  "faststart": true,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "size": 31020
+    },
+    {
+      "type": "free",
+      "offset": 31052,
+      "size": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 31060,
+      "size": 773678
+    }
+  ],
+  "titleROImaxMeanAbsoluteDifference": 0.3714074074074074,
+  "cueWindowsChecked": 25,
+  "audioHeard": false,
+  "inspectedFrameCandidates": [
+    0,
+    1.4,
+    2,
+    3.5,
+    4.7,
+    5.8,
+    6.5,
+    8.5,
+    9.5,
+    10.7,
+    11.5,
+    12.5,
+    14,
+    14.5,
+    15.7,
+    17,
+    18.3,
+    19,
+    20.5,
+    21.5,
+    23,
+    25,
+    27.9
+  ]
+}

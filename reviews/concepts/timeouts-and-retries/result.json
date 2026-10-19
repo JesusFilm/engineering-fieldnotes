@@ -1,0 +1,25 @@
+{
+  "id": "timeouts-and-retries",
+  "placement": "core",
+  "verifiedSources": [
+    "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+    "https://grpc.io/docs/guides/deadlines/",
+    "https://grpc.io/docs/guides/retry/",
+    "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2",
+    "https://docs.stripe.com/api/idempotent_requests",
+    "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/",
+    "https://stripe.com/blog/idempotency"
+  ],
+  "changes": [
+    "Revised every editorial field while preserving identity, taxonomy, roles, and related links.",
+    "Replaced checkout example with an agent reading CI status under a shared budget.",
+    "Separated caller timeout, server cancellation, unknown outcome, and idempotency.",
+    "Added runtime-owned limits, retry-layer audit, learning outcomes, walkthrough, pitfalls, and a fault-injection exercise.",
+    "Authored by gpt-6-astra using high reasoning; reviewed 2026-10-19."
+  ],
+  "limitations": [
+    "Timing values and runtime gate are illustrative design choices, not measured performance or an existing agent feature.",
+    "Exercise is specified, not implemented against a real service.",
+    "No independent comparative video reviewer or human audio listening was used."
+  ]
+}

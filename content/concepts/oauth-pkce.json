@@ -1,0 +1,85 @@
+{
+  "id": "oauth-pkce",
+  "title": "OAuth PKCE",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Keep each browser login tied to its own verifier when connecting an agent host to a protected tool service.",
+  "overview": "OAuth delegates access; an authorization code is exchanged for tokens. Proof Key for Code Exchange (PKCE) adds a fresh secret, the verifier, for each authorization attempt. The client sends its S256 challenge first and the verifier only during token exchange. Matching the challenge lets normal OAuth validation continue; it does not itself authorize every operation.",
+  "why": "An intercepted code should be unusable without its verifier. This matters when a desktop agent host connects to a protected service through browser authorization. PKCE belongs in the host’s OAuth implementation, outside model-generated prompts. It also exposes ordinary engineering mistakes: concurrent logins can fail when a shared variable overwrites the verifier.",
+  "example": "Illustrative scenario: a team connects its incident-summary assistant to an HTTP tool service. Two browser login attempts overlap. Callback A arrives after attempt B has overwritten a global verifier. Sending code A with verifier B fails the PKCE check. The repair is transaction-specific storage and a fresh login, not disabling the check or asking the model to retry credentials.",
+  "judgment": "Use a maintained OAuth library and inspect its integration. RFC 9700 requires PKCE for public clients and recommends it for confidential clients; the advice is not limited to mobile apps. Verify redirect handling and transaction binding. Scope, intended resource, token storage, and operation-level authorization remain separate responsibilities. A persistent prompt saying “read only” is not an enforcement mechanism.",
+  "next": "Can two overlapping logins complete with their own transaction records, while a deliberately crossed code/verifier pair fails without leaking secrets?",
+  "sources": [
+    {
+      "title": "RFC 7636 §§4.1–4.6: verifier, S256 and token validation",
+      "url": "https://www.rfc-editor.org/rfc/rfc7636",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RFC 9700 §§2.1, 2.1.1, 2.2: current OAuth security practice",
+      "url": "https://www.rfc-editor.org/rfc/rfc9700",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "MCP 2025-11-25: HTTP authorization and code protection",
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RFC 8252 §4: browser authorization for native apps",
+      "url": "https://www.rfc-editor.org/rfc/rfc8252",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "guardrails-and-permissions",
+    "tool-design",
+    "observability-and-tracing"
+  ],
+  "learning": {
+    "placement": "reference",
+    "relevance": "Read this when the team owns an agent connector’s login flow or reviews an OAuth integration. It supports safe delegation to protected services, but engineers using an already configured coding assistant do not need to implement PKCE first.",
+    "prerequisites": [
+      "guardrails-and-permissions",
+      "tool-design"
+    ],
+    "outcomes": [
+      "Trace a challenge, code and verifier through one authorization attempt.",
+      "Identify shared verifier storage that breaks concurrent logins.",
+      "Demonstrate rejection of a mismatched verifier and separate that check from tool permissions."
+    ],
+    "workflow": {
+      "before": "An engineer manually signs into a dashboard and copies incident details into a summary.",
+      "after": "An agent calls a narrowly scoped incident-reading tool after the host completes the user’s OAuth flow.",
+      "human": "Engineers choose trusted services, review granted scopes, test credential handling, and enforce write restrictions in the service."
+    },
+    "walkthrough": [
+      "Locate the actual OAuth client: in this example it is the desktop host, not the language model. Native applications should use an external browser for authorization, following RFC 8252. The user approves access there; the model does not need the login secret.",
+      "Let the library generate a cryptographically random verifier for each attempt. RFC 7636 specifies 43–128 permitted characters and recommends generating 32 random octets before base64url encoding. S256 means base64url(SHA256(ASCII(verifier))) without padding. Store the verifier under that transaction; send only its challenge in the authorization request.",
+      "At callback, retrieve the matching transaction and send its verifier with the code to the token endpoint over TLS. The server compares the derived challenge with the one associated with that code. A mismatch returns invalid_grant. A match proceeds to the remaining OAuth checks. Bind that transaction to the initiating client and browser session; a lookup keyed by an unchecked callback identifier is not sufficient.",
+      "For the versioned MCP HTTP authorization flow cited here, clients must verify PKCE support before proceeding; capable clients use S256. MCP servers must validate that tokens are intended for them. This does not describe every agent transport: the specification distinguishes HTTP authorization from credentials supplied to STDIO processes."
+    ],
+    "pitfalls": [
+      "One global verifier lets the last login overwrite an earlier attempt’s secret.",
+      "Logging callback payloads or exposing verifiers and tokens in model context expands the credential exposure surface.",
+      "Treating PKCE success as permission for every tool action bypasses the separate authorization decision."
+    ],
+    "exercise": {
+      "title": "Cross two login transactions in a test environment",
+      "steps": [
+        "Use a test account, local callback and maintained OAuth library; start attempts A and B.",
+        "Record only transaction identifiers and outcomes; confirm each attempt has distinct verifier storage.",
+        "In the test harness, pair code A with verifier B and observe rejection without a token.",
+        "Start fresh attempts and verify correct pairs succeed; review logs and confirm the read-only tool still rejects a write."
+      ],
+      "success": [
+        "A crossed pair fails, while fresh correctly matched attempts succeed.",
+        "Logs contain no verifier or token, and server-side write denial remains independent of PKCE."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

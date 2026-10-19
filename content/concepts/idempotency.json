@@ -1,0 +1,91 @@
+{
+  "id": "idempotency",
+  "title": "Idempotency",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Make retries of one intended action safe before giving an agent a tool that creates or changes shared state.",
+  "overview": "Idempotency means repeated identical requests have the same intended effect as one request. It does not promise identical responses, eventual success, or that all incidental effects, such as logging, happen once. HTTP defines PUT and DELETE as idempotent; a POST tool needs an explicit service contract before automatic retries are safe. See RFC 9110, section 9.2.2.",
+  "why": "An agent runner can lose a tool response after the service commits. Treating that timeout as proof of failure can create another ticket on retry. Delegation makes this recovery decision part of your software: establish what the tool guarantees before enabling unattended writes.",
+  "example": "Imagine an in-house release-ticket tool backed by one PostgreSQL database. A runner saves operation key k7 with release v1 before calling it. The service creates ticket #47 and records the key together. Its reply disappears. Repeating k7 with v1 retrieves #47; reusing k7 with v2 is rejected. This is a proposed contract, not a claim about a commercial issue tracker.",
+  "judgment": "Specify caller and operation scope, parameter comparison, retention, and concurrent-request behavior. Stripe illustrates why contracts matter: its API v1 can replay saved failures and permits pruning keys after 24 hours; v2 has different retry semantics. Never infer either policy from the word idempotent. A key is not authorization; keep access checks in the tool.",
+  "next": "At the service boundary, can your team demonstrate one ticket after a lost reply and two concurrent attempts, then explain what happens after the key expires?",
+  "sources": [
+    {
+      "title": "RFC 9110 §9.2.2 — intended effects and retry semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2"
+    },
+    {
+      "title": "AWS Builders’ Library — request identity, persistence, and changed intent",
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/"
+    },
+    {
+      "title": "Stripe API — version-specific replay and key retention",
+      "url": "https://docs.stripe.com/api/idempotent_requests"
+    },
+    {
+      "title": "PostgreSQL — transaction atomicity and visibility",
+      "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+    },
+    {
+      "title": "PostgreSQL — unique and primary-key constraints",
+      "url": "https://www.postgresql.org/docs/current/ddl-constraints.html"
+    },
+    {
+      "title": "PostgreSQL — concurrent uniqueness checks",
+      "url": "https://www.postgresql.org/docs/current/index-unique-checks.html"
+    }
+  ],
+  "related": [
+    "timeouts-and-retries",
+    "queues-and-backpressure",
+    "human-in-the-loop"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Teach this before agents gain permission to create shared resources, because uncertain outcomes require a deliberate retry policy. Even teams consuming hosted tools need to ask for that contract and route unresolved outcomes to a person.",
+    "prerequisites": [
+      "tool-design",
+      "timeouts-and-retries"
+    ],
+    "outcomes": [
+      "Distinguish a retry from a newly intended action and preserve its operation key.",
+      "Write a tool contract covering changed parameters, concurrent attempts, and expiry.",
+      "Fault-test a committed write with a dropped response and inspect the resulting resource count."
+    ],
+    "workflow": {
+      "before": "An engineer checks the ticket list after a failed submission and decides whether to submit again.",
+      "after": "A durable runner retains the operation key and arguments across retries and restarts, then follows the tool’s documented recovery policy.",
+      "human": "Engineers define intent, approve write permissions, and investigate outcomes the service cannot reconcile."
+    },
+    "walkthrough": [
+      "1. Identify one intended release ticket. Generate its key once in the runner and persist it with the arguments. A later, genuinely separate ticket needs a new key even when its contents match; equal text alone does not establish identity.",
+      "2. For this local design, require non-null caller, operation, and key fields under a composite, non-deferrable unique constraint. Within one transaction, claim that identity, insert the ticket, and save its identifier and parameters. PostgreSQL documents uniqueness and all-or-nothing transaction visibility; the application still needs a duplicate-handling branch.",
+      "3. PostgreSQL’s unique-index check waits for an uncommitted competing insertion. If the competing transaction commits, roll back the losing transaction and read the saved record in a fresh one. Return its ticket identifier for matching arguments; reject a mismatch. Bound the wait and report uncertainty instead of issuing an uncoordinated write.",
+      "4. Drop the first reply after commit and restart the runner. Its retry should take the lookup path. This single-database design does not make an external ticket API transactional with your local records: use that provider’s documented deduplication or reconciliation mechanism and test its failure window."
+    ],
+    "pitfalls": [
+      "Generating a new key for every attempt defeats duplicate detection.",
+      "Checking for a key and then writing without database-enforced coordination lets concurrent callers both proceed.",
+      "Pruning records before delayed retries arrive can turn an old intent into a new action.",
+      "Putting “do not duplicate” in a prompt supplies neither durable coordination nor enforced permissions."
+    ],
+    "exercise": {
+      "title": "Lose the reply, keep one ticket",
+      "steps": [
+        "Build a local test endpoint with ticket and operation tables; document the duplicate-response contract.",
+        "Inject a disconnect after commit, then retry with the same key and payload.",
+        "Submit two matching calls concurrently, then retry that key with changed release data.",
+        "Inspect stored rows and results; document how a retry after retention expiry is handled."
+      ],
+      "success": [
+        "Lost replies and concurrent matching calls leave exactly one ticket and converge on its identifier.",
+        "Changed parameters produce a mismatch without altering the original ticket.",
+        "The team can identify the recovery path for expired keys and external side effects."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

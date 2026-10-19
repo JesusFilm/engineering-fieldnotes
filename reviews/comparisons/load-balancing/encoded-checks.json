@@ -1,0 +1,1170 @@
+{
+  "baseline": {
+    "sha256": "8f084c7b4806ddcc4a08475572cdda74d894d11c0e491d945f2d088c351c3858",
+    "posterSha256": "df7311cb0895291163cb2790567b0ef93a80316fb8ac7b3a73e028160902098a",
+    "duration": 21.0,
+    "frames": 630,
+    "bytes": 937296,
+    "videoCodec": "h264",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "fps": 30,
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "fullDecode": true,
+    "firstLastIdentical": true,
+    "boundaryRGBSha256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+    "faststart": true,
+    "boxes": [
+      {
+        "type": "ftyp",
+        "offset": 0
+      },
+      {
+        "type": "moov",
+        "offset": 32
+      },
+      {
+        "type": "free",
+        "offset": 23144
+      },
+      {
+        "type": "mdat",
+        "offset": 23152
+      }
+    ],
+    "audioPeakDbFS": -0.9,
+    "audioHeard": false,
+    "cueWindowCount": 59,
+    "cueWindows": [
+      {
+        "time": 3.75,
+        "cue": "ack",
+        "windowPeakDbFS": -15.6
+      },
+      {
+        "time": 3.78,
+        "cue": "ack",
+        "windowPeakDbFS": -15.6
+      },
+      {
+        "time": 3.81,
+        "cue": "ack",
+        "windowPeakDbFS": -15.6
+      },
+      {
+        "time": 7.05,
+        "cue": "ack",
+        "windowPeakDbFS": -0.94
+      },
+      {
+        "time": 7.109999999999999,
+        "cue": "ack",
+        "windowPeakDbFS": -4.56
+      },
+      {
+        "time": 10.4,
+        "cue": "ack",
+        "windowPeakDbFS": -6.04
+      },
+      {
+        "time": 10.4,
+        "cue": "thump",
+        "windowPeakDbFS": -6.04
+      },
+      {
+        "time": 10.46,
+        "cue": "ack",
+        "windowPeakDbFS": -10.77
+      },
+      {
+        "time": 13.45,
+        "cue": "ack",
+        "windowPeakDbFS": -6.19
+      },
+      {
+        "time": 13.45,
+        "cue": "chime",
+        "windowPeakDbFS": -6.19
+      },
+      {
+        "time": 13.51,
+        "cue": "ack",
+        "windowPeakDbFS": -6.19
+      },
+      {
+        "time": 7.05,
+        "cue": "crash",
+        "windowPeakDbFS": -0.94
+      },
+      {
+        "time": 12.4,
+        "cue": "recover",
+        "windowPeakDbFS": -11.69
+      },
+      {
+        "time": 0.25,
+        "cue": "send",
+        "windowPeakDbFS": -18.83
+      },
+      {
+        "time": 1.27,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.63
+      },
+      {
+        "time": 0.93,
+        "cue": "send",
+        "windowPeakDbFS": -17.09
+      },
+      {
+        "time": 1.9500000000000002,
+        "cue": "arrive",
+        "windowPeakDbFS": -10.01
+      },
+      {
+        "time": 1.61,
+        "cue": "send",
+        "windowPeakDbFS": -17.16
+      },
+      {
+        "time": 2.6300000000000003,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.72
+      },
+      {
+        "time": 2.29,
+        "cue": "send",
+        "windowPeakDbFS": -16.58
+      },
+      {
+        "time": 3.31,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.73
+      },
+      {
+        "time": 2.97,
+        "cue": "send",
+        "windowPeakDbFS": -18.55
+      },
+      {
+        "time": 3.99,
+        "cue": "arrive",
+        "windowPeakDbFS": -10.33
+      },
+      {
+        "time": 3.6500000000000004,
+        "cue": "send",
+        "windowPeakDbFS": -16.9
+      },
+      {
+        "time": 4.67,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.63
+      },
+      {
+        "time": 4.33,
+        "cue": "send",
+        "windowPeakDbFS": -18.12
+      },
+      {
+        "time": 5.35,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.57
+      },
+      {
+        "time": 5.01,
+        "cue": "send",
+        "windowPeakDbFS": -17.26
+      },
+      {
+        "time": 6.029999999999999,
+        "cue": "arrive",
+        "windowPeakDbFS": -10.48
+      },
+      {
+        "time": 5.6899999999999995,
+        "cue": "send",
+        "windowPeakDbFS": -16.97
+      },
+      {
+        "time": 6.709999999999999,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.82
+      },
+      {
+        "time": 6.369999999999999,
+        "cue": "send",
+        "windowPeakDbFS": -16.82
+      },
+      {
+        "time": 7.389999999999999,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.09
+      },
+      {
+        "time": 7.049999999999999,
+        "cue": "send",
+        "windowPeakDbFS": -0.94
+      },
+      {
+        "time": 8.069999999999999,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.78
+      },
+      {
+        "time": 7.729999999999999,
+        "cue": "send",
+        "windowPeakDbFS": -18.67
+      },
+      {
+        "time": 8.749999999999998,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.88
+      },
+      {
+        "time": 8.409999999999998,
+        "cue": "send",
+        "windowPeakDbFS": -18.7
+      },
+      {
+        "time": 9.429999999999998,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.56
+      },
+      {
+        "time": 9.089999999999998,
+        "cue": "send",
+        "windowPeakDbFS": -16.89
+      },
+      {
+        "time": 10.109999999999998,
+        "cue": "arrive",
+        "windowPeakDbFS": -9.11
+      },
+      {
+        "time": 9.769999999999998,
+        "cue": "send",
+        "windowPeakDbFS": -16.87
+      },
+      {
+        "time": 10.789999999999997,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.74
+      },
+      {
+        "time": 10.449999999999998,
+        "cue": "send",
+        "windowPeakDbFS": -10.77
+      },
+      {
+        "time": 11.469999999999997,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.93
+      },
+      {
+        "time": 11.129999999999997,
+        "cue": "send",
+        "windowPeakDbFS": -17.41
+      },
+      {
+        "time": 12.149999999999997,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.35
+      },
+      {
+        "time": 11.809999999999997,
+        "cue": "send",
+        "windowPeakDbFS": -17.14
+      },
+      {
+        "time": 12.829999999999997,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.58
+      },
+      {
+        "time": 12.489999999999997,
+        "cue": "send",
+        "windowPeakDbFS": -11.69
+      },
+      {
+        "time": 13.509999999999996,
+        "cue": "arrive",
+        "windowPeakDbFS": -6.19
+      },
+      {
+        "time": 13.169999999999996,
+        "cue": "send",
+        "windowPeakDbFS": -17.31
+      },
+      {
+        "time": 14.189999999999996,
+        "cue": "arrive",
+        "windowPeakDbFS": -9.0
+      },
+      {
+        "time": 13.849999999999996,
+        "cue": "send",
+        "windowPeakDbFS": -18.88
+      },
+      {
+        "time": 14.869999999999996,
+        "cue": "arrive",
+        "windowPeakDbFS": -10.45
+      },
+      {
+        "time": 14.529999999999996,
+        "cue": "send",
+        "windowPeakDbFS": -18.71
+      },
+      {
+        "time": 15.549999999999995,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.94
+      },
+      {
+        "time": 15.209999999999996,
+        "cue": "send",
+        "windowPeakDbFS": -16.8
+      },
+      {
+        "time": 16.229999999999997,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.89
+      }
+    ],
+    "titleRaster": null,
+    "sampledFrames": 18
+  },
+  "astra": {
+    "sha256": "7fc1e430c45993bbabd78d63c568aacecb4b8e25daada622c8eb8920f94a00ee",
+    "posterSha256": "4bf5f7b2c22a89423e5eed30110dfd084d6915a5316a7f691a0496a28b105983",
+    "duration": 28.0,
+    "frames": 840,
+    "bytes": 644233,
+    "videoCodec": "h264",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "fps": 30,
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "fullDecode": true,
+    "firstLastIdentical": true,
+    "boundaryRGBSha256": "1f56bd4f609fab80a2b9cce7487d5c08de2768476849e1353881ca748d8d3b6a",
+    "faststart": true,
+    "boxes": [
+      {
+        "type": "ftyp",
+        "offset": 0
+      },
+      {
+        "type": "moov",
+        "offset": 32
+      },
+      {
+        "type": "free",
+        "offset": 31080
+      },
+      {
+        "type": "mdat",
+        "offset": 31088
+      }
+    ],
+    "audioPeakDbFS": -4.7,
+    "audioHeard": false,
+    "cueWindowCount": 40,
+    "cueWindows": [
+      {
+        "time": 0.3,
+        "cue": "ack",
+        "windowPeakDbFS": -23.39
+      },
+      {
+        "time": 1,
+        "cue": "send",
+        "windowPeakDbFS": -20.83
+      },
+      {
+        "time": 1.5,
+        "cue": "ack",
+        "windowPeakDbFS": -17.54
+      },
+      {
+        "time": 1.7,
+        "cue": "send",
+        "windowPeakDbFS": -21.1
+      },
+      {
+        "time": 2.35,
+        "cue": "arrive",
+        "windowPeakDbFS": -9.08
+      },
+      {
+        "time": 3.25,
+        "cue": "deliver",
+        "windowPeakDbFS": -12.63
+      },
+      {
+        "time": 2.6,
+        "cue": "send",
+        "windowPeakDbFS": -20.24
+      },
+      {
+        "time": 3.1,
+        "cue": "ack",
+        "windowPeakDbFS": -12.63
+      },
+      {
+        "time": 3.3,
+        "cue": "send",
+        "windowPeakDbFS": -16.07
+      },
+      {
+        "time": 3.95,
+        "cue": "arrive",
+        "windowPeakDbFS": -7.99
+      },
+      {
+        "time": 4.9,
+        "cue": "deliver",
+        "windowPeakDbFS": -12.45
+      },
+      {
+        "time": 5.5,
+        "cue": "send",
+        "windowPeakDbFS": -21.03
+      },
+      {
+        "time": 6,
+        "cue": "ack",
+        "windowPeakDbFS": -17.59
+      },
+      {
+        "time": 6.2,
+        "cue": "send",
+        "windowPeakDbFS": -21.19
+      },
+      {
+        "time": 6.85,
+        "cue": "arrive",
+        "windowPeakDbFS": -8.96
+      },
+      {
+        "time": 22,
+        "cue": "deliver",
+        "windowPeakDbFS": -12.46
+      },
+      {
+        "time": 7.2,
+        "cue": "send",
+        "windowPeakDbFS": -20.14
+      },
+      {
+        "time": 7.7,
+        "cue": "ack",
+        "windowPeakDbFS": -17.57
+      },
+      {
+        "time": 7.9,
+        "cue": "send",
+        "windowPeakDbFS": -20.93
+      },
+      {
+        "time": 8.55,
+        "cue": "arrive",
+        "windowPeakDbFS": -9.08
+      },
+      {
+        "time": 9.8,
+        "cue": "deliver",
+        "windowPeakDbFS": -12.52
+      },
+      {
+        "time": 10.5,
+        "cue": "send",
+        "windowPeakDbFS": -20.62
+      },
+      {
+        "time": 11,
+        "cue": "ack",
+        "windowPeakDbFS": -17.59
+      },
+      {
+        "time": 11.2,
+        "cue": "send",
+        "windowPeakDbFS": -21.04
+      },
+      {
+        "time": 11.85,
+        "cue": "thump",
+        "windowPeakDbFS": -4.7
+      },
+      {
+        "time": 14.25,
+        "cue": "recover",
+        "windowPeakDbFS": -18.2
+      },
+      {
+        "time": 15,
+        "cue": "send",
+        "windowPeakDbFS": -21.06
+      },
+      {
+        "time": 15.5,
+        "cue": "ack",
+        "windowPeakDbFS": -17.72
+      },
+      {
+        "time": 15.7,
+        "cue": "send",
+        "windowPeakDbFS": -21.1
+      },
+      {
+        "time": 16.35,
+        "cue": "arrive",
+        "windowPeakDbFS": -9.04
+      },
+      {
+        "time": 18,
+        "cue": "deliver",
+        "windowPeakDbFS": -12.48
+      },
+      {
+        "time": 18.45,
+        "cue": "send",
+        "windowPeakDbFS": -20.85
+      },
+      {
+        "time": 18.95,
+        "cue": "ack",
+        "windowPeakDbFS": -17.63
+      },
+      {
+        "time": 19.15,
+        "cue": "send",
+        "windowPeakDbFS": -20.93
+      },
+      {
+        "time": 19.8,
+        "cue": "arrive",
+        "windowPeakDbFS": -9.05
+      },
+      {
+        "time": 20.9,
+        "cue": "deliver",
+        "windowPeakDbFS": -12.5
+      },
+      {
+        "time": 22.35,
+        "cue": "send",
+        "windowPeakDbFS": -16.93
+      },
+      {
+        "time": 22.85,
+        "cue": "arrive",
+        "windowPeakDbFS": -9.08
+      },
+      {
+        "time": 24.5,
+        "cue": "deliver",
+        "windowPeakDbFS": -12.49
+      },
+      {
+        "time": 26.4,
+        "cue": "poof",
+        "windowPeakDbFS": -25.01
+      }
+    ],
+    "titleRaster": {
+      "frames": 762,
+      "minimumYellowPixels": 206
+    },
+    "sampledFrames": 21
+  },
+  "fable": {
+    "sha256": "2bf51a13222ef1ed1780dbc141b0ad8e74b08251bdb7c0c8e4aca832615dff9a",
+    "posterSha256": "d59da675a3021b925502050d35ac8ed7519f19dff07031122c2a514009bc1901",
+    "duration": 31.766667,
+    "frames": 953,
+    "bytes": 1756904,
+    "videoCodec": "h264",
+    "dimensions": [
+      1080,
+      1920
+    ],
+    "fps": 30,
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "fullDecode": true,
+    "firstLastIdentical": true,
+    "boundaryRGBSha256": "35eb61b2f4e87a882b09d1bc738edc8c45f613fa9d4cc08cb783d1cd95bb7a25",
+    "faststart": true,
+    "boxes": [
+      {
+        "type": "ftyp",
+        "offset": 0
+      },
+      {
+        "type": "moov",
+        "offset": 32
+      },
+      {
+        "type": "free",
+        "offset": 34027
+      },
+      {
+        "type": "mdat",
+        "offset": 34035
+      }
+    ],
+    "audioPeakDbFS": -1.2,
+    "audioHeard": false,
+    "cueWindowCount": 107,
+    "cueWindows": [
+      {
+        "time": 0.7,
+        "cue": "send",
+        "windowPeakDbFS": -16.55
+      },
+      {
+        "time": 1.2,
+        "cue": "send",
+        "windowPeakDbFS": -11.54
+      },
+      {
+        "time": 2,
+        "cue": "arrive",
+        "windowPeakDbFS": -4.42
+      },
+      {
+        "time": 2.6,
+        "cue": "ack",
+        "windowPeakDbFS": -12.3
+      },
+      {
+        "time": 3.5,
+        "cue": "deliver",
+        "windowPeakDbFS": -7.41
+      },
+      {
+        "time": 1.8,
+        "cue": "send",
+        "windowPeakDbFS": -16.5
+      },
+      {
+        "time": 2.3,
+        "cue": "send",
+        "windowPeakDbFS": -11.66
+      },
+      {
+        "time": 3.0999999999999996,
+        "cue": "arrive",
+        "windowPeakDbFS": -6.28
+      },
+      {
+        "time": 3.6999999999999997,
+        "cue": "ack",
+        "windowPeakDbFS": -12.44
+      },
+      {
+        "time": 4.6,
+        "cue": "deliver",
+        "windowPeakDbFS": -7.95
+      },
+      {
+        "time": 2.9,
+        "cue": "send",
+        "windowPeakDbFS": -16.54
+      },
+      {
+        "time": 3.4,
+        "cue": "send",
+        "windowPeakDbFS": -7.41
+      },
+      {
+        "time": 4.2,
+        "cue": "arrive",
+        "windowPeakDbFS": -4.59
+      },
+      {
+        "time": 4.8,
+        "cue": "ack",
+        "windowPeakDbFS": -10.93
+      },
+      {
+        "time": 5.7,
+        "cue": "deliver",
+        "windowPeakDbFS": -8.17
+      },
+      {
+        "time": 7.300000000000001,
+        "cue": "send",
+        "windowPeakDbFS": -14.93
+      },
+      {
+        "time": 7.800000000000001,
+        "cue": "send",
+        "windowPeakDbFS": -11.54
+      },
+      {
+        "time": 8.600000000000001,
+        "cue": "arrive",
+        "windowPeakDbFS": -1.23
+      },
+      {
+        "time": 8.900000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -11.62
+      },
+      {
+        "time": 9.400000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -2.3
+      },
+      {
+        "time": 9.900000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -10.68
+      },
+      {
+        "time": 10.400000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -4.59
+      },
+      {
+        "time": 10.900000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -10.94
+      },
+      {
+        "time": 11.400000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -7.74
+      },
+      {
+        "time": 11.900000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -8.06
+      },
+      {
+        "time": 12.400000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -10.77
+      },
+      {
+        "time": 12.900000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -11.07
+      },
+      {
+        "time": 13.400000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -4.71
+      },
+      {
+        "time": 13.900000000000002,
+        "cue": "work",
+        "windowPeakDbFS": -10.82
+      },
+      {
+        "time": 14.600000000000001,
+        "cue": "ack",
+        "windowPeakDbFS": -12.18
+      },
+      {
+        "time": 15.500000000000002,
+        "cue": "deliver",
+        "windowPeakDbFS": -9.5
+      },
+      {
+        "time": 8.100000000000001,
+        "cue": "send",
+        "windowPeakDbFS": -14.97
+      },
+      {
+        "time": 8.600000000000001,
+        "cue": "send",
+        "windowPeakDbFS": -1.23
+      },
+      {
+        "time": 9.400000000000002,
+        "cue": "arrive",
+        "windowPeakDbFS": -2.3
+      },
+      {
+        "time": 9.870000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -10.68
+      },
+      {
+        "time": 10.370000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -4.59
+      },
+      {
+        "time": 10.870000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -10.94
+      },
+      {
+        "time": 11.370000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -7.74
+      },
+      {
+        "time": 11.870000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -8.06
+      },
+      {
+        "time": 12.370000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -10.77
+      },
+      {
+        "time": 12.870000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -11.07
+      },
+      {
+        "time": 13.370000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -4.71
+      },
+      {
+        "time": 13.870000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -10.82
+      },
+      {
+        "time": 14.370000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -12.99
+      },
+      {
+        "time": 14.870000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -13.06
+      },
+      {
+        "time": 15.400000000000002,
+        "cue": "ack",
+        "windowPeakDbFS": -9.5
+      },
+      {
+        "time": 16.3,
+        "cue": "deliver",
+        "windowPeakDbFS": -9.7
+      },
+      {
+        "time": 9.200000000000001,
+        "cue": "send",
+        "windowPeakDbFS": -16.68
+      },
+      {
+        "time": 9.700000000000001,
+        "cue": "send",
+        "windowPeakDbFS": -11.02
+      },
+      {
+        "time": 10.500000000000002,
+        "cue": "arrive",
+        "windowPeakDbFS": -4.59
+      },
+      {
+        "time": 11.100000000000001,
+        "cue": "ack",
+        "windowPeakDbFS": -12.08
+      },
+      {
+        "time": 12.000000000000002,
+        "cue": "deliver",
+        "windowPeakDbFS": -8.06
+      },
+      {
+        "time": 11.400000000000002,
+        "cue": "ack",
+        "windowPeakDbFS": -7.74
+      },
+      {
+        "time": 11.440000000000001,
+        "cue": "ack",
+        "windowPeakDbFS": -13.14
+      },
+      {
+        "time": 11.480000000000002,
+        "cue": "ack",
+        "windowPeakDbFS": -13.14
+      },
+      {
+        "time": 12.200000000000001,
+        "cue": "send",
+        "windowPeakDbFS": -19.11
+      },
+      {
+        "time": 12.700000000000001,
+        "cue": "send",
+        "windowPeakDbFS": -11.91
+      },
+      {
+        "time": 13.500000000000002,
+        "cue": "arrive",
+        "windowPeakDbFS": -4.71
+      },
+      {
+        "time": 13.520000000000001,
+        "cue": "miss",
+        "windowPeakDbFS": -5.17
+      },
+      {
+        "time": 15.250000000000002,
+        "cue": "arrive",
+        "windowPeakDbFS": -3.93
+      },
+      {
+        "time": 15.750000000000002,
+        "cue": "ack",
+        "windowPeakDbFS": -12.01
+      },
+      {
+        "time": 16.650000000000002,
+        "cue": "deliver",
+        "windowPeakDbFS": -5.83
+      },
+      {
+        "time": 14.000000000000002,
+        "cue": "ack",
+        "windowPeakDbFS": -14.88
+      },
+      {
+        "time": 18.05,
+        "cue": "recover",
+        "windowPeakDbFS": -9.02
+      },
+      {
+        "time": 19.25,
+        "cue": "chime",
+        "windowPeakDbFS": -4.81
+      },
+      {
+        "time": 19.75,
+        "cue": "send",
+        "windowPeakDbFS": -14.99
+      },
+      {
+        "time": 20.25,
+        "cue": "ack",
+        "windowPeakDbFS": -12.04
+      },
+      {
+        "time": 21.05,
+        "cue": "arrive",
+        "windowPeakDbFS": -4.36
+      },
+      {
+        "time": 21.520000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -13.75
+      },
+      {
+        "time": 22.020000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -7.06
+      },
+      {
+        "time": 22.520000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -11.3
+      },
+      {
+        "time": 23.020000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -4.63
+      },
+      {
+        "time": 23.520000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -10.4
+      },
+      {
+        "time": 24.020000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -11.89
+      },
+      {
+        "time": 24.520000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -6.24
+      },
+      {
+        "time": 25.020000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -11.54
+      },
+      {
+        "time": 25.520000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -10.06
+      },
+      {
+        "time": 26.020000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -10.89
+      },
+      {
+        "time": 26.520000000000003,
+        "cue": "work",
+        "windowPeakDbFS": -10.4
+      },
+      {
+        "time": 27.05,
+        "cue": "ack",
+        "windowPeakDbFS": -11.04
+      },
+      {
+        "time": 27.95,
+        "cue": "deliver",
+        "windowPeakDbFS": -7.32
+      },
+      {
+        "time": 20.65,
+        "cue": "send",
+        "windowPeakDbFS": -14.97
+      },
+      {
+        "time": 21.15,
+        "cue": "ack",
+        "windowPeakDbFS": -4.36
+      },
+      {
+        "time": 21.95,
+        "cue": "arrive",
+        "windowPeakDbFS": -3.18
+      },
+      {
+        "time": 22.59,
+        "cue": "work",
+        "windowPeakDbFS": -11.3
+      },
+      {
+        "time": 23.09,
+        "cue": "work",
+        "windowPeakDbFS": -7.49
+      },
+      {
+        "time": 23.59,
+        "cue": "work",
+        "windowPeakDbFS": -10.4
+      },
+      {
+        "time": 24.09,
+        "cue": "work",
+        "windowPeakDbFS": -11.89
+      },
+      {
+        "time": 24.59,
+        "cue": "work",
+        "windowPeakDbFS": -6.24
+      },
+      {
+        "time": 25.09,
+        "cue": "work",
+        "windowPeakDbFS": -11.54
+      },
+      {
+        "time": 25.59,
+        "cue": "work",
+        "windowPeakDbFS": -10.06
+      },
+      {
+        "time": 26.09,
+        "cue": "work",
+        "windowPeakDbFS": -10.89
+      },
+      {
+        "time": 26.59,
+        "cue": "work",
+        "windowPeakDbFS": -10.4
+      },
+      {
+        "time": 27.09,
+        "cue": "work",
+        "windowPeakDbFS": -11.04
+      },
+      {
+        "time": 27.59,
+        "cue": "work",
+        "windowPeakDbFS": -10.34
+      },
+      {
+        "time": 27.95,
+        "cue": "ack",
+        "windowPeakDbFS": -7.32
+      },
+      {
+        "time": 28.849999999999998,
+        "cue": "deliver",
+        "windowPeakDbFS": -9.69
+      },
+      {
+        "time": 21.75,
+        "cue": "send",
+        "windowPeakDbFS": -16.49
+      },
+      {
+        "time": 22.25,
+        "cue": "ack",
+        "windowPeakDbFS": -10.05
+      },
+      {
+        "time": 23.05,
+        "cue": "arrive",
+        "windowPeakDbFS": -4.63
+      },
+      {
+        "time": 23.650000000000002,
+        "cue": "ack",
+        "windowPeakDbFS": -12.34
+      },
+      {
+        "time": 24.55,
+        "cue": "deliver",
+        "windowPeakDbFS": -6.24
+      },
+      {
+        "time": 23.95,
+        "cue": "send",
+        "windowPeakDbFS": -11.89
+      },
+      {
+        "time": 24.45,
+        "cue": "ack",
+        "windowPeakDbFS": -6.24
+      },
+      {
+        "time": 25.25,
+        "cue": "arrive",
+        "windowPeakDbFS": -4.66
+      },
+      {
+        "time": 25.85,
+        "cue": "ack",
+        "windowPeakDbFS": -12.19
+      },
+      {
+        "time": 26.75,
+        "cue": "deliver",
+        "windowPeakDbFS": -8.15
+      }
+    ],
+    "titleRaster": {
+      "frames": 953,
+      "minimumYellowPixels": 255
+    },
+    "sampledFrames": 29
+  }
+}

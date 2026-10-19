@@ -1,0 +1,5 @@
+[
+  "0–8s: A replica initially returns v1. The primary commits v2 and acknowledges it while the replica still holds v1.",
+  "9.5–14.5s: A replica read returns stale v1; reading the primary instead returns v2.",
+  "17.5–22.5s: Replication applies v2 to the replica, and a later replica read returns the new value."
+]

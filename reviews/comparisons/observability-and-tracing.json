@@ -1,0 +1,54 @@
+{
+  "id": "observability-and-tracing",
+  "recommended": "astra",
+  "rationale": "Follow the tool is the clearest chapter entry: a tool starts a separate trace, propagation is repaired for a new run, and the same 2.4-second operation becomes connected without becoming faster. Its large labels and distinct trace/span identifiers make the guide\u2019s exercise easier to reproduce. The baseline is a useful follow-up on nested retry cost, while Fable shows how to find the matching downstream failure among unrelated service records.",
+  "findings": [
+    "Astra 5.0\u201310.0s versus Fable 8.35\u201317.56s: both expose missing context, but Astra isolates one disconnected tool with explicit trace/span identities; Fable adds the useful complication of unrelated API traffic and requires more visual tracking.",
+    "Astra 11.0\u201319.2s versus Fable 17.56\u201324.8s: both reset and execute a new task after propagation changes. Astra preserves 0.6s model, 2.4s tool and 3.0s total; Fable preserves the 500 error. Neither repair claims to fix the underlying performance or failure.",
+    "Baseline 13.5\u201320.4s uniquely reveals the 1,200ms failed attempt, 200ms gap and 600ms successful attempt inside a 2,000ms operation. The revised 17.0s chip says attempt 2, making the first retry unambiguous; these nested intervals are not extra time to add to the parent.",
+    "Fable 25.36\u201328.56s now routes the blue join to only the matching 7e2d row and dims unrelated history. The red error remains visible inside the blue selection, so successful correlation is distinguishable from successful execution.",
+    "At 350px, Astra 16.0\u201322.5s has the clearest operation names and identity key; baseline 19.5s has the simplest readable waterfall; Fable 25.7\u201327.5s is legible but denser, with smaller operation strings and abbreviated IDs. The matching-row selection improves its ending without eliminating that reading cost.",
+    "Baseline 20.4\u201323.0s, Astra 21.2\u201325.3s and Fable 25.36\u201328.56s all hold the diagnostic result before fading. Astra\u2019s final hold is generous and slightly slow, while Fable needs its hold to read the matching failure; all three final encoded endpoints exactly match their openings."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 3
+    }
+  },
+  "hashes": {
+    "baseline": "417c0becf9199312140714f41b501941b3d9812e29771f51faf8300ae5086432",
+    "astra": "6541372dd63774fd44ba11334a77e25797a4448767ca4f6529eb0d6e2132a768",
+    "fable": "fe9cf7f4cd2375a8d7cd949705ba8dc0d45aa302b98e44fcb11dbfc68b9d8f80"
+  },
+  "contentVerdict": "Keep as core for teams delegating multi-operation tasks to agents. The guide teaches a concrete early debugging practice\u2014connect task/model/tool evidence before changing prompts\u2014and its deterministic broken-boundary exercise has observable success criteria. It correctly separates tracing from evaluation, authorization and performance improvement, covers privacy and missing telemetry, and warns that GenAI conventions are Development. Larger monitoring deployments remain problem-driven reference work; the chapter does not require them.",
+  "verified": true,
+  "defectsFixed": [
+    "Baseline: corrected retry 2 to attempt 2 at 17.0\u201317.6s; rerendered, regenerated poster and clarified the transcript while retaining unrecorded original-model provenance.",
+    "Fable: replaced the whole API-history glow with a join and selection of only the matching error span at 25.36s; unrelated rows dim and error status stays red. Rerendered and regenerated poster with original model provenance retained.",
+    "Fable: corrected transcript timings and dotted-line description against encoded frames; clarified receiver instrumentation/export requirements and that identical storage backends are not a protocol requirement.",
+    "Guide: added retrieval dates to the seven primary references accessed during this review."
+  ],
+  "limitations": [
+    "Audio was analysed via decoded PCM, per-cue energy and inspected spectrograms; it was not listened to. Device audibility and subjective timbre remain untested.",
+    "This is an author-material-blind first pass, not randomized identity blinding: supplied filenames expose variant labels. before.md predates author source and metadata inspection.",
+    "Visual review used decoded contact sheets, every causal beat at 350px, full-resolution key/busy frames and exact endpoints; continuous real-time playback was not used.",
+    "All three are illustrative synchronous examples. Sampling loss, export failure, asynchronous links, fan-out, sensitive-data controls and correctness evaluation are addressed by the guide rather than animated.",
+    "Fable omits concrete parent/span IDs and is denser on a phone; baseline omits propagation repair. Scores assess suitability as teaching artifacts, separately from the encoded-media checks.",
+    "Recommendation is saved editorial review evidence; no release, Git or publication operation was performed."
+  ]
+}

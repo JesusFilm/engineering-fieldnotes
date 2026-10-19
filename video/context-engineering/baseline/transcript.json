@@ -1,0 +1,7 @@
+[
+  "0.0\u20137.7s: KEEP API, the null-crash task and api.ts:42 trace occupy an illustrative 8k-token context. Three repeated logs raise the displayed count to 10k, 13k and 15k of 16k.",
+  "7.7\u201311.0s: Redundant logs fade and become summary: null input. The unchanged constraint, task and trace remain; with the summary the illustrative total is 9k. The constraint and trace are highlighted.",
+  "12.2\u201315.3s: A callers? request reaches Repository. caller.ts returns and is recorded as caller.ts:18; the context rises to 11k.",
+  "17.3\u201322.9s: The selected context reaches Model. After processing, an amber Patch? candidate appears. No test or correctness verdict is shown.",
+  "23.0\u201325.0s: The complete scene fades to black; the exact decoded first and last frames match."
+]

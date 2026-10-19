@@ -1,0 +1,83 @@
+{
+  "id": "context-engineering",
+  "title": "Context engineering",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Tech lead"
+  ],
+  "summary": "Give an agent the goal, constraints, evidence, and current state it needs for its next decision—and check what survives a handoff.",
+  "overview": "Context is the information supplied to a model for a particular invocation: instructions, conversation, tool descriptions, and retrieved results. Files on disk are not automatically visible. Retrieval brings evidence in; trimming removes material; compaction replaces detail with a shorter representation. These are separate choices, not a guarantee that the agent remembers correctly. Anthropic’s engineering account describes this continuing curation process [1].",
+  "why": "A senior engineer knows which API contract must survive a refactor; a newly resumed agent needs that requirement supplied again. Lost in the Middle found sensitivity to evidence position on the models and retrieval tasks it studied [2]. That motivates testing your workflow, not assuming every current model fails identically. More input is not automatically better or cheaper: caching changes processing cost and latency, while additional retrieval has its own overhead [1, 4].",
+  "example": "Suppose an agent is fixing slow invoice requests. Existing clients require the v1 response field total_cents. A handoff saying “optimize invoice endpoint; unit tests pass” omits that constraint. A resumed agent might rename the field to amount while fixing the timeout. Preserve the contract reference, the unchanged field requirement, and a compatibility fixture; rerun that fixture against the actual patch. This is an illustrative failure, not a measured model result.",
+  "judgment": "Keep non-negotiable constraints explicit. Keep bulky evidence retrievable through precise paths and revision identifiers. Ask whether the next engineer could verify each claim without trusting the previous agent’s prose. Anthropic’s long-running-agent experiments support structured progress artifacts and fresh checks, but describe one workflow rather than a universal recipe [3]. The human still owns requirement interpretation and acceptance.",
+  "next": "Restart a small task from its handoff alone. Can the next agent identify the compatibility constraint, retrieve its source, and reproduce the claimed test result before editing?",
+  "sources": [
+    {
+      "title": "[1] Effective context engineering for AI agents — engineering account, 2025",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "[2] Lost in the Middle — primary research, 2023",
+      "url": "https://arxiv.org/html/2307.03172v3",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "[3] Effective harnesses for long-running agents — engineering experiments, 2025",
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "[4] Prompt caching — implementation-specific cost and processing behavior",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "memory-architecture",
+    "tool-design",
+    "harness-engineering"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Use this when a team first delegates debugging or changes that span several agent sessions. It turns the engineer’s implicit working knowledge into an inspectable handoff and makes missing context a testable failure.",
+    "prerequisites": [],
+    "outcomes": [
+      "Build a task packet containing the goal, constraints, evidence references, and verification command.",
+      "Detect a lost requirement by restarting from a deliberately incomplete handoff.",
+      "Separate a reported test result from a result reproduced on the current patch."
+    ],
+    "workflow": {
+      "before": "An engineer remembers the v1 contract, searches relevant code, and explains unfinished work verbally to a teammate.",
+      "after": "The engineer gives an agent a task packet; each handoff records constraints, current patch state, source references, unresolved questions, and checks to rerun.",
+      "human": "Choose authoritative requirements, check the handoff against them, and approve the patch only after appropriate verification."
+    },
+    "walkthrough": [
+      "1. Define the slice: fix the invoice timeout while preserving v1 total_cents. Record the contract path and revision, the failing request, and a command that tests compatibility. Do not make “improve performance” the entire brief.",
+      "2. Load the failing trace and endpoint implementation. Follow a caller or schema reference when it answers an open question. Record what was inspected and what remains uncertain; a plausible explanation is still a hypothesis.",
+      "3. Before restarting, write a compact handoff with separate fields for goal, constraints, evidence, changes, checks, and next action. Include exact test commands and their observed status. Inspect it for the v1 requirement instead of assuming summarization preserved it.",
+      "4. Resume with the handoff and source access. Reopen the contract, inspect the current patch, and rerun the compatibility fixture. If the fixture fails, correct the patch and repeat the check; a green result only establishes what that fixture covers. Measure the timeout scenario separately: preserving a response field does not establish a performance improvement."
+    ],
+    "pitfalls": [
+      "Keeping a path in notes but never loading its contents before the relevant decision.",
+      "Treating a summarized “tests pass” as current evidence after files have changed.",
+      "Deleting a subtle compatibility constraint while retaining pages of obsolete tool output.",
+      "Treating instructions in context as enforced permissions; tool authorization must be controlled outside the prompt."
+    ],
+    "exercise": {
+      "title": "Break and repair a handoff",
+      "steps": [
+        "Choose a disposable endpoint fixture with one compatibility rule and a small requested change.",
+        "Prepare two handoffs: one omits the rule; one includes the rule, its source, and the test command.",
+        "Start fresh agent sessions with each packet and the same source access. Record whether the agent retrieves the rule; do not force a failure if it discovers it independently.",
+        "Inspect both patches and run the same fixture. Compare omissions and retrieval behavior, then improve the packet."
+      ],
+      "success": [
+        "The complete handoff makes the requirement and source identifiable before editing.",
+        "The team can reproduce the fixture result and explain what it does not cover."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

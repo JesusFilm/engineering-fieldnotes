@@ -1,0 +1,30 @@
+# Content and primary-source review
+
+Reviewed 19 October 2026 by gpt-6-astra comparative review. Links below were opened and relevant passages inspected using web tools during this review. Paraphrases only. This is documentation verification, not a RabbitMQ integration test. Source retrieval dates were added to the existing guide; its valid claims and reference placement were retained.
+
+| Primary document | Boundary checked | Finding |
+|---|---|---|
+| [Python asyncio queues](https://docs.python.org/3/library/asyncio-queue.html) | Positive maxsize, put/get versus task_done/join | A positive maxsize bounds queued items. Awaited put waits for removal; get removes an item, while task_done separately decrements unfinished work. The guide correctly allows three waiting plus one executing. A local asyncio queue provides no broker durability. |
+| [RabbitMQ acknowledgements and confirms](https://www.rabbitmq.com/docs/confirms) | Publisher versus consumer responsibility and outstanding deliveries | Publisher confirms do not establish consumer execution success. With manual acknowledgements, prefetch bounds outstanding unacknowledged deliveries. Sol’s completion ACK releases delivery credit; C’s later dequeue frees waiting capacity. The application intake gate is a separate policy. |
+| [RabbitMQ consumer prefetch](https://www.rabbitmq.com/docs/consumer-prefetch) | Per-consumer versus per-channel scope | RabbitMQ commonly applies prefetch separately to each consumer, and can also enforce a channel limit. Prefetch does not cap ready backlog. One consumer/prefetch one is a valid scope for Sol; generalising that drawing to multiple consumers would be wrong. |
+| [RabbitMQ queue length limit](https://www.rabbitmq.com/docs/maxlength) | Ready counts and overflow feedback | Ready messages count; unacknowledged deliveries do not. Default overflow removes oldest ready messages. Rejection feedback requires publisher confirms, and a publication routed to multiple queues may be rejected by one while accepted by another. The guide correctly recommends choosing supported policy and handling feedback rather than assuming bounded queues block publishers. |
+| [Google SRE: Handling Overload](https://sre.google/sre-book/handling-overload/) | Resource cost, throttling and retry budgets | Equal request counts can conceal unequal resource costs. Clients must react to overload; rejection itself costs resources. The chapter describes finite per-request and per-client retry budgets, not a universal retry delay or threshold. The guide’s measurement and finite-budget advice is justified; three waiting slots and one worker are illustrative choices. |
+| [RabbitMQ Reliability Guide](https://www.rabbitmq.com/docs/reliability) | Early ACK, redelivery, idempotency | A consuming application should acknowledge only after doing its required work. Connection loss can cause duplicate deliveries, and consumers must handle them safely. Neither an ACK nor a confirm validates the semantic quality of a model-generated result. The guide’s duplicate-safe side-effect warning is supported. |
+
+## Editorial judgement: keep as reference
+
+Queue design changes a concrete decision once an agent harness fans out tools, runs batches or shares a constrained service. It is unnecessary infrastructure for a first supervised sequential task, so promoting it to core would distract from tool design, permission boundaries and evaluating results. The chapter earns retention through its single-producer exercise, explicit waiting/active distinction and warnings about backlog moving into unlimited put-waiting tasks. Tool design and timeouts/retries are sensible prerequisites.
+
+The three cuts are teaching illustrations, not measured traces. Backpressure requires a cooperative or enforced upstream response. Finite waiting capacity, active-call capacity, byte budget, provider rate quota and deadlines are separate controls. A full queue may shed work, reject it or make submission wait depending on policy. Sustained arrivals above completions cannot be made safe merely by enlarging the queue. None of these animations demonstrates durable deferral, cancellation propagation, concurrent producer races, recovery, exact-once effects, permissions or output quality.
+
+## Exercise verification
+
+`exercise-check.py` actually ran a single local producer and consumer over `asyncio.Queue(maxsize=3)` with six jobs and a slower B. `exercise-check.json` records submission, admission, execution and finish. F waited through B; C’s dequeue permitted F admission. Depth never exceeded three; active execution never exceeded one; all six finished in FIFO order. The short stub durations are testing convenience, not throughput evidence. No remote tools, broker, paid API, repository edits by an agent or model execution were exercised.
+
+## Transcript against encoded frames
+
+- Baseline: A runs first (3.5s), B/C/D fill the queue (8.05s), E stays at the paused producer (9.8–14.6s), B dequeues (15s), E is admitted (18.65s), C runs and completes (21.85–23.2s). Revised D dispatch at 23.8s and execution at 24.45s replace the stopped-consumer ending; E remains waiting. Transcript now describes that exact unfinished ending.
+- Astra: normal A completes at 4.6s, B runs while C/D/E fill by 10.6s, F is held outside while paused at 11.6s, C dequeues at 15s and F is admitted at 17.2s. F dispatches at 25s, runs at 25.6s and completes at 27s. Empty queue and Done 6/6 are visible before fade. No source change was needed.
+- Sol: A finishes at 5.5s, B at 21s; their ACKs return afterwards. F is refused at 17.25s, returns and is deferred by 18.45s. C dequeues at 22.2s; F is resubmitted at 24s and admitted at 25.3s. The revised active count falls at completion, independently of delivery credit. C remains running and D/E/F waiting through the fade. This is refusal plus deliberate resubmission, not the guide’s single await-put sequence. The transcript preserves that distinction.
+
+The source event times guided fine-grained follow-up checks only after `before.md` was recorded. Final encoded evidence and visual review, not source intent alone, determine the saved verdict.

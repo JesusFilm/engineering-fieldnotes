@@ -1,0 +1,26 @@
+{
+  "id": "idempotency",
+  "title": "Idempotency",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Idempotency lets repeated attempts at one logical operation avoid duplicating its intended effect.",
+  "overview": "A service can associate a caller-supplied request key with an operation and its result. The deduplication record and mutation need coordinated persistence to avoid gaps during failure.",
+  "why": "A client may retry after the server committed a change but its response was lost.",
+  "example": "An order service returns the existing order when the same checkout key is retried, and rejects that key if the cart parameters differ.",
+  "judgment": "Define logical request identity, key retention, and behavior for concurrent duplicates.",
+  "next": "What happens when two identical keys arrive before either request has committed?",
+  "sources": [
+    {
+      "title": "Making retries safe with idempotent APIs \u2014 AWS Builders\u2019 Library",
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/"
+    }
+  ],
+  "related": [
+    "timeouts-and-retries",
+    "queues-and-backpressure",
+    "human-in-the-loop"
+  ]
+}

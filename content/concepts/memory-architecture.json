@@ -1,0 +1,85 @@
+{
+  "id": "memory-architecture",
+  "title": "Memory architecture",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform",
+    "Tech lead"
+  ],
+  "summary": "Design what an agent remembers, who may change it, and how each run checks whether recalled advice still applies.",
+  "overview": "Memory is information retained for later use. Distinguish the context supplied to a model now, the state saved for one conversation, and records available across conversations. LangGraph implements the latter two with checkpointers and stores. Thread-scoped state can itself be persisted: “short-term” describes scope, not necessarily RAM. A stored record only helps a decision when the application retrieves and supplies it. The storage backend determines whether it survives a process restart. [Persistence](https://docs.langchain.com/oss/python/langgraph/persistence) explains these distinctions.",
+  "why": "Repeated delegation exposes a team’s undocumented assumptions. Saving a wrong test command can repeatedly steer later work in the wrong direction; it does not guarantee that every run will follow it. Our recommendation is to treat shared agent memory as maintained engineering data, with a named owner and a correction path, rather than as accumulated chat history.",
+  "example": "Consider a billing service whose approved test command changes from npm test at revision r1 to pnpm test at r2. A new agent session retrieves the old r1 note. The note is relevant to the task but no longer applicable to this checkout. An application-side revision check rejects that candidate, reads the current repository instructions, and supplies r2. The accompanying video illustrates this deliberately implemented check; it is not an automatic feature of every memory store.",
+  "judgment": "Start with one reviewed repository instruction file before adding a retrieval service. For each durable record, propose fields for repository, source path, source revision, owner, approval status, and replacement key. Limit writes to the appropriate identity and scope in application code. Keep investigation hypotheses separate from approved conventions. Set retention according to operational need and data policy, including what happens to checkpoints and backups when a record is withdrawn. Persistent prompts do not enforce permissions: Claude Code, for example, enforces tool rules outside the model. [Permissions](https://code.claude.com/docs/en/permissions).",
+  "next": "When a convention changes, can you demonstrate what a fresh run and an active run each receive before their next relevant action?",
+  "sources": [
+    {
+      "title": "LangChain — Memory overview: scope, retrieval, and write timing",
+      "url": "https://docs.langchain.com/oss/python/concepts/memory",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "LangGraph — Persistence: checkpointers versus stores",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "LangChain — Long-term memory: namespace, key, and explicit access",
+      "url": "https://docs.langchain.com/oss/python/langchain/long-term-memory",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Claude Code — Permissions: enforcement outside prompts",
+      "url": "https://code.claude.com/docs/en/permissions",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "context-engineering",
+    "replication-and-consistency",
+    "cache-aside"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Teams adopting agents need a repeatable way to carry verified project knowledge between delegated tasks. Learning correction and ownership early prevents an improvised memory file from becoming an unreviewed source of team policy.",
+    "prerequisites": [
+      "context-engineering"
+    ],
+    "outcomes": [
+      "Classify a debugging hypothesis, thread checkpoint, and approved repository convention by scope.",
+      "Trace one retrieved instruction to its repository revision.",
+      "Demonstrate correction in both a new session and an active session."
+    ],
+    "workflow": {
+      "before": "An engineer reads the current repository guide, asks a teammate about the test command, and keeps temporary debugging notes locally.",
+      "after": "An agent receives a scoped, source-linked convention; application logic validates its revision before use and records which version was supplied.",
+      "human": "Engineers approve shared conventions, define access and retention, resolve conflicting evidence, and review whether the resulting tests actually cover the change."
+    },
+    "walkthrough": [
+      "Choose one recurring decision: how to test the billing service. Identify the authoritative file and record its revision. Keep a guess about a flaky test in task state until someone validates it.",
+      "Store the approved command under an explicit repository and purpose key. LangChain stores provide namespaces and keys; the application chooses their meaning and access rules. An in-memory demonstration store is not restart-safe. See [long-term memory](https://docs.langchain.com/oss/python/langchain/long-term-memory).",
+      "On retrieval, compare the recorded source revision with the current source. A mismatch means re-read and review, not that the command is necessarily wrong. Similarity search finds candidates; it does not establish their authority.",
+      "Publish a corrected record and refresh affected active contexts before the next relevant action. Our proposed workflow logs the revision supplied and the test result. Inline writes and background writes have different timing tradeoffs; background completion must be observed rather than assumed. See [memory overview](https://docs.langchain.com/oss/python/concepts/memory)."
+    ],
+    "pitfalls": [
+      "An unverified debugging guess becomes a shared rule after automatic summarization.",
+      "A record is corrected in storage while an active conversation still contains the old instruction.",
+      "Repository names are treated as authorization checks, allowing unrelated projects to read or overwrite records."
+    ],
+    "exercise": {
+      "title": "Correct one remembered test command",
+      "steps": [
+        "In a disposable example, create r1 instructions and a matching memory record with its source revision.",
+        "Load that record into session A, then change the source and stored convention to r2.",
+        "Start session B and inspect the exact context it receives; also inspect A before its next test action.",
+        "Add an explicit freshness check and refresh path; rerun both cases and save the supplied revisions and results."
+      ],
+      "success": [
+        "Both sessions use r2 before their next relevant action, or explicitly stop for unresolved evidence.",
+        "The trace identifies the source and revision, and an unapproved hypothesis never becomes a shared convention."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

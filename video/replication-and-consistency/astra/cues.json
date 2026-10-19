@@ -1,0 +1,190 @@
+[
+  {
+    "t": 0.4,
+    "name": "recover",
+    "gain": 0.3
+  },
+  {
+    "t": 1.5,
+    "name": "send",
+    "note": "G5",
+    "gain": 0.6,
+    "pan": 0.2733333333333333
+  },
+  {
+    "t": 2.3,
+    "name": "arrive",
+    "note": "G5",
+    "gain": 0.65,
+    "pan": 0.3
+  },
+  {
+    "t": 2.7,
+    "name": "send",
+    "note": "G5",
+    "gain": 0.6,
+    "pan": 0.3
+  },
+  {
+    "t": 3.5,
+    "name": "arrive",
+    "note": "G5",
+    "gain": 0.65,
+    "pan": 0.2733333333333333
+  },
+  {
+    "t": 3.5,
+    "name": "hit",
+    "note": "G5",
+    "gain": 0.75,
+    "pan": 0
+  },
+  {
+    "t": 5.4,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.6,
+    "pan": -0.2733333333333333
+  },
+  {
+    "t": 6.2,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.3
+  },
+  {
+    "t": 6.2,
+    "name": "store",
+    "note": "C5",
+    "gain": 0.75,
+    "pan": -0.3
+  },
+  {
+    "t": 7.1,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.6,
+    "pan": -0.3
+  },
+  {
+    "t": 7.8999999999999995,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2733333333333333
+  },
+  {
+    "t": 7.9,
+    "name": "ack",
+    "note": "E5",
+    "gain": 0.75,
+    "pan": 0
+  },
+  {
+    "t": 10.4,
+    "name": "send",
+    "note": "G5",
+    "gain": 0.6,
+    "pan": 0.2733333333333333
+  },
+  {
+    "t": 11.200000000000001,
+    "name": "arrive",
+    "note": "G5",
+    "gain": 0.65,
+    "pan": 0.3
+  },
+  {
+    "t": 11.8,
+    "name": "send",
+    "note": "G4",
+    "gain": 0.6,
+    "pan": 0.3
+  },
+  {
+    "t": 12.600000000000001,
+    "name": "arrive",
+    "note": "G4",
+    "gain": 0.65,
+    "pan": 0.2733333333333333
+  },
+  {
+    "t": 12.6,
+    "name": "thump",
+    "note": "C3",
+    "gain": 1.05,
+    "pan": 0
+  },
+  {
+    "t": 14.9,
+    "name": "recover",
+    "gain": 0.5,
+    "note": "C5",
+    "pan": -0.3
+  },
+  {
+    "t": 16.2,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.6,
+    "pan": -0.2733333333333333
+  },
+  {
+    "t": 17,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.3
+  },
+  {
+    "t": 17.6,
+    "name": "send",
+    "note": "C5",
+    "gain": 0.6,
+    "pan": -0.3
+  },
+  {
+    "t": 18.400000000000002,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.65,
+    "pan": -0.2733333333333333
+  },
+  {
+    "t": 18.4,
+    "name": "chime",
+    "note": "E5",
+    "gain": 0.75,
+    "pan": 0
+  },
+  {
+    "t": 21,
+    "name": "clock",
+    "gain": 2.5
+  },
+  {
+    "t": 22,
+    "name": "send",
+    "note": "C6",
+    "gain": 0.7
+  },
+  {
+    "t": 24,
+    "name": "store",
+    "note": "G5",
+    "gain": 0.75,
+    "pan": 0.3
+  },
+  {
+    "t": 26,
+    "name": "ack",
+    "note": "E5",
+    "gain": 0.7
+  },
+  {
+    "t": 28,
+    "name": "poof",
+    "gain": 0.2
+  }
+]

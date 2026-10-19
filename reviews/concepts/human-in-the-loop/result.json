@@ -1,0 +1,25 @@
+{
+  "id": "human-in-the-loop",
+  "placement": "core",
+  "verifiedSources": [
+    "https://docs.langchain.com/oss/python/langgraph/interrupts",
+    "https://docs.langchain.com/oss/python/langgraph/persistence",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html",
+    "https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments"
+  ],
+  "changes": [
+    "Expanded into a standalone adoption guide with a checkout-service release example.",
+    "Qualified checkpoint durability and attributed replay behavior to LangGraph.",
+    "Separated approval, permissions and executor enforcement; persistent prompts are not permission controls.",
+    "Added artifact-change rejection, review evidence, cancellation ownership and retry cautions.",
+    "Added learning workflow, outcomes, pitfalls and an observable sandbox exercise.",
+    "Reviewed every original assertion against primary pages; preserved identity and relationship fields."
+  ],
+  "limitations": [
+    "Authored and reviewed by gpt-6-astra on 2026-10-19.",
+    "Illustrative executor contract; no live framework or production workflow was tested.",
+    "GitHub plan eligibility and repository policy were not inspected.",
+    "Durable-execution documentation URL redirected to persistence; no separate article claimed.",
+    "Video comparison and human editorial promotion remain separate."
+  ]
+}

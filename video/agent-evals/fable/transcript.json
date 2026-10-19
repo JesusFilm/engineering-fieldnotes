@@ -1,0 +1,7 @@
+[
+  "0.0–8.0s: The task 'fix login bug' goes to the agent (harness v1). Its patch turns test_login from FAIL to PASS while test_signup and test_reset stay PASS. The grader, labelled required checks, runs its single assertion, login FAIL→PASS, ticks test_login and shows PASS. This is the normal case.",
+  "8.0–10.3s: The environment resets for a fresh trial (test_login failing again) and the agent's sublabel changes to 'harness v2', marking a change under test.",
+  "10.3–19.0s: The same task runs under v2. The patch fixes test_login, but test_signup and test_reset jolt and turn FAIL. The grader still checks only test_login and shows a green PASS beneath two red rows: a false pass, because nothing asserted the unrelated tests.",
+  "19.0–22.8s: A second assertion, others PASS→PASS, is added to the grader. Regrading the same end state ticks test_login, then marks × beside test_signup and test_reset; the second grader row turns red and the verdict pops to FAIL with a distinct low-frequency failure cue.",
+  "22.8–27.1s: The failing verdict holds, then the stage fades out while the title remains visible, matching the opening frame."
+]

@@ -1,0 +1,26 @@
+{
+  "id": "tool-design",
+  "title": "Tool design",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Tool design makes available actions clear, bounded, and easy for an agent to use correctly.",
+  "overview": "A tool is an interface with a purpose, inputs, outputs, and failure behavior. Its descriptions and response shape affect both tool selection and the context consumed.",
+  "why": "Ambiguous tools can cause incorrect actions even when the model understands the task.",
+  "example": "Provide search_incidents(service, start_time, limit) with incident IDs and short summaries instead of returning every log entry.",
+  "judgment": "Choose the right action granularity and distinguish an empty result from a failed lookup.",
+  "next": "Which tool-selection mistakes recur when we evaluate realistic incident tasks?",
+  "sources": [
+    {
+      "title": "Writing effective tools for AI agents",
+      "url": "https://www.anthropic.com/engineering/writing-tools-for-agents"
+    }
+  ],
+  "related": [
+    "context-engineering",
+    "guardrails-and-permissions",
+    "agent-evals"
+  ]
+}

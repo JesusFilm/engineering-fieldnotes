@@ -1,0 +1,3 @@
+# No trailing slash: also ignore a dependency-directory symlink.
+engine/node_modules
+scratch/

@@ -1,0 +1,86 @@
+[
+  {
+    "width": 1280,
+    "type": "chapter",
+    "overflow": false,
+    "videos": [
+      {
+        "src": "file://<project>/reviews/comparisons/cache-aside/scratch/browser/media/cache-aside/astra.mp4?v=67c0dbb92269",
+        "width": 1080,
+        "height": 1920,
+        "duration": 31
+      }
+    ],
+    "text": true,
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "type": "compare",
+    "overflow": false,
+    "videos": [
+      {
+        "src": "file://<project>/reviews/comparisons/cache-aside/scratch/browser/media/cache-aside/baseline.mp4?v=552d6ff43a87",
+        "width": 1080,
+        "height": 1920,
+        "duration": 24
+      },
+      {
+        "src": "file://<project>/reviews/comparisons/cache-aside/scratch/browser/media/cache-aside/astra.mp4?v=67c0dbb92269",
+        "width": 1080,
+        "height": 1920,
+        "duration": 31
+      },
+      {
+        "src": "file://<project>/reviews/comparisons/cache-aside/scratch/browser/media/cache-aside/fable.mp4?v=e32266cea78e",
+        "width": 1080,
+        "height": 1920,
+        "duration": 31.566667
+      }
+    ],
+    "text": false,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "type": "chapter",
+    "overflow": false,
+    "videos": [
+      {
+        "src": "file://<project>/reviews/comparisons/cache-aside/scratch/browser/media/cache-aside/astra.mp4?v=67c0dbb92269",
+        "width": 1080,
+        "height": 1920,
+        "duration": 31
+      }
+    ],
+    "text": true,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "type": "compare",
+    "overflow": false,
+    "videos": [
+      {
+        "src": "file://<project>/reviews/comparisons/cache-aside/scratch/browser/media/cache-aside/baseline.mp4?v=552d6ff43a87",
+        "width": 1080,
+        "height": 1920,
+        "duration": 24
+      },
+      {
+        "src": "file://<project>/reviews/comparisons/cache-aside/scratch/browser/media/cache-aside/astra.mp4?v=67c0dbb92269",
+        "width": 1080,
+        "height": 1920,
+        "duration": 31
+      },
+      {
+        "src": "file://<project>/reviews/comparisons/cache-aside/scratch/browser/media/cache-aside/fable.mp4?v=e32266cea78e",
+        "width": 1080,
+        "height": 1920,
+        "duration": 31.566667
+      }
+    ],
+    "text": false,
+    "errors": []
+  }
+]

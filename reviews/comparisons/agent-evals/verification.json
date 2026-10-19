@@ -1,0 +1,116 @@
+{
+  "baseline": {
+    "sha256": "0a548cda494c61984807a3143766c413324c5c387cfb32d8404a52657c3343a4",
+    "duration": 26.0,
+    "frames": 780,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "maxAudioDbFS": -6.4,
+    "firstLastIdentical": true,
+    "fullDecode": true,
+    "faststart": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 28967
+      },
+      {
+        "type": "free",
+        "offset": 28999,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 29007,
+        "size": 419543
+      }
+    ],
+    "checksPassed": true
+  },
+  "astra": {
+    "sha256": "5bd6298b918ddea0e5dd850181f4c80e62dad9866545f170b6b9d983f80bae98",
+    "duration": 28.0,
+    "frames": 840,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "maxAudioDbFS": -3.9,
+    "firstLastIdentical": true,
+    "fullDecode": true,
+    "faststart": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 30972
+      },
+      {
+        "type": "free",
+        "offset": 31004,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 31012,
+        "size": 473853
+      }
+    ],
+    "checksPassed": true
+  },
+  "fable": {
+    "sha256": "43eda35a86a8fe6a1097e0c5ca4a3828a47d261f2ed618a3080bbd08c075d5c4",
+    "duration": 27.066667,
+    "frames": 812,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "maxAudioDbFS": -3.2,
+    "firstLastIdentical": true,
+    "fullDecode": true,
+    "faststart": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 30108
+      },
+      {
+        "type": "free",
+        "offset": 30140,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 30148,
+        "size": 1035638
+      }
+    ],
+    "checksPassed": true
+  }
+}

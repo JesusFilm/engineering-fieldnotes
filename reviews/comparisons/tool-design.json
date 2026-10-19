@@ -1,0 +1,55 @@
+{
+  "id": "tool-design",
+  "recommended": "astra",
+  "rationale": "Astra makes the contract failure concrete: an empty search and a swallowed timeout produce the same answer, then an explicit error changes the answer to Unknown. Baseline offers a quieter walkthrough of correct outcomes but leaves the reason for the contract to inference. Fable is a useful companion about bounding log output before it consumes context; it teaches a different mechanism and works best after the main lesson.",
+  "findings": [
+    "Astra 03.1–06.8 versus 09.0–12.8: matching empty-list responses lead to matching zero-match conclusions despite different backend states; the false answer is explicitly crossed out. Baseline 03.0–11.3 distinguishes correct outcomes without showing this failure mode.",
+    "Astra 12.8–19.7 keeps the index failed while the contract changes and Unknown reaches the agent. This isolates the interface repair from backend recovery more clearly than baseline’s timeout/recovery sequence at 09.5–20.2.",
+    "Astra 19.7–21.0 now shows an application-labelled discrete retry budget dropping from one to zero at dispatch. Baseline’s RETRY · 1 at 13.6s names an attempt but does not show budget consumption; neither proves that a further attempt would be blocked.",
+    "Fable 11.4–15.1 makes excess output causal: packets fill context, overflow cuts off INC-42 around 14.3–14.4s, and the answer remains unknown. Its bounded replacement at 18.0–25.2 preserves the useful ID with a small context footprint; the other two cuts do not teach output-volume design.",
+    "Fable 05.3–07.7 now reports 12 lines read rather than claiming 0 incidents from a small log sample. Astra’s completed-empty case at 04.6s explicitly starts from an index reporting 0 found; a small payload alone establishes neither completeness nor absence.",
+    "Astra’s 44–56px primary labels and repaired packet clearance at 16.4/24.2s read most clearly at 350px. Baseline’s 20.2–24.0s and Fable’s 25.2–28.4s final holds are generous; Astra resolves at 24.5s and holds to 27.2s. Fable’s rapid dropped-ID beat benefits from replay."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 3,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "b3945a2994895bb21907d2b4c032da68c6816d113248141a6ebadacfe6995924",
+    "astra": "3000737b0dd9032416739734d8fcb8aa2efd991207a886e4406ab3f3d281a904",
+    "fable": "ba146481711bb07493d14593085e8aaabd773cf88754683b26e9b31f36306f6c"
+  },
+  "contentVerdict": "Keep as core. Explicit outcomes, bounded results and caller-enforced retries change the team’s first read-only agent integration, with observable success criteria in the four-fixture exercise. The primary-source review supports the guide’s boundaries: schema validity is not truth, tool annotations are not access controls, transport failure may yield no result, and count limits alone do not bound tokens. Experienced engineers need ordinary API and authorization knowledge; the videos remain illustrative, with pagination and production retry policy taught in the guide.",
+  "verified": true,
+  "defectsFixed": [
+    "Astra: inset response and request routes so large chips no longer intrude into node borders at departure and arrival.",
+    "Astra: replaced the ambiguous time-varying retry bar with a discrete App retries left indicator, paired waiting pulses with clock cues, and retained the green success border through the ending.",
+    "Fable: replaced the unsupported 0 incidents conclusion after a 12-line log result with neutral 12 lines read; added the requested window to read_logs inputs and enlarged input labels.",
+    "Fable: moved the redesign ripple clear of tool labels and capped local FFmpeg encoder/filter threads at two.",
+    "Updated revised-cut transcripts and beat sheets, preserved original model provenance and original transcript data, regenerated posters, and added guide source retrieval dates plus transport-timeout and response-size boundaries.",
+    "Publication polish: replaced long source excerpts with linked claim-level paraphrases, refined Fable transcript timestamps and scripted-uncertainty wording, and scoped final audio metadata to measured checks."
+  ],
+  "limitations": [
+    "Audio was analysed through decoded levels, cue-window signal and spectrograms, not heard; no subjective listening or isolated overlapping-cue claim is made.",
+    "Story review used decoded contact sheets, full-size and 350px beat/transition frames rather than continuous audiovisual playback. Complete video and audio decode and exact first/last-frame equality were separately verified.",
+    "No live agent evaluation was executed. Scripted Unknown, recovery and successful ID retrieval do not guarantee model behaviour or backend availability.",
+    "None of the cuts animates pagination, access enforcement, or a second failure after retry-budget exhaustion. Fable’s truncation threshold and context proportions are illustrative; its smallest secondary labels and brief dropped-ID trip require more attention than Astra.",
+    "Filenames were provided by the assignment, so viewing was source/provenance blind rather than a fully concealed randomized trial. This is one fresh reviewer’s editorial judgment, not curriculum publication or independent audience testing."
+  ]
+}

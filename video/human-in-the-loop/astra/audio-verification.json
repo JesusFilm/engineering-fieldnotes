@@ -1,0 +1,254 @@
+{
+  "method": "Decoded mono PCM, 0\u2013180ms from every scheduled cue; visual event times use the same scene clock. Overlapping cues cannot be individually distinguished by this check.",
+  "physicalListening": false,
+  "cueCount": 41,
+  "allCueWindowsHaveEnergy": true,
+  "cues": [
+    {
+      "time": 0.4,
+      "sound": "send",
+      "first180msPeakDBFS": -29.19,
+      "energyPresent": true
+    },
+    {
+      "time": 1,
+      "sound": "work",
+      "first180msPeakDBFS": -19.17,
+      "energyPresent": true
+    },
+    {
+      "time": 2.5,
+      "sound": "chime",
+      "first180msPeakDBFS": -15.08,
+      "energyPresent": true
+    },
+    {
+      "time": 3.3,
+      "sound": "send",
+      "first180msPeakDBFS": -26.44,
+      "energyPresent": true
+    },
+    {
+      "time": 4.1,
+      "sound": "arrive",
+      "first180msPeakDBFS": -13.76,
+      "energyPresent": true
+    },
+    {
+      "time": 4.1,
+      "sound": "store",
+      "first180msPeakDBFS": -13.76,
+      "energyPresent": true
+    },
+    {
+      "time": 5.7,
+      "sound": "send",
+      "first180msPeakDBFS": -27.07,
+      "energyPresent": true
+    },
+    {
+      "time": 6.7,
+      "sound": "arrive",
+      "first180msPeakDBFS": -10.59,
+      "energyPresent": true
+    },
+    {
+      "time": 6.7,
+      "sound": "arrive",
+      "first180msPeakDBFS": -10.59,
+      "energyPresent": true
+    },
+    {
+      "time": 8.3,
+      "sound": "chime",
+      "first180msPeakDBFS": -16.37,
+      "energyPresent": true
+    },
+    {
+      "time": 8.7,
+      "sound": "send",
+      "first180msPeakDBFS": -25.91,
+      "energyPresent": true
+    },
+    {
+      "time": 9.5,
+      "sound": "arrive",
+      "first180msPeakDBFS": -15.02,
+      "energyPresent": true
+    },
+    {
+      "time": 9.5,
+      "sound": "store",
+      "first180msPeakDBFS": -15.02,
+      "energyPresent": true
+    },
+    {
+      "time": 10.2,
+      "sound": "work",
+      "first180msPeakDBFS": -20.06,
+      "energyPresent": true
+    },
+    {
+      "time": 10.9,
+      "sound": "chime",
+      "first180msPeakDBFS": -14.83,
+      "energyPresent": true
+    },
+    {
+      "time": 11,
+      "sound": "send",
+      "first180msPeakDBFS": -14.83,
+      "energyPresent": true
+    },
+    {
+      "time": 11.8,
+      "sound": "arrive",
+      "first180msPeakDBFS": -16.29,
+      "energyPresent": true
+    },
+    {
+      "time": 11.8,
+      "sound": "miss",
+      "first180msPeakDBFS": -16.29,
+      "energyPresent": true
+    },
+    {
+      "time": 12.7,
+      "sound": "send",
+      "first180msPeakDBFS": -21.11,
+      "energyPresent": true
+    },
+    {
+      "time": 13.5,
+      "sound": "arrive",
+      "first180msPeakDBFS": -5.55,
+      "energyPresent": true
+    },
+    {
+      "time": 12.7,
+      "sound": "send",
+      "first180msPeakDBFS": -21.11,
+      "energyPresent": true
+    },
+    {
+      "time": 13.5,
+      "sound": "arrive",
+      "first180msPeakDBFS": -5.55,
+      "energyPresent": true
+    },
+    {
+      "time": 13.5,
+      "sound": "crash",
+      "first180msPeakDBFS": -5.55,
+      "energyPresent": true
+    },
+    {
+      "time": 14.5,
+      "sound": "thump",
+      "first180msPeakDBFS": -13.49,
+      "energyPresent": true
+    },
+    {
+      "time": 17,
+      "sound": "send",
+      "first180msPeakDBFS": -27.03,
+      "energyPresent": true
+    },
+    {
+      "time": 18,
+      "sound": "arrive",
+      "first180msPeakDBFS": -10.71,
+      "energyPresent": true
+    },
+    {
+      "time": 18,
+      "sound": "arrive",
+      "first180msPeakDBFS": -10.71,
+      "energyPresent": true
+    },
+    {
+      "time": 20,
+      "sound": "chime",
+      "first180msPeakDBFS": -16.25,
+      "energyPresent": true
+    },
+    {
+      "time": 20.5,
+      "sound": "send",
+      "first180msPeakDBFS": -26.99,
+      "energyPresent": true
+    },
+    {
+      "time": 21.3,
+      "sound": "arrive",
+      "first180msPeakDBFS": -13.65,
+      "energyPresent": true
+    },
+    {
+      "time": 21.3,
+      "sound": "store",
+      "first180msPeakDBFS": -13.65,
+      "energyPresent": true
+    },
+    {
+      "time": 21.3,
+      "sound": "ack",
+      "first180msPeakDBFS": -13.65,
+      "energyPresent": true
+    },
+    {
+      "time": 23,
+      "sound": "send",
+      "first180msPeakDBFS": -21.01,
+      "energyPresent": true
+    },
+    {
+      "time": 23.8,
+      "sound": "arrive",
+      "first180msPeakDBFS": -10.99,
+      "energyPresent": true
+    },
+    {
+      "time": 23,
+      "sound": "send",
+      "first180msPeakDBFS": -21.01,
+      "energyPresent": true
+    },
+    {
+      "time": 23.8,
+      "sound": "arrive",
+      "first180msPeakDBFS": -10.99,
+      "energyPresent": true
+    },
+    {
+      "time": 23.8,
+      "sound": "recover",
+      "first180msPeakDBFS": -10.99,
+      "energyPresent": true
+    },
+    {
+      "time": 24.6,
+      "sound": "send",
+      "first180msPeakDBFS": -26.85,
+      "energyPresent": true
+    },
+    {
+      "time": 25.6,
+      "sound": "arrive",
+      "first180msPeakDBFS": -12.57,
+      "energyPresent": true
+    },
+    {
+      "time": 25.6,
+      "sound": "chime",
+      "first180msPeakDBFS": -12.57,
+      "energyPresent": true
+    },
+    {
+      "time": 28.5,
+      "sound": "poof",
+      "first180msPeakDBFS": -25.23,
+      "energyPresent": true
+    }
+  ]
+}

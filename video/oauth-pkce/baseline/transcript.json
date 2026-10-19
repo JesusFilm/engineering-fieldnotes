@@ -1,0 +1,5 @@
+[
+  "0–7s: The mobile app retains a verifier and sends its S256 challenge. The server binds a newly issued authorization code to that challenge.",
+  "8–15s: An interceptor gets the code but not the verifier. Its token request is rejected.",
+  "16–22s: The legitimate app supplies the verifier. The server checks the challenge, consumes the code and returns the access token."
+]

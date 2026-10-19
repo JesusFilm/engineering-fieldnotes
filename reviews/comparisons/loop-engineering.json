@@ -1,0 +1,55 @@
+{
+  "id": "loop-engineering",
+  "recommended": "astra",
+  "rationale": "Astra makes the consequential decision explicit: valid failure permits an edit, fresh passing evidence routes to review, and zero selected tests blocks further edits. Baseline is a useful companion for budget exhaustion versus early success. Fable adds retained history and a repeat-evidence handoff, but its denser log and illustrative report identifier require more interpretation at phone size.",
+  "findings": [
+    "Astra 0:02.5–0:05.7 ties a failed assertion to permission for one edit; Baseline 0:02.8–0:08.8 shows generic feedback without teaching how evidence is classified.",
+    "Astra 0:05.7–0:12.5 resets the gate to WAIT for an untested patch, then sends fresh passing evidence to engineer review. This is the strongest main-entry explanation of evidence belonging to the current patch.",
+    "Astra 0:16.8–0:21.5 distinguishes missing validation from a failed assertion: zero selected tests blocks the return path, leaves patch 0 unchanged and prompts an engineer handoff.",
+    "Baseline 0:01–0:10.4 and 0:13.2–0:20.5 clearly contrast exhausting a three-call budget with exiting a separately allocated run early for review. Its small budget caption and generic tool/result labels limit its depth.",
+    "Fable 0:03.5–0:12.5 preserves a falling-count history and sends success to review; at 0:17.9, 0:21.3 and 0:24.7 it records matching failure reports. REPEAT LIMIT at 0:25.65 is a configured policy, not proof of impossibility or an inference from equal counts alone.",
+    "Astra 0:21.5–0:25 has the clearest phone-size stopped-state explanation. Fable 0:26.55–0:29 retains the evidence during handoff but needs closer reading of smaller log/chip text; Baseline 0:19.6–0:22.8 offers a simpler review endpoint."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 3,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 3
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "157e1d6e4bbba89948a5d735f32d535f85201545e6b06d020419816a6263d73d",
+    "astra": "a1da4bd5a241ef482f40958e2265158084ec9a1984968d01f2b08211399140c9",
+    "fable": "501ab63133e1919cf8e553ba047ee6b5b1715a635eaaedfb32571fbdfd2034d6"
+  },
+  "contentVerdict": "Keep / core. Teams delegating repeated edits need to define usable current-patch evidence, executable stop rules and resumable handoffs before scaling agent work. The guide correctly requires a harness and keeps review, coverage, permissions, time/call/patch limits and retry side effects explicit. Its exercise has observable outcomes; the numeric limits and immediate no-tests handoff are illustrative local policy rather than primary-source mandates. Teach the harness prerequisite first and use the other cuts to complement Astra.",
+  "verified": true,
+  "defectsFixed": [
+    "Baseline: added orientation, distinguished amber continuing feedback from green PASS, separated independent budgets by a labelled fade, changed the success endpoint to Review and shortened its final hold.",
+    "Astra: consumed the edit permit at patch creation and marked the new patch untested until fresh results; corrected zero collected to zero selected for the unmatched-keyword example.",
+    "Fable: replaced equal-count/no-progress reasoning with a configured repeat limit over matching reports under a fixed test selection; enlarged log/chip text and added the successful human review handoff.",
+    "Applied whole-frame boundaries where needed and capped local render FFmpeg codec/filter threads at two; rerendered and verified all three encodes and regenerated their posters.",
+    "Corrected the written guide’s collection/selection distinction and strengthened failure-identity/controlled-state boundaries; verified relevant primary documents and reproduced unmatched-keyword exit 5 locally.",
+    "Replaced long source excerpts in Fable evidence notes with concise paraphrases and links; synchronized transcripts and current metadata, retained original model provenance and separately attributed all corrections."
+  ],
+  "limitations": [
+    "Audio was analysed through decoded peaks, cue windows and spectrograms; it was not heard. Signal activity does not establish subjective mix quality.",
+    "Illustrative diagrams and thresholds, not a demonstrated model repair, optimal retry policy or convergence guarantee. Tests passing do not prove overall correctness.",
+    "Fable’s a7 identifier represents matching normalized failure evidence, not a production hash recommendation; its counts and small moving chips still need the guide or transcript for context.",
+    "Complete decoding and selected full-size/350px beat inspection were performed; no claim is made of manually watching every encoded frame in real time or testing comprehension with the target team.",
+    "The blind comparison preceded access to author source and provenance; the same comparative reviewer made the corrections and verified them, so the final review is not a further independent review."
+  ]
+}

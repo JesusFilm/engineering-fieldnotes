@@ -1,0 +1,413 @@
+{
+  "verified_at": "2026-10-18T23:52:29.904995+00:00",
+  "movie_sha256": "e05cd544415d1c531ec781b9eb32baa6a6aef372316fc5656e236c75f15182c0",
+  "poster_sha256": "fcee4ea8d03dd5b35a3bbd48c2843125b54590f98e22daf324cac662576cc534",
+  "source_sha256": {
+    "scene.js": "3f259cef957e822dd8f90174c1b618e20dd4b88953a05cd205766f8552fd129f",
+    "engine/flow-engine.js": "a75e4f8fa895dd92845b27e2be6e2ba10bcfbb7663035a4d579c45513fbec8ed",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "engine/render.mjs": "716d250c04c402436555aafd4c0ca8bcb6109a7e9b1aa776736d67d947cae47c",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e"
+  },
+  "size_bytes": 1450636,
+  "duration": 28,
+  "video_codec": "h264",
+  "pixel_format": "yuv420p",
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "frames": 840,
+  "audio_codec": "aac",
+  "audio_peak_dbfs": -3.2,
+  "full_decode_pass": true,
+  "first_last_decoded_md5": "eb31442608984c1aa5939de6decc4443",
+  "first_last_exactly_equal": true,
+  "faststart": true,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "size": 31212
+    },
+    {
+      "type": "free",
+      "offset": 31244,
+      "size": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 31252,
+      "size": 1419384
+    }
+  ],
+  "cue_count": 85,
+  "audio_energy_at_every_cue_time": [
+    {
+      "time": 0.3,
+      "rms_dbfs_15_to_115ms_after_cue": -24.87
+    },
+    {
+      "time": 1,
+      "rms_dbfs_15_to_115ms_after_cue": -38.37
+    },
+    {
+      "time": 1.5,
+      "rms_dbfs_15_to_115ms_after_cue": -44.08
+    },
+    {
+      "time": 1.9,
+      "rms_dbfs_15_to_115ms_after_cue": -30.95
+    },
+    {
+      "time": 2.2,
+      "rms_dbfs_15_to_115ms_after_cue": -34.32
+    },
+    {
+      "time": 2.8,
+      "rms_dbfs_15_to_115ms_after_cue": -18.98
+    },
+    {
+      "time": 5,
+      "rms_dbfs_15_to_115ms_after_cue": -20.82
+    },
+    {
+      "time": 5.7,
+      "rms_dbfs_15_to_115ms_after_cue": -43.97
+    },
+    {
+      "time": 5.86,
+      "rms_dbfs_15_to_115ms_after_cue": -44.21
+    },
+    {
+      "time": 5.98,
+      "rms_dbfs_15_to_115ms_after_cue": -29.99
+    },
+    {
+      "time": 6.0200000000000005,
+      "rms_dbfs_15_to_115ms_after_cue": -35.21
+    },
+    {
+      "time": 6.140000000000001,
+      "rms_dbfs_15_to_115ms_after_cue": -29.97
+    },
+    {
+      "time": 6.18,
+      "rms_dbfs_15_to_115ms_after_cue": -35.29
+    },
+    {
+      "time": 6.300000000000001,
+      "rms_dbfs_15_to_115ms_after_cue": -30.16
+    },
+    {
+      "time": 6.34,
+      "rms_dbfs_15_to_115ms_after_cue": -35.41
+    },
+    {
+      "time": 6.46,
+      "rms_dbfs_15_to_115ms_after_cue": -30.14
+    },
+    {
+      "time": 6.5,
+      "rms_dbfs_15_to_115ms_after_cue": -35.59
+    },
+    {
+      "time": 6.62,
+      "rms_dbfs_15_to_115ms_after_cue": -30.0
+    },
+    {
+      "time": 6.66,
+      "rms_dbfs_15_to_115ms_after_cue": -35.22
+    },
+    {
+      "time": 6.78,
+      "rms_dbfs_15_to_115ms_after_cue": -30.26
+    },
+    {
+      "time": 6.82,
+      "rms_dbfs_15_to_115ms_after_cue": -35.34
+    },
+    {
+      "time": 6.94,
+      "rms_dbfs_15_to_115ms_after_cue": -30.14
+    },
+    {
+      "time": 6.98,
+      "rms_dbfs_15_to_115ms_after_cue": -35.42
+    },
+    {
+      "time": 7.1000000000000005,
+      "rms_dbfs_15_to_115ms_after_cue": -27.78
+    },
+    {
+      "time": 7.140000000000001,
+      "rms_dbfs_15_to_115ms_after_cue": -32.64
+    },
+    {
+      "time": 7.260000000000001,
+      "rms_dbfs_15_to_115ms_after_cue": -30.05
+    },
+    {
+      "time": 7.300000000000001,
+      "rms_dbfs_15_to_115ms_after_cue": -35.17
+    },
+    {
+      "time": 7.420000000000001,
+      "rms_dbfs_15_to_115ms_after_cue": -19.13
+    },
+    {
+      "time": 7.46,
+      "rms_dbfs_15_to_115ms_after_cue": -21.3
+    },
+    {
+      "time": 7.580000000000001,
+      "rms_dbfs_15_to_115ms_after_cue": -25.32
+    },
+    {
+      "time": 7.62,
+      "rms_dbfs_15_to_115ms_after_cue": -30.21
+    },
+    {
+      "time": 7.74,
+      "rms_dbfs_15_to_115ms_after_cue": -29.97
+    },
+    {
+      "time": 7.78,
+      "rms_dbfs_15_to_115ms_after_cue": -35.09
+    },
+    {
+      "time": 7.9,
+      "rms_dbfs_15_to_115ms_after_cue": -30.12
+    },
+    {
+      "time": 7.94,
+      "rms_dbfs_15_to_115ms_after_cue": -35.21
+    },
+    {
+      "time": 8.06,
+      "rms_dbfs_15_to_115ms_after_cue": -30.15
+    },
+    {
+      "time": 8.1,
+      "rms_dbfs_15_to_115ms_after_cue": -35.21
+    },
+    {
+      "time": 8.22,
+      "rms_dbfs_15_to_115ms_after_cue": -30.3
+    },
+    {
+      "time": 8.26,
+      "rms_dbfs_15_to_115ms_after_cue": -35.43
+    },
+    {
+      "time": 8.379999999999999,
+      "rms_dbfs_15_to_115ms_after_cue": -30.05
+    },
+    {
+      "time": 8.42,
+      "rms_dbfs_15_to_115ms_after_cue": -34.98
+    },
+    {
+      "time": 8.54,
+      "rms_dbfs_15_to_115ms_after_cue": -30.13
+    },
+    {
+      "time": 8.58,
+      "rms_dbfs_15_to_115ms_after_cue": -35.37
+    },
+    {
+      "time": 8.7,
+      "rms_dbfs_15_to_115ms_after_cue": -27.9
+    },
+    {
+      "time": 8.74,
+      "rms_dbfs_15_to_115ms_after_cue": -32.78
+    },
+    {
+      "time": 8.86,
+      "rms_dbfs_15_to_115ms_after_cue": -30.18
+    },
+    {
+      "time": 8.9,
+      "rms_dbfs_15_to_115ms_after_cue": -35.7
+    },
+    {
+      "time": 9.02,
+      "rms_dbfs_15_to_115ms_after_cue": -19.11
+    },
+    {
+      "time": 9.06,
+      "rms_dbfs_15_to_115ms_after_cue": -21.06
+    },
+    {
+      "time": 9.18,
+      "rms_dbfs_15_to_115ms_after_cue": -25.41
+    },
+    {
+      "time": 9.22,
+      "rms_dbfs_15_to_115ms_after_cue": -30.14
+    },
+    {
+      "time": 9.34,
+      "rms_dbfs_15_to_115ms_after_cue": -29.97
+    },
+    {
+      "time": 9.38,
+      "rms_dbfs_15_to_115ms_after_cue": -35.26
+    },
+    {
+      "time": 9.5,
+      "rms_dbfs_15_to_115ms_after_cue": -30.21
+    },
+    {
+      "time": 9.54,
+      "rms_dbfs_15_to_115ms_after_cue": -35.49
+    },
+    {
+      "time": 9.66,
+      "rms_dbfs_15_to_115ms_after_cue": -30.23
+    },
+    {
+      "time": 9.7,
+      "rms_dbfs_15_to_115ms_after_cue": -35.66
+    },
+    {
+      "time": 9.819999999999999,
+      "rms_dbfs_15_to_115ms_after_cue": -30.24
+    },
+    {
+      "time": 9.86,
+      "rms_dbfs_15_to_115ms_after_cue": -35.7
+    },
+    {
+      "time": 9.979999999999999,
+      "rms_dbfs_15_to_115ms_after_cue": -30.07
+    },
+    {
+      "time": 10.02,
+      "rms_dbfs_15_to_115ms_after_cue": -35.32
+    },
+    {
+      "time": 10.139999999999999,
+      "rms_dbfs_15_to_115ms_after_cue": -30.12
+    },
+    {
+      "time": 10.18,
+      "rms_dbfs_15_to_115ms_after_cue": -35.11
+    },
+    {
+      "time": 10.299999999999999,
+      "rms_dbfs_15_to_115ms_after_cue": -27.42
+    },
+    {
+      "time": 10.34,
+      "rms_dbfs_15_to_115ms_after_cue": -32.49
+    },
+    {
+      "time": 10.459999999999999,
+      "rms_dbfs_15_to_115ms_after_cue": -30.78
+    },
+    {
+      "time": 10.62,
+      "rms_dbfs_15_to_115ms_after_cue": -19.39
+    },
+    {
+      "time": 11.2,
+      "rms_dbfs_15_to_115ms_after_cue": -33.62
+    },
+    {
+      "time": 11.6,
+      "rms_dbfs_15_to_115ms_after_cue": -34.43
+    },
+    {
+      "time": 12.4,
+      "rms_dbfs_15_to_115ms_after_cue": -39.7
+    },
+    {
+      "time": 12.9,
+      "rms_dbfs_15_to_115ms_after_cue": -19.01
+    },
+    {
+      "time": 13.6,
+      "rms_dbfs_15_to_115ms_after_cue": -37.96
+    },
+    {
+      "time": 14.1,
+      "rms_dbfs_15_to_115ms_after_cue": -12.14
+    },
+    {
+      "time": 16.6,
+      "rms_dbfs_15_to_115ms_after_cue": -35.5
+    },
+    {
+      "time": 17.1,
+      "rms_dbfs_15_to_115ms_after_cue": -15.38
+    },
+    {
+      "time": 18,
+      "rms_dbfs_15_to_115ms_after_cue": -35.35
+    },
+    {
+      "time": 19,
+      "rms_dbfs_15_to_115ms_after_cue": -21.4
+    },
+    {
+      "time": 20.5,
+      "rms_dbfs_15_to_115ms_after_cue": -43.98
+    },
+    {
+      "time": 21,
+      "rms_dbfs_15_to_115ms_after_cue": -30.91
+    },
+    {
+      "time": 21.4,
+      "rms_dbfs_15_to_115ms_after_cue": -44.17
+    },
+    {
+      "time": 21.9,
+      "rms_dbfs_15_to_115ms_after_cue": -30.93
+    },
+    {
+      "time": 22.3,
+      "rms_dbfs_15_to_115ms_after_cue": -43.68
+    },
+    {
+      "time": 22.8,
+      "rms_dbfs_15_to_115ms_after_cue": -30.81
+    },
+    {
+      "time": 23.1,
+      "rms_dbfs_15_to_115ms_after_cue": -18.95
+    },
+    {
+      "time": 26,
+      "rms_dbfs_15_to_115ms_after_cue": -32.43
+    }
+  ],
+  "aac_alignment": {
+    "failure_cue_time": 14.1,
+    "correlation": 0.985329,
+    "lag_ms": 0.0,
+    "maximum_visual_quantization_ms": 33.333
+  },
+  "listening": "Audio analysed, not physically listened to.",
+  "inspection_times": [
+    0,
+    3.3,
+    8.8,
+    11.9,
+    14.6,
+    17.5,
+    18.5,
+    20,
+    24.3,
+    27.966667
+  ],
+  "visual_review": "Requires manual view_image review; see review.md bound to movie hash."
+}

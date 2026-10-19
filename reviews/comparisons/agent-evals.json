@@ -1,0 +1,54 @@
+{
+  "id": "agent-evals",
+  "recommended": "astra",
+  "rationale": "Astra makes the grading decision concrete: rejecting an empty password is correct, but rejecting a valid password is a regression that blocks the patch. Its larger expected/actual labels read most clearly on a phone, and two passing checks lead explicitly to human review. Baseline is a useful follow-up on checking actual state rather than trusting Done; Fable shows how an incomplete grader can pass a broken artifact and how expanding the requirements exposes it.",
+  "findings": [
+    "Astra 3.30–11.30s separates expected behavior, observed output, and grade: the same REJECT passes the empty-password case and fails valid login. This is more immediately actionable for a coding team than Baseline’s ticket predicate or Fable’s abstract test names.",
+    "Baseline 4.65s versus 16.45s shows the same Done message with different actual ticket states; only the state reaches the grader. Its retained trial result and 11.00s fixture reset introduce variability that the two patch revisions in Astra do not.",
+    "Fable 13.28–15.89s deliberately juxtaposes two failing regression tests with a passing narrow grader. At 19.00–22.83s it expands the required checks and rejects the same artifact, teaching grader quality rather than another agent retry.",
+    "Astra 23.80–26.70s ends with 2/2 passed and Human review, the strongest explicit limit on what these checks establish. Baseline 21.60–24.00s retains two trial outcomes; Fable 22.83–25.94s holds a failed artifact, without a release claim.",
+    "Fable throughout, especially 19.60–23.60s: revised 36px rows in wider stores replace cramped 26px type, and the required-checks label distinguishes predicates from results. Phone readability now passes, while Astra’s larger behavioral labels remain easier to scan.",
+    "Baseline 19.80s is the actual FAIL onset, corrected in its transcript; 21.60s only adds the trial number. Astra’s 10.60–10.90s and 23.10–23.40s evidence packets route around the grade text without obscuring it. All final cuts have matching decoded first/last frames and deliberate result holds."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "0a548cda494c61984807a3143766c413324c5c387cfb32d8404a52657c3343a4",
+    "astra": "5bd6298b918ddea0e5dd850181f4c80e62dad9866545f170b6b9d983f80bae98",
+    "fable": "43eda35a86a8fe6a1097e0c5ca4a3828a47d261f2ed618a3080bbd08c075d5c4"
+  },
+  "contentVerdict": "Keep as core: defining observable success, preserving required behavior, isolating trials, and retaining all attempts are early necessities for a team delegating engineering work to agents. The guide has a concrete exercise and appropriate limits on small samples, release readiness, grader reliability, and permissions. Its four primary sources were checked on 2026-10-19; retrieval dates were recorded and the budget-timeout versus environment-failure distinction was clarified. Harness engineering remains a reasonable prerequisite.",
+  "verified": true,
+  "defectsFixed": [
+    "Fable: enlarged test and grader text and stores for 350px legibility, repositioned gutter marks and verdict, and rerendered MP4/poster with original model provenance preserved.",
+    "Fable: labelled required predicates explicitly, changed task wording to fix login bug, and bounded the lesson to required existing behaviors.",
+    "Fable: aligned transcript and beat-sheet ending with the actual retained-title fade; removed an unverified perceptual loudest-sound claim; recorded editedBy and corrections metadata.",
+    "Baseline: corrected transcript FAIL onset to 19.80s and included fixture reset and numbered-result timing; retained original text in the review record.",
+    "Guide: added source retrieval dates and distinguished agent budget exhaustion from a broken evaluation environment."
+  ],
+  "limitations": [
+    "Audio was analysed through full decode, peak levels, spectrograms, and signal windows around all 81 scheduled cues; it was not heard. Perceptual loudness and phone-speaker audibility were not tested.",
+    "Visual pacing was assessed from timestamped encoded contact sheets, native beat frames, 350px frames, and event timing, not continuous real-time playback or a learner study.",
+    "All three are illustrations, not measured agent experiments. Baseline’s two trials are not a reliability estimate; Astra’s patch revisions are not repeated samples; Fable shows only one trial per configuration.",
+    "Astra omits agent/harness internals; Baseline omits coding regressions; Fable uses abstract test names. The written guide is needed for the full workflow and technical boundaries.",
+    "Recommendation is saved for editorial review; no shared curriculum/build selection or publication operation was performed."
+  ]
+}

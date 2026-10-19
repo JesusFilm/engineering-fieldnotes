@@ -1,0 +1,375 @@
+{
+  "sha256": "552d6ff43a879b40776fcf5e0a58bd8cb54c1302d067340e674ebb6fefc8ec8c",
+  "duration": 24.0,
+  "frames": 720,
+  "video": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "30/1"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "44100",
+    "channels": 2
+  },
+  "fullDecodeClean": true,
+  "firstLastDecodedPixelsIdentical": true,
+  "firstFrameTime": 0,
+  "lastFrameTime": 23.966666666666665,
+  "faststart": true,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0
+    },
+    {
+      "type": "moov",
+      "offset": 32
+    },
+    {
+      "type": "free",
+      "offset": 26872
+    },
+    {
+      "type": "mdat",
+      "offset": 26880
+    }
+  ],
+  "audioPeakDbFS": -2.5,
+  "cueEnergyChecks": [
+    {
+      "t": 0.6,
+      "cue": "send",
+      "rmsDbFS": -30.14
+    },
+    {
+      "t": 1.15,
+      "cue": "arrive",
+      "rmsDbFS": -17.42
+    },
+    {
+      "t": 1.35,
+      "cue": "send",
+      "rmsDbFS": -29.23
+    },
+    {
+      "t": 1.9,
+      "cue": "arrive",
+      "rmsDbFS": -17.02
+    },
+    {
+      "t": 2,
+      "cue": "miss",
+      "rmsDbFS": -24.22
+    },
+    {
+      "t": 2.3,
+      "cue": "send",
+      "rmsDbFS": -30.18
+    },
+    {
+      "t": 2.85,
+      "cue": "arrive",
+      "rmsDbFS": -17.0
+    },
+    {
+      "t": 3,
+      "cue": "send",
+      "rmsDbFS": -28.0
+    },
+    {
+      "t": 3.55,
+      "cue": "arrive",
+      "rmsDbFS": -15.9
+    },
+    {
+      "t": 3.55,
+      "cue": "work",
+      "rmsDbFS": -15.9
+    },
+    {
+      "t": 3.75,
+      "cue": "work",
+      "rmsDbFS": -23.83
+    },
+    {
+      "t": 3.95,
+      "cue": "work",
+      "rmsDbFS": -25.5
+    },
+    {
+      "t": 4.15,
+      "cue": "work",
+      "rmsDbFS": -25.46
+    },
+    {
+      "t": 4.35,
+      "cue": "work",
+      "rmsDbFS": -25.35
+    },
+    {
+      "t": 4.55,
+      "cue": "send",
+      "rmsDbFS": -30.15
+    },
+    {
+      "t": 5.1,
+      "cue": "arrive",
+      "rmsDbFS": -16.18
+    },
+    {
+      "t": 5.3,
+      "cue": "send",
+      "rmsDbFS": -26.51
+    },
+    {
+      "t": 5.85,
+      "cue": "arrive",
+      "rmsDbFS": -15.9
+    },
+    {
+      "t": 5.85,
+      "cue": "store",
+      "rmsDbFS": -15.9
+    },
+    {
+      "t": 6.05,
+      "cue": "send",
+      "rmsDbFS": -29.76
+    },
+    {
+      "t": 6.6,
+      "cue": "arrive",
+      "rmsDbFS": -11.09
+    },
+    {
+      "t": 6.6,
+      "cue": "deliver",
+      "rmsDbFS": -11.09
+    },
+    {
+      "t": 8.6,
+      "cue": "send",
+      "rmsDbFS": -30.12
+    },
+    {
+      "t": 9.15,
+      "cue": "arrive",
+      "rmsDbFS": -17.36
+    },
+    {
+      "t": 9.35,
+      "cue": "send",
+      "rmsDbFS": -29.22
+    },
+    {
+      "t": 9.9,
+      "cue": "arrive",
+      "rmsDbFS": -15.68
+    },
+    {
+      "t": 10,
+      "cue": "hit",
+      "rmsDbFS": -14.69
+    },
+    {
+      "t": 10.2,
+      "cue": "send",
+      "rmsDbFS": -27.13
+    },
+    {
+      "t": 10.75,
+      "cue": "arrive",
+      "rmsDbFS": -17.18
+    },
+    {
+      "t": 10.9,
+      "cue": "send",
+      "rmsDbFS": -28.71
+    },
+    {
+      "t": 11.45,
+      "cue": "arrive",
+      "rmsDbFS": -11.07
+    },
+    {
+      "t": 11.45,
+      "cue": "deliver",
+      "rmsDbFS": -11.07
+    },
+    {
+      "t": 13,
+      "cue": "clock",
+      "rmsDbFS": -39.37
+    },
+    {
+      "t": 13.2,
+      "cue": "clock",
+      "rmsDbFS": -38.4
+    },
+    {
+      "t": 13.4,
+      "cue": "clock",
+      "rmsDbFS": -39.05
+    },
+    {
+      "t": 13.6,
+      "cue": "clock",
+      "rmsDbFS": -38.78
+    },
+    {
+      "t": 13.8,
+      "cue": "clock",
+      "rmsDbFS": -38.68
+    },
+    {
+      "t": 14,
+      "cue": "clock",
+      "rmsDbFS": -38.66
+    },
+    {
+      "t": 14.2,
+      "cue": "clock",
+      "rmsDbFS": -39.26
+    },
+    {
+      "t": 14.5,
+      "cue": "poof",
+      "rmsDbFS": -21.53
+    },
+    {
+      "t": 16,
+      "cue": "send",
+      "rmsDbFS": -30.14
+    },
+    {
+      "t": 16.55,
+      "cue": "arrive",
+      "rmsDbFS": -17.37
+    },
+    {
+      "t": 16.75,
+      "cue": "send",
+      "rmsDbFS": -29.23
+    },
+    {
+      "t": 17.3,
+      "cue": "arrive",
+      "rmsDbFS": -17.02
+    },
+    {
+      "t": 17.4,
+      "cue": "miss",
+      "rmsDbFS": -24.2
+    },
+    {
+      "t": 17.7,
+      "cue": "send",
+      "rmsDbFS": -30.02
+    },
+    {
+      "t": 18.25,
+      "cue": "arrive",
+      "rmsDbFS": -17.0
+    },
+    {
+      "t": 18.4,
+      "cue": "send",
+      "rmsDbFS": -28.05
+    },
+    {
+      "t": 18.95,
+      "cue": "arrive",
+      "rmsDbFS": -15.9
+    },
+    {
+      "t": 18.95,
+      "cue": "work",
+      "rmsDbFS": -15.9
+    },
+    {
+      "t": 19.15,
+      "cue": "work",
+      "rmsDbFS": -23.95
+    },
+    {
+      "t": 19.35,
+      "cue": "work",
+      "rmsDbFS": -25.4
+    },
+    {
+      "t": 19.55,
+      "cue": "work",
+      "rmsDbFS": -25.47
+    },
+    {
+      "t": 19.75,
+      "cue": "work",
+      "rmsDbFS": -25.34
+    },
+    {
+      "t": 19.95,
+      "cue": "send",
+      "rmsDbFS": -30.15
+    },
+    {
+      "t": 20.5,
+      "cue": "arrive",
+      "rmsDbFS": -16.15
+    },
+    {
+      "t": 20.7,
+      "cue": "send",
+      "rmsDbFS": -26.49
+    },
+    {
+      "t": 21.25,
+      "cue": "arrive",
+      "rmsDbFS": -15.99
+    },
+    {
+      "t": 21.25,
+      "cue": "store",
+      "rmsDbFS": -15.99
+    },
+    {
+      "t": 21.45,
+      "cue": "send",
+      "rmsDbFS": -30.05
+    },
+    {
+      "t": 22,
+      "cue": "arrive",
+      "rmsDbFS": -11.1
+    },
+    {
+      "t": 22,
+      "cue": "deliver",
+      "rmsDbFS": -11.1
+    }
+  ],
+  "audioHeard": false,
+  "exactBeatFrames": [
+    0.0,
+    0.6,
+    2.0,
+    3.6,
+    5.5,
+    6.5,
+    8.5,
+    10.4,
+    11.6,
+    13.7,
+    14.5,
+    16.4,
+    17.5,
+    19.0,
+    21.3,
+    22.2,
+    23.3,
+    23.966666666666665
+  ],
+  "technicalChecksPass": true
+}

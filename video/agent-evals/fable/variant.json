@@ -1,0 +1,49 @@
+{
+  "id": "fable",
+  "concept": "agent-evals",
+  "title": "Assert what must not change",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "A grader that checks only the requested fix can miss regressions; require the existing behaviors that must be preserved as well as the new outcome.",
+  "src": "media/agent-evals/fable.mp4",
+  "poster": "media/agent-evals/fable.jpg",
+  "duration": 27.07,
+  "verified": true,
+  "transcript": [
+    "0.0–8.0s: The task 'fix login bug' goes to the agent (harness v1). Its patch turns test_login from FAIL to PASS while test_signup and test_reset stay PASS. The grader, labelled required checks, runs its single assertion, login FAIL→PASS, ticks test_login and shows PASS. This is the normal case.",
+    "8.0–10.3s: The environment resets for a fresh trial (test_login failing again) and the agent's sublabel changes to 'harness v2', marking a change under test.",
+    "10.3–19.0s: The same task runs under v2. The patch fixes test_login, but test_signup and test_reset jolt and turn FAIL. The grader still checks only test_login and shows a green PASS beneath two red rows: a false pass, because nothing asserted the unrelated tests.",
+    "19.0–22.8s: A second assertion, others PASS→PASS, is added to the grader. Regrading the same end state ticks test_login, then marks × beside test_signup and test_reset; the second grader row turns red and the verdict pops to FAIL with a distinct low-frequency failure cue.",
+    "22.8–27.1s: The failing verdict holds, then the stage fades out while the title remains visible, matching the opening frame."
+  ],
+  "limitations": [
+    "Illustrative scenario: the harness change breaking two unrelated tests is one plausible regression, not a claim about how any model, prompt or harness behaves or how often this occurs.",
+    "One trial per harness version is shown; the resolution regrades the recorded end state rather than rerunning the task from a clean environment across several trials, which is what a real suite does.",
+    "Audio was verified by analysis (final encoded peak −3.2 dBFS, spectrogram, cue timing); it was not listened to.",
+    "The three-test suite stands in for any end-state assertion set (tickets, rows, events); the video shows only the test-suite form."
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "editor": "gpt-6-astra comparative review",
+      "changes": [
+        "Widened the test and grader stores from 480 to 660px and enlarged row text/status from 26 to 36px; enlarged task and harness labels.",
+        "Labelled grader rows as required checks to distinguish predicates from observations; moved verdict below the grader with matching sound pan.",
+        "Changed task wording to fix login bug so the instruction targets behavior rather than editing the grader test.",
+        "Narrowed the lesson to required existing behaviors; unrelated state need not remain byte-for-byte unchanged.",
+        "Matched transcript to the revised wording and retained-title ending; removed the unverified perceptual loudest claim.",
+        "Rerendered MP4 and poster; verified final encoding and audio analytically with two FFmpeg threads."
+      ],
+      "originalLesson": "An agent eval that only checks the requested outcome passes an agent that also broke unrelated state, so add an assertion that the rest of the environment stayed unchanged and grade the final state against both.",
+      "originalTranscript": [
+        "0.0–8.0s: The task 'fix test_login' goes to the agent (harness v1). Its patch turns test_login from FAIL to PASS while test_signup and test_reset stay PASS. The grader runs its single assertion, login FAIL→PASS, ticks test_login and shows PASS. This is the normal case.",
+        "8.0–10.3s: The environment resets for a fresh trial (test_login failing again) and the agent's sublabel changes to 'harness v2', marking a change under test.",
+        "10.3–19.0s: The same task runs under v2. The patch fixes test_login, but test_signup and test_reset jolt and turn FAIL. The grader still checks only test_login and shows a green PASS beneath two red rows: a false pass, because nothing asserted the unrelated tests.",
+        "19.0–22.8s: A second assertion, others PASS→PASS, is added to the grader. Regrading the same end state ticks test_login, then marks × beside test_signup and test_reset; the second grader row turns red and the verdict pops to FAIL with the loudest sound in the cut.",
+        "22.8–27.1s: The failing verdict holds, then the stage fades to black so the loop restarts on an identical frame."
+      ],
+      "originalMediaSha256": "39d39b3ad9e92cab5dde698de092469bc6f1d88aa0f6a54fa22bf8d5b4edc78f"
+    }
+  ]
+}

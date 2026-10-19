@@ -1,0 +1,6 @@
+[
+  "0–9s: Thread-local notes remain separate from a durable convention stored with an approved source revision. Agent A retrieves that convention.",
+  "10–15s: Agent B starts with empty context and retrieves the durable convention rather than the other thread’s temporary notes.",
+  "16–22s: A source correction updates storage. B still has the old version until it retrieves the corrected value.",
+  "22–26s: Hold the refreshed active context at r2, then fade the complete image to black."
+]

@@ -1,0 +1,73 @@
+{
+  "id": "baseline",
+  "concept": "canary-deployments",
+  "title": "Original explanation",
+  "model": "Original prototype; model not recorded",
+  "editedBy": "gpt-6.1-sol comparative review",
+  "duration": 26,
+  "verified": true,
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5,
+      "text": "All traffic uses v1, the control. Its illustrative p95 latency is 120 ms; the unexposed candidate has no result."
+    },
+    {
+      "start": 5,
+      "end": 9.4,
+      "text": "The router allocates twenty percent to the candidate. Three stylized four-to-one traffic cycles begin; the animated packets are not a statistical sample."
+    },
+    {
+      "start": 9.4,
+      "end": 15.2,
+      "text": "The candidate’s illustrative p95 is 900 ms, compared with 120 ms for the control. Its work bar remains busy longer."
+    },
+    {
+      "start": 15.2,
+      "end": 18.5,
+      "text": "The 7.5-fold latency difference is highlighted. ROLLBACK appears at 17.4 seconds and a signal returns to the router; the share bar moves back to the control from 18 seconds."
+    },
+    {
+      "start": 18.5,
+      "end": 26,
+      "text": "New requests use the control. The candidate receives zero percent, and its failed latency result remains visible. The stage fades from 24 seconds, retaining the title for the loop."
+    }
+  ],
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "scope": "Transcript only; encoded media and original scene unchanged",
+      "changes": [
+        "Aligned allocation, latency reveal, comparison, rollback and ending timestamps with decoded frames."
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "editedBy": "gpt-6.1-sol comparative review",
+      "scope": "Verification metadata only; scene, encode, poster and transcript unchanged",
+      "changes": [
+        "Completed fresh blind comparative review and renewed hash-bound encoded verification. Earlier gpt-6-astra comparative-review corrections and original model provenance are preserved.",
+        "Clarified historical self-review limitations and exposed the earlier reviewer attribution alongside the completed comparison status."
+      ]
+    }
+  ],
+  "limitations": [
+    "Illustrative p95 values summarize an observation window; animated requests are not enough to estimate a tail percentile.",
+    "A weighted traffic router is assumed. The exposure percentage and latency ratio are examples, not universal rollout thresholds.",
+    "New traffic returns to control; in-flight work and existing side effects require separate handling.",
+    "Audio analysed, not physically heard. Original authoring model was not recorded.",
+    "Earlier transcript corrections: gpt-6-astra comparative review. Final comparative verification: gpt-6.1-sol comparative review. Original authorship is unchanged."
+  ],
+  "previousEditedBy": "gpt-6-astra comparative review",
+  "reviewers": [
+    "gpt-6-astra comparative review",
+    "gpt-6.1-sol comparative review"
+  ],
+  "comparativeVerification": {
+    "reviewerModel": "gpt-6.1-sol",
+    "date": "2026-10-19",
+    "sha256": "421cba6f41c861b2e710ac1816cd08a3bb357c6317cdb62ce4c4dfcab30d50e8",
+    "evidence": "reviews/comparisons/canary-deployments/fresh-encoded-checks.json",
+    "physicalListening": false
+  }
+}

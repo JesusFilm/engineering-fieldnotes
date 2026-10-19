@@ -1,0 +1,836 @@
+{
+  "baseline": {
+    "cuesChecked": 29,
+    "allCueWindowsHaveEnergy": true,
+    "audioHeard": false,
+    "cues": [
+      {
+        "time": 1.2,
+        "name": "send",
+        "windowPeakDbfs": -27.84414222639331
+      },
+      {
+        "time": 1.85,
+        "name": "store",
+        "windowPeakDbfs": -18.520155397285595
+      },
+      {
+        "time": 2.4,
+        "name": "send",
+        "windowPeakDbfs": -27.84015469351224
+      },
+      {
+        "time": 3.05,
+        "name": "arrive",
+        "windowPeakDbfs": -15.68420404409025
+      },
+      {
+        "time": 5,
+        "name": "send",
+        "windowPeakDbfs": -27.788995106882773
+      },
+      {
+        "time": 5.65,
+        "name": "store",
+        "windowPeakDbfs": -23.946452610490393
+      },
+      {
+        "time": 6.2,
+        "name": "send",
+        "windowPeakDbfs": -27.75855815047361
+      },
+      {
+        "time": 6.8500000000000005,
+        "name": "store",
+        "windowPeakDbfs": -23.948492586882892
+      },
+      {
+        "time": 7.4,
+        "name": "send",
+        "windowPeakDbfs": -27.945145741298894
+      },
+      {
+        "time": 8.05,
+        "name": "store",
+        "windowPeakDbfs": -18.526736639908393
+      },
+      {
+        "time": 8.7,
+        "name": "thump",
+        "windowPeakDbfs": -10.429159468830358
+      },
+      {
+        "time": 9.6,
+        "name": "miss",
+        "windowPeakDbfs": -30.70703794159519
+      },
+      {
+        "time": 10.5,
+        "name": "work",
+        "windowPeakDbfs": -23.888694527375648
+      },
+      {
+        "time": 11.5,
+        "name": "work",
+        "windowPeakDbfs": -22.853143719515007
+      },
+      {
+        "time": 12.5,
+        "name": "work",
+        "windowPeakDbfs": -23.44414729312135
+      },
+      {
+        "time": 13.5,
+        "name": "work",
+        "windowPeakDbfs": -22.723801259153763
+      },
+      {
+        "time": 14.2,
+        "name": "chime",
+        "windowPeakDbfs": -17.511164887310464
+      },
+      {
+        "time": 15,
+        "name": "send",
+        "windowPeakDbfs": -27.764821965656502
+      },
+      {
+        "time": 15.65,
+        "name": "arrive",
+        "windowPeakDbfs": -15.68075001570138
+      },
+      {
+        "time": 15.8,
+        "name": "send",
+        "windowPeakDbfs": -22.01196503663629
+      },
+      {
+        "time": 16.7,
+        "name": "recover",
+        "windowPeakDbfs": -21.823238155346495
+      },
+      {
+        "time": 18,
+        "name": "send",
+        "windowPeakDbfs": -27.919397595181678
+      },
+      {
+        "time": 18.65,
+        "name": "store",
+        "windowPeakDbfs": -18.51116189240209
+      },
+      {
+        "time": 20.5,
+        "name": "chime",
+        "windowPeakDbfs": -17.525925995297275
+      },
+      {
+        "time": 21.2,
+        "name": "send",
+        "windowPeakDbfs": -27.97517977864226
+      },
+      {
+        "time": 21.849999999999998,
+        "name": "arrive",
+        "windowPeakDbfs": -15.759640614545678
+      },
+      {
+        "time": 23.2,
+        "name": "chime",
+        "windowPeakDbfs": -17.522598276463842
+      },
+      {
+        "time": 23.8,
+        "name": "send",
+        "windowPeakDbfs": -27.70538928441041
+      },
+      {
+        "time": 24.45,
+        "name": "arrive",
+        "windowPeakDbfs": -15.723906138270124
+      }
+    ],
+    "limitations": "Nearby or simultaneous sounds can contribute to cue-window energy; this does not establish subjective audibility or timbre."
+  },
+  "astra": {
+    "cuesChecked": 65,
+    "allCueWindowsHaveEnergy": true,
+    "audioHeard": false,
+    "cues": [
+      {
+        "time": 0.4,
+        "name": "arrive",
+        "windowPeakDbfs": -20.15822028796046
+      },
+      {
+        "time": 1.2,
+        "name": "send",
+        "windowPeakDbfs": -20.80391230999652
+      },
+      {
+        "time": 1.8,
+        "name": "store",
+        "windowPeakDbfs": -15.581412622199853
+      },
+      {
+        "time": 2.4,
+        "name": "send",
+        "windowPeakDbfs": -20.848681914019917
+      },
+      {
+        "time": 3,
+        "name": "arrive",
+        "windowPeakDbfs": -13.410763039369796
+      },
+      {
+        "time": 3.5,
+        "name": "work",
+        "windowPeakDbfs": -26.52148876559326
+      },
+      {
+        "time": 4.05,
+        "name": "work",
+        "windowPeakDbfs": -27.415572040676746
+      },
+      {
+        "time": 4.6,
+        "name": "deliver",
+        "windowPeakDbfs": -14.015466583730095
+      },
+      {
+        "time": 5.6,
+        "name": "send",
+        "windowPeakDbfs": -20.824785140142268
+      },
+      {
+        "time": 6.2,
+        "name": "store",
+        "windowPeakDbfs": -15.106844570244842
+      },
+      {
+        "time": 6.7,
+        "name": "send",
+        "windowPeakDbfs": -20.95015951287698
+      },
+      {
+        "time": 7.3,
+        "name": "arrive",
+        "windowPeakDbfs": -13.364638493664797
+      },
+      {
+        "time": 7.800000000000001,
+        "name": "work",
+        "windowPeakDbfs": -19.977594072755107
+      },
+      {
+        "time": 8.350000000000001,
+        "name": "work",
+        "windowPeakDbfs": -15.047809868189034
+      },
+      {
+        "time": 8.900000000000002,
+        "name": "work",
+        "windowPeakDbfs": -20.97508983880263
+      },
+      {
+        "time": 9.450000000000003,
+        "name": "work",
+        "windowPeakDbfs": -15.019064854246855
+      },
+      {
+        "time": 10.000000000000004,
+        "name": "work",
+        "windowPeakDbfs": -18.52984773123017
+      },
+      {
+        "time": 10.550000000000004,
+        "name": "work",
+        "windowPeakDbfs": -11.17655669007
+      },
+      {
+        "time": 11.100000000000005,
+        "name": "work",
+        "windowPeakDbfs": -27.40353606329926
+      },
+      {
+        "time": 11.650000000000006,
+        "name": "work",
+        "windowPeakDbfs": -21.224909559130513
+      },
+      {
+        "time": 12.200000000000006,
+        "name": "work",
+        "windowPeakDbfs": -26.674031484407216
+      },
+      {
+        "time": 12.750000000000007,
+        "name": "work",
+        "windowPeakDbfs": -54.11514792512924
+      },
+      {
+        "time": 13.300000000000008,
+        "name": "work",
+        "windowPeakDbfs": -26.94440607628305
+      },
+      {
+        "time": 13.850000000000009,
+        "name": "work",
+        "windowPeakDbfs": -54.41412726715797
+      },
+      {
+        "time": 14.40000000000001,
+        "name": "work",
+        "windowPeakDbfs": -14.020446450248098
+      },
+      {
+        "time": 8,
+        "name": "send",
+        "windowPeakDbfs": -19.977594072755107
+      },
+      {
+        "time": 8.6,
+        "name": "store",
+        "windowPeakDbfs": -15.047809868189034
+      },
+      {
+        "time": 9,
+        "name": "send",
+        "windowPeakDbfs": -20.97508983880263
+      },
+      {
+        "time": 9.6,
+        "name": "store",
+        "windowPeakDbfs": -15.019064854246855
+      },
+      {
+        "time": 10,
+        "name": "send",
+        "windowPeakDbfs": -18.52984773123017
+      },
+      {
+        "time": 10.6,
+        "name": "store",
+        "windowPeakDbfs": -11.17655669007
+      },
+      {
+        "time": 10.8,
+        "name": "thump",
+        "windowPeakDbfs": -11.17655669007
+      },
+      {
+        "time": 11.6,
+        "name": "thump",
+        "windowPeakDbfs": -8.281284957125688
+      },
+      {
+        "time": 14.6,
+        "name": "deliver",
+        "windowPeakDbfs": -14.020446450248098
+      },
+      {
+        "time": 15,
+        "name": "send",
+        "windowPeakDbfs": -20.687434037859624
+      },
+      {
+        "time": 15.6,
+        "name": "arrive",
+        "windowPeakDbfs": -13.029833136801885
+      },
+      {
+        "time": 16.1,
+        "name": "work",
+        "windowPeakDbfs": -25.872436169183363
+      },
+      {
+        "time": 16.650000000000002,
+        "name": "work",
+        "windowPeakDbfs": -20.732814653181496
+      },
+      {
+        "time": 17.200000000000003,
+        "name": "work",
+        "windowPeakDbfs": -14.986321687109292
+      },
+      {
+        "time": 17.750000000000004,
+        "name": "work",
+        "windowPeakDbfs": -54.478346392578096
+      },
+      {
+        "time": 18.300000000000004,
+        "name": "work",
+        "windowPeakDbfs": -26.630521105514312
+      },
+      {
+        "time": 18.850000000000005,
+        "name": "work",
+        "windowPeakDbfs": -54.42361607270951
+      },
+      {
+        "time": 19.400000000000006,
+        "name": "work",
+        "windowPeakDbfs": -26.69483423014156
+      },
+      {
+        "time": 15,
+        "name": "recover",
+        "windowPeakDbfs": -20.687434037859624
+      },
+      {
+        "time": 15.8,
+        "name": "chime",
+        "windowPeakDbfs": -13.029833136801885
+      },
+      {
+        "time": 16.6,
+        "name": "send",
+        "windowPeakDbfs": -20.732814653181496
+      },
+      {
+        "time": 17.2,
+        "name": "store",
+        "windowPeakDbfs": -14.986321687109292
+      },
+      {
+        "time": 19.8,
+        "name": "deliver",
+        "windowPeakDbfs": -14.039326430079093
+      },
+      {
+        "time": 20.2,
+        "name": "send",
+        "windowPeakDbfs": -20.89786837071488
+      },
+      {
+        "time": 20.8,
+        "name": "arrive",
+        "windowPeakDbfs": -13.32196985946082
+      },
+      {
+        "time": 21.3,
+        "name": "work",
+        "windowPeakDbfs": -26.627895941892376
+      },
+      {
+        "time": 21.85,
+        "name": "work",
+        "windowPeakDbfs": -27.10773534157489
+      },
+      {
+        "time": 22.2,
+        "name": "deliver",
+        "windowPeakDbfs": -14.035564735987156
+      },
+      {
+        "time": 22.6,
+        "name": "send",
+        "windowPeakDbfs": -20.629317274157586
+      },
+      {
+        "time": 23.200000000000003,
+        "name": "arrive",
+        "windowPeakDbfs": -13.274576598724426
+      },
+      {
+        "time": 23.700000000000003,
+        "name": "work",
+        "windowPeakDbfs": -26.740095135109115
+      },
+      {
+        "time": 24.250000000000004,
+        "name": "work",
+        "windowPeakDbfs": -53.95585011799802
+      },
+      {
+        "time": 24.6,
+        "name": "deliver",
+        "windowPeakDbfs": -14.027814555691648
+      },
+      {
+        "time": 25,
+        "name": "send",
+        "windowPeakDbfs": -20.95037321530342
+      },
+      {
+        "time": 25.6,
+        "name": "arrive",
+        "windowPeakDbfs": -13.279245915169373
+      },
+      {
+        "time": 26.1,
+        "name": "work",
+        "windowPeakDbfs": -27.251985096112822
+      },
+      {
+        "time": 26.650000000000002,
+        "name": "work",
+        "windowPeakDbfs": -27.469445800418878
+      },
+      {
+        "time": 27,
+        "name": "deliver",
+        "windowPeakDbfs": -9.725712861172921
+      },
+      {
+        "time": 27,
+        "name": "chime",
+        "windowPeakDbfs": -9.725712861172921
+      },
+      {
+        "time": 28.7,
+        "name": "poof",
+        "windowPeakDbfs": -28.30787438894841
+      }
+    ],
+    "limitations": "Nearby or simultaneous sounds can contribute to cue-window energy; this does not establish subjective audibility or timbre."
+  },
+  "sol": {
+    "cuesChecked": 68,
+    "allCueWindowsHaveEnergy": true,
+    "audioHeard": false,
+    "cues": [
+      {
+        "time": 0.6,
+        "name": "recover",
+        "windowPeakDbfs": -27.787588742821544
+      },
+      {
+        "time": 1.5,
+        "name": "send",
+        "windowPeakDbfs": -22.77474510714699
+      },
+      {
+        "time": 2.15,
+        "name": "ack",
+        "windowPeakDbfs": -15.94654230002323
+      },
+      {
+        "time": 2.15,
+        "name": "send",
+        "windowPeakDbfs": -15.94654230002323
+      },
+      {
+        "time": 2.8,
+        "name": "store",
+        "windowPeakDbfs": -17.987667909450536
+      },
+      {
+        "time": 3.1,
+        "name": "store",
+        "windowPeakDbfs": -15.736015986613722
+      },
+      {
+        "time": 3.1,
+        "name": "send",
+        "windowPeakDbfs": -15.736015986613722
+      },
+      {
+        "time": 3.85,
+        "name": "arrive",
+        "windowPeakDbfs": -18.156813733590198
+      },
+      {
+        "time": 4.55,
+        "name": "work",
+        "windowPeakDbfs": -21.968765637875705
+      },
+      {
+        "time": 5.5,
+        "name": "chime",
+        "windowPeakDbfs": -15.176214885453245
+      },
+      {
+        "time": 5.85,
+        "name": "ack",
+        "windowPeakDbfs": -19.292838320613743
+      },
+      {
+        "time": 6.65,
+        "name": "arrive",
+        "windowPeakDbfs": -16.590088126011114
+      },
+      {
+        "time": 7.4,
+        "name": "clock",
+        "windowPeakDbfs": -23.000896318472893
+      },
+      {
+        "time": 7.6,
+        "name": "send",
+        "windowPeakDbfs": -23.000896318472893
+      },
+      {
+        "time": 8.25,
+        "name": "ack",
+        "windowPeakDbfs": -15.941035469564609
+      },
+      {
+        "time": 8.25,
+        "name": "send",
+        "windowPeakDbfs": -15.941035469564609
+      },
+      {
+        "time": 8.9,
+        "name": "store",
+        "windowPeakDbfs": -15.596153806095877
+      },
+      {
+        "time": 9.05,
+        "name": "store",
+        "windowPeakDbfs": -15.596153806095877
+      },
+      {
+        "time": 9.05,
+        "name": "send",
+        "windowPeakDbfs": -15.596153806095877
+      },
+      {
+        "time": 9.8,
+        "name": "arrive",
+        "windowPeakDbfs": -12.524947547903624
+      },
+      {
+        "time": 10.5,
+        "name": "work",
+        "windowPeakDbfs": -16.024619341146764
+      },
+      {
+        "time": 11.4,
+        "name": "work",
+        "windowPeakDbfs": -16.848287012277744
+      },
+      {
+        "time": 12.3,
+        "name": "work",
+        "windowPeakDbfs": -15.946953809443691
+      },
+      {
+        "time": 13.200000000000001,
+        "name": "work",
+        "windowPeakDbfs": -16.9025602105637
+      },
+      {
+        "time": 14.100000000000001,
+        "name": "work",
+        "windowPeakDbfs": -15.992470651006478
+      },
+      {
+        "time": 15.000000000000002,
+        "name": "work",
+        "windowPeakDbfs": -9.45348507488784
+      },
+      {
+        "time": 15.900000000000002,
+        "name": "work",
+        "windowPeakDbfs": -22.026670678254764
+      },
+      {
+        "time": 16.8,
+        "name": "work",
+        "windowPeakDbfs": -20.742682830996063
+      },
+      {
+        "time": 17.7,
+        "name": "work",
+        "windowPeakDbfs": -20.70143677496806
+      },
+      {
+        "time": 18.599999999999998,
+        "name": "work",
+        "windowPeakDbfs": -20.763325485899372
+      },
+      {
+        "time": 19.499999999999996,
+        "name": "work",
+        "windowPeakDbfs": -21.607215748014706
+      },
+      {
+        "time": 20.399999999999995,
+        "name": "work",
+        "windowPeakDbfs": -21.702215865895646
+      },
+      {
+        "time": 10.1,
+        "name": "send",
+        "windowPeakDbfs": -23.15637915628316
+      },
+      {
+        "time": 10.75,
+        "name": "ack",
+        "windowPeakDbfs": -16.024619341146764
+      },
+      {
+        "time": 10.75,
+        "name": "send",
+        "windowPeakDbfs": -16.024619341146764
+      },
+      {
+        "time": 11.4,
+        "name": "store",
+        "windowPeakDbfs": -16.848287012277744
+      },
+      {
+        "time": 11.9,
+        "name": "send",
+        "windowPeakDbfs": -22.960612574671803
+      },
+      {
+        "time": 12.55,
+        "name": "ack",
+        "windowPeakDbfs": -15.946953809443691
+      },
+      {
+        "time": 12.55,
+        "name": "send",
+        "windowPeakDbfs": -15.946953809443691
+      },
+      {
+        "time": 13.200000000000001,
+        "name": "store",
+        "windowPeakDbfs": -16.9025602105637
+      },
+      {
+        "time": 13.7,
+        "name": "send",
+        "windowPeakDbfs": -22.951624737684114
+      },
+      {
+        "time": 14.35,
+        "name": "ack",
+        "windowPeakDbfs": -15.992470651006478
+      },
+      {
+        "time": 14.35,
+        "name": "send",
+        "windowPeakDbfs": -15.992470651006478
+      },
+      {
+        "time": 15,
+        "name": "store",
+        "windowPeakDbfs": -9.45348507488784
+      },
+      {
+        "time": 15,
+        "name": "thump",
+        "windowPeakDbfs": -9.45348507488784
+      },
+      {
+        "time": 16.6,
+        "name": "send",
+        "windowPeakDbfs": -20.742682830996063
+      },
+      {
+        "time": 17.25,
+        "name": "thump",
+        "windowPeakDbfs": -8.253118278799258
+      },
+      {
+        "time": 17.55,
+        "name": "thump",
+        "windowPeakDbfs": -10.89676089168686
+      },
+      {
+        "time": 18.45,
+        "name": "miss",
+        "windowPeakDbfs": -20.763325485899372
+      },
+      {
+        "time": 21,
+        "name": "chime",
+        "windowPeakDbfs": -15.179812046443338
+      },
+      {
+        "time": 21.35,
+        "name": "ack",
+        "windowPeakDbfs": -19.28194738874361
+      },
+      {
+        "time": 22.15,
+        "name": "arrive",
+        "windowPeakDbfs": -13.11598962588712
+      },
+      {
+        "time": 22.2,
+        "name": "store",
+        "windowPeakDbfs": -13.11598962588712
+      },
+      {
+        "time": 22.2,
+        "name": "send",
+        "windowPeakDbfs": -13.11598962588712
+      },
+      {
+        "time": 22.95,
+        "name": "arrive",
+        "windowPeakDbfs": -12.325493165487098
+      },
+      {
+        "time": 23.65,
+        "name": "work",
+        "windowPeakDbfs": -20.93100182075315
+      },
+      {
+        "time": 24.549999999999997,
+        "name": "work",
+        "windowPeakDbfs": -15.633880707748244
+      },
+      {
+        "time": 25.449999999999996,
+        "name": "work",
+        "windowPeakDbfs": -22.533789198758704
+      },
+      {
+        "time": 26.349999999999994,
+        "name": "work",
+        "windowPeakDbfs": -21.669664128701616
+      },
+      {
+        "time": 27.249999999999993,
+        "name": "work",
+        "windowPeakDbfs": -21.698071958982403
+      },
+      {
+        "time": 22.2,
+        "name": "recover",
+        "windowPeakDbfs": -13.11598962588712
+      },
+      {
+        "time": 23.6,
+        "name": "ack",
+        "windowPeakDbfs": -20.93100182075315
+      },
+      {
+        "time": 24,
+        "name": "send",
+        "windowPeakDbfs": -23.04961509380576
+      },
+      {
+        "time": 24.65,
+        "name": "ack",
+        "windowPeakDbfs": -15.633880707748244
+      },
+      {
+        "time": 24.65,
+        "name": "send",
+        "windowPeakDbfs": -15.633880707748244
+      },
+      {
+        "time": 25.3,
+        "name": "store",
+        "windowPeakDbfs": -10.465247961038791
+      },
+      {
+        "time": 25.3,
+        "name": "thump",
+        "windowPeakDbfs": -10.465247961038791
+      },
+      {
+        "time": 28,
+        "name": "poof",
+        "windowPeakDbfs": -23.29439410966359
+      }
+    ],
+    "limitations": "Nearby or simultaneous sounds can contribute to cue-window energy; this does not establish subjective audibility or timbre."
+  }
+}

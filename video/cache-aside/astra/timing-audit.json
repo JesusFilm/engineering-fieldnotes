@@ -1,0 +1,919 @@
+{
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "duration": 31,
+  "fps": 30,
+  "cues": [
+    {
+      "t": 0.25,
+      "name": "recover",
+      "gain": 0.25,
+      "note": "C4"
+    },
+    {
+      "t": 0.9,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 1.65,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 1.8,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 2.55,
+      "name": "hit",
+      "note": "E5",
+      "pan": -0.3055555555555556,
+      "gain": 0.8
+    },
+    {
+      "t": 2.8,
+      "name": "send",
+      "note": "C6",
+      "pan": -0.3055555555555556,
+      "gain": 0.55
+    },
+    {
+      "t": 3.55,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 3.7,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 4.45,
+      "name": "deliver",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 6.4,
+      "name": "store",
+      "note": "G5",
+      "pan": 0.3055555555555556,
+      "gain": 0.8
+    },
+    {
+      "t": 8.3,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 9.05,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 9.2,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 9.95,
+      "name": "hit",
+      "note": "E5",
+      "pan": -0.3055555555555556,
+      "gain": 0.8
+    },
+    {
+      "t": 10.15,
+      "name": "send",
+      "note": "C6",
+      "pan": -0.3055555555555556,
+      "gain": 0.55
+    },
+    {
+      "t": 10.9,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 11.05,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 11.8,
+      "name": "thump",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 14.1,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 14.85,
+      "name": "poof",
+      "note": "E5",
+      "pan": -0.3055555555555556,
+      "gain": 0.8
+    },
+    {
+      "t": 17,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 17.75,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 17.9,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 18.65,
+      "name": "miss",
+      "note": "E5",
+      "pan": -0.3055555555555556,
+      "gain": 0.8
+    },
+    {
+      "t": 18.85,
+      "name": "send",
+      "note": "C6",
+      "pan": -0.3055555555555556,
+      "gain": 0.55
+    },
+    {
+      "t": 19.6,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 19.75,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 20.5,
+      "name": "work",
+      "note": "G5",
+      "pan": 0.3055555555555556,
+      "gain": 0.8
+    },
+    {
+      "t": 20.7,
+      "name": "send",
+      "note": "C6",
+      "pan": 0.3055555555555556,
+      "gain": 0.55
+    },
+    {
+      "t": 21.45,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 21.6,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 22.35,
+      "name": "store",
+      "note": "E5",
+      "pan": -0.3055555555555556,
+      "gain": 0.8
+    },
+    {
+      "t": 22.6,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 23.35,
+      "name": "deliver",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 25,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 25.75,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 25.85,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 26.6,
+      "name": "hit",
+      "note": "E5",
+      "pan": -0.3055555555555556,
+      "gain": 0.8
+    },
+    {
+      "t": 26.7,
+      "name": "send",
+      "note": "C6",
+      "pan": -0.3055555555555556,
+      "gain": 0.55
+    },
+    {
+      "t": 27.45,
+      "name": "arrive",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 27.5,
+      "name": "send",
+      "note": "C6",
+      "pan": 0,
+      "gain": 0.55
+    },
+    {
+      "t": 28.25,
+      "name": "deliver",
+      "note": "C5",
+      "pan": 0,
+      "gain": 0.8
+    },
+    {
+      "t": 30.1,
+      "name": "poof",
+      "gain": 0.25,
+      "note": "C5"
+    }
+  ],
+  "packets": [
+    {
+      "t": 0.9,
+      "route": [
+        "agent.bottom",
+        "tool.top"
+      ],
+      "label": "GET",
+      "color": "#E6E8EC",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 1.8,
+      "route": [
+        "tool.bottom",
+        [
+          540,
+          1090
+        ],
+        [
+          265,
+          1090
+        ],
+        "cache.top"
+      ],
+      "label": "GET",
+      "color": "#E6E8EC",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 2.8,
+      "route": [
+        "cache.top",
+        [
+          265,
+          1090
+        ],
+        [
+          540,
+          1090
+        ],
+        "tool.bottom"
+      ],
+      "label": "v1",
+      "color": "#3FB68B",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 3.7,
+      "route": [
+        "tool.top",
+        "agent.bottom"
+      ],
+      "label": "v1",
+      "color": "#3FB68B",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 8.3,
+      "route": [
+        "agent.bottom",
+        "tool.top"
+      ],
+      "label": "GET",
+      "color": "#E6E8EC",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 9.2,
+      "route": [
+        "tool.bottom",
+        [
+          540,
+          1090
+        ],
+        [
+          265,
+          1090
+        ],
+        "cache.top"
+      ],
+      "label": "GET",
+      "color": "#E6E8EC",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 10.15,
+      "route": [
+        "cache.top",
+        [
+          265,
+          1090
+        ],
+        [
+          540,
+          1090
+        ],
+        "tool.bottom"
+      ],
+      "label": "v1",
+      "color": "#F5A524",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 11.05,
+      "route": [
+        "tool.top",
+        "agent.bottom"
+      ],
+      "label": "v1",
+      "color": "#F5A524",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 14.1,
+      "route": [
+        "tool.bottom",
+        [
+          540,
+          1090
+        ],
+        [
+          265,
+          1090
+        ],
+        "cache.top"
+      ],
+      "label": "DEL",
+      "color": "#E5484D",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 17,
+      "route": [
+        "agent.bottom",
+        "tool.top"
+      ],
+      "label": "GET",
+      "color": "#E6E8EC",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 17.9,
+      "route": [
+        "tool.bottom",
+        [
+          540,
+          1090
+        ],
+        [
+          265,
+          1090
+        ],
+        "cache.top"
+      ],
+      "label": "GET",
+      "color": "#E6E8EC",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 18.85,
+      "route": [
+        "cache.top",
+        [
+          265,
+          1090
+        ],
+        [
+          540,
+          1090
+        ],
+        "tool.bottom"
+      ],
+      "label": "MISS",
+      "color": "#F5A524",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 19.75,
+      "route": [
+        "tool.bottom",
+        [
+          540,
+          1090
+        ],
+        [
+          815,
+          1090
+        ],
+        "source.top"
+      ],
+      "label": "GET",
+      "color": "#F5A524",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 20.7,
+      "route": [
+        "source.top",
+        [
+          815,
+          1090
+        ],
+        [
+          540,
+          1090
+        ],
+        "tool.bottom"
+      ],
+      "label": "v2",
+      "color": "#3FB68B",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 21.6,
+      "route": [
+        "tool.bottom",
+        [
+          540,
+          1090
+        ],
+        [
+          265,
+          1090
+        ],
+        "cache.top"
+      ],
+      "label": "SET v2",
+      "color": "#3FB68B",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 22.6,
+      "route": [
+        "tool.top",
+        "agent.bottom"
+      ],
+      "label": "v2",
+      "color": "#3FB68B",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 25,
+      "route": [
+        "agent.bottom",
+        "tool.top"
+      ],
+      "label": "GET",
+      "color": "#E6E8EC",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 25.85,
+      "route": [
+        "tool.bottom",
+        [
+          540,
+          1090
+        ],
+        [
+          265,
+          1090
+        ],
+        "cache.top"
+      ],
+      "label": "GET",
+      "color": "#E6E8EC",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 26.7,
+      "route": [
+        "cache.top",
+        [
+          265,
+          1090
+        ],
+        [
+          540,
+          1090
+        ],
+        "tool.bottom"
+      ],
+      "label": "v2",
+      "color": "#3FB68B",
+      "kind": "chip",
+      "dur": 0.75
+    },
+    {
+      "t": 27.5,
+      "route": [
+        "tool.top",
+        "agent.bottom"
+      ],
+      "label": "v2",
+      "color": "#3FB68B",
+      "kind": "chip",
+      "dur": 0.75
+    }
+  ],
+  "semanticStates": [
+    {
+      "kind": "set",
+      "args": [
+        2.55,
+        "status",
+        "text",
+        "HIT",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        2.55,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        4.45,
+        "agent",
+        "value",
+        "v1",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        4.45,
+        "status",
+        "text",
+        "HIT v1",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        4.45,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        6.4,
+        "source",
+        "value",
+        "v2",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        6.4,
+        "status",
+        "text",
+        "EDIT v2",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        6.4,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        9.95,
+        "status",
+        "text",
+        "HIT",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        9.95,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        11.8,
+        "agent",
+        "value",
+        "v1",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        11.8,
+        "status",
+        "text",
+        "HIT ≠ FRESH",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        11.8,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        14.85,
+        "cache",
+        "value",
+        "∅",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        14.85,
+        "status",
+        "text",
+        "INVALIDATE",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        14.85,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        14.85,
+        "note",
+        "text",
+        "key: guide",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        18.65,
+        "status",
+        "text",
+        "MISS",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        18.65,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        20.5,
+        "status",
+        "text",
+        "READ SOURCE",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        20.5,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        22.35,
+        "cache",
+        "value",
+        "v2",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        22.35,
+        "status",
+        "text",
+        "REFILL v2",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        22.35,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        23.35,
+        "agent",
+        "value",
+        "v2",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        23.35,
+        "status",
+        "text",
+        "REFILL v2",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        23.35,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        26.6,
+        "status",
+        "text",
+        "HIT v2",
+        0
+      ]
+    },
+    {
+      "kind": "set",
+      "args": [
+        26.6,
+        "note",
+        "text",
+        "",
+        0
+      ]
+    }
+  ],
+  "allPacketDeparturesAndArrivalsCued": true,
+  "allSemanticStatesCued": true
+}

@@ -1,0 +1,27 @@
+{
+  "id": "harness-engineering",
+  "title": "Harness engineering",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform",
+    "Tech lead"
+  ],
+  "summary": "The harness supplies the runtime, tools, state, and checks that let a model do useful work.",
+  "overview": "A model needs an execution environment around it to act over multiple steps and sessions. Harness engineering shapes that environment, including startup, progress records, recovery, and evidence of completion.",
+  "why": "A stronger model can still fail when it cannot reconstruct prior work or verify an outcome.",
+  "example": "A coding harness restores a workspace, reads a feature checklist, runs a smoke test, and records the completed change for the next session.",
+  "judgment": "Decide which invariants the runtime enforces and what evidence is sufficient to mark work complete.",
+  "next": "Can a fresh session resume a half-finished task without repeating or losing completed work?",
+  "sources": [
+    {
+      "title": "Effective harnesses for long-running agents",
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"
+    }
+  ],
+  "related": [
+    "loop-engineering",
+    "context-engineering",
+    "agent-evals"
+  ]
+}

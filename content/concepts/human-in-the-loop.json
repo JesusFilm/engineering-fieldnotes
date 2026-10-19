@@ -1,0 +1,85 @@
+{
+  "id": "human-in-the-loop",
+  "title": "Human-in-the-loop",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Tech lead"
+  ],
+  "summary": "Human-in-the-loop means reserving a consequential decision for a person, then enforcing that decision at the point where an agent can change the world.",
+  "overview": "Separate proposing, reviewing and executing. A model can prepare a useful change without holding production credentials. A reviewer needs a concrete action and supporting evidence; the executor needs a trustworthy decision about that same action. A stored instruction to ask first expresses intent, but does not enforce permissions.",
+  "why": "Delegation removes moments when an engineer might notice a surprising command. Put review where mistakes become costly, such as deployment. Our recommendation is to automate bounded preparation and reserve attention for decisions requiring context.",
+  "example": "An agent prepares release A of a checkout service, attaches its test results and requests deployment to production. While approval waits, another edit creates release B. The deployment executor must not treat approval of A as approval of B. In our illustrative design, B requires new evidence and a new decision; no deployment occurs while the mismatch remains.",
+  "judgment": "Choose the approval boundary by impact and reversibility. Make rejection and cancellation real outcomes, and assign someone to handle abandoned requests. OWASP recommends server-side authorization, reviewable transaction details and a final execution gate. Applying those principles to agent releases is a design recommendation, not a feature guaranteed by an agent framework.",
+  "next": "Take one delegated task your team runs today. Which exact artifact and target would a reviewer authorize, and what executable check prevents a later revision from inheriting that authorization?",
+  "sources": [
+    {
+      "title": "LangGraph — Interrupts: pause, resume and replay behavior",
+      "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "LangGraph — Persistence: checkpointers and restart limitations",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OWASP — Transaction Authorization: review and execution boundaries",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "GitHub — Deployments and environments: approval gates and limitations",
+      "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "guardrails-and-permissions",
+    "idempotency",
+    "loop-engineering"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Teams adopting agents need to decide where delegation stops before expanding tool access. This chapter turns familiar release review into an explicit contract between the agent, reviewer and executor.",
+    "prerequisites": [
+      "guardrails-and-permissions"
+    ],
+    "outcomes": [
+      "Specify a review request containing an immutable artifact identity, target, evidence and expected impact.",
+      "Demonstrate that a changed proposal cannot reuse an earlier approval.",
+      "Explain what survives a restart and which operations can repeat during resumption."
+    ],
+    "workflow": {
+      "before": "An engineer builds a release, inspects its diff and tests, asks a teammate for review, then starts deployment.",
+      "after": "An agent prepares the release packet; a workflow pauses for review and a restricted executor checks the approved packet before deployment.",
+      "human": "The reviewer evaluates intent, impact and acceptable risk, and remains responsible for approving, rejecting or requesting changes."
+    },
+    "walkthrough": [
+      "1. Prepare a release packet. Include the checkout service’s artifact digest, production target, change summary, test evidence, rollout steps and recovery plan. Use trusted build outputs to identify the artifact. Give the reviewer something inspectable beyond the agent’s confidence.",
+      "2. Pause and retain the packet. LangGraph interrupts require a checkpointer and thread ID; resumption uses that same thread. Its persistence documentation warns that in-memory checkpoints disappear on process restart. Choose durable storage when approvals must survive deployment or worker failure; a chat message alone is not a durable workflow.",
+      "3. Review the specific release. Let the engineer inspect A and approve, reject or request edits. Record the authenticated reviewer, decision and packet identity in protected application state. If the agent produces B, return it for review. The artifact-approval cut isolates this substitution problem. The other cuts show changed production prerequisites and LangGraph node replay; none depicts every release check.",
+      "4. Revalidate and execute. Check the target’s current prerequisites and release identity at the executor, protecting the check-to-action boundary against concurrent changes. GitHub environment approvals illustrate a real gate: protected jobs cannot access environment secrets before approval. Availability depends on plan and repository visibility; administrator bypass settings also matter. This does not supply our artifact-binding contract automatically.",
+      "5. Resume without duplicating work. LangGraph restarts the interrupted node, so earlier code can run again. Keep the deployment outside that preparation node and make repeated execution harmless, for example by reconciling a unique release request with the deployment system. Moving code after an interrupt alone is not a general exactly-once guarantee."
+    ],
+    "pitfalls": [
+      "Approving a broad task such as “ship the fix” while the executable artifact keeps changing.",
+      "Giving the agent a second credential or tool path that bypasses the review gate.",
+      "Treating approval as proof that a release is correct, or repeatedly presenting evidence too weak for a meaningful decision."
+    ],
+    "exercise": {
+      "title": "Break a stale approval in a sandbox",
+      "steps": [
+        "Create a fake deployment tool that records its input instead of changing a real service.",
+        "Prepare packet A and have a teammate record approval for its artifact identity and target.",
+        "Replace A with B before resuming; attempt execution with A’s approval.",
+        "Review B, approve it, then resume twice and inspect the tool’s recorded effects."
+      ],
+      "success": [
+        "The stale approval produces no deployment record and a visible request for fresh review.",
+        "A newly approved B produces one intended deployment effect across duplicate resumption; the log identifies reviewer, artifact and target."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

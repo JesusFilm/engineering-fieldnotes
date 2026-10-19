@@ -1,0 +1,327 @@
+{
+  "id": "fable",
+  "concept": "observability-and-tracing",
+  "title": "Carry the trace into the tool call",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "A tool that calls another service must propagate the trace context (the traceparent header) or the service's spans land in a separate trace and a failed agent task cannot be followed into the dependency that failed.",
+  "src": "media/observability-and-tracing/fable.mp4",
+  "poster": "media/observability-and-tracing/fable.jpg",
+  "duration": 29.566667,
+  "verified": true,
+  "transcript": [
+    "0\u20138.35s: Task 7 calls charge() and receives 200 from the Billing API. The agent records invoke_agent and execute_tool under trace 4bf9; the service records POST /charge 200 under trace 91c0. Another caller adds trace a7e3. The task succeeds despite the missing trace connection.",
+    "8.35\u201317.56s: Task 8 receives a downstream 500. Its agent trace is c3a1, while the service failure is recorded under 0d12. A red dashed join appears at 13.85s, the service rows are scanned, and a question mark appears at 15.26s: none matches c3a1.",
+    "17.56\u201319.96s: The old agent trace clears. At 18.26s charge() gains + traceparent with a blue pulse, representing propagation configured for subsequent requests.",
+    "19.96\u201325.36s: New task 9 starts under trace 7e2d. A blue traceparent 7e2d chip crosses to the service around 22.01\u201322.56s. The API still returns 500; its new recorded span has trace 7e2d, matching the agent trace.",
+    "25.36\u201329.57s: A blue flowing dotted join routes to the matching 7e2d API row. Unrelated rows dim, the matching error row gains a blue selection outline while retaining its red failure status, and the question mark becomes a check. The linked failure holds until 28.56s, then the stage fades to the opening title card. Correlation is repaired; the API failure remains."
+  ],
+  "limitations": [
+    "Illustrative scenario: three tasks, one tool and one service, with trace ids shortened to four hex characters; a real traceparent carries a 32-hex trace id and a 16-hex parent id, and a real backend holds many more spans.",
+    "Propagation also requires receiver extraction, instrumentation and recording/export to queryable telemetry storage; sampling or export failures can omit evidence. A common backend is convenient, not a requirement of the trace-context protocol. The header does not prevent the failure, change retries, or authorize the request.",
+    "Agent span names (invoke_agent, execute_tool) follow the OpenTelemetry GenAI semantic conventions, which are marked Development and may change.",
+    "Audio was verified by analysis only (encoded peak -1.6 dBFS, spectrogram, cue timing against the scene); it was not listened to.",
+    "Originally self-reviewed by the author; subsequently compared and corrected in reviews/comparisons/observability-and-tracing/ with original provenance preserved.",
+    "Span operation labels are illustrative, not exact exported GenAI span names; matching shortened trace IDs show membership, while concrete parent/span IDs are omitted."
+  ],
+  "sources": [
+    {
+      "title": "Context propagation \u2014 OpenTelemetry",
+      "url": "https://opentelemetry.io/docs/concepts/context-propagation/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Propagators API \u2014 OpenTelemetry specification",
+      "url": "https://opentelemetry.io/docs/specs/otel/context/api-propagators/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Trace Context \u2014 W3C",
+      "url": "https://www.w3.org/TR/trace-context/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Semantic conventions for GenAI agent and framework spans \u2014 OpenTelemetry",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "checks": {
+    "sha256": "fe9cf7f4cd2375a8d7cd949705ba8dc0d45aa302b98e44fcb11dbfc68b9d8f80",
+    "duration": 29.566667,
+    "frames": 887,
+    "bytes": 1629984,
+    "video": "H.264 1080x1920 30fps yuv420p",
+    "audio": "AAC stereo",
+    "fullDecode": true,
+    "matchingBoundaryFrames": true,
+    "boundaryFrameMd5": "132200d2658ed4ba129d7dedc209dc2c",
+    "faststart": true,
+    "atomOffsets": {
+      "ftyp": 0,
+      "moov": 32,
+      "free": 32736,
+      "mdat": 32744
+    },
+    "audioPeakDbfs": -1.64,
+    "audioHeard": false,
+    "cueWindows": [
+      {
+        "time": 0.8,
+        "cue": "send",
+        "windowRmsDbfs": -34.25
+      },
+      {
+        "time": 1.3,
+        "cue": "arrive",
+        "windowRmsDbfs": -22.01
+      },
+      {
+        "time": 1.3800000000000001,
+        "cue": "store",
+        "windowRmsDbfs": -31.57
+      },
+      {
+        "time": 2.35,
+        "cue": "arrive",
+        "windowRmsDbfs": -19.95
+      },
+      {
+        "time": 2.43,
+        "cue": "store",
+        "windowRmsDbfs": -23.38
+      },
+      {
+        "time": 3.4000000000000004,
+        "cue": "arrive",
+        "windowRmsDbfs": -21.86
+      },
+      {
+        "time": 3.5000000000000004,
+        "cue": "work",
+        "windowRmsDbfs": -32.36
+      },
+      {
+        "time": 3.7000000000000006,
+        "cue": "work",
+        "windowRmsDbfs": -42.79
+      },
+      {
+        "time": 3.900000000000001,
+        "cue": "work",
+        "windowRmsDbfs": -35.45
+      },
+      {
+        "time": 4.1000000000000005,
+        "cue": "store",
+        "windowRmsDbfs": -34.52
+      },
+      {
+        "time": 5.550000000000001,
+        "cue": "chime",
+        "windowRmsDbfs": -20.69
+      },
+      {
+        "time": 6.850000000000001,
+        "cue": "arrive",
+        "windowRmsDbfs": -30.64
+      },
+      {
+        "time": 7.000000000000001,
+        "cue": "store",
+        "windowRmsDbfs": -35.59
+      },
+      {
+        "time": 7.65,
+        "cue": "poof",
+        "windowRmsDbfs": -42.35
+      },
+      {
+        "time": 8.350000000000001,
+        "cue": "send",
+        "windowRmsDbfs": -34.22
+      },
+      {
+        "time": 8.850000000000001,
+        "cue": "arrive",
+        "windowRmsDbfs": -22.02
+      },
+      {
+        "time": 8.930000000000001,
+        "cue": "store",
+        "windowRmsDbfs": -31.58
+      },
+      {
+        "time": 9.900000000000002,
+        "cue": "arrive",
+        "windowRmsDbfs": -19.96
+      },
+      {
+        "time": 9.980000000000002,
+        "cue": "store",
+        "windowRmsDbfs": -23.37
+      },
+      {
+        "time": 10.950000000000003,
+        "cue": "arrive",
+        "windowRmsDbfs": -21.87
+      },
+      {
+        "time": 11.050000000000002,
+        "cue": "work",
+        "windowRmsDbfs": -32.36
+      },
+      {
+        "time": 11.250000000000002,
+        "cue": "work",
+        "windowRmsDbfs": -42.66
+      },
+      {
+        "time": 11.450000000000001,
+        "cue": "work",
+        "windowRmsDbfs": -19.43
+      },
+      {
+        "time": 11.650000000000002,
+        "cue": "crash",
+        "windowRmsDbfs": -16.73
+      },
+      {
+        "time": 11.770000000000001,
+        "cue": "store",
+        "windowRmsDbfs": -24.07
+      },
+      {
+        "time": 12.3,
+        "cue": "thump",
+        "windowRmsDbfs": -20.62
+      },
+      {
+        "time": 13.150000000000002,
+        "cue": "deliver",
+        "windowRmsDbfs": -21.97
+      },
+      {
+        "time": 14.200000000000001,
+        "cue": "clock",
+        "windowRmsDbfs": -57.19
+      },
+      {
+        "time": 14.520000000000001,
+        "cue": "clock",
+        "windowRmsDbfs": -57.46
+      },
+      {
+        "time": 14.840000000000002,
+        "cue": "clock",
+        "windowRmsDbfs": -57.11
+      },
+      {
+        "time": 15.26,
+        "cue": "miss",
+        "windowRmsDbfs": -33.59
+      },
+      {
+        "time": 17.56,
+        "cue": "poof",
+        "windowRmsDbfs": -42.14
+      },
+      {
+        "time": 18.259999999999998,
+        "cue": "tag",
+        "windowRmsDbfs": -22.24
+      },
+      {
+        "time": 19.959999999999997,
+        "cue": "send",
+        "windowRmsDbfs": -34.22
+      },
+      {
+        "time": 20.459999999999997,
+        "cue": "arrive",
+        "windowRmsDbfs": -22.01
+      },
+      {
+        "time": 20.539999999999996,
+        "cue": "store",
+        "windowRmsDbfs": -31.57
+      },
+      {
+        "time": 21.509999999999998,
+        "cue": "arrive",
+        "windowRmsDbfs": -19.96
+      },
+      {
+        "time": 21.589999999999996,
+        "cue": "store",
+        "windowRmsDbfs": -23.38
+      },
+      {
+        "time": 22.56,
+        "cue": "arrive",
+        "windowRmsDbfs": -21.87
+      },
+      {
+        "time": 22.66,
+        "cue": "work",
+        "windowRmsDbfs": -32.35
+      },
+      {
+        "time": 22.86,
+        "cue": "work",
+        "windowRmsDbfs": -42.73
+      },
+      {
+        "time": 23.06,
+        "cue": "work",
+        "windowRmsDbfs": -19.67
+      },
+      {
+        "time": 23.259999999999998,
+        "cue": "crash",
+        "windowRmsDbfs": -16.79
+      },
+      {
+        "time": 23.38,
+        "cue": "store",
+        "windowRmsDbfs": -24.02
+      },
+      {
+        "time": 23.909999999999997,
+        "cue": "thump",
+        "windowRmsDbfs": -20.63
+      },
+      {
+        "time": 24.759999999999998,
+        "cue": "deliver",
+        "windowRmsDbfs": -21.97
+      },
+      {
+        "time": 25.36,
+        "cue": "hit",
+        "windowRmsDbfs": -22.38
+      },
+      {
+        "time": 25.66,
+        "cue": "chime",
+        "windowRmsDbfs": -20.67
+      }
+    ],
+    "posterSha256": "a8b3e5c92f34b0a08951698933d1ff6d918d79816390a9498ef2aa89ab450812",
+    "date": "2026-10-19",
+    "mediaSha256": "fe9cf7f4cd2375a8d7cd949705ba8dc0d45aa302b98e44fcb11dbfc68b9d8f80"
+  },
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "time": "25.36\u201328.56s",
+      "change": "Replaced whole-history glow with a blue selection of only the matching 7e2d error row; routed the join to that row and dimmed unrelated history. Red error status is preserved."
+    },
+    {
+      "date": "2026-10-19",
+      "time": "0\u201329.57s",
+      "change": "Aligned transcript boundaries with the encoded sequence, including 17.56s reset, 18.26s propagation cue, 19.96s new task and 25.36s correlation. Corrected solid-line wording to flowing dotted join."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "start": 0,
+    "end": 5,
+    "text": "All traffic uses v1, the control. Its illustrative p95 latency is 120 ms; the unexposed candidate has no result."
+  },
+  {
+    "start": 5,
+    "end": 9.4,
+    "text": "The router allocates twenty percent to the candidate. Three stylized four-to-one traffic cycles begin; the animated packets are not a statistical sample."
+  },
+  {
+    "start": 9.4,
+    "end": 15.2,
+    "text": "The candidate’s illustrative p95 is 900 ms, compared with 120 ms for the control. Its work bar remains busy longer."
+  },
+  {
+    "start": 15.2,
+    "end": 18.5,
+    "text": "The 7.5-fold latency difference is highlighted. ROLLBACK appears at 17.4 seconds and a signal returns to the router; the share bar moves back to the control from 18 seconds."
+  },
+  {
+    "start": 18.5,
+    "end": 26,
+    "text": "New requests use the control. The candidate receives zero percent, and its failed latency result remains visible. The stage fades from 24 seconds, retaining the title for the loop."
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "id": "astra",
+  "concept": "load-balancing",
+  "title": "Unequal work",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Equal request counts can hide unequal work; route new calls using current outstanding work while existing queued calls retain their assignment.",
+  "src": "media/load-balancing/astra.mp4",
+  "poster": "media/load-balancing/astra.jpg",
+  "duration": 28,
+  "verified": true,
+  "limitations": [
+    "Illustrative two-worker, one-slot-per-worker schedule with perfect visibility; not a production benchmark.",
+    "Least request compares the two visible candidates; it is not an exact Envoy implementation or a universal improvement guarantee.",
+    "Existing requests are neither migrated nor retried; progress bars do not predict remaining time.",
+    "Audio levels, waveform timing and spectrogram were analysed; physical listening was not performed.",
+    "Comparative review and edits by gpt-6-astra comparative review; original author provenance retained. Recommendation and evidence are recorded in reviews/comparisons/load-balancing.json."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5.5,
+      "text": "In this illustrative agent tool service, round robin sends a short call to worker A and then worker B. Each worker has one execution slot; both calls complete. The counters below the workers show cumulative assignments, not current load."
+    },
+    {
+      "start": 5.5,
+      "end": 10.5,
+      "text": "A receives long call L1 while B receives short call Q3. Both workers have received two calls, but B finishes and becomes idle while A is still running."
+    },
+    {
+      "start": 10.5,
+      "end": 14.25,
+      "text": "Round robin sends Q4 to A. It waits behind L1 although worker B is idle. Equal turns do not account for different task durations."
+    },
+    {
+      "start": 14.25,
+      "end": 22,
+      "text": "The example switches to least-request routing for new calls. Q5 and then Q6 go to B, breaking the alternating pattern. A still has L1 running and Q4 waiting; the policy change does not move those calls."
+    },
+    {
+      "start": 22,
+      "end": 28,
+      "text": "L1 finishes on A. Q4 then leaves its local queue, runs on A, and completes. Both workers finish, with three calls assigned to A and four to B. The resolved scene holds, then fades to black."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "time": "0\u201328s",
+      "change": "Label cumulative counters as assigned, distinguishing historical assignments from currently running or outstanding calls."
+    }
+  ],
+  "verification": {
+    "by": "gpt-6-astra comparative review",
+    "date": "2026-10-19",
+    "mp4SHA256": "7fc1e430c45993bbabd78d63c568aacecb4b8e25daada622c8eb8920f94a00ee",
+    "posterSHA256": "4bf5f7b2c22a89423e5eed30110dfd084d6915a5316a7f691a0496a28b105983",
+    "report": "reviews/comparisons/load-balancing/encoded-checks.json",
+    "frames": 840,
+    "bytes": 644233,
+    "audioPeakDbfs": -4.7,
+    "boundaryFramesIdentical": true,
+    "fullDecode": true,
+    "faststart": true,
+    "audioHeard": false,
+    "cueSync": "Energy present in all 40 scheduled 160 ms cue windows; overlapping sounds are not individually isolated."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "fable",
+  "concept": "harness-engineering",
+  "title": "Done means verified",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "An agent's \"done\" is a claim; the harness runs the end-to-end check and flips a feature to passing only on its own evidence, so a failed claim goes back to the agent while the record stays false.",
+  "src": "media/harness-engineering/fable.mp4",
+  "poster": "media/harness-engineering/fable.jpg",
+  "duration": 28.1,
+  "verified": true,
+  "limitations": [
+    "Audio verified analytically (peak -6.6 dBFS, spectrogram, onset alignment of 55 of 61 cues; the six quiet ack and first clock ticks were merged by the detector); no physical listening.",
+    "Frame legibility checked from decoded frames at full size and 350 px, not on a real phone.",
+    "Illustrative scenario: two features, one failing run, no measured timings or pass rates.",
+    "Shows the harness owning the test run and the record write; the source article has the agent self-verify under prompted rules, which prompts alone do not enforce."
+  ],
+  "transcript": [
+    {
+      "t": 0.8,
+      "text": "The agent works on feature A, then sends the harness a DONE claim. The feature list row for A turns orange: claimed but not yet verified."
+    },
+    {
+      "t": 3.1,
+      "text": "The harness runs the end-to-end tests for A. They pass, and only then does the harness write \"A passes:true\" to the feature list, which turns green."
+    },
+    {
+      "t": 9.4,
+      "text": "The agent works on feature B and sends the same DONE claim. The harness runs the tests for B and they fail."
+    },
+    {
+      "t": 14.9,
+      "text": "The feature list row for B stays \"passes:false\"; the harness returns the failed claim to the agent, which jolts red. The claim alone changed nothing."
+    },
+    {
+      "t": 17.6,
+      "text": "The agent fixes B and claims DONE again. The harness re-runs the tests, they pass, and \"B passes:true\" is written with a chime: every feature is now verified."
+    },
+    {
+      "t": 24.6,
+      "text": "The list holds both features green, then the frame fades to black."
+    }
+  ]
+}

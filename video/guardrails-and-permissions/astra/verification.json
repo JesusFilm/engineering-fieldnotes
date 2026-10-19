@@ -1,0 +1,126 @@
+{
+  "author": "gpt-6-astra",
+  "reasoning": "high",
+  "retrievalDate": "2026-10-19",
+  "file": "public/media/guardrails-and-permissions/astra.mp4",
+  "sha256": "0c6d12bff02ab48135b0222201f3201265092b98212239352f4a06943f1c43ad",
+  "bytes": 467704,
+  "duration": 28.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": "30/1",
+  "videoCodec": "h264",
+  "pixelFormat": "yuv420p",
+  "audioCodec": "aac",
+  "fullDecode": "pass",
+  "frames": 840,
+  "firstLastExact": true,
+  "firstFrameMD5": "eb31442608984c1aa5939de6decc4443",
+  "lastFrameMD5": "eb31442608984c1aa5939de6decc4443",
+  "audioPeakDbfs": -6.287,
+  "faststart": true,
+  "atomOrder": [
+    "ftyp",
+    "moov",
+    "free",
+    "mdat"
+  ],
+  "cueChecks": [
+    {
+      "t": 0.4,
+      "preset": "recover",
+      "rms_first_150ms_dbfs": -36.14
+    },
+    {
+      "t": 1.3,
+      "preset": "send",
+      "rms_first_150ms_dbfs": -36.83
+    },
+    {
+      "t": 2.1,
+      "preset": "hit",
+      "rms_first_150ms_dbfs": -25.66
+    },
+    {
+      "t": 2.9,
+      "preset": "send",
+      "rms_first_150ms_dbfs": -36.62
+    },
+    {
+      "t": 3.7,
+      "preset": "deliver",
+      "rms_first_150ms_dbfs": -25.74
+    },
+    {
+      "t": 5.7,
+      "preset": "send",
+      "rms_first_150ms_dbfs": -36.6
+    },
+    {
+      "t": 6.5,
+      "preset": "thump",
+      "rms_first_150ms_dbfs": -18.0
+    },
+    {
+      "t": 9.5,
+      "preset": "send",
+      "rms_first_150ms_dbfs": -36.6
+    },
+    {
+      "t": 10.3,
+      "preset": "arrive",
+      "rms_first_150ms_dbfs": -23.61
+    },
+    {
+      "t": 12.6,
+      "preset": "chime",
+      "rms_first_150ms_dbfs": -24.76
+    },
+    {
+      "t": 14.8,
+      "preset": "send",
+      "rms_first_150ms_dbfs": -36.59
+    },
+    {
+      "t": 15.6,
+      "preset": "arrive",
+      "rms_first_150ms_dbfs": -24.94
+    },
+    {
+      "t": 17.7,
+      "preset": "send",
+      "rms_first_150ms_dbfs": -36.61
+    },
+    {
+      "t": 18.5,
+      "preset": "store",
+      "rms_first_150ms_dbfs": -29.66
+    },
+    {
+      "t": 21,
+      "preset": "send",
+      "rms_first_150ms_dbfs": -36.58
+    },
+    {
+      "t": 21.8,
+      "preset": "thump",
+      "rms_first_150ms_dbfs": -17.98
+    },
+    {
+      "t": 23.3,
+      "preset": "send",
+      "rms_first_150ms_dbfs": -36.6
+    },
+    {
+      "t": 24.1,
+      "preset": "hit",
+      "rms_first_150ms_dbfs": -25.65
+    },
+    {
+      "t": 26.4,
+      "preset": "poof",
+      "rms_first_150ms_dbfs": -44.82
+    }
+  ],
+  "audioPhysicallyHeard": false
+}

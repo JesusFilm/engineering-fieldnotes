@@ -1,0 +1,98 @@
+{
+  "id": "fable",
+  "concept": "load-balancing",
+  "title": "Route on in-flight load, not request count",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "Round robin rotates through replicas without measuring request cost. This illustrative schedule shows a small request waiting while another replica is idle; selecting a minimum in-flight count avoids that placement for later new requests. The count remains an imperfect proxy for work.",
+  "src": "media/load-balancing/fable.mp4",
+  "poster": "media/load-balancing/fable.jpg",
+  "duration": 31.77,
+  "verified": true,
+  "limitations": [
+    "Illustrative single-execution-slot model: token sizes and 6 s / 0.6 s service times are invented. The elapsed badges are calculated from scene send/receive times, including animated transport; they are not benchmark results or guaranteed token runtimes. The two phases are different schedules, not a controlled performance replay.",
+    "The in-flight count is a proxy for load, not a measure of work (the Google SRE chapter's own caveat): two replicas with equal counts can hold very different work. Least in-flight cannot tell them apart; the cut shows it helping only after short requests finish and the counts diverge. Weighted or utilisation-based policies, health checks, connection draining and long-lived connections are not shown; the baseline cut covers health checks.",
+    "The policy label changing on the balancer is a scene event. Routing policy is configuration enforced by the balancer or client library; a label, prompt or persistent instruction does not enforce routing, and by the same token persistent prompts do not enforce permissions.",
+    "The orange second slot and WAIT badge represent a local waiting request, not parallel execution. Its bar stays empty until execution starts. In-flight counters count backend-arrived, unfinished work; transport and response travel are excluded from this toy signal.",
+    "Decoded audio peak -1.2 dBFS; all 107 scheduled 160 ms cue windows contain energy. Waveform and spectrogram were analysed; overlapping cues were not isolated and audio was not heard."
+  ],
+  "transcript": [
+    "0:00.7\u20130:05.7 \u2014 Normal case under ROUND ROBIN. Three small '2k tokens' requests leave the client about a second apart. The balancer's pointer steps to Replica 1, 2 and 3 in turn; each replica's counter ticks to '1 in flight' and back to 0 as its slot finishes, and each response returns with a green '2.8 s' demo-elapsed badge. The footer marks the schedule illustrative; all badges measure animation elapsed time, not production latency.",
+    "0:07.3\u20130:12.0 \u2014 Costs diverge. A '60k tokens' request lands on Replica 1 and another on Replica 2; their slots fill slowly with a low ticking. A small request lands on Replica 3 and finishes after 0.6 s of service. At 0:11.4 the three counters pop together: every replica has had exactly one request, yet they read 1, 1 and 0 because the short one is done.",
+    "0:12.2\u20130:16.7 \u2014 The misroute. The next small request leaves and the rotation points at Replica 1 anyway. It lands at 0:13.5 with a buzz and a jolt; Replica 1's counter turns orange at '2 in flight' and the request waits in an empty second slot with a WAIT badge until 0:15.25; it then starts filling with an arrival cue. Replica 3's counter ripples green at 0:14.0 to show it was free. The heavy jobs finish and return grey envelopes; the delayed small response arrives last at 0:16.65 with an orange '4.5 s' demo-elapsed badge.",
+    "0:18.0\u20130:19.3 \u2014 The fix. The balancer flashes green and its label changes in place to LEAST IN-FLIGHT; three green dots run from the counters up to the balancer's ports and a chime confirms the counters are now inputs.",
+    "0:19.8\u20130:26.8 \u2014 Resolution. The first heavy request is selected while all counters are 0; rotation breaks the tie toward Replica 2. By the next selection Replica 2 has one unfinished call, so the remaining zero-count tie selects Replica 3. With the counters at 0, 1, 1 the next small request goes to Replica 1 (its counter flashes green at the pick) and returns with a '2.8 s' demo-elapsed badge at 0:24.6; the one after that goes to Replica 1 again, where round robin would have sent it to busy Replica 2, and returns with a '2.8 s' demo-elapsed badge at 0:26.75.",
+    "0:27.0\u20130:31.8 \u2014 The heavy jobs complete and all counters return to 0 under the LEAST IN-FLIGHT label; the stage holds, then fades to the title-only frame that also opens the video."
+  ],
+  "sources": [
+    {
+      "title": "Load Balancing in the Datacenter \u2014 Google SRE Book",
+      "url": "https://sre.google/sre-book/load-balancing-datacenter/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Supported load balancers \u2014 Envoy proxy documentation",
+      "url": "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/load_balancing/load_balancers",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Implementer's guide \u2014 Kubernetes Gateway API Inference Extension",
+      "url": "https://gateway-api-inference-extension.sigs.k8s.io/guides/implementers/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "InferencePool \u2014 Gateway API Inference Extension",
+      "url": "https://gateway-api-inference-extension.sigs.k8s.io/api-types/inferencepool/",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "time": "3.5\u201328s",
+      "change": "Replace arbitrary response-time badges with elapsed client-send-to-client-receive times from the toy schedule (2.8 s clear, 4.5 s delayed), label demo elapsed and mark the example illustrative."
+    },
+    {
+      "time": "13.5\u201315.25s",
+      "change": "Show an explicit WAIT badge and zero progress on the queued slot; clear WAIT and sound the execution start."
+    },
+    {
+      "time": "0\u201331.77s",
+      "change": "Enlarge the policy subtitle to 36px and widen its box."
+    },
+    {
+      "time": "renderer-wide",
+      "change": "Fresh canvas per captured frame, software rendering and synchronous pixel readback prevent missing title/node rasters reproduced at 15.3s and 17.2s during preflight."
+    }
+  ],
+  "authorVerification": {
+    "by": "anthropic/claude-fable-5-1 (author), video/load-balancing/fable/verify.mjs",
+    "date": "2026-10-19",
+    "mp4SHA256": "7894be7ad4ac5fcc52930ca4bf5b92f3a0975a8c542159d2a1ab935266bd4d80",
+    "posterSHA256": "edf4a2a3813a1f01703f312c4fb1ce0a89b1e92c52a4f4478741efdad7328181",
+    "report": "video/load-balancing/fable/checks.json",
+    "frames": 953,
+    "bytes": 1759025,
+    "audioPeakDbfs": -1,
+    "boundaryFramesIdentical": true,
+    "fullDecode": true,
+    "faststart": true,
+    "cueSync": "106 of 106 cues show an energy rise within 70 ms in the decoded AAC",
+    "audioHeard": false
+  },
+  "verification": {
+    "by": "gpt-6-astra comparative review",
+    "date": "2026-10-19",
+    "mp4SHA256": "2bf51a13222ef1ed1780dbc141b0ad8e74b08251bdb7c0c8e4aca832615dff9a",
+    "posterSHA256": "d59da675a3021b925502050d35ac8ed7519f19dff07031122c2a514009bc1901",
+    "report": "reviews/comparisons/load-balancing/encoded-checks.json",
+    "frames": 953,
+    "bytes": 1756904,
+    "audioPeakDbfs": -1.2,
+    "boundaryFramesIdentical": true,
+    "fullDecode": true,
+    "faststart": true,
+    "audioHeard": false,
+    "cueSync": "Energy present in all 107 scheduled 160 ms cue windows; overlapping sounds are not individually isolated."
+  }
+}

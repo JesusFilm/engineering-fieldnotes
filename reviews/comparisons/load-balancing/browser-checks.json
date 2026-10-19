@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-18T23:36:53.644Z",
+  "viewports": [
+    1280,
+    350
+  ],
+  "errors": [],
+  "results": [
+    {
+      "mode": "chapter",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "title": "Load balancing — Fieldnotes",
+      "sourceUrls": [
+        "http://127.0.0.1:4190/media/load-balancing/astra.mp4?v=7fc1e430c459"
+      ],
+      "details": 1,
+      "media": [
+        {
+          "src": "http://127.0.0.1:4190/media/load-balancing/astra.mp4?v=7fc1e430c459",
+          "width": 1080,
+          "height": 1920,
+          "duration": 28,
+          "time": 12.7,
+          "readyState": 4
+        }
+      ],
+      "expanded": {
+        "scrollWidth": 1280,
+        "transcriptText": [
+          "Read the video sequence\n0–5.5s In this illustrative agent tool service, round robin sends a short call to worker A and then worker B. Each worker has one execution slot; both calls complete. The counters below the workers show cumulative assignments, not current load.\n5.5–10.5s A receives long call L1 while B receives short call Q3. Both workers have received two calls, but B finishes and becomes idle while A is still running.\n10.5–14.25s Round robin sends Q4 to A. It waits behind L1 although worker B is idle. Equal turns do not account for different task durations.\n14.25–22s The example switches to least-request routing for new calls. Q5 and then Q6 go to B, breaking the alternating pattern. A still has L1 running and Q4 waiting; the policy change does not move those calls.\n22–28s L1 finishes on A. Q4 then leaves its local queue, runs on A, and completes. Both workers finish, with three calls assigned to A and four to B. The resolved scene holds, then fades to black."
+        ],
+        "recommendation": null
+      }
+    },
+    {
+      "mode": "compare",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "title": "Load balancing · Video comparison — Fieldnotes",
+      "sourceUrls": [
+        "http://127.0.0.1:4190/media/load-balancing/baseline.mp4?v=8f084c7b4806",
+        "http://127.0.0.1:4190/media/load-balancing/astra.mp4?v=7fc1e430c459",
+        "http://127.0.0.1:4190/media/load-balancing/fable.mp4?v=2bf51a13222e"
+      ],
+      "details": 7,
+      "media": [
+        {
+          "src": "http://127.0.0.1:4190/media/load-balancing/baseline.mp4?v=8f084c7b4806",
+          "width": 1080,
+          "height": 1920,
+          "duration": 21.013991,
+          "time": 13.8,
+          "readyState": 4
+        },
+        {
+          "src": "http://127.0.0.1:4190/media/load-balancing/astra.mp4?v=7fc1e430c459",
+          "width": 1080,
+          "height": 1920,
+          "duration": 28,
+          "time": 12.7,
+          "readyState": 4
+        },
+        {
+          "src": "http://127.0.0.1:4190/media/load-balancing/fable.mp4?v=2bf51a13222e",
+          "width": 1080,
+          "height": 1920,
+          "duration": 31.766667,
+          "time": 14.3,
+          "readyState": 4
+        }
+      ],
+      "expanded": {
+        "scrollWidth": 1280,
+        "transcriptText": [
+          "Read the video sequence\n0–6s: Requests are distributed across three backends in turn.\n7–12s: The middle server fails and health checks remove it from eligible routing. The remaining servers keep receiving work.\n13–19s: A successful health check confirms recovery, and the middle server rejoins routing.",
+          "Read the video sequence\n0–5.5s In this illustrative agent tool service, round robin sends a short call to worker A and then worker B. Each worker has one execution slot; both calls complete. The counters below the workers show cumulative assignments, not current load.\n5.5–10.5s A receives long call L1 while B receives short call Q3. Both workers have received two calls, but B finishes and becomes idle while A is still running.\n10.5–14.25s Round robin sends Q4 to A. It waits behind L1 although worker B is idle. Equal turns do not account for different task durations.\n14.25–22s The example switches to least-request routing for new calls. Q5 and then Q6 go to B, breaking the alternating pattern. A still has L1 running and Q4 waiting; the policy change does not move those calls.\n22–28s L1 finishes on A. Q4 then leaves its local queue, runs on A, and completes. Both workers finish, with three calls assigned to A and four to B. The resolved scene holds, then fades to black.",
+          "Read the video sequence\n0:00.7–0:05.7 — Normal case under ROUND ROBIN. Three small '2k tokens' requests leave the client about a second apart. The balancer's pointer steps to Replica 1, 2 and 3 in turn; each replica's counter ticks to '1 in flight' and back to 0 as its slot finishes, and each response returns with a green '2.8 s' demo-elapsed badge. The footer marks the schedule illustrative; all badges measure animation elapsed time, not production latency.\n0:07.3–0:12.0 — Costs diverge. A '60k tokens' request lands on Replica 1 and another on Replica 2; their slots fill slowly with a low ticking. A small request lands on Replica 3 and finishes after 0.6 s of service. At 0:11.4 the three counters pop together: every replica has had exactly one request, yet they read 1, 1 and 0 because the short one is done.\n0:12.2–0:16.7 — The misroute. The next small request leaves and the rotation points at Replica 1 anyway. It lands at 0:13.5 with a buzz and a jolt; Replica 1's counter turns orange at '2 in flight' and the request waits in an empty second slot with a WAIT badge until 0:15.25; it then starts filling with an arrival cue. Replica 3's counter ripples green at 0:14.0 to show it was free. The heavy jobs finish and return grey envelopes; the delayed small response arrives last at 0:16.65 with an orange '4.5 s' demo-elapsed badge.\n0:18.0–0:19.3 — The fix. The balancer flashes green and its label changes in place to LEAST IN-FLIGHT; three green dots run from the counters up to the balancer's ports and a chime confirms the counters are now inputs.\n0:19.8–0:26.8 — Resolution. The first heavy request is selected while all counters are 0; rotation breaks the tie toward Replica 2. By the next selection Replica 2 has one unfinished call, so the remaining zero-count tie selects Replica 3. With the counters at 0, 1, 1 the next small request goes to Replica 1 (its counter flashes green at the pick) and returns with a '2.8 s' demo-elapsed badge at 0:24.6; the one after that goes to Replica 1 again, where round robin would have sent it to busy Replica 2, and returns with a '2.8 s' demo-elapsed badge at 0:26.75.\n0:27.0–0:31.8 — The heavy jobs complete and all counters return to 0 under the LEAST IN-FLIGHT label; the stage holds, then fades to the title-only frame that also opens the video."
+        ],
+        "recommendation": "Why we recommend Unequal work\n\nStart with Astra: one continuous two-worker example makes the idle-worker problem and the fate of an already queued call easy to follow. Its later calls use the free worker twice while the original call stays queued, showing exactly what a new routing policy changes. Baseline is a useful companion about health-based eligibility; Fable adds live counts and client response timing, but its denser three-replica animation and different before/after schedules require more explanation."
+      }
+    },
+    {
+      "mode": "chapter",
+      "width": 350,
+      "scrollWidth": 350,
+      "title": "Load balancing — Fieldnotes",
+      "sourceUrls": [
+        "http://127.0.0.1:4190/media/load-balancing/astra.mp4?v=7fc1e430c459"
+      ],
+      "details": 1,
+      "media": [
+        {
+          "src": "http://127.0.0.1:4190/media/load-balancing/astra.mp4?v=7fc1e430c459",
+          "width": 1080,
+          "height": 1920,
+          "duration": 28,
+          "time": 12.7,
+          "readyState": 4
+        }
+      ],
+      "expanded": {
+        "scrollWidth": 350,
+        "transcriptText": [
+          "Read the video sequence\n0–5.5s In this illustrative agent tool service, round robin sends a short call to worker A and then worker B. Each worker has one execution slot; both calls complete. The counters below the workers show cumulative assignments, not current load.\n5.5–10.5s A receives long call L1 while B receives short call Q3. Both workers have received two calls, but B finishes and becomes idle while A is still running.\n10.5–14.25s Round robin sends Q4 to A. It waits behind L1 although worker B is idle. Equal turns do not account for different task durations.\n14.25–22s The example switches to least-request routing for new calls. Q5 and then Q6 go to B, breaking the alternating pattern. A still has L1 running and Q4 waiting; the policy change does not move those calls.\n22–28s L1 finishes on A. Q4 then leaves its local queue, runs on A, and completes. Both workers finish, with three calls assigned to A and four to B. The resolved scene holds, then fades to black."
+        ],
+        "recommendation": null
+      }
+    },
+    {
+      "mode": "compare",
+      "width": 350,
+      "scrollWidth": 350,
+      "title": "Load balancing · Video comparison — Fieldnotes",
+      "sourceUrls": [
+        "http://127.0.0.1:4190/media/load-balancing/baseline.mp4?v=8f084c7b4806",
+        "http://127.0.0.1:4190/media/load-balancing/astra.mp4?v=7fc1e430c459",
+        "http://127.0.0.1:4190/media/load-balancing/fable.mp4?v=2bf51a13222e"
+      ],
+      "details": 7,
+      "media": [
+        {
+          "src": "http://127.0.0.1:4190/media/load-balancing/baseline.mp4?v=8f084c7b4806",
+          "width": 1080,
+          "height": 1920,
+          "duration": 21.013991,
+          "time": 13.8,
+          "readyState": 4
+        },
+        {
+          "src": "http://127.0.0.1:4190/media/load-balancing/astra.mp4?v=7fc1e430c459",
+          "width": 1080,
+          "height": 1920,
+          "duration": 28,
+          "time": 12.7,
+          "readyState": 4
+        },
+        {
+          "src": "http://127.0.0.1:4190/media/load-balancing/fable.mp4?v=2bf51a13222e",
+          "width": 1080,
+          "height": 1920,
+          "duration": 31.766667,
+          "time": 14.3,
+          "readyState": 4
+        }
+      ],
+      "expanded": {
+        "scrollWidth": 350,
+        "transcriptText": [
+          "Read the video sequence\n0–6s: Requests are distributed across three backends in turn.\n7–12s: The middle server fails and health checks remove it from eligible routing. The remaining servers keep receiving work.\n13–19s: A successful health check confirms recovery, and the middle server rejoins routing.",
+          "Read the video sequence\n0–5.5s In this illustrative agent tool service, round robin sends a short call to worker A and then worker B. Each worker has one execution slot; both calls complete. The counters below the workers show cumulative assignments, not current load.\n5.5–10.5s A receives long call L1 while B receives short call Q3. Both workers have received two calls, but B finishes and becomes idle while A is still running.\n10.5–14.25s Round robin sends Q4 to A. It waits behind L1 although worker B is idle. Equal turns do not account for different task durations.\n14.25–22s The example switches to least-request routing for new calls. Q5 and then Q6 go to B, breaking the alternating pattern. A still has L1 running and Q4 waiting; the policy change does not move those calls.\n22–28s L1 finishes on A. Q4 then leaves its local queue, runs on A, and completes. Both workers finish, with three calls assigned to A and four to B. The resolved scene holds, then fades to black.",
+          "Read the video sequence\n0:00.7–0:05.7 — Normal case under ROUND ROBIN. Three small '2k tokens' requests leave the client about a second apart. The balancer's pointer steps to Replica 1, 2 and 3 in turn; each replica's counter ticks to '1 in flight' and back to 0 as its slot finishes, and each response returns with a green '2.8 s' demo-elapsed badge. The footer marks the schedule illustrative; all badges measure animation elapsed time, not production latency.\n0:07.3–0:12.0 — Costs diverge. A '60k tokens' request lands on Replica 1 and another on Replica 2; their slots fill slowly with a low ticking. A small request lands on Replica 3 and finishes after 0.6 s of service. At 0:11.4 the three counters pop together: every replica has had exactly one request, yet they read 1, 1 and 0 because the short one is done.\n0:12.2–0:16.7 — The misroute. The next small request leaves and the rotation points at Replica 1 anyway. It lands at 0:13.5 with a buzz and a jolt; Replica 1's counter turns orange at '2 in flight' and the request waits in an empty second slot with a WAIT badge until 0:15.25; it then starts filling with an arrival cue. Replica 3's counter ripples green at 0:14.0 to show it was free. The heavy jobs finish and return grey envelopes; the delayed small response arrives last at 0:16.65 with an orange '4.5 s' demo-elapsed badge.\n0:18.0–0:19.3 — The fix. The balancer flashes green and its label changes in place to LEAST IN-FLIGHT; three green dots run from the counters up to the balancer's ports and a chime confirms the counters are now inputs.\n0:19.8–0:26.8 — Resolution. The first heavy request is selected while all counters are 0; rotation breaks the tie toward Replica 2. By the next selection Replica 2 has one unfinished call, so the remaining zero-count tie selects Replica 3. With the counters at 0, 1, 1 the next small request goes to Replica 1 (its counter flashes green at the pick) and returns with a '2.8 s' demo-elapsed badge at 0:24.6; the one after that goes to Replica 1 again, where round robin would have sent it to busy Replica 2, and returns with a '2.8 s' demo-elapsed badge at 0:26.75.\n0:27.0–0:31.8 — The heavy jobs complete and all counters return to 0 under the LEAST IN-FLIGHT label; the stage holds, then fades to the title-only frame that also opens the video."
+        ],
+        "recommendation": "Why we recommend Unequal work\n\nStart with Astra: one continuous two-worker example makes the idle-worker problem and the fate of an already queued call easy to follow. Its later calls use the free worker twice while the original call stays queued, showing exactly what a new routing policy changes. Baseline is a useful companion about health-based eligibility; Fable adds live counts and client response timing, but its denser three-replica animation and different before/after schedules require more explanation."
+      }
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "checkedAt": "2026-10-19T00:09:54.224Z",
+  "browser": "Headless Google Chrome via pinned puppeteer-core",
+  "method": "Scoped build functions wrote only review scratch; existing app assets copied without modification.",
+  "checks": [
+    {
+      "type": "chapter",
+      "viewport": 1280,
+      "width": 1280,
+      "videoCount": 1,
+      "source": "../../media/oauth-pkce/sol.mp4?v=3adea70acc68",
+      "media": [
+        {
+          "src": "file://<project>/reviews/comparisons/oauth-pkce/scratch/site/media/oauth-pkce/sol.mp4?v=3adea70acc68",
+          "duration": 32,
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "provenanceVisible": false,
+      "horizontalOverflow": false,
+      "detailsOpened": true
+    },
+    {
+      "type": "comparison",
+      "viewport": 1280,
+      "width": 1280,
+      "videoCount": 3,
+      "source": "../../../media/oauth-pkce/baseline.mp4?v=2eedd4158dbe",
+      "media": [
+        {
+          "src": "file://<project>/reviews/comparisons/oauth-pkce/scratch/site/media/oauth-pkce/baseline.mp4?v=2eedd4158dbe",
+          "duration": 26,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "src": "file://<project>/reviews/comparisons/oauth-pkce/scratch/site/media/oauth-pkce/astra.mp4?v=8d18fe05d761",
+          "duration": 30,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "src": "file://<project>/reviews/comparisons/oauth-pkce/scratch/site/media/oauth-pkce/sol.mp4?v=3adea70acc68",
+          "duration": 32,
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "provenanceVisible": true,
+      "horizontalOverflow": false,
+      "detailsOpened": true
+    },
+    {
+      "type": "chapter",
+      "viewport": 390,
+      "width": 390,
+      "videoCount": 1,
+      "source": "../../media/oauth-pkce/sol.mp4?v=3adea70acc68",
+      "media": [
+        {
+          "src": "file://<project>/reviews/comparisons/oauth-pkce/scratch/site/media/oauth-pkce/sol.mp4?v=3adea70acc68",
+          "duration": 32,
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "provenanceVisible": false,
+      "horizontalOverflow": false,
+      "detailsOpened": true
+    },
+    {
+      "type": "comparison",
+      "viewport": 390,
+      "width": 390,
+      "videoCount": 3,
+      "source": "../../../media/oauth-pkce/baseline.mp4?v=2eedd4158dbe",
+      "media": [
+        {
+          "src": "file://<project>/reviews/comparisons/oauth-pkce/scratch/site/media/oauth-pkce/baseline.mp4?v=2eedd4158dbe",
+          "duration": 26,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "src": "file://<project>/reviews/comparisons/oauth-pkce/scratch/site/media/oauth-pkce/astra.mp4?v=8d18fe05d761",
+          "duration": 30,
+          "width": 1080,
+          "height": 1920
+        },
+        {
+          "src": "file://<project>/reviews/comparisons/oauth-pkce/scratch/site/media/oauth-pkce/sol.mp4?v=3adea70acc68",
+          "duration": 32,
+          "width": 1080,
+          "height": 1920
+        }
+      ],
+      "provenanceVisible": true,
+      "horizontalOverflow": false,
+      "detailsOpened": true
+    }
+  ]
+}

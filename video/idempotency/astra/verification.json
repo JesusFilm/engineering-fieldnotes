@@ -1,0 +1,164 @@
+{
+  "author": "gpt-6-astra",
+  "reasoning": "high",
+  "reviewed": "2026-10-19",
+  "sha256": "9a8054364cb8b8378690d675f4100549fb9f17e389290956875584031efd5248",
+  "posterSha256": "d30e82d921041d42dd61c6df50d29df068d3cc6886096dc3af9eccb2f19728dc",
+  "bytes": 640221,
+  "duration": 30,
+  "frames": 900,
+  "format": "1080x1920/30fps H.264 yuv420p + AAC",
+  "fullDecode": true,
+  "exactFirstLastRgbEquality": true,
+  "boundaryRgbSha256": "1df06ad5fc2492dec05305694e51f45ca76110ca4460dd21321267df8e1ae49a",
+  "audioPeakDbfs": -7.1,
+  "faststart": true,
+  "mp4Atoms": {
+    "ftyp": 0,
+    "moov": 32,
+    "free": 33352,
+    "mdat": 33360
+  },
+  "cueCount": 25,
+  "cueEnergy": [
+    {
+      "time": 0.3,
+      "preset": "ack",
+      "first120msRmsDbfs": -42.19
+    },
+    {
+      "time": 1.5,
+      "preset": "send",
+      "first120msRmsDbfs": -37.85
+    },
+    {
+      "time": 2.3,
+      "preset": "arrive",
+      "first120msRmsDbfs": -23.68
+    },
+    {
+      "time": 3.1,
+      "preset": "send",
+      "first120msRmsDbfs": -37.73
+    },
+    {
+      "time": 3.8,
+      "preset": "store",
+      "first120msRmsDbfs": -28.06
+    },
+    {
+      "time": 5.7,
+      "preset": "ack",
+      "first120msRmsDbfs": -40.86
+    },
+    {
+      "time": 6.2,
+      "preset": "send",
+      "first120msRmsDbfs": -37.82
+    },
+    {
+      "time": 6.9,
+      "preset": "crash",
+      "first120msRmsDbfs": -16.84
+    },
+    {
+      "time": 9.8,
+      "preset": "clock",
+      "first120msRmsDbfs": -53.51
+    },
+    {
+      "time": 11.2,
+      "preset": "send",
+      "first120msRmsDbfs": -37.83
+    },
+    {
+      "time": 12,
+      "preset": "arrive",
+      "first120msRmsDbfs": -23.68
+    },
+    {
+      "time": 12.8,
+      "preset": "send",
+      "first120msRmsDbfs": -37.8
+    },
+    {
+      "time": 13.6,
+      "preset": "hit",
+      "first120msRmsDbfs": -24.69
+    },
+    {
+      "time": 14.4,
+      "preset": "send",
+      "first120msRmsDbfs": -37.89
+    },
+    {
+      "time": 15.2,
+      "preset": "arrive",
+      "first120msRmsDbfs": -23.67
+    },
+    {
+      "time": 16,
+      "preset": "send",
+      "first120msRmsDbfs": -37.79
+    },
+    {
+      "time": 16.8,
+      "preset": "deliver",
+      "first120msRmsDbfs": -24.96
+    },
+    {
+      "time": 19,
+      "preset": "clock",
+      "first120msRmsDbfs": -52.29
+    },
+    {
+      "time": 20,
+      "preset": "send",
+      "first120msRmsDbfs": -37.8
+    },
+    {
+      "time": 20.8,
+      "preset": "arrive",
+      "first120msRmsDbfs": -23.69
+    },
+    {
+      "time": 21.6,
+      "preset": "thump",
+      "first120msRmsDbfs": -20.96
+    },
+    {
+      "time": 22.5,
+      "preset": "send",
+      "first120msRmsDbfs": -37.82
+    },
+    {
+      "time": 23.3,
+      "preset": "thump",
+      "first120msRmsDbfs": -23.28
+    },
+    {
+      "time": 25,
+      "preset": "chime",
+      "first120msRmsDbfs": -24.97
+    },
+    {
+      "time": 28.7,
+      "preset": "poof",
+      "first120msRmsDbfs": -41.39
+    }
+  ],
+  "encodedFrameTimes": [
+    2,
+    4.6,
+    7.1,
+    10.2,
+    13.2,
+    17.6,
+    19.6,
+    21.9,
+    23.7,
+    26.5
+  ],
+  "phoneWidth": 350,
+  "physicalListening": false
+}

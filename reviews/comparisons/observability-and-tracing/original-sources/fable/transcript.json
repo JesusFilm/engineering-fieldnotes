@@ -1,0 +1,7 @@
+[
+  "0.0–7.6s: Normal case. Task 7 goes from the user to the agent, the agent's charge() tool posts to the Billing API, and 200 returns. The agent trace panel records invoke_agent and execute_tool under trace 4bf9; the Billing API's own span list records POST /charge 200 under a different id, 91c0, and another caller's request adds a7e3. Nothing links the two lists, and nobody notices while everything succeeds.",
+  "7.6–15.3s: Problem. Task 8 follows the same path and the Billing API fails with 500. The agent trace shows execute_tool · ERROR under trace c3a1; the API list gains POST /charge 500 · 0d12. A dashed red link appears between the two panels, the API rows are scanned one by one, none carries c3a1, and a red ? badge marks that the failed task cannot be followed into the service.",
+  "15.3–18.3s: Fix. The agent trace clears and the charge() tool gains the sublabel + traceparent with a blue pulse: the tool now injects the W3C trace context header on its outgoing request.",
+  "18.3–24.8s: Resolution. Task 9 runs; the packet from the tool to the Billing API is now a blue traceparent 7e2d chip. The API fails again with 500, but its new span reads POST /charge 500 · 7e2d, the same id as the agent trace.",
+  "24.8–29.6s: The link between the panels becomes a solid blue flowing line and the ? becomes a ✓: one trace now spans the agent, its tool and the service, so the failed task can be followed end to end. The stage holds, then fades so the loop restarts on the opening frame."
+]

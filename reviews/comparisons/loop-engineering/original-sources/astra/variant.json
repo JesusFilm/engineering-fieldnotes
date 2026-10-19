@@ -1,0 +1,47 @@
+{
+  "id": "astra",
+  "concept": "loop-engineering",
+  "title": "Evidence first",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Classify observed test results before allowing another agent edit: repair a valid failure, review a passing patch, and hand off missing validation.",
+  "src": "media/loop-engineering/astra.mp4",
+  "poster": "media/loop-engineering/astra.jpg",
+  "duration": 28,
+  "verified": true,
+  "limitations": [
+    "Illustrative scenario, counts, and timing; this is not a demonstrated model repair or a guarantee of successful fixes.",
+    "The result gate represents executable harness policy; persistent prompts alone do not enforce permissions, edit scope, or stopping.",
+    "Immediate handoff for no tests is this repair-only workflow’s policy; a separately scoped diagnostic agent could investigate discovery.",
+    "Passing the selected tests permits human review, not automatic merge or proof of overall correctness.",
+    "Audio was checked by decoded signal analysis and spectrogram, not physically heard.",
+    "Authored independently without inspecting baseline media or other variant scenes; comparative ranking is pending."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 4.5,
+      "text": "In this illustrative repair task, the agent runs 12 selected tests. One assertion fails. The result gate accepts this as usable feedback for another edit."
+    },
+    {
+      "start": 4.5,
+      "end": 9.8,
+      "text": "The failure travels back to the agent. Patch 0 becomes patch 1, and the selected tests run again. All 12 pass in this example."
+    },
+    {
+      "start": 9.8,
+      "end": 14.2,
+      "text": "The passing result exits the edit loop and reaches an engineer for patch review. Passing these tests does not authorize an automatic merge."
+    },
+    {
+      "start": 14.2,
+      "end": 20.2,
+      "text": "A separate task begins, but pytest collects no tests and returns exit 5. The gate blocks the edit path, and the task remains at patch 0. This gate represents enforced application logic, not a prompt-based permission guarantee."
+    },
+    {
+      "start": 20.2,
+      "end": 28,
+      "text": "The blocked run hands its command and logs to the engineer to inspect test discovery. Product edits stay stopped. The scene fades out without claiming the blocker was repaired."
+    }
+  ]
+}

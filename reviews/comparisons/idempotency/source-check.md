@@ -1,0 +1,26 @@
+# Idempotency guide and sequence verification
+
+Reviewed 2026-10-19 by gpt-6-astra comparative review, after the blind findings were saved. The following primary documents were opened and their relevant text read in this review; this is not a reuse of the authors' verification claim.
+
+| Primary document | Claims checked and result |
+|---|---|
+| [RFC 9110 §9.2.2](https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2) | Repetition preserves the intended server effect; responses can differ and per-request logging is allowed. PUT, DELETE, and safe methods are idempotent. Automatically retrying a non-idempotent method requires knowledge of safe semantics or that the first attempt was not applied. The guide's explicit POST contract is an appropriate conservative engineering rule. |
+| [AWS Builders’ Library](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/) | Identical parameters alone need not express the same intent. Caller-provided identity, customer scope, coordinated durable mutation/token recording, finite retention, and parameter mismatch rejection support the guide. Replaying a resource identifier is a particular useful contract, not the definition of idempotency. |
+| [Stripe idempotent requests](https://docs.stripe.com/api/idempotent_requests) | The current page explicitly distinguishes API v1 saved responses (including 500s) from API v2 recovery semantics. V1 permits pruning after at least 24 hours and treats a reused pruned key as a new request. The guide correctly avoids generalising these policies to every service or API version. |
+| [PostgreSQL transactions](https://www.postgresql.org/docs/current/tutorial-transactions.html) | Atomic commit and simultaneous visibility support storing the operation record and ticket within one local transaction. The tutorial also explains recovery from aborted transactions. It does not make a remote provider part of that transaction. |
+| [PostgreSQL constraints](https://www.postgresql.org/docs/current/ddl-constraints.html) | Composite uniqueness is appropriate. Default unique constraints allow null-containing duplicates; the guide's non-null scope/key fields close that gap. |
+| [PostgreSQL unique-index checks](https://www.postgresql.org/docs/current/index-unique-checks.html) | An inserter waits for an uncommitted conflicting insertion, then rechecks; a surviving committed conflict violates uniqueness. Non-deferrable checks run immediately. The fresh-transaction duplicate branch is the guide's application design, not an automatic database response-replay feature. |
+
+## Content verdict
+
+**Keep as core.** The immediate audience decision is whether an agent may automatically retry a write with an uncertain outcome. Engineers consuming existing tools need that contract before they need to implement a distributed system. The guide provides observable tests for a dropped reply, concurrent attempts, and changed payloads, plus an explicit question about expired keys. Its database implementation is a worked example and can be revisited as reference; it does not justify deferring the whole concept.
+
+Prerequisites (tool design and timeouts/retries) are appropriate. Authorization remains independent. A durable runner must retain the identity across restart; equal text is not identity. Retention must cover the retry policy, and a locally atomic operation does not protect an uncoordinated external side effect. These boundaries are present. No factual guide rewrite was needed. Retrieval date for all six sources: 2026-10-19.
+
+## Text versus frames
+
+- **Baseline:** 1–8s keyed cart A, order/key commit, and dropped return; 10–14.1s lookup and replay; 17–20.2s cart B rejected; 22.1s original order/count re-emphasized. The coarse transcript ranges match the encoded causal order. It does not demonstrate concurrent-key arbitration; the preceding MISS is not a safe check-then-insert algorithm on its own.
+- **Astra:** 3.8s paired database records; 6.9s reply loss and unknown caller outcome; 9.8–16.8s same k7/v1 and successful replay; 19–23.3s v2 mismatch/rejection; 25s unchanged ticket emphasis. All five textual sequence blocks match the actual pictures. Statements about permissions/prompts in the last block are explanatory context, not visual demonstrations. The saved-record pulse on mismatch is a condensed comparison, not a second fully animated database query.
+- **Fable:** normal #501 precedes the step-2 #502; the dropped reply leads to #503 on a bare retry; rows #502/#503 turn red. The second take resets to #501, then stores #502/key s2, loses the reply, and looks up the retained row without another insertion. The revised transition transcript now explicitly describes the moving rewind triangles. This is an editorial alternative, not deletion of committed duplicate tickets. “s2” is a short visual name, not a recommended globally reused production key. No concurrency, changed-parameter, or expiry claim is implied by that cut.
+
+The original author identity and sound sequence of Fable are retained. Its original self-review files remain historical evidence bound to the original hash; current checks are in encoded-checks.json and the final comparison. No subjective listening claim is made.

@@ -1,0 +1,63 @@
+{
+  "id": "astra",
+  "concept": "orchestration-patterns",
+  "title": "Join the checks",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Parallel checks can share a frozen patch, but only fresh, acceptable results may cross the join into a separate human approval step.",
+  "src": "media/orchestration-patterns/astra.mp4",
+  "poster": "media/orchestration-patterns/astra.jpg",
+  "duration": 30,
+  "verified": true,
+  "limitations": [
+    "Illustrative fixed workflow and timing; no measured speedup or quality guarantee.",
+    "PASS is a model review outcome, not proof of correctness; human evidence inspection remains necessary.",
+    "Failure blocks the approval-ready handoff, not engineers’ access to failing evidence; repair happens offscreen.",
+    "Read-only access and permission enforcement are configured outside the animation; persistent prompts cannot enforce permissions.",
+    "Audio was analysed but not physically listened to.",
+    "Original author self-review is preserved; subsequent comparative review and edits are credited separately."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 9.4,
+      "text": "A frozen patch A goes to two independent model reviewers: API compatibility and database migration. Both report a pass. The coordinator waits until both reports arrive, then sends a bundle to a human approver, who reviews and approves it."
+    },
+    {
+      "start": 9.4,
+      "end": 13.8,
+      "text": "A different patch B clears the earlier results and starts both checks again. The API report arrives first. The join shows one of two; approval waits while the database check continues."
+    },
+    {
+      "start": 13.8,
+      "end": 17.5,
+      "text": "The database reviewer reports a failure. Its red report reaches the join, blocking the approval-ready handoff. A red failure notice then reaches the human approver, whose state changes to REPAIR. Failing evidence is visible without permitting approval."
+    },
+    {
+      "start": 17.5,
+      "end": 24.3,
+      "text": "An engineer supplies a repaired patch C; the repair itself is offscreen. Both old reports are cleared because the code snapshot changed. Both checks run again, and their fresh passing reports reach the join."
+    },
+    {
+      "start": 24.3,
+      "end": 30,
+      "text": "The fresh bundle reaches the human approver for review and a separate approval decision. The result holds before fading to the opening background. This is an illustrative workflow, not a guarantee that passing model reviews establish correctness."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "changes": [
+        "Send a red failure notice to the human at 15.15s and show REPAIR at 15.95s while JOIN remains BLOCKED."
+      ],
+      "originalMp4Sha256": "998b932b0873441d661a384c80014849c839e49b7d113c5e71712e61095a37bc"
+    }
+  ],
+  "verification": {
+    "review": "reviews/comparisons/orchestration-patterns/after.md",
+    "evidence": "reviews/comparisons/orchestration-patterns/verification.json",
+    "sha256": "0ef2aaa0ee3cec7bad9a10146825f2f599600e6ffa289213ac3f40d1a6491fb3",
+    "physicalListening": false
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "astra",
+  "concept": "human-in-the-loop",
+  "title": "Approve the artifact",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Bind human approval to the exact proposed artifact, and require fresh review when an agent changes it before execution.",
+  "src": "media/human-in-the-loop/astra.mp4",
+  "poster": "media/human-in-the-loop/astra.jpg",
+  "duration": 30.0,
+  "verified": true,
+  "limitations": [
+    "Illustrative executor; no framework or prompt automatically guarantees artifact-bound authorization.",
+    "A/B abbreviate immutable artifact identities; target binding, authenticated decisions, race protection and retry handling are outside this cut.",
+    "Human review and testing durations are compressed, not benchmarks.",
+    "Audio was analysed, not physically listened to.",
+    "Self-reviewed; independent comparative review and default promotion remain separate."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5.5,
+      "text": "An agent runs tests and prepares release artifact A. Production remains unchanged behind a closed execution gate."
+    },
+    {
+      "start": 5.5,
+      "end": 10.2,
+      "text": "A reviewer inspects A and approves that artifact. The approval is recorded separately; nothing has deployed yet."
+    },
+    {
+      "start": 10.2,
+      "end": 17,
+      "text": "The agent prepares revision B. The executor compares B with approval for A, detects a mismatch and keeps production unchanged. The old approval is stale."
+    },
+    {
+      "start": 17,
+      "end": 23,
+      "text": "B returns to the reviewer. A fresh approval for B replaces the stale one, and the executor waits to recheck the pair."
+    },
+    {
+      "start": 23,
+      "end": 30,
+      "text": "The executor matches B to its new approval, opens the gate and releases B. This illustrates an enforced approval boundary; the scene fades to its opening state."
+    }
+  ]
+}

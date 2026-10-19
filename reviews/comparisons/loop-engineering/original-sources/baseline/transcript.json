@@ -1,0 +1,5 @@
+[
+  "0–9s: Three agent, tool and result cycles consume the available budget.",
+  "10–12s: The budget is exhausted and the run stops.",
+  "13–23s: A second run reaches a complete result with budget remaining, demonstrating a separate successful exit."
+]

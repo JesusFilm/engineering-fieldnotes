@@ -1,0 +1,24 @@
+{
+  "id": "orchestration-patterns",
+  "placement": "core",
+  "verifiedSources": [
+    "https://www.anthropic.com/engineering/building-effective-agents",
+    "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs",
+    "https://docs.github.com/en/actions/tutorials/authenticate-with-github_token"
+  ],
+  "changes": [
+    "Replaced brief taxonomy with a standalone 760-word review-workflow lesson.",
+    "Preserved id, title, category, roles, and related fields.",
+    "Added explicit worker contracts, shared snapshots, failure visibility, dependency gates, configured permissions, and retained human approval.",
+    "Added prerequisites, observable outcomes, four-step walkthrough, pitfalls, and a falsifiable exercise.",
+    "Audited every original assertion against three retrieved primary source pages; separated recommendations from sourced semantics.",
+    "Authored an independent gpt-6-astra video demonstrating a normal join, blocked approval, stale-result invalidation and recheck."
+  ],
+  "limitations": [
+    "Authored and self-reviewed by gpt-6-astra; no independent comparative review.",
+    "No performance or quality benchmark was run; scenario and timing are illustrative.",
+    "Anthropic article carries a tooling-age caveat; used for pattern definitions, not current product features.",
+    "Video is limited to a fixed two-worker join, not routing or dynamic planning.",
+    "Physical audio listening was not performed."
+  ]
+}

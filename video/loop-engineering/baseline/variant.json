@@ -1,0 +1,52 @@
+{
+  "id": "baseline",
+  "concept": "loop-engineering",
+  "title": "Bounded runs",
+  "model": "Original prototype; model not recorded",
+  "lesson": "A harness-owned call budget ends an unsuccessful run; a passing result can exit to review before that budget is spent.",
+  "src": "media/loop-engineering/baseline.mp4",
+  "poster": "media/loop-engineering/baseline.jpg",
+  "duration": 24.0,
+  "transcript": [
+    {
+      "start": 0,
+      "end": 9.7,
+      "text": "Run A has a three-call budget. Three agent-to-tool cycles consume it. Amber RETRY results return feedback; they do not mean the task has succeeded."
+    },
+    {
+      "start": 9.7,
+      "end": 13.2,
+      "text": "With no calls remaining, the run routes to Stop. The stage fades to separate this exhausted task from the next example."
+    },
+    {
+      "start": 13.2,
+      "end": 19.6,
+      "text": "An independent run B starts with its own three-call budget. After one continuing result, a second tool result becomes PASS and travels to Review with one call left."
+    },
+    {
+      "start": 19.6,
+      "end": 24,
+      "text": "The edit loop dims and Review remains active. The run has ended successfully for review; the animation does not show merge approval. A full-frame fade closes the loop."
+    }
+  ],
+  "limitations": [
+    "The three-call budget and outcomes are illustrative, not a recommended production limit.",
+    "The diagram abstracts the harness implementation and does not show timeout cancellation, evidence classification or a blocker handoff.",
+    "The separate run B must be authorized independently; an exhausted agent cannot refill its own budget.",
+    "Audio was analysed, not heard."
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "verified": true,
+  "corrections": {
+    "date": "2026-10-19",
+    "editor": "gpt-6-astra comparative review",
+    "originalMP4SHA256": "b58b18bf9404df1d3bdfbcfe225714908451577558129fc87736cd9dead7fc13",
+    "changes": [
+      "Added orientation title, distinct amber continuing results versus green PASS, a labelled and faded independent-run reset, and Review as the successful endpoint.",
+      "Shortened the final hold; capped local renderer FFmpeg threads."
+    ],
+    "originalSourceArchive": "reviews/comparisons/loop-engineering/original-sources/baseline",
+    "verification": "reviews/comparisons/loop-engineering/encoded-checks.json",
+    "finalMP4SHA256": "157e1d6e4bbba89948a5d735f32d535f85201545e6b06d020419816a6263d73d"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "astra",
+  "concept": "canary-deployments",
+  "title": "Split the signal",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Break down a canary’s measurements by version and changed operation before expanding exposure; a healthy pooled rate can hide a severe regression.",
+  "src": "media/canary-deployments/astra.mp4",
+  "poster": "media/canary-deployments/astra.jpg",
+  "duration": 30.0,
+  "verified": true,
+  "limitations": [
+    "Illustrative export-service scenario; counts, percentages, and compressed observation time are not safety guarantees.",
+    "Routing supports weighted traffic in this example; replica counts alone do not guarantee exact traffic shares.",
+    "Abort redirects new traffic but does not undo persisted changes or external side effects; the failed window is retained.",
+    "Audio levels, timing and spectrogram were analyzed; physical listening was not performed.",
+    "The original author review was a self-review; the completed independent comparison is now saved in reviews/comparisons/canary-deployments.json.",
+    "Earlier visual repairs: gpt-6-astra comparative review. Final comparative verification: gpt-6.1-sol comparative review. Original authorship is unchanged."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5.5,
+      "text": "The stable release receives all requests. Its previous observation window has no errors. The candidate is not yet receiving traffic."
+    },
+    {
+      "start": 5.5,
+      "end": 13,
+      "text": "A release containing an agent-assisted change receives ten percent of traffic. Two routing cycles send nine requests to stable for each one to the canary. The previous result is cleared while a new window is collected."
+    },
+    {
+      "start": 13,
+      "end": 16.4,
+      "text": "The new window shows forty errors out of ten thousand requests, or 0.4 percent overall. Promotion is still pending; the green pooled result is not approval."
+    },
+    {
+      "start": 16.4,
+      "end": 22.6,
+      "text": "The same window is split by version for exports: stable has zero failures among nine hundred exports; the canary has forty among one hundred, or forty percent. The failure signal blocks promotion."
+    },
+    {
+      "start": 22.6,
+      "end": 30,
+      "text": "The rollout is aborted and new traffic returns to stable. The candidate receives zero percent, while its failed measurement stays visible as historical evidence. This illustrates containment, not repair of earlier effects."
+    }
+  ],
+  "editedBy": "gpt-6.1-sol comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "scope": "Visual legibility; original authoring model, data, and lesson retained",
+      "changes": [
+        "Replaced a metric-centred ripple at 14.50s with border emphasis, keeping the label and denominator unobstructed."
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "editedBy": "gpt-6.1-sol comparative review",
+      "scope": "Verification metadata only; scene, encode, poster and transcript unchanged",
+      "changes": [
+        "Completed fresh blind comparative review and renewed hash-bound encoded verification. Earlier gpt-6-astra comparative-review corrections and original model provenance are preserved.",
+        "Clarified historical self-review limitations and exposed the earlier reviewer attribution alongside the completed comparison status."
+      ]
+    }
+  ],
+  "previousEditedBy": "gpt-6-astra comparative review",
+  "reviewers": [
+    "gpt-6-astra comparative review",
+    "gpt-6.1-sol comparative review"
+  ],
+  "comparativeVerification": {
+    "reviewerModel": "gpt-6.1-sol",
+    "date": "2026-10-19",
+    "sha256": "d70bf4b171079a1df38d94c28c12fe7aea62e7e64bece90541b19053aa3ac713",
+    "evidence": "reviews/comparisons/canary-deployments/fresh-encoded-checks.json",
+    "physicalListening": false
+  }
+}

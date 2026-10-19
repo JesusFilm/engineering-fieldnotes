@@ -1,0 +1,275 @@
+{
+  "author": "gpt-6-astra",
+  "reviewed": "2026-10-19",
+  "fileBytes": 635248,
+  "sha256": "32e1ae92f59fd2bb47eef168dfcce925a8e81c2e15e256b12f7c0a7e294b2ee0",
+  "duration": 28,
+  "frames": 840,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "videoCodec": "h264",
+  "pixelFormat": "yuv420p",
+  "audioCodec": "aac",
+  "fullDecode": "pass",
+  "topLevelBoxes": [
+    "ftyp",
+    "moov",
+    "free",
+    "mdat"
+  ],
+  "faststart": true,
+  "firstLastDecodedMD5": [
+    "9b2c4088acb2c896d5d79adbe4b893ac",
+    "9b2c4088acb2c896d5d79adbe4b893ac"
+  ],
+  "audioMaxDbFS": -4.7,
+  "cueCount": 40,
+  "cuePeaks": [
+    {
+      "time": 0.3,
+      "sound": "ack",
+      "peakDbFS": -23.39
+    },
+    {
+      "time": 1,
+      "sound": "send",
+      "peakDbFS": -20.82
+    },
+    {
+      "time": 1.5,
+      "sound": "ack",
+      "peakDbFS": -17.54
+    },
+    {
+      "time": 1.7,
+      "sound": "send",
+      "peakDbFS": -21.1
+    },
+    {
+      "time": 2.35,
+      "sound": "arrive",
+      "peakDbFS": -9.08
+    },
+    {
+      "time": 3.25,
+      "sound": "deliver",
+      "peakDbFS": -12.63
+    },
+    {
+      "time": 2.6,
+      "sound": "send",
+      "peakDbFS": -20.24
+    },
+    {
+      "time": 3.1,
+      "sound": "ack",
+      "peakDbFS": -12.63
+    },
+    {
+      "time": 3.3,
+      "sound": "send",
+      "peakDbFS": -16.07
+    },
+    {
+      "time": 3.95,
+      "sound": "arrive",
+      "peakDbFS": -7.99
+    },
+    {
+      "time": 4.9,
+      "sound": "deliver",
+      "peakDbFS": -12.45
+    },
+    {
+      "time": 5.5,
+      "sound": "send",
+      "peakDbFS": -21.03
+    },
+    {
+      "time": 6,
+      "sound": "ack",
+      "peakDbFS": -17.6
+    },
+    {
+      "time": 6.2,
+      "sound": "send",
+      "peakDbFS": -21.19
+    },
+    {
+      "time": 6.85,
+      "sound": "arrive",
+      "peakDbFS": -8.96
+    },
+    {
+      "time": 22,
+      "sound": "deliver",
+      "peakDbFS": -12.46
+    },
+    {
+      "time": 7.2,
+      "sound": "send",
+      "peakDbFS": -20.14
+    },
+    {
+      "time": 7.7,
+      "sound": "ack",
+      "peakDbFS": -17.57
+    },
+    {
+      "time": 7.9,
+      "sound": "send",
+      "peakDbFS": -20.92
+    },
+    {
+      "time": 8.55,
+      "sound": "arrive",
+      "peakDbFS": -9.08
+    },
+    {
+      "time": 9.8,
+      "sound": "deliver",
+      "peakDbFS": -12.52
+    },
+    {
+      "time": 10.5,
+      "sound": "send",
+      "peakDbFS": -20.61
+    },
+    {
+      "time": 11,
+      "sound": "ack",
+      "peakDbFS": -17.6
+    },
+    {
+      "time": 11.2,
+      "sound": "send",
+      "peakDbFS": -21.04
+    },
+    {
+      "time": 11.85,
+      "sound": "thump",
+      "peakDbFS": -4.7
+    },
+    {
+      "time": 14.25,
+      "sound": "recover",
+      "peakDbFS": -18.19
+    },
+    {
+      "time": 15,
+      "sound": "send",
+      "peakDbFS": -21.06
+    },
+    {
+      "time": 15.5,
+      "sound": "ack",
+      "peakDbFS": -17.72
+    },
+    {
+      "time": 15.7,
+      "sound": "send",
+      "peakDbFS": -21.1
+    },
+    {
+      "time": 16.35,
+      "sound": "arrive",
+      "peakDbFS": -9.04
+    },
+    {
+      "time": 18,
+      "sound": "deliver",
+      "peakDbFS": -12.48
+    },
+    {
+      "time": 18.45,
+      "sound": "send",
+      "peakDbFS": -20.85
+    },
+    {
+      "time": 18.95,
+      "sound": "ack",
+      "peakDbFS": -17.63
+    },
+    {
+      "time": 19.15,
+      "sound": "send",
+      "peakDbFS": -20.93
+    },
+    {
+      "time": 19.8,
+      "sound": "arrive",
+      "peakDbFS": -9.05
+    },
+    {
+      "time": 20.9,
+      "sound": "deliver",
+      "peakDbFS": -12.5
+    },
+    {
+      "time": 22.35,
+      "sound": "send",
+      "peakDbFS": -16.93
+    },
+    {
+      "time": 22.85,
+      "sound": "arrive",
+      "peakDbFS": -9.08
+    },
+    {
+      "time": 24.5,
+      "sound": "deliver",
+      "peakDbFS": -12.49
+    },
+    {
+      "time": 26.4,
+      "sound": "poof",
+      "peakDbFS": -25.01
+    }
+  ],
+  "audioTimingComparisons": [
+    {
+      "cueTime": 1.0,
+      "offsetMs": 0.0,
+      "correlation": 1.0
+    },
+    {
+      "cueTime": 5.5,
+      "offsetMs": -4.558,
+      "correlation": 0.9916
+    },
+    {
+      "cueTime": 11.85,
+      "offsetMs": 0.0,
+      "correlation": 0.9998
+    },
+    {
+      "cueTime": 14.25,
+      "offsetMs": 0.0,
+      "correlation": 1.0
+    },
+    {
+      "cueTime": 22.35,
+      "offsetMs": 0.0,
+      "correlation": 0.9992
+    },
+    {
+      "cueTime": 24.5,
+      "offsetMs": 0.0,
+      "correlation": 1.0
+    },
+    {
+      "cueTime": 26.4,
+      "offsetMs": 0.0,
+      "correlation": 0.9417
+    }
+  ],
+  "physicalListening": false,
+  "allVisibleFramesTitleCheck": {
+    "frames": 762,
+    "minYellowPixels": 205
+  },
+  "visualReview": "Requires human/model inspection of generated images; see review.md"
+}

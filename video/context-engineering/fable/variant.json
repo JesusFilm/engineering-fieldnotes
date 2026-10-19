@@ -1,0 +1,54 @@
+{
+  "id": "fable",
+  "concept": "context-engineering",
+  "title": "Load the trace and one module, fetch the rest on demand",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "Retrieve the failing trace and the module it identifies, then follow dependencies revealed by inspection. Stale notes can steer a candidate edit; fewer tokens do not establish a speedup or a correct patch.",
+  "src": "media/context-engineering/fable.mp4",
+  "poster": "media/context-engineering/fable.jpg",
+  "duration": 25.777007,
+  "verified": true,
+  "transcript": [
+    "0.0–4.8s: In this retrieval example, the null-crash task is present before the trace and all five repository files are loaded. The illustrative meter rises from 1k to 14k of 16k. High occupancy turns amber; the window is not exceeded.",
+    "5.4–11.9s: Context reaches the model, which pulses while working. At 7.3s the old notes row exposes old: edit db.ts. An amber db.ts? candidate leaves the model at 9.3s and lands at 9.8s. No test has run; the candidate reflects the stale note.",
+    "12.0–12.8s: The context is reset to the task alone and the previous candidate clears. The meter returns to 1k.",
+    "13.2–15.7s: The trace is loaded first; its api.ts module is selected and retrieved. The illustrated context settles at about 4k.",
+    "16.1–19.9s: After reading the partial context, the model requests users.ts?; the repository row lights and the file returns. The context grows to about 7k.",
+    "20.1–25.8s: Another model invocation emits the amber api.ts:42? candidate at 21.7–22.2s. The proposal holds until 24.7s, then the stage fades to the title-only opening. No latency number, test result or correctness tick appears."
+  ],
+  "limitations": [
+    "This is a schematic contrast, not a recorded agent run. Stale evidence may mislead, but a large context can contain essential information and selective retrieval can miss it.",
+    "Token counts and the 16k window are illustrative. Runtime retrieval can add tool calls and latency; caching can reduce repeated-input processing cost. There is no measured speedup here.",
+    "Both output badges are candidate locations, not patches checked by a fixture. The trace alone does not prove the fault lies in the named file.",
+    "One follow-up retrieval is shown; real agents may need several and should preserve applicable constraints throughout.",
+    "Material placed in context informs the model; it does not enforce permissions. Authorization belongs in the harness and tools.",
+    "Audio was analyzed for peak, timing and spectral events, not heard."
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "timestamp": "6.1–22.2s",
+      "change": "Removed invented 41s/9s latency comparison and its colliding badge; paired work ticks with visible model pulses."
+    },
+    {
+      "date": "2026-10-19",
+      "timestamp": "4.5–12.0s",
+      "change": "Changed high-but-within-capacity occupancy from red to amber; exposed the stale note content before its candidate edit."
+    },
+    {
+      "date": "2026-10-19",
+      "timestamp": "9.3–11.9s; 21.7–24.7s",
+      "change": "Replaced untested failure/success verdicts with amber db.ts? and api.ts:42? candidates; kept the incremental retrieval mechanism."
+    },
+    {
+      "date": "2026-10-19",
+      "timestamp": "1.9–4.5s; 14.8–15.4s; 18.9–19.6s",
+      "change": "Increased store row text from 26px to 32px and routed departing file chips clear of the Repository label; tightened the final ripple below the meter."
+    }
+  ],
+  "originalArtifacts": "reviews/comparisons/context-engineering/scratch/original-fable",
+  "mediaSHA256": "6051b9707ed991fa28d77eb3b407712ed2b89b2d90f30216ea355e0e05c393e9",
+  "verification": "reviews/comparisons/context-engineering/verification.json"
+}

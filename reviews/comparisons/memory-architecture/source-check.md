@@ -1,0 +1,19 @@
+# Guide relevance and source verification
+
+Retrieved 2026-10-19. These primary documents were opened during this comparative review; no integration, test-command migration or permission enforcement experiment was executed.
+
+| Guide boundary | Primary evidence inspected | Verdict |
+|---|---|---|
+| Thread state and cross-thread records are distinct scopes. “Short-term” need not mean volatile RAM. | [LangGraph persistence](https://docs.langchain.com/oss/python/langgraph/persistence), introduction, checkpointer/store table, in-memory restart limitation. | Supported. Checkpointers persist thread state; stores expose application-defined records across threads. Backend choice controls restart survival. |
+| Store namespaces and keys organize records; reading/writing is explicit application or tool work. | [Long-term memory](https://docs.langchain.com/oss/python/langchain/long-term-memory), Usage and Memory storage examples. | Supported. A namespace containing an organization name is not itself an authorization policy. The guide correctly assigns access rules to the application. |
+| Memory writing has hot-path/background timing tradeoffs. | [Memory overview](https://docs.langchain.com/oss/python/concepts/memory), Writing memories and Memory storage. | Supported. Background writes can leave another thread without the latest context. The library's explicit refresh/logging protocol is a proposed design, not a built-in guarantee. |
+| Repository instructions shape behaviour but cannot grant or revoke tool permission. | [Claude Code permissions](https://code.claude.com/docs/en/permissions), Manage permissions (especially explicit statement that Claude Code enforces rules outside the model). | Supported. The guide's enforcement distinction is precise. |
+
+**Keep / core.** Source ownership, correction and current-context refresh change decisions the team makes as soon as it delegates repeatable repository tasks. A reviewed instruction file is a suitable first implementation; a retrieval service is not a prerequisite. Keep context-engineering as the prerequisite. The exercise has observable success criteria: inspect both a new and already active session, trace the supplied revision, and use r2 or stop before the next relevant action. Checkpoints, backups, retention and permissions remain explicitly outside the animations' mechanisms.
+
+The freshness check compares the relevant source revision, not necessarily every repository commit. A mismatch requires rereading/review; it does not prove the recalled command is wrong. Conversely, a matching revision is not proof of safety or useful test coverage. The approved source is an assumption in the visual examples; the organization must define its review authority. These are engineering judgements and limits, not claimed automatic framework features.
+
+The guide already states the important limits and does not require a content rewrite. This review adds explicit retrieval dates to its four source entries. The classification remains an editorial recommendation, not a publication or curriculum-promotion action.
+
+
+Publication-note audit: inspected the topic's author reviews, beat sheets, READMEs, guide and source notes. No topic `evidence.md` exists. Condensed Fable's source summaries into linked paraphrases, keeping their claim mapping; removed the unsupported universal assertion that session persistence permits no validation. Also opened [Agents SDK sessions](https://openai.github.io/openai-agents-python/sessions/) (core behaviour and configurable history merging) and [Claude Code memory](https://code.claude.com/docs/en/memory) (instructions versus enforced configuration) on 2026-10-19. No long direct source quotations are included in the current topic notes. Historical author measurements are explicitly distinguished from the final encode's results.

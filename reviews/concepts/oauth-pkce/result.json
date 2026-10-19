@@ -1,0 +1,22 @@
+{
+  "id": "oauth-pkce",
+  "placement": "reference",
+  "verifiedSources": [
+    "https://www.rfc-editor.org/rfc/rfc7636",
+    "https://www.rfc-editor.org/rfc/rfc9700",
+    "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+    "https://www.rfc-editor.org/rfc/rfc8252"
+  ],
+  "changes": [
+    "Revised by gpt-6-astra with high reasoning; kept identity/category/roles/related fields.",
+    "Corrected token-issuance implication after a matching verifier.",
+    "Added agent-host transaction isolation example and HTTP/STDIO distinction.",
+    "Added prerequisites, outcomes, workflow, walkthrough, pitfalls and observable exercise.",
+    "Added independent video teaching scope and primary-source mapping."
+  ],
+  "limitations": [
+    "Illustrative scenario; no live OAuth provider tested.",
+    "MCP evidence pinned to 2025-11-25, not a claim about every deployed agent.",
+    "Self-review; no cross-model comparative ranking."
+  ]
+}

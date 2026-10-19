@@ -1,0 +1,210 @@
+[
+  {
+    "t": 1.2,
+    "type": "send",
+    "job": "A"
+  },
+  {
+    "t": 1.8,
+    "type": "enqueue",
+    "job": "A",
+    "waiting": [
+      "A"
+    ]
+  },
+  {
+    "t": 2.4,
+    "type": "dequeue",
+    "job": "A",
+    "waiting": []
+  },
+  {
+    "t": 3,
+    "type": "start",
+    "job": "A"
+  },
+  {
+    "t": 4.6,
+    "type": "complete",
+    "job": "A"
+  },
+  {
+    "t": 5.6,
+    "type": "send",
+    "job": "B"
+  },
+  {
+    "t": 6.2,
+    "type": "enqueue",
+    "job": "B",
+    "waiting": [
+      "B"
+    ]
+  },
+  {
+    "t": 6.7,
+    "type": "dequeue",
+    "job": "B",
+    "waiting": []
+  },
+  {
+    "t": 7.3,
+    "type": "start",
+    "job": "B"
+  },
+  {
+    "t": 8,
+    "type": "send",
+    "job": "C"
+  },
+  {
+    "t": 8.6,
+    "type": "enqueue",
+    "job": "C",
+    "waiting": [
+      "C"
+    ]
+  },
+  {
+    "t": 9,
+    "type": "send",
+    "job": "D"
+  },
+  {
+    "t": 9.6,
+    "type": "enqueue",
+    "job": "D",
+    "waiting": [
+      "C",
+      "D"
+    ]
+  },
+  {
+    "t": 10,
+    "type": "send",
+    "job": "E"
+  },
+  {
+    "t": 10.6,
+    "type": "enqueue",
+    "job": "E",
+    "waiting": [
+      "C",
+      "D",
+      "E"
+    ]
+  },
+  {
+    "t": 10.8,
+    "type": "full-signal",
+    "job": "F"
+  },
+  {
+    "t": 11.6,
+    "type": "producer-blocked",
+    "job": "F"
+  },
+  {
+    "t": 14.6,
+    "type": "complete",
+    "job": "B"
+  },
+  {
+    "t": 15,
+    "type": "dequeue",
+    "job": "C",
+    "waiting": [
+      "D",
+      "E"
+    ]
+  },
+  {
+    "t": 15.6,
+    "type": "start",
+    "job": "C"
+  },
+  {
+    "t": 15.8,
+    "type": "producer-resumed",
+    "job": "F"
+  },
+  {
+    "t": 16.6,
+    "type": "send",
+    "job": "F"
+  },
+  {
+    "t": 17.2,
+    "type": "enqueue",
+    "job": "F",
+    "waiting": [
+      "D",
+      "E",
+      "F"
+    ]
+  },
+  {
+    "t": 19.8,
+    "type": "complete",
+    "job": "C"
+  },
+  {
+    "t": 20.2,
+    "type": "dequeue",
+    "job": "D",
+    "waiting": [
+      "E",
+      "F"
+    ]
+  },
+  {
+    "t": 20.8,
+    "type": "start",
+    "job": "D"
+  },
+  {
+    "t": 22.2,
+    "type": "complete",
+    "job": "D"
+  },
+  {
+    "t": 22.6,
+    "type": "dequeue",
+    "job": "E",
+    "waiting": [
+      "F"
+    ]
+  },
+  {
+    "t": 23.200000000000003,
+    "type": "start",
+    "job": "E"
+  },
+  {
+    "t": 24.6,
+    "type": "complete",
+    "job": "E"
+  },
+  {
+    "t": 25,
+    "type": "dequeue",
+    "job": "F",
+    "waiting": []
+  },
+  {
+    "t": 25.6,
+    "type": "start",
+    "job": "F"
+  },
+  {
+    "t": 27,
+    "type": "complete",
+    "job": "F"
+  },
+  {
+    "t": 27,
+    "type": "batch-complete",
+    "job": null,
+    "completed": 6
+  }
+]

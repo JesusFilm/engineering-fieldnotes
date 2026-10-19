@@ -1,0 +1,99 @@
+{
+  "id": "cache-aside",
+  "title": "Cache-aside",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Cache-aside lets application code reuse a stored result, then fetch and cache missing data. A hit proves presence, not freshness.",
+  "overview": "The application owns the lookup, source read, and cache fill. An update path can commit to the source and then delete the cached entry. These operations are separate: another writer, a failed deletion, or an overlapping reader can leave outdated data available. This chapter concerns exact-key data caching behind an agent tool, not model prompt caching or similarity-based answer reuse.",
+  "why": "Use this when repeated tool reads create measurable source load. Delegation makes a stale result consequential: an agent may use an old runbook to propose a deployment. First decide which decisions tolerate old information; adding a cache is not a prerequisite for adopting agents.",
+  "example": "Illustrative scenario: a release-planning agent calls readRunbook(team, service). The cached guide is revision 1. An editor publishes revision 2 with a changed rollback step, but misses invalidation. The tool returns revision 1 again. A recovery operation deletes the key; the following lookup fetches revision 2 and caches it. No deployment executes in this example.",
+  "judgment": "Start with measured repeated reads and an explicit freshness budget. Treat five minutes as a test setting, not a recommendation. Choose keys for the result’s full scope, and keep authorization in application code on every request, including hits. Persistent instructions cannot enforce permissions. Decide whether a failed fresh read should block the proposed action.",
+  "next": "Can you pause a reader after it fetches revision 1, commit revision 2 and invalidate, then resume the reader and observe revision 1 reappear?",
+  "sources": [
+    {
+      "title": "Microsoft Learn — Cache-Aside pattern: application ownership and update ordering",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "AWS ElastiCache — Caching strategies: lazy loading and stale entries",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Strategies.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "AWS Builders’ Library — Caching challenges and strategies: cold-cache load and coalescing",
+      "url": "https://aws.amazon.com/builders-library/caching-challenges-and-strategies/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Redis — EXPIRE: key lifetime semantics",
+      "url": "https://redis.io/docs/latest/commands/expire/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Redis — SET: set a value with an expiration",
+      "url": "https://redis.io/docs/latest/commands/set/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OWASP — Authorization Cheat Sheet: check every request",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Nishtala et al. — Scaling Memcache at Facebook, §3.2.1: stale sets and lease invalidation",
+      "url": "https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final170_update.pdf",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "replication-and-consistency",
+    "load-balancing",
+    "memory-architecture"
+  ],
+  "learning": {
+    "placement": "reference",
+    "relevance": "Engineers building agent tools need this when repeated retrieval makes source capacity or latency a practical problem. Keep it as a supporting chapter because most teams should establish trustworthy tool results and review boundaries before optimizing retrieval.",
+    "prerequisites": [
+      "replication-and-consistency"
+    ],
+    "outcomes": [
+      "Trace a hit and a miss, identifying which component reads the source and populates the cache.",
+      "Reproduce a stale fill after invalidation with a controlled concurrent reader.",
+      "Specify key scope, freshness checks, and source-load limits for one tool."
+    ],
+    "workflow": {
+      "before": "An engineer opens the authoritative runbook, checks its revision, and writes a release plan for review.",
+      "after": "An agent requests the runbook through a tool that returns its source revision and retrieval time, then drafts the plan with those references.",
+      "human": "The engineer owns access rules, the acceptable freshness budget, and approval of the proposed operational steps."
+    },
+    "walkthrough": [
+      "1. Define the contract. Use a mock runbook containing revision and rollbackStep. For this exercise, key the result by team, service, and output-schema version. The team and service come from validated request context; knowing a key never grants access.",
+      "2. Implement the read path. After authorization, look up the key. On a miss, read the source and cache the returned object. For Redis, SET key value EX 300 attaches expiration in the same command. EXPIRE sets a key’s timeout; Redis removes the key after that timeout expires, and a plain GET does not renew its timeout. Cache lifetime is not proof of source freshness.",
+      "3. Implement the update path. Record a successful source commit before deleting the key. Surface deletion failures for recovery. Return the source revision to the caller so a reviewer can compare it against the authoritative revision before relying on operational instructions.",
+      "4. Challenge the happy path. Pause an in-flight old read until after deletion, then release it. A version label alone cannot prevent stale refill. For an action requiring current instructions, make an authoritative recheck part of its execution contract and define what happens if that check fails. A check establishes freshness only at the time it reads the authority; if a later action requires the same revision, the execution system must enforce that revision precondition or revalidate under an appropriate concurrency contract."
+    ],
+    "pitfalls": [
+      "Caching a permission decision alongside content and reusing it after access changes: check authorization for every tool call.",
+      "Treating expiration as a consistency guarantee: an old in-flight read can populate a newly expiring entry after a write.",
+      "Letting simultaneous misses or a cache outage flood the source: test with caching disabled, coalesce duplicate work where appropriate, and cap downstream concurrency."
+    ],
+    "exercise": {
+      "title": "Make a stale runbook visible",
+      "steps": [
+        "Build an in-memory source and cache with a controllable pause between source read and cache fill.",
+        "Perform one cold read followed by two warm reads and record source-read counts; change the source without deletion and observe the old revision.",
+        "Delete the key and read again, checking that the new revision appears.",
+        "Run the paused-reader race and capture the stale result; add an authoritative revision check before accepting the plan."
+      ],
+      "success": [
+        "An initial cold read followed by two warm reads produces exactly one source fetch; deletion causes the next read to fetch again.",
+        "The race is reproducible, and the acceptance check rejects a plan whose cited revision differs from the current source."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

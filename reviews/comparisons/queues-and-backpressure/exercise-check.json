@@ -1,0 +1,174 @@
+{
+  "success": true,
+  "logs": [
+    {
+      "t": 0.0,
+      "event": "submit",
+      "job": "A",
+      "waiting": 0,
+      "active": 0
+    },
+    {
+      "t": 0.0,
+      "event": "admitted",
+      "job": "A",
+      "waiting": 1,
+      "active": 0
+    },
+    {
+      "t": 0.0,
+      "event": "submit",
+      "job": "B",
+      "waiting": 1,
+      "active": 0
+    },
+    {
+      "t": 0.0,
+      "event": "admitted",
+      "job": "B",
+      "waiting": 2,
+      "active": 0
+    },
+    {
+      "t": 0.0,
+      "event": "submit",
+      "job": "C",
+      "waiting": 2,
+      "active": 0
+    },
+    {
+      "t": 0.0,
+      "event": "admitted",
+      "job": "C",
+      "waiting": 3,
+      "active": 0
+    },
+    {
+      "t": 0.0,
+      "event": "submit",
+      "job": "D",
+      "waiting": 3,
+      "active": 0
+    },
+    {
+      "t": 0.0,
+      "event": "start",
+      "job": "A",
+      "waiting": 2,
+      "active": 1
+    },
+    {
+      "t": 0.0001,
+      "event": "admitted",
+      "job": "D",
+      "waiting": 3,
+      "active": 1
+    },
+    {
+      "t": 0.0001,
+      "event": "submit",
+      "job": "E",
+      "waiting": 3,
+      "active": 1
+    },
+    {
+      "t": 0.0412,
+      "event": "finish",
+      "job": "A",
+      "waiting": 3,
+      "active": 0
+    },
+    {
+      "t": 0.0412,
+      "event": "start",
+      "job": "B",
+      "waiting": 2,
+      "active": 1
+    },
+    {
+      "t": 0.0413,
+      "event": "admitted",
+      "job": "E",
+      "waiting": 3,
+      "active": 1
+    },
+    {
+      "t": 0.0413,
+      "event": "submit",
+      "job": "F",
+      "waiting": 3,
+      "active": 1
+    },
+    {
+      "t": 0.3923,
+      "event": "finish",
+      "job": "B",
+      "waiting": 3,
+      "active": 0
+    },
+    {
+      "t": 0.3923,
+      "event": "start",
+      "job": "C",
+      "waiting": 2,
+      "active": 1
+    },
+    {
+      "t": 0.3923,
+      "event": "admitted",
+      "job": "F",
+      "waiting": 3,
+      "active": 1
+    },
+    {
+      "t": 0.4334,
+      "event": "finish",
+      "job": "C",
+      "waiting": 3,
+      "active": 0
+    },
+    {
+      "t": 0.4334,
+      "event": "start",
+      "job": "D",
+      "waiting": 2,
+      "active": 1
+    },
+    {
+      "t": 0.4745,
+      "event": "finish",
+      "job": "D",
+      "waiting": 2,
+      "active": 0
+    },
+    {
+      "t": 0.4745,
+      "event": "start",
+      "job": "E",
+      "waiting": 1,
+      "active": 1
+    },
+    {
+      "t": 0.5155,
+      "event": "finish",
+      "job": "E",
+      "waiting": 1,
+      "active": 0
+    },
+    {
+      "t": 0.5156,
+      "event": "start",
+      "job": "F",
+      "waiting": 0,
+      "active": 1
+    },
+    {
+      "t": 0.5566,
+      "event": "finish",
+      "job": "F",
+      "waiting": 0,
+      "active": 0
+    }
+  ],
+  "scope": "Local asyncio stub only; no broker, real tool, model or production benchmark."
+}

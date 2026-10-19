@@ -1,0 +1,55 @@
+{
+  "id": "canary-deployments",
+  "reviewerModel": "gpt-6.1-sol",
+  "recommended": "astra",
+  "rationale": "Split the signal makes the chapter’s most useful release decision concrete: a green 0.4% pooled error rate conceals 40% failures in candidate exports, so promotion must wait for the right breakdown. Its same-window denominators and retained failed window make it the strongest main entry for the guide and exercise. The original is a simpler routing-and-latency introduction, while Canary the outcome adds a useful agent-prompt example where HTTP 200 coexists with failed PR tests and a visible gate returns new sessions to control.",
+  "findings": [
+    "Baseline 00:05–00:15 shows three 4:1 routing cycles and longer candidate work before comparing p95 900ms with 120ms; it gives the clearest service-flow intuition, but its small version labels and 7.5× badge are harder to read at 350px than the alternatives’ cards.",
+    "Astra 00:06–00:18.6 clears the prior window, collects a new one, then replaces 40/10,000 overall errors with same-window export counts 0/900 versus 40/100. That denominator contrast teaches a release decision the other two cuts do not show.",
+    "Sol 00:11.2–00:19 separates successful API responses from required PR-test failure, sends that failure into STOP, and feeds the gate back to session routing. This is the clearest explicit enforcement path and the most direct application to shared agent prompts; it does not establish a population failure rate.",
+    "Astra 00:23.1–00:28.6 explicitly labels the retained 40% result FAILED WINDOW after withdrawal. Baseline 00:18.5–00:24 and Sol 00:19–00:26 also retain failed evidence while fresh work uses control, but leave its historical scope implicit.",
+    "All three allow the failure and recovery to land. Baseline 00:06–00:15 repeats the latency contrast longest; Astra 00:06–00:13 uses a collecting window before its metric reveal; Sol 00:05.7–00:10.62 packs thirty routing events into a short burst. These are stylized ratios, not adequate measured samples or prescribed observation times.",
+    "Astra 00:14.65 and Sol 00:12.25–00:14.20 confirm that the interrupted reviewer’s border-emphasis and artifact-gutter repairs keep critical text clear. Full encoded checks pass for all three final files, including exact first/last RGB equality; audio has measurable cue energy and safe peaks but was not heard."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 3,
+      "visual": 3
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "sol": {
+      "clarity": 5,
+      "accuracy": 4,
+      "pacing": 4,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "421cba6f41c861b2e710ac1816cd08a3bb357c6317cdb62ce4c4dfcab30d50e8",
+    "astra": "d70bf4b171079a1df38d94c28c12fe7aea62e7e64bece90541b19053aa3ac713",
+    "sol": "58d27f9edd463ed9c8ee557349f1589ee4e748e72f2255a3eef5acc9143d5db6"
+  },
+  "contentVerdict": "Keep as reference. Canary evaluation changes a concrete exposure-and-recovery decision when agent-assisted code or shared agent tooling reaches live users; it is not a prerequisite to ordinary local AI-assisted coding. The guide correctly connects concurrent version/operation measurements, explicit pass/fail/insufficient-evidence policy, human-owned release limits, and rollback compatibility to a local exercise with observable success criteria. Primary sources support those boundaries; the fixture counts and five-percentage-point gate are illustrative editorial choices, not universal safety thresholds.",
+  "verified": true,
+  "defectsFixed": [
+    "Earlier partial review, gpt-6-astra comparative review: Astra 00:14.50 metric-centred ripple replaced by border emphasis; confirmed clear in the current encode.",
+    "Earlier partial review, gpt-6-astra comparative review: Sol 00:12.00–00:14.10 PR artifacts rerouted through the centre gutter and status-centred ripples replaced by border emphasis; confirmed clear in the current encode.",
+    "Earlier partial review, gpt-6-astra comparative review: baseline transcript timings aligned to the unchanged encode; current source and frames agree.",
+    "Fresh gpt-6.1-sol comparative review: completed missing comparison, renewed encoded checks, and resolved pending verified metadata while retaining original author models and earlier correction attribution. No further scene or media repair was warranted."
+  ],
+  "limitations": [
+    "Audio was analysed through full-track levels, spectrograms and cue-window energy, not physically heard. Overlapping energy does not prove isolated audibility or comfortable sound on hardware.",
+    "Inspection used decoded contact sheets, full-resolution and 350px frames including beat transitions, routing cycles and exact endpoints; it is not a real-phone playback test.",
+    "All data, traffic weights and video observation times are illustrative. The animations omit statistical power and do not demonstrate pass and insufficient-evidence branches; the guide supplies those policies.",
+    "Baseline p95 and Sol retained test results have implicit historical scope; Astra labels the failed window explicitly. Tests alone cannot establish complete artifact correctness, and a strict test abort does not prove causal attribution.",
+    "Withdrawal redirects new traffic or sessions; it does not undo data, PRs, external effects or automatically cancel existing work. Shared dependencies can affect the control, so absolute health checks remain necessary.",
+    "Fresh review is independent of author commentary until before.md was saved, but it is model review and is fallible. Earlier author verification files describe older encodes; the fresh hash-bound checks are the current evidence."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "orchestration-patterns",
+  "title": "Orchestration patterns",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Tech lead"
+  ],
+  "summary": "Orchestration assigns work and coordinates results across steps or agents.",
+  "overview": "Fixed workflows prescribe the path; agents can choose it dynamically. Routing, parallel workers, and evaluator loops suit different task structures.",
+  "why": "Extra coordination adds cost and failure paths.",
+  "example": "Run independent API and database reviews concurrently, then reconcile their findings.",
+  "judgment": "Decide whether subtasks are independent enough to justify parallel execution.",
+  "next": "Does delegation improve measured results over one agent on our workload?",
+  "sources": [
+    {
+      "title": "Building effective agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents"
+    }
+  ],
+  "related": [
+    "loop-engineering",
+    "queues-and-backpressure",
+    "agent-evals"
+  ]
+}

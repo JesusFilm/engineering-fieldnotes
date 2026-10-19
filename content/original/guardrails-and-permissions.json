@@ -1,0 +1,27 @@
+{
+  "id": "guardrails-and-permissions",
+  "title": "Guardrails and permissions",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform",
+    "Tech lead"
+  ],
+  "summary": "Guardrails check behavior, while permissions limit which operations a system can actually execute.",
+  "overview": "Input validation and policy checks can reject unsuitable tool requests. Access controls must enforce authority at the execution boundary, rather than relying on a model to obey instructions.",
+  "why": "A plausible tool call can still target a resource the user is not allowed to change.",
+  "example": "An incident agent can read service metrics, but a deployment tool checks environment access and requires approval before changing production.",
+  "judgment": "Decide the permitted resources and actions, and which checks must fail closed.",
+  "next": "Can a manipulated tool result cause a write outside the caller\u2019s authorized scope?",
+  "sources": [
+    {
+      "title": "MCP tools specification: security considerations",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
+    }
+  ],
+  "related": [
+    "tool-design",
+    "human-in-the-loop",
+    "oauth-pkce"
+  ]
+}

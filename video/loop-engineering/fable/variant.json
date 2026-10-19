@@ -1,0 +1,73 @@
+{
+  "id": "fable",
+  "concept": "loop-engineering",
+  "title": "Repeated evidence reaches a limit",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "Record comparable observations from a fixed test selection; a configured limit on repeated failure evidence stops edits and hands the trace to an engineer. Passing tests also exit to human review.",
+  "src": "media/loop-engineering/fable.mp4",
+  "poster": "media/loop-engineering/fable.jpg",
+  "duration": 30.766667,
+  "verified": true,
+  "transcript": [
+    {
+      "start": 0,
+      "end": 4.2,
+      "text": "The agent sends EDIT 1 around the ring to a fixed 12-test suite. Five tests fail; 5 FAIL enters the run log with a full illustrative bar."
+    },
+    {
+      "start": 4.2,
+      "end": 7.6,
+      "text": "EDIT 2 returns 2 FAIL under the same selection. A shorter bar and a check mark register the reduced count. Counts summarize this example; they are not a sufficient general progress test."
+    },
+    {
+      "start": 7.6,
+      "end": 13.55,
+      "text": "EDIT 3 returns PASS. The log retains the earlier observations, a REVIEW badge appears, the loop dims, and a REVIEW chip reaches the human for patch review."
+    },
+    {
+      "start": 13.55,
+      "end": 18.75,
+      "text": "The scene fades into a separate task with a repeat limit of three. Its first edit returns FAIL a7; the log records 3 FAIL · a7. Here a7 represents one normalized assertion report, not merely a failure count."
+    },
+    {
+      "start": 18.75,
+      "end": 22.15,
+      "text": "The second edit returns the same report a7. Two matching log entries turn amber and a warning mark appears."
+    },
+    {
+      "start": 22.15,
+      "end": 26.55,
+      "text": "The third edit returns a7 again. Three matching entries reach this example’s configured repeat limit: the log turns red, a REPEAT LIMIT badge appears, and the agent and loop dim."
+    },
+    {
+      "start": 26.55,
+      "end": 30.766667,
+      "text": "HAND OFF travels from the retained run log to the human. The human lights to acknowledge receipt; the blocker has not been repaired. The resolved handoff holds before a full-frame fade."
+    }
+  ],
+  "limitations": [
+    "The repeat threshold of three is an illustrative policy, not an optimal count or proof that a repair is impossible.",
+    "The same failure count can hide different failing tests. The revised repeated-report identifier a7 stands for matching failure identities and relevant assertion details under a fixed selection; it is not a suggested production hash length.",
+    "The initial falling-count example assumes stable tests and controlled state; counts or a single green run alone do not prove overall correctness.",
+    "The run log represents executable harness checks; the animation does not demonstrate permission enforcement or timeout cancellation.",
+    "Iteration budgets are complementary and shown in the baseline cut.",
+    "Audio was analysed by signal levels, cue windows and spectrogram, not heard.",
+    "Original author provenance is retained; teaching and render corrections are attributed separately."
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": {
+    "date": "2026-10-19",
+    "editor": "gpt-6-astra comparative review",
+    "originalMP4SHA256": "5a01de3a0047c73fc8e06efa5efeb5713126fe2a8623b11b87a9a9bf04bd2855",
+    "changes": [
+      "Replaced the unsupported equal-count/no-progress inference with a configured repeat limit over matching failure reports (a7); retained the three-failure observations.",
+      "Bound observations to a fixed 12-test suite, enlarged log/chip text, and added a success review handoff.",
+      "Fade the entire frame at loop boundaries.",
+      "Replaced long primary-source quotations with concise paraphrases and links."
+    ],
+    "originalSourceArchive": "reviews/comparisons/loop-engineering/original-sources/fable",
+    "verification": "reviews/comparisons/loop-engineering/encoded-checks.json",
+    "finalMP4SHA256": "501ab63133e1919cf8e553ba047ee6b5b1715a635eaaedfb32571fbdfd2034d6"
+  }
+}

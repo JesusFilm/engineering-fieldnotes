@@ -1,0 +1,88 @@
+{
+  "id": "harness-engineering",
+  "title": "Harness engineering",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform",
+    "Tech lead"
+  ],
+  "summary": "Build the working environment that lets an agent act, check its work, and hand back inspectable evidence.",
+  "overview": "A harness is the software and repository setup around a model: tool execution, workspace preparation, instructions, progress records, and feedback. Harness engineering makes these parts work together. A prompt can request a test; an execution path can run it, retain its result, and prevent an unchecked change from advancing. Start by making one ordinary team task reproducible.",
+  "why": "Delegation exposes practices that previously lived in an engineer’s head: which command starts the service, which fixture demonstrates a bug, and what counts as finished. Anthropic’s long-running-agent study reports premature completion and disrupted handoffs. Its progress artifacts and startup checks are useful patterns, not proof that every agent needs the same files or architecture.",
+  "example": "An agent changes an invoice endpoint. A request from the owning tenant returns 200, but a request from another tenant also returns 200. A harness runs both cases, returns the failed assertion, and reruns them against the repair. Here the agreed contract requires 403 for the second request; that status is an example policy, not a universal authorization rule.",
+  "judgment": "Choose checks from the risk of the change. Give the agent useful failure details while keeping acceptance criteria under review. Distinguish instructions from enforcement: “do not merge failing changes” is text; a configured required status check is a repository control. GitHub documents bypass exceptions and accepts skipped or neutral required checks, so inspect actual permissions, the expected status provider, and whether the check really ran. Passing checks should make evidence available to a reviewer, not imply complete correctness.",
+  "next": "Take a recently delegated change. Could another engineer reproduce its claimed result from the saved workspace version, exact command, and output?",
+  "sources": [
+    {
+      "title": "Anthropic: Effective harnesses for long-running agents — session setup and verification",
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenAI: Harness engineering — making constraints mechanically checkable",
+      "url": "https://openai.com/index/harness-engineering/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "GitHub Docs: About protected branches — required checks and bypass permissions",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OWASP: Authorization Cheat Sheet — object access and authorization tests",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "loop-engineering",
+    "context-engineering",
+    "agent-evals"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Use this early because delegating a change also delegates the steps needed to establish that it works. A small harness lets the team replace repeated supervision with reusable setup, feedback, and evidence while retaining responsibility for acceptance.",
+    "prerequisites": [
+      "tool-design",
+      "context-engineering"
+    ],
+    "outcomes": [
+      "Create one repeatable command that sets up fixtures and checks a delegated change.",
+      "Demonstrate that a failing acceptance case prevents advancement and supplies actionable feedback.",
+      "Produce a handoff another engineer can reproduce without the original chat."
+    ],
+    "workflow": {
+      "before": "An engineer starts the invoice service, remembers two tenant accounts, manually tries requests, and tells the reviewer what happened.",
+      "after": "The agent uses a documented fixture and check command; the harness captures the tested version, exit status, and assertions, then returns failures for repair.",
+      "human": "The team owns the access policy, test adequacy, tool permissions, and release decision; it reviews changes to the checks themselves."
+    },
+    "walkthrough": [
+      "1. Specify the boundary. In a disposable invoice service, seed tenant A, tenant B, and an invoice owned by A. Agree on expected behavior before delegation. OWASP recommends checking authorization for the particular resource requested and testing that logic; being signed in alone does not grant access to every invoice.",
+      "2. Package the working context. Provide one setup command, fixture identifiers, and one command that exercises both cases. Record an initial run so pre-existing failures are visible. Make the relevant policy discoverable beside the code; avoid burying the actual acceptance criteria in a large instruction file.",
+      "3. Close the feedback loop. Ask the agent to repair the failing case. Capture expected versus actual results and the version tested. Rerun both cases after edits: yesterday’s green result is not evidence for today’s patch. Keep the check definitions reviewable so weakening an assertion is visible.",
+      "4. Hand off evidence. Save the diff, commands, results, and remaining uncertainty. If interrupted, leave the next action and rerun setup before resuming. OpenAI’s engineering account describes mechanically enforced constraints; this example applies that principle to a narrow acceptance boundary, without adopting its broader autonomy choices."
+    ],
+    "pitfalls": [
+      "A smoke test checks startup while the changed access rule remains untested.",
+      "The agent edits an assertion to accept the bug, and the reviewer inspects only application code.",
+      "A result survives a code or fixture change without being rerun; the handoff overstates what was checked."
+    ],
+    "exercise": {
+      "title": "Turn one manual check into a harness contract",
+      "steps": [
+        "Choose a small local change and write one allowed and one forbidden behavior.",
+        "Create disposable fixtures and a single check command; verify that the deliberately broken implementation fails.",
+        "Make the runner emit a ready-for-review marker only after the required command succeeds. Deliberately fail the command and confirm that the runner retains failure output but withholds that marker; this local gate does not itself enforce repository merge permissions.",
+        "Give an agent the task, setup, and failure output; inspect its repair and any edits to checks.",
+        "Rerun from a fresh setup and ask a teammate to reproduce the result using only the handoff."
+      ],
+      "success": [
+        "The broken case fails, and the repair passes both cases without weakening the agreed contract.",
+        "A failed required command preserves failure evidence and prevents the ready-for-review marker; a successful run produces the marker with its tested version.",
+        "The teammate reproduces the recorded results and can identify what still needs human review."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

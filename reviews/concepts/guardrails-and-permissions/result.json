@@ -1,0 +1,26 @@
+{
+  "id": "guardrails-and-permissions",
+  "placement": "core",
+  "verifiedSources": [
+    "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+    "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html",
+    "https://modelcontextprotocol.io/specification/2025-06-18/server/tools",
+    "https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments"
+  ],
+  "changes": [
+    "Re-reviewed every original assertion against five opened primary source pages.",
+    "Clarified guardrails as an umbrella term and separated model instructions from execution permissions.",
+    "Replaced the terse example with a scoped incident agent and separately authorized release path.",
+    "Added learning outcomes, before/after responsibilities, walkthrough, concrete pitfalls, and a disposable boundary exercise.",
+    "Bound proposed review to the exact artifact and target; included continued denial after approval.",
+    "Preserved id, title, category, roles, and related fields."
+  ],
+  "limitations": [
+    "Illustrative architecture and exercise; no live security-system test performed.",
+    "MCP citation is explicitly revision 2025-06-18, not asserted to be the latest revision.",
+    "GitHub protections depend on plan, visibility, settings, and execution environment.",
+    "Video intentionally omits token lifecycle, authentication, rollback, and race handling.",
+    "No comparative variant ranking performed; audio not physically heard."
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "astra",
+  "concept": "harness-engineering",
+  "title": "Prove the patch",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Use executable acceptance checks to return failures to an agent, rerun evidence after a repair, and hand the result to a human reviewer.",
+  "src": "media/harness-engineering/astra.mp4",
+  "poster": "media/harness-engineering/astra.jpg",
+  "duration": 28.0,
+  "verified": true,
+  "limitations": [
+    "Scripted illustrative invoice scenario, not a recorded agent repair or a guarantee of agent reliability.",
+    "The example contract uses 403 for another tenant; that response is not a universal authorization policy, and two checks do not establish complete security or correctness.",
+    "The diagram shows the execution/check slice of a harness. Persistent prompts and progress records do not enforce permissions; actual controls and their configuration do.",
+    "Audio cues, levels, and spectrogram were analysed; audio was not physically listened to.",
+    "Originally self-reviewed; now also compared independently from author reviews against all three encoded cuts at full resolution and 350px width. No learner study or physical-phone test."
+  ],
+  "transcript": [
+    {
+      "time": "00:00–00:05",
+      "text": "In this illustrative invoice service, an agent proposes patch 1. The harness runs a request from the customer who owns the invoice. It returns 200, meaning success, and satisfies the first check. The second check has not run."
+    },
+    {
+      "time": "00:05–00:09",
+      "text": "A different customer also receives 200. That violates this example’s agreed access rule, which expects denial with 403. The second check turns red and the change is blocked from advancing to a ready-for-review state."
+    },
+    {
+      "time": "00:09–00:15",
+      "text": "The harness sends the failure back to the agent. At 11.40s the agent produces patch 2 and both old check results clear in the same frame, because they describe the previous patch."
+    },
+    {
+      "time": "00:15–00:21",
+      "text": "The harness runs both checks again. The owning customer still receives 200; the other customer now receives 403. Both satisfy the stated contract. This demonstrates two passing checks, not complete security."
+    },
+    {
+      "time": "00:21–00:28",
+      "text": "The harness sends the evidence to human review and marks it ready. No deployment or human approval is assumed. The resolved state holds, then fades to black. The diagram assumes working check controls; stored instructions alone cannot enforce permissions."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "time": "00:11.40",
+      "change": "Cleared old result values and colours at the PATCH 2 transition, eliminating the 0.8-second stale-evidence window; moved the invalidation cue with the visible change."
+    },
+    {
+      "time": "00:24.50",
+      "change": "Poster regenerated from the resolved READY state; metadata now points to final comparative verification. Original author verification/review files remain historical and preserved."
+    }
+  ],
+  "comparativeVerification": {
+    "reviewer": "gpt-6-astra comparative review",
+    "report": "reviews/comparisons/harness-engineering.json",
+    "evidence": "reviews/comparisons/harness-engineering/verification.json",
+    "sha256": "91cc732764f54ad514cb601c021ead21c72b0181533013cdd16fb22432697482"
+  }
+}

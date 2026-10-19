@@ -1,0 +1,25 @@
+{
+  "id": "harness-engineering",
+  "placement": "core",
+  "verifiedSources": [
+    "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+    "https://openai.com/index/harness-engineering/",
+    "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html"
+  ],
+  "changes": [
+    "Rewrote the short definition into a 738-word practical guide with an explicit manual-to-agent workflow.",
+    "Audited every original assertion; qualified vendor-specific observations instead of generalizing them to all agents.",
+    "Added an invoice-access counterexample, evidence tied to the tested version, review of acceptance checks, and a reproducible exercise.",
+    "Distinguished persistent instructions from enforceable controls and retained human responsibility for acceptance and release.",
+    "Preserved id, title, category, roles, and related fields; added core placement, prerequisites, observable outcomes, pitfalls, and review date.",
+    "Authored an independent gpt-6-astra video focused on failed-check feedback, repair, rerun, and human review; included accessible timestamped transcript."
+  ],
+  "limitations": [
+    "Engineering reports describe particular experiments, not independent comparative benchmarks or guaranteed results.",
+    "The invoice scenario and 403 contract are illustrative; no invoice service or live agent repair was executed.",
+    "Actual repository permission and status-check configuration was not audited.",
+    "No source was unavailable among the four selected primary pages retrieved on 2026-10-19.",
+    "Video audio was analysed, not physically listened to; editorial and independent comparative promotion remain separate from technical verification."
+  ]
+}

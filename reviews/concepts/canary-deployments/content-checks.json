@@ -1,0 +1,47 @@
+{
+  "author": "gpt-6-astra",
+  "reviewed": "2026-10-19",
+  "identityFieldsPreserved": true,
+  "schemaCountsValid": true,
+  "prerequisiteIdsExist": true,
+  "illustrativeArithmeticVerified": true,
+  "fixtureResults": [
+    {
+      "candidate": [
+        0,
+        100
+      ],
+      "control": [
+        0,
+        900
+      ],
+      "expected": "pass",
+      "observed": "pass"
+    },
+    {
+      "candidate": [
+        40,
+        100
+      ],
+      "control": [
+        0,
+        900
+      ],
+      "expected": "fail",
+      "observed": "fail"
+    },
+    {
+      "candidate": [
+        0,
+        0
+      ],
+      "control": [
+        0,
+        900
+      ],
+      "expected": "pause",
+      "observed": "pause"
+    }
+  ],
+  "productionValidation": false
+}

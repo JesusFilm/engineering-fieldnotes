@@ -1,0 +1,61 @@
+{
+  "id": "astra",
+  "concept": "oauth-pkce",
+  "title": "One login, one verifier",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Keep each agent-host OAuth login tied to its own verifier: crossed transaction pairs fail PKCE.",
+  "src": "media/oauth-pkce/astra.mp4",
+  "poster": "media/oauth-pkce/astra.jpg",
+  "duration": 30,
+  "verified": true,
+  "limitations": [
+    "Illustrative concurrent-login bug; not an observed product incident or the OAuth issuer mix-up attack.",
+    "A/B/C are symbolic; hash abbreviates the full S256 transform.",
+    "Token issuance assumes other OAuth checks pass; browser consent, redirects and permission enforcement are omitted.",
+    "Screen clearing is not revocation; the repair begins a fresh authorization attempt.",
+    "Audio analyzed but not physically listened to.",
+    "Original author evidence is retained separately; final encoded evidence and independent comparison are in reviews/comparisons/oauth-pkce/. No live provider test or continuous real-time playback review was performed."
+  ],
+  "transcript": [
+    {
+      "time": "00:00–00:06.4",
+      "text": "The agent host starts login A, retains verifier A, and sends its S256 challenge. The server associates the returned code A with that challenge."
+    },
+    {
+      "time": "00:06.4–00:11.4",
+      "text": "Login B starts alongside A with a different verifier and challenge. Both transactions have their own code and verifier."
+    },
+    {
+      "time": "00:11.4–00:18",
+      "text": "An illustrative callback bug replaces the selected verifier in login A with verifier B. Code A and verifier B are sent together. The server derives a different challenge and rejects the exchange with invalid_grant; no token is returned."
+    },
+    {
+      "time": "00:18–00:23.1",
+      "text": "The host abandons the confused local attempts and starts fresh login C with its own verifier and challenge. Clearing the diagram does not represent server-side revocation."
+    },
+    {
+      "time": "00:23.1–00:30",
+      "text": "Code C and verifier C match the stored challenge. PKCE passes and, assuming the other OAuth checks pass too, the host receives a token. Tool permissions remain a separate check."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    "At 12.3s persist the wrongly selected verifier B in login A, with amber state and a brief shake, before the crossed pair is sent."
+  ],
+  "comparativeVerification": {
+    "reviewer": "gpt-6-astra comparative review",
+    "checkedAt": "2026-10-19T00:09:21.285868+00:00",
+    "sha256": "8d18fe05d761b07a7a5d9146c9ae223d7ceb3151354b3ced392aae577a598877",
+    "evidence": "reviews/comparisons/oauth-pkce/verification.json",
+    "audioHeard": false
+  },
+  "originalAuthorLimitations": [
+    "Illustrative concurrent-login bug; not an observed product incident or the OAuth issuer mix-up attack.",
+    "A/B/C are symbolic; hash abbreviates the full S256 transform.",
+    "Token issuance assumes other OAuth checks pass; browser consent, redirects and permission enforcement are omitted.",
+    "Screen clearing is not revocation; the repair begins a fresh authorization attempt.",
+    "Audio analyzed but not physically listened to.",
+    "Self-reviewed; no live provider test or comparative ranking."
+  ]
+}

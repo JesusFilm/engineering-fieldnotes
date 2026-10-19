@@ -1,0 +1,322 @@
+[
+  {
+    "t": 0.8,
+    "sound": "send",
+    "rmsFirst150msDBFS": -28.843730926513672
+  },
+  {
+    "t": 1.6,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -22.723129272460938
+  },
+  {
+    "t": 1.75,
+    "sound": "work",
+    "rmsFirst150msDBFS": -29.39141082763672
+  },
+  {
+    "t": 1.95,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.020034790039062
+  },
+  {
+    "t": 2.15,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.070091247558594
+  },
+  {
+    "t": 2.35,
+    "sound": "work",
+    "rmsFirst150msDBFS": -28.599815368652344
+  },
+  {
+    "t": 2.45,
+    "sound": "miss",
+    "rmsFirst150msDBFS": -30.061826705932617
+  },
+  {
+    "t": 3.25,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -20.915224075317383
+  },
+  {
+    "t": 3.35,
+    "sound": "store",
+    "rmsFirst150msDBFS": -21.758930206298828
+  },
+  {
+    "t": 4.2,
+    "sound": "send",
+    "rmsFirst150msDBFS": -28.85440444946289
+  },
+  {
+    "t": 5,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -22.732507705688477
+  },
+  {
+    "t": 5.15,
+    "sound": "work",
+    "rmsFirst150msDBFS": -29.49899673461914
+  },
+  {
+    "t": 5.3500000000000005,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.103557586669922
+  },
+  {
+    "t": 5.550000000000001,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.041290283203125
+  },
+  {
+    "t": 5.750000000000001,
+    "sound": "work",
+    "rmsFirst150msDBFS": -28.631141662597656
+  },
+  {
+    "t": 5.85,
+    "sound": "miss",
+    "rmsFirst150msDBFS": -30.061294555664062
+  },
+  {
+    "t": 6.6499999999999995,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -20.931215286254883
+  },
+  {
+    "t": 6.749999999999999,
+    "sound": "store",
+    "rmsFirst150msDBFS": -21.77670669555664
+  },
+  {
+    "t": 7.199999999999999,
+    "sound": "ack",
+    "rmsFirst150msDBFS": -26.75653076171875
+  },
+  {
+    "t": 7.6,
+    "sound": "send",
+    "rmsFirst150msDBFS": -28.836584091186523
+  },
+  {
+    "t": 8.4,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -22.724496841430664
+  },
+  {
+    "t": 8.55,
+    "sound": "work",
+    "rmsFirst150msDBFS": -29.403085708618164
+  },
+  {
+    "t": 8.75,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.11151885986328
+  },
+  {
+    "t": 8.95,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.0493221282959
+  },
+  {
+    "t": 9.149999999999999,
+    "sound": "work",
+    "rmsFirst150msDBFS": -22.8549861907959
+  },
+  {
+    "t": 9.25,
+    "sound": "hit",
+    "rmsFirst150msDBFS": -18.981374740600586
+  },
+  {
+    "t": 10.05,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -20.904258728027344
+  },
+  {
+    "t": 10.15,
+    "sound": "store",
+    "rmsFirst150msDBFS": -21.745098114013672
+  },
+  {
+    "t": 10.6,
+    "sound": "ack",
+    "rmsFirst150msDBFS": -26.752647399902344
+  },
+  {
+    "t": 11.15,
+    "sound": "chime",
+    "rmsFirst150msDBFS": -17.632869720458984
+  },
+  {
+    "t": 11.35,
+    "sound": "send",
+    "rmsFirst150msDBFS": -28.501544952392578
+  },
+  {
+    "t": 12.05,
+    "sound": "deliver",
+    "rmsFirst150msDBFS": -23.38861083984375
+  },
+  {
+    "t": 15.35,
+    "sound": "send",
+    "rmsFirst150msDBFS": -28.838375091552734
+  },
+  {
+    "t": 16.15,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -22.731075286865234
+  },
+  {
+    "t": 16.299999999999997,
+    "sound": "work",
+    "rmsFirst150msDBFS": -29.470426559448242
+  },
+  {
+    "t": 16.499999999999996,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.081626892089844
+  },
+  {
+    "t": 16.699999999999996,
+    "sound": "work",
+    "rmsFirst150msDBFS": -29.992145538330078
+  },
+  {
+    "t": 16.899999999999995,
+    "sound": "work",
+    "rmsFirst150msDBFS": -28.53316879272461
+  },
+  {
+    "t": 17,
+    "sound": "miss",
+    "rmsFirst150msDBFS": -30.055953979492188
+  },
+  {
+    "t": 17.8,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -20.921520233154297
+  },
+  {
+    "t": 17.900000000000002,
+    "sound": "store",
+    "rmsFirst150msDBFS": -21.767377853393555
+  },
+  {
+    "t": 18.75,
+    "sound": "send",
+    "rmsFirst150msDBFS": -28.842506408691406
+  },
+  {
+    "t": 19.55,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -22.725828170776367
+  },
+  {
+    "t": 19.7,
+    "sound": "work",
+    "rmsFirst150msDBFS": -29.451187133789062
+  },
+  {
+    "t": 19.9,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.19818115234375
+  },
+  {
+    "t": 20.099999999999998,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.1478271484375
+  },
+  {
+    "t": 20.299999999999997,
+    "sound": "work",
+    "rmsFirst150msDBFS": -28.646774291992188
+  },
+  {
+    "t": 20.400000000000002,
+    "sound": "miss",
+    "rmsFirst150msDBFS": -30.053802490234375
+  },
+  {
+    "t": 21.200000000000003,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -20.911476135253906
+  },
+  {
+    "t": 21.300000000000004,
+    "sound": "store",
+    "rmsFirst150msDBFS": -21.762313842773438
+  },
+  {
+    "t": 21.750000000000004,
+    "sound": "thump",
+    "rmsFirst150msDBFS": -21.027942657470703
+  },
+  {
+    "t": 22.15,
+    "sound": "send",
+    "rmsFirst150msDBFS": -28.83775520324707
+  },
+  {
+    "t": 22.95,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -22.748899459838867
+  },
+  {
+    "t": 23.099999999999998,
+    "sound": "work",
+    "rmsFirst150msDBFS": -29.44089126586914
+  },
+  {
+    "t": 23.299999999999997,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.15441131591797
+  },
+  {
+    "t": 23.499999999999996,
+    "sound": "work",
+    "rmsFirst150msDBFS": -30.071313858032227
+  },
+  {
+    "t": 23.699999999999996,
+    "sound": "work",
+    "rmsFirst150msDBFS": -28.62663459777832
+  },
+  {
+    "t": 23.8,
+    "sound": "miss",
+    "rmsFirst150msDBFS": -30.052478790283203
+  },
+  {
+    "t": 24.6,
+    "sound": "arrive",
+    "rmsFirst150msDBFS": -20.893169403076172
+  },
+  {
+    "t": 24.700000000000003,
+    "sound": "store",
+    "rmsFirst150msDBFS": -21.740386962890625
+  },
+  {
+    "t": 25.150000000000002,
+    "sound": "stall",
+    "rmsFirst150msDBFS": -13.572054862976074
+  },
+  {
+    "t": 25.650000000000002,
+    "sound": "thump",
+    "rmsFirst150msDBFS": -19.748672485351562
+  },
+  {
+    "t": 26.550000000000004,
+    "sound": "send",
+    "rmsFirst150msDBFS": -28.846179962158203
+  },
+  {
+    "t": 27.250000000000004,
+    "sound": "chime",
+    "rmsFirst150msDBFS": -17.634164810180664
+  }
+]

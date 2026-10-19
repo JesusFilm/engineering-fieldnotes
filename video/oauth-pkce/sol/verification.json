@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-18T23:53:53.397705+00:00",
+  "sha256": "33c4b6d90080d8ffd807481f827f6784c127ed3284ad5bc70b11dd522bd5ced8",
+  "posterSha256": "3bccc6ec1270b22d9348aaf23e5d453bf3a91fbc3a7c5f302156c60538963e7a",
+  "bytes": 1062166,
+  "duration": 32,
+  "frames": 960,
+  "width": 1080,
+  "height": 1920,
+  "videoCodec": "h264",
+  "pixelFormat": "yuv420p",
+  "fps": "30/1",
+  "audioCodec": "aac",
+  "fullDecode": true,
+  "matchingBoundaryFrames": true,
+  "boundaryRgbSha256": "1f56bd4f609fab80a2b9cce7487d5c08de2768476849e1353881ca748d8d3b6a",
+  "audioPeakDbfs": -6.4,
+  "faststart": true,
+  "mp4BoxOffsets": {
+    "ftyp": 0,
+    "moov": 32,
+    "free": 35472,
+    "mdat": 35480
+  },
+  "cueCount": 44,
+  "allCueWindowsAboveMinus55Dbfs": true,
+  "mismatchCueCorrelation": 0.999781,
+  "audioLagMilliseconds": 0.0,
+  "physicalListening": false,
+  "visualReview": "Passed author inspection of final encoded contact sheet, spectrogram, all five full-resolution beat frames and five separate 350px beat images via view_image.",
+  "visualReviewAt": "2026-10-18T23:55:24.300054+00:00",
+  "sourceSha256": {
+    "scene.js": "a7142ca8aa061680c69ab9ea1f94c463f2fe00dc341f36791ee0b8b30a53ad06",
+    "engine/flow-engine.js": "e9e91bd43e6d653a3d3c6e54e552aeb583fb2d132c7aa5c003778c91b5f46346",
+    "engine/render.mjs": "2312d6fa9720833ed2f0d683465fc9362ef682b5bba8f2fbac620da8311a1aba",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "rootPackageLockSha256": "b65eaf420e316789835922128d848c59ad74bce7e8db6e741dac70c1330d6c13"
+}

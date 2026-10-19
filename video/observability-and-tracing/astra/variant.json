@@ -1,0 +1,46 @@
+{
+  "id": "astra",
+  "concept": "observability-and-tracing",
+  "title": "Follow the tool",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Propagating trace context connects a tool operation to its agent task on a new run, revealing where time went without making the operation faster.",
+  "src": "media/observability-and-tracing/astra.mp4",
+  "poster": "media/observability-and-tracing/astra.jpg",
+  "duration": 28,
+  "verified": true,
+  "limitations": [
+    "Illustrative synchronous scenario and durations; abbreviated trace/span IDs; HTTP client/server intermediary spans omitted.",
+    "New run after propagation repair; no retroactive trace reconstruction, performance improvement, correctness or authorization guarantee.",
+    "Sampling, export failures, asynchronous links, fan-out and retries are not animated.",
+    "Audio analysed for peaks and timing; no physical listening or device audibility review.",
+    "Self-reviewed by the author; no comparative recommendation or other variant inspection."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5,
+      "text": "Run A begins. The agent task and model operation share trace 7B but have distinct span IDs. Their connected bars show the model operation taking an illustrative 0.6 seconds."
+    },
+    {
+      "start": 5,
+      "end": 11,
+      "text": "Trace context is lost at the test-tool boundary. The tool starts separate trace 9C and takes 2.4 seconds. The agent takes 3.0 seconds overall, but its trace does not connect the tool record."
+    },
+    {
+      "start": 11,
+      "end": 16.8,
+      "text": "After fixing transport propagation, Run B starts with new trace 8D. The traceparent header crosses the boundary and is extracted by the tool. The tool now shares the agent trace while retaining its own span ID."
+    },
+    {
+      "start": 16.8,
+      "end": 21.2,
+      "text": "A bracket connects the tool interval to the other spans in Run B. The model still takes 0.6 seconds and the tool 2.4 seconds; total duration remains 3.0 seconds."
+    },
+    {
+      "start": 21.2,
+      "end": 28,
+      "text": "The tool and its longer interval are highlighted for investigation. Tracing improved visibility, not speed. The scene fades to black. These durations and identifiers are illustrative, not guarantees."
+    }
+  ]
+}

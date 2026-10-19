@@ -1,0 +1,21 @@
+{
+  "id": "replication-and-consistency",
+  "placement": "reference",
+  "verifiedSources": [
+    "https://www.postgresql.org/docs/current/warm-standby.html",
+    "https://www.postgresql.org/docs/current/runtime-config-wal.html",
+    "https://www.postgresql.org/docs/current/transaction-iso.html"
+  ],
+  "changes": [
+    "Replaced generic profile example with an agent release verification workflow.",
+    "Separated acknowledgement, replay visibility, and read snapshot.",
+    "Added observable outcomes, retained human responsibility, and a fake-replica exercise.",
+    "Scoped primary verification to fresh reads and explicit concurrency assumptions."
+  ],
+  "limitations": [
+    "No deployed database or live replica tested.",
+    "PostgreSQL current alias served version 18 on retrieval date.",
+    "Illustrative application revision and tool fields are proposed design, not PostgreSQL features.",
+    "Human editorial promotion and independent comparative video review are not performed here."
+  ]
+}

@@ -1,0 +1,227 @@
+[
+  {
+    "t": 0.6,
+    "name": "arrive",
+    "note": "C5",
+    "gain": 0.55,
+    "encodedWindowRmsDb": -26.56,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 1.3,
+    "name": "send",
+    "note": "C6",
+    "gain": 0.7,
+    "encodedWindowRmsDb": -36.62,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9999
+  },
+  {
+    "t": 2.05,
+    "name": "arrive",
+    "note": "E5",
+    "gain": 0.7,
+    "encodedWindowRmsDb": -22.89,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9999
+  },
+  {
+    "t": 2.65,
+    "name": "ack",
+    "note": "E6",
+    "gain": 0.7,
+    "encodedWindowRmsDb": -35.78,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9994
+  },
+  {
+    "t": 5,
+    "name": "miss",
+    "note": "E4",
+    "gain": 1,
+    "encodedWindowRmsDb": -33.12,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9999
+  },
+  {
+    "t": 5.3,
+    "name": "send",
+    "note": "C6",
+    "gain": 0.7,
+    "encodedWindowRmsDb": -36.75,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9999
+  },
+  {
+    "t": 6.05,
+    "name": "thump",
+    "note": "G3",
+    "gain": 0.8,
+    "encodedWindowRmsDb": -21.77,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9999
+  },
+  {
+    "t": 6.65,
+    "name": "work",
+    "note": "G3",
+    "gain": 0.65,
+    "encodedWindowRmsDb": -36.9,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 7.25,
+    "name": "work",
+    "note": "G3",
+    "gain": 0.65,
+    "encodedWindowRmsDb": -36.91,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 7.85,
+    "name": "work",
+    "note": "G3",
+    "gain": 0.65,
+    "encodedWindowRmsDb": -36.89,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 8.45,
+    "name": "deliver",
+    "note": "G4",
+    "gain": 0.7,
+    "encodedWindowRmsDb": -24.66,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 8.45,
+    "name": "miss",
+    "note": "E4",
+    "gain": 0.55,
+    "encodedWindowRmsDb": -24.66,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 11,
+    "name": "recover",
+    "note": "C4",
+    "gain": 0.7,
+    "encodedWindowRmsDb": -27.2,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 11.8,
+    "name": "send",
+    "note": "C6",
+    "gain": 0.7,
+    "encodedWindowRmsDb": -36.39,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9989
+  },
+  {
+    "t": 12.55,
+    "name": "arrive",
+    "note": "E5",
+    "gain": 0.7,
+    "encodedWindowRmsDb": -22.92,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 14,
+    "name": "send",
+    "note": "C6",
+    "gain": 1,
+    "encodedWindowRmsDb": -33.51,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 15.3,
+    "name": "store",
+    "note": "G5",
+    "gain": 1,
+    "encodedWindowRmsDb": -25.99,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9998
+  },
+  {
+    "t": 16.8,
+    "name": "arrive",
+    "note": "G5",
+    "gain": 0.7,
+    "encodedWindowRmsDb": -24.3,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9991
+  },
+  {
+    "t": 17.4,
+    "name": "work",
+    "note": "G3",
+    "gain": 0.65,
+    "encodedWindowRmsDb": -36.87,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9998
+  },
+  {
+    "t": 18,
+    "name": "work",
+    "note": "G3",
+    "gain": 0.65,
+    "encodedWindowRmsDb": -36.93,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 18.6,
+    "name": "work",
+    "note": "G3",
+    "gain": 0.65,
+    "encodedWindowRmsDb": -36.81,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 19.2,
+    "name": "deliver",
+    "note": "G5",
+    "gain": 0.7,
+    "encodedWindowRmsDb": -25.25,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 21.2,
+    "name": "hit",
+    "note": "G5",
+    "gain": 0.8,
+    "encodedWindowRmsDb": -23.82,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 1.0
+  },
+  {
+    "t": 23.7,
+    "name": "arrive",
+    "note": "G5",
+    "gain": 0.55,
+    "encodedWindowRmsDb": -26.28,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9999
+  },
+  {
+    "t": 25.3,
+    "name": "poof",
+    "note": "C5",
+    "gain": 0.35,
+    "encodedWindowRmsDb": -38.7,
+    "bestAlignmentMs": 0,
+    "envelopeCorrelation": 0.9965
+  }
+]

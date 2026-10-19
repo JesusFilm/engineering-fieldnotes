@@ -1,0 +1,81 @@
+{
+  "id": "orchestration-patterns",
+  "title": "Orchestration patterns",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Tech lead"
+  ],
+  "summary": "Choose who does each part, what must finish first, and who accepts the combined result. Start with a small workflow whose failures you can explain.",
+  "overview": "Orchestration coordinates model calls, tools, and results. In Anthropic’s terminology, workflows follow predefined code paths; agents choose their next steps dynamically. A chain handles dependencies, routing selects a specialist, parallel workers handle independent tasks, and an evaluator loop revises work against criteria. Dynamic delegation is useful when the needed subtasks cannot be specified in advance. These are design options, not a maturity ladder.",
+  "why": "A team moving beyond chat needs explicit handoffs more than additional agent names. An answer arriving is not evidence that all required checks passed. Coordination also introduces timeouts, incompatible outputs, and reconciliation work. Measure whether the additional machinery earns its maintenance cost.",
+  "example": "Consider a pull request changing a customer API and its database migration. Freeze one code snapshot. Ask one model worker to inspect compatibility and another to inspect migration risks, both with read-only tools. Their analyses can run independently against that same snapshot; the final assessment depends on both. Neither worker edits shared files or approves the change.",
+  "judgment": "Use a fixed workflow for this review. Define a result contract: snapshot identifier, checks attempted, findings with evidence, and completion status. The coordinator validates completeness and reconciles contradictions; it must not count an unavailable worker as a clean review. In GitHub Actions, needs normally requires prerequisite jobs to succeed; conditional expressions can override that default. A successful process exit alone does not validate a model’s findings.",
+  "next": "Compare this workflow with one agent on the same saved changes. Track missed defects, false alarms, elapsed time, model usage, and engineer reconciliation time. Adopt the split only if it improves your chosen tradeoff; concurrency does not guarantee lower cost or higher quality.",
+  "sources": [
+    {
+      "title": "Anthropic: Building effective agents — pattern definitions and tradeoffs",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "GitHub: Using jobs in a workflow — prerequisite success and exceptions",
+      "url": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "GitHub: Authenticate with GITHUB_TOKEN — explicit permission configuration",
+      "url": "https://docs.github.com/en/actions/tutorials/authenticate-with-github_token",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "loop-engineering",
+    "queues-and-backpressure",
+    "agent-evals"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Teams begin coordinating model work as soon as one task needs several checks or a tool handoff. Learning explicit dependencies and acceptance rules early makes delegation inspectable before autonomous planning adds complexity.",
+    "prerequisites": [
+      "tool-design",
+      "agent-evals"
+    ],
+    "outcomes": [
+      "Draw the dependencies for a real review and identify which tasks can safely overlap.",
+      "Specify a worker result contract and reject missing or mismatched evidence.",
+      "Demonstrate that failed checks block handoff and changed code invalidates prior results."
+    ],
+    "workflow": {
+      "before": "An engineer reads the API diff, inspects the migration, gathers test output, and writes one review summary manually.",
+      "after": "A fixed coordinator sends one snapshot to two bounded model reviewers, validates their reports, and prepares an approval-ready evidence bundle.",
+      "human": "The engineer chooses acceptance criteria, resolves disagreements, checks evidence, and retains approval and merge responsibility."
+    },
+    "walkthrough": [
+      "1. Define the boundary. Select a small historical change and a frozen copy of the repository. Give both reviewers the relevant API schema, migration, and acceptance checklist. Make read-only access a tool/runtime configuration; a persistent prompt saying “do not write” is not a permission boundary. GitHub workflows expose token permissions explicitly. Token permissions restrict GitHub API actions; they do not make a runner’s local checkout read-only. Configure filesystem and tool access separately.",
+      "2. Dispatch independent analysis. The compatibility worker checks callers against the changed contract; the migration worker checks assumptions about existing rows. If one task needs the other’s output, sequence it instead. Keep automated test results distinguishable from model opinions.",
+      "3. Join deliberately. Wait for both valid reports from the same snapshot before preparing an approval-ready bundle. Blocking findings and incomplete work must stay visible to engineers immediately. Preserve disagreements. Set a deadline and stop with an incomplete status when a worker times out; choose a bounded retry policy rather than silently producing approval.",
+      "4. Repair and recheck. If the migration review finds a problem, the engineer changes the patch. That creates a new snapshot: clear both old reports and rerun the checks for this exercise. Only then prepare the approval-ready bundle. This conservative invalidation rule is an instructional design choice, not a universal requirement to rerun everything."
+    ],
+    "pitfalls": [
+      "Two workers editing one checkout overwrite or assess each other’s unfinished changes; use read-only analysis or isolated ownership.",
+      "A coordinator merges fluent summaries while losing the failing test, uncertainty, or snapshot identifier.",
+      "Repeated evaluator feedback consumes the budget without a measurable stopping condition."
+    ],
+    "exercise": {
+      "title": "Build a review join that can fail",
+      "steps": [
+        "Choose one saved patch and write two distinct review checklists plus a shared result schema.",
+        "Run a single-agent review, then the two-worker version using the same inputs.",
+        "Withhold one report, inject a conflicting finding, and submit an old-snapshot report after changing the patch.",
+        "Record the blocked handoffs and reconcile the final evidence yourself. Compare quality and total effort with the baseline."
+      ],
+      "success": [
+        "Missing, stale, or blocking reports never produce an approval-ready bundle; failures remain visible to engineers.",
+        "The final bundle retains evidence and disagreements for an identifiable human approver.",
+        "The team records a measured reason to retain or simplify the workflow."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

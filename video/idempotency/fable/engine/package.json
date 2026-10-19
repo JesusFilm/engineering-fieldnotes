@@ -1,0 +1,9 @@
+{
+  "name": "engineering-fieldnotes-idempotency-fable-engine",
+  "private": true,
+  "description": "Local copy of the architecture-flow-video engine for this cut. node_modules is a relative symlink to the repository root, which pins puppeteer-core 25.14.0; run npm ci at the repository root.",
+  "dependencies": {
+    "puppeteer-core": "25.14.0"
+  }
+}
+

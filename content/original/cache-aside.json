@@ -1,0 +1,26 @@
+{
+  "id": "cache-aside",
+  "title": "Cache-aside",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Cache-aside loads data from the source on a cache miss and stores it for later reads.",
+  "overview": "The application checks the cache before querying the backing store. Writes commonly update the store and invalidate the cached entry, but concurrent operations can still expose stale data.",
+  "why": "Caching reduces repeated reads while introducing freshness and invalidation decisions.",
+  "example": "A product API caches descriptions for five minutes and invalidates a product\u2019s key after an editor saves a change.",
+  "judgment": "Decide acceptable staleness, key scope, and how the database survives cache misses or outages.",
+  "next": "Can a read racing with an update repopulate an invalidated key with old data?",
+  "sources": [
+    {
+      "title": "Cache-Aside pattern \u2014 Azure Architecture Center",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside"
+    }
+  ],
+  "related": [
+    "replication-and-consistency",
+    "load-balancing",
+    "memory-architecture"
+  ]
+}

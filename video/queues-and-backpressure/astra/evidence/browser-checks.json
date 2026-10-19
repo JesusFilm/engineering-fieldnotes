@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-19",
+  "isolatedBuild": true,
+  "sharedUIEdited": false,
+  "results": [
+    {
+      "page": "chapter",
+      "scrollWidth": 350,
+      "width": 350,
+      "bodyFont": "17px",
+      "videos": 1
+    },
+    {
+      "page": "comparison",
+      "scrollWidth": 350,
+      "width": 350,
+      "bodyFont": "18px",
+      "videos": 2
+    },
+    {
+      "page": "chapter",
+      "scrollWidth": 1280,
+      "width": 1280,
+      "bodyFont": "17px",
+      "videos": 1
+    },
+    {
+      "page": "comparison",
+      "scrollWidth": 1280,
+      "width": 1280,
+      "bodyFont": "18px",
+      "videos": 2
+    }
+  ],
+  "errors": [],
+  "mutedAstraPlayback": true,
+  "physicalListening": false
+}

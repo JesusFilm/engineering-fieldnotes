@@ -1,0 +1,288 @@
+{
+  "author": "gpt-6-astra",
+  "reasoning": "high",
+  "reviewed": "2026-10-19",
+  "sha256": "95ea3cc274edc341f6a94652aab6d9c57e093542e9d206bb51e82b246cda0ffe",
+  "posterSha256": "e79a5e77c5c91e4359af74875e57a570e976b3a88fdf8c0954a4e235e79ae3b1",
+  "duration": 30.0,
+  "bytes": 1840202,
+  "frames": 900,
+  "width": 1080,
+  "height": 1920,
+  "fps": "30/1",
+  "videoCodec": "h264",
+  "pixelFormat": "yuv420p",
+  "audioCodec": "aac",
+  "audioPeakDbfs": -4.6,
+  "matchingBoundaryFrames": true,
+  "boundaryRgbSha256": "1f56bd4f609fab80a2b9cce7487d5c08de2768476849e1353881ca748d8d3b6a",
+  "fullDecode": true,
+  "faststart": true,
+  "mp4BoxOffsets": {
+    "ftyp": 0,
+    "moov": 32,
+    "free": 32924,
+    "mdat": 32932
+  },
+  "audioCueCount": 45,
+  "audioCorrelation": 0.99555,
+  "audioLagMs": 0.0,
+  "physicalListening": false,
+  "encodedFrameTimes": [
+    0,
+    0.4,
+    0.8,
+    3.8,
+    5.5,
+    6.4,
+    9.45,
+    10,
+    12.5,
+    14,
+    16.4,
+    16.8,
+    17.2,
+    17.9,
+    18.6,
+    20,
+    20.7,
+    21,
+    22.6,
+    23.3,
+    25.8,
+    28.6,
+    29.2,
+    29.966667
+  ],
+  "cueWindows": [
+    {
+      "t": 0.4,
+      "name": "recover",
+      "peakInNext200msDbfs": -27.08
+    },
+    {
+      "t": 1.2,
+      "name": "send",
+      "peakInNext200msDbfs": -44.38
+    },
+    {
+      "t": 2.1,
+      "name": "send",
+      "peakInNext200msDbfs": -45.8
+    },
+    {
+      "t": 3,
+      "name": "send",
+      "peakInNext200msDbfs": -45.67
+    },
+    {
+      "t": 3.3,
+      "name": "chime",
+      "peakInNext200msDbfs": -16.94
+    },
+    {
+      "t": 5.5,
+      "name": "store",
+      "peakInNext200msDbfs": -16.5
+    },
+    {
+      "t": 6,
+      "name": "work",
+      "peakInNext200msDbfs": -20.68
+    },
+    {
+      "t": 6.7,
+      "name": "send",
+      "peakInNext200msDbfs": -46.04
+    },
+    {
+      "t": 6.99,
+      "name": "send",
+      "peakInNext200msDbfs": -45.91
+    },
+    {
+      "t": 7.28,
+      "name": "send",
+      "peakInNext200msDbfs": -45.76
+    },
+    {
+      "t": 7.57,
+      "name": "send",
+      "peakInNext200msDbfs": -45.9
+    },
+    {
+      "t": 7.86,
+      "name": "send",
+      "peakInNext200msDbfs": -45.74
+    },
+    {
+      "t": 8.15,
+      "name": "send",
+      "peakInNext200msDbfs": -45.95
+    },
+    {
+      "t": 8.44,
+      "name": "send",
+      "peakInNext200msDbfs": -45.92
+    },
+    {
+      "t": 8.73,
+      "name": "send",
+      "peakInNext200msDbfs": -45.88
+    },
+    {
+      "t": 9.02,
+      "name": "send",
+      "peakInNext200msDbfs": -45.97
+    },
+    {
+      "t": 9.31,
+      "name": "send",
+      "peakInNext200msDbfs": -35.09
+    },
+    {
+      "t": 9.56,
+      "name": "arrive",
+      "peakInNext200msDbfs": -18.25
+    },
+    {
+      "t": 9.6,
+      "name": "send",
+      "peakInNext200msDbfs": -21.01
+    },
+    {
+      "t": 9.89,
+      "name": "send",
+      "peakInNext200msDbfs": -40.88
+    },
+    {
+      "t": 10.18,
+      "name": "send",
+      "peakInNext200msDbfs": -45.94
+    },
+    {
+      "t": 10.469999999999999,
+      "name": "send",
+      "peakInNext200msDbfs": -45.76
+    },
+    {
+      "t": 10.76,
+      "name": "send",
+      "peakInNext200msDbfs": -45.92
+    },
+    {
+      "t": 11.05,
+      "name": "send",
+      "peakInNext200msDbfs": -45.83
+    },
+    {
+      "t": 11.34,
+      "name": "send",
+      "peakInNext200msDbfs": -45.94
+    },
+    {
+      "t": 11.629999999999999,
+      "name": "send",
+      "peakInNext200msDbfs": -45.72
+    },
+    {
+      "t": 11.92,
+      "name": "send",
+      "peakInNext200msDbfs": -45.91
+    },
+    {
+      "t": 12.21,
+      "name": "send",
+      "peakInNext200msDbfs": -35.02
+    },
+    {
+      "t": 12.46,
+      "name": "arrive",
+      "peakInNext200msDbfs": -18.16
+    },
+    {
+      "t": 13,
+      "name": "clock",
+      "peakInNext200msDbfs": -35.5
+    },
+    {
+      "t": 14.5,
+      "name": "clock",
+      "peakInNext200msDbfs": -36.25
+    },
+    {
+      "t": 16.8,
+      "name": "send",
+      "peakInNext200msDbfs": -31.53
+    },
+    {
+      "t": 16.4,
+      "name": "work",
+      "peakInNext200msDbfs": -20.32
+    },
+    {
+      "t": 17,
+      "name": "arrive",
+      "peakInNext200msDbfs": -14.21
+    },
+    {
+      "t": 17.7,
+      "name": "crash",
+      "peakInNext200msDbfs": -4.75
+    },
+    {
+      "t": 18.1,
+      "name": "thump",
+      "peakInNext200msDbfs": -12.35
+    },
+    {
+      "t": 20,
+      "name": "send",
+      "peakInNext200msDbfs": -30.23
+    },
+    {
+      "t": 20.45,
+      "name": "thump",
+      "peakInNext200msDbfs": -10.02
+    },
+    {
+      "t": 22.6,
+      "name": "recover",
+      "peakInNext200msDbfs": -18.83
+    },
+    {
+      "t": 23.1,
+      "name": "chime",
+      "peakInNext200msDbfs": -14.04
+    },
+    {
+      "t": 23.6,
+      "name": "send",
+      "peakInNext200msDbfs": -45.02
+    },
+    {
+      "t": 24.5,
+      "name": "send",
+      "peakInNext200msDbfs": -46.0
+    },
+    {
+      "t": 25.4,
+      "name": "send",
+      "peakInNext200msDbfs": -45.79
+    },
+    {
+      "t": 25.65,
+      "name": "arrive",
+      "peakInNext200msDbfs": -14.96
+    },
+    {
+      "t": 28.6,
+      "name": "poof",
+      "peakInNext200msDbfs": -31.78
+    }
+  ],
+  "tools": {
+    "ffmpeg": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+    "ffprobe": "ffprobe version 8.0.1 Copyright (c) 2007-2025 the FFmpeg developers"
+  }
+}

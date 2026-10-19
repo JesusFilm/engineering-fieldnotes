@@ -1,0 +1,27 @@
+{
+  "id": "fable",
+  "concept": "human-in-the-loop",
+  "title": "Put side effects after the approval",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "Resuming an approved step re-runs that step from its beginning, so a notification or record created before the approval is created twice; place side effects after the approval or make them idempotent.",
+  "src": "media/human-in-the-loop/fable.mp4",
+  "poster": "media/human-in-the-loop/fable.jpg",
+  "duration": 30.2,
+  "verified": true,
+  "transcript": [
+    "0.0–4.5s: The deploy node is a three-step list: notify #ops, approve?, apply v8. A cursor enters at notify #ops and a 'v8 notice' lands as a green row in the #ops channel. The cursor moves to approve?; the question 'approve v8?' is written to the Checkpoint and sent on to the human Reviewer, and the step waits.",
+    "6.3–9.4s: The Reviewer answers yes. The Checkpoint row changes to 'approve v8? → yes' and a resume chip returns to the deploy node. The cursor slides back up to notify #ops with a rewind sound: the whole step restarts from its top. notify runs again and a second 'v8 notice' lands red in #ops with an × mark; a red badge reads 'sent ×2'.",
+    "10.3–13.1s: The cursor reaches approve?, which turns green at once because the stored answer is returned, then apply v8 runs and Production changes from schema v7 to schema v8.",
+    "15.0–16.4s: The channel, badge and checkpoint are cleared and Production returns to v7. The first two rows of the deploy node swap so approve? comes before notify #ops.",
+    "17.3–27.1s: The same pause and approval happen. On resume the step restarts at approve?, which returns the stored yes immediately; notify #ops then runs once (green row, badge 'sent ×1') and apply v8 sets schema v8.",
+    "27.1–30.2s: The resolved state holds, then the stage fades to the title-only frame that also opens the video."
+  ],
+  "limitations": [
+    "Illustrative scenario: the node-restarts-from-its-beginning behaviour is LangGraph's documented interrupt semantics; other agent runtimes may replay, resume in place, or re-run differently, so the transferable lesson is to know what your runtime re-executes on resume and keep pre-approval side effects idempotent.",
+    "The cut shows one of three documented fixes (moving the side effect after the interrupt); making the side effect idempotent or isolating it in its own node are equally valid and not shown.",
+    "A persisted approval records a decision; it does not by itself enforce authorization or revalidate the action, which the baseline cut and the guardrails-and-permissions chapter cover.",
+    "The duplicate #ops notice stands in for any duplicated side effect (tickets, records, charges, audit rows); only the notification form is shown.",
+    "Audio was verified by analysis (peak −2.31 dBFS, spectrogram, onset timing against the cue list); it was not listened to. No independent reviewer saw this cut in this task."
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "author": "gpt-6-astra",
+  "reasoning": "high",
+  "date": "2026-10-19",
+  "media": "public/media/loop-engineering/astra.mp4",
+  "bytes": 813085,
+  "sha256": "ed3d27641dc55790ce349c29ee437982bc5e2fd202e955212dccb7e21f1e39ab",
+  "duration": 28,
+  "frames": 840,
+  "video": "H264 1080x1920 yuv420p 30fps",
+  "audio": "AAC stereo 44100 Hz",
+  "fullDecode": "passed",
+  "firstFrameMD5": "eb31442608984c1aa5939de6decc4443",
+  "lastFrameMD5": "eb31442608984c1aa5939de6decc4443",
+  "exactBoundaryEquality": true,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "size": 31012
+    },
+    {
+      "type": "free",
+      "offset": 31044,
+      "size": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 31052,
+      "size": 782033
+    }
+  ],
+  "faststart": true,
+  "audioPeakDBFS": -4.026,
+  "referenceCorrelation": 0.987226,
+  "audioOffsetSamples": 0,
+  "audioOffsetMilliseconds": 0.0,
+  "cueChecks": [
+    {
+      "t": 0.2,
+      "sound": "arrive",
+      "note": "C5",
+      "target": "agent",
+      "meaning": "Stage opens: task A",
+      "encodedPeakFirst200ms": -19.9
+    },
+    {
+      "t": 1,
+      "sound": "send",
+      "note": "C6",
+      "target": "agent.bottom",
+      "meaning": "Run task A tests",
+      "encodedPeakFirst200ms": -25.68
+    },
+    {
+      "t": 1.7,
+      "sound": "work",
+      "note": "E5",
+      "target": "tests",
+      "meaning": "Runner starts",
+      "encodedPeakFirst200ms": -16.97
+    },
+    {
+      "t": 2.5,
+      "sound": "thump",
+      "note": "E4",
+      "target": "tests",
+      "meaning": "Assertion failure observed",
+      "encodedPeakFirst200ms": -8.76
+    },
+    {
+      "t": 3.2,
+      "sound": "send",
+      "note": "C6",
+      "target": "tests.bottom",
+      "meaning": "Failure result reaches gate",
+      "encodedPeakFirst200ms": -25.69
+    },
+    {
+      "t": 3.8,
+      "sound": "arrive",
+      "note": "G5",
+      "target": "gate",
+      "meaning": "Gate permits bounded repair",
+      "encodedPeakFirst200ms": -12.46
+    },
+    {
+      "t": 4.5,
+      "sound": "send",
+      "note": "C6",
+      "target": "gate.left",
+      "meaning": "Feedback returns to repair agent",
+      "encodedPeakFirst200ms": -23.68
+    },
+    {
+      "t": 5.7,
+      "sound": "work",
+      "note": "C5",
+      "target": "agent",
+      "meaning": "One repair patch is created",
+      "encodedPeakFirst200ms": -16.3
+    },
+    {
+      "t": 7.5,
+      "sound": "send",
+      "note": "C6",
+      "target": "agent.bottom",
+      "meaning": "Run tests on patch 1",
+      "encodedPeakFirst200ms": -25.86
+    },
+    {
+      "t": 8.2,
+      "sound": "work",
+      "note": "E5",
+      "target": "tests",
+      "meaning": "Validate updated code",
+      "encodedPeakFirst200ms": -17.27
+    },
+    {
+      "t": 9,
+      "sound": "chime",
+      "note": "E5",
+      "target": "tests",
+      "meaning": "Selected tests pass",
+      "encodedPeakFirst200ms": -13.46
+    },
+    {
+      "t": 9.8,
+      "sound": "send",
+      "note": "C6",
+      "target": "tests.bottom",
+      "meaning": "Pass result reaches gate",
+      "encodedPeakFirst200ms": -25.89
+    },
+    {
+      "t": 10.4,
+      "sound": "arrive",
+      "note": "G5",
+      "target": "gate",
+      "meaning": "Gate exits edit loop",
+      "encodedPeakFirst200ms": -12.58
+    },
+    {
+      "t": 11.1,
+      "sound": "send",
+      "note": "C6",
+      "target": "gate.bottom",
+      "meaning": "Patch and evidence handed to engineer",
+      "encodedPeakFirst200ms": -25.79
+    },
+    {
+      "t": 11.8,
+      "sound": "store",
+      "note": "C6",
+      "target": "human",
+      "meaning": "Engineer receives patch for review",
+      "encodedPeakFirst200ms": -15.5
+    },
+    {
+      "t": 14.2,
+      "sound": "arrive",
+      "note": "C5",
+      "target": "agent",
+      "meaning": "New task begins",
+      "encodedPeakFirst200ms": -12.65
+    },
+    {
+      "t": 15.3,
+      "sound": "send",
+      "note": "C6",
+      "target": "agent.bottom",
+      "meaning": "Run task B tests",
+      "encodedPeakFirst200ms": -25.73
+    },
+    {
+      "t": 16,
+      "sound": "work",
+      "note": "E5",
+      "target": "tests",
+      "meaning": "Runner starts task B",
+      "encodedPeakFirst200ms": -17.29
+    },
+    {
+      "t": 16.8,
+      "sound": "crash",
+      "note": "E3",
+      "target": "tests",
+      "meaning": "No tests collected: evidence missing",
+      "encodedPeakFirst200ms": -4.03
+    },
+    {
+      "t": 18,
+      "sound": "send",
+      "note": "C6",
+      "target": "tests.bottom",
+      "meaning": "No-tests result reaches gate",
+      "encodedPeakFirst200ms": -25.58
+    },
+    {
+      "t": 18.6,
+      "sound": "thump",
+      "note": "G3",
+      "target": "gate",
+      "meaning": "Gate refuses further product edits",
+      "encodedPeakFirst200ms": -10.06
+    },
+    {
+      "t": 20.2,
+      "sound": "send",
+      "note": "C6",
+      "target": "gate.bottom",
+      "meaning": "Command and logs handed to engineer",
+      "encodedPeakFirst200ms": -25.68
+    },
+    {
+      "t": 21.2,
+      "sound": "deliver",
+      "note": "C5",
+      "target": "human",
+      "meaning": "Engineer receives blocker evidence",
+      "encodedPeakFirst200ms": -14.26
+    },
+    {
+      "t": 22.5,
+      "sound": "ack",
+      "note": "G4",
+      "target": "gate",
+      "meaning": "Stopped status persists; patch 0 remains unchanged",
+      "encodedPeakFirst200ms": -19.35
+    },
+    {
+      "t": 25.5,
+      "sound": "poof",
+      "note": "C4",
+      "target": "gate",
+      "meaning": "Fade to matching boundary",
+      "encodedPeakFirst200ms": -27.0
+    }
+  ],
+  "physicalListening": false,
+  "limitations": [
+    "No physical listening performed; audio verified by decoded signal analysis and spectrogram.",
+    "Visual review is performed separately using encoded full-size and 350px images.",
+    "Illustrative task and timing; result-gate policy must be enforced by harness code."
+  ]
+}

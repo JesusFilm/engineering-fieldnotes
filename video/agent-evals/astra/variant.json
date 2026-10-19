@@ -1,0 +1,46 @@
+{
+  "id": "astra",
+  "concept": "agent-evals",
+  "title": "Test the fix",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Evaluate an agent-generated fix against both the requested behavior and existing behavior before advancing it to human review.",
+  "src": "media/agent-evals/astra.mp4",
+  "poster": "media/agent-evals/astra.jpg",
+  "duration": 28,
+  "verified": true,
+  "limitations": [
+    "Illustrative authentication patches and two checks; no agent experiment or comprehensive security evaluation.",
+    "Patch A to B depicts revision, not repeated trials of one configuration.",
+    "Passing checks supports human review, not release authorization or permission enforcement.",
+    "Audio was measured and inspected spectrally, not physically listened to.",
+    "Self-reviewed; no comparative recommendation across variants."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5.8,
+      "text": "Illustration: a coding agent proposes authentication patch A. It rejects an empty password, so the new requirement passes."
+    },
+    {
+      "start": 5.8,
+      "end": 10.5,
+      "text": "The same patch also rejects a valid password. The existing login behavior fails even though the new test passed."
+    },
+    {
+      "start": 10.5,
+      "end": 14,
+      "text": "Both results reach the evaluation gate. One required check failed, so the candidate is blocked."
+    },
+    {
+      "start": 14,
+      "end": 23,
+      "text": "The agent produces revised patch B. Previous results clear. Fresh checks now reject the empty password and accept the valid password; both pass."
+    },
+    {
+      "start": 23,
+      "end": 28,
+      "text": "The two passing checks advance patch B to human review. This limited example does not establish release readiness. The scene fades for a clean loop."
+    }
+  ]
+}

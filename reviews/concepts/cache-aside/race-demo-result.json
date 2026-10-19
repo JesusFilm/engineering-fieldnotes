@@ -1,0 +1,7 @@
+{
+  "warmReadReuse": "passed",
+  "serializedInvalidationRefill": "passed",
+  "staleFillRace": "reproduced",
+  "authoritativeRevisionComparison": "rejected stale plan",
+  "limits": "No deployment, live Redis, TTL, authorization, or simultaneous threads are tested."
+}

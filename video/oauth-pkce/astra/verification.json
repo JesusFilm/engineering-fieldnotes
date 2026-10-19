@@ -1,0 +1,17 @@
+{
+  "sha256": "99dde72f7d99c5d5b048e50c277c14f7328e28861c11844b375b7fd126235129",
+  "posterSha256": "36970a9c5674b214244d9fb40a85f394a886f57f45600dbea17c34bf1b0411d7",
+  "duration": 30.0,
+  "bytes": 513169,
+  "frames": 900,
+  "video": "h264/yuv420p/1080x1920/30fps",
+  "audio": "aac",
+  "audioPeakDbfs": -6.7,
+  "firstLastExactlyEqual": true,
+  "boundaryRgbSha256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+  "fullDecode": true,
+  "faststart": true,
+  "cueCount": 34,
+  "everyCueHasDecodedAudio": true,
+  "physicalListening": false
+}

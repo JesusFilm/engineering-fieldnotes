@@ -1,0 +1,6 @@
+[
+  "0–5s: A total duration of 2,400 ms leaves the slow operation unexplained.",
+  "6–13s: Related spans show a short retrieval and a much longer billing operation on the same trace.",
+  "14–19s: Billing expands into a failed first attempt, a delay, and a successful retry.",
+  "20–23s: The slow dependency remains emphasized, showing where the request spent its time."
+]

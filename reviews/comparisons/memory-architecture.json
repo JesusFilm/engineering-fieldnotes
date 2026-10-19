@@ -1,0 +1,55 @@
+{
+  "id": "memory-architecture",
+  "recommended": "astra",
+  "rationale": "Start with Astra: it makes a recalled command visibly succeed at retrieval, fail a source-revision check, and become usable only after both saved memory and session context are refreshed. Baseline complements it by showing an already active context staying stale after storage changes, while keeping another thread’s notes separate. Fable adds the write-side lesson: one unreviewed guess is reused across runs until an application gate and an approved replacement change later behaviour; its denser seven-run story is better as a follow-up.",
+  "findings": [
+    "Astra 6.2–16.0s separates source change, successful stale recall and rejection before action. Its large three-card layout makes the guide’s test-command example easier to follow at 350px than Baseline’s four-node scope diagram or Fable’s run counter and gate.",
+    "Baseline 10.0–14.2s keeps Thread A separate from Agent B; 17.4–21.3s shows r2 in storage while B remains amber at r1 until a separate GET returns r2. This directly teaches the active-context gap that Astra’s replacement of session A with B at 8.3s leaves outside its story.",
+    "Fable 6.9–18.5s shows an unsourced skip-tests write surviving into three later runs. The revised NO TESTS outcomes identify the harm without implying that skipped tests ran and failed; repeated reuse is illustrative, not a guaranteed model behaviour.",
+    "Fable 20.3–25.45s now shows approved TESTS.md r13 supplying the replacement through the gate, with packet marks clear of labels. SAVED at 25.9s and RUN TESTS at 29.0s separate write completion from the next run’s action. Source/revision metadata still requires a real approval policy.",
+    "Astra 16.0–23.2s gives clearing, source refresh, context supply and test execution distinct steps, followed by a roughly three-second result hold. Baseline resolves at 21.3s and holds to 25.5s; Fable spends about ten seconds on repeated bad retrievals before its denser repair. That repetition teaches amplification but makes Fable less efficient as the first explanation.",
+    "Baseline 25.5–26.0s, Astra 26.2–28.0s and Fable 31.4–32.2s all end on exact matching opening/closing pixels. The final sequences agree with their transcripts; none demonstrates authorization, retention, concurrent updates or repair of every active session, so the written guide and two-session exercise remain essential."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 4,
+      "pacing": 3,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "1850aa670eac3f8e42a9ba641cad1c0f7d491bed58af91327f4ad50f4993d2f0",
+    "astra": "0b89eef6decee8b4b8fe97db8817f88de426dc4955f4e8d5a7b400c09aa4f576",
+    "fable": "d991bdd4cf8650a7480a801f75ab4e9e5d387da44109461eaa0c7137fc3fccef"
+  },
+  "contentVerdict": "Keep / core, after context-engineering. Scope, ownership, provenance and correction affect the team’s first repeatable delegations, even when memory is only a reviewed repository file. The guide correctly distinguishes thread scope from restart durability, namespaces from authorization, retrieved candidates from approved instructions, and storage updates from current-context refresh. Its new-session and active-session exercise has observable revision/stop criteria; advanced retrieval infrastructure can remain reference material. Classification and video selection are review recommendations, not a publication action.",
+  "verified": true,
+  "defectsFixed": [
+    "Baseline: restored the missing topic title; made stale B amber from storage correction at 17.4s until retrieval completes at 21.3s, including removal of pulse colour reversion found during reinspection; improved inactive-thread visibility.",
+    "Baseline: used a topic-local thread-limited renderer with normalized audio and a full-canvas fade, then rerendered and verified matching decoded boundaries.",
+    "Fable: moved gate packet endpoints and rejection/acceptance marks clear of labels; enlarged record/gate text and numbered threads to avoid implying checkpoint deletion.",
+    "Fable: added approved TESTS.md r13 as the visible correction origin; changed FAIL to NO TESTS and separated SAVED from RUN TESTS; added illustrative-workflow framing and a full-canvas fade.",
+    "Regenerated the two revised posters from final encoded frames; synchronized transcripts and beat sheets; retained original provenance and added editedBy/corrections metadata to changed cuts.",
+    "Condensed source notes to linked paraphrases with source-to-claim mapping, qualified the unsupported no-validation assertion in Fable’s notes, and recorded primary-source retrieval dates."
+  ],
+  "limitations": [
+    "Audio was analysed using decoded sample peaks, scheduled-cue window energy and spectrograms; it was not physically heard. Cue-window energy confirms signal presence, not subjective sound quality or precise perceptual synchronization.",
+    "Visual review used decoded contact sheets, full-resolution causal/busy frames, all selected 350px beat frames and exact opening/closing frames; no continuous real-time playback or user learning study was conducted.",
+    "These are illustrative workflows. No real agent integration, repository migration, permission enforcement or test suite was executed. Approval authority, concurrency, retention and source-change races require application design.",
+    "Fable remains the densest cut, and source + rev is an abbreviated policy label rather than a complete approval implementation. Baseline signals divergence without demonstrating a validator. Astra shows one new session and does not refresh all previously active sessions.",
+    "Source pages were opened and relevant sections read on 2026-10-19. Documentation examples were not executed; exact rendering can vary with host fonts. Original author reports remain historical evidence for their original encodes."
+  ]
+}

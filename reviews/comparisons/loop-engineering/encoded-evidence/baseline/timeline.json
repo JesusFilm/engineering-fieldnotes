@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 24,
+    "title": "Loop engineering",
+    "subtitle": "BOUNDED RUNS",
+    "speed": 1,
+    "fullFade": true,
+    "renderDuration": 24
+  },
+  "events": [],
+  "cues": [
+    {
+      "t": 22.8,
+      "name": "poof",
+      "gain": 0.2
+    },
+    {
+      "t": 1,
+      "name": "clock",
+      "gain": 0.8
+    },
+    {
+      "t": 1.2,
+      "name": "send",
+      "note": "E5",
+      "gain": 0.55,
+      "pan": 0.1622222222222222
+    },
+    {
+      "t": 1.7999999999999998,
+      "name": "arrive",
+      "note": "E5",
+      "pan": 0.3
+    },
+    {
+      "t": 2,
+      "name": "work",
+      "pan": 0.5
+    },
+    {
+      "t": 2.2,
+      "name": "send",
+      "note": "G5",
+      "gain": 0.55,
+      "pan": 0.3
+    },
+    {
+      "t": 2.8000000000000003,
+      "name": "arrive",
+      "note": "G5",
+      "pan": 0.1622222222222222
+    },
+    {
+      "t": 3,
+      "name": "send",
+      "note": "C5",
+      "gain": 0.55,
+      "pan": -0.1622222222222222
+    },
+    {
+      "t": 3.6,
+      "name": "arrive",
+      "note": "C5",
+      "pan": -0.1622222222222222
+    },
+    {
+      "t": 4,
+      "name": "clock",
+      "gain": 0.8
+    },
+    {
+      "t": 4.2,
+      "name": "send",
+      "note": "E5",
+      "gain": 0.55,
+      "pan": 0.1622222222222222
+    },
+    {
+      "t": 4.8,
+      "name": "arrive",
+      "note": "E5",
+      "pan": 0.3
+    },
+    {
+      "t": 5,
+      "name": "work",
+      "pan": 0.5
+    },
+    {
+      "t": 5.2,
+      "name": "send",
+      "note": "G5",
+      "gain": 0.55,
+      "pan": 0.3
+    },
+    {
+      "t": 5.8,
+      "name": "arrive",
+      "note": "G5",
+      "pan": 0.1622222222222222
+    },
+    {
+      "t": 6,
+      "name": "send",
+      "note": "C5",
+      "gain": 0.55,
+      "pan": -0.1622222222222222
+    },
+    {
+      "t": 6.6,
+      "name": "arrive",
+      "note": "C5",
+      "pan": -0.1622222222222222
+    },
+    {
+      "t": 7,
+      "name": "clock",
+      "gain": 0.8
+    },
+    {
+      "t": 7.2,
+      "name": "send",
+      "note": "E5",
+      "gain": 0.55,
+      "pan": 0.1622222222222222
+    },
+    {
+      "t": 7.8,
+      "name": "arrive",
+      "note": "E5",
+      "pan": 0.3
+    },
+    {
+      "t": 8,
+      "name": "work",
+      "pan": 0.5
+    },
+    {
+      "t": 8.2,
+      "name": "send",
+      "note": "G5",
+      "gain": 0.55,
+      "pan": 0.3
+    },
+    {
+      "t": 8.799999999999999,
+      "name": "arrive",
+      "note": "G5",
+      "pan": 0.1622222222222222
+    },
+    {
+      "t": 9,
+      "name": "send",
+      "note": "C5",
+      "gain": 0.55,
+      "pan": -0.1622222222222222
+    },
+    {
+      "t": 9.6,
+      "name": "arrive",
+      "note": "C5",
+      "pan": -0.1622222222222222
+    },
+    {
+      "t": 9.7,
+      "name": "thump"
+    },
+    {
+      "t": 9.8,
+      "name": "send",
+      "note": "C4",
+      "gain": 0.55,
+      "pan": 0
+    },
+    {
+      "t": 10.4,
+      "name": "arrive",
+      "note": "C4",
+      "pan": -0.3333333333333333
+    },
+    {
+      "t": 10.4,
+      "name": "thump",
+      "pan": -0.5
+    },
+    {
+      "t": 12.4,
+      "name": "poof",
+      "gain": 0.2
+    },
+    {
+      "t": 13,
+      "name": "recover"
+    },
+    {
+      "t": 14,
+      "name": "clock",
+      "gain": 0.8
+    },
+    {
+      "t": 14.2,
+      "name": "send",
+      "note": "E5",
+      "gain": 0.55,
+      "pan": 0.1622222222222222
+    },
+    {
+      "t": 14.799999999999999,
+      "name": "arrive",
+      "note": "E5",
+      "pan": 0.3
+    },
+    {
+      "t": 15,
+      "name": "work",
+      "pan": 0.5
+    },
+    {
+      "t": 15.2,
+      "name": "send",
+      "note": "G5",
+      "gain": 0.55,
+      "pan": 0.3
+    },
+    {
+      "t": 15.799999999999999,
+      "name": "arrive",
+      "note": "G5",
+      "pan": 0.1622222222222222
+    },
+    {
+      "t": 16,
+      "name": "send",
+      "note": "C5",
+      "gain": 0.55,
+      "pan": -0.1622222222222222
+    },
+    {
+      "t": 16.6,
+      "name": "arrive",
+      "note": "C5",
+      "pan": -0.1622222222222222
+    },
+    {
+      "t": 17,
+      "name": "clock",
+      "gain": 0.8
+    },
+    {
+      "t": 17.2,
+      "name": "send",
+      "note": "E5",
+      "gain": 0.55,
+      "pan": 0.1622222222222222
+    },
+    {
+      "t": 17.8,
+      "name": "arrive",
+      "note": "E5",
+      "pan": 0.3
+    },
+    {
+      "t": 18,
+      "name": "work",
+      "pan": 0.5
+    },
+    {
+      "t": 18.2,
+      "name": "send",
+      "note": "G5",
+      "gain": 0.55,
+      "pan": 0.3
+    },
+    {
+      "t": 18.8,
+      "name": "arrive",
+      "note": "G5",
+      "pan": 0.1622222222222222
+    },
+    {
+      "t": 19,
+      "name": "send",
+      "note": "C6",
+      "gain": 0.55,
+      "pan": 0
+    },
+    {
+      "t": 19.6,
+      "name": "arrive",
+      "note": "C6",
+      "pan": 0
+    },
+    {
+      "t": 19.6,
+      "name": "chime"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "memory-architecture",
+  "placement": "core",
+  "verifiedSources": [
+    "https://docs.langchain.com/oss/python/concepts/memory",
+    "https://docs.langchain.com/oss/python/langgraph/persistence",
+    "https://docs.langchain.com/oss/python/langchain/long-term-memory",
+    "https://code.claude.com/docs/en/permissions"
+  ],
+  "changes": [
+    "Rewrote the guide around a stale repository test-command scenario.",
+    "Distinguished current context, persisted thread state, cross-thread scope, and restart durability.",
+    "Added ownership, source revisions, correction of active contexts, and explicit permission boundaries.",
+    "Added observable outcomes, a before/after/human workflow, walkthrough, pitfalls, and a two-session exercise.",
+    "Audited every original assertion and documented primary-source mappings."
+  ],
+  "limitations": [
+    "Documentation inspected on 2026-10-19; no real agent integration executed.",
+    "Revision validation and invalidation are proposed application logic, not automatic framework guarantees.",
+    "A complete concurrency, access-control, and deletion protocol remains application-specific.",
+    "Video comparison and human editorial promotion are outside this assigned scope."
+  ]
+}

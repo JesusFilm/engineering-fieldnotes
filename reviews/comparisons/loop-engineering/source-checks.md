@@ -1,0 +1,19 @@
+# Source and curriculum verification
+
+Reviewer: gpt-6-astra comparative review. Sources opened on 2026-10-19; no inference of verification from earlier author reports.
+
+| Primary document actually opened | Supported boundary | Editorial use |
+|---|---|---|
+| [Anthropic, Building effective agents](https://www.anthropic.com/engineering/building-effective-agents), Agents and Coding agents | Environment feedback, stopping conditions and human checkpoints are part of agent operation. Test feedback supports iteration; broader requirements still need human review. | Keep loop control as core. No sourced optimal attempt count or convergence guarantee. |
+| [pytest exit codes](https://docs.pytest.org/en/stable/reference/exit-codes.html) | Ordinary exit codes distinguish success, failures, and no tests; customization is possible. | Keep 0/1/5 in the illustrative test runner. Do not use the numeric exit alone as proof of intended coverage. |
+| [pytest invocation](https://docs.pytest.org/en/stable/how-to/usage.html) | Keyword expressions select tests; collection inspection can identify discovered cases. | Distinguish discovered/collected tests from the selected and executed set. Correct the unmatched-keyword example. |
+| [pytest flaky tests](https://docs.pytest.org/en/stable/explanation/flaky.html) | Uncontrolled state, ordering and isolation can undermine result consistency. | Keep the warning about rerunning until green; failure counts alone cannot diagnose progress. |
+| [AWS, Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/) | Retry load needs control; timeout/failure does not establish absence of a side effect. The original URL redirects to AWS Builder Center. | Keep the publishing-tool example as a boundary, not a claim that agent edits are transport retries. |
+
+The local reproduction used pytest 8.4.2, one discovered passing test and `-k discuont`. Its output reports one collected, one deselected, zero selected, exit 5. The command and complete result are in `scratch/pytest-case/result.txt`. This validates the precise correction from “0 collected” to “0 selected”; it is not a model repair benchmark.
+
+**Keep / core.** Before delegating repeated code edits, engineers must specify what evidence authorizes the next step, which limits terminate the run, and what another engineer needs to resume it. The guide has an explicit harness prerequisite, separates human responsibility from the automated loop, and gives observable exercise outcomes including a forced budget exhaustion. The three-patch/six-test/five-minute limits and immediate no-tests handoff are local teaching policy, not source mandates. A separately scoped diagnostic agent could investigate missing tests.
+
+The guide retains the important limits: executable controls rather than prompt promises, current-patch evidence, stable test selection, no assertion weakening, coverage/skips, human review after pass, time/call/patch budgets, and retry side effects. Added retrieval dates and the collection/selection distinction; strengthened comparison of failure identities and assertion details. Equal counts can hide different failures, and a normalized repeated-report signal needs its own validation. The short `a7` label is illustrative, not a production hash recommendation.
+
+Publication notes inspected: `video/loop-engineering/fable/evidence.md`, both alternatives’ beat sheets/reviews/readmes or render notes, the current concept JSON, and the earlier concept review. The only long external excerpts found were in fable’s evidence note; they were replaced with concise linked paraphrases. Historical author reviews are retained as history and explicitly superseded for current media. No source text is used as a product capability or measured productivity claim. No audio was heard.

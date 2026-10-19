@@ -1,0 +1,192 @@
+{
+  "baseline": {
+    "sha256": "26aca59394fe7d953402cf2f9e3a341fe305a390bafccf5b6e63f9fffd85f44d",
+    "duration": 26.0,
+    "frames": 780,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "audioPeakDbfs": -8.5002,
+    "fullDecode": true,
+    "firstLastPixelsEqual": true,
+    "firstFrameRgbSha256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+    "lastFrameRgbSha256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+    "faststart": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 28783
+      },
+      {
+        "type": "free",
+        "offset": 28815,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 28823,
+        "size": 554988
+      }
+    ],
+    "audioHeard": false,
+    "fullSizeAnd350pxFrameTimes": [
+      0.0,
+      1.7,
+      3.1,
+      5.3,
+      6.7,
+      7.3,
+      8.8,
+      11.3,
+      12.2,
+      14.3,
+      16.5,
+      17.9,
+      18.7,
+      20.7,
+      21.5,
+      24.4,
+      25.966666666666665
+    ]
+  },
+  "astra": {
+    "sha256": "a1aa02083b41b0decc40300bc0263699596150a6973b3221b91f693cf238f3d9",
+    "duration": 30.0,
+    "frames": 900,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "audioPeakDbfs": -5.7382,
+    "fullDecode": true,
+    "firstLastPixelsEqual": true,
+    "firstFrameRgbSha256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+    "lastFrameRgbSha256": "79445f389b6b9cb23cdfea05ad5c45b02ea92043b1a34a04d6a7c02b19412651",
+    "faststart": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 33172
+      },
+      {
+        "type": "free",
+        "offset": 33204,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 33212,
+        "size": 1253703
+      }
+    ],
+    "audioHeard": false,
+    "fullSizeAnd350pxFrameTimes": [
+      0.0,
+      1.2,
+      4.2,
+      6.2,
+      6.8,
+      9.5,
+      10.5,
+      12.2,
+      13.2,
+      13.8,
+      14.8,
+      18.3,
+      20.7,
+      21.7,
+      23.5,
+      24.2,
+      25.8,
+      28.4,
+      29.966666666666665
+    ]
+  },
+  "fable": {
+    "sha256": "49781e18e05a3f3a4aed01e2f7b272ccabc783f4eda66dc4c284a88eb8dc83c8",
+    "duration": 30.2,
+    "frames": 906,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "audioPeakDbfs": -2.3124,
+    "fullDecode": true,
+    "firstLastPixelsEqual": true,
+    "firstFrameRgbSha256": "da96d25f08a5e54657dbc3bf4445f7bf8ba017c8f002c15ad2cc6c6d844e59ee",
+    "lastFrameRgbSha256": "da96d25f08a5e54657dbc3bf4445f7bf8ba017c8f002c15ad2cc6c6d844e59ee",
+    "faststart": true,
+    "atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "size": 32
+      },
+      {
+        "type": "moov",
+        "offset": 32,
+        "size": 33160
+      },
+      {
+        "type": "free",
+        "offset": 33192,
+        "size": 8
+      },
+      {
+        "type": "mdat",
+        "offset": 33200,
+        "size": 1635980
+      }
+    ],
+    "audioHeard": false,
+    "fullSizeAnd350pxFrameTimes": [
+      0.0,
+      1.6,
+      2.2,
+      3.8,
+      4.6,
+      6.6,
+      7.2,
+      7.9,
+      8.8,
+      9.8,
+      10.7,
+      11.9,
+      13.3,
+      14.6,
+      14.933333333333334,
+      15.5,
+      15.866666666666667,
+      16.5,
+      18.2,
+      19.2,
+      21.2,
+      22.5,
+      23.9,
+      24.8,
+      26.0,
+      27.5,
+      29.0,
+      30.166666666666668
+    ]
+  }
+}

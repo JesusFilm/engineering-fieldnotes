@@ -1,0 +1,64 @@
+{
+  "id": "sol",
+  "concept": "oauth-pkce",
+  "title": "One attempt, one verifier",
+  "model": "gpt-6.1-sol",
+  "reasoning": "high",
+  "lesson": "Keep each OAuth sign-in's verifier bound to its authorization attempt: the token endpoint rejects a code paired with another attempt's verifier.",
+  "src": "media/oauth-pkce/sol.mp4",
+  "poster": "media/oauth-pkce/sol.jpg",
+  "duration": 32,
+  "verified": true,
+  "limitations": [
+    "Illustrative concurrent sign-ins in an agent host; A–D represent full random verifier values, not literal secrets.",
+    "Consent, TLS and other OAuth validation are omitted. A matching verifier does not by itself guarantee token issuance.",
+    "PKCE does not enforce agent permissions or turn persistent prompts into access controls.",
+    "Audio was decoded and analysed for levels and activity near declared cues, with spectrogram inspection; it was not physically heard. Perceptual quality and exact audiovisual synchronization remain untested.",
+    "Original author evidence is retained separately; final encoded evidence and independent comparison are in reviews/comparisons/oauth-pkce/. No live provider test or continuous real-time playback review was performed."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5.3,
+      "text": "An agent host starts sign-in A. It keeps a fresh secret called a verifier and sends an S256 challenge derived from it. The authorization server associates that challenge with code A and returns the code."
+    },
+    {
+      "start": 5.3,
+      "end": 10,
+      "text": "The host sends code A and verifier A to the token endpoint. The server transforms the verifier and finds the stored challenge matches. Assuming the other OAuth checks pass, it issues a token and consumes the code."
+    },
+    {
+      "start": 10,
+      "end": 16,
+      "text": "Two new sign-ins, B and C, overlap. Each has a separate verifier, challenge and code. Their values belong to separate authorization attempts."
+    },
+    {
+      "start": 16,
+      "end": 22,
+      "text": "An illustrative client bug puts C's verifier into B's exchange. The server receives code B with verifier C. Its transformed value differs from B's stored challenge, so the server returns invalid_grant and issues no token."
+    },
+    {
+      "start": 22,
+      "end": 32,
+      "text": "The host clears the failed flow and starts fresh sign-in D with its own verifier. D's challenge and code remain paired through exchange. The comparison matches and the valid request receives a token. This protects the code exchange; agent permissions still require separate access controls."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    "Rename the OAuth client to Agent host, matching the chapter scenario and distinguishing it from the protected tool service."
+  ],
+  "comparativeVerification": {
+    "reviewer": "gpt-6-astra comparative review",
+    "checkedAt": "2026-10-19T00:09:21.285868+00:00",
+    "sha256": "3adea70acc68e3b1bfe967696ce1e1f6a634009985e123f99b9c261ec4d82d8e",
+    "evidence": "reviews/comparisons/oauth-pkce/verification.json",
+    "audioHeard": false
+  },
+  "originalAuthorLimitations": [
+    "Illustrative concurrent sign-ins in an agent host; A–D represent full random verifier values, not literal secrets.",
+    "Consent, TLS and other OAuth validation are omitted. A matching verifier does not by itself guarantee token issuance.",
+    "PKCE does not enforce agent permissions or turn persistent prompts into access controls.",
+    "Audio was analysed for levels, cues and synchronization but was not physically heard; perceptual audio quality remains untested.",
+    "Author review of encoded frames and timing evidence; no independent comparison or continuous real-time playback review is claimed."
+  ]
+}

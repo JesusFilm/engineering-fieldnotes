@@ -1,0 +1,77 @@
+{
+  "id": "fable",
+  "concept": "orchestration-patterns",
+  "title": "Split by dependency",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "Fan subtasks out in parallel only when neither needs the other's output; when one does, keep the independent work parallel and sequence the dependent step by forwarding the prerequisite result.",
+  "src": "media/orchestration-patterns/fable.mp4",
+  "poster": "media/orchestration-patterns/fable.jpg",
+  "duration": 30,
+  "verified": true,
+  "limitations": [
+    "The rename-field/handler example is an illustrative scenario, not a recorded agent run; real conflicts may surface later or not at all.",
+    "\"Known dependency\" stands for a planning decision by a person or the orchestrating model; nothing here shows dependencies being detected automatically or guarantees they will be.",
+    "Sequencing is a plan, not an enforced constraint. Written or persistent instructions to an orchestrator do not enforce ordering or permissions.",
+    "The red redo round trip stands in for coordination cost qualitatively; no latency, token, or cost figures are claimed.",
+    "Audio was analysed from the final AAC: sample peak -1.908 dBFS, signal at all 101 scheduled cue windows, and spectrogram inspected; it was not physically listened to. Overlapping cues were not isolated for audibility.",
+    "Independently authored alternative to the baseline cut; a different model is provenance, not proof of quality, and no comparative winner is claimed.",
+    "The docs task is assumed independent of the renamed API field; API documentation that consumes that field must also wait for the rename. Tests in the final sequence validate the completed handler; writing test code earlier would be a different task.",
+    "Distinct rows illustrate separate output ownership, not permission for agents to mutate one checkout freely; actual editing needs isolated ownership or controlled integration."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 6.3,
+      "text": "An orchestrator hands two independent tasks, tests and docs, to Worker A and Worker B at the same time. Each writes its own row in the shared code and both results return; the orchestrator chimes green. This is the normal case: parallel work on independent subtasks."
+    },
+    {
+      "start": 6.3,
+      "end": 11,
+      "text": "Before dispatch, the old tests and docs results turn amber and are marked stale. The orchestrator fans out a field rename and a handler that uses it. A renames the field to total_cents, but B used the old name amount. The handler turns red; a red dashed dependency bracket and HIDDEN DEPENDENCY label reveal the mismatch."
+    },
+    {
+      "start": 11,
+      "end": 15.4,
+      "text": "A red redo instruction carries total_cents to Worker B. B rewrites the handler, the row turns green and the dependency bracket becomes green and dotted. The worker task completes one rework round trip late; the old tests and docs remain stale, so this is not a validated or approval-ready patch."
+    },
+    {
+      "start": 15.4,
+      "end": 17,
+      "text": "The stage resets. The field and handler rows return to the old name, and the bracket between them is now shown in orange from the start: the dependency is known before any work is dispatched."
+    },
+    {
+      "start": 17,
+      "end": 20.5,
+      "text": "Worker A renames the field while Worker B does the independent docs task in parallel. The field result, total_cents, travels back to the orchestrator, which holds it for the dependent step."
+    },
+    {
+      "start": 20.5,
+      "end": 23.85,
+      "text": "SEQUENCED appears. The orchestrator forwards total_cents with the handler task. The handler lands at 22.8 seconds without conflict; its completion report returns before tests are dispatched. The dependency bracket becomes green and dotted."
+    },
+    {
+      "start": 23.85,
+      "end": 30,
+      "text": "Tests are dispatched only after the handler is complete. Their result lands at 25.9 seconds and returns before the final join at 26.9 seconds. The resolved state holds, then the stage fades back to the opening title. The plan illustrates correct dependency ordering; enforcement and permission configuration are not shown."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "changes": [
+        "Mark old tests/docs stale at 6.3s before code changes.",
+        "Wait for handler completion/report before dispatching tests at 23.85s; tests land at 25.9s, final join at 26.9s, hold and fade through 30s.",
+        "Clear both worker labels and colors during the 15.95s reset so prior rename completion cannot survive into the new scenario."
+      ],
+      "originalMp4Sha256": "7c929e4a8af473094603eca1bb413b6ab5dfbd39ec2badd174fbedfa67c82322"
+    }
+  ],
+  "verification": {
+    "review": "reviews/comparisons/orchestration-patterns/after.md",
+    "evidence": "reviews/comparisons/orchestration-patterns/verification.json",
+    "sha256": "31d44cdbdb8a50e3d67643b1b2d6d7a8b2cf7969787cc3d0f7e4a40e9b4ed81a",
+    "physicalListening": false
+  }
+}

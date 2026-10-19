@@ -1,0 +1,10 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const F = require('./engine/flow-engine.js');
+const SFX = require('./engine/sfx.js');
+require('./scene.js');
+const sc = F.createScene(F.lastScene);
+fs.mkdirSync(path.join(__dirname,'scratch'),{recursive:true});
+fs.writeFileSync(path.join(__dirname,'scratch/cues.json'),JSON.stringify(sc.audioCues(),null,2));
+fs.writeFileSync(path.join(__dirname,'scratch/reference.wav'),Buffer.from(SFX.toWav(SFX.render(sc.audioCues(),sc.meta.renderDuration,{presets:sc.sounds}))));
+console.log(sc.audioCues().length+' cues exported');

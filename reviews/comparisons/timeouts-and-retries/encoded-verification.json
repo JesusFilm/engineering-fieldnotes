@@ -1,0 +1,134 @@
+{
+  "baseline": {
+    "sha256": "89da1fe9032322631818afb5305e00e7acd15dc4b315211c783f346884ff1077",
+    "posterSha256": "b3c232c80b80d3abc793e657772a2661b6601ab402dfb84232bf12d3b7070720",
+    "duration": 21.0,
+    "frames": 630,
+    "bytes": 694438,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "fullDecode": true,
+    "firstLastExactRGB": true,
+    "firstFrameMd5": "eb31442608984c1aa5939de6decc4443",
+    "lastFrameMd5": "eb31442608984c1aa5939de6decc4443",
+    "faststart": true,
+    "atoms": [
+      [
+        "ftyp",
+        0,
+        32
+      ],
+      [
+        "moov",
+        32,
+        23760
+      ],
+      [
+        "free",
+        23792,
+        8
+      ],
+      [
+        "mdat",
+        23800,
+        670638
+      ]
+    ],
+    "audioPeakDbFS": -7.7,
+    "auditedCueCount": 29,
+    "audioPhysicallyHeard": false,
+    "frameManifest": "scratch/final/baseline/frame-manifest.json"
+  },
+  "astra": {
+    "sha256": "4b44dbe3e40a7e2c82f86a7f3b08524463e78629987c9abaed28d9860751c0db",
+    "posterSha256": "072cd4766760f0a196bac64ff81275c1509c9882b22dd69eb232722c7465c949",
+    "duration": 26.0,
+    "frames": 780,
+    "bytes": 1163088,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "fullDecode": true,
+    "firstLastExactRGB": true,
+    "firstFrameMd5": "eb31442608984c1aa5939de6decc4443",
+    "lastFrameMd5": "eb31442608984c1aa5939de6decc4443",
+    "faststart": true,
+    "atoms": [
+      [
+        "ftyp",
+        0,
+        32
+      ],
+      [
+        "moov",
+        32,
+        29320
+      ],
+      [
+        "free",
+        29352,
+        8
+      ],
+      [
+        "mdat",
+        29360,
+        1133728
+      ]
+    ],
+    "audioPeakDbFS": -5.6,
+    "auditedCueCount": 38,
+    "audioPhysicallyHeard": false,
+    "frameManifest": "scratch/final/astra/frame-manifest.json"
+  },
+  "sol": {
+    "sha256": "15e7ece8b04a262106ed9bcd984d4beffc42de956784af3911de42bb22463cc9",
+    "posterSha256": "2f576c3564fd523c8f67a97c3a3240d55ade32630de70bedf4d916ed62d563fc",
+    "duration": 32.0,
+    "frames": 960,
+    "bytes": 987182,
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1",
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "fullDecode": true,
+    "firstLastExactRGB": true,
+    "firstFrameMd5": "9b2c4088acb2c896d5d79adbe4b893ac",
+    "lastFrameMd5": "9b2c4088acb2c896d5d79adbe4b893ac",
+    "faststart": true,
+    "atoms": [
+      [
+        "ftyp",
+        0,
+        32
+      ],
+      [
+        "moov",
+        32,
+        35239
+      ],
+      [
+        "free",
+        35271,
+        8
+      ],
+      [
+        "mdat",
+        35279,
+        951903
+      ]
+    ],
+    "audioPeakDbFS": -5.8,
+    "auditedCueCount": 56,
+    "audioPhysicallyHeard": false,
+    "frameManifest": "scratch/final/sol/frame-manifest.json"
+  }
+}

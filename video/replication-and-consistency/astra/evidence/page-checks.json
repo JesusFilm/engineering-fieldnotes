@@ -1,0 +1,58 @@
+[
+  {
+    "page": "chapter",
+    "width": 390,
+    "documentWidth": 390,
+    "videos": [
+      {
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      }
+    ],
+    "transcriptBeats": 5,
+    "bodyFont": "17px"
+  },
+  {
+    "page": "compare/",
+    "width": 390,
+    "documentWidth": 390,
+    "videos": [
+      {
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      }
+    ],
+    "transcriptBeats": 5,
+    "bodyFont": "15px"
+  },
+  {
+    "page": "chapter",
+    "width": 1280,
+    "documentWidth": 1280,
+    "videos": [
+      {
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      }
+    ],
+    "transcriptBeats": 5,
+    "bodyFont": "17px"
+  },
+  {
+    "page": "compare/",
+    "width": 1280,
+    "documentWidth": 1280,
+    "videos": [
+      {
+        "preload": "none",
+        "autoplay": false,
+        "controls": true
+      }
+    ],
+    "transcriptBeats": 5,
+    "bodyFont": "15px"
+  }
+]

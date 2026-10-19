@@ -1,0 +1,27 @@
+{
+  "id": "replication-and-consistency",
+  "title": "Replication and consistency",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform",
+    "Tech lead"
+  ],
+  "summary": "Replication copies data across nodes, while consistency rules determine what reads can observe.",
+  "overview": "Asynchronous replicas can lag committed writes and lose recent changes on failover. Synchronous acknowledgement strengthens specific durability guarantees, but read visibility depends on the acknowledgement mode and replica selected.",
+  "why": "A successful write does not automatically mean every replica can return it immediately.",
+  "example": "After saving a profile, an application reads it from the primary rather than a potentially lagging reporting replica.",
+  "judgment": "Decide acceptable stale reads and data loss, then choose acknowledgement and routing behavior accordingly.",
+  "next": "Does our acknowledgement wait for remote persistence or for changes to become queryable?",
+  "sources": [
+    {
+      "title": "Log-Shipping Standby Servers \u2014 PostgreSQL",
+      "url": "https://www.postgresql.org/docs/current/warm-standby.html"
+    }
+  ],
+  "related": [
+    "cache-aside",
+    "idempotency",
+    "timeouts-and-retries"
+  ]
+}

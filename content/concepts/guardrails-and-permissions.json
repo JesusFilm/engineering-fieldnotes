@@ -1,0 +1,90 @@
+{
+  "id": "guardrails-and-permissions",
+  "title": "Guardrails and permissions",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform",
+    "Tech lead"
+  ],
+  "summary": "Delegate investigation without handing the agent deployment authority. Evaluate proposed actions, then enforce permissions where tools execute.",
+  "overview": "A guardrail checks whether an input, output, or proposed action meets a policy. The term covers deterministic checks and fallible model judgments; it is not a security guarantee. Authorization determines whether an authenticated identity may perform an operation on a particular resource. A persistent instruction such as “never deploy” expresses intent but cannot enforce that boundary.",
+  "why": "Manual workflows put an engineer between reading evidence and executing commands. An agent can connect those steps automatically, including when a retrieved log contains misleading instructions. Teams need to decide which decisions may be delegated and which credentials the execution system can actually use. Read access also deserves scoping: logs can contain sensitive data.",
+  "example": "Imagine an incident agent investigating checkout errors. It can read approved service logs and propose release r42, but its identity cannot deploy. A reviewer checks the proposed artifact and production target. A separate deployment service executes an authorized release; the agent remains read-only. This is an illustrative architecture, not a feature that every agent framework supplies.",
+  "judgment": "Start with one useful, restricted workflow. Inventory identities, tools, resources, and alternate paths such as shell access. Reject an action when its permission check fails or is unavailable. Choose review requirements by consequence and reversibility; a confirmation on every harmless read can obscure the decisions that deserve attention.",
+  "next": "Can you demonstrate a successful read and a denied production write using the same agent identity, even when the prompt asks for the write?",
+  "sources": [
+    {
+      "title": "OWASP: Authorization — least privilege, default deny, checks on every request",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OWASP: LLM Prompt Injection Prevention — tool defenses and guardrail limitations",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OWASP: Transaction Authorization — bind approval to significant action data",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "MCP tools specification (2025-06-18): implementation responsibilities",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "GitHub Actions: deployment protection rules and environment secrets",
+      "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "tool-design",
+    "human-in-the-loop",
+    "oauth-pkce"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Teams should learn this before attaching agents to credentials that can change shared systems. It makes delegation reviewable by separating useful investigation from the authority to cause effects.",
+    "prerequisites": [
+      "tool-design"
+    ],
+    "outcomes": [
+      "Draw the execution boundary and identify the credential used for each tool.",
+      "Distinguish a model policy check from an enforced permission.",
+      "Demonstrate denied requests leave the protected resource unchanged."
+    ],
+    "workflow": {
+      "before": "An on-call engineer reads logs, chooses a release, and manually invokes a deployment workflow.",
+      "after": "An agent gathers scoped evidence and prepares a release proposal; an authorized workflow checks and executes the reviewed action.",
+      "human": "The engineer owns permission policy, evaluates release evidence, and decides whether the operational risk is acceptable."
+    },
+    "walkthrough": [
+      "1. Trace one request end to end. Record the requesting user, agent service identity, tool, action, and target. Establish the permitted combination before giving the tool access. Schema-valid arguments alone say nothing about authority.",
+      "2. Give the investigation identity only the selected log reads. Treat log text as evidence, including a line saying “deploy immediately.” A content check may flag that line, but the deployment endpoint must reject the agent regardless of whether the model follows it.",
+      "3. Prepare a reviewable release record: service, environment, immutable artifact digest, and expected effect. Here r42 names that record. Bind approval to those values in trusted execution code; changed values require renewed review. An approval boolean supplied by the model is not evidence of approval.",
+      "4. Execute through the deployment service’s separate identity after checking the authorized reviewer and approved action. Record the decision and result without secrets. Retry the direct agent write afterward: it must still fail. GitHub environment reviewers illustrate a real approval gate, but availability, administrator bypass, workflow permissions, and runner isolation require separate configuration review."
+    ],
+    "pitfalls": [
+      "Sharing the engineer’s broad shell credentials gives the agent a route around the restricted tool.",
+      "Approving “fix production” allows the actual artifact or target to drift after review.",
+      "Treating a read-only tool label, a safety classifier, or a successful refusal as proof of enforced permissions."
+    ],
+    "exercise": {
+      "title": "Prove the boundary with a fake deployment",
+      "steps": [
+        "Use a disposable fixture with a read endpoint, a deployment endpoint, and a recorded release value. Define separate investigation and deployment identities.",
+        "Allow the investigation identity to read. Attempt a direct write and a write prompted by a malicious log line; inspect both the response and release value.",
+        "Approve a specific artifact and target through a trusted reviewer fixture. Execute it with the deployment identity, then attempt a changed target.",
+        "Retry the agent write after the approved deployment. Save decisions and resource changes as the review evidence."
+      ],
+      "success": [
+        "Allowed reads and the exact approved release succeed; unauthorized or changed requests leave the release unchanged.",
+        "The evidence identifies which identity acted and shows the agent gained no deployment permission."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "queues-and-backpressure",
+  "title": "Queues and backpressure",
+  "category": "Distributed systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Bound waiting work and make the producer respond when capacity runs out. A queue buys time; it does not make an overloaded tool faster.",
+  "overview": "A producer submits jobs; consumers execute them. Queues separate arrival from execution, but sustained arrivals above completions grow backlog unless work is delayed, rejected or discarded. Backpressure carries capacity information upstream so producers slow or wait. Load shedding instead abandons work. These are explicit policies, not automatic consequences of adding a queue.",
+  "why": "An engineer running commands manually naturally waits for results. An agent runner can fan out tool calls faster than a test service or API can finish them. Moving that workflow into automation requires explicit limits on waiting jobs, active calls and how long either may live.",
+  "example": "Imagine an agent planning documentation checks against an internal search tool. Its harness has one worker and three waiting places. While job B is slow, C, D and E fill the queue. Submission of F waits at the producer. When the worker removes C, F can enter. Admission of F is not completion: expose queued, running and completed outcomes separately. The video illustrates this finite batch; it makes no claim about model speed or production capacity.",
+  "judgment": "Choose limits from measured tool cost, latency and the team’s delay budget. Google SRE cautions that request counts hide different resource costs. Track oldest waiting age, active calls and completion rate alongside depth. An age threshold is a policy signal, not proof that remaining work will meet its deadline. Enforce limits in the runner; a prompt asking an agent to be careful is not enforcement.",
+  "next": "If the downstream tool slows tenfold, where does waiting accumulate, and which component stops accepting or generating more work?",
+  "sources": [
+    {
+      "title": "Python asyncio queues — bounded put, get and task completion",
+      "url": "https://docs.python.org/3/library/asyncio-queue.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RabbitMQ — Consumer acknowledgements and publisher confirms",
+      "url": "https://www.rabbitmq.com/docs/confirms",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RabbitMQ — Consumer prefetch",
+      "url": "https://www.rabbitmq.com/docs/consumer-prefetch",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RabbitMQ — Queue length limit and overflow behavior",
+      "url": "https://www.rabbitmq.com/docs/maxlength",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Google SRE — Handling overload",
+      "url": "https://sre.google/sre-book/handling-overload/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RabbitMQ — Reliability Guide: redelivery and idempotency",
+      "url": "https://www.rabbitmq.com/docs/reliability",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "idempotency",
+    "load-balancing",
+    "timeouts-and-retries"
+  ],
+  "learning": {
+    "placement": "reference",
+    "relevance": "Use this chapter when agents start batch jobs or concurrent tool calls against limited services. It supports safe scaling of an established workflow; it is unnecessary infrastructure for a first supervised, sequential task.",
+    "prerequisites": [
+      "tool-design",
+      "timeouts-and-retries"
+    ],
+    "outcomes": [
+      "Locate and measure waiting work separately from executing calls.",
+      "Demonstrate that a full queue changes producer behavior without stopping the worker.",
+      "Explain which limits cover backlog, in-flight deliveries and request rate.",
+      "Report queue admission separately from successful tool completion."
+    ],
+    "workflow": {
+      "before": "An engineer submits one documentation check, watches its result, then submits the next.",
+      "after": "The harness feeds checks through a bounded queue and fixed worker count; the producer awaits admission.",
+      "human": "The team owns acceptable delay, cost, cancellation, retry policy and whether a result is good enough."
+    },
+    "walkthrough": [
+      "Start locally. Python’s asyncio.Queue(maxsize=3) permits three waiting items. Awaiting put() on a full queue waits for get() to free a place; task_done() records completion separately. With one worker, three waiting jobs and one active job can coexist. This is not a durable broker.",
+      "Keep production bounded too. Have one producer await admission before generating more jobs. Creating unlimited tasks that each wait on put() merely moves the backlog outside the queue. Large payloads also need a byte or memory budget; an item count alone is insufficient.",
+      "For a RabbitMQ deployment, manual acknowledgements identify handled deliveries. Prefetch caps outstanding unacknowledged deliveries, commonly per consumer; it does not cap the broker’s waiting backlog. Publisher confirms cover broker acceptance, not successful tool execution. Redelivery remains possible, so externally visible actions need an idempotency strategy.",
+      "Configure overflow deliberately. RabbitMQ queue-length limits count ready messages, excluding unacknowledged ones; the default can drop oldest messages. Choose a supported rejection policy and handle its feedback if silent loss is unacceptable. Separately choose deadlines and a finite retry budget. Increasing queue size only postpones the capacity decision."
+    ],
+    "pitfalls": [
+      "Increasing worker count floods the same downstream bottleneck; a concurrency cap is not a requests-per-minute quota.",
+      "Immediate retries compete with useful work and can sustain overload; repeated failures need a terminal outcome.",
+      "Acknowledging before recording a result can lose recoverable work; acknowledging later still requires duplicate-safe side effects."
+    ],
+    "exercise": {
+      "title": "Make the producer wait",
+      "steps": [
+        "Use a local stub tool and six named jobs; avoid paid API calls or repository writes.",
+        "Run one consumer and an asyncio.Queue(maxsize=3). Log submission start, admission, execution start and finish.",
+        "Make the second job take several seconds. Submit the others from a single producer using await put().",
+        "Check that the sixth admission waits for a free place, then let all jobs drain. Discuss where a deadline would cancel stale work."
+      ],
+      "success": [
+        "Logs never show more than three waiting jobs or one executing job.",
+        "The blocked submission resumes after a dequeue, while existing work continues.",
+        "All six stub jobs reach a recorded outcome; admission is never mistaken for completion."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

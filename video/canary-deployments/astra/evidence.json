@@ -1,0 +1,44 @@
+{
+  "author": "gpt-6-astra",
+  "reasoning": "high",
+  "reviewed": "2026-10-19",
+  "files": {
+    "video/canary-deployments/astra/scene.js": "662fdb6879f985fe9b44e185bffaa488b4733d8847f81e20127aafe1344a4923",
+    "video/canary-deployments/astra/engine/flow-engine.js": "c95b52b51d642d6dd279cb6fe41b35525114af52aa182a8bf151f02285be041a",
+    "video/canary-deployments/astra/engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "video/canary-deployments/astra/engine/render.mjs": "db35e787adb1c39506efc7bd40cdfbdb4ef1a79fae6a240371257013f2f72ed4",
+    "video/canary-deployments/astra/engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "video/canary-deployments/astra/engine/package.json": "542ffcd6a004b70c1c394b8f58ec6495f46d24c44f3482e169b8a1be55e8f2c4",
+    "video/canary-deployments/astra/engine/package-lock.json": "b65eaf420e316789835922128d848c59ad74bce7e8db6e741dac70c1330d6c13",
+    "video/canary-deployments/astra/render.sh": "6962b34be86ae6cf25814c87a2979889653e07831888f465883446946f07485f",
+    "video/canary-deployments/astra/verify.py": "2ce2022da2fb10b027359476858bc18f5a924732ccf9d62f9972affc6348674d",
+    "video/canary-deployments/astra/variant.json": "c1c3f4e91d1733ea17244101a882c88e6a27f20ac0135cbf89184d0fa77f6040",
+    "video/canary-deployments/astra/beat-sheet.md": "e2a11ab1411e6d0fd068c00fd8db1ed6d7c2b13980cbe44eef371e4a46c1e553",
+    "video/canary-deployments/astra/review.md": "a45da2568d1b685b42c9dc8df6c37493fcd73ff8aba20062663024fd72b39579",
+    "video/canary-deployments/astra/verification.json": "f7c70b35d2b1ff219d26c35b174c5290ffd9464996fd956c941d8943331322cb",
+    "content/concepts/canary-deployments.json": "87b7c1d530e56670748bf5efb4a52ef25d719a3f14142f9228eb16deac0f8166",
+    "reviews/concepts/canary-deployments/review.md": "d7174029194c05f8f3354f16ddb09890b63dd9498cef808590195894894b1532",
+    "reviews/concepts/canary-deployments/result.json": "b6d6f05370375ddfbfd769265827c9c0af7555402efdddb2c5490cfce04337d6",
+    "public/media/canary-deployments/astra.mp4": "95ea3cc274edc341f6a94652aab6d9c57e093542e9d206bb51e82b246cda0ffe",
+    "public/media/canary-deployments/astra.jpg": "e79a5e77c5c91e4359af74875e57a570e976b3a88fdf8c0954a4e235e79ae3b1"
+  },
+  "visualReview": {
+    "encodedContactSheet": true,
+    "phoneWidth": 350,
+    "beatTimes": [
+      3.8,
+      10,
+      14,
+      18.6,
+      21,
+      25.8
+    ],
+    "correctedBoundaryTimes": [
+      16.4,
+      16.8
+    ],
+    "spectrogram": true,
+    "physicalListening": false
+  },
+  "scope": "Only assigned chapter, concept review, Astra source/evidence and two media files; no Git operations, shared build/manifest/UI changes or subagents."
+}

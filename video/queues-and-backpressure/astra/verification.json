@@ -1,0 +1,57 @@
+{
+  "author": "gpt-6-astra",
+  "reasoning": "high",
+  "date": "2026-10-19",
+  "sha256": "f0a19b81c3661c36c06c5061ab2ef2b7c62627091d7d3cfee33f8184e94eebbf",
+  "posterSha256": "3632c99291cc332ceb7bbca70118d052fae08574212f9f2d9c7655f4ef3d1769",
+  "duration": 30.0,
+  "bytes": 606634,
+  "frames": 900,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "videoCodec": "h264",
+  "pixelFormat": "yuv420p",
+  "audioCodec": "aac",
+  "audioPeakDbfs": -8.3,
+  "fullDecode": true,
+  "matchingBoundaryFrames": true,
+  "faststart": true,
+  "mp4AtomOffsets": {
+    "ftyp": 0,
+    "moov": 32,
+    "free": 33200,
+    "mdat": 33208
+  },
+  "cueCount": 65,
+  "semanticEventCount": 34,
+  "everyEventHasCueWithinOneFrame": true,
+  "allCueWindowsAboveMinus50Dbfs": true,
+  "sourceAudioCorrelation": 0.999227,
+  "audioAlignmentLagSeconds": 0.0,
+  "titleRegionMeanRange": [
+    61.667,
+    61.979
+  ],
+  "fifoAndBoundsChecked": true,
+  "physicalListening": false,
+  "encodedReviewTimes": [
+    3.7,
+    10.7,
+    11.2,
+    12.8,
+    15.4,
+    16.9,
+    18,
+    23.5,
+    26,
+    27.5
+  ],
+  "sourceHashes": {
+    "scene.js": "d52070e4d672550dad6fba8bd0630c831302db7c529d72de03bd749e19ef6cfa",
+    "engine/flow-engine.js": "55ada1ebc9ee850c72f92f89a765b92a46b100fa1d28b6bde0bdc2e08f602503",
+    "engine/render.mjs": "dd543ba79ddcd0201df5db91cd46683e3404431c5b971881f2eb5bc3ca8f2e72",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "7b20aa8f8ddfde843294b36fb7be39f80c14c33f391a7325c3581d107643f296"
+  }
+}

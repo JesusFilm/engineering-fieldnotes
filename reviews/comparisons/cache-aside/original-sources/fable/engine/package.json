@@ -1,0 +1,7 @@
+{
+  "name": "architecture-flow-video-scripts",
+  "private": true,
+  "dependencies": {
+    "puppeteer-core": "25.14.0"
+  }
+}

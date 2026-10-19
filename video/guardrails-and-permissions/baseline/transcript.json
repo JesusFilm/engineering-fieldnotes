@@ -1,0 +1,5 @@
+[
+  "0\u201311s: A metrics-read request passes schema validation and permission checks; CPU usage returns to the agent.",
+  "11.5\u201317s: A deploy request passes schema validation at 12.25s but is denied permission at 15.25s. No deployment reaches production.",
+  "17.5\u201322.5s: The denial travels back and reaches the agent at 18.25s. Production remains at version 7; the final state holds before the fade."
+]

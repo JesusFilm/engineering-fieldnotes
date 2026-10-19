@@ -1,0 +1,26 @@
+{
+  "id": "observability-and-tracing",
+  "title": "Observability and tracing",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Observability connects runtime signals so engineers can explain a system\u2019s behavior and failures.",
+  "overview": "Traces represent a request as related spans across operations and services. For an agent, instrument model calls, tool calls, and orchestration steps alongside service telemetry.",
+  "why": "An end-to-end duration alone cannot identify which dependency or step caused a delay.",
+  "example": "A support-agent trace shows retrieval taking 200 milliseconds and a billing API retry consuming most of the response time.",
+  "judgment": "Decide which events and identifiers support diagnosis, and which sensitive payloads must be omitted.",
+  "next": "Can we follow one failed task through its tool call into the downstream service?",
+  "sources": [
+    {
+      "title": "Traces \u2014 OpenTelemetry",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/"
+    }
+  ],
+  "related": [
+    "agent-evals",
+    "timeouts-and-retries",
+    "load-balancing"
+  ]
+}

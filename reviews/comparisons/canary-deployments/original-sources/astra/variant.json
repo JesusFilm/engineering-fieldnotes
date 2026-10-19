@@ -1,0 +1,46 @@
+{
+  "id": "astra",
+  "concept": "canary-deployments",
+  "title": "Split the signal",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Break down a canary’s measurements by version and changed operation before expanding exposure; a healthy pooled rate can hide a severe regression.",
+  "src": "media/canary-deployments/astra.mp4",
+  "poster": "media/canary-deployments/astra.jpg",
+  "duration": 30.0,
+  "verified": true,
+  "limitations": [
+    "Illustrative export-service scenario; counts, percentages, and compressed observation time are not safety guarantees.",
+    "Routing supports weighted traffic in this example; replica counts alone do not guarantee exact traffic shares.",
+    "Abort redirects new traffic but does not undo persisted changes or external side effects; the failed window is retained.",
+    "Audio levels, timing and spectrogram were analyzed; physical listening was not performed.",
+    "Self-reviewed by gpt-6-astra; no independent comparative recommendation or shared-site integration review is claimed."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 5.5,
+      "text": "The stable release receives all requests. Its previous observation window has no errors. The candidate is not yet receiving traffic."
+    },
+    {
+      "start": 5.5,
+      "end": 13,
+      "text": "A release containing an agent-assisted change receives ten percent of traffic. Two routing cycles send nine requests to stable for each one to the canary. The previous result is cleared while a new window is collected."
+    },
+    {
+      "start": 13,
+      "end": 16.4,
+      "text": "The new window shows forty errors out of ten thousand requests, or 0.4 percent overall. Promotion is still pending; the green pooled result is not approval."
+    },
+    {
+      "start": 16.4,
+      "end": 22.6,
+      "text": "The same window is split by version for exports: stable has zero failures among nine hundred exports; the canary has forty among one hundred, or forty percent. The failure signal blocks promotion."
+    },
+    {
+      "start": 22.6,
+      "end": 30,
+      "text": "The rollout is aborted and new traffic returns to stable. The candidate receives zero percent, while its failed measurement stays visible as historical evidence. This illustrates containment, not repair of earlier effects."
+    }
+  ]
+}

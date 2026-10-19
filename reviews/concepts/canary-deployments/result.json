@@ -1,0 +1,23 @@
+{
+  "id": "canary-deployments",
+  "placement": "reference",
+  "verifiedSources": [
+    "https://sre.google/workbook/canarying-releases/",
+    "https://argo-rollouts.readthedocs.io/en/stable/features/analysis/",
+    "https://argo-rollouts.readthedocs.io/en/stable/features/canary/",
+    "https://aws.amazon.com/builders-library/ensuring-rollback-safety-during-deployments/"
+  ],
+  "changes": [
+    "Replaced generic traffic example with a worked agent-assisted export regression and explicit denominators.",
+    "Added a 689-word standalone learning guide with prerequisites, observable outcomes, manual-to-AI workflow, walkthrough, pitfalls, and a local exercise.",
+    "Separated missing evidence from success and explained actual routing versus replica approximation.",
+    "Qualified isolation and rollback limits and retained human responsibility for release policy.",
+    "Preserved original identity, title, category, roles, and related concepts."
+  ],
+  "limitations": [
+    "Primary pages retrieved 2026-10-19; Argo stable documentation may change.",
+    "Counts, traffic weights, and exercise thresholds are illustrative, not measured or statistically validated.",
+    "No deployment-controller integration, production trial, or browser curriculum integration was performed.",
+    "Astra review and video authored by gpt-6-astra with high reasoning; no independent comparative review claimed."
+  ]
+}

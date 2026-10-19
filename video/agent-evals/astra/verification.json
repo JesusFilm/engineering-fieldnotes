@@ -1,0 +1,226 @@
+{
+  "duration": 28,
+  "bytes": 504865,
+  "frames": 840,
+  "video": {
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "30/1"
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "44100",
+    "channels": 2
+  },
+  "fullDecode": "pass",
+  "firstLastEqual": true,
+  "firstLastFrameMD5": "eb31442608984c1aa5939de6decc4443",
+  "audioMaxDbFS": -3.9,
+  "faststart": true,
+  "atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "size": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "size": 30972
+    },
+    {
+      "type": "free",
+      "offset": 31004,
+      "size": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 31012,
+      "size": 473853
+    }
+  ],
+  "cueCount": 27,
+  "cueEnergy": [
+    {
+      "time": 0.15,
+      "preset": "arrive",
+      "peakNext160msDbFS": -12.04
+    },
+    {
+      "time": 1.1,
+      "preset": "send",
+      "peakNext160msDbFS": -19.34
+    },
+    {
+      "time": 1.8,
+      "preset": "arrive",
+      "peakNext160msDbFS": -9.58
+    },
+    {
+      "time": 2.2,
+      "preset": "work",
+      "peakNext160msDbFS": -16.52
+    },
+    {
+      "time": 2.75,
+      "preset": "store",
+      "peakNext160msDbFS": -13.91
+    },
+    {
+      "time": 3.3000000000000003,
+      "preset": "chime",
+      "peakNext160msDbFS": -10.74
+    },
+    {
+      "time": 5.8,
+      "preset": "send",
+      "peakNext160msDbFS": -19.34
+    },
+    {
+      "time": 6.5,
+      "preset": "arrive",
+      "peakNext160msDbFS": -10.11
+    },
+    {
+      "time": 6.9,
+      "preset": "work",
+      "peakNext160msDbFS": -15.97
+    },
+    {
+      "time": 7.449999999999999,
+      "preset": "store",
+      "peakNext160msDbFS": -13.93
+    },
+    {
+      "time": 8,
+      "preset": "crash",
+      "peakNext160msDbFS": -1.7
+    },
+    {
+      "time": 10.5,
+      "preset": "send",
+      "peakNext160msDbFS": -20.1
+    },
+    {
+      "time": 11.3,
+      "preset": "thump",
+      "peakNext160msDbFS": -6.8
+    },
+    {
+      "time": 14,
+      "preset": "recover",
+      "peakNext160msDbFS": -15.73
+    },
+    {
+      "time": 14.8,
+      "preset": "send",
+      "peakNext160msDbFS": -19.2
+    },
+    {
+      "time": 15.5,
+      "preset": "arrive",
+      "peakNext160msDbFS": -9.96
+    },
+    {
+      "time": 15.9,
+      "preset": "work",
+      "peakNext160msDbFS": -16.51
+    },
+    {
+      "time": 16.45,
+      "preset": "store",
+      "peakNext160msDbFS": -14.03
+    },
+    {
+      "time": 17,
+      "preset": "chime",
+      "peakNext160msDbFS": -10.77
+    },
+    {
+      "time": 18.3,
+      "preset": "send",
+      "peakNext160msDbFS": -19.51
+    },
+    {
+      "time": 19,
+      "preset": "arrive",
+      "peakNext160msDbFS": -9.91
+    },
+    {
+      "time": 19.400000000000002,
+      "preset": "work",
+      "peakNext160msDbFS": -15.2
+    },
+    {
+      "time": 19.95,
+      "preset": "store",
+      "peakNext160msDbFS": -13.64
+    },
+    {
+      "time": 20.5,
+      "preset": "chime",
+      "peakNext160msDbFS": -11.96
+    },
+    {
+      "time": 23,
+      "preset": "send",
+      "peakNext160msDbFS": -19.85
+    },
+    {
+      "time": 23.8,
+      "preset": "deliver",
+      "peakNext160msDbFS": -11.49
+    },
+    {
+      "time": 26.7,
+      "preset": "poof",
+      "peakNext160msDbFS": -24.32
+    }
+  ],
+  "isolatedCueOnsets": [
+    {
+      "scheduled": 0.15,
+      "detected": 0.15039,
+      "offsetMs": 0.39
+    },
+    {
+      "scheduled": 1.1,
+      "detected": 1.10057,
+      "offsetMs": 0.57
+    },
+    {
+      "scheduled": 5.8,
+      "detected": 5.80057,
+      "offsetMs": 0.57
+    },
+    {
+      "scheduled": 10.5,
+      "detected": 10.50027,
+      "offsetMs": 0.27
+    },
+    {
+      "scheduled": 14,
+      "detected": 14.00971,
+      "offsetMs": 9.71
+    },
+    {
+      "scheduled": 18.3,
+      "detected": 18.30057,
+      "offsetMs": 0.57
+    },
+    {
+      "scheduled": 23,
+      "detected": 23.00032,
+      "offsetMs": 0.32
+    },
+    {
+      "scheduled": 26.7,
+      "detected": 26.70288,
+      "offsetMs": 2.88
+    }
+  ],
+  "mp4SHA256": "5bd6298b918ddea0e5dd850181f4c80e62dad9866545f170b6b9d983f80bae98",
+  "audioPhysicallyHeard": false
+}

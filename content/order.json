@@ -1,0 +1,20 @@
+[
+  "harness-engineering",
+  "loop-engineering",
+  "context-engineering",
+  "tool-design",
+  "memory-architecture",
+  "orchestration-patterns",
+  "guardrails-and-permissions",
+  "agent-evals",
+  "human-in-the-loop",
+  "observability-and-tracing",
+  "load-balancing",
+  "cache-aside",
+  "queues-and-backpressure",
+  "idempotency",
+  "replication-and-consistency",
+  "timeouts-and-retries",
+  "canary-deployments",
+  "oauth-pkce"
+]

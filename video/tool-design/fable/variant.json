@@ -1,0 +1,57 @@
+{
+  "id": "fable",
+  "concept": "tool-design",
+  "title": "Bound the result inside the tool",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "A tool's response shape decides what lands in the agent's context: a raw read_logs dump looks fine on a quiet service, floods the context during the incident so the useful line is truncated away, and a bounded search_logs(service, window, limit) moves the filtering into the tool and returns the few lines and IDs the agent needs.",
+  "src": "media/tool-design/fable.mp4",
+  "poster": "media/tool-design/fable.jpg",
+  "duration": 29.63,
+  "verified": true,
+  "limitations": [
+    "Illustrative scenario: the truncation point, the line counts and the agent's '?' answer are an example. A real agent may answer confidently and wrongly after truncation, which is worse and is not shown; truncation limits differ by harness.",
+    "A bounded tool reduces what reaches the context; it does not guarantee the incident is found or that the returned lines are the right ones. Evaluate on recorded runs.",
+    "Limits must be enforced in the tool's implementation. Tool descriptions, prompt instructions and persistent system prompts do not enforce limits, pagination or permissions.",
+    "Pagination cursors, coverage fields and the empty-versus-failed distinction are not shown; the baseline cut covers empty versus failed.",
+    "Final audio was checked through decoded peak (-1.8 dBFS), cue-window signal and spectrograms, not listening. The author's earlier onset check is historical; the comparative review does not claim frame-exact perceived synchronization.",
+    "A small returned log sample does not establish absence of incidents; the opening reports only the received line count. Pagination and coverage still require an explicit contract."
+  ],
+  "transcript": [
+    "0:01–0:06 — Normal case. The agent asks read_logs for web over a one-hour window. Logs returns 12 lines; three representative dots land and the context bar fills a little. The agent displays the neutral receipt '12 lines read', making no claim that there were no incidents.",
+    "0:08–0:12 — The incident. The agent asks the same tool about 'payments'. Logs works longer and returns 3,214 lines; the raw lines stream to the agent and the context bar fills to a rising scale, turning orange.",
+    "0:13.7–0:15.1 — Overflow. The context bar turns red and a TRUNCATED badge appears. Later lines are dropped with red crosses, including INC-42 at about 14.4 seconds. In this scripted example the agent then displays '?'; this is not a guarantee of uncertainty after truncation.",
+    "0:18–0:19 — Redesign. The tool is relabelled from read_logs to search_logs with service, window and limit. At about 19 seconds the context bar drains and the badge disappears.",
+    "0:20–0:25.2 — Resolution. The agent asks search_logs for payments, one hour, limit 20. The tool sends a filter request to Logs, which returns 3 lines. A green INC-42 chip reaches the agent at about 24.4 seconds with a small context footprint; the displayed answer becomes INC-42 at about 25.2 seconds.",
+    "0:28.4–0:29.6 — The stage fades to the dark background while the title remains, returning to the opening title-only frame."
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": [
+    {
+      "date": "2026-10-19",
+      "originalMP4SHA256": "f9040376ba08b06da4722d0c8dbddbb9c9d4ff9491796e294f6bd54da719f3dc",
+      "changes": [
+        "Replace unsupported 0 incidents conclusion after 12 log lines with neutral 12 lines read.",
+        "Declare the already-requested window in read_logs inputs; enlarge input labels.",
+        "Move redesign ripple clear of tool labels.",
+        "Cap local FFmpeg input, output and filter threads at two.",
+        "Publication polish: paraphrase source excerpts with claim links; clarify scripted uncertainty and transcript phase timing; scope audio metadata to final measurements."
+      ],
+      "originalTranscript": [
+        "0:01–0:05 — Normal case. The agent asks read_logs for the quiet 'web' service over the last hour. Logs returns 12 lines; three dots land on the agent, its context bar fills a little, and the agent answers '0 incidents' in green.",
+        "0:08–0:12 — The incident. The agent asks the same tool about 'payments'. Logs works longer and returns 3,214 lines; the raw lines stream to the agent and the context bar fills to a rising scale, turning orange.",
+        "0:14 — Overflow. The bar snaps red, jolts, and a TRUNCATED badge pops up. Later lines are dropped at the agent with red crosses, including the one green chip, INC-42. The agent can only answer '?'.",
+        "0:18 — Redesign. The tool is relabelled in place from read_logs to search_logs with service, window and limit; the context bar drains and the badge disappears.",
+        "0:20–0:25 — Resolution. The agent asks search_logs for payments, one hour, limit 20. Logs does the filtering itself, returns 3 lines, and a single green INC-42 chip reaches the agent. The bar fills only slightly, in green, and the agent answers 'INC-42' with a chime.",
+        "0:28 — The stage fades to black under the title so the video loops cleanly."
+      ]
+    }
+  ],
+  "verification": {
+    "by": "gpt-6-astra comparative review",
+    "date": "2026-10-19",
+    "mp4SHA256": "ba146481711bb07493d14593085e8aaabd773cf88754683b26e9b31f36306f6c",
+    "report": "reviews/comparisons/tool-design/checks.json",
+    "audioHeard": false
+  }
+}

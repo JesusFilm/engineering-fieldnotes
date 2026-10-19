@@ -1,0 +1,60 @@
+{
+  "id": "astra",
+  "concept": "loop-engineering",
+  "title": "Evidence first",
+  "model": "gpt-6-astra",
+  "reasoning": "high",
+  "lesson": "Classify observed test results before allowing another agent edit: repair a valid failure, review a passing patch, and hand off missing validation.",
+  "src": "media/loop-engineering/astra.mp4",
+  "poster": "media/loop-engineering/astra.jpg",
+  "duration": 28.0,
+  "verified": true,
+  "limitations": [
+    "Illustrative scenario, counts, and timing; this is not a demonstrated model repair or a guarantee of successful fixes.",
+    "The result gate represents executable harness policy; persistent prompts alone do not enforce permissions, edit scope, or stopping.",
+    "Immediate handoff for no tests is this repair-only workflow’s policy; a separately scoped diagnostic agent could investigate discovery.",
+    "Passing the selected tests permits human review, not automatic merge or proof of overall correctness.",
+    "Audio was checked by decoded signal analysis and spectrogram, not physically heard.",
+    "Authored independently without inspecting baseline media or other variant scenes; original authorship is retained; the comparative review and corrections are separately attributed."
+  ],
+  "transcript": [
+    {
+      "start": 0,
+      "end": 4.5,
+      "text": "In this illustrative repair task, the agent runs 12 selected tests. One assertion fails. The result gate accepts this as usable feedback for another edit."
+    },
+    {
+      "start": 4.5,
+      "end": 9.8,
+      "text": "The failure returns to the agent. Patch 0 becomes patch 1, consuming the edit permit: the gate returns to WAIT and the new patch is untested. The same selected tests run again; all 12 pass in this illustrative task."
+    },
+    {
+      "start": 9.8,
+      "end": 14.2,
+      "text": "The passing result exits the edit loop and reaches an engineer for patch review. Passing these tests does not authorize an automatic merge."
+    },
+    {
+      "start": 14.2,
+      "end": 20.2,
+      "text": "A separate task begins, but the keyword selector leaves no tests selected and returns exit 5. The gate blocks the edit path, and the task remains at patch 0. This gate represents enforced application logic, not a prompt-based permission guarantee."
+    },
+    {
+      "start": 20.2,
+      "end": 28,
+      "text": "An evidence envelope represents the command and logs sent to the engineer to inspect test discovery. Product edits stay stopped. The scene fades out without claiming the blocker was repaired."
+    }
+  ],
+  "editedBy": "gpt-6-astra comparative review",
+  "corrections": {
+    "date": "2026-10-19",
+    "editor": "gpt-6-astra comparative review",
+    "originalMP4SHA256": "ed3d27641dc55790ce349c29ee437982bc5e2fd202e955212dccb7e21f1e39ab",
+    "changes": [
+      "Consumed the edit permit at patch creation: gate returns to WAIT, return wire dims, and the new patch is marked untested until fresh results arrive.",
+      "Corrected zero collected to zero selected for the unmatched-keyword example."
+    ],
+    "originalSourceArchive": "reviews/comparisons/loop-engineering/original-sources/astra",
+    "verification": "reviews/comparisons/loop-engineering/encoded-checks.json",
+    "finalMP4SHA256": "a1da4bd5a241ef482f40958e2265158084ec9a1984968d01f2b08211399140c9"
+  }
+}

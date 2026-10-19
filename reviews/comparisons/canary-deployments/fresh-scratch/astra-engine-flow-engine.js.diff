@@ -1,0 +1,14 @@
+--- reviews/comparisons/canary-deployments/original-sources/astra/engine/flow-engine.js
++++ video/canary-deployments/astra/engine/flow-engine.js
+@@ -101,8 +101,9 @@
+     // Cut-local generic metric card: large values and an explicit denominator.
+     metric(ctx, n, p) {
+       const w=n.w || 400, h=n.h || 250, c=p('color',THEME.mid);
+-      ctx.fillStyle=THEME.bg; ctx.strokeStyle=c; ctx.lineWidth=4;
+-      rr(ctx,n.x-w/2,n.y-h/2,w,h,18); ctx.fill();ctx.stroke();
++      ctx.fillStyle=THEME.bg; ctx.strokeStyle=p('borderColor',c); ctx.lineWidth=4;
++      glow(ctx,ctx.strokeStyle,22*p('glow',0));
++      rr(ctx,n.x-w/2,n.y-h/2,w,h,18); ctx.fill();ctx.stroke();noGlow(ctx);
+       text(ctx,p('label',''),n.x,n.y-72,{size:44,color:THEME.fg});
+       text(ctx,p('value',''),n.x,n.y+3,{size:74,weight:750,color:c});
+       text(ctx,p('detail',''),n.x,n.y+82,{size:38,color:THEME.fg});

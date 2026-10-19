@@ -1,0 +1,183 @@
+{
+  "sha256": "9a8054364cb8b8378690d675f4100549fb9f17e389290956875584031efd5248",
+  "method": "First 1ms RMS bin >=15% of cue-window maximum; source versus decoded AAC; \u00b140ms pre-roll and 120ms post-cue window. Gain-invariant onset check, not a perceptual listening test.",
+  "maxAbsOnsetDeltaMs": 0.998,
+  "allWithinOneVideoFrame": true,
+  "cues": [
+    {
+      "cueTime": 0.3,
+      "preset": "ack",
+      "referenceOnset": 0.299909,
+      "encodedOnset": 0.299909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 1.5,
+      "preset": "send",
+      "referenceOnset": 1.499909,
+      "encodedOnset": 1.499909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 2.3,
+      "preset": "arrive",
+      "referenceOnset": 2.300907,
+      "encodedOnset": 2.300907,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 3.1,
+      "preset": "send",
+      "referenceOnset": 3.099909,
+      "encodedOnset": 3.099909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 3.8,
+      "preset": "store",
+      "referenceOnset": 3.799909,
+      "encodedOnset": 3.800907,
+      "deltaMs": 0.998
+    },
+    {
+      "cueTime": 5.7,
+      "preset": "ack",
+      "referenceOnset": 5.699909,
+      "encodedOnset": 5.699909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 6.2,
+      "preset": "send",
+      "referenceOnset": 6.199909,
+      "encodedOnset": 6.199909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 6.9,
+      "preset": "crash",
+      "referenceOnset": 6.899909,
+      "encodedOnset": 6.899909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 9.8,
+      "preset": "clock",
+      "referenceOnset": 9.799909,
+      "encodedOnset": 9.799909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 11.2,
+      "preset": "send",
+      "referenceOnset": 11.199909,
+      "encodedOnset": 11.199909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 12,
+      "preset": "arrive",
+      "referenceOnset": 12.000907,
+      "encodedOnset": 12.000907,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 12.8,
+      "preset": "send",
+      "referenceOnset": 12.799909,
+      "encodedOnset": 12.799909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 13.6,
+      "preset": "hit",
+      "referenceOnset": 13.599909,
+      "encodedOnset": 13.599909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 14.4,
+      "preset": "send",
+      "referenceOnset": 14.399909,
+      "encodedOnset": 14.399909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 15.2,
+      "preset": "arrive",
+      "referenceOnset": 15.200907,
+      "encodedOnset": 15.200907,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 16,
+      "preset": "send",
+      "referenceOnset": 15.999909,
+      "encodedOnset": 15.999909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 16.8,
+      "preset": "deliver",
+      "referenceOnset": 16.800907,
+      "encodedOnset": 16.800907,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 19,
+      "preset": "clock",
+      "referenceOnset": 18.999909,
+      "encodedOnset": 18.999909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 20,
+      "preset": "send",
+      "referenceOnset": 19.999909,
+      "encodedOnset": 19.999909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 20.8,
+      "preset": "arrive",
+      "referenceOnset": 20.800907,
+      "encodedOnset": 20.800907,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 21.6,
+      "preset": "thump",
+      "referenceOnset": 21.600907,
+      "encodedOnset": 21.600907,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 22.5,
+      "preset": "send",
+      "referenceOnset": 22.499909,
+      "encodedOnset": 22.499909,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 23.3,
+      "preset": "thump",
+      "referenceOnset": 23.300907,
+      "encodedOnset": 23.300907,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 25,
+      "preset": "chime",
+      "referenceOnset": 25.000907,
+      "encodedOnset": 25.000907,
+      "deltaMs": 0.0
+    },
+    {
+      "cueTime": 28.7,
+      "preset": "poof",
+      "referenceOnset": 28.7039,
+      "encodedOnset": 28.704898,
+      "deltaMs": 0.998
+    }
+  ]
+}

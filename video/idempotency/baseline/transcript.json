@@ -1,0 +1,5 @@
+[
+  "1–8s: A keyed request creates order 042 once. The reply is lost after the order and request record are committed.",
+  "10–14s: Retrying the same key and cart returns the recorded order without adding another order.",
+  "17–25s: Reusing the key with a different cart returns a conflict; the original order remains unchanged."
+]

@@ -1,0 +1,101 @@
+{
+  "id": "observability-and-tracing",
+  "title": "Observability and tracing",
+  "category": "Agent systems",
+  "roles": [
+    "Application",
+    "Platform"
+  ],
+  "summary": "Make delegated work inspectable: follow one agent task through its model and tool calls before changing prompts or blaming a dependency.",
+  "overview": "Observability uses runtime evidence to investigate behavior. A trace groups related operations; each span records one operation, its timing, and contextual metadata. Spans share a trace ID but have distinct span IDs. Parent IDs describe nesting. Context propagation carries these relationships across process boundaries; instrumentation and export must also work.",
+  "why": "When an engineer runs commands manually, terminal output and memory supply a rough history. Delegation removes that direct supervision. A final answer or total duration cannot show which intermediate operation consumed time. A recorded trace helps locate the next investigation, but does not prove that the generated answer is correct.",
+  "example": "An illustrative coding assistant asks a model which tests to run, then calls a remote test tool. The model takes 0.6 seconds; the tool takes 2.4 seconds. Without propagated context, the tool starts a separate trace. After correcting propagation and repeating the task, its span joins the agent trace. Total time is still 3.0 seconds: visibility improved, performance did not.",
+  "judgment": "Start with task, model, and tool boundaries rather than every function. Record operation names, durations, error classes, and a non-sensitive task identifier. Treat output evaluation and authorization as separate controls. Prefer approved metadata over prompts, source code, credentials, or tool payloads; define access and retention before collecting richer evidence.",
+  "next": "Can a teammate use a recorded task to locate its slow tool operation, identify a missing parent relationship, and state what the trace cannot establish?",
+  "sources": [
+    {
+      "title": "OpenTelemetry: traces, span context, and parent relationships",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenTelemetry: context propagation across service boundaries",
+      "url": "https://opentelemetry.io/docs/concepts/context-propagation/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "W3C Trace Context: traceparent and processing model",
+      "url": "https://www.w3.org/TR/trace-context/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenTelemetry GenAI: client and tool spans (development conventions)",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-spans.md",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenTelemetry GenAI: agent spans",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenTelemetry: handling sensitive data",
+      "url": "https://opentelemetry.io/docs/security/handling-sensitive-data/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenTelemetry: sampling and missing information",
+      "url": "https://opentelemetry.io/docs/concepts/sampling/",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "related": [
+    "agent-evals",
+    "timeouts-and-retries",
+    "load-balancing"
+  ],
+  "learning": {
+    "placement": "core",
+    "relevance": "Teams need inspectable execution as soon as agents perform several operations without continuous supervision. Learning to connect one task to its tool activity gives engineers a practical debugging habit before they invest in larger monitoring systems.",
+    "prerequisites": [
+      "tool-design"
+    ],
+    "outcomes": [
+      "Locate the longest relevant operation in a recorded task and distinguish its duration from total elapsed time.",
+      "Demonstrate propagation across one tool boundary using trace and parent IDs.",
+      "Explain one evidence gap and verify that a seeded secret is absent from exported telemetry."
+    ],
+    "workflow": {
+      "before": "Run tests manually, inspect terminal output, and reconstruct the command sequence from shell history when a task stalls.",
+      "after": "Instrument the agent harness and remote tool, attach a trace reference to the task record, and inspect the recorded execution before changing the workflow.",
+      "human": "Choose useful boundaries, approve captured fields, test instrumentation, and validate the resulting code or answer independently."
+    },
+    "walkthrough": [
+      "1. Pick one safe test task. Start a task span in the harness and end it when the task finishes or fails. Add model and tool operations beneath it. OpenTelemetry has GenAI conventions for these operations, but its client-span guidance is marked Development; check the version your instrumentation implements.",
+      "2. Check the boundary. For HTTP, a propagator injects context into outgoing headers and extracts it at the receiver. W3C traceparent includes a trace ID, parent ID, and flags. Do this in trusted transport code; asking the model to remember an identifier does not implement propagation or grant permission.",
+      "3. Run the same fixture with and without propagation. Inspect actual exported parent relationships, not only matching timestamps. In the connected run, select the long tool span. Its duration includes whatever that instrumented operation covers; investigate inside it before concluding that the test process itself is slow.",
+      "4. Compare the timeline with a correlated error log and task outcome. Nested or overlapping spans must not be added as if they were sequential. If a span is absent, check instrumentation, sampling, and export before concluding the operation never happened. Turn a confirmed failure into a regression case."
+    ],
+    "pitfalls": [
+      "Equating a successful span or plausible final message with correct code; preserve tests and review.",
+      "Treating an absent span as proof of no execution when sampling may omit telemetry.",
+      "Exporting raw prompts or tool arguments to debug faster, exposing secrets and customer content.",
+      "Changing prompts to address a delay that actually belongs to a tool or an uninstrumented wait."
+    ],
+    "exercise": {
+      "title": "Break and repair one trace boundary",
+      "steps": [
+        "Use a sandbox harness with a deterministic model stub and an HTTP test-tool stub; add a known delay to the tool.",
+        "Record one run with outgoing context disabled and one with injection and extraction enabled; retain all traces for this fixture.",
+        "Compare trace IDs, parent IDs, and durations. Ask a teammate to identify the disconnected operation without seeing the code.",
+        "Place a fake secret in the tool input, export telemetry, and verify that the value was omitted. Record the capture policy and one remaining uncertainty."
+      ],
+      "success": [
+        "The repaired run connects the receiver span to the intended parent while keeping distinct span IDs.",
+        "The teammate locates the delayed tool and explains why propagation did not reduce its duration.",
+        "The fake secret is absent from exported data; the review records a limitation of the trace."
+      ]
+    },
+    "reviewed": "2026-10-19"
+  }
+}

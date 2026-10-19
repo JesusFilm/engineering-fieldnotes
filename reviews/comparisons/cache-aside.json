@@ -1,0 +1,56 @@
+{
+  "id": "cache-aside",
+  "recommended": "astra",
+  "rationale": "Start with Astra: the source changes to v2 while the cache and agent still hold v1, making the cost of a stale tool result visible before showing explicit recovery. Baseline is the simpler introduction to misses, hits and expiry; Fable is the stronger follow-on for reproducing a delayed refill that defeats deletion. Astra offers the clearest first viewing at phone size, while Fable’s overlapping reader and writer reward a pause or replay.",
+  "findings": [
+    "Baseline 00:00.6–00:06.6 and 00:08.6–00:11.5 makes application-owned fetch/fill and database avoidance easiest to trace. Its revised TTL bar drains from insertion through the hit to expiry at 00:14.5, but no source write occurs, so this cut alone cannot teach freshness.",
+    "Astra 00:06.4–00:11.8 leaves v1 visible in the cache and agent after the source becomes v2. Its large version fields and HIT ≠ FRESH conclusion communicate the chapter’s central warning more directly than Baseline’s envelopes or Fable’s smaller policy rows.",
+    "Astra 00:14.1–00:23.35 shows explicit deletion, a subsequent miss, source read, cache fill and delivery in that order. The agent retains its old result until the new response arrives; deletion does not repair already-returned data. The editor and recovery trigger are abstracted, and this serialized success is not a concurrency guarantee.",
+    "Fable 00:10.2–00:13.6 holds SET 14d while a writer commits 7d and deletes the empty key, then lets the old fill land. This concrete race is absent from the other cuts and directly supports the guide’s paused-reader exercise. Enlarged values and feedback beside the row fix the original phone-legibility and value-overlap weaknesses.",
+    "Fable 00:15–00:22.94 shows two stale hits without renewing the entry’s TTL, then expiration. This reinforces persistence but makes the 31.57-second cut denser than Astra; 30d/14d/7d are policy values, and the clock limits this cache entry after its late insertion, not the age of source data.",
+    "Baseline delivers its final response at 00:22, Astra at 00:28.25, and Fable at 00:27.67. All leave a readable outcome before fading and have pixel-identical first/last decoded frames; Baseline and Fable retain their titles, while Astra returns to an empty dark frame."
+  ],
+  "scores": {
+    "baseline": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 4
+    },
+    "astra": {
+      "clarity": 5,
+      "accuracy": 5,
+      "pacing": 4,
+      "visual": 5
+    },
+    "fable": {
+      "clarity": 4,
+      "accuracy": 5,
+      "pacing": 3,
+      "visual": 4
+    }
+  },
+  "hashes": {
+    "baseline": "552d6ff43a879b40776fcf5e0a58bd8cb54c1302d067340e674ebb6fefc8ec8c",
+    "astra": "67c0dbb92269cb3aabbaca705e21bf475a5af191006f17cd6a0abab92793e3e8",
+    "fable": "e32266cea78e3908dd5ddf45385d3b27d2c35b5a31e95a50a5e28f6e40d218b2"
+  },
+  "contentVerdict": "Keep as reference. Exact-key caching becomes useful when repeated tool retrieval creates measured source load or latency; it is not a prerequisite for adopting agents. The guide earns its place through an observable stale-fill exercise, explicit freshness and authorization boundaries, and source-load controls. Preserve the existing reference classification; establish trustworthy tool contracts and review boundaries before optimizing retrieval.",
+  "verified": true,
+  "defectsFixed": [
+    "Baseline: added a topic title and caller/TTL labels; made the lifetime bar drain continuously from each fill without hit renewal; rerendered and regenerated the poster.",
+    "Baseline: used the topic-local normalized encoder with deterministic loop endpoints and at most two FFmpeg encoder/filter threads; preserved unknown original model provenance.",
+    "Fable: moved hit/miss/expiry feedback off the policy value; enlarged row, source, badge and packet text; renamed the subtitle STALE FILL RACE; rerendered and regenerated the poster without changing causal timing.",
+    "Fable: corrected overly broad TTL claims in lesson metadata, scene commentary, README and beat sheet; clarified policy values versus lifetime and the persistent closing title in its transcript.",
+    "Guide: distinguished EXPIRE’s timeout-setting from later deletion, aligned exercise steps and source-fetch counts, added the primary stale-set paper, and separated a revision check from enforcement at action execution.",
+    "Both edited cuts retain original provenance plus editedBy and corrections metadata. Original sources, author reviews and pre-edit hashes are preserved in the comparison folder."
+  ],
+  "limitations": [
+    "Audio was analysed using full decode, sample peaks, cue-window energy and spectrograms; it was not heard. Energy during overlapping cue windows does not prove each cue is individually audible or comfortable.",
+    "Visual review used decoded half-second contact sheets across each complete duration, exact full-size and 350px beat/busy/ending frames, and exact endpoints; it was not an uninterrupted real-time viewing of every frame.",
+    "No real cache service, deployment, concurrency implementation or team exercise was executed. Timing is illustrative and no latency, freshness, authorization or capacity guarantee is measured.",
+    "Fable’s simultaneous operations and short write/delete transitions remain more demanding on first viewing. The second stale hit is retained as useful reinforcement; the transcript supports pausing or replay.",
+    "Primary-source claims were checked in the relevant sections listed in content-review.md, not every page of every source. Astra’s source, metadata and media remain unchanged.",
+    "This is a topic-scoped comparison, not a release or publication. Other concepts and shared build/app files were not modified."
+  ]
+}

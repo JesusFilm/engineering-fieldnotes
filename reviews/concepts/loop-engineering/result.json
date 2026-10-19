@@ -1,0 +1,27 @@
+{
+  "id": "loop-engineering",
+  "placement": "core",
+  "verifiedSources": [
+    "https://www.anthropic.com/engineering/building-effective-agents",
+    "https://docs.pytest.org/en/stable/reference/exit-codes.html",
+    "https://docs.pytest.org/en/stable/how-to/usage.html",
+    "https://docs.pytest.org/en/stable/explanation/flaky.html",
+    "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+  ],
+  "changes": [
+    "Revised the original outline into a standalone adoption guide with an executable continuation contract.",
+    "Distinguished valid assertion failures, passing selected tests, and missing validation using current pytest documentation.",
+    "Replaced the implied universal three-attempt rule with explicitly illustrative exercise budgets and separate tool/elapsed-time limits.",
+    "Added current-patch evidence, test-selection integrity, human review responsibility, and a five-step exercise with observable checks.",
+    "Explained that persistent prompts do not enforce permissions; application control logic must enforce boundaries.",
+    "Preserved id, title, category, roles, and related fields; added core learning placement and harness-engineering prerequisite.",
+    "Created an independent gpt-6-astra video teaching normal repair, absent validation, and an evidence-bearing handoff."
+  ],
+  "limitations": [
+    "Authored and source-reviewed by gpt-6-astra, high reasoning; human curriculum promotion and comparative video recommendation remain with the coordinator.",
+    "All five cited source pages were available and read on 2026-10-19; this does not verify any specific deployed agent product.",
+    "Examples, budgets, timing, test counts, and outcomes are illustrative; no actual model repair benchmark or productivity study was performed.",
+    "No-tests handoff is a proposed repair-only policy, not a universal requirement; diagnostic automation can have different explicit scope.",
+    "Video audio was analyzed but not physically heard."
+  ]
+}

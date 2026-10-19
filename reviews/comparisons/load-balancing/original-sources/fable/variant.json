@@ -1,0 +1,59 @@
+{
+  "id": "fable",
+  "concept": "load-balancing",
+  "title": "Route on in-flight load, not request count",
+  "model": "anthropic/claude-fable-5-1",
+  "reasoning": "high",
+  "lesson": "Round robin hands each replica the same number of requests, so when a 60k-token request and a 2k-token request cost very different amounts of work one replica saturates while another sits idle; counting the requests in flight on each replica and sending the next one to the lowest count (the SRE book's least-loaded round robin) keeps small requests from waiting behind heavy ones.",
+  "src": "media/load-balancing/fable.mp4",
+  "poster": "media/load-balancing/fable.jpg",
+  "duration": 31.77,
+  "verified": true,
+  "limitations": [
+    "Illustrative scenario: the arrival order (heavy, heavy, small, small), the 6 s and 0.6 s service times, the 180 ms and 2.5 s response badges and the token sizes are an example. A token count is not a guaranteed proportional runtime, and round robin misroutes only when its rotation reaches a busy replica while another is free.",
+    "The in-flight count is a proxy for load, not a measure of work (the Google SRE chapter's own caveat): two replicas with equal counts can hold very different work. Least in-flight cannot tell them apart; the cut shows it helping only after short requests finish and the counts diverge. Weighted or utilisation-based policies, health checks, connection draining and long-lived connections are not shown; the baseline cut covers health checks.",
+    "The policy label changing on the balancer is a scene event. Routing policy is configuration enforced by the balancer or client library; a label, prompt or persistent instruction does not enforce routing, and by the same token persistent prompts do not enforce permissions.",
+    "The misrouted small request is drawn as waiting in a second slot until the heavy request completes. Real replicas may interleave work or queue in front of the process; the delay is the point, the exact mechanism is simplified.",
+    "Audio was measured and analysed (peak -1.0 dBFS, energy rise within 70 ms of each of 106 cues, spectrogram), not heard by a person."
+  ],
+  "transcript": [
+    "0:00.7–0:05.7 — Normal case under ROUND ROBIN. Three small '2k tokens' requests leave the client about a second apart. The balancer's pointer steps to Replica 1, 2 and 3 in turn; each replica's counter ticks to '1 in flight' and back to 0 as its slot finishes, and each response returns with a green '180 ms' badge.",
+    "0:07.3–0:12.0 — Costs diverge. A '60k tokens' request lands on Replica 1 and another on Replica 2; their slots fill slowly with a low ticking. A small request lands on Replica 3 and finishes at once. At 0:11.4 the three counters pop together: every replica has had exactly one request, yet they read 1, 1 and 0 because the short one is done.",
+    "0:12.2–0:16.7 — The misroute. The next small request leaves and the rotation points at Replica 1 anyway. It lands at 0:13.5 with a buzz and a jolt; Replica 1's counter turns orange at '2 in flight' and the request waits in a second slot. Replica 3's counter ripples green at 0:14.0 to show it was free. The heavy jobs finish and return grey envelopes; the delayed small response arrives last at 0:16.65 with an orange '2.5 s' badge.",
+    "0:18.0–0:19.3 — The fix. The balancer flashes green and its label changes in place to LEAST IN-FLIGHT; three green dots run from the counters up to the balancer's ports and a chime confirms the counters are now inputs.",
+    "0:19.8–0:26.8 — Resolution. Two heavy requests arrive while all counters are 0, so the tie falls back to rotation: Replica 2, then Replica 3. With the counters at 0, 1, 1 the next small request goes to Replica 1 (its counter flashes green at the pick) and returns in '180 ms' at 0:24.6; the one after that goes to Replica 1 again, where round robin would have sent it to busy Replica 2, and returns in '180 ms' at 0:26.75.",
+    "0:27.0–0:31.8 — The heavy jobs complete and all counters return to 0 under the LEAST IN-FLIGHT label; the stage holds, then fades to the title-only frame that also opens the video."
+  ],
+  "sources": [
+    {
+      "title": "Load Balancing in the Datacenter — Google SRE Book",
+      "url": "https://sre.google/sre-book/load-balancing-datacenter/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Supported load balancers — Envoy proxy documentation",
+      "url": "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/load_balancing/load_balancers",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Implementer's guide — Kubernetes Gateway API Inference Extension",
+      "url": "https://gateway-api-inference-extension.sigs.k8s.io/guides/implementers/",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "verification": {
+    "by": "anthropic/claude-fable-5-1 (author), video/load-balancing/fable/verify.mjs",
+    "date": "2026-10-19",
+    "mp4SHA256": "7894be7ad4ac5fcc52930ca4bf5b92f3a0975a8c542159d2a1ab935266bd4d80",
+    "posterSHA256": "edf4a2a3813a1f01703f312c4fb1ce0a89b1e92c52a4f4478741efdad7328181",
+    "report": "video/load-balancing/fable/checks.json",
+    "frames": 953,
+    "bytes": 1759025,
+    "audioPeakDbfs": -1,
+    "boundaryFramesIdentical": true,
+    "fullDecode": true,
+    "faststart": true,
+    "cueSync": "106 of 106 cues show an energy rise within 70 ms in the decoded AAC",
+    "audioHeard": false
+  }
+}
