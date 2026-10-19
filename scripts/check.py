@@ -97,8 +97,8 @@ def check(draft=False):
             assert target.exists(), f'{file.relative_to(OUT)}: missing {link}'
             if url.fragment and target in pages:
                 assert unquote(url.fragment) in pages[target].ids, f'{file}: missing anchor {link}'
-    expected_pages = 40 if (OUT / 'spatial/viewer.html').exists() else 39
-    assert len(pages) == expected_pages, f'Expected book pages and optional 3D viewer; got {len(pages)}'
+    expected_pages = 39
+    assert len(pages) == expected_pages, f'Expected book pages; got {len(pages)}'
     initial = sum((OUT / p).stat().st_size for p in ['index.html', 'style.css', 'app.js', 'fonts/font-0.woff', 'fonts/font-2.woff', 'fonts/font-4.woff'])
     assert initial < 220_000, f'Index exceeds 220 KB uncompressed budget: {initial}'
     print(f'Checked {len(concepts)} concepts, {len(pages)} pages, all local links and anchors. Index + runtime + fonts: {initial:,} bytes; no video preload.')

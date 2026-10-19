@@ -63,30 +63,3 @@ for (const video of videos) {
   video.addEventListener('error', showMediaError);
   video.querySelector('source')?.addEventListener('error', showMediaError);
 }
-
-// Load only the explanation the reader chose. Returning to video tears down WebGL.
-for (const media of document.querySelectorAll('.chapter-media')) {
-  const modes = [...media.querySelectorAll('[data-media-mode]')];
-  const panels = [...media.querySelectorAll('[data-media-panel]')];
-  const grid = media.closest('.article-grid');
-  const mount = media.querySelector('.spatial-mount');
-  media.querySelector('.media-modes').hidden = false;
-  for (const button of modes) button.addEventListener('click', () => {
-    const spatial = button.dataset.mediaMode === 'spatial';
-    for (const option of modes) option.setAttribute('aria-pressed', String(option === button));
-    for (const panel of panels) panel.hidden = panel.dataset.mediaPanel !== button.dataset.mediaMode;
-    grid.classList.toggle('spatial-open', spatial);
-    if (spatial) {
-      for (const video of videos) video.pause();
-      if (!mount.firstChild) {
-        const frame = document.createElement('iframe');
-        frame.src = media.dataset.spatialSrc;
-        frame.title = `${document.querySelector('h1').textContent} — interactive investigation`;
-        frame.setAttribute('loading', 'eager');
-        mount.append(frame);
-      }
-    } else mount.replaceChildren();
-    // The wider 3D stage changes the grid: keep the chosen explanation in view.
-    media.scrollIntoView({block:'start', behavior:'instant'});
-  });
-}

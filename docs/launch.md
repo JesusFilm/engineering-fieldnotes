@@ -16,11 +16,7 @@ The original prototype remains intact. Its October 18 review verified one cut pe
 
 ## Current work
 
-An optional spatial-investigation change is prepared on
-`codex/spatial-investigations` for review. Four of eighteen Blender attempts pass
-the spatial gate: context engineering, loop engineering, load balancing and
-canary deployments. See [the spatial release review](../reviews/spatial-release.md).
-The public release described below is unchanged until that change is merged.
+The 3D experiences were removed following user review on 20 October 2026: their interactions and metaphors required too much prior knowledge. A single-concept sequential-video experiment is next, pending human review before broader adoption.
 
 All 18 written and comparative reviews are complete, with 54 validated videos. The independent alternatives use Astra plus Fable for 13 concepts and Astra plus Sol for five. See [the editorial release report](../reviews/launch-review.md) and [UI review](../reviews/ui.md).
 

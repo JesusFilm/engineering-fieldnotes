@@ -18,7 +18,3 @@ reviews/recovery-state.json
 .DS_Store
 video/**/attempts/
 **/render-tmp-*/
-
-spatial/**/*.blend1
-spatial/**/scratch/
-reviews/spatial/**/captures/

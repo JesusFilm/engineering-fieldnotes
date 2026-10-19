@@ -11,10 +11,3 @@ Videos belong beside the reading on wide screens and after the introduction on n
 Use plain rectangular controls, thin rules, and underlined prose links. Avoid decorative badges, generic sales copy, ornamental gradients and motion. Retain visible focus, a skip link, comfortable hit targets, reduced-motion behaviour, useful empty states and a printable article.
 
 Review index, chapter, comparison, sources, exercise, navigation, no-results and unknown-path states at desktop and phone sizes. Record observed problems and repairs in `reviews/ui.md`, with screenshots and actual browser checks.
-
-Optional 3D investigations share the chapter's media position with video. Keep
-video selected initially; load the viewer only after an explicit choice. Expand
-the chosen 3D scene above the reading column, with two scene controls at most,
-Reset, one caption and collapsed help. Switching back removes the viewer.
-Mark qualifying chapters quietly in the index; do not display rejected attempts
-or add another simultaneous media panel. See `spatial.md` for the spatial gate.
