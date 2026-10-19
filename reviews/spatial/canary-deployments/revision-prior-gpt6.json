@@ -1,0 +1,60 @@
+{
+  "concept": "canary-deployments",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "GPT-6 (Codex)",
+  "provenanceNote": "authorModel retains the requested attribution; this post-critique revision was executed by the current GPT-6 Codex session, not an Opus invocation.",
+  "completedAt": "2026-10-19T09:05:03.840469+00:00",
+  "critiqueSha256": "dbf5260f97f4eb634ea6503c412e88959373d1d8307176f0f22453a1b0a0a31f",
+  "changes": [
+    "Replaced enlarged amber footprints with exact un-bevelled subgroup rectangles: 20.25, 2.25, 2.25 and 0.25 square units.",
+    "Removed both combs and all corner gauges; added a single offset 0/40/100% scale, darkened the grid and engraved 1 cell = 100 requests.",
+    "Clarified amber as an aggregate rate representation of fixed underlying failures; healthy v2 operations dilute the export rate.",
+    "Aggregation input cancels the previous tween and starts from current interpolated positions/heights; final frame invalidates explicitly. Zero-height meshes have zero volume.",
+    "Rebuilt Blender source, blend, GLB and split-state poster; added executable Node verification using installed vendor modules."
+  ],
+  "addressedFindings": [
+    {
+      "findingIndex": 0,
+      "issue": "The geometry redistributes amber into healthy subgroups when joined, but captions describe failures as physically spread across v2. This can imply changing which requests failed.",
+      "disposition": "implemented; coordinator visual verification pending",
+      "response": "Clarified amber as an aggregate rate representation of fixed underlying failures; healthy v2 operations dilute the export rate."
+    },
+    {
+      "findingIndex": 1,
+      "issue": "Decorative combs and unlabeled gauges consume the front edges while the causal scale and 100-request cell meaning are absent from the visible explanation.",
+      "disposition": "implemented; coordinator visual verification pending",
+      "response": "Removed both combs and all corner gauges; added a single offset 0/40/100% scale, darkened the grid and engraved 1 cell = 100 requests."
+    },
+    {
+      "findingIndex": 2,
+      "issue": "The claimed conserved amber volume is only approximate in the authored geometry.",
+      "disposition": "implemented; coordinator visual verification pending",
+      "response": "Replaced enlarged amber footprints with exact un-bevelled subgroup rectangles: 20.25, 2.25, 2.25 and 0.25 square units. Actual transformed GLB triangle volumes verified at 0.15 cubic units."
+    },
+    {
+      "findingIndex": 3,
+      "issue": "Repeated control input can leave concurrent tweens writing the same positions and heights.",
+      "disposition": "implemented; coordinator visual verification pending",
+      "response": "Aggregation input cancels the previous tween and starts from current interpolated positions/heights; final frame invalidates explicitly. Zero-height meshes have zero volume. Reset restores the initial caption."
+    }
+  ],
+  "remainingLimitations": [
+    "Pooled layer is intentionally 0.4% tall and may be subpixel at 420px.",
+    "Rate aggregation redistributes the visual layer, never the fixed underlying failed requests. Only one observation window is represented.",
+    "Coordinator must check all four browser states, scale text readability, pointer occlusion and whether a reader understands why either single split still dilutes failures."
+  ],
+  "recommendation": "accept",
+  "recommendationScope": "Author recommendation only; coordinator owns final browser QA and integration.",
+  "verification": [
+    "Blender 5.1.2 executed with --threads 2; exported GLB and inspected rebuilt poster.",
+    "node --check passed.",
+    "node spatial/canary-deployments/verify.mjs: both concepts, both reduced-motion settings, both action orders, reset and rapid toggles passed.",
+    "Canary actual transformed GLB triangle volumes sum to 0.15 within 1e-6 for all four aggregation states."
+  ],
+  "hashes": {
+    "scene.glb": "302425ce35928b6ba332a1ad4a5de96797230693429aee07f567809e5670db77",
+    "scene.json": "20882cb2f06b5e2f95ba5257d8c2e4eb5c51075792171f2061de9f585f3337ec",
+    "interaction.js": "a01c7468e573dbb2e7e318d86b7e0bf63db7c7954a036ceaf0e2b7722f79906c",
+    "poster.png": "f5febdfd4c668a2de199cb50e06305644774a15db163002880717a7b1b24891c"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Selected, executed, routed",
+  "description": "Evaluate the patch in the socket, or shift the selector plate first, and look between plate and pins to see whether any test actually ran.",
+  "camera": {
+    "position": [
+      0.6,
+      5.4,
+      10.2
+    ],
+    "target": [
+      0.0,
+      0.75,
+      -0.55
+    ],
+    "minAspect": 1.6
+  },
+  "initialCaption": "Patch 1 sits in the socket. The selector plate decides which of the twelve tests the probes can reach.",
+  "interactionHint": "Drag to look around · scroll to zoom",
+  "fallback": "With the selector aligned, the probes press all twelve pins: one failure sends patch 1 back for an edit, and a clean run on patch 2 stops for review. With the selector mistyped, the probes stop on the plate, the counter stays at zero and no assertions ran, so this repair-only loop stops and hands the command and logs to an engineer."
+}

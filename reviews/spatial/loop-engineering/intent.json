@@ -1,0 +1,42 @@
+{
+  "concept": "loop-engineering",
+  "status": "candidate",
+  "mechanism": "A test bed that holds its evidence. Twelve discovered tests are pins in the bed. A selector plate with twelve holes slides above them, and a probe head with twelve plungers lowers through it. Evaluating holds the head at contact. With the selector aligned, the plungers pass through the holes and press every pin, the TESTS RAN counter moves from 0 to 12, an amber rod rises in front of the one failing test on patch 1, and a route lever turns to EDIT. On patch 2 the lever turns to REVIEW. With the selector mistyped, the plungers rest on the solid plate above untouched pins, the counter stays at 0, no rod rises, and the lever turns to ENGINEER.",
+  "spatialBenefit": "The difference between \"nothing failed\" and \"nothing ran\" is a physical contact the reader can inspect: plungers seated on pin caps through aligned holes, or resting on the plate with a visible gap above twelve untouched pins. The evidence persists, so the reader can orbit and look between plate and pins at leisure, then compare it with the counter and the lever.",
+  "beyondVideoTest": "Pass, moderate. The reader decides when to break or fix the selection (on patch 1, after a repair, or after review) and sees the same patch routed differently from the same bed. The contact state stays still and inspectable from any angle, where a video passes it in a moment.",
+  "interaction": {
+    "buttons": [
+      "Evaluate patch N / Apply patch 2 and evaluate / Loop stopped (disabled after review or handoff)",
+      "Mistype selector / Fix selector"
+    ],
+    "pick": "Clicking the selector plate (nearest visible surface only) toggles it, like the button.",
+    "reset": "Host Reset restores patch 1, the aligned selector, a raised head, a zero counter and a neutral lever.",
+    "reducedMotion": "Every step completes in one frame.",
+    "locking": "Both controls and the plate pick are ignored during any transition. The route is computed from the committed patch and selector when the evaluation starts."
+  },
+  "expectedObservations": [
+    "Initial still state: head raised, plate holes over the twelve pins, counter at 0, lever pointing at the viewer, patch 1 in the socket and patch 2 on its tray.",
+    "Evaluate patch 1: plungers press all twelve pins and hold; the counter reads 12; the amber rod rises at the failing pin; the lever points to EDIT.",
+    "Apply patch 2 and evaluate: the old evidence clears, patch 1 moves to the spent tray and patch 2 into the socket; twelve pins pressed, no rod, lever on REVIEW.",
+    "Mistype selector, then evaluate (either patch): plungers rest on the plate above untouched pins, counter at 0, no rod, lever on ENGINEER."
+  ],
+  "sourceGuide": "content/concepts/loop-engineering.json (task A: one failure, a patch, then all pass; task B: a mistyped keyword selector deselects every discovered test, and under the repair-only policy the run stops with command and logs)",
+  "limitations": [
+    "Teaching metaphor. pytest exit codes, collected versus deselected counts, timeouts, call budgets and the three-patch edit budget are not modelled. The budget prop was removed because the scene never exhausts it.",
+    "The engineer route reflects this guide's team-specific repair-only policy; the caption says so, and diagnostic automation is out of scope.",
+    "REVIEW means the loop stops for review; merge remains a human decision, and the caption says so.",
+    "Seeing the plate gap needs the default low elevation or an orbit; it is narrow at 420px and needs browser confirmation."
+  ],
+  "authorModel": "anthropic/claude-opus-5-5",
+  "files": {
+    "source": "spatial/loop-engineering/build_scene.py",
+    "blend": "spatial/loop-engineering/scene.blend",
+    "runtime": [
+      "public/spatial/loop-engineering/scene.glb",
+      "public/spatial/loop-engineering/scene.json",
+      "public/spatial/loop-engineering/interaction.js",
+      "public/spatial/loop-engineering/poster.png"
+    ]
+  },
+  "rebuild": "cd spatial/loop-engineering && /opt/homebrew/bin/blender --background --threads 2 --python build_scene.py"
+}

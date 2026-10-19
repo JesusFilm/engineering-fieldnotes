@@ -1,0 +1,28 @@
+{
+  "concept": "replication-and-consistency",
+  "status": "unsuitable",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "revisionExecutionModel": "GPT-6 (Codex)",
+  "provenanceNote": "authorModel retains the requested attribution; this post-critique revision was executed by the current GPT-6 Codex session, not an Opus invocation.",
+  "mechanism": "Permanent section through retained WAL instruction, replay press and applied-data bed. The front query aperture reaches only applied data; rear WAL receipt cannot answer it. Two independent controls compare held/applied fixtures and issue fresh reads on the selected route. The committed-write receipt and log record remain unchanged.",
+  "spatialBenefit": "Two simultaneously visible storage surfaces and separate read reach distinguish receipt from application without an artificial cabinet concealment.",
+  "beyondVideoTest": "Compare held replay plus a primary read against held replay plus a replica read, then applied replay plus either read. Same one-write receipt, different query reach. Reader comprehension still requires coordinator QA.",
+  "interaction": {
+    "primaryActions": [
+      "Compare replay applied / held",
+      "Fresh primary / replica read"
+    ],
+    "motion": "Instant fixture changes; idle update always false; no pointer-only essentials."
+  },
+  "expectedObservations": [
+    "Received log record remains after replay; applied data changes from v7 to v8.",
+    "Fresh primary read sees v8 in either fixture; fresh replica read depends on replay."
+  ],
+  "sourceGuide": "content/concepts/replication-and-consistency.json",
+  "limitations": [
+    "Replay press is a teaching metaphor, not PostgreSQL storage machinery. Reversible fixture comparison does not undo database replay.",
+    "Single writer, fresh post-commit queries and no cache only; transaction snapshots, failover and concurrent writes remain outside this illustration.",
+    "Headless state tests and Blender poster inspection passed; coordinator must assess geometry-only comprehension, initial framing, keyboard focus and 420px browser readability."
+  ],
+  "opusAssessment": "Opus 5.5 pass recommends omit: the cutaway is an extruded plan whose lesson is carried by v7/v8 labels and the caption; the recommended video already covers stale replica reads and verification. GPT-6 revision artifacts preserved unchanged."
+}

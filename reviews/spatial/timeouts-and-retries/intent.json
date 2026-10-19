@@ -1,0 +1,28 @@
+{
+  "concept": "timeouts-and-retries",
+  "status": "candidate",
+  "mechanism": "An open architectural frame: two slim posts carry AGENT, RUNTIME and CLIENT LIBRARY bands behind the pipework, so no casing or shelf covers a connection. One amber call slip drops into a funnel; the runtime splits it into attempt 1 and a valved retry; each runtime attempt reaches a library tee with a first-try outlet and two valved retry outlets, widely separated per runtime branch. Six cups on the service bench, labelled first/retry/retry, hold an amber slip for each request the selected policy can send. A runtime trace peg board shows how many attempts the runtime records. Closing the runtime retry dims and disables its entire downstream subtree, including library valves; closing library retries dims only the outlets below those valves.",
+  "spatialBenefit": "The multiplication is a property of nesting, and the frame keeps every branch traceable from the single call to its cup. Reader-controlled valve combinations show four policies in one persistent apparatus, and the trace board sits physically above the library valves, so the reader can see why library retries never appear in the runtime's record while still reaching the service.",
+  "beyondVideoTest": "The reader chooses which layer owns retries and inspects the outcome (up to 6, 3, 2 or 1 service requests) beside what the runtime trace records (2, 1, 2 or 1). The library-only case, where the service receives three requests while the runtime records one, is the counterfactual a linear video does not let the viewer select.",
+  "interaction": [
+    "Button: Turn off / on runtime retry (also the runtime valve handle)",
+    "Button: Turn off / on library retries (also any active library valve handle)",
+    "Click a cup, slip, the trace board or the call slip for one factual sentence",
+    "Host Reset reopens all valves"
+  ],
+  "expectedObservations": [
+    "Both layers: six slips; trace shows 2 pegs.",
+    "Runtime only: two slips (one per runtime attempt, both 'first' cups); trace 2.",
+    "Library only: three slips under attempt 1; right subtree dimmed; trace 1.",
+    "Neither: one slip; caption says a timeout leaves an unknown outcome to report."
+  ],
+  "sourceGuide": "content/concepts/timeouts-and-retries.json (why and judgment: independent retry loops at multiple layers multiply downstream attempts; count actual downstream calls).",
+  "limitations": [
+    "Counts are an illustrative maximum when every attempt fails with a retryable error (2 runtime attempts x 3 library attempts: first try plus two retries); real calls often succeed early, and lower layers such as gRPC may retry transparently or by error class.",
+    "Each control compares policies for the same failing call; switching a valve does not undo requests already sent.",
+    "The scene shows attempt multiplication and trace visibility, not the shared deadline or backoff timing; those remain in the guide and video.",
+    "Pipes and valves are a metaphor, not a model of network behaviour."
+  ],
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "anthropic/claude-opus-5-5"
+}

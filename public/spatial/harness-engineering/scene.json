@@ -1,0 +1,19 @@
+{
+  "title": "Where does the ownership check sit?",
+  "description": "Two routes reach the same invoice. Choose where the ownership check sits, then run the harness's four probes and inspect which ones reach the invoice.",
+  "camera": {
+    "position": [
+      4.6,
+      4.4,
+      4.9
+    ],
+    "target": [
+      0.8,
+      0.25,
+      0.9
+    ]
+  },
+  "initialCaption": "The repair added an ownership check on the front route to invoice A-17, which belongs to tenant A. The harness probes tenants A and B on the front and export routes.",
+  "interactionHint": "Drag to look around · scroll to zoom · tap a lamp for expected and actual results",
+  "fallback": "Invoice A-17 belongs to tenant A and can be reached through a front route and an export route. With the ownership check on the front route only, tenant B is refused there but receives the invoice through the export route; moving the check to the invoice refuses B on both routes while A still receives it. These four probes cover two routes and one invoice, nothing more."
+}

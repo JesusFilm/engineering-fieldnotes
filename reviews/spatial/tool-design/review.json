@@ -1,0 +1,62 @@
+{
+  "concept": "tool-design",
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "verdict": "omit",
+  "spatialBenefitAssessment": "The current candidate fails the spatial-benefit gate. Opening fixed lids reveals three preset timelines; returning coverage merely reveals preset markers. No search boundary, backend condition or conclusion can be investigated through a counterfactual. Partial coverage adds subject matter beyond the recommended Astra transcript, but hiding it in boxes does not add a spatial explanatory relationship. Omit this candidate; retain the guide and video unless a materially different mechanism is prototyped.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "Arbitrary concealment supplies the investigation; the underlying explanation remains three flat timelines.",
+      "requestedChange": "If attempting a replacement, use one query volume spanning independently searchable partitions: let the reader change the requested scope and the available partition, then inspect the intersection, omitted region and returned evidence simultaneously. Derive coverage from that intersection rather than revealing fixed symbols. Keep two controls plus Reset; reassess against a simpler 2D treatment before shipping.",
+      "evidence": "interaction.js only changes lid rotation and Coverage visibility/scale; build_scene.py fixes STOP=(12,8,2) and INCIDENTS. Astra transcript already distinguishes completed empty from timeout."
+    },
+    {
+      "severity": "high",
+      "issue": "An empty search purportedly hits a result-count limit before finding any incidents. This conflates result count with scan/coverage budget.",
+      "requestedChange": "For any retained attempt, call this a scan-budget or incomplete-partition boundary and define that fixture explicitly, or return actual incident records up to the result limit and expose the continuation cursor. Do not claim an ordinary positive result-count limit is consumed by zero matches.",
+      "evidence": "LANE_TEXT[2], scene.json fallback and intent describe a result limit; build_scene.py lane 2 contains no incident before its stop."
+    },
+    {
+      "severity": "medium",
+      "issue": "The open lids are clipped, while tiny front-facing result labels and near-identical charcoal markers carry the distinction.",
+      "requestedChange": "Remove tall hinged lids from a replacement; expose the query/coverage relationship in the initial framing. Use larger differentiated physical end conditions and keep all essential geometry within the 420px view. Move the agent figure away from the tray sightline.",
+      "evidence": "captures/housings-open.png and status-coverage.png clip the lid tops; browser-initial.json independently notes clipping and label legibility. The status image requires the caption to interpret small markers."
+    },
+    {
+      "severity": "medium",
+      "issue": "The claimed agent-view comparison and individually narrated lanes lack equivalent primary-control access.",
+      "requestedChange": "If retained, make the essential comparison accessible through the two controls, for example a cycle through inspected scopes and a coverage toggle; do not make clicking the small agent the only direct access to the intended viewpoint.",
+      "evidence": "onPick selects individual lanes or ctx.view from Agent; primary actions only open all housings and toggle coverage. Shared viewer supports keyboard orbit but no object-pick equivalent."
+    }
+  ],
+  "requiredVerification": [
+    "No browser interaction or live tests were run by this reviewer. Existing browser-initial checks are supplied evidence, not independent validation.",
+    "For a replacement, demonstrate an outcome-changing counterfactual that cannot be reduced to opening a cover; compare directly against the recommended video.",
+    "Capture initial, incomplete, failed and complete outcomes at desktop and 420px; verify keyboard access, reduced motion, reset, agent-view sightlines and nearest-visible-mesh picking."
+  ],
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/tool-design.json",
+    "public/spatial/tool-design/scene.json",
+    "public/spatial/tool-design/interaction.js",
+    "public/spatial/tool-design/scene.glb",
+    "public/spatial/tool-design/poster.png",
+    "reviews/spatial/tool-design/intent.json",
+    "reviews/comparisons/tool-design.json",
+    "video/tool-design/astra/variant.json",
+    "spatial/tool-design/build_scene.py",
+    "public/spatial/shared/viewer.js",
+    "reviews/spatial/tool-design/captures/housings-open.png",
+    "reviews/spatial/tool-design/captures/initial.png",
+    "reviews/spatial/tool-design/captures/status-coverage.png",
+    "reviews/spatial/tool-design/browser-initial.json"
+  ],
+  "hashes": {
+    "scene.glb": "e29bf1ec8e84b887e1ccdc6d639c7eb8218fc9eaea9c97bce2294d8447febf1b",
+    "scene.json": "7cff9f95ae82274e449a70fd2df62fd8085be18f05d0877bc024a79784cc64dc",
+    "interaction.js": "98b2b4d0756bd0acb4c02d8a7f70107afc8658f40033984d74e92c1c9c6365ba",
+    "poster.png": "e1ad5c7ceb273bd53ecb08602c7d91d77c9b4c1931a43d162803f1a6b7000ed6"
+  }
+}

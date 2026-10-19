@@ -1,0 +1,59 @@
+{
+  "concept": "load-balancing",
+  "revision": 3,
+  "stage": "opus-post-critique",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "anthropic/claude-opus-5-5",
+  "modelVerification": "Coordinator verified this session turn_context model as anthropic/claude-opus-5-5.",
+  "critiqueSha256": "ae87e255d7fdd984314200c780af572ba31f8b69a1fad3055cec5a9f97069864",
+  "priorRevision": "reviews/spatial/load-balancing/revision-prior-astra.json (revision 2, gpt-6-astra low)",
+  "assessmentOfPriorRevision": "Revision 2 resolved the obstruction, autoplay and identity findings and its logic is correct, but its second control replayed the video’s round-robin versus least-request comparison; at the held tie both policies send Q5 to A, so the toggle changed nothing at the decision. Its spatial claim (count and height visible together) is equally served by a 2D bar chart.",
+  "changes": [
+    "Replaced the policy toggle with a Balancer’s view / Side view camera toggle; the policy is fixed to fewest outstanding with A-first ties.",
+    "Added an amber Router_Pointer on a charcoal pivot that turns to the lane the count rule picks, so the held decision is physically visible.",
+    "Moved enlarged lane labels outside the lanes and respaced the arrival rack to give the default camera a clear sight line to the router.",
+    "Rewrote captions: held tie states the tied counts, the rule’s pick and the unequal work; post-dispatch names the backlog Q5 joined; top view states what the balancer can and cannot see.",
+    "Rebuilt build_scene.py, scene.blend, scene.glb and poster.png with Blender 5.1.2 --threads 2; updated scene.json title, description and fallback."
+  ],
+  "addressedFindings": [
+    {
+      "issue": "The claimed overhead counting view is obstructed by the worker presses, and the prescribed side view aligns the two lanes.",
+      "resolution": "Overhead structure stays removed. The top-down view now earns its place as the balancer’s perspective rather than a viewpoint that hides height by accident; the side view is the default oblique with separated lanes."
+    },
+    {
+      "issue": "The meaningful tie is buried in autoplay and captions describe the pre-service decision after service has already changed geometry.",
+      "resolution": "Kept explicit steps and the automatic hold; captions now match settled geometry, and the pointer shows the pending choice before dispatch."
+    },
+    {
+      "issue": "The count beam and press machinery add visual competition while request identities shrink with remaining work.",
+      "resolution": "No balance or press machinery; fixed bases separate from scaled work columns. The only added object is the router pointer, which is the routing signal itself."
+    },
+    {
+      "issue": "Current camera and interaction behavior lack matching browser evidence.",
+      "resolution": "Fallback rewritten with exact counts and work. Blender captures of the held tie from both views are author evidence only; browser captures remain with the coordinator. Clicking is not used."
+    }
+  ],
+  "remainingLimitations": [
+    "Discrete toy workload with deterministic A-first ties; Envoy least-request samples candidates and breaks ties differently. Not a benchmark.",
+    "Real balancers usually cannot observe remaining work at all; the side view is the reader’s privilege, not a proposed routing signal.",
+    "A strictly top-down perspective view still shows slightly larger tops for taller columns, and the host key light casts shadows whose length hints at height.",
+    "A 2D chart could show the same counts and heights side by side; the 3D contribution is the perspective comparison itself. Policy comparison (round robin vs least request) is left to the video.",
+    "Coordinator browser QA of 420px framing of both views is outstanding."
+  ],
+  "recommendation": "accept",
+  "recommendationRationale": "The perspective toggle carries a substantive spatial mechanism (the routing signal is a projection that drops remaining work) at a decision the video never reaches. The benefit is moderate; the coordinator should reject it if the 420px top view does not make the two lanes read as alike.",
+  "recommendationScope": "Author recommendation only; not final spatial-gate approval.",
+  "hashes": {
+    "scene.glb": "5881eb7ab3bf6e136c41f6bd4d794be3243c8a0b0b16fd94b26f84c535f3c7ca",
+    "scene.json": "26ebb3d21927000909d6c244d9c94976311d68478a622257dd19f1aa2e427a61",
+    "interaction.js": "606c900f8cb7cafec4f319ac49fd011dcf3e47014f6f1b53634a1e2d90d6cd65",
+    "poster.png": "caf4767931a44117ec90e6797cc094f526b6efa2fffd016010a248ebc0b561a2"
+  },
+  "verification": [
+    "Blender 5.1.2 rebuild/export/render with --threads 2; poster inspected (pointer visible, labels unobstructed).",
+    "GLB loaded in vendored Three GLTFLoader: bounds x ±4.5, y -0.18..2.46, z -2..3.5; nodes Base_Q1..6, Work_Q1..6, Router_Pointer, LaneLabel_A/B present.",
+    "node --check passed; headless run from Reset: idle update false, hold at step 5 with A 1/4 and B 1/2, pointer aims A, Q5 to A, finish step 9, Q5 waited 4, Reset restores side view and labels.",
+    "Blender captures of the held tie (author evidence, ignored captures/): held-side.png, held-balancer-view.png."
+  ],
+  "browserQA": "Coordinator browser QA remains required (desktop and 420px, keyboard, reduced motion, Reset); final browser evidence belongs in tracked evidence/. No browser interaction was performed in this pass."
+}

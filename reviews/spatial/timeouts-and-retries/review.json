@@ -1,0 +1,60 @@
+{
+  "concept": "timeouts-and-retries",
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "verdict": "revise",
+  "spatialBenefitAssessment": "Conditional pass for the counterfactual, not for orbiting: independently closing either retry layer exposes the nested 2 x 3 relationship and all four ownership outcomes in one persistent apparatus. The recommended Astra video teaches budget exhaustion, while the comparison identifies a Sol video already teaching multiplication. This candidate adds reader-controlled combinations, but its shallow cabinet is essentially a branching diagram; depth and decoration alone add no value.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "Attempt and retry counts are conflated; visibility is overstated.",
+      "requestedChange": "Replace \"each retried 3 times\" with \"3 library attempts per runtime attempt (initial plus two retries)\". Replace \"the agent can see both attempts\" with a qualified runtime-trace statement; define this as an illustrative retryable-failure maximum, not six inevitable requests for every call.",
+      "evidence": "interaction.js describe(); guide why/judgment count actual downstream calls and distinguish application and transparent retries."
+    },
+    {
+      "severity": "medium",
+      "issue": "The changed state leaves misleading active-looking machinery beneath the closed runtime branch.",
+      "requestedChange": "Dim the entire inactive right library subtree, including its handles and upper risers. Keep active paths solid and visually continuous; inactive branches must not look like alternate live routes.",
+      "evidence": "runtime-closed.png shows right library handles still prominent; LAYERS.runtime omits those levers, while LAYERS.library only dims terminal drops."
+    },
+    {
+      "severity": "medium",
+      "issue": "The cabinet hides branch continuity and gives the explanatory mechanism too little space.",
+      "requestedChange": "Remove or thin shelf fronts and the side casing, use the space to separate the two three-outlet groups, and move short layer labels onto clear front edges. Reframe the desktop camera to make the six outputs and branch ownership readable without zoom. Keep the two toggles plus Reset.",
+      "evidence": "initial.png has library text behind pipes; in-page.png leaves most horizontal space empty; phone capture makes labels very small. Shelf geometry occludes the descending connections."
+    },
+    {
+      "severity": "medium",
+      "issue": "Captions read like accumulated history although toggling removes already-arrived slips.",
+      "requestedChange": "State that controls compare policies for a fresh identical failed operation, or label outputs as requests under the selected policy; do not imply closing a retry valve undoes requests already sent.",
+      "evidence": "sync() sinks inactive Slip nodes; describe() says requests \"reach\" or \"reached\"; initial and runtime-closed captures show six changing to three."
+    }
+  ],
+  "requiredVerification": [
+    "Coordinator: capture all four policy states and verify counts 6/3/2/1, correct branch attribution, reset, rapid alternating toggles, keyboard access and reduced motion.",
+    "At desktop and 420px panel width, verify routes remain traceable and handles are pickable without picking through shelves or solid walls; verify ghost pipes do not intercept intended picks.",
+    "No live browser or interaction tests were run by this reviewer. Existing browser-initial.json is author/coordinator evidence, not independent verification."
+  ],
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/timeouts-and-retries.json",
+    "public/spatial/timeouts-and-retries/scene.json",
+    "public/spatial/timeouts-and-retries/interaction.js",
+    "reviews/spatial/timeouts-and-retries/intent.json",
+    "reviews/comparisons/timeouts-and-retries.json",
+    "video/timeouts-and-retries/astra/variant.json",
+    "public/spatial/timeouts-and-retries/poster.png",
+    "reviews/spatial/timeouts-and-retries/captures/in-page-phone.png",
+    "reviews/spatial/timeouts-and-retries/captures/in-page.png",
+    "reviews/spatial/timeouts-and-retries/captures/initial.png",
+    "reviews/spatial/timeouts-and-retries/captures/runtime-closed.png",
+    "reviews/spatial/timeouts-and-retries/browser-initial.json"
+  ],
+  "hashes": {
+    "scene.glb": "5572c4cb1f3564c7c13733a9d39bde71e908182a5811a9c793184c8c1504cbbc",
+    "scene.json": "754288c85737f1411fadbe6268f772755122660474b5a26f2ad4691b682bcf49",
+    "interaction.js": "61aa854b0888808d1b9312cb6bd54c470dc3499efdfcd61a3fb27f54b4a0448a",
+    "poster.png": "262ad48849a7f83f478ec8d7cdce117c57be923129d3c5091bea6f3055d5e88d"
+  }
+}

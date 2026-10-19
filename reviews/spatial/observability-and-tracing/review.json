@@ -1,0 +1,62 @@
+{
+  "concept": "observability-and-tracing",
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "verdict": "omit",
+  "spatialBenefitAssessment": "Fails the critical gate in its current form. It is a labeled waterfall extruded into depth, with a deliberately misleading camera hiding the second trace lane. Orbiting reveals a relationship that should simply be legible; propagation moves one labeled block between lanes. The recommended video already explains missing parentage, a new run after repair and unchanged duration more accurately. This temporal/state concept is better served by that video unless a substantially different investigation is built.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "The spatial discovery is an arbitrary projection trick rather than a new causal relationship.",
+      "requestedChange": "Omit this candidate from the optional 3D set. If attempting replacement, use a branching request topology with simultaneous unrelated traffic and a selectable broken propagation boundary; trace reach should stop at that boundary while real execution continues. Let the reader compare evidence reach against execution reach with two controls. Require that this answers a question beyond the current video before retaining it.",
+      "evidence": "intent.json explicitly calls the default view convincing but misleading and uses orbiting to discover the gap. initial.png partially hides the rear trace plaque behind Model_Span. The model otherwise consists of labeled timeline blocks and rails."
+    },
+    {
+      "severity": "high",
+      "issue": "Propagate context appears to rewrite an already recorded tool span into the existing task trace.",
+      "requestedChange": "If retained or replaced, label the comparison as two fixture runs and generate new trace/span identities for the propagated run; preserve the earlier orphan evidence. Do not animate historical span reassignment as the effect of transport propagation.",
+      "evidence": "interaction.js propagate() moves the same Tool_Span from home to Tool_Dock and hides Trace_B_Plaque; caption says it now hangs from the task in trace 4bf9. Guide example repeats the task, and Astra transcript 11\u201316.8 explicitly starts Run B with a new trace."
+    },
+    {
+      "severity": "medium",
+      "issue": "Camera occlusion hides the very trace identity needed for diagnosis, and one caption incorrectly assigns a parent to every span.",
+      "requestedChange": "For any replacement keep trace identity and the boundary visible from the default view; use links for parentage, not depth alone. Correct the above-view caption to say child spans have parent links while the task is a root.",
+      "evidence": "initial.png obscures most of trace a3ce behind the model block. turn() says every span shares trace 4bf9 and hangs from a parent link, while facts.Task_Span identifies the task as root."
+    },
+    {
+      "severity": "medium",
+      "issue": "Propagation can be toggled during its animation, stacking conflicting position writers.",
+      "requestedChange": "If the candidate is retained, replace active motion on each toggle or lock the control until it settles; verify state, plaque visibility and parent link agree after rapid input.",
+      "evidence": "propagate() toggles joined and enqueues animate() without cancelling existing tweens; completion callbacks read mutable joined. No interactive browser test was run by this reviewer."
+    }
+  ],
+  "requiredVerification": [
+    "Coordinator owns omission/integration decision; this review changes no manifest.",
+    "If replaced, demonstrate an actual user-controlled boundary counterfactual with unchanged execution and different evidence reach, not another camera reveal.",
+    "If retained despite omission recommendation, capture connected/disconnected states from both views at 420px, test rapid toggles/reset/reduced motion and keyboard access, and verify new-run semantics and distinct span identities.",
+    "Only initial.png is available for runtime inspection; the poster and GLB hierarchy establish geometry, not working pointer or animation behavior."
+  ],
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/observability-and-tracing.json",
+    "public/spatial/observability-and-tracing/scene.json",
+    "public/spatial/observability-and-tracing/interaction.js",
+    "reviews/spatial/observability-and-tracing/intent.json",
+    "reviews/comparisons/observability-and-tracing.json",
+    "video/observability-and-tracing/astra/variant.json",
+    "video/observability-and-tracing/baseline/transcript.json",
+    "public/spatial/observability-and-tracing/poster.png",
+    "reviews/spatial/observability-and-tracing/captures/initial.png",
+    "public/spatial/observability-and-tracing/scene.glb"
+  ],
+  "hashes": {
+    "scene.glb": "88c4e96a2e05553629b88f2f6ec7fa72a1ec33e687f8cf22d4a038ad2c6e4305",
+    "scene.json": "972428e0cb10faeb1d5e634debfde0e763e0c035e5e2afa4c9a1065ee3d7e899",
+    "interaction.js": "634c20b36264688b76447e5bb1c8ab5ef610578b94af40bd1979e25983c2cf88",
+    "poster.png": "fde7a557d43848890572230d0eb93fec83ad4396c4dd261cac0145aa02ddc954"
+  },
+  "reviewLimitations": [
+    "Read-only source, transcript and saved-image review; no shared browser used, no runtime interactions or tests executed. Initial captures are not exhaustive validation. No browser-initial.json or alternate runtime capture was present for this assigned concept. Coordinator retains final verification responsibility."
+  ]
+}

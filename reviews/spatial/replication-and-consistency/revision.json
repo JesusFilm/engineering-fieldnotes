@@ -1,0 +1,49 @@
+{
+  "concept": "replication-and-consistency",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "anthropic/claude-opus-5-5",
+  "provenanceSource": "Launched explicitly with model anthropic/claude-opus-5-5; no contrary runtime evidence observed. Codex/GPT-6 text in the session system prompt is product boilerplate and is not treated as model identity.",
+  "priorRevision": "revision-prior-gpt6.json (executed by GPT-6 Codex, preserved unchanged)",
+  "completedAt": "2026-10-19T09:10:59.315889+00:00",
+  "critiqueSha256": "7d0155b1f3caa54622aed39f87e97363a2a93acaa3e02484b53843010cb60580",
+  "changes": [
+    "No geometry or runtime change. Changed the author recommendation from GPT-6's accept to omit after an independent assessment; artifacts preserved unchanged as review evidence."
+  ],
+  "analysis": "The GPT-6 rebuild correctly removed the manufactured door and implements fresh reads on two routes. However, the result is a flat floor plan of extruded labeled boxes: every relevant surface is visible from one top-down view, no relationship depends on depth or orbit, and the only physical change is a press lowering 0.32 units. Astra's own gate was to omit if a caption and two version labels still carry the entire lesson. They do: the reader display v7/v8 and the caption carry the explanation, and the 2x2 fixture/route comparison is four enumerable states that a 2D figure or the existing video covers. The recommended Astra video already shows acknowledgement before catch-up, the stale replica read, primary verification with the write count held at one, and the replica applying v8. The remaining extra, received WAL versus applied data, is a state distinction and gains nothing from 3D. The log record says SET ready while the data shows v7/v8, which adds a naming mismatch.",
+  "addressedFindings": [
+    {
+      "findingIndex": 0,
+      "issue": "The closed door manufactures the investigation; the read arm terminates on a roof instead of revealing why received WAL cannot answer a query.",
+      "disposition": "GPT-6 implementation verified; candidate still fails spatial-value gate",
+      "response": "Permanent cutaway and front read aperture exist, but the cutaway is a plan layout that needs no spatial inspection."
+    },
+    {
+      "findingIndex": 1,
+      "issue": "The primary v8 and the received/replayed distinction are poorly exposed by the actual initial framing.",
+      "disposition": "GPT-6 implementation verified; moot under omission",
+      "response": "Lintel, roofs and legs removed; v8 is exposed in the poster."
+    },
+    {
+      "findingIndex": 2,
+      "issue": "The display models a continuously updated value, while the lesson requires a fresh query and explicit verification assumptions.",
+      "disposition": "GPT-6 implementation verified; moot under omission",
+      "response": "Each selection issues a fresh query and the fallback states single writer, post-commit and no cache; verify.mjs passes."
+    }
+  ],
+  "remainingLimitations": [
+    "Preserved artifacts pass headless tests but should not be published as a spatial investigation.",
+    "A future retry would need a relationship that depends on depth (for example physically nested visibility boundaries); none is evident for this concept."
+  ],
+  "recommendation": "omit",
+  "verification": [
+    "Read all three review records and the comparison; inspected poster, scene.json, interaction.js and build_scene.py.",
+    "node spatial/canary-deployments/verify.mjs replication cases pass; hashes unchanged from GPT-6 revision."
+  ],
+  "recommendationScope": "Author recommendation only; coordinator owns final browser QA, integration and omission decisions.",
+  "hashes": {
+    "scene.glb": "d7323604af3dafea04aa9805295cc6fc1c0cd519e979e8045de8e0ad835a869d",
+    "scene.json": "6d9e439672102cea10cd27776a5d1f622e06de66e3efe5623d7ff2e7303f0e9a",
+    "interaction.js": "75273543946aa878ae6f91d87eecef212773207dbfe3752e7707bb5a90b9cff2",
+    "poster.png": "4e115113b673cf0ae6e70d1e3bad67a09ca8dc70648f4e7d703f25f2f4a880d4"
+  }
+}

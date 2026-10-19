@@ -1,0 +1,56 @@
+{
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "reviewMethod": "Read-only source, original review, poster and supplied diagnostic Blender-render inspection. No browser, independent runtime execution or video playback. Only final-review.json files written. Integrated UI verification belongs to coordinator.",
+  "gateStandard": "Require useful spatial inspection beyond the existing video, not impossibility of representing the lesson in 2D.",
+  "concept": "context-engineering",
+  "verdict": "accept",
+  "spatialBenefitAssessment": "The bridge passes the conceptual spatial gate: inspecting under the deck exposes evidence, while inspecting the prop against the hull and the underpin against the channel exposes a competing physical requirement. Depth serves diagnosis and clearance comparison rather than decorating a route graph. Four selectable handoffs add counterfactual inspection beyond the fixed invoice video.",
+  "rationale": "The redesign addresses the original blockers: explicit four-state keyboard cycle, synchronized toggles, stale repair removal, a test camera, stronger repair geometry and appropriately limited authored-example captions. Diagnostic prop, patch and underpin renders distinguish the outcomes. Acceptance is of spatial design and source, with integrated visibility and interaction checks still outstanding.",
+  "findings": [
+    {
+      "severity": "low",
+      "issue": "Picking evidence after a completed test changes the handoff and immediately removes the repair being inspected.",
+      "evidence": "setState calls restoreBridge when tested; boat/buoy and upstream pier picks toggle rather than merely describe. The interaction hint and changed caption disclose this behavior.",
+      "requestedChange": "Coordinator should verify this remains understandable during result inspection; it is not a conceptual blocker because orbiting and repair picks preserve the result."
+    },
+    {
+      "severity": "low",
+      "issue": "The lane envelope dominates the successful-repair render, and the prop contact is close to the pier silhouette.",
+      "evidence": "captures/blender-ctx-underpin.png and blender-ctx-prop.png show improved geometry but do not establish 420px WebGL readability.",
+      "requestedChange": "Verify hull/prop contact, banded underpin footprint and fascia crack at 420px and desktop, including an orbit with captions hidden."
+    },
+    {
+      "severity": "low",
+      "issue": "Repair selection remains deterministic and is an analogy, not evidence that richer context guarantees success.",
+      "evidence": "chooseRepair maps handoffs directly to patch/prop/underpin; captions now explicitly call these examples and limit passing checks.",
+      "requestedChange": "Retain those limitations and the distinction between inspecting an object and supplying it in the handoff."
+    }
+  ],
+  "requiredVerification": [
+    "Coordinator: keyboard-cycle all four handoffs; verify switching after a check clears repair and results, and Reset/reduced motion/idle-on-load work.",
+    "Coordinator: confirm nearest-visible picking, no hidden split selection through solids, and water/clearance do not intercept picks.",
+    "Coordinator: inspect all three repair outcomes at desktop and 420px; diagnostic Blender images are not integrated browser evidence."
+  ],
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "reviews/spatial/context-engineering/intent.json",
+    "reviews/spatial/context-engineering/revision.json",
+    "reviews/spatial/context-engineering/review.json",
+    "spatial/context-engineering/build_scene.py",
+    "public/spatial/context-engineering/interaction.js",
+    "public/spatial/context-engineering/scene.json",
+    "public/spatial/context-engineering/poster.png",
+    "video/context-engineering/astra/variant.json",
+    "reviews/spatial/context-engineering/captures/blender-ctx-prop.png",
+    "reviews/spatial/context-engineering/captures/blender-ctx-underpin.png",
+    "reviews/spatial/context-engineering/captures/blender-ctx-patch.png"
+  ],
+  "hashes": {
+    "scene.glb": "17ff391541fa4cebff8ccfa79c05b477763b95a380dcc72530963ba81c78d260",
+    "scene.json": "36b2c98aaddc21e9d9ecda848167ccca4c618c751e88724c8122af4bcb7201cf",
+    "interaction.js": "7518b55b47cd9292424c489e3364b183c7941641dc94b12dc205d8af2f49028b",
+    "poster.png": "c93f69826e4efc18b5fa1b59fa5e935f2d8c78aeb14327c7d76361a4332d709f"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "concept": "cache-aside",
+  "revision": 3,
+  "stage": "opus-post-critique",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "anthropic/claude-opus-5-5",
+  "modelVerification": "Coordinator verified this session turn_context model as anthropic/claude-opus-5-5.",
+  "critiqueSha256": "e0ef00fbc464946197e7d3d7eaaff08501b1732a619f6bafd4363e1e98b06547",
+  "priorRevision": "reviews/spatial/cache-aside/revision-prior-astra.json (revision 2, gpt-6-astra low)",
+  "assessmentOfPriorRevision": "Revision 2 addressed every Astra finding and its logic is correct (reran: read, publish, fill gives cache 1 under source 2; delete then read/fill recovers 2). It succeeded at what the critique asked, which exposes the problem: once scenery was removed, what remains is a state table rendered in 3D. The reviewer already judged the third dimension to contribute little, and the core criterion requires a substantive spatial mechanism.",
+  "changes": [
+    "No runtime or geometry changes. Updated intent.json to candidateStatus unsuitable with spatial-test evidence.",
+    "Evaluated and rejected a space-time alternative (place on one axis, time on another, publish+delete as a plane the held copy’s interval crosses): it is a 2D diagram and adds no 3D relation."
+  ],
+  "addressedFindings": [
+    {
+      "issue": "The causal objects are tiny inside an elaborate miniature; the source temple, editor furniture, nine cache cubbies and long railway dominate a single-key race.",
+      "resolution": "Resolved by revision 2 (verified by rerun); superseded by the omission recommendation."
+    },
+    {
+      "issue": "The alternate-state evidence does not establish the advertised clean-cache/stale-reader inspection state.",
+      "resolution": "Resolved by revision 2 (verified by rerun); superseded by the omission recommendation."
+    },
+    {
+      "issue": "The stale result caption offers deletion recovery that the current controls cannot perform.",
+      "resolution": "Resolved by revision 2 (verified by rerun); superseded by the omission recommendation."
+    },
+    {
+      "issue": "Optional close-ups may lose the simultaneous comparison on which the spatial claim rests.",
+      "resolution": "Resolved by revision 2 (verified by rerun); superseded by the omission recommendation."
+    }
+  ],
+  "remainingLimitations": [
+    "No expiry, authorization or leases modelled.",
+    "Recommend omission from 3D; the ordering counterfactual would suit a small 2D interactive or the guide exercise."
+  ],
+  "recommendation": "omit",
+  "recommendationRationale": "Explanatory depth beyond the video exists but is temporal ordering, not spatial. Omit the 3D candidate; keep the ordering idea for a 2D interactive or exercise if the coordinator wants it.",
+  "recommendationScope": "Author recommendation only; reverses the prior author accept. Coordinator decides.",
+  "hashes": {
+    "scene.glb": "ecfe56e6b2ffc58ab69453926eb5392a3eb97a8c5585a92aeb5f1eb16825aa6a",
+    "scene.json": "8f8255765eeeff850bba4be7950c1501b987c7d87fb4d3da68d82a3bef02867e",
+    "interaction.js": "747d390ace29476589bb0b82891e746793d1524664aa54eb2239f8c4c93334a5",
+    "poster.png": "5344e506b70683ac0c7ad8622cc413beeaa03d974610af413bd322020440330b"
+  },
+  "verification": [
+    "Hashes match revision-prior-astra.json (runtime untouched).",
+    "Headless rerun of the race, stale fill and second-delete recovery."
+  ],
+  "browserQA": "Coordinator browser QA remains required (desktop and 420px, keyboard, reduced motion, Reset); final browser evidence belongs in tracked evidence/. No browser interaction was performed in this pass."
+}

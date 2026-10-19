@@ -1,0 +1,55 @@
+{
+  "concept": "tool-design",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "revisionProvenance": "Original candidate authored under the requested Opus label; this revision executed by GPT-6-based Codex after a model switch. authorModel retained as explicitly requested, not a claim that Opus executed the revision.",
+  "critiqueSha256": "29994b0ed1303ed89eed5f39ad2d76d6bbfe6ef386136a9d14e10de016f38e29",
+  "changes": [
+    "Corrected zero-match partial search from result-count limit to explicit scan-budget exhaustion in runtime caption, fallback, source comments and intent.",
+    "Evaluated proposed independently selectable query scope and partition availability against a 2D coverage grid; recommend omission rather than repackaging the same intersection in boxes."
+  ],
+  "addressedFindings": [
+    {
+      "finding": 1,
+      "issue": "Arbitrary concealment supplies the investigation; the underlying explanation remains three flat timelines.",
+      "status": "resolved-by-omission"
+    },
+    {
+      "finding": 2,
+      "issue": "An empty search purportedly hits a result-count limit before finding any incidents. This conflates result count with scan/coverage budget.",
+      "status": "addressed"
+    },
+    {
+      "finding": 3,
+      "issue": "The open lids are clipped, while tiny front-facing result labels and near-identical charcoal markers carry the distinction.",
+      "status": "resolved-by-omission"
+    },
+    {
+      "finding": 4,
+      "issue": "The claimed agent-view comparison and individually narrated lanes lack equivalent primary-control access.",
+      "status": "resolved-by-omission"
+    }
+  ],
+  "remainingLimitations": [
+    "The tray markers are metaphors for status, coverage and cursor fields; they are illustrative application fields, not MCP requirements, matching the guide.",
+    "A client-side transport timeout that yields no tool result at all is not depicted.",
+    "Retry budgets and argument validation from the guide are outside this scene.",
+    "Lane order is fixed, so a reader may learn the lanes’ meaning by position. The lane coverage words engraved on the counter appear only after coverage is returned.",
+    "Opened lids are tall and can occlude parts of the scene from low rear angles."
+  ],
+  "recommendation": "omit",
+  "reason": "Omit. Requested scope × available partition intersection is useful, but two independent categorical axes form an ordinary coverage grid. A third depth axis has no domain meaning here; hiding it behind a cover adds effort without evidence. Existing timelines also fail the gate. No speculative replacement GLB is claimed.",
+  "verification": [
+    "Parsed final GLB with installed Three GLTFLoader; module setup and named-node access succeeded.",
+    "Module syntax checks passed; initial update and reset return false.",
+    "Exercised housing/coverage toggles and Reset; no geometry change, retained GLB/poster."
+  ],
+  "verificationGaps": [
+    "No browser manipulation or integrated browser QA performed; coordinator owns final desktop/420px review."
+  ],
+  "hashes": {
+    "scene.glb": "e29bf1ec8e84b887e1ccdc6d639c7eb8218fc9eaea9c97bce2294d8447febf1b",
+    "scene.json": "07918892bb3973a5be33f27541f2300a93e94ca434f001d80ae0b7e211ff7d60",
+    "interaction.js": "eb76b30d554844a967427a91ae676c80a30007d02c6d0c568c120772261ccf9d",
+    "poster.png": "e1ad5c7ceb273bd53ecb08602c7d91d77c9b4c1931a43d162803f1a6b7000ed6"
+  }
+}

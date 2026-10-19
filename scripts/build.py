@@ -130,11 +130,19 @@ def chapter(c, index):
     if exercise: contents.append(('exercise', 'Team exercise'))
     contents.append(('sources', 'Sources'))
     body = f'<a class="back" href="../../">← Contents</a><div class="article-grid"><div class="article-head"><p class="eyebrow">{e(c["category"])} · {"Start here" if placement == "core" else "Reference" if placement == "reference" else "Under review"}</p><h1>{e(title)}</h1><p class="deck">{e(c["summary"])}</p>{prereq}<a class="read-first" href="#idea">Read the guide ↓</a></div>'
-    body += '<div class="prose">' + sections + '</div><aside aria-label="Video and chapter navigation">'
+    body += '<div class="prose">' + sections + '</div><aside aria-label="Optional explanation and chapter navigation">'
+    spatial_item = spatial.get(key, {})
+    candidate_ready = all((ROOT / f'public/spatial/{key}' / name).exists() for name in ('scene.glb', 'scene.json', 'interaction.js', 'poster.png'))
+    has_spatial = spatial_item.get('status') == 'accepted' or (draft and spatial_item.get('status') == 'candidate' and candidate_ready)
+    if has_spatial:
+        body += f'<section class="chapter-media" data-spatial-src="../../spatial/viewer.html?concept={e(key)}"><div class="media-modes" role="group" aria-label="Choose an explanation" hidden><button type="button" data-media-mode="video" aria-pressed="true">Video</button><button type="button" data-media-mode="spatial" aria-pressed="false">Explore in 3D</button></div><div data-media-panel="video">'
     body += player(selected, '../../', title)
     body += f'<p class="media-label">{round(selected["duration"])} sec · Sound optional</p><p class="video-lesson">{e(selected["lesson"])}</p><a class="compare-link" href="compare/">Compare {len(variants)} video cuts →</a>'
     if selected.get('transcript'):
         body += '<details class="transcript"><summary>Read the video sequence</summary>' + transcript_html(selected['transcript']) + '</details>'
+    if has_spatial:
+        scene_info = read(f'public/spatial/{key}/scene.json')
+        body += f'</div><div data-media-panel="spatial" hidden><div class="spatial-mount"></div><details class="spatial-explanation"><summary>What this model shows</summary>{paragraphs(scene_info.get("fallback", scene_info.get("description", ""))) }<p>An illustrative model. Explore the relationship, then use the guide to check its limits in a real system.</p></details></div></section>'
     body += '<nav class="chapter-nav" aria-label="On this page"><h2>In this chapter</h2>' + ''.join(f'<a href="#{anchor}">{label}</a>' for anchor, label in contents) + '</nav></aside></div>'
     links = []
     for idx, direction in [(index - 1, 'Previous'), (index + 1, 'Next')]:
@@ -174,20 +182,25 @@ def index_page():
     body = '<div class="intro"><h1>Engineering<br>with agents.</h1><p>Practical guides for teams learning to delegate software work.</p></div>'
     body += '<div class="start-note"><h2>A useful first pass</h2><p>Begin with <a href="concepts/tool-design/">tool design</a>, <a href="concepts/guardrails-and-permissions/">permissions</a>, and <a href="concepts/agent-evals/">evaluations</a>. Then bring one small, repeatable task into your team’s workflow.</p></div>'
     body += f'<form class="toolbar" role="search"><label class="search">Find a concept<input id="search" type="search" placeholder="Try “retry” or “context”" autocomplete="off"></label><label>Reading shelf<select id="shelf"><option value="all">All concepts</option>{shelf_options}</select></label><label>Team role<select id="role"><option value="all">All roles</option><option>Application</option><option>Platform</option><option>Tech lead</option></select></label><button type="reset" class="reset" hidden>Clear filters</button></form>'
-    body += f'<div class="results-heading"><p id="count" role="status">{len(concepts)} concepts</p><p>Short guides · Practical exercises</p></div><div class="catalogue">'
+    has_spatial = any(item.get('status') == 'accepted' for item in spatial.values())
+    formats = 'Guides · Video · Optional 3D' if has_spatial else 'Short guides · Practical exercises'
+    body += f'<div class="results-heading"><p id="count" role="status">{len(concepts)} concepts</p><p>{formats}</p></div><div class="catalogue">'
     for i, c in enumerate(concepts):
         placement = c.get('learning', {}).get('placement', 'core' if c['category'] == 'Agent systems' else 'reference')
         search = ' '.join([c['title'], c['summary'], c['overview'], c['category']]).lower()
-        body += f'<a class="concept-row" href="concepts/{e(c["id"])}/" data-concept="{e(c["id"])}" data-search="{e(search)}" data-shelf="{placement}" data-roles="{e("|".join(c["roles"]))}"><span class="number">{i+1:02}</span><h2>{e(c["title"])}</h2><p>{e(c["summary"])}</p><span class="shelf-label">{"Start here" if placement == "core" else "Reference" if placement == "reference" else "Under review"}</span><span class="arrow" aria-hidden="true">→</span></a>'
+        spatial_label = " · 3D" if spatial.get(c["id"], {}).get("status") == "accepted" else ""
+        body += f'<a class="concept-row" href="concepts/{e(c["id"])}/" data-concept="{e(c["id"])}" data-search="{e(search)}" data-shelf="{placement}" data-roles="{e("|".join(c["roles"]))}"><span class="number">{i+1:02}</span><h2>{e(c["title"])}</h2><p>{e(c["summary"])}</p><span class="shelf-label">{"Start here" if placement == "core" else "Reference" if placement == "reference" else "Under review"}{spatial_label}</span><span class="arrow" aria-hidden="true">→</span></a>'
     body += '</div><div class="empty" hidden><h2>No matching concepts</h2><p>Try a shorter search, or clear the filters to see the whole book.</p><button type="button" id="clear-empty">Show all concepts</button></div><noscript><p>All chapters are listed above. Search and filters need JavaScript; reading and video controls work without it.</p></noscript>'
     write('index.html', shell('Engineering with agents', body, description='Practical guides, exercises and animated explanations for software teams adopting AI and agentic workflows.', page='index'))
 
 
 def build():
-    global concepts, by_id, baseline, originals, variant_order
+    global concepts, by_id, baseline, originals, variant_order, spatial, draft
     parser = argparse.ArgumentParser()
     parser.add_argument('--draft', action='store_true', help='Build while reviews and alternatives are in progress')
     args = parser.parse_args()
+    draft = args.draft
+    spatial = read('content/spatial.json') if (ROOT / 'content/spatial.json').exists() else {}
     order = read('content/order.json')
     variant_order = read('content/variants.json')
     concepts = [read(f'content/concepts/{key}.json') for key in order]
@@ -201,7 +214,13 @@ def build():
             assert (ROOT / f'reviews/comparisons/{c["id"]}.json').exists(), f'Comparison missing: {c["id"]}'
     if OUT.exists(): shutil.rmtree(OUT)
     OUT.mkdir()
-    shutil.copytree(ROOT / 'public', OUT, dirs_exist_ok=True)
+    def public_ignore(directory, names):
+        if pathlib.Path(directory) == ROOT / 'public/spatial' and not draft:
+            return [name for name in names if name != 'shared'
+                    and (pathlib.Path(directory) / name).is_dir()
+                    and spatial.get(name, {}).get('status') != 'accepted']
+        return []
+    shutil.copytree(ROOT / 'public', OUT, dirs_exist_ok=True, ignore=public_ignore)
     for name in ('style.css', 'app.js', 'favicon.svg'): shutil.copy2(ROOT / 'src' / name, OUT / name)
     index_page()
     for i, c in enumerate(concepts): chapter(c, i)

@@ -1,0 +1,42 @@
+{
+  "concept": "agent-evals",
+  "status": "candidate",
+  "mechanism": "An exposed two-lane input field crossed by one patch wall. The EMPTY lane holds empty-password inputs, which must be refused; the VALID lane holds valid logins, which must reach the SIGNED IN landing. Patch A and Patch B are arcaded walls on one track: A has both arches bricked up, B has a low barrier in the EMPTY arch and an open VALID arch. Test probes are sleds: a ring probe (new empty-password test) and a toothed key probe (existing valid-login test). The runtime casts a ray up each lane against whichever wall currently stands across the field; the probe stops where the geometry stops it, and an amber flag rises only on a probe whose result contradicts its expectation.",
+  "spatialBenefit": "Coverage is a spatial relation here: a check only learns about the lane its probe runs through. With only the new test, the VALID lane is visibly unprobed while A's bricked arch stands across it, so the reader sees why the suite cannot tell A from B. The walls stay exposed, so the reader can predict each outcome from structure before running it and orbit to see the probe resting against the wall or arriving on the landing.",
+  "beyondVideoTest": "Moderate pass. Patch and coverage are independent controls, giving four states whose outcomes are computed from probe/wall intersections rather than authored stages. The reader chooses the combination (for example B with only the new test, which the video does not show) and can inspect any of them from any angle. Limit: the scene has two lanes and two patches, so a careful video could show all four states; the gain is reader-chosen comparison and inspectable cause.",
+  "interaction": {
+    "buttons": [
+      "Add existing login test / Remove existing login test",
+      "Swap to patch B / Swap to patch A"
+    ],
+    "pick": "Clicking either patch wall swaps the patch (same as the button). Clicking a probe states what it checks and its current result. Picks are ignored during a transition.",
+    "reset": "Host Reset restores Patch A, the new test only, and the settled result without animation.",
+    "reducedMotion": "Every step completes in one frame.",
+    "locking": "Both controls disable during any transition; results are computed after the wall has finished moving."
+  },
+  "expectedObservations": [
+    "Initial still state: Patch A across the field, the ring probe resting against A's bricked EMPTY arch, the key probe parked on its rack, no amber visible.",
+    "Add existing login test with A: the key probe runs up VALID, stops at the bricked arch, and its amber flag rises.",
+    "Swap to B with both tests: the ring stops at B's low barrier and the key passes through the open arch onto SIGNED IN; no flag.",
+    "Swap to B with only the new test: the result is identical to A, and the VALID lane stays unprobed."
+  ],
+  "sourceGuide": "content/concepts/agent-evals.json (example: Patch A rejects every login, Patch B passes both tests; two checks are deliberately incomplete coverage)",
+  "limitations": [
+    "A physical metaphor for one grading step, not a model of authentication code or agent output. Lanes are input regions, and a single probe stands in for one test case.",
+    "Repeated trials, clean fixtures, harness errors, time budgets and held-out tasks from the guide are not illustrated.",
+    "Only two input regions exist, so the incompleteness of two checks is stated in the final caption and fallback; it is not shown as a third, unprobed region, because any wall geometry there would assert behaviour the guide does not specify.",
+    "Lane labels (EMPTY, VALID, SIGNED IN) and wall letters are engraved; legibility at 420px needs browser confirmation."
+  ],
+  "authorModel": "anthropic/claude-opus-5-5",
+  "files": {
+    "source": "spatial/agent-evals/build_scene.py",
+    "blend": "spatial/agent-evals/scene.blend",
+    "runtime": [
+      "public/spatial/agent-evals/scene.glb",
+      "public/spatial/agent-evals/scene.json",
+      "public/spatial/agent-evals/interaction.js",
+      "public/spatial/agent-evals/poster.png"
+    ]
+  },
+  "rebuild": "cd spatial/agent-evals && /opt/homebrew/bin/blender --background --threads 2 --python build_scene.py"
+}

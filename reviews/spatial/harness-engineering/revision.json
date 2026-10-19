@@ -1,0 +1,57 @@
+{
+  "concept": "harness-engineering",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "anthropic/claude-opus-5-5",
+  "requestedModel": "anthropic/claude-opus-5-5 (Opus 5.5)",
+  "provenanceNote": "executionModel is the coordinator-verified turn_context model for this revision run.",
+  "critique": "reviews/spatial/harness-engineering/review.json",
+  "critiqueSha256": "dd3aa6d6ba11dc3b2b28a66a2e5da0403cb359168050f820e199121021db96e7",
+  "critiqueReviewer": "gpt-6-astra (low)",
+  "changes": [
+    "Replaced the locker bank with an open cutaway vault: front route and export route to the same invoice tray, each with a probe station (A and B rods, one large lamp per rod).",
+    "Action 1 now moves enforcement between a front-route gate and a guard at the invoice; action 2 runs four probes. The one-way partition install is gone.",
+    "Every probe\u2019s result is geometric: received invoices return as copies on the rod (amber when forbidden), refused rods remain pressed flush on the barrier that stopped them.",
+    "Owner access is preserved and shown on both routes under the invoice guard.",
+    "Changing placement atomically clears rods and marks every lamp stale; lamp picks give expected versus actual or stale state.",
+    "Captions state the coverage limit and that a front-only harness would have reported green."
+  ],
+  "addressedFindings": [
+    {
+      "severity": "high",
+      "finding": "Orbit plus a fixed install adds no investigation",
+      "resolution": "Two-route fixture with user-controlled enforcement placement and a visible bypass; narrow coverage stated."
+    },
+    {
+      "severity": "high",
+      "finding": "Geometry does not substantiate both results",
+      "resolution": "Each probe reaches the same invoice or stops at a visible barrier and returns a visible copy; owner access shown; boundary identified as a predicate metaphor in limitations."
+    },
+    {
+      "severity": "medium",
+      "finding": "Only closed initial state; small lamps; keyboard path",
+      "resolution": "Open cutaway shows all contacts from the default and run view; lamps enlarged onto station tops away from rods; final caption carries both routes\u2019 outcomes so picks are optional. Browser captures remain for the coordinator."
+    }
+  ],
+  "remainingLimitations": [
+    "Physical metaphor: the gate and guard stand for an ownership predicate in code, not for separate tenant storage; per-tenant lanes stand for requests, not network paths. 403 is the guide\u2019s example policy.",
+    "The four probes are themselves narrow; the caption says other routes and records remain untested, but the scene does not show adding a probe.",
+    "Does not show weakening an assertion or required status checks.",
+    "Not yet verified in the integrated browser; the guard collar\u2019s near corner partly hides the tray from the default view (shutters and B contacts stay visible).",
+    "Station letters are extruded default-font meshes and are soft at 420 px."
+  ],
+  "recommendation": "accept",
+  "recommendationNote": "Accept subject to coordinator browser QA of both placements, stale state and rerun at 420 px and desktop.",
+  "finalAssets": {
+    "scene.glb": "f7f4ef2a80f7ef579436447f11ee3986e0de5a2564bc9f6b14238e3f1d0e4743",
+    "scene.json": "18640a06c1aa4afa2dfaf1aa74dbe6389f9415589fef5ea4fda9cd8df4666f3f",
+    "interaction.js": "73796b33192f1f701428b61326966762ea211130cdd692ca842bf161b56406ef",
+    "poster.png": "8c079cbbd39edfa96e69205573450dd338d259abbca369509a8b82d4850cf3ad"
+  },
+  "hashes": {
+    "scene.glb": "f7f4ef2a80f7ef579436447f11ee3986e0de5a2564bc9f6b14238e3f1d0e4743",
+    "scene.json": "18640a06c1aa4afa2dfaf1aa74dbe6389f9415589fef5ea4fda9cd8df4666f3f",
+    "interaction.js": "73796b33192f1f701428b61326966762ea211130cdd692ca842bf161b56406ef",
+    "poster.png": "8c079cbbd39edfa96e69205573450dd338d259abbca369509a8b82d4850cf3ad"
+  },
+  "schemaNormalization": "Coordinator copied finalAssets into canonical hashes; values unchanged and checked against disk."
+}

@@ -1,0 +1,115 @@
+/Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/spatial/replication-and-consistency/build_scene.py:26: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+BlenderMCP addon registered
+BlenderMCP addon unregistered
+Info: Saved as "scene.blend"
+INFO Draco mesh compression is available, use library at /Applications/Blender.app/Contents/Resources/5.1/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+22:03:07 | INFO: Starting glTF 2.0 export
+22:03:07 | INFO: Extracting primitive: Plinth
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_DataBed
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_Data
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_Mark_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_Applied_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_AperturePost-0.6
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_AperturePost0.6
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_ApertureTop
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_ReadProbe
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_v7
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_v7_Text_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_v7_Top_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_v8
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_v8_Text_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Primary_v8_Top_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_DataBed
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_Data
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_Mark_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_Applied_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_AperturePost-0.6
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_AperturePost0.6
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_ApertureTop
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_ReadProbe
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_v7
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_v7_Text_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_v7_Top_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_v8
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_v8_Text_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Replica_v8_Top_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: LogChannel
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: LogRail0.8
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: LogRail1.75
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: LogRecord
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: LogInstruction_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: LogLegend_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: ReplayGuide1.85
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: ReplayGuide3.55
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: ReplayPress
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: ReplayLabel_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: PressRod2.08
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: PressRod3.32
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: RouteLine_Primary
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: RouteLine_Replica
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: WALTransfer
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Receipt
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: ReceiptText_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Reader
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Display_v7
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Display_v7_Text_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Display_v8
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Extracting primitive: Display_v8_Text_curve
+22:03:07 | INFO: Primitives created: 1
+22:03:07 | INFO: Finished glTF 2.0 export in 0.03387713432312012 s
+00:00.861  render           | Saved: '/Users/jacobusbrink/Jaxs/projects/engineering-fieldnotes/public/spatial/replication-and-consistency/poster.png'
+
+Blender 5.1.2 (hash ec6e62d40fa9 built 2026-05-19 01:30:33)
+
+Blender quit

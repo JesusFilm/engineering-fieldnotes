@@ -1,0 +1,50 @@
+{
+  "concept": "memory-architecture",
+  "reviewerModel": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "verdict": "omit",
+  "spatialBenefitAssessment": "Fails the spatial-benefit gate. This is a temporal freshness lesson represented by labeled furniture and animated cards. The fresh/active distinction adds useful content to the recommended video but does not require depth or spatial inspection. Agree with the author\u2019s unsuitable assessment.",
+  "findings": [
+    {
+      "severity": "high",
+      "issue": "The only progression is a predetermined three-step animation of text cards.",
+      "requestedChange": "Omit this candidate from the optional 3D experience. Carry the active-session refresh distinction into a compact before/after illustration or video revision through the coordinator; do not spend another pass decorating the room.",
+      "evidence": "interaction.js stage 0\u21921\u21922\u21923 fixes the order and outcome; pose moves Card_fresh_old, Card_fresh and Card_active_r2. intent.json explicitly reports no spatial benefit; recommended video already explains revision rejection and reload."
+    },
+    {
+      "severity": "medium",
+      "issue": "Furniture and perspective make the text lesson harder to read.",
+      "requestedChange": "For any replacement use aligned flat rows for repository, stored record and active contexts, with readable r1/r2 and explicit supplied revision. Avoid 3D desks, plaque backs and moving command cards.",
+      "evidence": "poster.png has heavy extruded lettering; captures/initial.png places the stored r1 behind the fresh-run divider and foreshortens the active command. No alternate runtime capture is present."
+    },
+    {
+      "severity": "medium",
+      "issue": "The candidate stops with shared storage still stale and leaves application-side validation implicit in visible captions.",
+      "requestedChange": "If retaining the teaching content elsewhere, explicitly name the implemented revision check, distinguish mismatch from proof of an incorrect command, and show correcting the durable record separately from refreshing active context.",
+      "evidence": "CAPTION.refreshed leaves the stored record at r1; guide walkthrough requires publishing a corrected record and notes mismatch requires re-reading rather than proving the command wrong. The video explicitly identifies a separately implemented check."
+    }
+  ],
+  "requiredVerification": [
+    "Coordinator: confirm the candidate is excluded from publication if omission is adopted; retain its review/source history.",
+    "Any replacement must distinguish durable correction, fresh retrieval and active-context refresh. Only initial screenshot and source were reviewed; no runtime animation or picking was independently exercised.",
+    "Review method: source/transcript reading and supplied image inspection only; no shared browser use, independent runtime test, video playback or implementation changes. Coordinator owns final verification."
+  ],
+  "inspected": [
+    "AGENTS.md",
+    "docs/spatial-contract.json",
+    "content/concepts/memory-architecture.json",
+    "public/spatial/memory-architecture/scene.json",
+    "public/spatial/memory-architecture/interaction.js",
+    "public/spatial/memory-architecture/poster.png",
+    "reviews/spatial/memory-architecture/intent.json",
+    "reviews/comparisons/memory-architecture.json",
+    "video/memory-architecture/astra/variant.json",
+    "reviews/spatial/memory-architecture/captures/initial.png"
+  ],
+  "hashes": {
+    "scene.glb": "6083e3bc11a5e7a2485a47c3cbabe0ade8e1f61dadb694ddde9629955357610e",
+    "scene.json": "f6bf558342a8c61ef9a969591fe874e1765055ab1e1068bba45e741dbb258b3b",
+    "interaction.js": "6d6af0f0fa858b05c47c6eefd7beffc8e49dd6fa2ca78e09af09f003e47b032d",
+    "poster.png": "f0bd9023dfcc665a666fd64cd46739f914278dfb7a89d7ff6964b89e76dddcc0"
+  }
+}

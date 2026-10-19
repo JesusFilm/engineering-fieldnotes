@@ -1,0 +1,53 @@
+{
+  "concept": "replication-and-consistency",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "executionModel": "GPT-6 (Codex)",
+  "provenanceNote": "authorModel retains the requested attribution; this post-critique revision was executed by the current GPT-6 Codex session, not an Opus invocation.",
+  "completedAt": "2026-10-19T09:05:03.836040+00:00",
+  "critiqueSha256": "7d0155b1f3caa54622aed39f87e97363a2a93acaa3e02484b53843010cb60580",
+  "changes": [
+    "Rebuilt the miniature as a permanent cutaway: removed cabinet walls, door, roofs, lintel, plate stack, desk legs and overhead read arm.",
+    "Authored a retained SET ready WAL record, receiving channel, guide rails, replay press, applied data bed and front read aperture; WAL transfer runs behind the independently selectable read routes.",
+    "Replaced sequential opening/replay with reversible held/applied fixtures and fresh primary/replica queries. Every selection issues a fresh query, preserves one committed write and resets deterministically without animation.",
+    "Added exposed revision marks, explicit single-writer/no-cache/post-commit assumptions, and rebuilt scene.blend, GLB and initial-state poster."
+  ],
+  "addressedFindings": [
+    {
+      "findingIndex": 0,
+      "issue": "The closed door manufactures the investigation; the read arm terminates on a roof instead of revealing why received WAL cannot answer a query.",
+      "disposition": "implemented; coordinator visual verification pending",
+      "response": "Rebuilt the miniature as a permanent cutaway: removed cabinet walls, door, roofs, lintel, plate stack, desk legs and overhead read arm. Authored a retained SET ready WAL record, receiving channel, guide rails, replay press, applied data bed and front read aperture; WAL transfer runs behind the independently selectable read routes."
+    },
+    {
+      "findingIndex": 1,
+      "issue": "The primary v8 and the received/replayed distinction are poorly exposed by the actual initial framing.",
+      "disposition": "implemented; coordinator visual verification pending",
+      "response": "Rebuilt the miniature as a permanent cutaway: removed cabinet walls, door, roofs, lintel, plate stack, desk legs and overhead read arm. Added exposed revision marks, explicit single-writer/no-cache/post-commit assumptions, and rebuilt scene.blend, GLB and initial-state poster."
+    },
+    {
+      "findingIndex": 2,
+      "issue": "The display models a continuously updated value, while the lesson requires a fresh query and explicit verification assumptions.",
+      "disposition": "implemented; coordinator visual verification pending",
+      "response": "Replaced sequential opening/replay with reversible held/applied fixtures and fresh primary/replica queries. Every selection issues a fresh query, preserves one committed write and resets deterministically without animation."
+    }
+  ],
+  "remainingLimitations": [
+    "Replay press is a teaching metaphor, not PostgreSQL storage machinery. Reversible fixture comparison does not undo database replay.",
+    "Single writer, fresh post-commit queries and no cache only; transaction snapshots, failover and concurrent writes remain outside this illustration.",
+    "Headless state tests and Blender poster inspection passed; coordinator must assess geometry-only comprehension, initial framing, keyboard focus and 420px browser readability."
+  ],
+  "recommendation": "accept",
+  "recommendationScope": "Author recommendation only; coordinator owns final browser QA and integration.",
+  "verification": [
+    "Blender 5.1.2 executed with --threads 2; exported GLB and inspected rebuilt poster.",
+    "node --check passed.",
+    "node spatial/canary-deployments/verify.mjs: both concepts, both reduced-motion settings, both action orders, reset and rapid toggles passed.",
+    "Canary actual transformed GLB triangle volumes sum to 0.15 within 1e-6 for all four aggregation states."
+  ],
+  "hashes": {
+    "scene.glb": "d7323604af3dafea04aa9805295cc6fc1c0cd519e979e8045de8e0ad835a869d",
+    "scene.json": "6d9e439672102cea10cd27776a5d1f622e06de66e3efe5623d7ff2e7303f0e9a",
+    "interaction.js": "75273543946aa878ae6f91d87eecef212773207dbfe3752e7707bb5a90b9cff2",
+    "poster.png": "4e115113b673cf0ae6e70d1e3bad67a09ca8dc70648f4e7d703f25f2f4a880d4"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Where is v8?",
+  "description": "Compare received WAL with applied data through a permanent cutaway and issue fresh reads on either route.",
+  "camera": {
+    "position": [
+      5.5,
+      7.8,
+      10.5
+    ],
+    "target": [
+      0,
+      0.3,
+      0
+    ]
+  },
+  "initialCaption": "One write committed v8; the replica query reaches applied v7, while its received WAL waits for replay.",
+  "interactionHint": "Drag to look around \u00b7 scroll to zoom",
+  "fallback": "Single writer, post-commit fresh queries, no cache: received WAL is not yet applied data. Replay changes the queryable state; a new fresh replica read then sees v8. The primary already returns v8. Fixture comparison does not undo a real database."
+}

@@ -1,0 +1,62 @@
+{
+  "concept": "guardrails-and-permissions",
+  "authorModel": "anthropic/claude-opus-5-5",
+  "revisionProvenance": "Original candidate authored under the requested Opus label; this revision executed by GPT-6-based Codex after a model switch. authorModel retained as explicitly requested, not a claim that Opus executed the revision.",
+  "critiqueSha256": "b43adeb07c007374dc2d7d24ea04eb6ee154dbd60d43d74a15059a81ff1a9a26",
+  "changes": [
+    "Replaced choreographed walk with independent direct/shell inspections and three enforcement placements; six instantly inspectable counterfactuals.",
+    "Removed passage roof and old walk trail; authored permanent routes and separate production entrances in Blender, rebuilt scene.blend and GLB and rendered poster.",
+    "Added round investigator credential, square authorized-deployer credential and matching deny/allow plaques at active execution checks.",
+    "Raised the proposal guard in permission-check trials so direct denial occurs at the execution entrance, not behind an earlier guard refusal.",
+    "Placed denial endpoints immediately before the selected execution entrance and enlarged release labels.",
+    "Every comparison explicitly starts a new r41 trial; permission changes are not depicted as rollback.",
+    "All essential comparisons are reachable through two buttons; no pointer-only discovery or animation input blocking."
+  ],
+  "addressedFindings": [
+    {
+      "finding": 1,
+      "issue": "The locked run does not demonstrate the caption that production rejects identity on every route. The corridor is always stopped by the guard check and the runtime only changes the rear-route stop.",
+      "status": "addressed"
+    },
+    {
+      "finding": 2,
+      "issue": "Universal locked doors can read as disabling production entirely rather than denying a scoped identity; shared shell authority is only a label.",
+      "status": "addressed"
+    },
+    {
+      "finding": 3,
+      "issue": "Changing the boundary silently restores r41, which can imply that adding authorization rolls back an already executed deployment.",
+      "status": "addressed"
+    },
+    {
+      "finding": 4,
+      "issue": "The bypass inspection is pointer-only, labels are small, and the claimed rear-door stop has not been captured.",
+      "status": "addressed"
+    }
+  ],
+  "remainingLimitations": [
+    "Doorways metaphorically represent server-side execution checks, not physical security or prompt instructions.",
+    "Authorized deployer is visibly distinguished and permitted by the modeled policy, but its deployment is not an independently animated/tested route.",
+    "Guard-only and permission trials deliberately differ in the guard decision so the execution checks can be exercised.",
+    "Connectivity can also be shown in 2D; value is simultaneous inspection of the miniature, not an exclusive need for depth.",
+    "Coordinator must verify narrow host framing, labels, focus and screenshots."
+  ],
+  "recommendation": "accept",
+  "reason": "Recommend accept subject to coordinator browser QA. The open model supports selecting an independent route while holding enforcement fixed, and changing enforcement while holding the route fixed. Credential checks, remaining entry path and release consequence are inspectable together. This adds a connectivity counterfactual to the video’s single denied execution; it does not claim 3D is uniquely necessary.",
+  "verification": [
+    "Parsed final GLB with installed Three GLTFLoader; module setup and named-node access succeeded.",
+    "Module syntax checks passed; initial update and reset return false.",
+    "Blender 5.1.2 executed with --threads 2; inspected rebuilt poster.",
+    "Exercised all six policy/route combinations and Reset in Node against real GLB.",
+    "Initial bounding box 10.6 × 1.81 × 7.5; all corners fit aspect 1.4 with authored camera. Narrow host responsive FOV requires coordinator QA."
+  ],
+  "verificationGaps": [
+    "No browser manipulation or integrated browser QA performed; coordinator owns final desktop/420px review."
+  ],
+  "hashes": {
+    "scene.glb": "ce17a55fced8d8369714d57573414365af15524980c6a1e57e756d3080a9ebc6",
+    "scene.json": "ff7337002dbe5e183030a49fa3324e6c7446918f20dd8cfd94bfc9d41a159bf5",
+    "interaction.js": "a52efcf520fd178884807d5cd81d8a4225c06340e540684f20caa5107fde0961",
+    "poster.png": "00163e927710edc4611c5e8fdec611004e288a4b8103524f15043ccb3eb163f6"
+  }
+}
