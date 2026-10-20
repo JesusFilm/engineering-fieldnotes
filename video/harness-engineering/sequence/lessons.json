@@ -1,0 +1,132 @@
+[
+  {
+    "title": "The model and its runtime",
+    "duration": 28,
+    "intro": "A model can propose a tool call. The surrounding software prepares inputs, checks permissions, executes the call and supplies results. That surrounding setup is part of the harness.",
+    "takeaway": "Instructions express what should happen; executable software decides what actually runs.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The model proposes a tool call. It does not execute the tool by itself."
+      },
+      {
+        "time": 7,
+        "text": "The runtime receives the request. It checks and dispatches the operation."
+      },
+      {
+        "time": 14,
+        "text": "The tool runs and produces a result. The runtime captures that evidence."
+      },
+      {
+        "time": 21,
+        "text": "The model receives the captured result. The harness connects action to feedback."
+      }
+    ],
+    "src": "lessons/harness-engineering/01.mp4",
+    "poster": "lessons/harness-engineering/01.jpg"
+  },
+  {
+    "title": "Prepare a known workspace",
+    "duration": 28,
+    "intro": "A long-running task needs a known starting state. The harness prepares the repository, instructions and a way to run relevant checks before work begins.",
+    "takeaway": "Reproducible setup reduces ambiguity. It does not make every task deterministic or guarantee the environment is correct.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Begin with a known repository revision. Setup prepares the working directory."
+      },
+      {
+        "time": 7,
+        "text": "Load the task and repository instructions. They define the work and its boundaries."
+      },
+      {
+        "time": 14,
+        "text": "Run a baseline check before editing. Record existing failures separately."
+      },
+      {
+        "time": 21,
+        "text": "The starting evidence is now recorded. Later results can be compared with it."
+      }
+    ],
+    "src": "lessons/harness-engineering/02.mp4",
+    "poster": "lessons/harness-engineering/02.jpg"
+  },
+  {
+    "title": "Execute and retain evidence",
+    "duration": 28,
+    "intro": "The agent requests a test. The harness runs the actual command and retains the exit status and output for later inspection.",
+    "takeaway": "A statement that tests passed is different from a recorded command and its result. Bind evidence to the code that was tested.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The agent asks to run the tests. A test runner executes the command."
+      },
+      {
+        "time": 7,
+        "text": "Capture the exit status and output. Do not replace them with a success claim."
+      },
+      {
+        "time": 14,
+        "text": "Associate evidence with the code revision. A new patch needs new evidence."
+      },
+      {
+        "time": 21,
+        "text": "Return that evidence to the agent. Its next decision uses an observation."
+      }
+    ],
+    "src": "lessons/harness-engineering/03.mp4",
+    "poster": "lessons/harness-engineering/03.jpg"
+  },
+  {
+    "title": "Turn a failure into feedback",
+    "duration": 28,
+    "intro": "An invoice endpoint should deny cross-tenant access under this example contract. A failed authorization test supplies a concrete expected-versus-actual result.",
+    "takeaway": "Useful feedback names the violated behavior. The harness must rerun the relevant checks against the repair.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "This example denies cross-tenant access. Expected: 403. Actual: 200."
+      },
+      {
+        "time": 7,
+        "text": "Return the failed assertion to the agent. The failure identifies what to repair."
+      },
+      {
+        "time": 14,
+        "text": "The agent changes the authorization check. A proposed repair is not yet verified."
+      },
+      {
+        "time": 21,
+        "text": "Rerun the access test on the patch. Now it returns the expected 403."
+      }
+    ],
+    "src": "lessons/harness-engineering/04.mp4",
+    "poster": "lessons/harness-engineering/04.jpg"
+  },
+  {
+    "title": "Require a passing check",
+    "duration": 28,
+    "intro": "A mechanically enforced gate can prevent an unchecked change from advancing. The gate needs a relevant check, current evidence and controlled bypass permissions.",
+    "takeaway": "A prompt asking for tests is not a required-check mechanism. Passing checks cover only their tested behavior.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The patch is ready for evaluation. The merge path still blocks it."
+      },
+      {
+        "time": 7,
+        "text": "A required check runs on this revision. The gate waits for its actual result."
+      },
+      {
+        "time": 14,
+        "text": "The configured checks pass. The gate records current evidence."
+      },
+      {
+        "time": 21,
+        "text": "This gate now permits advancement. Other review requirements still apply."
+      }
+    ],
+    "src": "lessons/harness-engineering/05.mp4",
+    "poster": "lessons/harness-engineering/05.jpg"
+  }
+]

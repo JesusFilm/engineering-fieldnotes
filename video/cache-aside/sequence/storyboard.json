@@ -1,0 +1,540 @@
+{
+  "concept": "cache-aside",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "Microsoft Learn \u2014 Cache-Aside pattern: application ownership and update ordering",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "AWS ElastiCache \u2014 Caching strategies: lazy loading and stale entries",
+      "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Strategies.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "AWS Builders\u2019 Library \u2014 Caching challenges and strategies: cold-cache load and coalescing",
+      "url": "https://aws.amazon.com/builders-library/caching-challenges-and-strategies/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Redis \u2014 EXPIRE: key lifetime semantics",
+      "url": "https://redis.io/docs/latest/commands/expire/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Redis \u2014 SET: set a value with an expiration",
+      "url": "https://redis.io/docs/latest/commands/set/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OWASP \u2014 Authorization Cheat Sheet: check every request",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Nishtala et al. \u2014 Scaling Memcache at Facebook, \u00a73.2.1: stale sets and lease invalidation",
+      "url": "https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final170_update.pdf",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Read the source",
+      "nodes": [
+        {
+          "id": "app",
+          "label": "APPLICATION",
+          "state": ""
+        },
+        {
+          "id": "db",
+          "label": "DATABASE",
+          "state": "revision 1"
+        }
+      ],
+      "intro": "The application needs a runbook. The database is the source of record: it holds the saved revision.",
+      "takeaway": "A normal source read asks the database for the current record. The animation uses illustrative times.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The application needs a runbook.",
+            "The database stores the saved record."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "It sends a read to the database.",
+            "The database looks up the key."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "db",
+              "label": "READ",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "work",
+              "node": "db",
+              "duration": 4,
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The database returns revision 1.",
+            "The application receives the record."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "app",
+              "label": "r1",
+              "delay": 0,
+              "from": "db"
+            },
+            {
+              "type": "state",
+              "node": "app",
+              "text": "revision 1",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Every read can repeat that work.",
+            "A cache can keep a reusable copy."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "A cache hit",
+      "nodes": [
+        {
+          "id": "app",
+          "label": "APPLICATION",
+          "state": ""
+        },
+        {
+          "id": "cache",
+          "label": "CACHE",
+          "state": "revision 1"
+        },
+        {
+          "id": "db",
+          "label": "DATABASE",
+          "state": "revision 1"
+        }
+      ],
+      "intro": "A cache is a separate store for reusable copies. In cache-aside, the application checks it before reading the source.",
+      "takeaway": "A hit means the requested key was found in the cache. It does not establish that the copy is fresh.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "A cache holds a reusable copy.",
+            "The application checks it first."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "cache",
+              "label": "READ",
+              "delay": 0,
+              "from": "app"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The requested key is present.",
+            "This lookup is a cache hit."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "cache",
+              "text": "HIT",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The cache returns revision 1.",
+            "No database read is needed here."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "app",
+              "label": "r1",
+              "delay": 0,
+              "from": "cache"
+            },
+            {
+              "type": "state",
+              "node": "app",
+              "text": "revision 1",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "A hit avoids this source read.",
+            "But is the copy still current?"
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "A cache miss",
+      "nodes": [
+        {
+          "id": "app",
+          "label": "APPLICATION",
+          "state": ""
+        },
+        {
+          "id": "cache",
+          "label": "CACHE",
+          "state": "empty"
+        },
+        {
+          "id": "db",
+          "label": "DATABASE",
+          "state": "revision 1"
+        }
+      ],
+      "intro": "When the key is absent, the application reads the database and fills the cache. The cache does not fetch the data by itself.",
+      "takeaway": "A miss is an absent key, not a failed database. Application code performs the source read and cache fill.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The application checks the cache.",
+            "The key is absent: a miss."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "cache",
+              "label": "READ",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "state",
+              "node": "cache",
+              "text": "MISS",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The application reads the source.",
+            "The database has revision 1."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "db",
+              "label": "READ",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "work",
+              "node": "db",
+              "duration": 3,
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The database returns the record.",
+            "The application receives it next."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "app",
+              "label": "r1",
+              "delay": 0,
+              "from": "db"
+            },
+            {
+              "type": "state",
+              "node": "app",
+              "text": "revision 1",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The application fills the cache.",
+            "A later lookup can find this copy."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "cache",
+              "label": "STORE r1",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "state",
+              "node": "cache",
+              "text": "revision 1",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "A stale copy",
+      "nodes": [
+        {
+          "id": "app",
+          "label": "APPLICATION",
+          "state": ""
+        },
+        {
+          "id": "cache",
+          "label": "CACHE",
+          "state": "revision 1"
+        },
+        {
+          "id": "db",
+          "label": "DATABASE",
+          "state": "revision 1"
+        }
+      ],
+      "intro": "An editor updates the database, but the cached key is not deleted. A later hit can still return the old runbook.",
+      "takeaway": "Source writes and cache changes are separate operations. A successful hit can still return stale data.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Both stores begin at revision 1.",
+            "The copies agree for now."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "An editor saves revision 2.",
+            "The cached copy is unchanged."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "db",
+              "text": "revision 2",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The next lookup checks the cache.",
+            "It still finds revision 1."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "cache",
+              "label": "READ",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "state",
+              "node": "cache",
+              "text": "HIT: revision 1",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The old copy returns successfully.",
+            "A cache hit does not mean fresh."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "app",
+              "label": "r1",
+              "delay": 0,
+              "from": "cache"
+            },
+            {
+              "type": "state",
+              "node": "app",
+              "text": "old revision",
+              "color": "bad",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Invalidate and refill",
+      "nodes": [
+        {
+          "id": "app",
+          "label": "APPLICATION",
+          "state": ""
+        },
+        {
+          "id": "cache",
+          "label": "CACHE",
+          "state": "revision 1"
+        },
+        {
+          "id": "db",
+          "label": "DATABASE",
+          "state": "revision 2"
+        }
+      ],
+      "intro": "Invalidation removes the cached key. The next reader misses, reads revision 2 from the source, and stores it.",
+      "takeaway": "This repairs the illustrated stale key. Failed deletions and concurrent readers or writers need additional handling.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The source is now at revision 2.",
+            "Remove its stale cached key."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "cache",
+              "label": "DELETE",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "state",
+              "node": "cache",
+              "text": "empty",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The next cache lookup misses.",
+            "Read the source again."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "cache",
+              "text": "MISS",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "db",
+              "label": "READ",
+              "delay": 2,
+              "from": "app"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The source returns revision 2.",
+            "The application uses the new record."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "app",
+              "label": "r2",
+              "delay": 0,
+              "from": "db"
+            },
+            {
+              "type": "state",
+              "node": "app",
+              "text": "revision 2",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Store the new copy in the cache.",
+            "Concurrent writes still need care."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "cache",
+              "label": "STORE r2",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "state",
+              "node": "cache",
+              "text": "revision 2",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

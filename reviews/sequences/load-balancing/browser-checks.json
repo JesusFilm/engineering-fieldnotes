@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checks": [
+    "no eager MP4 requests",
+    "one visible lesson",
+    "playback starts",
+    "previous player paused on navigation",
+    "focus follows lesson",
+    "new lesson paused",
+    "browser back restores prior lesson",
+    "deep link lesson 6",
+    "real ended event and sequence completion",
+    "350px and 390px no overflow",
+    "keyboard navigation",
+    "all six lessons without JS"
+  ],
+  "errors": []
+}

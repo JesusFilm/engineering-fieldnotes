@@ -11,3 +11,7 @@ Videos belong beside the reading on wide screens and after the introduction on n
 Use plain rectangular controls, thin rules, and underlined prose links. Avoid decorative badges, generic sales copy, ornamental gradients and motion. Retain visible focus, a skip link, comfortable hit targets, reduced-motion behaviour, useful empty states and a printable article.
 
 Review index, chapter, comparison, sources, exercise, navigation, no-results and unknown-path states at desktop and phone sizes. Record observed problems and repairs in `reviews/ui.md`, with screenshots and actual browser checks.
+
+The default chapter uses the approved Option A: topic heading, a direct lesson index, and one portrait player. Supporting explanation and the full source-backed guide are closed disclosures. No marketing subtitles, introductory text wall, or previous/next lesson carousel. On narrow screens a labelled selector replaces the side index.
+
+Selecting a lesson pauses other videos and swaps content within the same player footprint without scrolling or moving focus. The explanation remains open if the reader opened it, with a stable reading area. Query links preserve the selection and browser Back works. Legacy lesson hashes normalize to query links so opening one does not hide the mobile selector. Playback starts only on request and ends without advancing. Without JavaScript, every lesson remains readable and playable.

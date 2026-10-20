@@ -1,0 +1,132 @@
+[
+  {
+    "title": "What the model can see",
+    "duration": 28,
+    "intro": "Context is the information supplied for a particular invocation. A file on disk is not automatically part of that input.",
+    "takeaway": "Distinguish information that exists from information actually supplied to the model.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A contract file exists in the repository. That does not mean the model has read it."
+      },
+      {
+        "time": 7,
+        "text": "The application selects information. Only selected content enters this input."
+      },
+      {
+        "time": 14,
+        "text": "The model receives the assembled input. It can use the supplied contract."
+      },
+      {
+        "time": 21,
+        "text": "Context is specific to this invocation. Check what was actually included."
+      }
+    ],
+    "src": "lessons/context-engineering/01.mp4",
+    "poster": "lessons/context-engineering/01.jpg"
+  },
+  {
+    "title": "Retrieve relevant evidence",
+    "duration": 28,
+    "intro": "The task is to fix invoice latency. Retrieval should bring in the code and contract that constrain that change, not every nearby document.",
+    "takeaway": "Relevance is a selection problem. Retrieved content still needs checking for authority and applicability.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The task is to fix invoice latency. Find evidence that constrains this change."
+      },
+      {
+        "time": 7,
+        "text": "Retrieve the endpoint and v1 contract. They explain behavior that must remain."
+      },
+      {
+        "time": 14,
+        "text": "Supply those records to the model input. Include where each record came from."
+      },
+      {
+        "time": 21,
+        "text": "More material is not always more useful. Select evidence that changes the decision."
+      }
+    ],
+    "src": "lessons/context-engineering/02.mp4",
+    "poster": "lessons/context-engineering/02.jpg"
+  },
+  {
+    "title": "Preserve a constraint",
+    "duration": 28,
+    "intro": "Existing clients expect total_cents. An optimization must keep that field. The constraint needs to be visible when the agent chooses its edit.",
+    "takeaway": "State what must remain unchanged and reference the authoritative contract. The model still needs verification.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Clients expect the field total_cents. Latency work must preserve that contract."
+      },
+      {
+        "time": 7,
+        "text": "Include the unchanged-field requirement. Keep its contract reference with it."
+      },
+      {
+        "time": 14,
+        "text": "The agent proposes a compatible edit. The field name stays total_cents."
+      },
+      {
+        "time": 21,
+        "text": "A visible constraint guides the edit. A check must still verify the result."
+      }
+    ],
+    "src": "lessons/context-engineering/03.mp4",
+    "poster": "lessons/context-engineering/03.jpg"
+  },
+  {
+    "title": "Make a useful handoff",
+    "duration": 28,
+    "intro": "A resumed task needs a concise record of the goal, important constraints, evidence and unresolved work. Summarization can lose crucial details.",
+    "takeaway": "A handoff is a shorter representation, not perfect memory. Preserve references so the next session can retrieve omitted detail.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The current session must hand work over. A vague summary can lose the contract."
+      },
+      {
+        "time": 7,
+        "text": "Record the goal and unchanged field. Keep evidence and open questions too."
+      },
+      {
+        "time": 14,
+        "text": "The next session receives the handoff. It can retrieve the source when needed."
+      },
+      {
+        "time": 21,
+        "text": "Shorten incidental history first. Do not silently drop decisive constraints."
+      }
+    ],
+    "src": "lessons/context-engineering/04.mp4",
+    "poster": "lessons/context-engineering/04.jpg"
+  },
+  {
+    "title": "Verify the patch",
+    "duration": 28,
+    "intro": "A saved compatibility fixture checks that the optimized endpoint still returns the required field. Run it against the actual changed code.",
+    "takeaway": "Good context reduces ambiguity; it does not prove the result correct. Verification closes the gap.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The patch claims to preserve compatibility. The claim still needs evidence."
+      },
+      {
+        "time": 7,
+        "text": "Run the v1 response fixture. Check the actual response field."
+      },
+      {
+        "time": 14,
+        "text": "The response still has total_cents. The checked contract is satisfied."
+      },
+      {
+        "time": 21,
+        "text": "Keep the result with the patch revision. Context and verification work together."
+      }
+    ],
+    "src": "lessons/context-engineering/05.mp4",
+    "poster": "lessons/context-engineering/05.jpg"
+  }
+]

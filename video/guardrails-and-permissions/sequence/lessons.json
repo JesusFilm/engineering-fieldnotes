@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Intent versus permission",
+    "duration": 28,
+    "intro": "An instruction says what an agent should do. Authorization determines whether its identity is allowed to perform the requested operation on the resource.",
+    "takeaway": "Enforce important boundaries in the application or service. A persistent instruction cannot replace an authorization check.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The agent is told not to deploy. That instruction expresses the policy."
+      },
+      {
+        "time": 7,
+        "text": "Suppose it still requests deployment. The service must check its identity."
+      },
+      {
+        "time": 14,
+        "text": "This identity has no deploy permission. Authorization rejects the operation."
+      },
+      {
+        "time": 21,
+        "text": "The deploy service is never invoked. Enforce access outside the model."
+      }
+    ],
+    "src": "lessons/guardrails-and-permissions/01.mp4",
+    "poster": "lessons/guardrails-and-permissions/01.jpg"
+  },
+  {
+    "title": "Grant only needed access",
+    "duration": 28,
+    "intro": "An incident investigation needs access to particular service logs. Give the investigating identity only the operations and resources required.",
+    "takeaway": "Least privilege applies to both action and resource. A read capability should not implicitly grant deployment or unrelated data access.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The agent needs checkout service logs. Its identity is allowed to read that scope."
+      },
+      {
+        "time": 7,
+        "text": "The service checks this read request. Permission applies to action and resource."
+      },
+      {
+        "time": 14,
+        "text": "The approved read is executed. The permitted logs can be returned."
+      },
+      {
+        "time": 21,
+        "text": "A read of payments logs is different. This identity lacks that permission."
+      }
+    ],
+    "src": "lessons/guardrails-and-permissions/02.mp4",
+    "poster": "lessons/guardrails-and-permissions/02.jpg"
+  },
+  {
+    "title": "Policy and permission",
+    "duration": 28,
+    "intro": "Guardrails can include deterministic validation and model-based judgments. Their reliability differs. Authorization should still be checked for every execution.",
+    "takeaway": "A guardrail pass is not a security guarantee. Keep identity-based permission enforcement at the action boundary.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A proposed action enters a policy check. Some checks involve fallible judgments."
+      },
+      {
+        "time": 7,
+        "text": "The policy check accepts the proposal. That result alone does not grant access."
+      },
+      {
+        "time": 14,
+        "text": "Authorization still checks the operation. The identity lacks the required permission."
+      },
+      {
+        "time": 21,
+        "text": "Do not execute the unauthorized action. A guardrail pass cannot override this check."
+      }
+    ],
+    "src": "lessons/guardrails-and-permissions/03.mp4",
+    "poster": "lessons/guardrails-and-permissions/03.jpg"
+  },
+  {
+    "title": "Review a concrete action",
+    "duration": 28,
+    "intro": "The agent can propose a release without holding production credentials. A reviewer checks the exact artifact, target and supporting evidence.",
+    "takeaway": "Approval must refer to the action actually executed. A separate executor enforces that binding.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The agent prepares release r42. Its proposal names the production target."
+      },
+      {
+        "time": 7,
+        "text": "Send the artifact and test evidence. The reviewer can inspect a concrete action."
+      },
+      {
+        "time": 14,
+        "text": "The reviewer approves that exact release. The executor checks artifact and target."
+      },
+      {
+        "time": 21,
+        "text": "Only the authorized action proceeds. The agent itself stays read-only."
+      }
+    ],
+    "src": "lessons/guardrails-and-permissions/04.mp4",
+    "poster": "lessons/guardrails-and-permissions/04.jpg"
+  },
+  {
+    "title": "Recheck changed actions",
+    "duration": 28,
+    "intro": "An approval for r42 does not authorize a later r43 artifact. The executor compares the current action with the approved one.",
+    "takeaway": "Bind authorization to significant action data and recheck it at execution time. Changed intent requires a new decision.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The saved approval names release r42. The proposed artifact is now r43."
+      },
+      {
+        "time": 7,
+        "text": "The executor receives the new proposal. It checks the stored approval."
+      },
+      {
+        "time": 14,
+        "text": "The artifact identifiers do not match. The executor blocks the changed action."
+      },
+      {
+        "time": 21,
+        "text": "Get review for the actual new artifact. Do not reuse approval for different work."
+      }
+    ],
+    "src": "lessons/guardrails-and-permissions/05.mp4",
+    "poster": "lessons/guardrails-and-permissions/05.jpg"
+  }
+]

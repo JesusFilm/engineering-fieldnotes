@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Wait for a response",
+    "duration": 28,
+    "intro": "A caller asks a remote service for CI status. Network travel and processing both take time; the caller waits for the response.",
+    "takeaway": "A successful response supplies evidence about the request. Every time in this sequence is an illustrative policy value.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The caller asks for CI status. The remote service must answer."
+      },
+      {
+        "time": 7,
+        "text": "The service processes the request. The caller is waiting."
+      },
+      {
+        "time": 14,
+        "text": "A response arrives in time. The caller can use the reported status."
+      },
+      {
+        "time": 21,
+        "text": "Some responses take too long. A timeout bounds one attempt."
+      }
+    ],
+    "src": "lessons/timeouts-and-retries/01.mp4",
+    "poster": "lessons/timeouts-and-retries/01.jpg"
+  },
+  {
+    "title": "A timeout is not a rollback",
+    "duration": 28,
+    "intro": "The caller stops waiting when its attempt timeout expires. Work at the remote service may continue.",
+    "takeaway": "Missing a response means the outcome is unknown. Cancellation and rollback require their own implementation.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The caller is still waiting. The remote request is in progress."
+      },
+      {
+        "time": 7,
+        "text": "The attempt timeout expires. The caller stops waiting now."
+      },
+      {
+        "time": 14,
+        "text": "Remote work may still continue. A timeout does not undo that work."
+      },
+      {
+        "time": 21,
+        "text": "Report the outcome as unknown. Do not invent a failed build result."
+      }
+    ],
+    "src": "lessons/timeouts-and-retries/02.mp4",
+    "poster": "lessons/timeouts-and-retries/02.jpg"
+  },
+  {
+    "title": "Retry only when safe",
+    "duration": 28,
+    "intro": "A retry is another attempt at the same operation. A status read can usually be retried, but effectful operations need a safe retry contract.",
+    "takeaway": "Decide retry safety from the operation contract. An idempotency key can help protect a write when the service implements it.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The first status read timed out. Another attempt may obtain the result."
+      },
+      {
+        "time": 7,
+        "text": "Check whether repetition is safe. This operation only reads CI status."
+      },
+      {
+        "time": 14,
+        "text": "Send a second bounded attempt. It is the same question, asked again."
+      },
+      {
+        "time": 21,
+        "text": "Use the response if it arrives. A write would need its own contract."
+      }
+    ],
+    "src": "lessons/timeouts-and-retries/03.mp4",
+    "poster": "lessons/timeouts-and-retries/03.jpg"
+  },
+  {
+    "title": "Back off before retrying",
+    "duration": 28,
+    "intro": "After a shared failure, callers can retry together and add another burst of load. Backoff waits; jitter varies the wait between callers. These delays are illustrative.",
+    "takeaway": "Different retry delays spread arrivals. They do not guarantee recovery, and total attempts still need a bound.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Three callers encounter the same failure. Immediate retries would form a new burst."
+      },
+      {
+        "time": 7,
+        "text": "Each caller chooses a retry delay. Jitter makes those delays different."
+      },
+      {
+        "time": 14,
+        "text": "Watch the retries arrive at different times. The service still may not recover."
+      },
+      {
+        "time": 21,
+        "text": "Each caller has made two attempts. Keep further retries within a limit."
+      }
+    ],
+    "src": "lessons/timeouts-and-retries/04.mp4",
+    "poster": "lessons/timeouts-and-retries/04.jpg"
+  },
+  {
+    "title": "Bound the whole operation",
+    "duration": 28,
+    "intro": "An attempt timeout and an overall deadline solve different problems. In this illustrative policy, two attempts and their delay must fit within twelve seconds. Animation time is slowed for explanation.",
+    "takeaway": "Five seconds for the first attempt plus a two-second delay leaves at most five seconds for a retry, less overhead. The deadline gate rejects further attempts when the shared budget reaches zero.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Example policy: a 12-second deadline. The gate permits the first attempt."
+      },
+      {
+        "time": 7,
+        "text": "Attempt 1 times out after 5 seconds. The shared budget has 7 seconds left."
+      },
+      {
+        "time": 14,
+        "text": "A 2-second backoff leaves at most 5s. The second attempt uses that remainder."
+      },
+      {
+        "time": 21,
+        "text": "The deadline expires: no third attempt. Return unknown and both timed-out tries."
+      }
+    ],
+    "src": "lessons/timeouts-and-retries/05.mp4",
+    "poster": "lessons/timeouts-and-retries/05.jpg"
+  }
+]

@@ -1,0 +1,566 @@
+{
+  "concept": "tool-design",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "Anthropic engineering: Writing effective tools for agents",
+      "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "MCP specification 2025-11-25: Tools, results, errors and security",
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/server/tools",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "JSON Schema: Object properties and validation",
+      "url": "https://json-schema.org/understanding-json-schema/reference/object",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "AWS Builders\u2019 Library: Timeouts, retries, and backoff with jitter",
+      "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "A callable operation",
+      "nodes": [
+        {
+          "id": "model",
+          "label": "MODEL",
+          "state": ""
+        },
+        {
+          "id": "app",
+          "label": "APPLICATION",
+          "state": ""
+        },
+        {
+          "id": "tool",
+          "label": "INCIDENT SEARCH",
+          "state": ""
+        }
+      ],
+      "intro": "A tool is an operation exposed to the model through a documented interface. The application executes requested calls and returns their results.",
+      "takeaway": "Tool descriptions guide selection. Execution, authorization and error handling belong in application code.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The model needs incident information.",
+            "A search tool exposes one operation."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The model requests that operation.",
+            "The application receives a structured call."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "app",
+              "label": "SEARCH CALL",
+              "delay": 0,
+              "from": "model"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The application executes the search.",
+            "The model does not run it directly."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "tool",
+              "label": "EXECUTE",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "work",
+              "node": "tool",
+              "duration": 4,
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Return the result through the application.",
+            "The model uses it as evidence."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "app",
+              "label": "RESULT",
+              "delay": 0,
+              "from": "tool"
+            },
+            {
+              "type": "send",
+              "to": "model",
+              "label": "RESULT",
+              "delay": 3,
+              "from": "app"
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Make inputs explicit",
+      "nodes": [
+        {
+          "id": "model",
+          "label": "MODEL",
+          "state": ""
+        },
+        {
+          "id": "schema",
+          "label": "INPUT VALIDATION",
+          "state": ""
+        },
+        {
+          "id": "tool",
+          "label": "INCIDENT SEARCH",
+          "state": ""
+        }
+      ],
+      "intro": "A search needs a service, time range and result limit. Explicit input fields let the application reject invalid calls instead of guessing.",
+      "takeaway": "Shape validation catches missing or invalid fields. It does not establish authorization or guarantee the query is useful.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Search needs a service and time range.",
+            "These are explicit input fields."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "A call omits the end time.",
+            "Validation finds the missing field."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "schema",
+              "label": "INCOMPLETE CALL",
+              "delay": 0,
+              "from": "model"
+            },
+            {
+              "type": "state",
+              "node": "schema",
+              "text": "end_time missing",
+              "color": "bad",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Reject the invalid call before execution.",
+            "Return an actionable input error."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "model",
+              "label": "INPUT ERROR",
+              "delay": 0,
+              "from": "schema"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "A corrected call can reach the tool.",
+            "Validate it before running the search."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "model",
+              "text": "end_time=10:00",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "schema",
+              "label": "COMPLETE CALL",
+              "delay": 0,
+              "from": "model"
+            },
+            {
+              "type": "state",
+              "node": "schema",
+              "text": "required fields valid",
+              "color": "ok",
+              "delay": 2
+            },
+            {
+              "type": "send",
+              "to": "tool",
+              "label": "VALID INPUT",
+              "delay": 3,
+              "from": "schema"
+            },
+            {
+              "type": "state",
+              "node": "tool",
+              "text": "search running",
+              "color": "accent",
+              "delay": 5
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Return usable evidence",
+      "nodes": [
+        {
+          "id": "tool",
+          "label": "INCIDENT SEARCH",
+          "state": ""
+        },
+        {
+          "id": "result",
+          "label": "TOOL RESULT",
+          "state": ""
+        },
+        {
+          "id": "model",
+          "label": "MODEL",
+          "state": ""
+        }
+      ],
+      "intro": "Useful results identify records and the scope searched. An incident summary should retain IDs and its searched interval so the answer can be checked.",
+      "takeaway": "A valid output shape does not prove source completeness or correctness. Expose enough provenance to evaluate the result.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The search finds incident records.",
+            "A bare success flag is not enough."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "tool",
+              "text": "2 records found",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Return IDs and short summaries.",
+            "Include the interval that was searched."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "result",
+              "label": "IDs + INTERVAL",
+              "delay": 0,
+              "from": "tool"
+            },
+            {
+              "type": "state",
+              "node": "result",
+              "text": "INC-42, INC-43",
+              "color": "ok",
+              "delay": 2
+            },
+            {
+              "type": "state",
+              "node": "tool",
+              "text": "09:00\u201310:00",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The model can cite those records.",
+            "Its answer has inspectable support."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "model",
+              "label": "EVIDENCE",
+              "delay": 0,
+              "from": "result"
+            },
+            {
+              "type": "state",
+              "node": "model",
+              "text": "2 in 09:00\u201310:00",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Keep claims within the returned scope.",
+            "Two found records are not all history."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Empty versus failed",
+      "nodes": [
+        {
+          "id": "tool",
+          "label": "INCIDENT SEARCH",
+          "state": ""
+        },
+        {
+          "id": "result",
+          "label": "TOOL RESULT",
+          "state": ""
+        },
+        {
+          "id": "model",
+          "label": "MODEL",
+          "state": ""
+        }
+      ],
+      "intro": "An empty completed search and a backend timeout are different outcomes. They must not share an ambiguous empty-list response.",
+      "takeaway": "An MCP tool execution error uses its error signaling. A transport timeout may produce no tool result at all; preserve that failure too.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "A completed search finds no matches.",
+            "That is an empty successful result."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "tool",
+              "text": "completed: 0 items",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Return success and an empty list.",
+            "This supports no matches in that scope."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "result",
+              "label": "OK: []",
+              "delay": 0,
+              "from": "tool"
+            },
+            {
+              "type": "state",
+              "node": "result",
+              "text": "empty success",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Now consider a backend timeout.",
+            "That search did not establish no matches."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "tool",
+              "text": "timeout",
+              "color": "bad",
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "result",
+              "text": "new call: unknown",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "result",
+              "text": "error, not empty",
+              "color": "bad",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The model must preserve the uncertainty.",
+            "It cannot claim there were no incidents."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "model",
+              "label": "SEARCH FAILED",
+              "delay": 0,
+              "from": "result"
+            },
+            {
+              "type": "state",
+              "node": "model",
+              "text": "answer uncertain",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Expose more pages",
+      "nodes": [
+        {
+          "id": "model",
+          "label": "MODEL",
+          "state": ""
+        },
+        {
+          "id": "tool",
+          "label": "INCIDENT SEARCH",
+          "state": ""
+        },
+        {
+          "id": "result",
+          "label": "RESULT PAGE",
+          "state": ""
+        }
+      ],
+      "intro": "A result limit bounds response size. If more matches exist, return a continuation cursor and make partial coverage explicit.",
+      "takeaway": "A page is not the complete result set. Follow the cursor when the task requires more coverage and the budget permits.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The search is limited to one page.",
+            "More matches may remain."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Return the page and a continuation cursor.",
+            "The caller can see that this is partial."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "result",
+              "label": "PAGE + CURSOR",
+              "delay": 0,
+              "from": "tool"
+            },
+            {
+              "type": "state",
+              "node": "result",
+              "text": "more available",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The model requests the following page.",
+            "It reuses the cursor and query scope."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "model",
+              "label": "CURSOR",
+              "delay": 0,
+              "from": "result"
+            },
+            {
+              "type": "send",
+              "to": "tool",
+              "label": "NEXT PAGE",
+              "delay": 3,
+              "from": "model"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Page 2 returns without a next cursor.",
+            "This query is complete; stop paging."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "result",
+              "label": "PAGE 2",
+              "delay": 0,
+              "from": "tool"
+            },
+            {
+              "type": "state",
+              "node": "result",
+              "text": "no next cursor",
+              "color": "ok",
+              "delay": 2
+            },
+            {
+              "type": "state",
+              "node": "model",
+              "text": "query complete",
+              "color": "ok",
+              "delay": 3
+            }
+          ],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

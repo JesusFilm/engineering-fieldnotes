@@ -1,0 +1,648 @@
+{
+  "scope": "Current encode hashes linked to sampled independent review and repair reports; historical findings remain in reports.",
+  "lessons": [
+    {
+      "file": "public/lessons/agent-evals/01.mp4",
+      "sha256": "a38a29da8c5a7669c7caae32d3381c5f810502a25afa0275c33c73fd5dbabf6e",
+      "reviews": [
+        "reviews/sequences/review-evals.md"
+      ]
+    },
+    {
+      "file": "public/lessons/agent-evals/02.mp4",
+      "sha256": "96f20244ee69e101ee39f735f8cd3247d5b46b405b8ef31e6c64162714a83c49",
+      "reviews": [
+        "reviews/sequences/review-evals.md"
+      ]
+    },
+    {
+      "file": "public/lessons/agent-evals/03.mp4",
+      "sha256": "e43923a37e8130a05d5fce31188a3d7bea734a5cd11ba4f18008dd01e2c6fce3",
+      "reviews": [
+        "reviews/sequences/review-evals.md"
+      ]
+    },
+    {
+      "file": "public/lessons/agent-evals/04.mp4",
+      "sha256": "a39d935b92cc3093dda076a4b24723608134ff93b222b36cf05fc9e66654fa9e",
+      "reviews": [
+        "reviews/sequences/review-evals.md"
+      ]
+    },
+    {
+      "file": "public/lessons/agent-evals/05.mp4",
+      "sha256": "f83ccc50bbed0c95f09e0be0935bc0328790fd2b3fc67bdda7a3bc46dd9d2342",
+      "reviews": [
+        "reviews/sequences/review-evals.md"
+      ]
+    },
+    {
+      "file": "public/lessons/cache-aside/01.mp4",
+      "sha256": "0756da96946132dc881d7af9840c3efd94d7521364532ae9b52909a2ae7b6c4f",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/cache-aside/02.mp4",
+      "sha256": "cd3c8a7cd410b580f25ad426f970de47f8d3f4a296ff64f5bae6a65c47c843e3",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/cache-aside/03.mp4",
+      "sha256": "98529494cc8d6895dbff736671dc3a4ad3bc0544272c5c5b6d0460a8d5a65b1e",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/cache-aside/04.mp4",
+      "sha256": "0816b2641b266870eb8f9e7cbbfa46e00a7b4abb7fcbf722fd2abadbd6b4418a",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/cache-aside/05.mp4",
+      "sha256": "23c6cd920f0c3eb0734755dbf24744a7ae1ab4fbbff65ab9588b87732fdee865",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/canary-deployments/01.mp4",
+      "sha256": "29ce39af6bfadb7e2cf192d41f59ca0fc78b8fd99851a2385a314c3a57d755c5",
+      "reviews": [
+        "reviews/sequences/review-canary-oauth.md"
+      ]
+    },
+    {
+      "file": "public/lessons/canary-deployments/02.mp4",
+      "sha256": "7603aa3c6db5b0ac215bf050350ce5e7fa52d614d974d855b7a19942ff4d0242",
+      "reviews": [
+        "reviews/sequences/review-canary-oauth.md"
+      ]
+    },
+    {
+      "file": "public/lessons/canary-deployments/03.mp4",
+      "sha256": "a8e22dc0e89d5a2e81e2b09f51377004d222aae890becd9c9ba242255928dcb7",
+      "reviews": [
+        "reviews/sequences/review-canary-oauth.md"
+      ]
+    },
+    {
+      "file": "public/lessons/canary-deployments/04.mp4",
+      "sha256": "9c9375845c20dae261bf151f5022f9b1c24d4ae154b3fad89c155b78f9b43dac",
+      "reviews": [
+        "reviews/sequences/review-canary-oauth.md"
+      ]
+    },
+    {
+      "file": "public/lessons/canary-deployments/05.mp4",
+      "sha256": "798740086144d74b2fe2f0669f2545549614a465581435edb76b3752ff36cce2",
+      "reviews": [
+        "reviews/sequences/review-canary-oauth.md"
+      ]
+    },
+    {
+      "file": "public/lessons/context-engineering/01.mp4",
+      "sha256": "24935f40fbbe26d9caa30040ce6ad6c6c9a5028c00336661014a543435964172",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/context-engineering/02.mp4",
+      "sha256": "f6661ee3a9cbb96a80e2371cd124d64e9752c08d46498a7bc5126d928b9c396a",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/context-engineering/03.mp4",
+      "sha256": "3b5e4a7c51d82472e3d860beae0a7dc6dd99db32aa5aa14735a9eaea49dd5cb5",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/context-engineering/04.mp4",
+      "sha256": "2ef56a1d5912ad0f5c5491bff2e096a2c1cdd0d1991baed9385da19ed25d6fcf",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/context-engineering/05.mp4",
+      "sha256": "ad120102b97e7c1c34f2da3f05342ad86e02d8d1b5c5ac891b2c87467a867358",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/guardrails-and-permissions/01.mp4",
+      "sha256": "e2be4cf18fa2c676caadb1d9dec253387a5efb8ecd5a10b9aa29f9886256029f",
+      "reviews": [
+        "reviews/sequences/review-orchestration-permissions.md"
+      ]
+    },
+    {
+      "file": "public/lessons/guardrails-and-permissions/02.mp4",
+      "sha256": "ab2ec6c5afc117306f9e1c9d1a13f8add6f23548dc2768c9c7737ac3367a8d7d",
+      "reviews": [
+        "reviews/sequences/review-orchestration-permissions.md"
+      ]
+    },
+    {
+      "file": "public/lessons/guardrails-and-permissions/03.mp4",
+      "sha256": "b1cd0c713a6694ef155355f20600258bc1e04385added091c4b3dbeafc44b54f",
+      "reviews": [
+        "reviews/sequences/review-orchestration-permissions.md"
+      ]
+    },
+    {
+      "file": "public/lessons/guardrails-and-permissions/04.mp4",
+      "sha256": "1b98a74b8d5f9ecbade1dd105a0a613bdeea5048601caf1cccc96c3adc720e9d",
+      "reviews": [
+        "reviews/sequences/review-orchestration-permissions.md"
+      ]
+    },
+    {
+      "file": "public/lessons/guardrails-and-permissions/05.mp4",
+      "sha256": "706753a9236d6cfbfef8275f041aa3e3cf27f20a23b925a9ab13a096f7b9fb8d",
+      "reviews": [
+        "reviews/sequences/review-orchestration-permissions.md"
+      ]
+    },
+    {
+      "file": "public/lessons/harness-engineering/01.mp4",
+      "sha256": "a5a149b1d62f580367577b7a8ac9bd05a2c63091ffdae518a9e144aa46116388",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/harness-engineering/02.mp4",
+      "sha256": "9fff8a5b7f33290cd9728a77b5b2bbcce5b2bbed6c1d4dea638c58a9bbbeb8c8",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/harness-engineering/03.mp4",
+      "sha256": "165f5e173bb6ac34c115a0dbf69329b4c6881ddef4098a435cd2374f129e05fc",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/harness-engineering/04.mp4",
+      "sha256": "2cd1bed8d11bf924ef5a96c1a2a790e4bafa0e4eb776c1ecbaaa130139ef2dfb",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/harness-engineering/05.mp4",
+      "sha256": "e2bf45daea1932b22820c0b1b97336caca6c33d38274e0f6c767fef2f3bed34f",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/human-in-the-loop/01.mp4",
+      "sha256": "92483870adbdf66eb62cffc7af718b3c2d13e05e7692a5545185a662ebd7df5f",
+      "reviews": [
+        "reviews/sequences/review-human-traces.md"
+      ]
+    },
+    {
+      "file": "public/lessons/human-in-the-loop/02.mp4",
+      "sha256": "767bf4e0b88ba0769d80f508d61688e5613b304ad1d3c902571497df3f90c437",
+      "reviews": [
+        "reviews/sequences/review-human-traces.md"
+      ]
+    },
+    {
+      "file": "public/lessons/human-in-the-loop/03.mp4",
+      "sha256": "af02835ae971aae3ad352b0fd47bb6dfd20f835a6c2cf23df4f13509a8d36169",
+      "reviews": [
+        "reviews/sequences/review-human-traces.md"
+      ]
+    },
+    {
+      "file": "public/lessons/human-in-the-loop/04.mp4",
+      "sha256": "fb1cd80579bd44658c0f826176071324c8c5a0cb8303ea99643568f3ce0c2b11",
+      "reviews": [
+        "reviews/sequences/review-human-traces.md"
+      ]
+    },
+    {
+      "file": "public/lessons/human-in-the-loop/05.mp4",
+      "sha256": "5c8a99ff1fbbc049e6998333ea68ec752a7f8ef67884ac7a3e1ad18bd31f64be",
+      "reviews": [
+        "reviews/sequences/review-human-traces.md"
+      ]
+    },
+    {
+      "file": "public/lessons/idempotency/01.mp4",
+      "sha256": "e059559029002ec9afa8da783f56888aa8811d97adb9c6647b1d773182774a0a",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/idempotency/02.mp4",
+      "sha256": "211b5bc6bdea05e8cc901b92ac2ced0aad45aa2e5d29797c15d5cb10ff019c34",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/idempotency/03.mp4",
+      "sha256": "c226114470ccc4624b86d22d653edf12f1c36e76a486ea259a026ad91bff4817",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/idempotency/04.mp4",
+      "sha256": "b9d818815d9db9b00481ff562b37fe790ec7b4d35458cd2657be26bf322278de",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/idempotency/05.mp4",
+      "sha256": "d9928043984adafbaf5357f6488674cb03193ef13e2902d0ffe73040cd8c3336",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/load-balancing/01.mp4",
+      "sha256": "f07b1c85301dfd26e884fdc6fed0bdf4d4f5fd7e5a9db3f03f46436f16843321",
+      "reviews": [
+        "reviews/sequences/load-balancing/relocation-checks.json",
+        "reviews/sequences/load-balancing/review.md"
+      ]
+    },
+    {
+      "file": "public/lessons/load-balancing/02.mp4",
+      "sha256": "7eaa944b610ee00cd9b24977c777a01b311c08d21442085317149791359fd7ce",
+      "reviews": [
+        "reviews/sequences/load-balancing/relocation-checks.json",
+        "reviews/sequences/load-balancing/review.md"
+      ]
+    },
+    {
+      "file": "public/lessons/load-balancing/03.mp4",
+      "sha256": "b28c9dd560c51f0890a0c6fb0d02bd253c9d53b9c12bd0f39c13611fff1cf623",
+      "reviews": [
+        "reviews/sequences/load-balancing/relocation-checks.json",
+        "reviews/sequences/load-balancing/review.md"
+      ]
+    },
+    {
+      "file": "public/lessons/load-balancing/04.mp4",
+      "sha256": "d1b343fcad83d4598b16565c52da04315aabdaeb65a48709d06213497c76e0eb",
+      "reviews": [
+        "reviews/sequences/load-balancing/relocation-checks.json",
+        "reviews/sequences/load-balancing/review.md"
+      ]
+    },
+    {
+      "file": "public/lessons/load-balancing/05.mp4",
+      "sha256": "a0b1bdf7dc01a0fae80974afece3d021396eecb096c39626cb7a23c6c38cf50d",
+      "reviews": [
+        "reviews/sequences/load-balancing/relocation-checks.json",
+        "reviews/sequences/load-balancing/review.md"
+      ]
+    },
+    {
+      "file": "public/lessons/load-balancing/06.mp4",
+      "sha256": "83e529a4ff9b94ddc1c11ac8220ea4011b285638ba1366c577442e7b2a20497f",
+      "reviews": [
+        "reviews/sequences/load-balancing/relocation-checks.json",
+        "reviews/sequences/load-balancing/review.md"
+      ]
+    },
+    {
+      "file": "public/lessons/loop-engineering/01.mp4",
+      "sha256": "6d233bc79980798a9f67fdcdee3316e93bfc03fcf60561af4a4ee2aa53194a0f",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/loop-engineering/02.mp4",
+      "sha256": "73ce9f17834f263f3073833b56bdbb3a5488bd15572ebd1a8011fa0217a5ab15",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/loop-engineering/03.mp4",
+      "sha256": "faed3b21779c22d249fd7142555113bd9f0b5498851e129a5d4eaa0da242e53f",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/loop-engineering/04.mp4",
+      "sha256": "1d410cdd58c93d60a3fb134efe792e7b9d7727401c3b51c3c8aca5fc83345ddf",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/loop-engineering/05.mp4",
+      "sha256": "98e879d99bfe966ee97c65c0562052386edd7fc59748087c87b979d3685abda2",
+      "reviews": [
+        "reviews/sequences/review-harness-loop-context.md"
+      ]
+    },
+    {
+      "file": "public/lessons/memory-architecture/01.mp4",
+      "sha256": "9284e0c5643e82d4d38eb8d2958c843ed5cafe050168bff67aa942820840c08d",
+      "reviews": [
+        "reviews/sequences/review-tools-memory.md"
+      ]
+    },
+    {
+      "file": "public/lessons/memory-architecture/02.mp4",
+      "sha256": "61dae169add8e69da4d2729763cc77cba52c975860eaf65725e975903ea4b94c",
+      "reviews": [
+        "reviews/sequences/review-tools-memory.md"
+      ]
+    },
+    {
+      "file": "public/lessons/memory-architecture/03.mp4",
+      "sha256": "3e86d964bf9538bb26afaba2eb635f46728c3f1aaba45b2806f2bfc6d60bc7e3",
+      "reviews": [
+        "reviews/sequences/review-tools-memory.md"
+      ]
+    },
+    {
+      "file": "public/lessons/memory-architecture/04.mp4",
+      "sha256": "3562888f238271a4b75875a44e4bbc6ae40b7753a08ccb810f0bd9d3e2b380c6",
+      "reviews": [
+        "reviews/sequences/review-tools-memory.md"
+      ]
+    },
+    {
+      "file": "public/lessons/memory-architecture/05.mp4",
+      "sha256": "4387cddfe382213d79b39595c905a81590a0a2cc4059afe0b0c8fa5f1d0bce31",
+      "reviews": [
+        "reviews/sequences/review-tools-memory.md"
+      ]
+    },
+    {
+      "file": "public/lessons/oauth-pkce/01.mp4",
+      "sha256": "3ef03bb3e588c66746d524541b028acbddde30e6941c65ec5d22887ae5fd063e",
+      "reviews": [
+        "reviews/sequences/review-canary-oauth.md"
+      ]
+    },
+    {
+      "file": "public/lessons/oauth-pkce/02.mp4",
+      "sha256": "91093262f1cb9c0112552b970a5b4a44f85d5751d6b558392b033bcd75cbd10d",
+      "reviews": [
+        "reviews/sequences/review-canary-oauth.md"
+      ]
+    },
+    {
+      "file": "public/lessons/oauth-pkce/03.mp4",
+      "sha256": "e512c8cb43c271270420a96a138d024bb772d661100d21b639afe31055ae0262",
+      "reviews": [
+        "reviews/sequences/review-canary-oauth.md"
+      ]
+    },
+    {
+      "file": "public/lessons/oauth-pkce/04.mp4",
+      "sha256": "4c4888d39417ef06124365315b7a9fef1dc25d53292dca6b56b30c6549b3c743",
+      "reviews": [
+        "reviews/sequences/review-canary-oauth.md"
+      ]
+    },
+    {
+      "file": "public/lessons/oauth-pkce/05.mp4",
+      "sha256": "695ee20514f974a029d67887ea24c16818017974e5f28e9e93a031d47d14c27a",
+      "reviews": [
+        "reviews/sequences/review-canary-oauth.md"
+      ]
+    },
+    {
+      "file": "public/lessons/observability-and-tracing/01.mp4",
+      "sha256": "d53b9a759c9bd65331add09a03645bff7dc14b6b4cdd61911b0c61614b7708a4",
+      "reviews": [
+        "reviews/sequences/review-human-traces.md"
+      ]
+    },
+    {
+      "file": "public/lessons/observability-and-tracing/02.mp4",
+      "sha256": "dfb1eeb4bca9c24037b2be9117d97986791d48280a92e14ac71ea819f8b94136",
+      "reviews": [
+        "reviews/sequences/review-human-traces.md"
+      ]
+    },
+    {
+      "file": "public/lessons/observability-and-tracing/03.mp4",
+      "sha256": "9e0cf51e68ecea563a072d2f87c5700d545f0ccd94378bf99674a60ce1532a8f",
+      "reviews": [
+        "reviews/sequences/review-human-traces.md"
+      ]
+    },
+    {
+      "file": "public/lessons/observability-and-tracing/04.mp4",
+      "sha256": "dfbe143ea88d10870093ed8d483595b2f32576b5a669768c6b039d734eb0007e",
+      "reviews": [
+        "reviews/sequences/review-human-traces.md"
+      ]
+    },
+    {
+      "file": "public/lessons/observability-and-tracing/05.mp4",
+      "sha256": "1b870595c9d7b384e3e306de453830696dcba86ea682c0eba77067342cbeb335",
+      "reviews": [
+        "reviews/sequences/review-human-traces.md"
+      ]
+    },
+    {
+      "file": "public/lessons/orchestration-patterns/01.mp4",
+      "sha256": "2c402e86450ddece5409504b033551423741c50901a49dc2a1b34a3dc30b3010",
+      "reviews": [
+        "reviews/sequences/review-orchestration-permissions.md"
+      ]
+    },
+    {
+      "file": "public/lessons/orchestration-patterns/02.mp4",
+      "sha256": "6be321bd510d9a78e1fdf0d111ccccd2c49b081c9877620335e02b2254488dd9",
+      "reviews": [
+        "reviews/sequences/review-orchestration-permissions.md"
+      ]
+    },
+    {
+      "file": "public/lessons/orchestration-patterns/03.mp4",
+      "sha256": "f90eee5bc0e58f98726ee0f2f3a44a01f5124c8e517285e657a416f60baa9fae",
+      "reviews": [
+        "reviews/sequences/review-orchestration-permissions.md"
+      ]
+    },
+    {
+      "file": "public/lessons/orchestration-patterns/04.mp4",
+      "sha256": "ff4d129a4658408ff89692fd0358467cc67d19b7a85e258f642182c9cfb16089",
+      "reviews": [
+        "reviews/sequences/review-orchestration-permissions.md"
+      ]
+    },
+    {
+      "file": "public/lessons/orchestration-patterns/05.mp4",
+      "sha256": "7584dc2574b777f69c16edfa71dc5a814adae80f92ab3a4d5eb587b558866bd5",
+      "reviews": [
+        "reviews/sequences/review-orchestration-permissions.md"
+      ]
+    },
+    {
+      "file": "public/lessons/queues-and-backpressure/01.mp4",
+      "sha256": "b0ff78411d8330c661fd9dd4d61015aeaac83e13e2aad042f037edcd8443adbd",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/queues-and-backpressure/02.mp4",
+      "sha256": "87b6c625598ab4f91e252ee545849ea1ace5cc99e73e57c69fef172bfb797f6e",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/queues-and-backpressure/03.mp4",
+      "sha256": "767678b8809e8410a6f5538e333a84faf55da1022ea4b8417cadcacfbb95272c",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/queues-and-backpressure/04.mp4",
+      "sha256": "124cdbd6038699df721bd63c7b261875749ed3b4e1f72d4746307fb73a6dd6aa",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/queues-and-backpressure/05.mp4",
+      "sha256": "acfe2bc464fce5982236b27507355e8bb0d5dfbb272fd92c0aa65f39b2778546",
+      "reviews": [
+        "reviews/sequences/review-cache-queues-idempotency.md"
+      ]
+    },
+    {
+      "file": "public/lessons/replication-and-consistency/01.mp4",
+      "sha256": "4ce425123f751a43c997807afc050d2e55a3df402f854d1e930687042d3e5312",
+      "reviews": [
+        "reviews/sequences/review-replication-retries.md"
+      ]
+    },
+    {
+      "file": "public/lessons/replication-and-consistency/02.mp4",
+      "sha256": "cdb1a648d6f0253d1b2ce724765ed90fdbc6c475292770f33a249897a25e3d76",
+      "reviews": [
+        "reviews/sequences/review-replication-retries.md"
+      ]
+    },
+    {
+      "file": "public/lessons/replication-and-consistency/03.mp4",
+      "sha256": "38bd195382e4fbcae21d577ff1ed864ae79a30a1fe187c5992d0ef3de7d2febd",
+      "reviews": [
+        "reviews/sequences/review-replication-retries.md"
+      ]
+    },
+    {
+      "file": "public/lessons/replication-and-consistency/04.mp4",
+      "sha256": "b0d7f305a7d51d9b4f44b48df419d888f4e54042e07dbceeeb283e03a37face2",
+      "reviews": [
+        "reviews/sequences/review-replication-retries.md"
+      ]
+    },
+    {
+      "file": "public/lessons/replication-and-consistency/05.mp4",
+      "sha256": "c1c4b2e6cae6e09022511c51602c9d98a93f0c5de505a17a145def1422bdab83",
+      "reviews": [
+        "reviews/sequences/review-replication-retries.md"
+      ]
+    },
+    {
+      "file": "public/lessons/timeouts-and-retries/01.mp4",
+      "sha256": "b3d88503c954286e15774cbced559ca9faea80bfa220de16745b3b9da894bee7",
+      "reviews": [
+        "reviews/sequences/review-replication-retries.md"
+      ]
+    },
+    {
+      "file": "public/lessons/timeouts-and-retries/02.mp4",
+      "sha256": "171bb488f82b6b1f0e9ddea8534ba13d8dbc5faffc605f26cdd0a309fa0fc832",
+      "reviews": [
+        "reviews/sequences/review-replication-retries.md"
+      ]
+    },
+    {
+      "file": "public/lessons/timeouts-and-retries/03.mp4",
+      "sha256": "dcc1a557990be3d25291ddeacd973bace50612c398bf1b2dd8d0cb85a94c2b41",
+      "reviews": [
+        "reviews/sequences/review-replication-retries.md"
+      ]
+    },
+    {
+      "file": "public/lessons/timeouts-and-retries/04.mp4",
+      "sha256": "a89d6e599fa7bbe43e50bf0952b9f528a0a7f6c2246604dd2fa37acf92c70833",
+      "reviews": [
+        "reviews/sequences/review-replication-retries.md"
+      ]
+    },
+    {
+      "file": "public/lessons/timeouts-and-retries/05.mp4",
+      "sha256": "c15a46b71482808105ea694b65b1de50703aa460ecad233f39c2ce77f989eb99",
+      "reviews": [
+        "reviews/sequences/review-replication-retries.md"
+      ]
+    },
+    {
+      "file": "public/lessons/tool-design/01.mp4",
+      "sha256": "3984b42d57ed6cf3fbe3d33b92d99b7c3c78415950979464bc37c75d2a3e0b44",
+      "reviews": [
+        "reviews/sequences/review-tools-memory.md"
+      ]
+    },
+    {
+      "file": "public/lessons/tool-design/02.mp4",
+      "sha256": "80dff624265531a784c1add61984a14bec2b4f900de2cafa987f94e4439839bb",
+      "reviews": [
+        "reviews/sequences/review-tools-memory.md"
+      ]
+    },
+    {
+      "file": "public/lessons/tool-design/03.mp4",
+      "sha256": "ce1aa99900cde974ff81ab3be2926a3ed09ee7b90c5da19210ba69058d871b09",
+      "reviews": [
+        "reviews/sequences/review-tools-memory.md"
+      ]
+    },
+    {
+      "file": "public/lessons/tool-design/04.mp4",
+      "sha256": "8914bb38a231e49887d2e661edaf0327f90521dfbcf57925b3326ca0ea2bf85c",
+      "reviews": [
+        "reviews/sequences/review-tools-memory.md"
+      ]
+    },
+    {
+      "file": "public/lessons/tool-design/05.mp4",
+      "sha256": "80ccfae115bbd5731701101c007773bc5f61384555faed02530bb3ce588f4e83",
+      "reviews": [
+        "reviews/sequences/review-tools-memory.md"
+      ]
+    }
+  ]
+}

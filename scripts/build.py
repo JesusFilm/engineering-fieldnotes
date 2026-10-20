@@ -99,14 +99,32 @@ def player(v, prefix, title):
 <source src="{source}" type="video/mp4"><p><a href="{source}">Open the video</a></p></video>'''
 
 
+def lesson_sequence(key, title):
+    lessons = read(f'video/{key}/sequence/lessons.json')
+    body = f'<section class="lesson-sequence" aria-label="{e(title)} videos"><nav class="lesson-list" aria-label="Lessons">'
+    for i, item in enumerate(lessons, 1):
+        body += f'<a href="#lesson-{i}" data-lesson-link="{i}"><span>{i:02}</span>{e(item["title"])}</a>'
+    body += '</nav><label class="lesson-picker" hidden><span class="sr-only">Choose a lesson</span><select aria-label="Choose a lesson">'
+    for i, item in enumerate(lessons, 1):
+        body += f'<option value="{i}">{i:02} · {e(item["title"])}</option>'
+    body += '</select></label><div class="lesson-stage"><p class="lesson-status sr-only" role="status" aria-live="polite"></p>'
+    for i, item in enumerate(lessons, 1):
+        body += f'<section id="lesson-{i}" class="lesson-panel" data-title="{e(item["title"])}">' + player(item, '../../', title) + '</section>'
+    body += '<details class="lesson-explanation"><summary>Explanation</summary><div class="lesson-readings">'
+    for i, item in enumerate(lessons, 1):
+        body += f'<article data-lesson-notes="{i}"><h2>{e(item["title"])}</h2>' + paragraphs(item['intro']) + paragraphs(item['takeaway']) + transcript_html(item['beats'])
+        if item.get('question'):
+            body += '<details><summary>Check your understanding</summary>' + paragraphs(item['question']) + paragraphs(item['answer']) + '</details>'
+        body += '</article>'
+    return body + '</div></details></div></section>'
+
+
 def chapter(c, index):
     key, title = c['id'], c['title']
     learning = c.get('learning', {})
     variants = media_for(c)
     review_path = ROOT / f'reviews/comparisons/{key}.json'
     comparison = json.loads(review_path.read_text()) if review_path.exists() else {}
-    selected = next((v for v in variants if v['id'] == comparison.get('recommended')), variants[0])
-    placement = learning.get('placement', 'core' if c['category'] == 'Agent systems' else 'reference')
     sections = '<section id="idea"><h2>The idea</h2>' + paragraphs(c['overview']) + '</section>'
     sections += '<section id="practice"><h2>Where it helps</h2>' + paragraphs(c['why']) + paragraphs(learning.get('relevance')) + paragraphs(c['example']) + '</section>'
     if learning.get('outcomes'):
@@ -125,24 +143,14 @@ def chapter(c, index):
     sections += '<section id="related"><h2>Connected ideas</h2><ul class="related">' + ''.join(f'<li><a href="../{e(x["id"])}/">{e(x["title"])}</a></li>' for x in related) + '</ul></section>'
     prerequisites = [by_id[x] for x in learning.get('prerequisites', []) if x in by_id]
     prereq = '<p class="prerequisites">Helpful first: ' + ', '.join(f'<a href="../{e(x["id"])}/">{e(x["title"])}</a>' for x in prerequisites) + '.</p>' if prerequisites else ''
-    contents = [('idea', 'The idea'), ('practice', 'Where it helps')]
-    if workflow: contents.append(('workflow', 'Team workflow'))
-    if exercise: contents.append(('exercise', 'Team exercise'))
-    contents.append(('sources', 'Sources'))
-    body = f'<a class="back" href="../../">← Contents</a><div class="article-grid"><div class="article-head"><p class="eyebrow">{e(c["category"])} · {"Start here" if placement == "core" else "Reference" if placement == "reference" else "Under review"}</p><h1>{e(title)}</h1><p class="deck">{e(c["summary"])}</p>{prereq}<a class="read-first" href="#idea">Read the guide ↓</a></div>'
-    body += '<div class="prose">' + sections + '</div><aside aria-label="Optional explanation and chapter navigation">'
-    body += player(selected, '../../', title)
-    body += f'<p class="media-label">{round(selected["duration"])} sec · Sound optional</p><p class="video-lesson">{e(selected["lesson"])}</p><a class="compare-link" href="compare/">Compare {len(variants)} video cuts →</a>'
-    if selected.get('transcript'):
-        body += '<details class="transcript"><summary>Read the video sequence</summary>' + transcript_html(selected['transcript']) + '</details>'
-    body += '<nav class="chapter-nav" aria-label="On this page"><h2>In this chapter</h2>' + ''.join(f'<a href="#{anchor}">{label}</a>' for anchor, label in contents) + '</nav></aside></div>'
+    body = f'<div class="sequence-page"><h1>{e(title)}</h1>' + lesson_sequence(key, title)
+    body += '<details class="chapter-reading"><summary>Read the guide</summary><div class="prose">' + prereq + sections + '<a href="compare/">Original video comparisons</a></div></details></div>'
     links = []
     for idx, direction in [(index - 1, 'Previous'), (index + 1, 'Next')]:
         if 0 <= idx < len(concepts):
             other = concepts[idx]
             links.append(f'<a href="../{e(other["id"])}/"><span>{direction} chapter</span>{e(other["title"])}</a>')
     body += '<nav class="chapter-turn" aria-label="Chapter navigation">' + ''.join(links) + '</nav>'
-    if learning.get('reviewed'): body += f'<p class="review-date">Content reviewed {e(learning["reviewed"])}. <a href="../../about/#review">How reviews work</a></p>'
     write(f'concepts/{key}/index.html', shell(title, body, '../../', c['summary']))
     compare(c, variants, comparison)
 
@@ -191,6 +199,10 @@ def build():
     args = parser.parse_args()
     draft = args.draft
     order = read('content/order.json')
+    sequences = read('content/sequences.json')
+    assert set(sequences) == set(order), 'Every topic must have a sequence'
+    for key in order:
+        assert (ROOT / sequences[key]['lessons']).is_file(), f'Missing sequence: {key}'
     variant_order = read('content/variants.json')
     concepts = [read(f'content/concepts/{key}.json') for key in order]
     by_id = {c['id']: c for c in concepts}

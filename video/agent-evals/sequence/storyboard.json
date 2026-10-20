@@ -1,0 +1,523 @@
+{
+  "concept": "agent-evals",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "Anthropic: Demystifying evals for AI agents \u2014 tasks, trials, graders and isolated environments",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenAI: Evaluation best practices \u2014 representative cases and human calibration",
+      "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Anthropic: Writing effective tools for agents \u2014 held-out tasks and valid alternative paths",
+      "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "SWE-bench: Evaluation guide \u2014 execute generated patches and distinguish harness errors",
+      "url": "https://www.swebench.com/SWE-bench/guides/evaluation/",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Task, trial and grader",
+      "nodes": [
+        {
+          "id": "task",
+          "label": "EVALUATION TASK",
+          "state": ""
+        },
+        {
+          "id": "agent",
+          "label": "AGENT SYSTEM",
+          "state": ""
+        },
+        {
+          "id": "grade",
+          "label": "GRADER",
+          "state": ""
+        }
+      ],
+      "intro": "An evaluation task specifies what the agent should accomplish. One execution is a trial. A grader inspects evidence against defined criteria.",
+      "takeaway": "Evaluate the agent with its harness, tools and environment, not just an isolated model response.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "A task asks for an authentication fix.",
+            "Define what success will look like."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Run one trial with the agent system.",
+            "The system returns a patch and evidence."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "agent",
+              "label": "TASK",
+              "delay": 0,
+              "from": "task"
+            },
+            {
+              "type": "work",
+              "node": "agent",
+              "duration": 4,
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "A grader inspects the result.",
+            "It applies the stated success criteria."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "grade",
+              "label": "PATCH + EVIDENCE",
+              "delay": 0,
+              "from": "agent"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The grade describes this one trial.",
+            "It is not a guarantee about future runs."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "grade",
+              "text": "one trial scored",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Check actual behavior",
+      "nodes": [
+        {
+          "id": "patch",
+          "label": "AGENT PATCH",
+          "state": ""
+        },
+        {
+          "id": "tests",
+          "label": "BEHAVIOR TESTS",
+          "state": ""
+        },
+        {
+          "id": "grade",
+          "label": "GRADER",
+          "state": ""
+        }
+      ],
+      "intro": "Instead of grading a claim that the bug is fixed, run the changed code on inputs with known expected outcomes.",
+      "takeaway": "Grade observable results. A good explanation can accompany an incorrect patch.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The agent says the bug is fixed.",
+            "A statement is not the behavior itself."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Run the patch with an empty password.",
+            "The expected behavior is rejection."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "tests",
+              "label": "EMPTY INPUT",
+              "delay": 0,
+              "from": "patch"
+            },
+            {
+              "type": "work",
+              "node": "tests",
+              "duration": 4,
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The empty password is rejected.",
+            "This test has passed."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "tests",
+              "text": "empty rejected",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Record the observed result for grading.",
+            "Other required cases still need testing."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "grade",
+              "label": "OBSERVED RESULT",
+              "delay": 0,
+              "from": "tests"
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Catch an overbroad fix",
+      "nodes": [
+        {
+          "id": "patch",
+          "label": "PATCH A",
+          "state": "reject every login"
+        },
+        {
+          "id": "empty",
+          "label": "EMPTY INPUT",
+          "state": ""
+        },
+        {
+          "id": "valid",
+          "label": "VALID INPUT",
+          "state": ""
+        },
+        {
+          "id": "grade",
+          "label": "GRADER",
+          "state": ""
+        }
+      ],
+      "intro": "Patch A rejects all logins. It fixes the empty-password case but breaks legitimate users. A regression case reveals the overbroad change.",
+      "takeaway": "A narrow success test can reward the wrong solution. Include behavior that must remain valid.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Patch A rejects every login.",
+            "Both bad and valid passwords fail."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The empty-password case is rejected.",
+            "That expectation passes."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "empty",
+              "label": "EMPTY INPUT",
+              "delay": 0,
+              "from": "patch"
+            },
+            {
+              "type": "state",
+              "node": "empty",
+              "text": "PASS",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The valid-password case is also rejected.",
+            "That expectation fails."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "valid",
+              "label": "VALID INPUT",
+              "delay": 0,
+              "from": "patch"
+            },
+            {
+              "type": "state",
+              "node": "valid",
+              "text": "FAIL",
+              "color": "bad",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The grader rejects this overbroad fix.",
+            "Passing one case was insufficient."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "grade",
+              "label": "REGRESSION",
+              "delay": 0,
+              "from": "valid"
+            },
+            {
+              "type": "state",
+              "node": "grade",
+              "text": "patch A fails",
+              "color": "bad",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Repeat trials independently",
+      "nodes": [
+        {
+          "id": "task",
+          "label": "SAME TASK",
+          "state": ""
+        },
+        {
+          "id": "a",
+          "label": "TRIAL 1",
+          "state": ""
+        },
+        {
+          "id": "b",
+          "label": "TRIAL 2",
+          "state": ""
+        },
+        {
+          "id": "report",
+          "label": "EVAL REPORT",
+          "state": ""
+        }
+      ],
+      "intro": "Repeated trials reveal variation in the agent system. Each should start from the intended clean state so one trial does not contaminate another.",
+      "takeaway": "Repeated success measures consistency on these tasks. It does not make the system deterministic or prove general safety.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Run the same task more than once.",
+            "Each trial starts in an isolated state."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Trial 1 produces a result.",
+            "Record the outcome and evidence."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "a",
+              "label": "TASK",
+              "delay": 0,
+              "from": "task"
+            },
+            {
+              "type": "work",
+              "node": "a",
+              "duration": 4,
+              "delay": 2
+            },
+            {
+              "type": "state",
+              "node": "a",
+              "text": "PASS",
+              "color": "ok",
+              "delay": 6
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Trial 2 runs from a clean starting point.",
+            "Its result may differ."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "b",
+              "label": "TASK",
+              "delay": 0,
+              "from": "task"
+            },
+            {
+              "type": "work",
+              "node": "b",
+              "duration": 4,
+              "delay": 2
+            },
+            {
+              "type": "state",
+              "node": "b",
+              "text": "FAIL",
+              "color": "bad",
+              "delay": 6
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Report the distribution of outcomes.",
+            "Do not show only the best attempt."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "report",
+              "label": "PASS",
+              "delay": 0,
+              "from": "a"
+            },
+            {
+              "type": "send",
+              "to": "report",
+              "label": "FAIL",
+              "delay": 3,
+              "from": "b"
+            },
+            {
+              "type": "state",
+              "node": "report",
+              "text": "1 pass / 2 trials",
+              "color": "accent",
+              "delay": 5
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Know the grading limits",
+      "nodes": [
+        {
+          "id": "suite",
+          "label": "EVAL SUITE",
+          "state": ""
+        },
+        {
+          "id": "grade",
+          "label": "GRADERS",
+          "state": ""
+        },
+        {
+          "id": "decision",
+          "label": "TEAM DECISION",
+          "state": ""
+        }
+      ],
+      "intro": "A suite collects representative tasks. Deterministic tests and model graders cover different properties, and graders themselves need calibration.",
+      "takeaway": "Passing a suite supports claims within its coverage. Keep held-out cases and inspect grading errors before making broader decisions.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Collect tasks that represent real use.",
+            "Include known failures and valid behavior."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Apply graders suited to each criterion.",
+            "Some judgments need human calibration."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "grade",
+              "label": "TRIAL EVIDENCE",
+              "delay": 0,
+              "from": "suite"
+            },
+            {
+              "type": "state",
+              "node": "grade",
+              "text": "check grading",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Inspect false passes and false failures.",
+            "A flawed grader can reward wrong work."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "grade",
+              "text": "calibrate results",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Use the evidence with stated limits.",
+            "A passing suite is not automatic release."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "decision",
+              "label": "SCOPED RESULTS",
+              "delay": 0,
+              "from": "grade"
+            }
+          ],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,493 @@
+{
+  "concept": "oauth-pkce",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "RFC 7636 \u00a7\u00a74.1\u20134.6: verifier, S256 and token validation",
+      "url": "https://www.rfc-editor.org/rfc/rfc7636",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RFC 9700 \u00a7\u00a72.1, 2.1.1, 2.2: current OAuth security practice",
+      "url": "https://www.rfc-editor.org/rfc/rfc9700",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "MCP 2025-11-25: HTTP authorization and code protection",
+      "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RFC 8252 \u00a74: browser authorization for native apps",
+      "url": "https://www.rfc-editor.org/rfc/rfc8252",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Delegate access",
+      "nodes": [
+        {
+          "id": "app",
+          "label": "CLIENT APP",
+          "state": ""
+        },
+        {
+          "id": "auth",
+          "label": "AUTH SERVER",
+          "state": ""
+        },
+        {
+          "id": "api",
+          "label": "RESOURCE API",
+          "state": ""
+        }
+      ],
+      "intro": "OAuth lets a client obtain delegated access. The authorization server issues tokens that a resource API can validate.",
+      "takeaway": "OAuth is an access-delegation protocol. PKCE protects one part of an authorization-code flow; it is not a universal permission check.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "A client needs access to an API.",
+            "An authorization server handles the grant."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The user authorizes access in a browser.",
+            "The client receives an authorization code."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "app",
+              "label": "AUTH CODE",
+              "delay": 0,
+              "from": "auth"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The client exchanges the code for tokens.",
+            "The server validates the exchange."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "auth",
+              "label": "CODE",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "send",
+              "to": "app",
+              "label": "TOKEN",
+              "delay": 3,
+              "from": "auth"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "A token accompanies an API request.",
+            "The API still checks access."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "api",
+              "label": "TOKEN",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "state",
+              "node": "api",
+              "text": "validate access",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Create a verifier",
+      "nodes": [
+        {
+          "id": "app",
+          "label": "CLIENT APP",
+          "state": ""
+        },
+        {
+          "id": "attempt",
+          "label": "LOGIN ATTEMPT A",
+          "state": "fresh attempt"
+        }
+      ],
+      "intro": "For each authorization attempt, the client creates a fresh unpredictable verifier and retains it for that attempt. S256 derives a challenge from it.",
+      "takeaway": "The verifier is a secret for this transaction. A later login needs a different verifier and separate storage.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Start a new authorization attempt.",
+            "Create a fresh unpredictable verifier."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "app",
+              "text": "verifier A",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Keep that verifier with attempt A.",
+            "It will be needed at token exchange."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "attempt",
+              "label": "SAVE verifier A",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "state",
+              "node": "attempt",
+              "text": "verifier A stored",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Derive its S256 challenge.",
+            "The challenge is a transformed value."
+          ],
+          "actions": [
+            {
+              "type": "work",
+              "node": "app",
+              "duration": 4,
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "app",
+              "text": "challenge A",
+              "color": "accent",
+              "delay": 4
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Send the challenge first.",
+            "Keep the verifier for the later exchange."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Bind code and challenge",
+      "nodes": [
+        {
+          "id": "app",
+          "label": "CLIENT APP",
+          "state": "challenge A"
+        },
+        {
+          "id": "auth",
+          "label": "AUTH SERVER",
+          "state": ""
+        }
+      ],
+      "intro": "The client sends its challenge with the authorization request. After authorization, the server issues a code bound to that challenge.",
+      "takeaway": "The first leg sends the challenge, not the verifier. Normal OAuth request validation and user authorization still apply.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The client has challenge A.",
+            "Its verifier remains with the client."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Send challenge A for authorization.",
+            "The server records it for this attempt."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "auth",
+              "label": "CHALLENGE A",
+              "delay": 0,
+              "from": "app"
+            },
+            {
+              "type": "state",
+              "node": "auth",
+              "text": "challenge A saved",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "After authorization, issue code A.",
+            "The server binds it to challenge A."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "auth",
+              "text": "code A bound",
+              "color": "ok",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "app",
+              "label": "CODE A",
+              "delay": 1,
+              "from": "auth"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "A code alone is not the full proof.",
+            "The exchange must match the challenge."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Prove the verifier matches",
+      "nodes": [
+        {
+          "id": "app",
+          "label": "CLIENT APP",
+          "state": "code A + verifier A"
+        },
+        {
+          "id": "auth",
+          "label": "AUTH SERVER",
+          "state": "challenge A saved"
+        }
+      ],
+      "intro": "The client submits the authorization code and the original verifier. The authorization server derives a challenge from the verifier and compares it with the saved value.",
+      "takeaway": "A matching PKCE check allows the rest of token validation to proceed. A mismatch must fail; it should not disable the protection.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Submit code A with verifier A.",
+            "The server has its saved challenge."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "auth",
+              "label": "CODE + VERIFIER",
+              "delay": 0,
+              "from": "app"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Derive S256 from the submitted verifier.",
+            "Compare it with saved challenge A."
+          ],
+          "actions": [
+            {
+              "type": "work",
+              "node": "auth",
+              "duration": 4,
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "auth",
+              "text": "compare challenges",
+              "color": "accent",
+              "delay": 4
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "A matching proof passes this check.",
+            "Other OAuth checks must also pass."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "auth",
+              "text": "PKCE match",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Then tokens may be issued.",
+            "The code and proof belong together."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "app",
+              "label": "TOKEN",
+              "delay": 0,
+              "from": "auth"
+            },
+            {
+              "type": "state",
+              "node": "app",
+              "text": "token received",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Separate login attempts",
+      "nodes": [
+        {
+          "id": "a",
+          "label": "ATTEMPT A",
+          "state": "code A"
+        },
+        {
+          "id": "b",
+          "label": "ATTEMPT B",
+          "state": "verifier B"
+        },
+        {
+          "id": "auth",
+          "label": "AUTH SERVER",
+          "state": "challenge A saved"
+        }
+      ],
+      "intro": "Two logins overlap. If B overwrites a global verifier, exchanging code A with verifier B fails. Store each verifier with its own transaction.",
+      "takeaway": "Repair transaction-specific storage and start a fresh login. Do not disable PKCE or repeatedly send mismatched credentials.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Attempt A owns code A and verifier A.",
+            "Attempt B needs its own stored verifier."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "A shared variable is overwritten by B.",
+            "Code A is now paired with verifier B."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "a",
+              "text": "wrong verifier B",
+              "color": "bad",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "a",
+              "label": "OVERWRITE",
+              "delay": 0,
+              "from": "b"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The server checks the mismatched proof.",
+            "It must reject this token exchange."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "auth",
+              "label": "A + verifier B",
+              "delay": 0,
+              "from": "a"
+            },
+            {
+              "type": "state",
+              "node": "auth",
+              "text": "PKCE mismatch",
+              "color": "bad",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Keep verifier storage per transaction.",
+            "Repair the client; start a fresh login."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "a",
+              "text": "separate storage",
+              "color": "ok",
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "b",
+              "text": "separate storage",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

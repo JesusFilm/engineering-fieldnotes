@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Follow dependencies",
+    "duration": 28,
+    "intro": "A chain runs dependent steps in order. Checking a draft requires that draft to exist, so these two steps cannot run independently.",
+    "takeaway": "Use a chain when later work depends on an earlier result. Extra steps add latency and new failure points.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "First produce the draft. The check needs that output."
+      },
+      {
+        "time": 7,
+        "text": "Send the draft to the checking step. The dependency is now available."
+      },
+      {
+        "time": 14,
+        "text": "Check the draft against the criteria. Keep the observed findings."
+      },
+      {
+        "time": 21,
+        "text": "Build the result from checked work. Order follows the data dependency."
+      }
+    ],
+    "src": "lessons/orchestration-patterns/01.mp4",
+    "poster": "lessons/orchestration-patterns/01.jpg"
+  },
+  {
+    "title": "Route to one specialist",
+    "duration": 28,
+    "intro": "Routing selects a path based on the request. An API compatibility question goes to the reviewer equipped for that work.",
+    "takeaway": "A route is a choice, not proof that the chosen worker will be correct. Ambiguous requests need a fallback.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The request concerns API compatibility. Not every specialist needs to run."
+      },
+      {
+        "time": 7,
+        "text": "A router chooses the relevant path. It uses the request and routing criteria."
+      },
+      {
+        "time": 14,
+        "text": "Send the task to the API reviewer. Its tools and instructions fit that scope."
+      },
+      {
+        "time": 21,
+        "text": "A new request has unclear scope. Send it to human triage instead."
+      }
+    ],
+    "src": "lessons/orchestration-patterns/02.mp4",
+    "poster": "lessons/orchestration-patterns/02.jpg"
+  },
+  {
+    "title": "Independent parallel work",
+    "duration": 28,
+    "intro": "Two read-only reviews can inspect different concerns in the same code snapshot. Their analyses are independent, so they can overlap.",
+    "takeaway": "Parallel work is appropriate when tasks do not depend on each other or mutate shared state unsafely.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Freeze one code snapshot. Both reviewers must inspect that revision."
+      },
+      {
+        "time": 7,
+        "text": "Assign compatibility and migration reviews. These analyses can run independently."
+      },
+      {
+        "time": 14,
+        "text": "Both reviewers inspect the code. Neither edits shared files."
+      },
+      {
+        "time": 21,
+        "text": "Keep the results tied to the snapshot. The coordinator will need both reports."
+      }
+    ],
+    "src": "lessons/orchestration-patterns/03.mp4",
+    "poster": "lessons/orchestration-patterns/03.jpg"
+  },
+  {
+    "title": "Join before deciding",
+    "duration": 28,
+    "intro": "The final assessment depends on both reviews. One early result does not satisfy the join condition.",
+    "takeaway": "A coordinator must handle missing, failed or conflicting results. Parallel execution does not remove dependencies at the decision point.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "In this run, the API review finishes first. The migration review is still running."
+      },
+      {
+        "time": 7,
+        "text": "The coordinator waits for the dependency. One report cannot stand for both."
+      },
+      {
+        "time": 14,
+        "text": "Migration finishes and reports a risk. Its report travels to the coordinator."
+      },
+      {
+        "time": 21,
+        "text": "The migration risk blocks this release. Two reports do not imply success."
+      }
+    ],
+    "src": "lessons/orchestration-patterns/04.mp4",
+    "poster": "lessons/orchestration-patterns/04.jpg"
+  },
+  {
+    "title": "Revise against criteria",
+    "duration": 28,
+    "intro": "An evaluator checks work against explicit criteria. Feedback can drive a revision loop, but the controller must limit iteration and handle uncertain grading.",
+    "takeaway": "Evaluation is useful feedback, not infallible truth. Stop when criteria or budgets say to stop.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The worker submits a draft. The evaluator applies explicit criteria."
+      },
+      {
+        "time": 7,
+        "text": "The evaluator finds a missing requirement. Return a specific reason to revise."
+      },
+      {
+        "time": 14,
+        "text": "The worker submits a revised result. The evaluator checks it again."
+      },
+      {
+        "time": 21,
+        "text": "The revised example meets the criterion. Stop this loop after one revision."
+      }
+    ],
+    "src": "lessons/orchestration-patterns/05.mp4",
+    "poster": "lessons/orchestration-patterns/05.jpg"
+  }
+]
