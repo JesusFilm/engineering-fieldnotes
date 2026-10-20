@@ -1,0 +1,109 @@
+{
+  "base": "https://jesusfilm.github.io/engineering-fieldnotes/",
+  "checks": [
+    "no eager MP4 requests",
+    "actual playback of every lesson",
+    "real ended event for final lesson of each topic",
+    "every desktop selection preserves scroll and player position",
+    "previous video paused",
+    "new lesson awaits play",
+    "selected state",
+    "browser Back",
+    "query deep links",
+    "stable open explanations",
+    "350px and 390px layouts and selection",
+    "all lessons accessible without JavaScript"
+  ],
+  "results": [
+    {
+      "topic": "harness-engineering",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "loop-engineering",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "context-engineering",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "tool-design",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "memory-architecture",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "orchestration-patterns",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "guardrails-and-permissions",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "agent-evals",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "human-in-the-loop",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "observability-and-tracing",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "load-balancing",
+      "lessons": 6,
+      "passed": true
+    },
+    {
+      "topic": "cache-aside",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "queues-and-backpressure",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "idempotency",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "replication-and-consistency",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "timeouts-and-retries",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "canary-deployments",
+      "lessons": 5,
+      "passed": true
+    },
+    {
+      "topic": "oauth-pkce",
+      "lessons": 5,
+      "passed": true
+    }
+  ]
+}

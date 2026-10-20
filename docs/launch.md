@@ -38,6 +38,6 @@ The implementation branch is `codex/load-balancing-sequence`. Normal builds now 
 - [x] Implement Option A with stable video placement, direct selection and collapsed supporting text.
 - [x] Complete final encoded media and teaching review after rendering corrections.
 - [x] Verify full release and browser behavior against the final files.
-- [ ] Push the branch and publish through GitHub Pages; verify the exact live release.
+- [x] Push the branch and publish through GitHub Pages; verify the exact live release.
 
 See `reviews/sequences/rollout-progress.md` for current evidence and remaining work.

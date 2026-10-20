@@ -1,0 +1,330 @@
+[
+  {
+    "path": "spatial/agent-evals/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/agent-evals/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/agent-evals/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/agent-evals/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/cache-aside/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/cache-aside/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/cache-aside/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/cache-aside/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/canary-deployments/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/canary-deployments/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/canary-deployments/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/canary-deployments/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/context-engineering/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/context-engineering/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/context-engineering/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/context-engineering/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/guardrails-and-permissions/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/guardrails-and-permissions/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/guardrails-and-permissions/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/guardrails-and-permissions/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/harness-engineering/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/harness-engineering/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/harness-engineering/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/harness-engineering/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/human-in-the-loop/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/human-in-the-loop/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/human-in-the-loop/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/human-in-the-loop/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/idempotency/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/idempotency/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/idempotency/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/idempotency/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/load-balancing/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/load-balancing/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/load-balancing/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/load-balancing/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/loop-engineering/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/loop-engineering/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/loop-engineering/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/loop-engineering/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/memory-architecture/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/memory-architecture/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/memory-architecture/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/memory-architecture/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/oauth-pkce/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/oauth-pkce/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/oauth-pkce/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/oauth-pkce/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/observability-and-tracing/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/observability-and-tracing/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/observability-and-tracing/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/observability-and-tracing/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/orchestration-patterns/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/orchestration-patterns/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/orchestration-patterns/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/orchestration-patterns/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/queues-and-backpressure/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/queues-and-backpressure/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/queues-and-backpressure/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/queues-and-backpressure/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/replication-and-consistency/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/replication-and-consistency/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/replication-and-consistency/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/replication-and-consistency/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/shared/vendor/LICENSE",
+    "status": 404
+  },
+  {
+    "path": "spatial/shared/vendor/addons/controls/OrbitControls.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/shared/vendor/addons/loaders/GLTFLoader.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/shared/vendor/addons/utils/BufferGeometryUtils.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/shared/vendor/addons/utils/SkeletonUtils.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/shared/vendor/three.core.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/shared/vendor/three.module.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/shared/viewer.css",
+    "status": 404
+  },
+  {
+    "path": "spatial/shared/viewer.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/timeouts-and-retries/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/timeouts-and-retries/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/timeouts-and-retries/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/timeouts-and-retries/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/tool-design/interaction.js",
+    "status": 404
+  },
+  {
+    "path": "spatial/tool-design/poster.png",
+    "status": 404
+  },
+  {
+    "path": "spatial/tool-design/scene.glb",
+    "status": 404
+  },
+  {
+    "path": "spatial/tool-design/scene.json",
+    "status": 404
+  },
+  {
+    "path": "spatial/viewer.html",
+    "status": 404
+  }
+]

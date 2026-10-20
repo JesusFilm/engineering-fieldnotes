@@ -1,0 +1,1122 @@
+{
+  "base": "https://jesusfilm.github.io/engineering-fieldnotes/",
+  "topics": 18,
+  "lessons": 91,
+  "verifiedFiles": [
+    {
+      "path": "404.html",
+      "sha256": "b4e8d204a42090b7524718543ef9f7e43fb3c16784513bee7784ea8db65c97d4",
+      "status": 200
+    },
+    {
+      "path": "about/index.html",
+      "sha256": "2fc2efa06eb08355d9e9f5927248007ff1e9c4cda80106558cebc4c96855a7fd",
+      "status": 200
+    },
+    {
+      "path": "app.js",
+      "sha256": "5a17ae8dfeaa3766921b22e83c5a7281a01b0ca831df9a3baed1867bcd7cbca5",
+      "status": 200
+    },
+    {
+      "path": "concepts/agent-evals/compare/index.html",
+      "sha256": "9dd8cb31b95fe502b53f41ba75181c16d2ae204b19448ca3b29c06b762171ca9",
+      "status": 200
+    },
+    {
+      "path": "concepts/agent-evals/index.html",
+      "sha256": "1f75c1b48ba2f1f8ee983e21fea1f3f0fdf791788051e9d998707f9680e05967",
+      "status": 200
+    },
+    {
+      "path": "concepts/cache-aside/compare/index.html",
+      "sha256": "8bf945ce8b742a1f9a141e84db242e1daff753abab3c18d4a08f6e3c2ea28317",
+      "status": 200
+    },
+    {
+      "path": "concepts/cache-aside/index.html",
+      "sha256": "852537bed35cbb82e008a37b65c2e4c9e0267e8397464cd356b95deca3b09c1b",
+      "status": 200
+    },
+    {
+      "path": "concepts/canary-deployments/compare/index.html",
+      "sha256": "a2cab4cfef839a8f02c73c28f2f29c08a2b4632d6d514973e4a357130b163975",
+      "status": 200
+    },
+    {
+      "path": "concepts/canary-deployments/index.html",
+      "sha256": "9310af59ef47bda7d178d609c00fdf2c38f2ca00f0d075cc123ecce312fbfaa4",
+      "status": 200
+    },
+    {
+      "path": "concepts/context-engineering/compare/index.html",
+      "sha256": "978c368a1d015c2785878bc797dae0933bcee5fef1b22b3512962fa5301330c6",
+      "status": 200
+    },
+    {
+      "path": "concepts/context-engineering/index.html",
+      "sha256": "e29a8a5e1e3aad89b78aa837bb28d22c2b251437f138c5b930cdde57e17708b3",
+      "status": 200
+    },
+    {
+      "path": "concepts/guardrails-and-permissions/compare/index.html",
+      "sha256": "1dd6d73e474c2b351641d97aca43438bf52c28d94086337841f7b62f4c7ea7bb",
+      "status": 200
+    },
+    {
+      "path": "concepts/guardrails-and-permissions/index.html",
+      "sha256": "02c72a9923fb00c4bbc756f1e223374452a071160a796b27555c87e545e1acd3",
+      "status": 200
+    },
+    {
+      "path": "concepts/harness-engineering/compare/index.html",
+      "sha256": "73ba2a9542479c1b9944df9e2b98feaa4f8391ea2b078c78e49dcb4d1163d3ad",
+      "status": 200
+    },
+    {
+      "path": "concepts/harness-engineering/index.html",
+      "sha256": "913c3bed55a47939f04eb70502aa1060222f25c02c6e1e30a07d842e81acb7be",
+      "status": 200
+    },
+    {
+      "path": "concepts/human-in-the-loop/compare/index.html",
+      "sha256": "619dbde3f726254ad07f8144888c3d7175a0edcc451c2b368cdfc83bb05cef1d",
+      "status": 200
+    },
+    {
+      "path": "concepts/human-in-the-loop/index.html",
+      "sha256": "c2cb60b083275e5cd9c9f319e99539073b57ce69ac9cfc6fc0c1be036b766cfc",
+      "status": 200
+    },
+    {
+      "path": "concepts/idempotency/compare/index.html",
+      "sha256": "5e77af3e178e9d2c43b030a95390fbce27485f339672802b614e9ab57d71ba85",
+      "status": 200
+    },
+    {
+      "path": "concepts/idempotency/index.html",
+      "sha256": "45ad18d923de5cd25e153c130a62460f541c2e820e715f894c2e38deb651f506",
+      "status": 200
+    },
+    {
+      "path": "concepts/load-balancing/compare/index.html",
+      "sha256": "7fa9b934aba48f92b3db156e01ed0033cdac891f2cad19c8d39062829d2006f5",
+      "status": 200
+    },
+    {
+      "path": "concepts/load-balancing/index.html",
+      "sha256": "5427b71b0e7943a427e74192d95ed66358a5524cfd0b16482975aed6a709e0fe",
+      "status": 200
+    },
+    {
+      "path": "concepts/loop-engineering/compare/index.html",
+      "sha256": "9a2ecb58a375b74278fbd99f22007177c8f81cae308887eb26baeb6ff6c0e33c",
+      "status": 200
+    },
+    {
+      "path": "concepts/loop-engineering/index.html",
+      "sha256": "01ab0ad9946472e6ad5d2621f41cf5238df2c81e34674cf26f4d15a5dff8748d",
+      "status": 200
+    },
+    {
+      "path": "concepts/memory-architecture/compare/index.html",
+      "sha256": "c055689a5e78b77d4a4b5e9d8b0351c85f19a51730d6c0c07fd6aacfd71bc932",
+      "status": 200
+    },
+    {
+      "path": "concepts/memory-architecture/index.html",
+      "sha256": "4228d73d716cf0380f577fca81c517830add28ed2206684de7e47ada6112fb37",
+      "status": 200
+    },
+    {
+      "path": "concepts/oauth-pkce/compare/index.html",
+      "sha256": "c32caabe5f96f160495b6de72fd19d1fa57c37c9085919af6d20893a39c3ee8a",
+      "status": 200
+    },
+    {
+      "path": "concepts/oauth-pkce/index.html",
+      "sha256": "64027a3bba44909b67c28d88e012c24f8a49a9ac0b21ac514d3c2ff8a9cfd4a7",
+      "status": 200
+    },
+    {
+      "path": "concepts/observability-and-tracing/compare/index.html",
+      "sha256": "98c8a7fce39793aa496cf225fc780625da5cf41d07ee9ca536bea91f895924a1",
+      "status": 200
+    },
+    {
+      "path": "concepts/observability-and-tracing/index.html",
+      "sha256": "bdcfa36798d1afaed0d6db92e334426ee96f3115eb69e01c27c0f983d69b1c07",
+      "status": 200
+    },
+    {
+      "path": "concepts/orchestration-patterns/compare/index.html",
+      "sha256": "d0c772d82c819ac69a916ea9766e26e21a1735fdaddc1b5b65c779577329fd7a",
+      "status": 200
+    },
+    {
+      "path": "concepts/orchestration-patterns/index.html",
+      "sha256": "3afe251f3eb8bc32c0ba5f4cc127955517ac0e7e1f0d37235381514f6f0e1892",
+      "status": 200
+    },
+    {
+      "path": "concepts/queues-and-backpressure/compare/index.html",
+      "sha256": "1a12b2d05c29cf1e2116a6816271500454ab1bc0b882fe5b51a6efc080d14bca",
+      "status": 200
+    },
+    {
+      "path": "concepts/queues-and-backpressure/index.html",
+      "sha256": "fe1811f2f3a2f2fb650a56ccbfa7d07b43f06fa69caae041400adc83beedb5ff",
+      "status": 200
+    },
+    {
+      "path": "concepts/replication-and-consistency/compare/index.html",
+      "sha256": "528185a7129efebb40c2ac1b3bf50d6d6b95e6d95f48ce0f112c0bf9d7507310",
+      "status": 200
+    },
+    {
+      "path": "concepts/replication-and-consistency/index.html",
+      "sha256": "b7e0e115f29cabb67c446167c8c5b2734b0b5af468a273974db849824332c9a9",
+      "status": 200
+    },
+    {
+      "path": "concepts/timeouts-and-retries/compare/index.html",
+      "sha256": "bd97d4c52d851e15882e33f7131d8e934f418aa9e30fe345f4b941dfa7122ff2",
+      "status": 200
+    },
+    {
+      "path": "concepts/timeouts-and-retries/index.html",
+      "sha256": "07ad47cee602cebf9a18c7ffbf0dbc70d4d6fd28927afbe74aded9b85ab011c8",
+      "status": 200
+    },
+    {
+      "path": "concepts/tool-design/compare/index.html",
+      "sha256": "2831187fadb4ba94f8c89a472ab32b26eaac8b7354f30df807b602d0d1b833a7",
+      "status": 200
+    },
+    {
+      "path": "concepts/tool-design/index.html",
+      "sha256": "8982b06a6df6de2b3efa7e8ae674c1f5571fa2dc9a1757fd61fca7647219f2ab",
+      "status": 200
+    },
+    {
+      "path": "index.html",
+      "sha256": "8ede6b7789e054d10eade606c9e08a2a29e17cea6db9cae3a50a6895ac8c703a",
+      "status": 200
+    },
+    {
+      "path": "lessons/agent-evals/01.jpg",
+      "sha256": "049b0cabb28f6b66ff34697b061b3ee081b83436aa0815ce9ea47a31bf849d6c",
+      "status": 200
+    },
+    {
+      "path": "lessons/agent-evals/01.mp4",
+      "sha256": "a38a29da8c5a7669c7caae32d3381c5f810502a25afa0275c33c73fd5dbabf6e",
+      "status": 200
+    },
+    {
+      "path": "lessons/agent-evals/02.jpg",
+      "sha256": "8cdfd3f650a3280c77edef5c66c51ccec62876365b8432468e6002243f0cff46",
+      "status": 200
+    },
+    {
+      "path": "lessons/agent-evals/02.mp4",
+      "sha256": "96f20244ee69e101ee39f735f8cd3247d5b46b405b8ef31e6c64162714a83c49",
+      "status": 200
+    },
+    {
+      "path": "lessons/agent-evals/03.jpg",
+      "sha256": "03b660739318ea3b79b4ecfca73841ca966a49341fe9d34f4f56bd03518ed446",
+      "status": 200
+    },
+    {
+      "path": "lessons/agent-evals/03.mp4",
+      "sha256": "e43923a37e8130a05d5fce31188a3d7bea734a5cd11ba4f18008dd01e2c6fce3",
+      "status": 200
+    },
+    {
+      "path": "lessons/agent-evals/04.jpg",
+      "sha256": "43aa92d66dddbcd25e8dade606659d4d015a0b270b3e8308b7e96f8610d9ceb6",
+      "status": 200
+    },
+    {
+      "path": "lessons/agent-evals/04.mp4",
+      "sha256": "a39d935b92cc3093dda076a4b24723608134ff93b222b36cf05fc9e66654fa9e",
+      "status": 200
+    },
+    {
+      "path": "lessons/agent-evals/05.jpg",
+      "sha256": "b3cf03a9316b3d78fc9d6f3172c939b607c1c327dd1d9b3988cb348daa066d68",
+      "status": 200
+    },
+    {
+      "path": "lessons/agent-evals/05.mp4",
+      "sha256": "f83ccc50bbed0c95f09e0be0935bc0328790fd2b3fc67bdda7a3bc46dd9d2342",
+      "status": 200
+    },
+    {
+      "path": "lessons/cache-aside/01.jpg",
+      "sha256": "4f1f8e337c9bb4aa91e2c8de1f01850c7bd8b14d7eaa79cc28c49d22ab743261",
+      "status": 200
+    },
+    {
+      "path": "lessons/cache-aside/01.mp4",
+      "sha256": "0756da96946132dc881d7af9840c3efd94d7521364532ae9b52909a2ae7b6c4f",
+      "status": 200
+    },
+    {
+      "path": "lessons/cache-aside/02.jpg",
+      "sha256": "93b925f48b35680252d3dfd739ba4ae084c1b6ef7cc5660be421417e073d0f82",
+      "status": 200
+    },
+    {
+      "path": "lessons/cache-aside/02.mp4",
+      "sha256": "cd3c8a7cd410b580f25ad426f970de47f8d3f4a296ff64f5bae6a65c47c843e3",
+      "status": 200
+    },
+    {
+      "path": "lessons/cache-aside/03.jpg",
+      "sha256": "af514a31af3ca5e421bf572a7b4631296fc4997cf828546780c81ce7b5d5aa0e",
+      "status": 200
+    },
+    {
+      "path": "lessons/cache-aside/03.mp4",
+      "sha256": "98529494cc8d6895dbff736671dc3a4ad3bc0544272c5c5b6d0460a8d5a65b1e",
+      "status": 200
+    },
+    {
+      "path": "lessons/cache-aside/04.jpg",
+      "sha256": "b5074f0e960d5442349fa44c4e48377864134e520b5a75cfc27e5b91c4379b74",
+      "status": 200
+    },
+    {
+      "path": "lessons/cache-aside/04.mp4",
+      "sha256": "0816b2641b266870eb8f9e7cbbfa46e00a7b4abb7fcbf722fd2abadbd6b4418a",
+      "status": 200
+    },
+    {
+      "path": "lessons/cache-aside/05.jpg",
+      "sha256": "af46a5567f2b7b8b1a6a90e2590f7cab20432799a42f683d0fccc11adc3fa8b2",
+      "status": 200
+    },
+    {
+      "path": "lessons/cache-aside/05.mp4",
+      "sha256": "23c6cd920f0c3eb0734755dbf24744a7ae1ab4fbbff65ab9588b87732fdee865",
+      "status": 200
+    },
+    {
+      "path": "lessons/canary-deployments/01.jpg",
+      "sha256": "d2043dc87596e515494cad0ef7c4dd6ba88fff68b74cba5e1eef07df33bb4b87",
+      "status": 200
+    },
+    {
+      "path": "lessons/canary-deployments/01.mp4",
+      "sha256": "29ce39af6bfadb7e2cf192d41f59ca0fc78b8fd99851a2385a314c3a57d755c5",
+      "status": 200
+    },
+    {
+      "path": "lessons/canary-deployments/02.jpg",
+      "sha256": "0273beec58eb8afc179237f6d965e6f1e7583bac4b66feda834146f80bc83b89",
+      "status": 200
+    },
+    {
+      "path": "lessons/canary-deployments/02.mp4",
+      "sha256": "7603aa3c6db5b0ac215bf050350ce5e7fa52d614d974d855b7a19942ff4d0242",
+      "status": 200
+    },
+    {
+      "path": "lessons/canary-deployments/03.jpg",
+      "sha256": "c03c0ed8346b3bd43b52e47e8c2e8b72422bb762a6ce10624ad0f44a7d30e116",
+      "status": 200
+    },
+    {
+      "path": "lessons/canary-deployments/03.mp4",
+      "sha256": "a8e22dc0e89d5a2e81e2b09f51377004d222aae890becd9c9ba242255928dcb7",
+      "status": 200
+    },
+    {
+      "path": "lessons/canary-deployments/04.jpg",
+      "sha256": "8b84470406297c15d0f60c6d6d8ad3d3a5ecb2299da2f70b922f6c1e32e4aaca",
+      "status": 200
+    },
+    {
+      "path": "lessons/canary-deployments/04.mp4",
+      "sha256": "9c9375845c20dae261bf151f5022f9b1c24d4ae154b3fad89c155b78f9b43dac",
+      "status": 200
+    },
+    {
+      "path": "lessons/canary-deployments/05.jpg",
+      "sha256": "43f0fd73a89884317fe6c8fd9ed0e1d8357edf22c055fcc0ac3ac6588e52d37b",
+      "status": 200
+    },
+    {
+      "path": "lessons/canary-deployments/05.mp4",
+      "sha256": "798740086144d74b2fe2f0669f2545549614a465581435edb76b3752ff36cce2",
+      "status": 200
+    },
+    {
+      "path": "lessons/context-engineering/01.jpg",
+      "sha256": "b0f27262c42b2b14ba30c6173c244880841820a4120e86ec1fb80d609f09f5a3",
+      "status": 200
+    },
+    {
+      "path": "lessons/context-engineering/01.mp4",
+      "sha256": "24935f40fbbe26d9caa30040ce6ad6c6c9a5028c00336661014a543435964172",
+      "status": 200
+    },
+    {
+      "path": "lessons/context-engineering/02.jpg",
+      "sha256": "6acef22bb5834d7186959df13e2e6fb6802338bb1a828bed305230506fb45e83",
+      "status": 200
+    },
+    {
+      "path": "lessons/context-engineering/02.mp4",
+      "sha256": "f6661ee3a9cbb96a80e2371cd124d64e9752c08d46498a7bc5126d928b9c396a",
+      "status": 200
+    },
+    {
+      "path": "lessons/context-engineering/03.jpg",
+      "sha256": "737db39323498c80d9c28dd771badad4c32cff2bd15c1aa04e0bb89f610e8fe8",
+      "status": 200
+    },
+    {
+      "path": "lessons/context-engineering/03.mp4",
+      "sha256": "3b5e4a7c51d82472e3d860beae0a7dc6dd99db32aa5aa14735a9eaea49dd5cb5",
+      "status": 200
+    },
+    {
+      "path": "lessons/context-engineering/04.jpg",
+      "sha256": "e58ec18c23b6ec850b4fc531144b4a18f9c749a46b3b794ea8b04366b341b2d7",
+      "status": 200
+    },
+    {
+      "path": "lessons/context-engineering/04.mp4",
+      "sha256": "2ef56a1d5912ad0f5c5491bff2e096a2c1cdd0d1991baed9385da19ed25d6fcf",
+      "status": 200
+    },
+    {
+      "path": "lessons/context-engineering/05.jpg",
+      "sha256": "3eaf9a65fb43ff61a97a6cf11eef8174e58f7be83c54d85b8564a4201d8bf5a0",
+      "status": 200
+    },
+    {
+      "path": "lessons/context-engineering/05.mp4",
+      "sha256": "ad120102b97e7c1c34f2da3f05342ad86e02d8d1b5c5ac891b2c87467a867358",
+      "status": 200
+    },
+    {
+      "path": "lessons/guardrails-and-permissions/01.jpg",
+      "sha256": "a1fbf52fa4a64a524ac06f8f321173b8464aa515c60eebdf72747a3ba2ef4d86",
+      "status": 200
+    },
+    {
+      "path": "lessons/guardrails-and-permissions/01.mp4",
+      "sha256": "e2be4cf18fa2c676caadb1d9dec253387a5efb8ecd5a10b9aa29f9886256029f",
+      "status": 200
+    },
+    {
+      "path": "lessons/guardrails-and-permissions/02.jpg",
+      "sha256": "5c1b657c1aab9629a94d963e810d2af995591ef75a4a8b098f87f0d4e9f4eddd",
+      "status": 200
+    },
+    {
+      "path": "lessons/guardrails-and-permissions/02.mp4",
+      "sha256": "ab2ec6c5afc117306f9e1c9d1a13f8add6f23548dc2768c9c7737ac3367a8d7d",
+      "status": 200
+    },
+    {
+      "path": "lessons/guardrails-and-permissions/03.jpg",
+      "sha256": "55467871578af048b411ed59515b9bf575c6616af731a02f2cdf02884ac8dee9",
+      "status": 200
+    },
+    {
+      "path": "lessons/guardrails-and-permissions/03.mp4",
+      "sha256": "b1cd0c713a6694ef155355f20600258bc1e04385added091c4b3dbeafc44b54f",
+      "status": 200
+    },
+    {
+      "path": "lessons/guardrails-and-permissions/04.jpg",
+      "sha256": "9c8087a8e367d96a8f0af7de6d9aac066edbfda6b7d73bc94031a63dce1337b4",
+      "status": 200
+    },
+    {
+      "path": "lessons/guardrails-and-permissions/04.mp4",
+      "sha256": "1b98a74b8d5f9ecbade1dd105a0a613bdeea5048601caf1cccc96c3adc720e9d",
+      "status": 200
+    },
+    {
+      "path": "lessons/guardrails-and-permissions/05.jpg",
+      "sha256": "a90d59afe87547eef913c458fb21117093becbf37934bea8c06ba141f11c0d07",
+      "status": 200
+    },
+    {
+      "path": "lessons/guardrails-and-permissions/05.mp4",
+      "sha256": "706753a9236d6cfbfef8275f041aa3e3cf27f20a23b925a9ab13a096f7b9fb8d",
+      "status": 200
+    },
+    {
+      "path": "lessons/harness-engineering/01.jpg",
+      "sha256": "1fd35e4a655e83ca0cdac10c287dbaa60c72dd78550a432c35642fdc852fde87",
+      "status": 200
+    },
+    {
+      "path": "lessons/harness-engineering/01.mp4",
+      "sha256": "a5a149b1d62f580367577b7a8ac9bd05a2c63091ffdae518a9e144aa46116388",
+      "status": 200
+    },
+    {
+      "path": "lessons/harness-engineering/02.jpg",
+      "sha256": "d37e5fe6cad4fd203388b6049bc01dc63e95cb747bca5b650f2ae93a0a4f3ad9",
+      "status": 200
+    },
+    {
+      "path": "lessons/harness-engineering/02.mp4",
+      "sha256": "9fff8a5b7f33290cd9728a77b5b2bbcce5b2bbed6c1d4dea638c58a9bbbeb8c8",
+      "status": 200
+    },
+    {
+      "path": "lessons/harness-engineering/03.jpg",
+      "sha256": "2fd40813ce06178f48c62a3b376a41e7b803f464eb03ef3c2fd8f9ea0715f704",
+      "status": 200
+    },
+    {
+      "path": "lessons/harness-engineering/03.mp4",
+      "sha256": "165f5e173bb6ac34c115a0dbf69329b4c6881ddef4098a435cd2374f129e05fc",
+      "status": 200
+    },
+    {
+      "path": "lessons/harness-engineering/04.jpg",
+      "sha256": "56f96997c5ea00a5fdfea883ef6c9ed1bb626e35be04242df69865ac9765aca5",
+      "status": 200
+    },
+    {
+      "path": "lessons/harness-engineering/04.mp4",
+      "sha256": "2cd1bed8d11bf924ef5a96c1a2a790e4bafa0e4eb776c1ecbaaa130139ef2dfb",
+      "status": 200
+    },
+    {
+      "path": "lessons/harness-engineering/05.jpg",
+      "sha256": "f4a06886e207022914caa6392feb29a3945ce45fd0fcb425fb33e197f43d552a",
+      "status": 200
+    },
+    {
+      "path": "lessons/harness-engineering/05.mp4",
+      "sha256": "e2bf45daea1932b22820c0b1b97336caca6c33d38274e0f6c767fef2f3bed34f",
+      "status": 200
+    },
+    {
+      "path": "lessons/human-in-the-loop/01.jpg",
+      "sha256": "43cda88ea4fc22939b1e0fc9e5044c0f6ddbe60c4ec4efe87e3a644e516e7a6f",
+      "status": 200
+    },
+    {
+      "path": "lessons/human-in-the-loop/01.mp4",
+      "sha256": "92483870adbdf66eb62cffc7af718b3c2d13e05e7692a5545185a662ebd7df5f",
+      "status": 200
+    },
+    {
+      "path": "lessons/human-in-the-loop/02.jpg",
+      "sha256": "97edab89c484be3b78634e9dc7e4225fc9a7061fc8a8233f6c105eb91b08d465",
+      "status": 200
+    },
+    {
+      "path": "lessons/human-in-the-loop/02.mp4",
+      "sha256": "767bf4e0b88ba0769d80f508d61688e5613b304ad1d3c902571497df3f90c437",
+      "status": 200
+    },
+    {
+      "path": "lessons/human-in-the-loop/03.jpg",
+      "sha256": "0c2926e786832863a085c290f4748a60f5e062ce83932a03ef2f6d8c8b80ca69",
+      "status": 200
+    },
+    {
+      "path": "lessons/human-in-the-loop/03.mp4",
+      "sha256": "af02835ae971aae3ad352b0fd47bb6dfd20f835a6c2cf23df4f13509a8d36169",
+      "status": 200
+    },
+    {
+      "path": "lessons/human-in-the-loop/04.jpg",
+      "sha256": "49b4ecf7a6d0191a95ab6292a16e82e9660ea5edddd8aa69f05c7328d0ac3f41",
+      "status": 200
+    },
+    {
+      "path": "lessons/human-in-the-loop/04.mp4",
+      "sha256": "fb1cd80579bd44658c0f826176071324c8c5a0cb8303ea99643568f3ce0c2b11",
+      "status": 200
+    },
+    {
+      "path": "lessons/human-in-the-loop/05.jpg",
+      "sha256": "7771cd76db9a888b464f5f397397579ebdc78d3c998ecc7612cd5ab753ead034",
+      "status": 200
+    },
+    {
+      "path": "lessons/human-in-the-loop/05.mp4",
+      "sha256": "5c8a99ff1fbbc049e6998333ea68ec752a7f8ef67884ac7a3e1ad18bd31f64be",
+      "status": 200
+    },
+    {
+      "path": "lessons/idempotency/01.jpg",
+      "sha256": "fe88633e0b0677cae9c6c022c491dfc31f77586cec9aa5dc3bef267a13e385f5",
+      "status": 200
+    },
+    {
+      "path": "lessons/idempotency/01.mp4",
+      "sha256": "e059559029002ec9afa8da783f56888aa8811d97adb9c6647b1d773182774a0a",
+      "status": 200
+    },
+    {
+      "path": "lessons/idempotency/02.jpg",
+      "sha256": "95f48c2b1aebbfb69c6e332734ced43929975bfab6df1b42e72d2c63bac3a2ac",
+      "status": 200
+    },
+    {
+      "path": "lessons/idempotency/02.mp4",
+      "sha256": "211b5bc6bdea05e8cc901b92ac2ced0aad45aa2e5d29797c15d5cb10ff019c34",
+      "status": 200
+    },
+    {
+      "path": "lessons/idempotency/03.jpg",
+      "sha256": "eac72511eafb44561286bfcad7aa4a30e636c549f641c0a2734de91f895940c4",
+      "status": 200
+    },
+    {
+      "path": "lessons/idempotency/03.mp4",
+      "sha256": "c226114470ccc4624b86d22d653edf12f1c36e76a486ea259a026ad91bff4817",
+      "status": 200
+    },
+    {
+      "path": "lessons/idempotency/04.jpg",
+      "sha256": "620ae201211f641bb469508d156398ad53af6c4aa63a0ef8f22ebd568e62a20b",
+      "status": 200
+    },
+    {
+      "path": "lessons/idempotency/04.mp4",
+      "sha256": "b9d818815d9db9b00481ff562b37fe790ec7b4d35458cd2657be26bf322278de",
+      "status": 200
+    },
+    {
+      "path": "lessons/idempotency/05.jpg",
+      "sha256": "e2aa5a354a8fe0bc3c160d1d253c22b46898b9872d40ec3c1ba7f6d568b39f01",
+      "status": 200
+    },
+    {
+      "path": "lessons/idempotency/05.mp4",
+      "sha256": "d9928043984adafbaf5357f6488674cb03193ef13e2902d0ffe73040cd8c3336",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/01.jpg",
+      "sha256": "8bc87d86fb4d7c2e9b0a48f08072cd34802f7778dd93ed78998f599f15760700",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/01.mp4",
+      "sha256": "f07b1c85301dfd26e884fdc6fed0bdf4d4f5fd7e5a9db3f03f46436f16843321",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/02.jpg",
+      "sha256": "ab4eff6c977d46a31643a416cbe8c2fe89c3f7abcb39f87918704b6131858f33",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/02.mp4",
+      "sha256": "7eaa944b610ee00cd9b24977c777a01b311c08d21442085317149791359fd7ce",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/03.jpg",
+      "sha256": "0da120f1aa4d25a9dbdd6814cbb79786cffec809a22c511ff59c2567e16de809",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/03.mp4",
+      "sha256": "b28c9dd560c51f0890a0c6fb0d02bd253c9d53b9c12bd0f39c13611fff1cf623",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/04.jpg",
+      "sha256": "80d8943d36f54b8bf8d74b9d51d858e8dd6f050d3ee3c6f6dfc3d96c23c7e964",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/04.mp4",
+      "sha256": "d1b343fcad83d4598b16565c52da04315aabdaeb65a48709d06213497c76e0eb",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/05.jpg",
+      "sha256": "6c6a6f6dcae4750c7e3c6455ece333291139dbcc842ead106948239e5f91cd2c",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/05.mp4",
+      "sha256": "a0b1bdf7dc01a0fae80974afece3d021396eecb096c39626cb7a23c6c38cf50d",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/06.jpg",
+      "sha256": "fa349d82f378083093261135cd7fcbc3f8b6639fa9561a6502e274da34d2b3b6",
+      "status": 200
+    },
+    {
+      "path": "lessons/load-balancing/06.mp4",
+      "sha256": "83e529a4ff9b94ddc1c11ac8220ea4011b285638ba1366c577442e7b2a20497f",
+      "status": 200
+    },
+    {
+      "path": "lessons/loop-engineering/01.jpg",
+      "sha256": "818c2153183dae3a3f45ccacaf87eaf814b6338d4c340cf2e90988e19f43cc3e",
+      "status": 200
+    },
+    {
+      "path": "lessons/loop-engineering/01.mp4",
+      "sha256": "6d233bc79980798a9f67fdcdee3316e93bfc03fcf60561af4a4ee2aa53194a0f",
+      "status": 200
+    },
+    {
+      "path": "lessons/loop-engineering/02.jpg",
+      "sha256": "fd06b8471e1a936cf56628982387322846965886bb85af7d948b6987c164c56b",
+      "status": 200
+    },
+    {
+      "path": "lessons/loop-engineering/02.mp4",
+      "sha256": "73ce9f17834f263f3073833b56bdbb3a5488bd15572ebd1a8011fa0217a5ab15",
+      "status": 200
+    },
+    {
+      "path": "lessons/loop-engineering/03.jpg",
+      "sha256": "871ffe62f8fc4844be4fa47d838395ee738e89b033dd7cfd9f25d3dad257146b",
+      "status": 200
+    },
+    {
+      "path": "lessons/loop-engineering/03.mp4",
+      "sha256": "faed3b21779c22d249fd7142555113bd9f0b5498851e129a5d4eaa0da242e53f",
+      "status": 200
+    },
+    {
+      "path": "lessons/loop-engineering/04.jpg",
+      "sha256": "bb21cb569f7ff82def7c8639e1c48f6cd5ea6ebe042785b66ec68b8daf358ceb",
+      "status": 200
+    },
+    {
+      "path": "lessons/loop-engineering/04.mp4",
+      "sha256": "1d410cdd58c93d60a3fb134efe792e7b9d7727401c3b51c3c8aca5fc83345ddf",
+      "status": 200
+    },
+    {
+      "path": "lessons/loop-engineering/05.jpg",
+      "sha256": "2ed475f25f1dcfac9d4ca21caa1213143647167ab5fa7ea3bc256bf09d1c9a45",
+      "status": 200
+    },
+    {
+      "path": "lessons/loop-engineering/05.mp4",
+      "sha256": "98e879d99bfe966ee97c65c0562052386edd7fc59748087c87b979d3685abda2",
+      "status": 200
+    },
+    {
+      "path": "lessons/memory-architecture/01.jpg",
+      "sha256": "05f9581b0d7da3d6fd812c98b4985f2eb9327678572670a1f3029a3efacb3229",
+      "status": 200
+    },
+    {
+      "path": "lessons/memory-architecture/01.mp4",
+      "sha256": "9284e0c5643e82d4d38eb8d2958c843ed5cafe050168bff67aa942820840c08d",
+      "status": 200
+    },
+    {
+      "path": "lessons/memory-architecture/02.jpg",
+      "sha256": "822d3ec1764405e6b18a3c81afe2b82627807798c2df80d19257c6622e184fc9",
+      "status": 200
+    },
+    {
+      "path": "lessons/memory-architecture/02.mp4",
+      "sha256": "61dae169add8e69da4d2729763cc77cba52c975860eaf65725e975903ea4b94c",
+      "status": 200
+    },
+    {
+      "path": "lessons/memory-architecture/03.jpg",
+      "sha256": "aac2e5ebdb37c5cd1211c969640b203aafbcc400824843f9e430626a66b21e51",
+      "status": 200
+    },
+    {
+      "path": "lessons/memory-architecture/03.mp4",
+      "sha256": "3e86d964bf9538bb26afaba2eb635f46728c3f1aaba45b2806f2bfc6d60bc7e3",
+      "status": 200
+    },
+    {
+      "path": "lessons/memory-architecture/04.jpg",
+      "sha256": "965a1f3a5acd69b4e32756e10bfa1a85e70e61373b07c4719d402daeb5771aee",
+      "status": 200
+    },
+    {
+      "path": "lessons/memory-architecture/04.mp4",
+      "sha256": "3562888f238271a4b75875a44e4bbc6ae40b7753a08ccb810f0bd9d3e2b380c6",
+      "status": 200
+    },
+    {
+      "path": "lessons/memory-architecture/05.jpg",
+      "sha256": "1c198c0adb349b6586e70c4da0eda8ca18a761c1f48bc7ba66ce910a7b6c5e73",
+      "status": 200
+    },
+    {
+      "path": "lessons/memory-architecture/05.mp4",
+      "sha256": "4387cddfe382213d79b39595c905a81590a0a2cc4059afe0b0c8fa5f1d0bce31",
+      "status": 200
+    },
+    {
+      "path": "lessons/oauth-pkce/01.jpg",
+      "sha256": "8a18acdc230e703e59a3e10c44871fcb827b5e95c0108b53aa9c9f10743209b1",
+      "status": 200
+    },
+    {
+      "path": "lessons/oauth-pkce/01.mp4",
+      "sha256": "3ef03bb3e588c66746d524541b028acbddde30e6941c65ec5d22887ae5fd063e",
+      "status": 200
+    },
+    {
+      "path": "lessons/oauth-pkce/02.jpg",
+      "sha256": "dd4a521bac37eaf0b40b5c9b061b5c0ad2aca55815904a409819e3119fc4078b",
+      "status": 200
+    },
+    {
+      "path": "lessons/oauth-pkce/02.mp4",
+      "sha256": "91093262f1cb9c0112552b970a5b4a44f85d5751d6b558392b033bcd75cbd10d",
+      "status": 200
+    },
+    {
+      "path": "lessons/oauth-pkce/03.jpg",
+      "sha256": "e8e931f06696cb4f19c7871020fb24f45a440820c6e13a7a670ff4027a41d672",
+      "status": 200
+    },
+    {
+      "path": "lessons/oauth-pkce/03.mp4",
+      "sha256": "e512c8cb43c271270420a96a138d024bb772d661100d21b639afe31055ae0262",
+      "status": 200
+    },
+    {
+      "path": "lessons/oauth-pkce/04.jpg",
+      "sha256": "f17d3884522ed4c129b338ba33fd48451df11c9adde3711b0840c2b109a4bf2a",
+      "status": 200
+    },
+    {
+      "path": "lessons/oauth-pkce/04.mp4",
+      "sha256": "4c4888d39417ef06124365315b7a9fef1dc25d53292dca6b56b30c6549b3c743",
+      "status": 200
+    },
+    {
+      "path": "lessons/oauth-pkce/05.jpg",
+      "sha256": "efd51166dfd2a749c5de4f02679f3cf4bbe13f8c6272a4b62f8e1765adb4a523",
+      "status": 200
+    },
+    {
+      "path": "lessons/oauth-pkce/05.mp4",
+      "sha256": "695ee20514f974a029d67887ea24c16818017974e5f28e9e93a031d47d14c27a",
+      "status": 200
+    },
+    {
+      "path": "lessons/observability-and-tracing/01.jpg",
+      "sha256": "0c7e6564ad394347118b31d8422363ba7ae74c3cf181f8f5c4128d5eae21ca2b",
+      "status": 200
+    },
+    {
+      "path": "lessons/observability-and-tracing/01.mp4",
+      "sha256": "d53b9a759c9bd65331add09a03645bff7dc14b6b4cdd61911b0c61614b7708a4",
+      "status": 200
+    },
+    {
+      "path": "lessons/observability-and-tracing/02.jpg",
+      "sha256": "1a5a7e41b3b712aadf7deadcf7aab70e4b4b0e4e31d2128443c8c04c983b878c",
+      "status": 200
+    },
+    {
+      "path": "lessons/observability-and-tracing/02.mp4",
+      "sha256": "dfb1eeb4bca9c24037b2be9117d97986791d48280a92e14ac71ea819f8b94136",
+      "status": 200
+    },
+    {
+      "path": "lessons/observability-and-tracing/03.jpg",
+      "sha256": "b763c536f7ace2d8ef2353373e6c8088e36692632b4b249e23618df888dfc784",
+      "status": 200
+    },
+    {
+      "path": "lessons/observability-and-tracing/03.mp4",
+      "sha256": "9e0cf51e68ecea563a072d2f87c5700d545f0ccd94378bf99674a60ce1532a8f",
+      "status": 200
+    },
+    {
+      "path": "lessons/observability-and-tracing/04.jpg",
+      "sha256": "82199cf7dd0e6272c2530f3467aa87ea0cf8f9e9a9ed1c24f630ea4e099720e4",
+      "status": 200
+    },
+    {
+      "path": "lessons/observability-and-tracing/04.mp4",
+      "sha256": "dfbe143ea88d10870093ed8d483595b2f32576b5a669768c6b039d734eb0007e",
+      "status": 200
+    },
+    {
+      "path": "lessons/observability-and-tracing/05.jpg",
+      "sha256": "f74e9aef35336205c05a69a24a9dbe5b9871e5eea0ec73d5874f7acabacbd8b3",
+      "status": 200
+    },
+    {
+      "path": "lessons/observability-and-tracing/05.mp4",
+      "sha256": "1b870595c9d7b384e3e306de453830696dcba86ea682c0eba77067342cbeb335",
+      "status": 200
+    },
+    {
+      "path": "lessons/orchestration-patterns/01.jpg",
+      "sha256": "e2e5bf0b3b2c1ff7b08b4187fb1625e96246833ff997fdf48b92595369b3191f",
+      "status": 200
+    },
+    {
+      "path": "lessons/orchestration-patterns/01.mp4",
+      "sha256": "2c402e86450ddece5409504b033551423741c50901a49dc2a1b34a3dc30b3010",
+      "status": 200
+    },
+    {
+      "path": "lessons/orchestration-patterns/02.jpg",
+      "sha256": "c2931b6348e5a55e28a6f47d0571c84954f442b6b825c84411c2bda282cd7846",
+      "status": 200
+    },
+    {
+      "path": "lessons/orchestration-patterns/02.mp4",
+      "sha256": "6be321bd510d9a78e1fdf0d111ccccd2c49b081c9877620335e02b2254488dd9",
+      "status": 200
+    },
+    {
+      "path": "lessons/orchestration-patterns/03.jpg",
+      "sha256": "267b66d8e71a39ad897db988b58cf1a192179ea27382d9d92ce73a18e1dce8da",
+      "status": 200
+    },
+    {
+      "path": "lessons/orchestration-patterns/03.mp4",
+      "sha256": "f90eee5bc0e58f98726ee0f2f3a44a01f5124c8e517285e657a416f60baa9fae",
+      "status": 200
+    },
+    {
+      "path": "lessons/orchestration-patterns/04.jpg",
+      "sha256": "8739a9145ecc942721e492eab2281e6b544ece30d3ed480ce8a1cd099991c989",
+      "status": 200
+    },
+    {
+      "path": "lessons/orchestration-patterns/04.mp4",
+      "sha256": "ff4d129a4658408ff89692fd0358467cc67d19b7a85e258f642182c9cfb16089",
+      "status": 200
+    },
+    {
+      "path": "lessons/orchestration-patterns/05.jpg",
+      "sha256": "0b04f8d45b44f5247a4a6dfbe1e237a7b4a013f10629fe5128c5de43800e4d29",
+      "status": 200
+    },
+    {
+      "path": "lessons/orchestration-patterns/05.mp4",
+      "sha256": "7584dc2574b777f69c16edfa71dc5a814adae80f92ab3a4d5eb587b558866bd5",
+      "status": 200
+    },
+    {
+      "path": "lessons/queues-and-backpressure/01.jpg",
+      "sha256": "5ee1a60f56714bd73f21b35eae0e0d59567c704418e5b8a0da3044113da60254",
+      "status": 200
+    },
+    {
+      "path": "lessons/queues-and-backpressure/01.mp4",
+      "sha256": "b0ff78411d8330c661fd9dd4d61015aeaac83e13e2aad042f037edcd8443adbd",
+      "status": 200
+    },
+    {
+      "path": "lessons/queues-and-backpressure/02.jpg",
+      "sha256": "235c5fe64b8a2042107291f07a9094e717c1b36b4ee7cccf0f51e803c3706c8a",
+      "status": 200
+    },
+    {
+      "path": "lessons/queues-and-backpressure/02.mp4",
+      "sha256": "87b6c625598ab4f91e252ee545849ea1ace5cc99e73e57c69fef172bfb797f6e",
+      "status": 200
+    },
+    {
+      "path": "lessons/queues-and-backpressure/03.jpg",
+      "sha256": "925a390ff0459907e6100308907973b21afb8d72ceddfb46a29cc041a9ebd0a4",
+      "status": 200
+    },
+    {
+      "path": "lessons/queues-and-backpressure/03.mp4",
+      "sha256": "767678b8809e8410a6f5538e333a84faf55da1022ea4b8417cadcacfbb95272c",
+      "status": 200
+    },
+    {
+      "path": "lessons/queues-and-backpressure/04.jpg",
+      "sha256": "9d96a7cab9df1c07e3a34055cc2fa23f516056771232687a0973f4c9e53c2337",
+      "status": 200
+    },
+    {
+      "path": "lessons/queues-and-backpressure/04.mp4",
+      "sha256": "124cdbd6038699df721bd63c7b261875749ed3b4e1f72d4746307fb73a6dd6aa",
+      "status": 200
+    },
+    {
+      "path": "lessons/queues-and-backpressure/05.jpg",
+      "sha256": "30e57971ce872331fb8fdae6bff42882861d89b5a2d09f07ab9aace25bd032e0",
+      "status": 200
+    },
+    {
+      "path": "lessons/queues-and-backpressure/05.mp4",
+      "sha256": "acfe2bc464fce5982236b27507355e8bb0d5dfbb272fd92c0aa65f39b2778546",
+      "status": 200
+    },
+    {
+      "path": "lessons/replication-and-consistency/01.jpg",
+      "sha256": "ca7c37630761ce7e12b33a34015ced3a2e224e76ce125e97b4f8a6b901285079",
+      "status": 200
+    },
+    {
+      "path": "lessons/replication-and-consistency/01.mp4",
+      "sha256": "4ce425123f751a43c997807afc050d2e55a3df402f854d1e930687042d3e5312",
+      "status": 200
+    },
+    {
+      "path": "lessons/replication-and-consistency/02.jpg",
+      "sha256": "780587fb82c7a4fe03f460979cf74d8a6081eaa7596209503c1d9099df8814ba",
+      "status": 200
+    },
+    {
+      "path": "lessons/replication-and-consistency/02.mp4",
+      "sha256": "cdb1a648d6f0253d1b2ce724765ed90fdbc6c475292770f33a249897a25e3d76",
+      "status": 200
+    },
+    {
+      "path": "lessons/replication-and-consistency/03.jpg",
+      "sha256": "7b638fe886d113684863c05b72d7ca8ba6f113f784214d96d1b8edbbd5e5decd",
+      "status": 200
+    },
+    {
+      "path": "lessons/replication-and-consistency/03.mp4",
+      "sha256": "38bd195382e4fbcae21d577ff1ed864ae79a30a1fe187c5992d0ef3de7d2febd",
+      "status": 200
+    },
+    {
+      "path": "lessons/replication-and-consistency/04.jpg",
+      "sha256": "4721120b0871e7b4547d49d543f6faa070395da4dda0a92ea61a7d514455d024",
+      "status": 200
+    },
+    {
+      "path": "lessons/replication-and-consistency/04.mp4",
+      "sha256": "b0d7f305a7d51d9b4f44b48df419d888f4e54042e07dbceeeb283e03a37face2",
+      "status": 200
+    },
+    {
+      "path": "lessons/replication-and-consistency/05.jpg",
+      "sha256": "e8b08ea7ef06623bec353538c1a910c89e8b8f0540a2a8f3f7b9247d30de4a5c",
+      "status": 200
+    },
+    {
+      "path": "lessons/replication-and-consistency/05.mp4",
+      "sha256": "c1c4b2e6cae6e09022511c51602c9d98a93f0c5de505a17a145def1422bdab83",
+      "status": 200
+    },
+    {
+      "path": "lessons/timeouts-and-retries/01.jpg",
+      "sha256": "46052419d009a02ae1882eec67654bbb671efbd41040ae12dcb0dd456ca0d6ef",
+      "status": 200
+    },
+    {
+      "path": "lessons/timeouts-and-retries/01.mp4",
+      "sha256": "b3d88503c954286e15774cbced559ca9faea80bfa220de16745b3b9da894bee7",
+      "status": 200
+    },
+    {
+      "path": "lessons/timeouts-and-retries/02.jpg",
+      "sha256": "bbab278e8511d579d32ed0a49105c8e6e807ffff1e7acd5544d8361fc984b582",
+      "status": 200
+    },
+    {
+      "path": "lessons/timeouts-and-retries/02.mp4",
+      "sha256": "171bb488f82b6b1f0e9ddea8534ba13d8dbc5faffc605f26cdd0a309fa0fc832",
+      "status": 200
+    },
+    {
+      "path": "lessons/timeouts-and-retries/03.jpg",
+      "sha256": "43f4b6c47520e7285a9fea35d67046a898cb26dc28249ab1084a283d611c30a0",
+      "status": 200
+    },
+    {
+      "path": "lessons/timeouts-and-retries/03.mp4",
+      "sha256": "dcc1a557990be3d25291ddeacd973bace50612c398bf1b2dd8d0cb85a94c2b41",
+      "status": 200
+    },
+    {
+      "path": "lessons/timeouts-and-retries/04.jpg",
+      "sha256": "8594fa24a9555777eaa09149c905b8151b26008abe6ce3de2a57519c41ffa7b6",
+      "status": 200
+    },
+    {
+      "path": "lessons/timeouts-and-retries/04.mp4",
+      "sha256": "a89d6e599fa7bbe43e50bf0952b9f528a0a7f6c2246604dd2fa37acf92c70833",
+      "status": 200
+    },
+    {
+      "path": "lessons/timeouts-and-retries/05.jpg",
+      "sha256": "4b16c5974b50107d45c88d3407ecdd26c9849caac4ab70ba8deb84ff4ac475d5",
+      "status": 200
+    },
+    {
+      "path": "lessons/timeouts-and-retries/05.mp4",
+      "sha256": "c15a46b71482808105ea694b65b1de50703aa460ecad233f39c2ce77f989eb99",
+      "status": 200
+    },
+    {
+      "path": "lessons/tool-design/01.jpg",
+      "sha256": "554e05ae84ca17a31cb001a4d79dba4187e15b6d891d4fa21cfd67b3335a8753",
+      "status": 200
+    },
+    {
+      "path": "lessons/tool-design/01.mp4",
+      "sha256": "3984b42d57ed6cf3fbe3d33b92d99b7c3c78415950979464bc37c75d2a3e0b44",
+      "status": 200
+    },
+    {
+      "path": "lessons/tool-design/02.jpg",
+      "sha256": "def91da25365bbd2c17f901c3159eec7f8aebd85bea362fbcca755a79e19b90e",
+      "status": 200
+    },
+    {
+      "path": "lessons/tool-design/02.mp4",
+      "sha256": "80dff624265531a784c1add61984a14bec2b4f900de2cafa987f94e4439839bb",
+      "status": 200
+    },
+    {
+      "path": "lessons/tool-design/03.jpg",
+      "sha256": "7dce70849649d169606655d89d1cebdf11d79b067191a860492399a805ddc189",
+      "status": 200
+    },
+    {
+      "path": "lessons/tool-design/03.mp4",
+      "sha256": "ce1aa99900cde974ff81ab3be2926a3ed09ee7b90c5da19210ba69058d871b09",
+      "status": 200
+    },
+    {
+      "path": "lessons/tool-design/04.jpg",
+      "sha256": "139fd18087b3ac6f632e4004963089eea8a774ed49a54968a3e95188c57a01cc",
+      "status": 200
+    },
+    {
+      "path": "lessons/tool-design/04.mp4",
+      "sha256": "8914bb38a231e49887d2e661edaf0327f90521dfbcf57925b3326ca0ea2bf85c",
+      "status": 200
+    },
+    {
+      "path": "lessons/tool-design/05.jpg",
+      "sha256": "1d95042f7d985f3397821237ddf33f525e85367905ff1b69b7552407a8c2121d",
+      "status": 200
+    },
+    {
+      "path": "lessons/tool-design/05.mp4",
+      "sha256": "80ccfae115bbd5731701101c007773bc5f61384555faed02530bb3ce588f4e83",
+      "status": 200
+    },
+    {
+      "path": "style.css",
+      "sha256": "87aea037caa9d1973bdcccbfd904c0ae41755a82d0176b5a144532e087cf4b8a",
+      "status": 200
+    }
+  ]
+}
