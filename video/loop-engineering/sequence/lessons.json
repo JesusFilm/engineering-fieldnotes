@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Act, observe, decide",
+    "duration": 28,
+    "intro": "An agent loop alternates an action, an observation and a decision about what to do next. The controller enforces continuation and stopping rules.",
+    "takeaway": "A loop requires evidence and boundaries; repeated prompting alone does not enforce them.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The agent proposes an action. The tool executes the permitted operation."
+      },
+      {
+        "time": 7,
+        "text": "The tool returns an observation. The controller receives actual evidence."
+      },
+      {
+        "time": 14,
+        "text": "The controller checks the stopping rules. It decides whether another step is allowed."
+      },
+      {
+        "time": 21,
+        "text": "If allowed, another action can follow. The cycle has an explicit decision point."
+      }
+    ],
+    "src": "lessons/loop-engineering/01.mp4",
+    "poster": "lessons/loop-engineering/01.jpg"
+  },
+  {
+    "title": "Use a specific failure",
+    "duration": 28,
+    "intro": "A discount-calculation test fails with a concrete assertion. The agent can connect that observation to a targeted code change.",
+    "takeaway": "A failing assertion is useful only when the relevant tests actually ran. Preserve the failing input and expected behavior.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Twelve tests run against the code. One assertion fails."
+      },
+      {
+        "time": 7,
+        "text": "Send the failing assertion to the agent. It shows expected and actual behavior."
+      },
+      {
+        "time": 14,
+        "text": "The agent makes a targeted repair. The code changes; the evidence is now old."
+      },
+      {
+        "time": 21,
+        "text": "Return the changed code to the runner. The next observation must be fresh."
+      }
+    ],
+    "src": "lessons/loop-engineering/02.mp4",
+    "poster": "lessons/loop-engineering/02.jpg"
+  },
+  {
+    "title": "Stop after verified success",
+    "duration": 28,
+    "intro": "The repaired code runs through the selected suite again. When the configured success criteria are met, the edit loop stops and hands over evidence.",
+    "takeaway": "Passing this suite supports the tested behavior. It does not establish that all possible behavior is correct.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Run the same relevant checks again. This time, test the repaired revision."
+      },
+      {
+        "time": 7,
+        "text": "All twelve selected tests pass. The runner reports what actually ran."
+      },
+      {
+        "time": 14,
+        "text": "The controller checks the success rule. The observed result satisfies this rule."
+      },
+      {
+        "time": 21,
+        "text": "Stop editing and hand over the evidence. Unrequested edits add uncertainty."
+      }
+    ],
+    "src": "lessons/loop-engineering/03.mp4",
+    "poster": "lessons/loop-engineering/03.jpg"
+  },
+  {
+    "title": "No tests is not a pass",
+    "duration": 28,
+    "intro": "A mistyped test selector can select zero tests. Under this repair-only policy, the agent stops rather than treating the empty run as proof of correctness.",
+    "takeaway": "Distinguish assertion failure, collection errors and no tests selected. They require different next actions.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A selector matches no tests. No behavior has been checked."
+      },
+      {
+        "time": 7,
+        "text": "The runner returns that empty selection. The agent cannot call it a passing suite."
+      },
+      {
+        "time": 14,
+        "text": "This policy stops further code edits. Keep the command and selection output."
+      },
+      {
+        "time": 21,
+        "text": "Hand the evidence to an engineer. Repair the test setup before continuing."
+      }
+    ],
+    "src": "lessons/loop-engineering/04.mp4",
+    "poster": "lessons/loop-engineering/04.jpg"
+  },
+  {
+    "title": "Limit repair attempts",
+    "duration": 28,
+    "intro": "A controller can cap time, tool calls or repair attempts. Repeated unproductive failures should lead to a useful handoff rather than an endless loop.",
+    "takeaway": "The controller must enforce the budget outside the model. A handoff should explain what was tried and what still fails.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The task has a configured attempt budget. The controller counts completed attempts."
+      },
+      {
+        "time": 7,
+        "text": "Another repair attempt still fails. The remaining allowance decreases."
+      },
+      {
+        "time": 14,
+        "text": "The budget is exhausted. The controller blocks another edit cycle."
+      },
+      {
+        "time": 21,
+        "text": "Send the remaining failure and evidence. A human can choose a new approach."
+      }
+    ],
+    "src": "lessons/loop-engineering/05.mp4",
+    "poster": "lessons/loop-engineering/05.jpg"
+  }
+]

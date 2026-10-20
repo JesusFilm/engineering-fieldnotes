@@ -80,5 +80,5 @@ lessons=[
 for i,l in enumerate(lessons,1):
  scene='FlowVideo.scene({meta:'+json.dumps(dict(title=l['title'],subtitle=f'LOAD BALANCING / {i} OF 6',titleSize=70,subtitleSize=34,duration=l['duration'],fps=24,speed=1,fadeAll=True))+',build(s){const LESSON='+str(i)+';'+common+l['code']+'}});\n'
  (ROOT/f'{i:02}.js').write_text(scene)
- l['src']=f'pilots/load-balancing/{i:02}.mp4';l['poster']=f'pilots/load-balancing/{i:02}.jpg';l.pop('code');l['beats']=[{'time':t,'text':v} for t,v in l['beats']]
+ l['src']=f'lessons/load-balancing/{i:02}.mp4';l['poster']=f'lessons/load-balancing/{i:02}.jpg';l.pop('code');l['beats']=[{'time':t,'text':v} for t,v in l['beats']]
 (ROOT/'lessons.json').write_text(json.dumps(lessons,indent=2)+'\n')

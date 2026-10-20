@@ -64,47 +64,67 @@ for (const video of videos) {
   video.querySelector('source')?.addEventListener('error', showMediaError);
 }
 
-// With no JavaScript, all lessons and their anchor links remain usable.
+// Direct lesson selection changes the media in place, never the scroll position.
 for (const sequence of document.querySelectorAll('.lesson-sequence')) {
   const panels = [...sequence.querySelectorAll('.lesson-panel')];
   const links = [...sequence.querySelectorAll('[data-lesson-link]')];
+  const readings = [...sequence.querySelectorAll('[data-lesson-notes]')];
+  const picker = sequence.querySelector('.lesson-picker');
+  const select = picker.querySelector('select');
   const status = sequence.querySelector('.lesson-status');
-  function show(id, focus = false) {
-    const selected = panels.find(panel => panel.id === id) || panels[0];
+  picker.hidden = false;
+  sequence.classList.add('enhanced');
+  const fromURL = () => new URL(location.href).searchParams.get('lesson') || location.hash.match(/^#lesson-(\d+)$/)?.[1] || '1';
+  function show(value) {
+    const selected = panels.find(panel => panel.id === `lesson-${value}`) || panels[0];
+    const number = String(panels.indexOf(selected) + 1);
     for (const panel of panels) {
-      const current = panel === selected;
-      panel.hidden = !current;
-      if (!current) panel.querySelector('video').pause();
+      panel.hidden = panel !== selected;
+      if (panel !== selected) panel.querySelector('video').pause();
     }
     for (const link of links) {
-      if (link.hash === '#' + selected.id) link.setAttribute('aria-current', 'step');
+      if (link.dataset.lessonLink === number) link.setAttribute('aria-current', 'step');
       else link.removeAttribute('aria-current');
     }
-    const number = panels.indexOf(selected) + 1;
-    status.hidden = false;
-    status.textContent = `Lesson ${number} of ${panels.length}: ${selected.querySelector('h3').textContent}`;
-    if (focus) {
-      selected.querySelector('h3').focus({preventScroll: true});
-      selected.scrollIntoView({block: 'start', behavior: 'instant'});
-    }
+    for (const reading of readings) reading.hidden = reading.dataset.lessonNotes !== number;
+    select.value = number;
+    status.textContent = `Lesson ${number} of ${panels.length}: ${selected.dataset.title}`;
+  }
+  function choose(value) {
+    const url = new URL(location.href);
+    url.searchParams.set('lesson', value);
+    url.hash = '';
+    history.pushState(null, '', url);
+    show(value);
   }
   for (const link of links) link.addEventListener('click', event => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
-    history.pushState(null, '', link.hash);
-    show(link.hash.slice(1), true);
+    choose(link.dataset.lessonLink);
   });
-  for (const panel of panels) {
-    const video = panel.querySelector('video');
-    video.addEventListener('ended', () => {
-      panel.querySelector('.lesson-ended').hidden = false;
-      status.textContent = `${panel.querySelector('h3').textContent} finished. ${panel === panels.at(-1) ? 'Sequence complete. Continue with the guide when ready.' : 'Continue to the next lesson when ready.'}`;
-    });
-    video.addEventListener('play', () => { panel.querySelector('.lesson-ended').hidden = true; });
+  select.addEventListener('change', () => choose(select.value));
+  for (const panel of panels) panel.querySelector('video').addEventListener('ended', () => {
+    status.textContent = `${panel.dataset.title} finished. Choose another lesson or replay.`;
+  });
+  window.addEventListener('popstate', () => show(fromURL()));
+  window.addEventListener('hashchange', () => show(fromURL()));
+  const initialLesson = fromURL();
+  // Old lesson anchors would otherwise scroll past the chapter picker on load.
+  if (/^#lesson-\d+$/.test(location.hash)) {
+    const url = new URL(location.href);
+    url.searchParams.set('lesson', initialLesson);
+    url.hash = '';
+    history.replaceState(null, '', url);
   }
-  window.addEventListener('hashchange', () => {
-    if (panels.some(panel => '#' + panel.id === location.hash)) show(location.hash.slice(1));
-  });
-  window.addEventListener('popstate', () => show(location.hash.slice(1)));
-  show(location.hash.slice(1));
+  show(initialLesson);
 }
+// A direct guide anchor must reveal its enclosing disclosure.
+function revealGuideAnchor() {
+  if (!location.hash || location.hash.startsWith('#lesson-')) return;
+  let target;
+  try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch { return; }
+  const disclosure = target?.closest('.chapter-reading');
+  if (disclosure) { disclosure.open = true; target.scrollIntoView(); }
+}
+window.addEventListener('hashchange', revealGuideAnchor);
+revealGuideAnchor();

@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Task, trial and grader",
+    "duration": 28,
+    "intro": "An evaluation task specifies what the agent should accomplish. One execution is a trial. A grader inspects evidence against defined criteria.",
+    "takeaway": "Evaluate the agent with its harness, tools and environment, not just an isolated model response.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A task asks for an authentication fix. Define what success will look like."
+      },
+      {
+        "time": 7,
+        "text": "Run one trial with the agent system. The system returns a patch and evidence."
+      },
+      {
+        "time": 14,
+        "text": "A grader inspects the result. It applies the stated success criteria."
+      },
+      {
+        "time": 21,
+        "text": "The grade describes this one trial. It is not a guarantee about future runs."
+      }
+    ],
+    "src": "lessons/agent-evals/01.mp4",
+    "poster": "lessons/agent-evals/01.jpg"
+  },
+  {
+    "title": "Check actual behavior",
+    "duration": 28,
+    "intro": "Instead of grading a claim that the bug is fixed, run the changed code on inputs with known expected outcomes.",
+    "takeaway": "Grade observable results. A good explanation can accompany an incorrect patch.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The agent says the bug is fixed. A statement is not the behavior itself."
+      },
+      {
+        "time": 7,
+        "text": "Run the patch with an empty password. The expected behavior is rejection."
+      },
+      {
+        "time": 14,
+        "text": "The empty password is rejected. This test has passed."
+      },
+      {
+        "time": 21,
+        "text": "Record the observed result for grading. Other required cases still need testing."
+      }
+    ],
+    "src": "lessons/agent-evals/02.mp4",
+    "poster": "lessons/agent-evals/02.jpg"
+  },
+  {
+    "title": "Catch an overbroad fix",
+    "duration": 28,
+    "intro": "Patch A rejects all logins. It fixes the empty-password case but breaks legitimate users. A regression case reveals the overbroad change.",
+    "takeaway": "A narrow success test can reward the wrong solution. Include behavior that must remain valid.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Patch A rejects every login. Both bad and valid passwords fail."
+      },
+      {
+        "time": 7,
+        "text": "The empty-password case is rejected. That expectation passes."
+      },
+      {
+        "time": 14,
+        "text": "The valid-password case is also rejected. That expectation fails."
+      },
+      {
+        "time": 21,
+        "text": "The grader rejects this overbroad fix. Passing one case was insufficient."
+      }
+    ],
+    "src": "lessons/agent-evals/03.mp4",
+    "poster": "lessons/agent-evals/03.jpg"
+  },
+  {
+    "title": "Repeat trials independently",
+    "duration": 28,
+    "intro": "Repeated trials reveal variation in the agent system. Each should start from the intended clean state so one trial does not contaminate another.",
+    "takeaway": "Repeated success measures consistency on these tasks. It does not make the system deterministic or prove general safety.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Run the same task more than once. Each trial starts in an isolated state."
+      },
+      {
+        "time": 7,
+        "text": "Trial 1 produces a result. Record the outcome and evidence."
+      },
+      {
+        "time": 14,
+        "text": "Trial 2 runs from a clean starting point. Its result may differ."
+      },
+      {
+        "time": 21,
+        "text": "Report the distribution of outcomes. Do not show only the best attempt."
+      }
+    ],
+    "src": "lessons/agent-evals/04.mp4",
+    "poster": "lessons/agent-evals/04.jpg"
+  },
+  {
+    "title": "Know the grading limits",
+    "duration": 28,
+    "intro": "A suite collects representative tasks. Deterministic tests and model graders cover different properties, and graders themselves need calibration.",
+    "takeaway": "Passing a suite supports claims within its coverage. Keep held-out cases and inspect grading errors before making broader decisions.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Collect tasks that represent real use. Include known failures and valid behavior."
+      },
+      {
+        "time": 7,
+        "text": "Apply graders suited to each criterion. Some judgments need human calibration."
+      },
+      {
+        "time": 14,
+        "text": "Inspect false passes and false failures. A flawed grader can reward wrong work."
+      },
+      {
+        "time": 21,
+        "text": "Use the evidence with stated limits. A passing suite is not automatic release."
+      }
+    ],
+    "src": "lessons/agent-evals/05.mp4",
+    "poster": "lessons/agent-evals/05.jpg"
+  }
+]

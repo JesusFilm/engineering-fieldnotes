@@ -1,0 +1,132 @@
+[
+  {
+    "title": "A callable operation",
+    "duration": 28,
+    "intro": "A tool is an operation exposed to the model through a documented interface. The application executes requested calls and returns their results.",
+    "takeaway": "Tool descriptions guide selection. Execution, authorization and error handling belong in application code.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The model needs incident information. A search tool exposes one operation."
+      },
+      {
+        "time": 7,
+        "text": "The model requests that operation. The application receives a structured call."
+      },
+      {
+        "time": 14,
+        "text": "The application executes the search. The model does not run it directly."
+      },
+      {
+        "time": 21,
+        "text": "Return the result through the application. The model uses it as evidence."
+      }
+    ],
+    "src": "lessons/tool-design/01.mp4",
+    "poster": "lessons/tool-design/01.jpg"
+  },
+  {
+    "title": "Make inputs explicit",
+    "duration": 28,
+    "intro": "A search needs a service, time range and result limit. Explicit input fields let the application reject invalid calls instead of guessing.",
+    "takeaway": "Shape validation catches missing or invalid fields. It does not establish authorization or guarantee the query is useful.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Search needs a service and time range. These are explicit input fields."
+      },
+      {
+        "time": 7,
+        "text": "A call omits the end time. Validation finds the missing field."
+      },
+      {
+        "time": 14,
+        "text": "Reject the invalid call before execution. Return an actionable input error."
+      },
+      {
+        "time": 21,
+        "text": "A corrected call can reach the tool. Validate it before running the search."
+      }
+    ],
+    "src": "lessons/tool-design/02.mp4",
+    "poster": "lessons/tool-design/02.jpg"
+  },
+  {
+    "title": "Return usable evidence",
+    "duration": 28,
+    "intro": "Useful results identify records and the scope searched. An incident summary should retain IDs and its searched interval so the answer can be checked.",
+    "takeaway": "A valid output shape does not prove source completeness or correctness. Expose enough provenance to evaluate the result.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The search finds incident records. A bare success flag is not enough."
+      },
+      {
+        "time": 7,
+        "text": "Return IDs and short summaries. Include the interval that was searched."
+      },
+      {
+        "time": 14,
+        "text": "The model can cite those records. Its answer has inspectable support."
+      },
+      {
+        "time": 21,
+        "text": "Keep claims within the returned scope. Two found records are not all history."
+      }
+    ],
+    "src": "lessons/tool-design/03.mp4",
+    "poster": "lessons/tool-design/03.jpg"
+  },
+  {
+    "title": "Empty versus failed",
+    "duration": 28,
+    "intro": "An empty completed search and a backend timeout are different outcomes. They must not share an ambiguous empty-list response.",
+    "takeaway": "An MCP tool execution error uses its error signaling. A transport timeout may produce no tool result at all; preserve that failure too.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A completed search finds no matches. That is an empty successful result."
+      },
+      {
+        "time": 7,
+        "text": "Return success and an empty list. This supports no matches in that scope."
+      },
+      {
+        "time": 14,
+        "text": "Now consider a backend timeout. That search did not establish no matches."
+      },
+      {
+        "time": 21,
+        "text": "The model must preserve the uncertainty. It cannot claim there were no incidents."
+      }
+    ],
+    "src": "lessons/tool-design/04.mp4",
+    "poster": "lessons/tool-design/04.jpg"
+  },
+  {
+    "title": "Expose more pages",
+    "duration": 28,
+    "intro": "A result limit bounds response size. If more matches exist, return a continuation cursor and make partial coverage explicit.",
+    "takeaway": "A page is not the complete result set. Follow the cursor when the task requires more coverage and the budget permits.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The search is limited to one page. More matches may remain."
+      },
+      {
+        "time": 7,
+        "text": "Return the page and a continuation cursor. The caller can see that this is partial."
+      },
+      {
+        "time": 14,
+        "text": "The model requests the following page. It reuses the cursor and query scope."
+      },
+      {
+        "time": 21,
+        "text": "Page 2 returns without a next cursor. This query is complete; stop paging."
+      }
+    ],
+    "src": "lessons/tool-design/05.mp4",
+    "poster": "lessons/tool-design/05.jpg"
+  }
+]

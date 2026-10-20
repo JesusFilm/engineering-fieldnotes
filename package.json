@@ -8,7 +8,10 @@
     "build:draft": "python3 scripts/build.py --draft",
     "dev": "python3 -m http.server 4174 --directory dist",
     "check": "python3 scripts/check.py",
-    "check:media": "python3 scripts/check_media.py"
+    "check:media": "python3 scripts/check_media.py",
+    "check:sequences": "python3 scripts/check_sequences.py",
+    "check:sequence-ui": "node scripts/check_sequence.mjs",
+    "check:sequence-layout": "node scripts/check_sequence_layout.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "25.14.0"

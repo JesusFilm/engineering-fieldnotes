@@ -1,0 +1,516 @@
+{
+  "concept": "memory-architecture",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "LangChain \u2014 Memory overview: scope, retrieval, and write timing",
+      "url": "https://docs.langchain.com/oss/python/concepts/memory",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "LangGraph \u2014 Persistence: checkpointers versus stores",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "LangChain \u2014 Long-term memory: namespace, key, and explicit access",
+      "url": "https://docs.langchain.com/oss/python/langchain/long-term-memory",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Claude Code \u2014 Permissions: enforcement outside prompts",
+      "url": "https://code.claude.com/docs/en/permissions",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Current and saved context",
+      "nodes": [
+        {
+          "id": "input",
+          "label": "CURRENT INPUT",
+          "state": ""
+        },
+        {
+          "id": "model",
+          "label": "MODEL",
+          "state": ""
+        },
+        {
+          "id": "store",
+          "label": "MEMORY STORE",
+          "state": "saved records"
+        }
+      ],
+      "intro": "Current context is supplied now. Saved memory is information retained for later use. A stored record is not automatically visible to the model.",
+      "takeaway": "Persistence and visibility are separate: storage retains a record; retrieval supplies it to a later invocation.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The model receives its current input.",
+            "This is the context it can use now."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "model",
+              "label": "CURRENT CONTEXT",
+              "delay": 0,
+              "from": "input"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Other records exist in a memory store.",
+            "Their presence does not include them."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "store",
+              "text": "r1: npm test",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The application must retrieve a record.",
+            "Then it can include it in a new input."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "input",
+              "label": "RETRIEVE",
+              "delay": 0,
+              "from": "store"
+            },
+            {
+              "type": "state",
+              "node": "input",
+              "text": "next: r1 npm test",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Supply that record to the next call.",
+            "The saved copy stays in the store."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "model",
+              "label": "NEXT INPUT",
+              "delay": 0,
+              "from": "input"
+            },
+            {
+              "type": "state",
+              "node": "model",
+              "text": "received r1 note",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Choose the memory scope",
+      "nodes": [
+        {
+          "id": "thread",
+          "label": "THREAD STATE",
+          "state": ""
+        },
+        {
+          "id": "store",
+          "label": "SHARED STORE",
+          "state": ""
+        },
+        {
+          "id": "session",
+          "label": "NEW SESSION",
+          "state": ""
+        }
+      ],
+      "intro": "Thread-scoped state belongs to a conversation. A separate store can hold records used across conversations. Either may use persistent storage.",
+      "takeaway": "Short-term describes scope, not necessarily RAM. The backend determines what survives process restarts.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Thread state belongs to one conversation.",
+            "It can include saved progress."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "thread",
+              "text": "thread A state",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "A shared store has a wider scope.",
+            "Use namespaces and keys for its records."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "store",
+              "text": "service namespace",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "A new session reads the relevant scope.",
+            "It should not mix unrelated histories."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "session",
+              "label": "SCOPED RECORD",
+              "delay": 0,
+              "from": "store"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Scope and durability are different choices.",
+            "Check what the backend actually retains."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Save a useful record",
+      "nodes": [
+        {
+          "id": "session",
+          "label": "SESSION",
+          "state": ""
+        },
+        {
+          "id": "review",
+          "label": "WRITE POLICY",
+          "state": ""
+        },
+        {
+          "id": "store",
+          "label": "MEMORY STORE",
+          "state": ""
+        }
+      ],
+      "intro": "Before retaining a fact, decide whether it is useful, supported and appropriate for later use. Include provenance and applicability such as repository revision.",
+      "takeaway": "Memory writes need policy. Repeatedly storing an unsupported inference can make later answers consistently wrong.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The session finds the test command.",
+            "It proposes retaining that information."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "review",
+              "label": "CANDIDATE NOTE",
+              "delay": 0,
+              "from": "session"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Check its source and intended scope.",
+            "A guess should not become a settled fact."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "review",
+              "text": "repo r1: npm test",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Save the command with its revision.",
+            "Future readers can check applicability."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "store",
+              "label": "COMMAND + r1",
+              "delay": 0,
+              "from": "review"
+            },
+            {
+              "type": "state",
+              "node": "store",
+              "text": "r1: npm test",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Retain only what the policy allows.",
+            "More stored notes are not always better."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Check applicability",
+      "nodes": [
+        {
+          "id": "store",
+          "label": "MEMORY STORE",
+          "state": "r1: npm test"
+        },
+        {
+          "id": "check",
+          "label": "REVISION CHECK",
+          "state": "checkout r2"
+        },
+        {
+          "id": "source",
+          "label": "REPO r2",
+          "state": "pnpm test"
+        },
+        {
+          "id": "input",
+          "label": "MODEL INPUT",
+          "state": ""
+        }
+      ],
+      "intro": "A new checkout uses pnpm test at revision r2. Retrieval returns an older r1 note. Application-side checks reject the stale command.",
+      "takeaway": "Relevant does not mean current. Revision validation is deliberately implemented here, not an automatic feature of every memory store.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "A saved note says npm test at r1.",
+            "The checkout now uses revision r2."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Retrieval returns the relevant old note.",
+            "Compare its revision with the checkout."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "check",
+              "label": "r1 NOTE",
+              "delay": 0,
+              "from": "store"
+            },
+            {
+              "type": "state",
+              "node": "check",
+              "text": "revision mismatch",
+              "color": "bad",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Reject the stale command for this task.",
+            "Read the current repository instructions."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "check",
+              "text": "read repo r2",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "check",
+              "label": "",
+              "delay": 2,
+              "kind": "dot",
+              "from": "source"
+            },
+            {
+              "type": "state",
+              "node": "check",
+              "text": "r2 verified",
+              "color": "ok",
+              "delay": 4
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Supply pnpm test from revision r2.",
+            "The model gets applicable evidence."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "input",
+              "label": "r2: pnpm test",
+              "delay": 0,
+              "from": "check"
+            },
+            {
+              "type": "state",
+              "node": "input",
+              "text": "r2: pnpm test",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Correct outdated memory",
+      "nodes": [
+        {
+          "id": "old",
+          "label": "SAVED r1 NOTE",
+          "state": "npm test"
+        },
+        {
+          "id": "source",
+          "label": "SOURCE r2",
+          "state": "pnpm test"
+        },
+        {
+          "id": "store",
+          "label": "SAVED r2 NOTE",
+          "state": "not saved"
+        },
+        {
+          "id": "next",
+          "label": "LATER RETRIEVAL",
+          "state": "task at r2"
+        }
+      ],
+      "intro": "When authoritative instructions change, update or supersede retained notes according to the memory policy. Preserve enough history to explain the correction.",
+      "takeaway": "Memory needs maintenance and access controls. Removing stale applicability is different from pretending the old note was never valid.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The authoritative command changed at r2.",
+            "The stored r1 note is now outdated."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Mark the old record as superseded.",
+            "Keep its earlier revision explicit."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "old",
+              "text": "r1 superseded",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Store the current command and source.",
+            "The new record applies to r2."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "store",
+              "label": "",
+              "delay": 0,
+              "kind": "dot",
+              "from": "source"
+            },
+            {
+              "type": "state",
+              "node": "store",
+              "text": "r2: pnpm test",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Later retrieval selects a matching version.",
+            "Still validate it against the current task."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "next",
+              "label": "r2 NOTE",
+              "delay": 0,
+              "from": "store"
+            },
+            {
+              "type": "state",
+              "node": "next",
+              "text": "r2 matches task",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

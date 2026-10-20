@@ -28,8 +28,8 @@
         "text": "The application receives the result."
       }
     ],
-    "src": "pilots/load-balancing/01.mp4",
-    "poster": "pilots/load-balancing/01.jpg"
+    "src": "lessons/load-balancing/01.mp4",
+    "poster": "lessons/load-balancing/01.jpg"
   },
   {
     "title": "Share the work",
@@ -60,8 +60,8 @@
         "text": "Separate requests use separate capacity."
       }
     ],
-    "src": "pilots/load-balancing/02.mp4",
-    "poster": "pilots/load-balancing/02.jpg"
+    "src": "lessons/load-balancing/02.mp4",
+    "poster": "lessons/load-balancing/02.jpg"
   },
   {
     "title": "Take turns",
@@ -92,8 +92,8 @@
         "text": "The rule repeats A, B, A, B."
       }
     ],
-    "src": "pilots/load-balancing/03.mp4",
-    "poster": "pilots/load-balancing/03.jpg"
+    "src": "lessons/load-balancing/03.mp4",
+    "poster": "lessons/load-balancing/03.jpg"
   },
   {
     "title": "Unequal work",
@@ -128,8 +128,8 @@
         "text": "A finishes and the waiting request starts."
       }
     ],
-    "src": "pilots/load-balancing/04.mp4",
-    "poster": "pilots/load-balancing/04.jpg"
+    "src": "lessons/load-balancing/04.mp4",
+    "poster": "lessons/load-balancing/04.jpg"
   },
   {
     "title": "Look at active work",
@@ -160,8 +160,8 @@
         "text": "Selection changes new assignments only."
       }
     ],
-    "src": "pilots/load-balancing/05.mp4",
-    "poster": "pilots/load-balancing/05.jpg"
+    "src": "lessons/load-balancing/05.mp4",
+    "poster": "lessons/load-balancing/05.jpg"
   },
   {
     "title": "Avoid a failed server",
@@ -196,7 +196,7 @@
         "text": "B returns its response through the balancer."
       }
     ],
-    "src": "pilots/load-balancing/06.mp4",
-    "poster": "pilots/load-balancing/06.jpg"
+    "src": "lessons/load-balancing/06.mp4",
+    "poster": "lessons/load-balancing/06.jpg"
   }
 ]

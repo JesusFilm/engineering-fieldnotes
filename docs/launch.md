@@ -16,7 +16,7 @@ The original prototype remains intact. Its October 18 review verified one cut pe
 
 ## Current work
 
-The 3D experiences were removed following user review on 20 October 2026: their interactions and metaphors required too much prior knowledge. A single-concept sequential-video experiment is next, pending human review before broader adoption.
+The 3D experiences were removed following user review on 20 October 2026: their interactions and metaphors required too much prior knowledge. The user subsequently selected the side-index layout and authorized focused sequences across all topics and publication.
 
 All 18 written and comparative reviews are complete, with 54 validated videos. The independent alternatives use Astra plus Fable for 13 concepts and Astra plus Sol for five. See [the editorial release report](../reviews/launch-review.md) and [UI review](../reviews/ui.md).
 
@@ -27,7 +27,17 @@ The original prototype remains intact at source commit `f74bc99beef23a4aaff80813
 - [x] Remove all 3D runtime assets, scene sources, UI and build checks; deploy removal (`c327d1c`, Actions run 39325272787).
 - [x] Prepare a load-balancing-only draft with six focused clips, written introductions, takeaways, comprehension checks and ordered navigation.
 - [x] Check encoded media, caption timing, desktop/phone layout, playback handoff, keyboard/deep-link/back navigation and no-JavaScript fallback.
-- [ ] Jaco reviews the sequence and navigation for teaching value.
-- [ ] Decide refinements and whether to promote this pilot or extend the format to other concepts.
+- [x] Jaco reviews the navigation proposals and selects Option A: side index.
+- [x] User authorizes extending focused sequences across all topics.
 
-The local branch is `codex/load-balancing-sequence`. Use `python3 scripts/build.py --draft` to view the experiment. A normal build excludes pilot assets and retains the released video defaults. The review record is `reviews/sequences/load-balancing/review.md`; reproduction instructions are `video/load-balancing/sequence/README.md`.
+The implementation branch is `codex/load-balancing-sequence`. Normal builds now include the focused sequences. The original pilot review is retained at `reviews/sequences/load-balancing/review.md` as historical evidence.
+
+## All-topic rollout
+
+- [x] Author 91 focused lessons across all 18 topics.
+- [x] Implement Option A with stable video placement, direct selection and collapsed supporting text.
+- [x] Complete final encoded media and teaching review after rendering corrections.
+- [x] Verify full release and browser behavior against the final files.
+- [ ] Push the branch and publish through GitHub Pages; verify the exact live release.
+
+See `reviews/sequences/rollout-progress.md` for current evidence and remaining work.

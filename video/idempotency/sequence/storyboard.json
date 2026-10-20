@@ -1,0 +1,493 @@
+{
+  "concept": "idempotency",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "RFC 9110 \u00a79.2.2 \u2014 intended effects and retry semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2"
+    },
+    {
+      "title": "AWS Builders\u2019 Library \u2014 request identity, persistence, and changed intent",
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/"
+    },
+    {
+      "title": "Stripe API \u2014 version-specific replay and key retention",
+      "url": "https://docs.stripe.com/api/idempotent_requests"
+    },
+    {
+      "title": "PostgreSQL \u2014 transaction atomicity and visibility",
+      "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+    },
+    {
+      "title": "PostgreSQL \u2014 unique and primary-key constraints",
+      "url": "https://www.postgresql.org/docs/current/ddl-constraints.html"
+    },
+    {
+      "title": "PostgreSQL \u2014 concurrent uniqueness checks",
+      "url": "https://www.postgresql.org/docs/current/index-unique-checks.html"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "One intended operation",
+      "nodes": [
+        {
+          "id": "c",
+          "label": "CALLER",
+          "state": ""
+        },
+        {
+          "id": "s",
+          "label": "TICKET SERVICE",
+          "state": ""
+        },
+        {
+          "id": "db",
+          "label": "DATABASE",
+          "state": "no ticket"
+        }
+      ],
+      "intro": "A caller asks for one release ticket. The intended effect is one saved ticket, not merely a successful network response.",
+      "takeaway": "Separate the business effect from the response that reports it.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The caller wants one release ticket.",
+            "The service must save that effect."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The create request reaches the service.",
+            "The service begins the operation."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "s",
+              "label": "CREATE",
+              "delay": 0,
+              "from": "c"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The service saves ticket 47.",
+            "The database records that effect."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "db",
+              "label": "TICKET 47",
+              "delay": 0,
+              "from": "s"
+            },
+            {
+              "type": "state",
+              "node": "db",
+              "text": "ticket 47",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "A response reports ticket 47.",
+            "This normal attempt succeeds."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "c",
+              "label": "TICKET 47",
+              "delay": 0,
+              "from": "s"
+            },
+            {
+              "type": "state",
+              "node": "c",
+              "text": "ticket 47",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "A missing reply",
+      "nodes": [
+        {
+          "id": "c",
+          "label": "CALLER",
+          "state": "waiting"
+        },
+        {
+          "id": "s",
+          "label": "TICKET SERVICE",
+          "state": ""
+        },
+        {
+          "id": "db",
+          "label": "DATABASE",
+          "state": "no ticket"
+        }
+      ],
+      "intro": "The service saves a ticket but the reply is lost. The caller times out without knowing whether the operation happened.",
+      "takeaway": "A timeout does not prove that nothing was created. Retrying an unprotected create can duplicate the effect.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The caller sends a create request.",
+            "The service receives it."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "s",
+              "label": "CREATE",
+              "delay": 0,
+              "from": "c"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The service saves ticket 47.",
+            "Its response will not reach the caller."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "db",
+              "label": "TICKET 47",
+              "delay": 0,
+              "from": "s"
+            },
+            {
+              "type": "state",
+              "node": "db",
+              "text": "ticket 47",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The caller stops waiting.",
+            "Its outcome is unknown."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "c",
+              "text": "timed out",
+              "color": "bad",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Another create could add a duplicate.",
+            "The caller needs a stable operation ID."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Name the operation",
+      "nodes": [
+        {
+          "id": "c",
+          "label": "CALLER",
+          "state": "key k7"
+        },
+        {
+          "id": "s",
+          "label": "TICKET SERVICE",
+          "state": ""
+        },
+        {
+          "id": "db",
+          "label": "DATABASE",
+          "state": "no key record"
+        }
+      ],
+      "intro": "The caller saves key k7 with its release request before sending. The service commits the ticket and key record in one database transaction.",
+      "takeaway": "The key identifies an intended operation. Atomic storage and uniqueness are needed to prevent concurrent duplicate effects in this design.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "New attempt: save key k7 before sending.",
+            "This time, protect the operation upfront."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "c",
+              "text": "k7 + release v1",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Send the key with the request.",
+            "The service checks its stored records."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "s",
+              "label": "k7 + v1",
+              "delay": 0,
+              "from": "c"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The first attempt creates ticket 47.",
+            "Store the ticket and key atomically."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "db",
+              "label": "COMMIT",
+              "delay": 0,
+              "from": "s"
+            },
+            {
+              "type": "state",
+              "node": "db",
+              "text": "k7 \u2192 ticket 47",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Suppose this protected reply is lost too.",
+            "Key k7 still identifies the saved ticket."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Retry the same key",
+      "nodes": [
+        {
+          "id": "c",
+          "label": "CALLER",
+          "state": "key k7"
+        },
+        {
+          "id": "s",
+          "label": "TICKET SERVICE",
+          "state": ""
+        },
+        {
+          "id": "db",
+          "label": "DATABASE",
+          "state": "k7 \u2192 ticket 47"
+        }
+      ],
+      "intro": "After losing the response, the caller resends k7 with the same release payload. The service finds the previous result.",
+      "takeaway": "The retry reuses the recorded effect instead of creating a second ticket. This depends on the service contract and key retention.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The caller still needs its result.",
+            "It reuses the saved key k7."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "s",
+              "label": "k7 + v1",
+              "delay": 0,
+              "from": "c"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The service looks up k7.",
+            "Its record points to ticket 47."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "db",
+              "label": "LOOKUP k7",
+              "delay": 0,
+              "from": "s"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The existing result is returned.",
+            "No second ticket is created."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "s",
+              "label": "TICKET 47",
+              "delay": 0,
+              "from": "db"
+            },
+            {
+              "type": "state",
+              "node": "db",
+              "text": "one ticket",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The caller receives ticket 47.",
+            "The intended effect remains one ticket."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "c",
+              "label": "TICKET 47",
+              "delay": 0,
+              "from": "s"
+            },
+            {
+              "type": "state",
+              "node": "c",
+              "text": "ticket 47",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Changed intent, new key",
+      "nodes": [
+        {
+          "id": "c",
+          "label": "CALLER",
+          "state": "k7 + release v2"
+        },
+        {
+          "id": "s",
+          "label": "TICKET SERVICE",
+          "state": ""
+        },
+        {
+          "id": "db",
+          "label": "DATABASE",
+          "state": "k7 used for v1"
+        }
+      ],
+      "intro": "The caller now sends a different release payload using the old key. This service compares the stored payload before deciding whether replay is valid.",
+      "takeaway": "A key is not a general-purpose deduplication label. Reusing it for changed intent must follow the service contract; here the request is rejected.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Key k7 belongs to release v1.",
+            "The new payload asks for release v2."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The service compares the payloads.",
+            "The same key now has different intent."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "s",
+              "label": "k7 + v2",
+              "delay": 0,
+              "from": "c"
+            },
+            {
+              "type": "send",
+              "to": "db",
+              "label": "CHECK k7",
+              "delay": 3,
+              "from": "s"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The service rejects the mismatch.",
+            "It does not overwrite the old operation."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "s",
+              "text": "payload mismatch",
+              "color": "bad",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "c",
+              "label": "REJECTED",
+              "delay": 1,
+              "from": "s"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "A new operation needs a new key.",
+            "A retry keeps its original identity."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,533 @@
+{
+  "concept": "queues-and-backpressure",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "Python asyncio queues \u2014 bounded put, get and task completion",
+      "url": "https://docs.python.org/3/library/asyncio-queue.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RabbitMQ \u2014 Consumer acknowledgements and publisher confirms",
+      "url": "https://www.rabbitmq.com/docs/confirms",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RabbitMQ \u2014 Consumer prefetch",
+      "url": "https://www.rabbitmq.com/docs/consumer-prefetch",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RabbitMQ \u2014 Queue length limit and overflow behavior",
+      "url": "https://www.rabbitmq.com/docs/maxlength",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Google SRE \u2014 Handling overload",
+      "url": "https://sre.google/sre-book/handling-overload/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RabbitMQ \u2014 Reliability Guide: redelivery and idempotency",
+      "url": "https://www.rabbitmq.com/docs/reliability",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Submit a job",
+      "nodes": [
+        {
+          "id": "p",
+          "label": "PRODUCER",
+          "state": ""
+        },
+        {
+          "id": "q",
+          "label": "QUEUE",
+          "state": "empty"
+        },
+        {
+          "id": "w",
+          "label": "WORKER",
+          "state": "ready"
+        }
+      ],
+      "intro": "A producer creates a job. A queue holds jobs until a worker can execute them. Submission and completion are different events.",
+      "takeaway": "Accepted means the job entered the queue; it does not mean the requested work has finished.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "A producer creates a job.",
+            "A queue holds it until a worker is ready."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Job A enters the queue.",
+            "The job has been accepted."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "q",
+              "label": "JOB A",
+              "delay": 0,
+              "from": "p"
+            },
+            {
+              "type": "state",
+              "node": "q",
+              "text": "A waiting",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "A worker takes job A.",
+            "It leaves the waiting queue."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "w",
+              "label": "JOB A",
+              "delay": 0,
+              "from": "q"
+            },
+            {
+              "type": "state",
+              "node": "q",
+              "text": "empty",
+              "color": "ok",
+              "delay": 2
+            },
+            {
+              "type": "state",
+              "node": "w",
+              "text": "A running",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Execution happens at the worker.",
+            "Accepted is different from complete."
+          ],
+          "actions": [
+            {
+              "type": "work",
+              "node": "w",
+              "duration": 5,
+              "delay": 0
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Finish a job",
+      "nodes": [
+        {
+          "id": "q",
+          "label": "QUEUE",
+          "state": "A waiting"
+        },
+        {
+          "id": "w",
+          "label": "WORKER",
+          "state": "ready"
+        }
+      ],
+      "intro": "Follow one job from waiting to running to completed. A worker reports completion only after the work succeeds.",
+      "takeaway": "Waiting, running and completed describe different states. Acknowledgement policy must match the effect being confirmed.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Replay job A from its waiting state.",
+            "No work has happened yet in this replay."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The worker takes job A.",
+            "Execution starts after it arrives."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "w",
+              "label": "JOB A",
+              "delay": 0,
+              "from": "q"
+            },
+            {
+              "type": "state",
+              "node": "q",
+              "text": "empty",
+              "color": "ok",
+              "delay": 2
+            },
+            {
+              "type": "state",
+              "node": "w",
+              "text": "running",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The worker executes the job.",
+            "Leaving the wait queue did not finish it."
+          ],
+          "actions": [
+            {
+              "type": "work",
+              "node": "w",
+              "duration": 5,
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The work finishes successfully.",
+            "Now the job can be marked complete."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "w",
+              "text": "completed",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "A backlog grows",
+      "nodes": [
+        {
+          "id": "p",
+          "label": "PRODUCER",
+          "state": ""
+        },
+        {
+          "id": "q",
+          "label": "QUEUE",
+          "state": "empty"
+        },
+        {
+          "id": "w",
+          "label": "WORKER",
+          "state": "A running"
+        }
+      ],
+      "intro": "A slow worker cannot keep up with incoming jobs. The queue absorbs a short burst, but sustained excess arrivals create a growing backlog.",
+      "takeaway": "A queue delays overload; it does not create execution capacity. This example has one worker.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "New scenario: the worker is running A.",
+            "More jobs arrive while it is busy."
+          ],
+          "actions": [
+            {
+              "type": "work",
+              "node": "w",
+              "duration": 26,
+              "delay": 0
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "B waits behind the running job.",
+            "The worker has not taken B."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "q",
+              "label": "JOB B",
+              "delay": 0,
+              "from": "p"
+            },
+            {
+              "type": "state",
+              "node": "q",
+              "text": "B waiting",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "C arrives before A finishes.",
+            "C will join B in the queue."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "q",
+              "label": "JOB C",
+              "delay": 0,
+              "from": "p"
+            },
+            {
+              "type": "state",
+              "node": "q",
+              "text": "B, C waiting",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "D arrives too. The backlog grows.",
+            "Arrivals exceed completions here."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "q",
+              "label": "JOB D",
+              "delay": 0,
+              "from": "p"
+            },
+            {
+              "type": "state",
+              "node": "q",
+              "text": "B, C, D waiting",
+              "color": "bad",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "A full queue pushes back",
+      "nodes": [
+        {
+          "id": "p",
+          "label": "PRODUCER",
+          "state": "E ready"
+        },
+        {
+          "id": "q",
+          "label": "QUEUE",
+          "state": "B, C, D: full"
+        },
+        {
+          "id": "w",
+          "label": "WORKER",
+          "state": "A running"
+        }
+      ],
+      "intro": "Give the queue three waiting places. Under this blocking admission policy, submitting E waits at the producer while the queue is full.",
+      "takeaway": "Backpressure makes upstream production wait or slow. Dropping a job would be a different policy: load shedding.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "All three waiting places are full.",
+            "E is still with the producer."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Admission waits at the producer.",
+            "E does not enter the full queue."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "p",
+              "text": "waiting to submit",
+              "color": "bad",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The worker finishes A, then takes B.",
+            "One waiting place becomes free."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "w",
+              "text": "A completed",
+              "color": "ok",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "w",
+              "label": "JOB B",
+              "delay": 2,
+              "from": "q"
+            },
+            {
+              "type": "state",
+              "node": "q",
+              "text": "C, D waiting",
+              "color": "accent",
+              "delay": 4
+            },
+            {
+              "type": "state",
+              "node": "w",
+              "text": "B running",
+              "color": "accent",
+              "delay": 4
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "E can now enter the queue.",
+            "It is accepted, not yet completed."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "q",
+              "label": "JOB E",
+              "delay": 0,
+              "from": "p"
+            },
+            {
+              "type": "state",
+              "node": "q",
+              "text": "C, D, E: full",
+              "color": "accent",
+              "delay": 2
+            },
+            {
+              "type": "state",
+              "node": "p",
+              "text": "submitted",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Choose an overload policy",
+      "nodes": [
+        {
+          "id": "p",
+          "label": "PRODUCER",
+          "state": "new job"
+        },
+        {
+          "id": "q",
+          "label": "BOUNDED QUEUE",
+          "state": "full"
+        },
+        {
+          "id": "w",
+          "label": "WORKER",
+          "state": "busy"
+        }
+      ],
+      "intro": "A bounded queue requires an explicit full-queue policy. This lesson illustrates rejection instead of indefinite waiting.",
+      "takeaway": "Waiting, rejecting and dropping work have different consequences. Expose the outcome rather than calling every submission successful.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The queue is full again.",
+            "This policy rejects new submissions."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The producer asks to submit a job.",
+            "No waiting place is available."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "q",
+              "label": "SUBMIT",
+              "delay": 0,
+              "from": "p"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The queue reports rejection.",
+            "The producer must handle that result."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "p",
+              "label": "REJECTED",
+              "delay": 0,
+              "from": "q"
+            },
+            {
+              "type": "state",
+              "node": "p",
+              "text": "not accepted",
+              "color": "bad",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The rejected job was not admitted.",
+            "Make the overload policy explicit."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

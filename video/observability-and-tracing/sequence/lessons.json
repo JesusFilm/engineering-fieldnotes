@@ -1,0 +1,132 @@
+[
+  {
+    "title": "One operation is a span",
+    "duration": 28,
+    "intro": "A span records one operation, including its start, duration and attributes. It describes observed execution rather than the intended plan.",
+    "takeaway": "Instrumentation creates spans. Missing instrumentation means some operations will not appear.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The caller invokes a remote test tool. That operation takes time."
+      },
+      {
+        "time": 7,
+        "text": "Instrumentation records the start. The tool performs its work."
+      },
+      {
+        "time": 14,
+        "text": "The operation ends and its span closes. The record includes duration and outcome."
+      },
+      {
+        "time": 21,
+        "text": "This span describes one operation. Several related spans can form a trace."
+      }
+    ],
+    "src": "lessons/observability-and-tracing/01.mp4",
+    "poster": "lessons/observability-and-tracing/01.jpg"
+  },
+  {
+    "title": "Related spans form a trace",
+    "duration": 28,
+    "intro": "A trace groups related spans. They share a trace ID but each has its own span ID. Parent IDs describe the nesting relationship.",
+    "takeaway": "Shared trace identity links operations; distinct span identities keep individual work identifiable.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The agent operation starts trace T. Its children represent individual calls."
+      },
+      {
+        "time": 7,
+        "text": "A model call gets its own span ID. It keeps trace T and the parent relation."
+      },
+      {
+        "time": 14,
+        "text": "A tool call gets another span ID. It also belongs to trace T."
+      },
+      {
+        "time": 21,
+        "text": "The trace view groups the related spans. Parent links show how they fit together."
+      }
+    ],
+    "src": "lessons/observability-and-tracing/02.mp4",
+    "poster": "lessons/observability-and-tracing/02.jpg"
+  },
+  {
+    "title": "Cross a service boundary",
+    "duration": 28,
+    "intro": "When an operation crosses a process boundary, tracing context must travel with the request and be extracted by the receiving service.",
+    "takeaway": "Propagation links the spans, but instrumentation and export must also work. Headers alone do not create a complete trace.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The agent calls a separate service. A local parent relation cannot cross alone."
+      },
+      {
+        "time": 7,
+        "text": "Include trace context in the request. It identifies the trace and parent span."
+      },
+      {
+        "time": 14,
+        "text": "The receiver extracts that context. It starts a child span for its work."
+      },
+      {
+        "time": 21,
+        "text": "Both sides now share trace identity. Export their spans to see the whole path."
+      }
+    ],
+    "src": "lessons/observability-and-tracing/03.mp4",
+    "poster": "lessons/observability-and-tracing/03.jpg"
+  },
+  {
+    "title": "Visibility is not a speedup",
+    "duration": 28,
+    "intro": "In this illustrative sequential run, the model takes 0.6 seconds and the tool 2.4 seconds. Correct propagation makes the slow tool visible but does not shorten the work.",
+    "takeaway": "Use tracing to locate time. A tracing repair is an observability improvement, not automatically a performance optimization.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Example: two calls run sequentially. 0.6 + 2.4 = 3.0 seconds total."
+      },
+      {
+        "time": 7,
+        "text": "Without linkage, the tool looks separate. Its time is harder to attribute."
+      },
+      {
+        "time": 14,
+        "text": "Next run: propagate the request context. Export now links the same 2.4s tool span."
+      },
+      {
+        "time": 21,
+        "text": "The run still takes 3.0 seconds. We improved visibility, not execution speed."
+      }
+    ],
+    "src": "lessons/observability-and-tracing/04.mp4",
+    "poster": "lessons/observability-and-tracing/04.jpg"
+  },
+  {
+    "title": "Missing and sensitive data",
+    "duration": 28,
+    "intro": "Sampling, export failures and missing instrumentation can omit spans. Recorded attributes can also contain sensitive information unless the application controls them.",
+    "takeaway": "A missing span is not proof that work never happened. Minimize sensitive attributes and treat traces as partial evidence.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Runtime operations produce tracing data. Not every detail should be recorded."
+      },
+      {
+        "time": 7,
+        "text": "Remove a secret attribute from span A. Keep the span itself in the export."
+      },
+      {
+        "time": 14,
+        "text": "Separately, span B fails to export. The view has A, but B is missing."
+      },
+      {
+        "time": 21,
+        "text": "Use traces with their collection limits. Absence of a span is not proof of absence."
+      }
+    ],
+    "src": "lessons/observability-and-tracing/05.mp4",
+    "poster": "lessons/observability-and-tracing/05.jpg"
+  }
+]

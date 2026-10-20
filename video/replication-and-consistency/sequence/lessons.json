@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Keep another copy",
+    "duration": 28,
+    "intro": "Replication maintains another copy of stored data. In this single-writer example the application writes to the primary.",
+    "takeaway": "A replica is another data copy. Keeping it updated requires data to travel and be applied.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The primary stores application data. The replica holds another copy."
+      },
+      {
+        "time": 7,
+        "text": "A change is written to the primary. The primary now has revision 8."
+      },
+      {
+        "time": 14,
+        "text": "The change travels to the replica. The replica must apply it."
+      },
+      {
+        "time": 21,
+        "text": "The replica reaches revision 8. Both copies now contain the change."
+      }
+    ],
+    "src": "lessons/replication-and-consistency/01.mp4",
+    "poster": "lessons/replication-and-consistency/01.jpg"
+  },
+  {
+    "title": "A replica can lag",
+    "duration": 28,
+    "intro": "With asynchronous replication, the primary can acknowledge a write while the replica is behind. A read from that replica can return old data.",
+    "takeaway": "A stale read does not prove the write failed. It tells you which data that particular reader observed.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The primary has saved revision 8. The replica is still at revision 7."
+      },
+      {
+        "time": 7,
+        "text": "The application reads the replica. That query sees the older revision."
+      },
+      {
+        "time": 14,
+        "text": "Revision 7 comes back successfully. The read is stale, not a failed write."
+      },
+      {
+        "time": 21,
+        "text": "The primary still holds revision 8. Different copies can answer differently."
+      }
+    ],
+    "src": "lessons/replication-and-consistency/02.mp4",
+    "poster": "lessons/replication-and-consistency/02.jpg"
+  },
+  {
+    "title": "Check the revision you need",
+    "duration": 28,
+    "intro": "A release assistant needs to verify its own change. It checks the returned application revision rather than treating any successful response as confirmation.",
+    "takeaway": "In this example, a fresh primary query sees the saved revision. Transaction snapshots and concurrent writers still matter in real systems.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The verification expects revision 8. A replica response says revision 7."
+      },
+      {
+        "time": 7,
+        "text": "Use a fresh read from the primary. Verify against the required revision."
+      },
+      {
+        "time": 14,
+        "text": "The primary returns revision 8. This matches the saved change."
+      },
+      {
+        "time": 21,
+        "text": "Match the observation to the decision. A successful query alone is not enough."
+      }
+    ],
+    "src": "lessons/replication-and-consistency/03.mp4",
+    "poster": "lessons/replication-and-consistency/03.jpg"
+  },
+  {
+    "title": "Received is not applied",
+    "duration": 28,
+    "intro": "PostgreSQL sends write-ahead log records to standbys. Receiving or flushing those records differs from replaying them into query-visible state.",
+    "takeaway": "What an acknowledgement proves depends on the configured replication mode. Do not equate received bytes with a query seeing the change.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The primary sends a change record. The replica receives the record."
+      },
+      {
+        "time": 7,
+        "text": "Receipt does not mean replay finished. Queries may still observe revision 7."
+      },
+      {
+        "time": 14,
+        "text": "The replica replays the change. Its query-visible state advances."
+      },
+      {
+        "time": 21,
+        "text": "Now a fresh query can see revision 8. Check what your acknowledgement means."
+      }
+    ],
+    "src": "lessons/replication-and-consistency/04.mp4",
+    "poster": "lessons/replication-and-consistency/04.jpg"
+  },
+  {
+    "title": "Failover can lose data",
+    "duration": 28,
+    "intro": "If an asynchronous primary fails before a recent change reaches the standby, promoting that standby can lose the acknowledged change.",
+    "takeaway": "Replication modes trade latency, availability and durability. This illustrates an asynchronous failure window, not every replication configuration.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Async replication: v8 was acknowledged. The standby only has revision 7."
+      },
+      {
+        "time": 7,
+        "text": "The primary fails before shipping v8. Its newest change is absent elsewhere."
+      },
+      {
+        "time": 14,
+        "text": "The standby is promoted. It can serve the data it actually has."
+      },
+      {
+        "time": 21,
+        "text": "Revision 8 is missing after failover. Choose durability requirements explicitly."
+      }
+    ],
+    "src": "lessons/replication-and-consistency/05.mp4",
+    "poster": "lessons/replication-and-consistency/05.jpg"
+  }
+]

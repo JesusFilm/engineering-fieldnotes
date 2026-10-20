@@ -1,0 +1,464 @@
+{
+  "concept": "human-in-the-loop",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "LangGraph \u2014 Interrupts: pause, resume and replay behavior",
+      "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "LangGraph \u2014 Persistence: checkpointers and restart limitations",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OWASP \u2014 Transaction Authorization: review and execution boundaries",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "GitHub \u2014 Deployments and environments: approval gates and limitations",
+      "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Propose, review, execute",
+      "nodes": [
+        {
+          "id": "agent",
+          "label": "AGENT",
+          "state": ""
+        },
+        {
+          "id": "review",
+          "label": "REVIEWER",
+          "state": ""
+        },
+        {
+          "id": "exec",
+          "label": "EXECUTOR",
+          "state": ""
+        }
+      ],
+      "intro": "An agent prepares a proposed action. A reviewer decides whether that action should proceed. An executor enforces the decision and performs it.",
+      "takeaway": "These are separate responsibilities. The proposing agent does not need unrestricted production credentials.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The agent prepares a release proposal.",
+            "It has not deployed anything."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "A reviewer inspects the proposed action.",
+            "A decision is still required."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "review",
+              "label": "PROPOSAL",
+              "delay": 0,
+              "from": "agent"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The executor waits for authorization.",
+            "A proposal alone cannot trigger execution."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "exec",
+              "text": "waiting",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Keep these responsibilities separate.",
+            "Preparation is different from permission."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Give the reviewer evidence",
+      "nodes": [
+        {
+          "id": "agent",
+          "label": "RELEASE PROPOSAL",
+          "state": "artifact A"
+        },
+        {
+          "id": "review",
+          "label": "REVIEWER",
+          "state": ""
+        },
+        {
+          "id": "decision",
+          "label": "DECISION RECORD",
+          "state": ""
+        }
+      ],
+      "intro": "A review request should name the exact artifact, environment and observed checks. The reviewer needs a concrete action rather than a vague request to continue.",
+      "takeaway": "The decision should identify the action that was reviewed. Approval is not a blanket permission for future changes.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The proposal names artifact A.",
+            "Its destination is production."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Attach test results and relevant risks.",
+            "The reviewer can inspect the evidence."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "review",
+              "label": "A + EVIDENCE",
+              "delay": 0,
+              "from": "agent"
+            },
+            {
+              "type": "state",
+              "node": "review",
+              "text": "A; prod; 12 tests pass",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The reviewer makes a decision about A.",
+            "Store the action the decision applies to."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "decision",
+              "label": "APPROVE A",
+              "delay": 0,
+              "from": "review"
+            },
+            {
+              "type": "state",
+              "node": "decision",
+              "text": "A approved",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Approval now refers to a concrete artifact.",
+            "Execution must check that same identity."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Pause without guessing",
+      "nodes": [
+        {
+          "id": "workflow",
+          "label": "WORKFLOW",
+          "state": "approval pending"
+        },
+        {
+          "id": "state",
+          "label": "SAVED STATE",
+          "state": ""
+        },
+        {
+          "id": "review",
+          "label": "REVIEWER",
+          "state": ""
+        }
+      ],
+      "intro": "A workflow can persist its state while waiting for a human decision. A durable pause must survive the failures relevant to the application.",
+      "takeaway": "Elapsed time is not approval. Resume only with a trustworthy decision and preserve the action under review.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The workflow reaches a review boundary.",
+            "It pauses before executing the action."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Save the state and proposed artifact.",
+            "The pending work can be resumed later."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "state",
+              "label": "SAVE STATE",
+              "delay": 0,
+              "from": "workflow"
+            },
+            {
+              "type": "state",
+              "node": "state",
+              "text": "pending A",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "No decision has arrived yet.",
+            "Do not interpret waiting as consent."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "workflow",
+              "text": "still paused",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "A decision can resume the workflow.",
+            "Revalidate the action before execution."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "workflow",
+              "label": "A: YES",
+              "delay": 0,
+              "from": "review"
+            },
+            {
+              "type": "state",
+              "node": "workflow",
+              "text": "decision: revalidate",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Reject an approval mismatch",
+      "nodes": [
+        {
+          "id": "artifact",
+          "label": "CURRENT ARTIFACT",
+          "state": "B"
+        },
+        {
+          "id": "approval",
+          "label": "APPROVAL",
+          "state": "A approved"
+        },
+        {
+          "id": "exec",
+          "label": "EXECUTOR",
+          "state": ""
+        }
+      ],
+      "intro": "A new edit produces artifact B while approval for A is pending or already recorded. The executor must not apply approval of A to B.",
+      "takeaway": "New artifact, target or significant parameters require revalidation and, when policy requires it, a new decision.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The current artifact has changed to B.",
+            "The recorded approval still names A."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The executor compares their identities.",
+            "The approved and requested actions differ."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "exec",
+              "label": "B",
+              "delay": 0,
+              "from": "artifact"
+            },
+            {
+              "type": "send",
+              "to": "exec",
+              "label": "APPROVAL A",
+              "delay": 3,
+              "from": "approval"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Execution is blocked by the mismatch.",
+            "No deployment happens here."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "exec",
+              "text": "blocked",
+              "color": "bad",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Review B with its own current evidence.",
+            "Do not treat approval as transferable."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Record the outcome",
+      "nodes": [
+        {
+          "id": "approval",
+          "label": "APPROVED ACTION",
+          "state": "artifact A"
+        },
+        {
+          "id": "exec",
+          "label": "EXECUTOR",
+          "state": ""
+        },
+        {
+          "id": "record",
+          "label": "OUTCOME RECORD",
+          "state": ""
+        }
+      ],
+      "intro": "The executor checks the matching approval and permissions, performs the action, and records the result. Resume and retry behavior must avoid duplicate effects.",
+      "takeaway": "Human approval does not replace reliable execution. Use suitable idempotency and failure handling for the actual operation.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "In a separate run, artifact A is approved.",
+            "The executor also checks permissions."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "exec",
+              "label": "APPROVED A",
+              "delay": 0,
+              "from": "approval"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The executor performs the operation.",
+            "A restart must not blindly repeat effects."
+          ],
+          "actions": [
+            {
+              "type": "work",
+              "node": "exec",
+              "duration": 5,
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "exec",
+              "text": "executing",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Record the observed execution result.",
+            "Keep it tied to the approved artifact."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "exec",
+              "text": "A deployed",
+              "color": "ok",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "record",
+              "label": "A: SUCCESS",
+              "delay": 0,
+              "from": "exec"
+            },
+            {
+              "type": "state",
+              "node": "record",
+              "text": "A: deployed",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Report what actually happened.",
+            "Approval and successful execution differ."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

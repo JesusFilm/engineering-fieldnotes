@@ -33,6 +33,32 @@ def check(draft=False):
     assert len(order) == len(set(order)) == 18, 'Expected 18 unique concept IDs'
     variants_by_concept = json.loads((ROOT / 'content/variants.json').read_text())
     assert set(variants_by_concept) == set(order)
+    sequences = json.loads((ROOT / 'content/sequences.json').read_text())
+    assert set(sequences) == set(order), 'Every topic needs a focused sequence'
+    sequence_checks = json.loads((ROOT / 'reviews/sequence-media-checks.json').read_text()) if not draft else {}
+    for key in order:
+        lessons = json.loads((ROOT / sequences[key]['lessons']).read_text())
+        assert len(lessons) >= 3, f'{key}: expected multiple focused lessons'
+        chapter_html = (OUT / f'concepts/{key}/index.html').read_text()
+        assert 'lesson-list' in chapter_html and 'lesson-picker' in chapter_html, key
+        assert chapter_html.count('data-lesson-link=') == len(lessons), key
+        for number, lesson in enumerate(lessons, 1):
+            assert all(lesson.get(field) for field in ('title', 'intro', 'takeaway', 'beats', 'duration', 'src', 'poster')), key
+            assert all(0 <= beat['time'] < lesson['duration'] for beat in lesson['beats']), key
+            for field in ('src', 'poster'):
+                file = ROOT / 'public' / lesson[field]
+                assert file.is_file(), str(file)
+                assert lesson[field] in chapter_html, str(file)
+                if not draft:
+                    record = sequence_checks[lesson['src']]
+                    hash_field = 'sha256' if field == 'src' else 'posterSha256'
+                    assert record[hash_field] == hashlib.sha256(file.read_bytes()).hexdigest(), f'Stale sequence evidence: {file}'
+            if not draft:
+                assert record['expectedDuration'] == lesson['duration']
+                scene = ROOT/f'video/{key}/sequence/{number:02}.js'
+                engine = ROOT/('video/load-balancing/sequence/engine' if key == 'load-balancing' else 'video/shared/sequence-engine')
+                source_digest = hashlib.sha256(scene.read_bytes()+b''.join((engine/name).read_bytes() for name in ['flow-engine.js','sfx.js','render.mjs','preview.html'])).hexdigest()
+                assert record['sourceSha256'] == source_digest, f'Stale sequence source: {key}/{number}'
     concepts = [json.loads((ROOT / f'content/concepts/{key}.json').read_text()) for key in order]
     media_checks = json.loads((ROOT / 'reviews/media-checks.json').read_text()) if not draft else {}
     if not draft:

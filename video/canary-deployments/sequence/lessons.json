@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Keep a control version",
+    "duration": 28,
+    "intro": "A canary deploys a candidate to limited traffic while the current version remains as a control. The comparison must influence the rollout decision.",
+    "takeaway": "A slow rollout alone is not an evaluation. Define which outcomes will cause promotion, pause or abort.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Version 1 is serving the application. Version 2 is a candidate change."
+      },
+      {
+        "time": 7,
+        "text": "Keep the current version as a control. It gives the candidate a comparison."
+      },
+      {
+        "time": 14,
+        "text": "Send limited traffic to the candidate. Observe its behavior before expanding."
+      },
+      {
+        "time": 21,
+        "text": "Compare results from both versions. The result must change a rollout decision."
+      }
+    ],
+    "src": "lessons/canary-deployments/01.mp4",
+    "poster": "lessons/canary-deployments/01.jpg"
+  },
+  {
+    "title": "Limit the exposure",
+    "duration": 28,
+    "intro": "In this example, the candidate receives ten percent of traffic: 1,000 of 10,000 requests. The other 9,000 stay on the current version.",
+    "takeaway": "The percentages describe this illustrative window. A small share limits exposure, but can still harm affected users.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "This window has 10,000 requests. The candidate receives a ten-percent share."
+      },
+      {
+        "time": 7,
+        "text": "9,000 requests go to version 1. Most traffic stays on the control."
+      },
+      {
+        "time": 14,
+        "text": "1,000 requests go to version 2. The candidate has limited exposure."
+      },
+      {
+        "time": 21,
+        "text": "Measure each version separately. A small rollout is not proof of safety."
+      }
+    ],
+    "src": "lessons/canary-deployments/02.mp4",
+    "poster": "lessons/canary-deployments/02.jpg"
+  },
+  {
+    "title": "An average hides failure",
+    "duration": 28,
+    "intro": "Forty candidate exports fail. Everything else succeeds. Across all traffic that is 40 out of 10,000, or 0.4%, but the affected operation is much worse.",
+    "takeaway": "Aggregate rates can conceal failures concentrated in a small version-and-operation slice.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "There are 10,000 total requests. Only 100 are exports handled by v2."
+      },
+      {
+        "time": 7,
+        "text": "Forty candidate exports fail. The other requests succeed."
+      },
+      {
+        "time": 14,
+        "text": "Overall: 40 failures out of 10,000. The headline error rate is only 0.4%."
+      },
+      {
+        "time": 21,
+        "text": "An overall 1% alert would stay quiet. Split the results before judging safety."
+      }
+    ],
+    "src": "lessons/canary-deployments/03.mp4",
+    "poster": "lessons/canary-deployments/03.jpg"
+  },
+  {
+    "title": "Compare the same operation",
+    "duration": 28,
+    "intro": "Compare export requests on the candidate with export requests on the control. Candidate exports fail 40 out of 100 times; control exports fail zero out of 900.",
+    "takeaway": "The 40% candidate-export failure rate is relevant to this rollout. These authored counts are not real benchmark results.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Compare exports with exports. Do not mix them with unrelated requests."
+      },
+      {
+        "time": 7,
+        "text": "Version 1: zero failures out of 900. Control exports have a 0% error rate."
+      },
+      {
+        "time": 14,
+        "text": "Version 2: 40 failures out of 100. Candidate exports have a 40% error rate."
+      },
+      {
+        "time": 21,
+        "text": "The candidate has a clear regression. The comparison argues against promotion."
+      }
+    ],
+    "src": "lessons/canary-deployments/04.mp4",
+    "poster": "lessons/canary-deployments/04.jpg"
+  },
+  {
+    "title": "Abort and verify recovery",
+    "duration": 28,
+    "intro": "After detecting the regression, stop sending new traffic to the candidate and verify the current version can safely resume the load.",
+    "takeaway": "Rerouting new requests does not undo completed writes or guarantee schema compatibility. Rollback safety needs separate planning.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The candidate fails the release check. Stop increasing its share."
+      },
+      {
+        "time": 7,
+        "text": "Route new requests to the control. The candidate receives no new traffic."
+      },
+      {
+        "time": 14,
+        "text": "Check the recovered service behavior. Do not assume abort means healthy."
+      },
+      {
+        "time": 21,
+        "text": "Confirm recovery before concluding. Data changes may need separate repair."
+      }
+    ],
+    "src": "lessons/canary-deployments/05.mp4",
+    "poster": "lessons/canary-deployments/05.jpg"
+  }
+]

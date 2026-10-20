@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Propose, review, execute",
+    "duration": 28,
+    "intro": "An agent prepares a proposed action. A reviewer decides whether that action should proceed. An executor enforces the decision and performs it.",
+    "takeaway": "These are separate responsibilities. The proposing agent does not need unrestricted production credentials.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The agent prepares a release proposal. It has not deployed anything."
+      },
+      {
+        "time": 7,
+        "text": "A reviewer inspects the proposed action. A decision is still required."
+      },
+      {
+        "time": 14,
+        "text": "The executor waits for authorization. A proposal alone cannot trigger execution."
+      },
+      {
+        "time": 21,
+        "text": "Keep these responsibilities separate. Preparation is different from permission."
+      }
+    ],
+    "src": "lessons/human-in-the-loop/01.mp4",
+    "poster": "lessons/human-in-the-loop/01.jpg"
+  },
+  {
+    "title": "Give the reviewer evidence",
+    "duration": 28,
+    "intro": "A review request should name the exact artifact, environment and observed checks. The reviewer needs a concrete action rather than a vague request to continue.",
+    "takeaway": "The decision should identify the action that was reviewed. Approval is not a blanket permission for future changes.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The proposal names artifact A. Its destination is production."
+      },
+      {
+        "time": 7,
+        "text": "Attach test results and relevant risks. The reviewer can inspect the evidence."
+      },
+      {
+        "time": 14,
+        "text": "The reviewer makes a decision about A. Store the action the decision applies to."
+      },
+      {
+        "time": 21,
+        "text": "Approval now refers to a concrete artifact. Execution must check that same identity."
+      }
+    ],
+    "src": "lessons/human-in-the-loop/02.mp4",
+    "poster": "lessons/human-in-the-loop/02.jpg"
+  },
+  {
+    "title": "Pause without guessing",
+    "duration": 28,
+    "intro": "A workflow can persist its state while waiting for a human decision. A durable pause must survive the failures relevant to the application.",
+    "takeaway": "Elapsed time is not approval. Resume only with a trustworthy decision and preserve the action under review.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The workflow reaches a review boundary. It pauses before executing the action."
+      },
+      {
+        "time": 7,
+        "text": "Save the state and proposed artifact. The pending work can be resumed later."
+      },
+      {
+        "time": 14,
+        "text": "No decision has arrived yet. Do not interpret waiting as consent."
+      },
+      {
+        "time": 21,
+        "text": "A decision can resume the workflow. Revalidate the action before execution."
+      }
+    ],
+    "src": "lessons/human-in-the-loop/03.mp4",
+    "poster": "lessons/human-in-the-loop/03.jpg"
+  },
+  {
+    "title": "Reject an approval mismatch",
+    "duration": 28,
+    "intro": "A new edit produces artifact B while approval for A is pending or already recorded. The executor must not apply approval of A to B.",
+    "takeaway": "New artifact, target or significant parameters require revalidation and, when policy requires it, a new decision.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The current artifact has changed to B. The recorded approval still names A."
+      },
+      {
+        "time": 7,
+        "text": "The executor compares their identities. The approved and requested actions differ."
+      },
+      {
+        "time": 14,
+        "text": "Execution is blocked by the mismatch. No deployment happens here."
+      },
+      {
+        "time": 21,
+        "text": "Review B with its own current evidence. Do not treat approval as transferable."
+      }
+    ],
+    "src": "lessons/human-in-the-loop/04.mp4",
+    "poster": "lessons/human-in-the-loop/04.jpg"
+  },
+  {
+    "title": "Record the outcome",
+    "duration": 28,
+    "intro": "The executor checks the matching approval and permissions, performs the action, and records the result. Resume and retry behavior must avoid duplicate effects.",
+    "takeaway": "Human approval does not replace reliable execution. Use suitable idempotency and failure handling for the actual operation.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "In a separate run, artifact A is approved. The executor also checks permissions."
+      },
+      {
+        "time": 7,
+        "text": "The executor performs the operation. A restart must not blindly repeat effects."
+      },
+      {
+        "time": 14,
+        "text": "Record the observed execution result. Keep it tied to the approved artifact."
+      },
+      {
+        "time": 21,
+        "text": "Report what actually happened. Approval and successful execution differ."
+      }
+    ],
+    "src": "lessons/human-in-the-loop/05.mp4",
+    "poster": "lessons/human-in-the-loop/05.jpg"
+  }
+]

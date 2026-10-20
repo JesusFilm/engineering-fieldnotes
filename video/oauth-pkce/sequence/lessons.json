@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Delegate access",
+    "duration": 28,
+    "intro": "OAuth lets a client obtain delegated access. The authorization server issues tokens that a resource API can validate.",
+    "takeaway": "OAuth is an access-delegation protocol. PKCE protects one part of an authorization-code flow; it is not a universal permission check.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A client needs access to an API. An authorization server handles the grant."
+      },
+      {
+        "time": 7,
+        "text": "The user authorizes access in a browser. The client receives an authorization code."
+      },
+      {
+        "time": 14,
+        "text": "The client exchanges the code for tokens. The server validates the exchange."
+      },
+      {
+        "time": 21,
+        "text": "A token accompanies an API request. The API still checks access."
+      }
+    ],
+    "src": "lessons/oauth-pkce/01.mp4",
+    "poster": "lessons/oauth-pkce/01.jpg"
+  },
+  {
+    "title": "Create a verifier",
+    "duration": 28,
+    "intro": "For each authorization attempt, the client creates a fresh unpredictable verifier and retains it for that attempt. S256 derives a challenge from it.",
+    "takeaway": "The verifier is a secret for this transaction. A later login needs a different verifier and separate storage.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Start a new authorization attempt. Create a fresh unpredictable verifier."
+      },
+      {
+        "time": 7,
+        "text": "Keep that verifier with attempt A. It will be needed at token exchange."
+      },
+      {
+        "time": 14,
+        "text": "Derive its S256 challenge. The challenge is a transformed value."
+      },
+      {
+        "time": 21,
+        "text": "Send the challenge first. Keep the verifier for the later exchange."
+      }
+    ],
+    "src": "lessons/oauth-pkce/02.mp4",
+    "poster": "lessons/oauth-pkce/02.jpg"
+  },
+  {
+    "title": "Bind code and challenge",
+    "duration": 28,
+    "intro": "The client sends its challenge with the authorization request. After authorization, the server issues a code bound to that challenge.",
+    "takeaway": "The first leg sends the challenge, not the verifier. Normal OAuth request validation and user authorization still apply.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The client has challenge A. Its verifier remains with the client."
+      },
+      {
+        "time": 7,
+        "text": "Send challenge A for authorization. The server records it for this attempt."
+      },
+      {
+        "time": 14,
+        "text": "After authorization, issue code A. The server binds it to challenge A."
+      },
+      {
+        "time": 21,
+        "text": "A code alone is not the full proof. The exchange must match the challenge."
+      }
+    ],
+    "src": "lessons/oauth-pkce/03.mp4",
+    "poster": "lessons/oauth-pkce/03.jpg"
+  },
+  {
+    "title": "Prove the verifier matches",
+    "duration": 28,
+    "intro": "The client submits the authorization code and the original verifier. The authorization server derives a challenge from the verifier and compares it with the saved value.",
+    "takeaway": "A matching PKCE check allows the rest of token validation to proceed. A mismatch must fail; it should not disable the protection.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Submit code A with verifier A. The server has its saved challenge."
+      },
+      {
+        "time": 7,
+        "text": "Derive S256 from the submitted verifier. Compare it with saved challenge A."
+      },
+      {
+        "time": 14,
+        "text": "A matching proof passes this check. Other OAuth checks must also pass."
+      },
+      {
+        "time": 21,
+        "text": "Then tokens may be issued. The code and proof belong together."
+      }
+    ],
+    "src": "lessons/oauth-pkce/04.mp4",
+    "poster": "lessons/oauth-pkce/04.jpg"
+  },
+  {
+    "title": "Separate login attempts",
+    "duration": 28,
+    "intro": "Two logins overlap. If B overwrites a global verifier, exchanging code A with verifier B fails. Store each verifier with its own transaction.",
+    "takeaway": "Repair transaction-specific storage and start a fresh login. Do not disable PKCE or repeatedly send mismatched credentials.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Attempt A owns code A and verifier A. Attempt B needs its own stored verifier."
+      },
+      {
+        "time": 7,
+        "text": "A shared variable is overwritten by B. Code A is now paired with verifier B."
+      },
+      {
+        "time": 14,
+        "text": "The server checks the mismatched proof. It must reject this token exchange."
+      },
+      {
+        "time": 21,
+        "text": "Keep verifier storage per transaction. Repair the client; start a fresh login."
+      }
+    ],
+    "src": "lessons/oauth-pkce/05.mp4",
+    "poster": "lessons/oauth-pkce/05.jpg"
+  }
+]

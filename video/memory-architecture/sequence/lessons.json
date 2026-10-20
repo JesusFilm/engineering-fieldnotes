@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Current and saved context",
+    "duration": 28,
+    "intro": "Current context is supplied now. Saved memory is information retained for later use. A stored record is not automatically visible to the model.",
+    "takeaway": "Persistence and visibility are separate: storage retains a record; retrieval supplies it to a later invocation.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The model receives its current input. This is the context it can use now."
+      },
+      {
+        "time": 7,
+        "text": "Other records exist in a memory store. Their presence does not include them."
+      },
+      {
+        "time": 14,
+        "text": "The application must retrieve a record. Then it can include it in a new input."
+      },
+      {
+        "time": 21,
+        "text": "Supply that record to the next call. The saved copy stays in the store."
+      }
+    ],
+    "src": "lessons/memory-architecture/01.mp4",
+    "poster": "lessons/memory-architecture/01.jpg"
+  },
+  {
+    "title": "Choose the memory scope",
+    "duration": 28,
+    "intro": "Thread-scoped state belongs to a conversation. A separate store can hold records used across conversations. Either may use persistent storage.",
+    "takeaway": "Short-term describes scope, not necessarily RAM. The backend determines what survives process restarts.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Thread state belongs to one conversation. It can include saved progress."
+      },
+      {
+        "time": 7,
+        "text": "A shared store has a wider scope. Use namespaces and keys for its records."
+      },
+      {
+        "time": 14,
+        "text": "A new session reads the relevant scope. It should not mix unrelated histories."
+      },
+      {
+        "time": 21,
+        "text": "Scope and durability are different choices. Check what the backend actually retains."
+      }
+    ],
+    "src": "lessons/memory-architecture/02.mp4",
+    "poster": "lessons/memory-architecture/02.jpg"
+  },
+  {
+    "title": "Save a useful record",
+    "duration": 28,
+    "intro": "Before retaining a fact, decide whether it is useful, supported and appropriate for later use. Include provenance and applicability such as repository revision.",
+    "takeaway": "Memory writes need policy. Repeatedly storing an unsupported inference can make later answers consistently wrong.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The session finds the test command. It proposes retaining that information."
+      },
+      {
+        "time": 7,
+        "text": "Check its source and intended scope. A guess should not become a settled fact."
+      },
+      {
+        "time": 14,
+        "text": "Save the command with its revision. Future readers can check applicability."
+      },
+      {
+        "time": 21,
+        "text": "Retain only what the policy allows. More stored notes are not always better."
+      }
+    ],
+    "src": "lessons/memory-architecture/03.mp4",
+    "poster": "lessons/memory-architecture/03.jpg"
+  },
+  {
+    "title": "Check applicability",
+    "duration": 28,
+    "intro": "A new checkout uses pnpm test at revision r2. Retrieval returns an older r1 note. Application-side checks reject the stale command.",
+    "takeaway": "Relevant does not mean current. Revision validation is deliberately implemented here, not an automatic feature of every memory store.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A saved note says npm test at r1. The checkout now uses revision r2."
+      },
+      {
+        "time": 7,
+        "text": "Retrieval returns the relevant old note. Compare its revision with the checkout."
+      },
+      {
+        "time": 14,
+        "text": "Reject the stale command for this task. Read the current repository instructions."
+      },
+      {
+        "time": 21,
+        "text": "Supply pnpm test from revision r2. The model gets applicable evidence."
+      }
+    ],
+    "src": "lessons/memory-architecture/04.mp4",
+    "poster": "lessons/memory-architecture/04.jpg"
+  },
+  {
+    "title": "Correct outdated memory",
+    "duration": 28,
+    "intro": "When authoritative instructions change, update or supersede retained notes according to the memory policy. Preserve enough history to explain the correction.",
+    "takeaway": "Memory needs maintenance and access controls. Removing stale applicability is different from pretending the old note was never valid.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The authoritative command changed at r2. The stored r1 note is now outdated."
+      },
+      {
+        "time": 7,
+        "text": "Mark the old record as superseded. Keep its earlier revision explicit."
+      },
+      {
+        "time": 14,
+        "text": "Store the current command and source. The new record applies to r2."
+      },
+      {
+        "time": 21,
+        "text": "Later retrieval selects a matching version. Still validate it against the current task."
+      }
+    ],
+    "src": "lessons/memory-architecture/05.mp4",
+    "poster": "lessons/memory-architecture/05.jpg"
+  }
+]

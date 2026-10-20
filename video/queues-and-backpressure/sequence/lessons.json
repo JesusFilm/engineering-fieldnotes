@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Submit a job",
+    "duration": 28,
+    "intro": "A producer creates a job. A queue holds jobs until a worker can execute them. Submission and completion are different events.",
+    "takeaway": "Accepted means the job entered the queue; it does not mean the requested work has finished.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A producer creates a job. A queue holds it until a worker is ready."
+      },
+      {
+        "time": 7,
+        "text": "Job A enters the queue. The job has been accepted."
+      },
+      {
+        "time": 14,
+        "text": "A worker takes job A. It leaves the waiting queue."
+      },
+      {
+        "time": 21,
+        "text": "Execution happens at the worker. Accepted is different from complete."
+      }
+    ],
+    "src": "lessons/queues-and-backpressure/01.mp4",
+    "poster": "lessons/queues-and-backpressure/01.jpg"
+  },
+  {
+    "title": "Finish a job",
+    "duration": 28,
+    "intro": "Follow one job from waiting to running to completed. A worker reports completion only after the work succeeds.",
+    "takeaway": "Waiting, running and completed describe different states. Acknowledgement policy must match the effect being confirmed.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Replay job A from its waiting state. No work has happened yet in this replay."
+      },
+      {
+        "time": 7,
+        "text": "The worker takes job A. Execution starts after it arrives."
+      },
+      {
+        "time": 14,
+        "text": "The worker executes the job. Leaving the wait queue did not finish it."
+      },
+      {
+        "time": 21,
+        "text": "The work finishes successfully. Now the job can be marked complete."
+      }
+    ],
+    "src": "lessons/queues-and-backpressure/02.mp4",
+    "poster": "lessons/queues-and-backpressure/02.jpg"
+  },
+  {
+    "title": "A backlog grows",
+    "duration": 28,
+    "intro": "A slow worker cannot keep up with incoming jobs. The queue absorbs a short burst, but sustained excess arrivals create a growing backlog.",
+    "takeaway": "A queue delays overload; it does not create execution capacity. This example has one worker.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "New scenario: the worker is running A. More jobs arrive while it is busy."
+      },
+      {
+        "time": 7,
+        "text": "B waits behind the running job. The worker has not taken B."
+      },
+      {
+        "time": 14,
+        "text": "C arrives before A finishes. C will join B in the queue."
+      },
+      {
+        "time": 21,
+        "text": "D arrives too. The backlog grows. Arrivals exceed completions here."
+      }
+    ],
+    "src": "lessons/queues-and-backpressure/03.mp4",
+    "poster": "lessons/queues-and-backpressure/03.jpg"
+  },
+  {
+    "title": "A full queue pushes back",
+    "duration": 28,
+    "intro": "Give the queue three waiting places. Under this blocking admission policy, submitting E waits at the producer while the queue is full.",
+    "takeaway": "Backpressure makes upstream production wait or slow. Dropping a job would be a different policy: load shedding.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "All three waiting places are full. E is still with the producer."
+      },
+      {
+        "time": 7,
+        "text": "Admission waits at the producer. E does not enter the full queue."
+      },
+      {
+        "time": 14,
+        "text": "The worker finishes A, then takes B. One waiting place becomes free."
+      },
+      {
+        "time": 21,
+        "text": "E can now enter the queue. It is accepted, not yet completed."
+      }
+    ],
+    "src": "lessons/queues-and-backpressure/04.mp4",
+    "poster": "lessons/queues-and-backpressure/04.jpg"
+  },
+  {
+    "title": "Choose an overload policy",
+    "duration": 28,
+    "intro": "A bounded queue requires an explicit full-queue policy. This lesson illustrates rejection instead of indefinite waiting.",
+    "takeaway": "Waiting, rejecting and dropping work have different consequences. Expose the outcome rather than calling every submission successful.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The queue is full again. This policy rejects new submissions."
+      },
+      {
+        "time": 7,
+        "text": "The producer asks to submit a job. No waiting place is available."
+      },
+      {
+        "time": 14,
+        "text": "The queue reports rejection. The producer must handle that result."
+      },
+      {
+        "time": 21,
+        "text": "The rejected job was not admitted. Make the overload policy explicit."
+      }
+    ],
+    "src": "lessons/queues-and-backpressure/05.mp4",
+    "poster": "lessons/queues-and-backpressure/05.jpg"
+  }
+]

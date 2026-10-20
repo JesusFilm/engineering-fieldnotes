@@ -1,0 +1,601 @@
+{
+  "concept": "timeouts-and-retries",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "AWS Builders\u2019 Library \u2014 Timeouts, retries, and backoff with jitter",
+      "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "gRPC \u2014 Deadlines",
+      "url": "https://grpc.io/docs/guides/deadlines/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "gRPC \u2014 Retry policy, transparent retries, and metrics",
+      "url": "https://grpc.io/docs/guides/retry/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "RFC 9110 \u00a79.2.2 \u2014 Idempotent methods",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "Stripe API \u2014 Idempotent requests",
+      "url": "https://docs.stripe.com/api/idempotent_requests",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "AWS Architecture Blog \u2014 Exponential Backoff and Jitter",
+      "url": "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Wait for a response",
+      "nodes": [
+        {
+          "id": "c",
+          "label": "CALLER",
+          "state": "waiting"
+        },
+        {
+          "id": "s",
+          "label": "REMOTE SERVICE",
+          "state": "ready"
+        }
+      ],
+      "intro": "A caller asks a remote service for CI status. Network travel and processing both take time; the caller waits for the response.",
+      "takeaway": "A successful response supplies evidence about the request. Every time in this sequence is an illustrative policy value.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The caller asks for CI status.",
+            "The remote service must answer."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "s",
+              "label": "READ STATUS",
+              "delay": 0,
+              "from": "c"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The service processes the request.",
+            "The caller is waiting."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "s",
+              "text": "processing",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "work",
+              "node": "s",
+              "duration": 5,
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "A response arrives in time.",
+            "The caller can use the reported status."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "s",
+              "text": "response sent",
+              "color": "ok",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "c",
+              "label": "BUILD PASSED",
+              "delay": 0,
+              "from": "s"
+            },
+            {
+              "type": "state",
+              "node": "c",
+              "text": "status known",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Some responses take too long.",
+            "A timeout bounds one attempt."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "A timeout is not a rollback",
+      "nodes": [
+        {
+          "id": "c",
+          "label": "CALLER",
+          "state": "waiting"
+        },
+        {
+          "id": "s",
+          "label": "REMOTE SERVICE",
+          "state": "processing"
+        }
+      ],
+      "intro": "The caller stops waiting when its attempt timeout expires. Work at the remote service may continue.",
+      "takeaway": "Missing a response means the outcome is unknown. Cancellation and rollback require their own implementation.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The caller is still waiting.",
+            "The remote request is in progress."
+          ],
+          "actions": [
+            {
+              "type": "work",
+              "node": "s",
+              "duration": 35,
+              "delay": 0
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The attempt timeout expires.",
+            "The caller stops waiting now."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "c",
+              "text": "timed out",
+              "color": "bad",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Remote work may still continue.",
+            "A timeout does not undo that work."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "s",
+              "text": "still processing",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Report the outcome as unknown.",
+            "Do not invent a failed build result."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "c",
+              "text": "status unknown",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Retry only when safe",
+      "nodes": [
+        {
+          "id": "c",
+          "label": "CALLER",
+          "state": "status unknown"
+        },
+        {
+          "id": "s",
+          "label": "REMOTE SERVICE",
+          "state": ""
+        }
+      ],
+      "intro": "A retry is another attempt at the same operation. A status read can usually be retried, but effectful operations need a safe retry contract.",
+      "takeaway": "Decide retry safety from the operation contract. An idempotency key can help protect a write when the service implements it.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The first status read timed out.",
+            "Another attempt may obtain the result."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Check whether repetition is safe.",
+            "This operation only reads CI status."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "c",
+              "text": "safe read",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Send a second bounded attempt.",
+            "It is the same question, asked again."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "s",
+              "label": "READ STATUS",
+              "delay": 0,
+              "from": "c"
+            },
+            {
+              "type": "state",
+              "node": "s",
+              "text": "attempt 2",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Use the response if it arrives.",
+            "A write would need its own contract."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "s",
+              "text": "response sent",
+              "color": "ok",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "c",
+              "label": "BUILD PASSED",
+              "delay": 0,
+              "from": "s"
+            },
+            {
+              "type": "state",
+              "node": "c",
+              "text": "status known",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Back off before retrying",
+      "nodes": [
+        {
+          "id": "a",
+          "label": "CALLER A",
+          "state": "attempt failed"
+        },
+        {
+          "id": "b",
+          "label": "CALLER B",
+          "state": "attempt failed"
+        },
+        {
+          "id": "c",
+          "label": "CALLER C",
+          "state": "attempt failed"
+        },
+        {
+          "id": "s",
+          "label": "REMOTE SERVICE",
+          "state": "overloaded"
+        }
+      ],
+      "intro": "After a shared failure, callers can retry together and add another burst of load. Backoff waits; jitter varies the wait between callers. These delays are illustrative.",
+      "takeaway": "Different retry delays spread arrivals. They do not guarantee recovery, and total attempts still need a bound.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Three callers encounter the same failure.",
+            "Immediate retries would form a new burst."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Each caller chooses a retry delay.",
+            "Jitter makes those delays different."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "a",
+              "text": "retry first",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "b",
+              "text": "2s later",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "c",
+              "text": "4s later",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Watch the retries arrive at different times.",
+            "The service still may not recover."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "s",
+              "label": "A",
+              "delay": 0,
+              "from": "a"
+            },
+            {
+              "type": "send",
+              "to": "s",
+              "label": "B",
+              "delay": 2,
+              "from": "b"
+            },
+            {
+              "type": "send",
+              "to": "s",
+              "label": "C",
+              "delay": 4,
+              "from": "c"
+            },
+            {
+              "type": "state",
+              "node": "a",
+              "text": "retry sent",
+              "color": "accent",
+              "delay": 2
+            },
+            {
+              "type": "state",
+              "node": "b",
+              "text": "retry sent",
+              "color": "accent",
+              "delay": 4
+            },
+            {
+              "type": "state",
+              "node": "c",
+              "text": "retry sent",
+              "color": "accent",
+              "delay": 6
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Each caller has made two attempts.",
+            "Keep further retries within a limit."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "a",
+              "text": "2 attempts",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "b",
+              "text": "2 attempts",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "c",
+              "text": "2 attempts",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Bound the whole operation",
+      "nodes": [
+        {
+          "id": "c",
+          "label": "CALLER",
+          "state": ""
+        },
+        {
+          "id": "gate",
+          "label": "DEADLINE GATE",
+          "state": "12s remaining"
+        },
+        {
+          "id": "s",
+          "label": "REMOTE SERVICE",
+          "state": ""
+        }
+      ],
+      "intro": "An attempt timeout and an overall deadline solve different problems. In this illustrative policy, two attempts and their delay must fit within twelve seconds. Animation time is slowed for explanation.",
+      "takeaway": "Five seconds for the first attempt plus a two-second delay leaves at most five seconds for a retry, less overhead. The deadline gate rejects further attempts when the shared budget reaches zero.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Example policy: a 12-second deadline.",
+            "The gate permits the first attempt."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "gate",
+              "label": "TRY 1",
+              "delay": 0,
+              "from": "c"
+            },
+            {
+              "type": "send",
+              "to": "s",
+              "label": "TRY 1",
+              "delay": 3,
+              "from": "gate"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Attempt 1 times out after 5 seconds.",
+            "The shared budget has 7 seconds left."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "gate",
+              "text": "7s remaining",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "c",
+              "text": "1 timeout",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "A 2-second backoff leaves at most 5s.",
+            "The second attempt uses that remainder."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "gate",
+              "text": "5s remaining",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "gate",
+              "label": "TRY 2",
+              "delay": 0,
+              "from": "c"
+            },
+            {
+              "type": "send",
+              "to": "s",
+              "label": "TRY 2",
+              "delay": 3,
+              "from": "gate"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The deadline expires: no third attempt.",
+            "Return unknown and both timed-out tries."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "gate",
+              "text": "0s: CLOSED",
+              "color": "bad",
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "c",
+              "text": "2 timeouts; unknown",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "gate",
+              "label": "TRY 3",
+              "delay": 1,
+              "from": "c"
+            },
+            {
+              "type": "state",
+              "node": "gate",
+              "text": "0s: TRY 3 blocked",
+              "color": "bad",
+              "delay": 3
+            }
+          ],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

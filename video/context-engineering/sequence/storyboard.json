@@ -1,0 +1,451 @@
+{
+  "concept": "context-engineering",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "[1] Effective context engineering for AI agents \u2014 engineering account, 2025",
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "[2] Lost in the Middle \u2014 primary research, 2023",
+      "url": "https://arxiv.org/html/2307.03172v3",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "[3] Effective harnesses for long-running agents \u2014 engineering experiments, 2025",
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "[4] Prompt caching \u2014 implementation-specific cost and processing behavior",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "What the model can see",
+      "nodes": [
+        {
+          "id": "files",
+          "label": "REPOSITORY",
+          "state": ""
+        },
+        {
+          "id": "input",
+          "label": "MODEL INPUT",
+          "state": ""
+        },
+        {
+          "id": "model",
+          "label": "MODEL",
+          "state": ""
+        }
+      ],
+      "intro": "Context is the information supplied for a particular invocation. A file on disk is not automatically part of that input.",
+      "takeaway": "Distinguish information that exists from information actually supplied to the model.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "A contract file exists in the repository.",
+            "That does not mean the model has read it."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "files",
+              "text": "contract on disk",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The application selects information.",
+            "Only selected content enters this input."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "input",
+              "label": "READ CONTRACT",
+              "delay": 0,
+              "from": "files"
+            },
+            {
+              "type": "state",
+              "node": "input",
+              "text": "contract included",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The model receives the assembled input.",
+            "It can use the supplied contract."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "model",
+              "label": "CONTEXT",
+              "delay": 0,
+              "from": "input"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Context is specific to this invocation.",
+            "Check what was actually included."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Retrieve relevant evidence",
+      "nodes": [
+        {
+          "id": "task",
+          "label": "TASK",
+          "state": "fix invoice latency"
+        },
+        {
+          "id": "search",
+          "label": "RETRIEVAL",
+          "state": ""
+        },
+        {
+          "id": "input",
+          "label": "MODEL INPUT",
+          "state": ""
+        }
+      ],
+      "intro": "The task is to fix invoice latency. Retrieval should bring in the code and contract that constrain that change, not every nearby document.",
+      "takeaway": "Relevance is a selection problem. Retrieved content still needs checking for authority and applicability.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The task is to fix invoice latency.",
+            "Find evidence that constrains this change."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "search",
+              "label": "INVOICE QUERY",
+              "delay": 0,
+              "from": "task"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Retrieve the endpoint and v1 contract.",
+            "They explain behavior that must remain."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "search",
+              "text": "code + contract",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Supply those records to the model input.",
+            "Include where each record came from."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "input",
+              "label": "EVIDENCE",
+              "delay": 0,
+              "from": "search"
+            },
+            {
+              "type": "state",
+              "node": "input",
+              "text": "source references",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "More material is not always more useful.",
+            "Select evidence that changes the decision."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Preserve a constraint",
+      "nodes": [
+        {
+          "id": "contract",
+          "label": "v1 CONTRACT",
+          "state": "total_cents"
+        },
+        {
+          "id": "input",
+          "label": "MODEL INPUT",
+          "state": ""
+        },
+        {
+          "id": "patch",
+          "label": "PROPOSED PATCH",
+          "state": ""
+        }
+      ],
+      "intro": "Existing clients expect total_cents. An optimization must keep that field. The constraint needs to be visible when the agent chooses its edit.",
+      "takeaway": "State what must remain unchanged and reference the authoritative contract. The model still needs verification.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Clients expect the field total_cents.",
+            "Latency work must preserve that contract."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Include the unchanged-field requirement.",
+            "Keep its contract reference with it."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "input",
+              "label": "KEEP total_cents",
+              "delay": 0,
+              "from": "contract"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The agent proposes a compatible edit.",
+            "The field name stays total_cents."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "patch",
+              "label": "CONSTRAINED EDIT",
+              "delay": 0,
+              "from": "input"
+            },
+            {
+              "type": "state",
+              "node": "patch",
+              "text": "field preserved",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "A visible constraint guides the edit.",
+            "A check must still verify the result."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Make a useful handoff",
+      "nodes": [
+        {
+          "id": "session",
+          "label": "CURRENT SESSION",
+          "state": ""
+        },
+        {
+          "id": "note",
+          "label": "HANDOFF",
+          "state": ""
+        },
+        {
+          "id": "next",
+          "label": "NEXT SESSION",
+          "state": ""
+        }
+      ],
+      "intro": "A resumed task needs a concise record of the goal, important constraints, evidence and unresolved work. Summarization can lose crucial details.",
+      "takeaway": "A handoff is a shorter representation, not perfect memory. Preserve references so the next session can retrieve omitted detail.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The current session must hand work over.",
+            "A vague summary can lose the contract."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Record the goal and unchanged field.",
+            "Keep evidence and open questions too."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "note",
+              "label": "GOAL + CONSTRAINT",
+              "delay": 0,
+              "from": "session"
+            },
+            {
+              "type": "state",
+              "node": "note",
+              "text": "contract referenced",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The next session receives the handoff.",
+            "It can retrieve the source when needed."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "next",
+              "label": "HANDOFF",
+              "delay": 0,
+              "from": "note"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Shorten incidental history first.",
+            "Do not silently drop decisive constraints."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Verify the patch",
+      "nodes": [
+        {
+          "id": "patch",
+          "label": "PATCH",
+          "state": "optimization"
+        },
+        {
+          "id": "test",
+          "label": "COMPATIBILITY TEST",
+          "state": ""
+        },
+        {
+          "id": "result",
+          "label": "REVIEW EVIDENCE",
+          "state": ""
+        }
+      ],
+      "intro": "A saved compatibility fixture checks that the optimized endpoint still returns the required field. Run it against the actual changed code.",
+      "takeaway": "Good context reduces ambiguity; it does not prove the result correct. Verification closes the gap.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The patch claims to preserve compatibility.",
+            "The claim still needs evidence."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Run the v1 response fixture.",
+            "Check the actual response field."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "test",
+              "label": "RUN FIXTURE",
+              "delay": 0,
+              "from": "patch"
+            },
+            {
+              "type": "work",
+              "node": "test",
+              "duration": 4,
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The response still has total_cents.",
+            "The checked contract is satisfied."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "test",
+              "text": "field present",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Keep the result with the patch revision.",
+            "Context and verification work together."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "result",
+              "label": "RESULT + REVISION",
+              "delay": 0,
+              "from": "test"
+            }
+          ],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
-# Load balancing: sequential-video pilot
+# Load balancing: focused video sequence
 
 Six lessons, 214 seconds total, authored 20 October 2026 in response to Jaco's feedback that both the 3D metaphors and the short all-in-one videos assume too much prior knowledge. These videos retain the existing diagram vocabulary, add plain explanations, and show software actors directly. They are finite lessons, not loops; final frames intentionally hold the outcome.
 
-The draft build replaces only the load-balancing chapter's primary media with this sequence. Release builds exclude `public/pilots/` and retain the existing reviewed curriculum until Jaco reviews this experiment. Existing comparison cuts remain available. No broad rollout is authorized by acceptance of media integrity checks.
+The approved side-index rollout makes this the default load-balancing chapter. Its six clips live in `public/lessons/load-balancing/`. Existing comparison cuts remain available. Media integrity and teaching review remain separate checks.
 
 ## Reproduce
 
@@ -10,8 +10,8 @@ From the repository root, with Node 22.12+, Python 3, FFmpeg, Chrome, and `npm c
 
 ```sh
 sh video/load-balancing/sequence/render.sh
-python3 scripts/build.py --draft
-python3 scripts/check.py --draft
+python3 scripts/build.py
+python3 scripts/check.py
 python3 -m http.server 4174 --directory dist
 # In another terminal:
 node scripts/check_sequence.mjs

@@ -1,0 +1,565 @@
+{
+  "concept": "harness-engineering",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "Anthropic: Effective harnesses for long-running agents \u2014 session setup and verification",
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenAI: Harness engineering \u2014 making constraints mechanically checkable",
+      "url": "https://openai.com/index/harness-engineering/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "GitHub Docs: About protected branches \u2014 required checks and bypass permissions",
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OWASP: Authorization Cheat Sheet \u2014 object access and authorization tests",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "The model and its runtime",
+      "nodes": [
+        {
+          "id": "model",
+          "label": "MODEL",
+          "state": ""
+        },
+        {
+          "id": "runtime",
+          "label": "RUNTIME",
+          "state": ""
+        },
+        {
+          "id": "tool",
+          "label": "TOOL",
+          "state": ""
+        }
+      ],
+      "intro": "A model can propose a tool call. The surrounding software prepares inputs, checks permissions, executes the call and supplies results. That surrounding setup is part of the harness.",
+      "takeaway": "Instructions express what should happen; executable software decides what actually runs.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The model proposes a tool call.",
+            "It does not execute the tool by itself."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "runtime",
+              "label": "RUN TESTS",
+              "delay": 0,
+              "from": "model"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "The runtime receives the request.",
+            "It checks and dispatches the operation."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "runtime",
+              "text": "validate call",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "tool",
+              "label": "EXECUTE",
+              "delay": 2,
+              "from": "runtime"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The tool runs and produces a result.",
+            "The runtime captures that evidence."
+          ],
+          "actions": [
+            {
+              "type": "work",
+              "node": "tool",
+              "duration": 4,
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "runtime",
+              "label": "RESULT",
+              "delay": 4,
+              "from": "tool"
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The model receives the captured result.",
+            "The harness connects action to feedback."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "model",
+              "label": "TEST RESULT",
+              "delay": 0,
+              "from": "runtime"
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Prepare a known workspace",
+      "nodes": [
+        {
+          "id": "setup",
+          "label": "SETUP",
+          "state": ""
+        },
+        {
+          "id": "repo",
+          "label": "WORKSPACE",
+          "state": ""
+        },
+        {
+          "id": "agent",
+          "label": "AGENT",
+          "state": ""
+        }
+      ],
+      "intro": "A long-running task needs a known starting state. The harness prepares the repository, instructions and a way to run relevant checks before work begins.",
+      "takeaway": "Reproducible setup reduces ambiguity. It does not make every task deterministic or guarantee the environment is correct.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Begin with a known repository revision.",
+            "Setup prepares the working directory."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "repo",
+              "label": "CHECKOUT",
+              "delay": 0,
+              "from": "setup"
+            },
+            {
+              "type": "state",
+              "node": "repo",
+              "text": "revision recorded",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Load the task and repository instructions.",
+            "They define the work and its boundaries."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "agent",
+              "label": "INSTRUCTIONS",
+              "delay": 0,
+              "from": "repo"
+            },
+            {
+              "type": "state",
+              "node": "agent",
+              "text": "task loaded",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Run a baseline check before editing.",
+            "Record existing failures separately."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "setup",
+              "label": "BASELINE",
+              "delay": 0,
+              "from": "agent"
+            },
+            {
+              "type": "work",
+              "node": "setup",
+              "duration": 4,
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The starting evidence is now recorded.",
+            "Later results can be compared with it."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "setup",
+              "text": "baseline saved",
+              "color": "ok",
+              "delay": 0
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Execute and retain evidence",
+      "nodes": [
+        {
+          "id": "agent",
+          "label": "AGENT",
+          "state": ""
+        },
+        {
+          "id": "runner",
+          "label": "TEST RUNNER",
+          "state": ""
+        },
+        {
+          "id": "record",
+          "label": "RUN RECORD",
+          "state": ""
+        }
+      ],
+      "intro": "The agent requests a test. The harness runs the actual command and retains the exit status and output for later inspection.",
+      "takeaway": "A statement that tests passed is different from a recorded command and its result. Bind evidence to the code that was tested.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The agent asks to run the tests.",
+            "A test runner executes the command."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "runner",
+              "label": "TEST COMMAND",
+              "delay": 0,
+              "from": "agent"
+            },
+            {
+              "type": "work",
+              "node": "runner",
+              "duration": 4,
+              "delay": 2
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Capture the exit status and output.",
+            "Do not replace them with a success claim."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "record",
+              "label": "EXIT + LOG",
+              "delay": 0,
+              "from": "runner"
+            },
+            {
+              "type": "state",
+              "node": "record",
+              "text": "evidence saved",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Associate evidence with the code revision.",
+            "A new patch needs new evidence."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "record",
+              "text": "revision + result",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Return that evidence to the agent.",
+            "Its next decision uses an observation."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "agent",
+              "label": "OBSERVATION",
+              "delay": 0,
+              "from": "record"
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Turn a failure into feedback",
+      "nodes": [
+        {
+          "id": "agent",
+          "label": "AGENT",
+          "state": ""
+        },
+        {
+          "id": "tests",
+          "label": "ACCESS TESTS",
+          "state": ""
+        },
+        {
+          "id": "patch",
+          "label": "PATCH",
+          "state": ""
+        }
+      ],
+      "intro": "An invoice endpoint should deny cross-tenant access under this example contract. A failed authorization test supplies a concrete expected-versus-actual result.",
+      "takeaway": "Useful feedback names the violated behavior. The harness must rerun the relevant checks against the repair.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "This example denies cross-tenant access.",
+            "Expected: 403. Actual: 200."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "tests",
+              "text": "expected 403",
+              "color": "bad",
+              "delay": 0
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Return the failed assertion to the agent.",
+            "The failure identifies what to repair."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "agent",
+              "label": "403 \u2260 200",
+              "delay": 0,
+              "from": "tests"
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The agent changes the authorization check.",
+            "A proposed repair is not yet verified."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "patch",
+              "label": "EDIT",
+              "delay": 0,
+              "from": "agent"
+            },
+            {
+              "type": "state",
+              "node": "patch",
+              "text": "unverified",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Rerun the access test on the patch.",
+            "Now it returns the expected 403."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "tests",
+              "text": "new run pending",
+              "color": "accent",
+              "delay": 0
+            },
+            {
+              "type": "send",
+              "to": "tests",
+              "label": "RETEST",
+              "delay": 0,
+              "from": "patch"
+            },
+            {
+              "type": "work",
+              "node": "tests",
+              "duration": 2,
+              "delay": 2
+            },
+            {
+              "type": "state",
+              "node": "tests",
+              "text": "observed 403",
+              "color": "ok",
+              "delay": 4.5
+            },
+            {
+              "type": "state",
+              "node": "patch",
+              "text": "403 check passed",
+              "color": "ok",
+              "delay": 5
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Require a passing check",
+      "nodes": [
+        {
+          "id": "patch",
+          "label": "PATCH",
+          "state": "unverified"
+        },
+        {
+          "id": "gate",
+          "label": "REQUIRED CHECK",
+          "state": ""
+        },
+        {
+          "id": "merge",
+          "label": "MERGE PATH",
+          "state": "blocked"
+        }
+      ],
+      "intro": "A mechanically enforced gate can prevent an unchecked change from advancing. The gate needs a relevant check, current evidence and controlled bypass permissions.",
+      "takeaway": "A prompt asking for tests is not a required-check mechanism. Passing checks cover only their tested behavior.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The patch is ready for evaluation.",
+            "The merge path still blocks it."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "A required check runs on this revision.",
+            "The gate waits for its actual result."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "gate",
+              "label": "TEST REVISION",
+              "delay": 0,
+              "from": "patch"
+            },
+            {
+              "type": "work",
+              "node": "gate",
+              "duration": 4,
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The configured checks pass.",
+            "The gate records current evidence."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "gate",
+              "text": "checks passed",
+              "color": "ok",
+              "delay": 0
+            },
+            {
+              "type": "state",
+              "node": "patch",
+              "text": "review pending",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "This gate now permits advancement.",
+            "Other review requirements still apply."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "merge",
+              "label": "CHECK PASSED",
+              "delay": 0,
+              "from": "gate"
+            },
+            {
+              "type": "state",
+              "node": "merge",
+              "text": "gate satisfied",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}

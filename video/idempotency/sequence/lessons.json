@@ -1,0 +1,132 @@
+[
+  {
+    "title": "One intended operation",
+    "duration": 28,
+    "intro": "A caller asks for one release ticket. The intended effect is one saved ticket, not merely a successful network response.",
+    "takeaway": "Separate the business effect from the response that reports it.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The caller wants one release ticket. The service must save that effect."
+      },
+      {
+        "time": 7,
+        "text": "The create request reaches the service. The service begins the operation."
+      },
+      {
+        "time": 14,
+        "text": "The service saves ticket 47. The database records that effect."
+      },
+      {
+        "time": 21,
+        "text": "A response reports ticket 47. This normal attempt succeeds."
+      }
+    ],
+    "src": "lessons/idempotency/01.mp4",
+    "poster": "lessons/idempotency/01.jpg"
+  },
+  {
+    "title": "A missing reply",
+    "duration": 28,
+    "intro": "The service saves a ticket but the reply is lost. The caller times out without knowing whether the operation happened.",
+    "takeaway": "A timeout does not prove that nothing was created. Retrying an unprotected create can duplicate the effect.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The caller sends a create request. The service receives it."
+      },
+      {
+        "time": 7,
+        "text": "The service saves ticket 47. Its response will not reach the caller."
+      },
+      {
+        "time": 14,
+        "text": "The caller stops waiting. Its outcome is unknown."
+      },
+      {
+        "time": 21,
+        "text": "Another create could add a duplicate. The caller needs a stable operation ID."
+      }
+    ],
+    "src": "lessons/idempotency/02.mp4",
+    "poster": "lessons/idempotency/02.jpg"
+  },
+  {
+    "title": "Name the operation",
+    "duration": 28,
+    "intro": "The caller saves key k7 with its release request before sending. The service commits the ticket and key record in one database transaction.",
+    "takeaway": "The key identifies an intended operation. Atomic storage and uniqueness are needed to prevent concurrent duplicate effects in this design.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "New attempt: save key k7 before sending. This time, protect the operation upfront."
+      },
+      {
+        "time": 7,
+        "text": "Send the key with the request. The service checks its stored records."
+      },
+      {
+        "time": 14,
+        "text": "The first attempt creates ticket 47. Store the ticket and key atomically."
+      },
+      {
+        "time": 21,
+        "text": "Suppose this protected reply is lost too. Key k7 still identifies the saved ticket."
+      }
+    ],
+    "src": "lessons/idempotency/03.mp4",
+    "poster": "lessons/idempotency/03.jpg"
+  },
+  {
+    "title": "Retry the same key",
+    "duration": 28,
+    "intro": "After losing the response, the caller resends k7 with the same release payload. The service finds the previous result.",
+    "takeaway": "The retry reuses the recorded effect instead of creating a second ticket. This depends on the service contract and key retention.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The caller still needs its result. It reuses the saved key k7."
+      },
+      {
+        "time": 7,
+        "text": "The service looks up k7. Its record points to ticket 47."
+      },
+      {
+        "time": 14,
+        "text": "The existing result is returned. No second ticket is created."
+      },
+      {
+        "time": 21,
+        "text": "The caller receives ticket 47. The intended effect remains one ticket."
+      }
+    ],
+    "src": "lessons/idempotency/04.mp4",
+    "poster": "lessons/idempotency/04.jpg"
+  },
+  {
+    "title": "Changed intent, new key",
+    "duration": 28,
+    "intro": "The caller now sends a different release payload using the old key. This service compares the stored payload before deciding whether replay is valid.",
+    "takeaway": "A key is not a general-purpose deduplication label. Reusing it for changed intent must follow the service contract; here the request is rejected.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Key k7 belongs to release v1. The new payload asks for release v2."
+      },
+      {
+        "time": 7,
+        "text": "The service compares the payloads. The same key now has different intent."
+      },
+      {
+        "time": 14,
+        "text": "The service rejects the mismatch. It does not overwrite the old operation."
+      },
+      {
+        "time": 21,
+        "text": "A new operation needs a new key. A retry keeps its original identity."
+      }
+    ],
+    "src": "lessons/idempotency/05.mp4",
+    "poster": "lessons/idempotency/05.jpg"
+  }
+]

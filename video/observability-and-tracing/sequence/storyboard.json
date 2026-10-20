@@ -1,0 +1,525 @@
+{
+  "concept": "observability-and-tracing",
+  "authored": "2026-10-20",
+  "sources": [
+    {
+      "title": "OpenTelemetry: traces, span context, and parent relationships",
+      "url": "https://opentelemetry.io/docs/concepts/signals/traces/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenTelemetry: context propagation across service boundaries",
+      "url": "https://opentelemetry.io/docs/concepts/context-propagation/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "W3C Trace Context: traceparent and processing model",
+      "url": "https://www.w3.org/TR/trace-context/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenTelemetry GenAI: client and tool spans (development conventions)",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-spans.md",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenTelemetry GenAI: agent spans",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenTelemetry: handling sensitive data",
+      "url": "https://opentelemetry.io/docs/security/handling-sensitive-data/",
+      "retrieved": "2026-10-19"
+    },
+    {
+      "title": "OpenTelemetry: sampling and missing information",
+      "url": "https://opentelemetry.io/docs/concepts/sampling/",
+      "retrieved": "2026-10-19"
+    }
+  ],
+  "lessons": [
+    {
+      "title": "One operation is a span",
+      "nodes": [
+        {
+          "id": "caller",
+          "label": "CALLER",
+          "state": ""
+        },
+        {
+          "id": "tool",
+          "label": "TEST TOOL",
+          "state": ""
+        },
+        {
+          "id": "span",
+          "label": "SPAN RECORD",
+          "state": ""
+        }
+      ],
+      "intro": "A span records one operation, including its start, duration and attributes. It describes observed execution rather than the intended plan.",
+      "takeaway": "Instrumentation creates spans. Missing instrumentation means some operations will not appear.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The caller invokes a remote test tool.",
+            "That operation takes time."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "tool",
+              "label": "RUN TESTS",
+              "delay": 0,
+              "from": "caller"
+            }
+          ],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Instrumentation records the start.",
+            "The tool performs its work."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "span",
+              "label": "START",
+              "delay": 0,
+              "from": "tool"
+            },
+            {
+              "type": "work",
+              "node": "tool",
+              "duration": 4,
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The operation ends and its span closes.",
+            "The record includes duration and outcome."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "span",
+              "label": "END",
+              "delay": 0,
+              "from": "tool"
+            },
+            {
+              "type": "state",
+              "node": "span",
+              "text": "2.4s; exit 0",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "This span describes one operation.",
+            "Several related spans can form a trace."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Related spans form a trace",
+      "nodes": [
+        {
+          "id": "agent",
+          "label": "AGENT SPAN",
+          "state": "span A; trace T"
+        },
+        {
+          "id": "model",
+          "label": "MODEL SPAN",
+          "state": ""
+        },
+        {
+          "id": "tool",
+          "label": "TOOL SPAN",
+          "state": ""
+        },
+        {
+          "id": "trace",
+          "label": "TRACE VIEW",
+          "state": ""
+        }
+      ],
+      "intro": "A trace groups related spans. They share a trace ID but each has its own span ID. Parent IDs describe the nesting relationship.",
+      "takeaway": "Shared trace identity links operations; distinct span identities keep individual work identifiable.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The agent operation starts trace T.",
+            "Its children represent individual calls."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "A model call gets its own span ID.",
+            "It keeps trace T and the parent relation."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "model",
+              "label": "trace T",
+              "delay": 0,
+              "from": "agent"
+            },
+            {
+              "type": "state",
+              "node": "model",
+              "text": "M; parent A; T",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "A tool call gets another span ID.",
+            "It also belongs to trace T."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "tool",
+              "label": "trace T",
+              "delay": 0,
+              "from": "agent"
+            },
+            {
+              "type": "state",
+              "node": "tool",
+              "text": "U; parent A; T",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The trace view groups the related spans.",
+            "Parent links show how they fit together."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "trace",
+              "label": "SPAN M",
+              "delay": 0,
+              "from": "model"
+            },
+            {
+              "type": "send",
+              "to": "trace",
+              "label": "SPAN U",
+              "delay": 3,
+              "from": "tool"
+            },
+            {
+              "type": "state",
+              "node": "trace",
+              "text": "T: A \u2192 M and U",
+              "color": "ok",
+              "delay": 5
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Cross a service boundary",
+      "nodes": [
+        {
+          "id": "agent",
+          "label": "AGENT SERVICE",
+          "state": "trace T"
+        },
+        {
+          "id": "network",
+          "label": "REMOTE REQUEST",
+          "state": ""
+        },
+        {
+          "id": "tool",
+          "label": "TOOL SERVICE",
+          "state": ""
+        }
+      ],
+      "intro": "When an operation crosses a process boundary, tracing context must travel with the request and be extracted by the receiving service.",
+      "takeaway": "Propagation links the spans, but instrumentation and export must also work. Headers alone do not create a complete trace.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "The agent calls a separate service.",
+            "A local parent relation cannot cross alone."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Include trace context in the request.",
+            "It identifies the trace and parent span."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "network",
+              "label": "T; parent A",
+              "delay": 0,
+              "from": "agent"
+            },
+            {
+              "type": "state",
+              "node": "network",
+              "text": "trace=T; parent=A",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "The receiver extracts that context.",
+            "It starts a child span for its work."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "tool",
+              "label": "T; parent A",
+              "delay": 0,
+              "from": "network"
+            },
+            {
+              "type": "state",
+              "node": "tool",
+              "text": "U; parent A; trace T",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Both sides now share trace identity.",
+            "Export their spans to see the whole path."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Visibility is not a speedup",
+      "nodes": [
+        {
+          "id": "agent",
+          "label": "AGENT",
+          "state": "3.0s total"
+        },
+        {
+          "id": "model",
+          "label": "MODEL",
+          "state": "0.6s"
+        },
+        {
+          "id": "tool",
+          "label": "REMOTE TOOL",
+          "state": "2.4s"
+        },
+        {
+          "id": "view",
+          "label": "TRACE VIEW",
+          "state": ""
+        }
+      ],
+      "intro": "In this illustrative sequential run, the model takes 0.6 seconds and the tool 2.4 seconds. Correct propagation makes the slow tool visible but does not shorten the work.",
+      "takeaway": "Use tracing to locate time. A tracing repair is an observability improvement, not automatically a performance optimization.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Example: two calls run sequentially.",
+            "0.6 + 2.4 = 3.0 seconds total."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Without linkage, the tool looks separate.",
+            "Its time is harder to attribute."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "view",
+              "text": "tool disconnected",
+              "color": "bad",
+              "delay": 0
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Next run: propagate the request context.",
+            "Export now links the same 2.4s tool span."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "tool",
+              "label": "CONTEXT",
+              "delay": 0,
+              "from": "agent"
+            },
+            {
+              "type": "send",
+              "to": "view",
+              "label": "TOOL SPAN",
+              "delay": 3,
+              "from": "tool"
+            },
+            {
+              "type": "state",
+              "node": "view",
+              "text": "linked tool: 2.4s",
+              "color": "ok",
+              "delay": 5
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "The run still takes 3.0 seconds.",
+            "We improved visibility, not execution speed."
+          ],
+          "actions": [
+            {
+              "type": "state",
+              "node": "agent",
+              "text": "still 3.0s",
+              "color": "accent",
+              "delay": 0
+            }
+          ],
+          "time": 21
+        }
+      ]
+    },
+    {
+      "title": "Missing and sensitive data",
+      "nodes": [
+        {
+          "id": "runtime",
+          "label": "RUNTIME",
+          "state": ""
+        },
+        {
+          "id": "export",
+          "label": "TRACE EXPORT",
+          "state": ""
+        },
+        {
+          "id": "view",
+          "label": "TRACE VIEW",
+          "state": ""
+        }
+      ],
+      "intro": "Sampling, export failures and missing instrumentation can omit spans. Recorded attributes can also contain sensitive information unless the application controls them.",
+      "takeaway": "A missing span is not proof that work never happened. Minimize sensitive attributes and treat traces as partial evidence.",
+      "duration": 28,
+      "beats": [
+        {
+          "lines": [
+            "Runtime operations produce tracing data.",
+            "Not every detail should be recorded."
+          ],
+          "actions": [],
+          "time": 0
+        },
+        {
+          "lines": [
+            "Remove a secret attribute from span A.",
+            "Keep the span itself in the export."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "export",
+              "label": "SPAN A",
+              "delay": 0,
+              "from": "runtime"
+            },
+            {
+              "type": "state",
+              "node": "export",
+              "text": "A kept; token removed",
+              "color": "ok",
+              "delay": 2
+            }
+          ],
+          "time": 7
+        },
+        {
+          "lines": [
+            "Separately, span B fails to export.",
+            "The view has A, but B is missing."
+          ],
+          "actions": [
+            {
+              "type": "send",
+              "to": "view",
+              "label": "SPAN A",
+              "delay": 0,
+              "from": "export"
+            },
+            {
+              "type": "state",
+              "node": "view",
+              "text": "A present; B missing",
+              "color": "accent",
+              "delay": 2
+            }
+          ],
+          "time": 14
+        },
+        {
+          "lines": [
+            "Use traces with their collection limits.",
+            "Absence of a span is not proof of absence."
+          ],
+          "actions": [],
+          "time": 21
+        }
+      ]
+    }
+  ]
+}
