@@ -1,0 +1,291 @@
+{
+  "lesson": "timeouts-and-retries/01 Wait for a response",
+  "cut": "video/timeouts-and-retries/motion-v2/01",
+  "sha256": "8fe0278c7d0665832dfbf8ddb45118953580ac288413cc306b0dbff4af3022aa",
+  "duration_s": 39.0,
+  "files": {
+    "video.mp4": {
+      "sha256": "8fe0278c7d0665832dfbf8ddb45118953580ac288413cc306b0dbff4af3022aa",
+      "bytes": 1216115
+    },
+    "poster.jpg": {
+      "sha256": "b846bdd1c45c8f84f52ccfc33b99c631e7157c8921503837c3b29d2d5fe6386e",
+      "source_frame_index": 405,
+      "source_time_s": 13.5,
+      "width": 1080,
+      "height": 1920
+    }
+  },
+  "source_hashes": {
+    "scene.js": "068ed07e56903f3173a912818e566ba1ceb33f69feff2d643cf47bd10ad401b2",
+    "engine/flow-engine.js": "be7ac7d06c51ba416a36be84f3bf2b8da05aae603329b286127a5646ce3c76d7",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "engine_provenance": {
+    "copied_from": "architecture-flow-video skill scripts (general helpers); earlier cuts not modified",
+    "skill_flow_engine_sha256_before_local_change": "af17dffdf846f7d5e17d1efeeb8553953b39f54c098f6aa482030ba0ce31cf6d",
+    "local_changes": [
+      "flow-engine.js: export NODES and util for scene-local node types",
+      "flow-engine.js: anchor half-size fallback n.half",
+      "flow-engine.js: ease \"cruise\" (mostly linear, eased endpoints)"
+    ],
+    "unchanged_from_skill": [
+      "sfx.js",
+      "render.mjs",
+      "preview.html"
+    ]
+  },
+  "reproduction": {
+    "working_directory": "repository root",
+    "renderer_dependency": "puppeteer-core 25.14.0 from the repository package.json / node_modules",
+    "browser": "CHROME_PATH=/snap/bin/chromium (launched outside the workspace sandbox: snap Chromium fails to start inside it)",
+    "tools": {
+      "node": "v22.22.1",
+      "ffmpeg": "8.0.1-3ubuntu2"
+    },
+    "render_command": "CHROME_PATH=/snap/bin/chromium node video/timeouts-and-retries/motion-v2/01/engine/render.mjs video/timeouts-and-retries/motion-v2/01/scene.js video/timeouts-and-retries/motion-v2/01/video.mp4 --sheet video/timeouts-and-retries/motion-v2/01/scratch/contact-sheet.png",
+    "poster_command": "ffmpeg -v error -y -i video/timeouts-and-retries/motion-v2/01/video.mp4 -vf \"select='eq(n\\,405)'\" -frames:v 1 -q:v 2 video/timeouts-and-retries/motion-v2/01/poster.jpg",
+    "timing_dry_run": "cd video/timeouts-and-retries/motion-v2/01 && node -e \"const F=require('./engine/flow-engine.js'); require('./scene.js'); const sc=F.createScene(F.lastScene); console.log(sc.meta.renderDuration, sc.audioCues().map(c=>c.t.toFixed(2)+' '+c.name).join(' | '))\"",
+    "byte_identical_rerender": "not verified"
+  },
+  "encoded_verification": {
+    "video_stream": {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "duration": "39.000000",
+      "nb_frames": "1170"
+    },
+    "audio_stream": {
+      "codec_name": "aac",
+      "sample_rate": "44100",
+      "channels": 2,
+      "duration": "39.000000"
+    },
+    "decoded_video_frames": 1170,
+    "frame_pts_check": {
+      "first": "0.000000,",
+      "index_330": "11.000000",
+      "index_900": "30.000000",
+      "last": "38.966667",
+      "rule": "pts_time = index / 30"
+    },
+    "full_decode": {
+      "command": "ffmpeg -v error -xerror -i video.mp4 -f null -",
+      "exit_code": 0,
+      "stderr": ""
+    },
+    "audio_peak": {
+      "volumedetect_max_db": -6.3,
+      "volumedetect_mean_db": -32.2,
+      "astats_peak_db_per_channel_and_overall": [
+        -6.944742,
+        -6.283974,
+        -6.283974
+      ],
+      "limit_db": -0.5,
+      "pass": true
+    },
+    "streaming_metadata": {
+      "top_level_atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ],
+      "moov_offset": 32,
+      "mdat_offset": 43364,
+      "moov_before_mdat": true
+    },
+    "audio_onsets_s_silencedetect_-55dB_0.3s": [
+      0.3,
+      0.8,
+      3.0,
+      4.6,
+      5.6,
+      6.399,
+      7.0,
+      7.6,
+      8.4,
+      9.0,
+      9.4,
+      11.0,
+      12.6,
+      17.3,
+      17.8,
+      20.0,
+      21.6,
+      22.6,
+      23.4,
+      24.0,
+      24.6,
+      25.4,
+      26.0,
+      26.6,
+      27.4,
+      28.0,
+      28.6,
+      29.4,
+      30.0,
+      34.0
+    ],
+    "scheduled_cues_s": [
+      0.3,
+      0.8,
+      3.0,
+      4.6,
+      5.0,
+      5.6,
+      6.4,
+      7.0,
+      7.6,
+      8.4,
+      9.0,
+      9.4,
+      11.0,
+      12.6,
+      17.3,
+      17.8,
+      20.0,
+      21.6,
+      22.0,
+      22.6,
+      23.4,
+      24.0,
+      24.6,
+      25.4,
+      26.0,
+      26.6,
+      27.4,
+      28.0,
+      28.6,
+      29.4,
+      30.0,
+      30.6,
+      31.4,
+      34.0
+    ],
+    "onset_note": "Every detected onset matches a scheduled cue within 2 ms. Cues that follow another sound by less than 0.3 s or overlap its tail (5.0, 22.0, 30.6, 31.4) are not separated by silencedetect; the spectrogram shows them. The end-of-stream silence boundary at 39.01 s is excluded.",
+    "spectrogram": "scratch/spectrogram.png (showspectrumpic 1800x500 log frequency), inspected",
+    "contact_sheet": "scratch/contact-sheet.png (1 fps, 240 px tiles), inspected",
+    "inspected_frames": {
+      "indices": [
+        0,
+        9,
+        30,
+        75,
+        90,
+        93,
+        114,
+        138,
+        141,
+        150,
+        210,
+        282,
+        285,
+        306,
+        329,
+        330,
+        333,
+        378,
+        387,
+        405,
+        477,
+        492,
+        507,
+        510,
+        525,
+        558,
+        600,
+        603,
+        648,
+        651,
+        750,
+        840,
+        899,
+        900,
+        903,
+        981,
+        1020,
+        1107,
+        1125,
+        1169
+      ],
+      "extraction": "select='eq(n,N)' with -fps_mode passthrough",
+      "native_1080x1920": "each inspected individually",
+      "w350": "each scaled to 350 px width (area filter) and inspected at actual pixels in strips",
+      "dirs": [
+        "scratch/enc",
+        "scratch/w350"
+      ]
+    },
+    "alternate_exact_frame_check": {
+      "method": "select=eq(n,N) versus trim=start_frame=N; RGB md5",
+      "results": [
+        {
+          "frame": 282,
+          "select_md5": "ae2b9dc51771db63065d325990a1162f",
+          "trim_md5": "ae2b9dc51771db63065d325990a1162f",
+          "match": true
+        },
+        {
+          "frame": 283,
+          "select_md5": "17bf78c52f73dd28ff7a8107dff96a0b",
+          "trim_md5": "17bf78c52f73dd28ff7a8107dff96a0b",
+          "match": true
+        },
+        {
+          "frame": 285,
+          "select_md5": "03acf7491ef0dc1f10dbd945d8a6088d",
+          "trim_md5": "03acf7491ef0dc1f10dbd945d8a6088d",
+          "match": true
+        },
+        {
+          "frame": 329,
+          "select_md5": "764fa6463fd3850f74f58dbb7e805ef2",
+          "trim_md5": "764fa6463fd3850f74f58dbb7e805ef2",
+          "match": true
+        },
+        {
+          "frame": 330,
+          "select_md5": "24ef097f7812803465993f5097521f7c",
+          "trim_md5": "24ef097f7812803465993f5097521f7c",
+          "match": true
+        },
+        {
+          "frame": 333,
+          "select_md5": "e9763a8ff34ac69802d79e489e063cc5",
+          "trim_md5": "e9763a8ff34ac69802d79e489e063cc5",
+          "match": true
+        },
+        {
+          "frame": 899,
+          "select_md5": "77b2766e8c9affd6f7b9a116d5dc5156",
+          "trim_md5": "77b2766e8c9affd6f7b9a116d5dc5156",
+          "match": true
+        },
+        {
+          "frame": 900,
+          "select_md5": "2a482a1aa84a62e6e0dfa6d84f67eca9",
+          "trim_md5": "2a482a1aa84a62e6e0dfa6d84f67eca9",
+          "match": true
+        },
+        {
+          "frame": 903,
+          "select_md5": "1db40c70542915388d4ca17f45964b68",
+          "trim_md5": "1db40c70542915388d4ca17f45964b68",
+          "match": true
+        }
+      ],
+      "seek_note": "Input -ss at (N+0.5)/30 returned frame N-1 on this file, so seeking was not used as evidence"
+    },
+    "loop_check": "Frames 0 and 1169 both show the empty stage under the title; differences above 8 levels are 197 title-glyph pixels from keyframe versus predicted-frame encoding",
+    "audio_listening": "not heard; analysis only",
+    "onset_match_max_error_s": 0.001
+  },
+  "scope_notes": "Only this cut directory was written. Original cuts, lessons.json, content manifests, site and shared skill files are untouched. No git operations."
+}

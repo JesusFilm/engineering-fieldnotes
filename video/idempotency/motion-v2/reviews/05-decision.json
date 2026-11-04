@@ -1,0 +1,10 @@
+{
+  "sha256": "a2b0b9982553f5a2ccbaf79d5bc4829cfa1f276ce28a8c4964ad993ca7ac0b3c",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Make the '≠' mismatch (≈ 14.6 s, about −13 dB) the clearest cue of the comparison; it is quieter than the request arrival.",
+    "Enlarge the caller's operation-row tags ('new intent?', 'rejected', 'not sent'), the smallest text at 350 px.",
+    "Note in the write-up that rejecting a changed payload is this design's contract and that real services compare the full request or a fingerprint."
+  ]
+}

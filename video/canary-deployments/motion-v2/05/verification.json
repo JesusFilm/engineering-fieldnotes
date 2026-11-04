@@ -1,0 +1,242 @@
+{
+  "sha256": "d6c4199b389ae298fae0c4c95fbef14508f8808220cad431b6b0b8633d0a5075",
+  "duration_s": 40.5,
+  "file": "video.mp4",
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "0a556359a2de21db19c4062901e6e10300cd6ae50945985fed63fff9ca23b11f",
+    "source_frame_index": 1110,
+    "size": [
+      1080,
+      1920
+    ]
+  },
+  "source_hashes": {
+    "scene.js": "dcc55198298ca06e1a58a5ba0f86dff3dd5f55e010be1dd1d58d33233563619f",
+    "engine/flow-engine.js": "c5907c2339413ad510bd8bbe69486b1ea7ee23ba4bc1594d0778fea950e408fb",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "engine_notes": "Cut-local copy of the architecture-flow-video scripts. render.mjs, sfx.js and preview.html are unchanged. flow-engine.js adds general panel, steps and tag node types, a label align option, and their anchor sizes. The shared skill was not modified.",
+  "reproduction": {
+    "cwd": "video/canary-deployments/motion-v2/05",
+    "render": "CHROME_PATH=/snap/bin/chromium node engine/render.mjs scene.js video.mp4",
+    "poster": "ffmpeg -v error -y -i video.mp4 -vf \"select='eq(n\\,1110)'\" -vsync 0 -frames:v 1 -q:v 2 poster.jpg",
+    "dependencies": "puppeteer-core 25.14.0 resolved from the repository node_modules (package.json pin); Node v22.22.1; ffmpeg 8.0.1; Chromium snap at /snap/bin/chromium (launch required sandbox escalation)",
+    "timing_dry_run": "node -e \"const F=require('./engine/flow-engine.js'); require('./scene.js'); const sc=F.createScene(F.lastScene); console.log(sc.meta.renderDuration, sc.audioCues().length)\""
+  },
+  "encoded_verification": {
+    "ffprobe": {
+      "video": {
+        "codec": "h264",
+        "width": 1080,
+        "height": 1920,
+        "fps": "30/1",
+        "nb_frames": 1215,
+        "duration_s": 40.5
+      },
+      "audio": {
+        "codec": "aac",
+        "sample_rate": 44100,
+        "channels": 2,
+        "duration_s": 40.5
+      },
+      "format_size_bytes": 1956438
+    },
+    "full_decode": {
+      "command": "ffmpeg -v error -i video.mp4 -f null -",
+      "exit_code": 0,
+      "errors": 0,
+      "decoded_video_frames": 1215
+    },
+    "audio_levels": {
+      "max_volume_dBFS": -5.9,
+      "astats_peak_dB": -5.94,
+      "mean_volume_dB": -32.2,
+      "rms_dB": -32.25,
+      "peak_limit_dBFS": -0.5,
+      "pass": true
+    },
+    "faststart": {
+      "top_level_atoms": [
+        [
+          "ftyp",
+          0
+        ],
+        [
+          "moov",
+          32
+        ],
+        [
+          "free",
+          44576
+        ],
+        [
+          "mdat",
+          44584
+        ]
+      ],
+      "moov_before_mdat": true
+    },
+    "sound_cues": 48,
+    "frames_inspected": {
+      "method": "Exact frame indices extracted with ffmpeg select=eq(n,N) (no timestamp seeking); each frame viewed individually at native 1080x1920 and at 350 px width (scale=350:-1:flags=area).",
+      "beat_and_boundary": [
+        {
+          "frame": 0,
+          "t_s": 0,
+          "note": "start / release card empty"
+        },
+        {
+          "frame": 48,
+          "t_s": 1.6,
+          "note": "evidence rows shown"
+        },
+        {
+          "frame": 78,
+          "t_s": 2.6,
+          "note": "v1 ✓ and v2 × after the check"
+        },
+        {
+          "frame": 99,
+          "t_s": 3.3,
+          "note": "FAIL stamp lands"
+        },
+        {
+          "frame": 135,
+          "t_s": 4.5,
+          "note": "hold after FAIL; v2 label failed"
+        },
+        {
+          "frame": 177,
+          "t_s": 5.9,
+          "note": "expansion stopped, HOLD"
+        },
+        {
+          "frame": 233,
+          "t_s": 7.767,
+          "note": "router target v2 0%"
+        },
+        {
+          "frame": 258,
+          "t_s": 8.6,
+          "note": "applying…; in flight: 1"
+        },
+        {
+          "frame": 297,
+          "t_s": 9.9,
+          "note": "observed routing; new requests → v1"
+        },
+        {
+          "frame": 378,
+          "t_s": 12.6,
+          "note": "in-flight finishes on v2"
+        },
+        {
+          "frame": 399,
+          "t_s": 13.3,
+          "note": "write lands: v2 writes 12"
+        },
+        {
+          "frame": 443,
+          "t_s": 14.767,
+          "note": "release card clearing"
+        },
+        {
+          "frame": 465,
+          "t_s": 15.5,
+          "note": "Healthy? dashed assumption"
+        },
+        {
+          "frame": 510,
+          "t_s": 17,
+          "note": "fresh window opens"
+        },
+        {
+          "frame": 585,
+          "t_s": 19.5,
+          "note": "fresh 2/5 min pending"
+        },
+        {
+          "frame": 654,
+          "t_s": 21.8,
+          "note": "window complete, rows pending"
+        },
+        {
+          "frame": 675,
+          "t_s": 22.5,
+          "note": "errors 0/10,000 ✓"
+        },
+        {
+          "frame": 765,
+          "t_s": 25.5,
+          "note": "all three criteria ✓"
+        },
+        {
+          "frame": 816,
+          "t_s": 27.2,
+          "note": "Service OK · observed 5 min"
+        },
+        {
+          "frame": 876,
+          "t_s": 29.2,
+          "note": "limits: 1 finished highlighted"
+        },
+        {
+          "frame": 927,
+          "t_s": 30.9,
+          "note": "DB 12 · kept"
+        },
+        {
+          "frame": 1008,
+          "t_s": 33.6,
+          "note": "schema unverified ?"
+        },
+        {
+          "frame": 1059,
+          "t_s": 35.3,
+          "note": "12 · repair?"
+        },
+        {
+          "frame": 1110,
+          "t_s": 37,
+          "note": "final split verdict hold (poster)"
+        },
+        {
+          "frame": 1170,
+          "t_s": 39,
+          "note": "final hold with v1 traffic"
+        },
+        {
+          "frame": 1192,
+          "t_s": 39.733,
+          "note": "fade in progress"
+        },
+        {
+          "frame": 1214,
+          "t_s": 40.467,
+          "note": "last frame (stage faded)"
+        }
+      ],
+      "alternate_indices_for_suspect_transitions": [
+        100,
+        102,
+        105,
+        375,
+        381,
+        1062
+      ],
+      "contact_sheet": "1 fps, 240 px tiles (7x6), whole video",
+      "spectrogram": "showspectrumpic 1800x500 log frequency; a cue is visible at each beat and the FAIL stamp at 3.1 s is the strongest broadband event"
+    },
+    "audio_heard": false,
+    "audio_note": "Audio was analysed only (spectrogram, levels, cue list). It was not listened to."
+  },
+  "duration_guideline_s": [
+    35,
+    50
+  ],
+  "ending": "finite: stage fades from 39.3 s and ends at 40.5 s with the title only",
+  "scratch_outside_repo": "/tmp/c05 (stills, frames, sheets, spectrogram)"
+}

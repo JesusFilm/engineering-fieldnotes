@@ -1,0 +1,11 @@
+{
+  "sha256": "b995ddd95389376d647f78dc8eb8fbd52c5152d86d927b0126647ef0b828f7ff",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Make the token removal coincide with span A passing the attribute policy, or drop the policy highlight on the later pass, so the policy does not appear to act twice (removal ≈ 10.3–11.3 s, chip passes ≈ 12.6 s).",
+    "Raise the cue when the token row is first flagged (≈ 7.4 s, peaks −22.8 dB).",
+    "State in the write-up that sampling and missing instrumentation also omit spans, and that exporters may retry.",
+    "State in the write-up that removing secrets only at a downstream collector means they already left the process; not recording them is preferable."
+  ]
+}

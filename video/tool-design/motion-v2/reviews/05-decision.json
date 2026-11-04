@@ -1,0 +1,9 @@
+{
+  "sha256": "8200705b60adc6a1beab9987adb0917166644dcdf854023fb85c5cf9051c83be",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Delay the moving page-selection label change until the selector reaches the second page, avoiding a transient page 2 label beneath the old records.",
+    "Give the moving cursor a little more left-edge margin; its sampled route remains readable but is visually tight."
+  ]
+}

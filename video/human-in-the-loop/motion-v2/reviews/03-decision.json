@@ -1,0 +1,11 @@
+{
+  "sha256": "8c43114fd8ea64d03b97920d1885cff5220a97a3859f1383e157d5b4166486bb",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Fade or move the grey timer-refusal × in the right gutter when the decision arrives (36–38 s); beside 'approved · R1' it can read as a rejected approval.",
+    "Show a visible revalidation result (saved action matches, target ready) before the final hold; the cut currently ends at 'revalidate checking' (40–47 s) with execute 'not run'.",
+    "Increase stage and saved-state row text size; readable at 350 px but small (roughly 11–12 px).",
+    "Clear worker memory at the same instant as the crash (17.0–17.3 s) so 'offline' never coexists with 'mem W7 · A'."
+  ]
+}

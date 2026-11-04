@@ -1,0 +1,136 @@
+{
+  "sha256": "d0de6a64dabeb982e0b18735cfdecb410d36a67413d46660f4c9f078599ce8b7",
+  "size_bytes": 1326994,
+  "duration_s": 46.0,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1380,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 46.0,
+    "max_volume_dB": -2.3,
+    "mean_volume_dB": -34.0,
+    "astats_peak_dB": -2.256,
+    "astats_rms_dB": -34.046,
+    "clipping": false,
+    "cues": 20,
+    "per_cue_peak_dB": {
+      "1.20 ack": -13.7,
+      "2.80 store(key)": -5.6,
+      "4.40 clock": -14.6,
+      "8.20 send": -15.3,
+      "8.45 ack(key)": -15.2,
+      "9.80 arrive": -8.4,
+      "10.80 send": -16.8,
+      "11.40 miss": -23.9,
+      "16.00 ack": -11.4,
+      "17.20 work": -9.6,
+      "18.40 work": -10.3,
+      "18.55 ack(key)": -15.2,
+      "21.40 store+store(commit)": -2.3,
+      "26.50 send": -15.2,
+      "27.60 poof": -9.4,
+      "31.00 thump": -4.6,
+      "34.00 ack": -12.4,
+      "35.10 ack": -12.3,
+      "36.20 ack": -12.6
+    }
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "1e2783cd9631ea4e603a32a6cb1e3e35bcbf7bde07ac45a6a4249df4c3bd3126",
+    "source_time_s": 41.0,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "4ea05ba1b91f3ae111176db2e4cc034e5ffe9295040983e11dd1cd3cab18e76c",
+    "engine/flow-engine.js": "c43b08082e8f91c0d2ce307aedea0f6ebed6788509f666ae84c019529f07c202",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "render_command": "node video/idempotency/motion-v2/03/engine/render.mjs video/idempotency/motion-v2/03/scene.js video/idempotency/motion-v2/03/video.mp4 --sheet video/idempotency/motion-v2/03/scratch/contact-sheet.png --wav video/idempotency/motion-v2/03/scratch/sfx.wav (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules); poster: ffmpeg -y -ss 41 -i video/idempotency/motion-v2/03/video.mp4 -frames:v 1 -q:v 2 video/idempotency/motion-v2/03/poster.jpg",
+  "frames_inspected": {
+    "source": "final encoded video.mp4",
+    "times_s": [
+      0,
+      1.3,
+      2,
+      2.9,
+      3.6,
+      4.5,
+      6.5,
+      8.1,
+      9,
+      9.9,
+      10.9,
+      11.5,
+      12.6,
+      13.2,
+      15,
+      16.1,
+      17.3,
+      18.5,
+      20,
+      22.5,
+      24.8,
+      26,
+      26.9,
+      27.7,
+      29.5,
+      31.1,
+      32.4,
+      34.1,
+      35.2,
+      36.3,
+      37.6,
+      41,
+      44.5,
+      45.96
+    ],
+    "full_size_dir": "scratch/enc2",
+    "w350_dir": "scratch/w350b",
+    "w350_grids": [
+      "scratch/final0.png",
+      "scratch/final1.png",
+      "scratch/final2.png",
+      "scratch/final3.png"
+    ],
+    "commit_frames": {
+      "frames": [
+        641,
+        642,
+        643
+      ],
+      "file": "scratch/commitb.png",
+      "result": "641 both rows pending; 642 and 643 both committed"
+    }
+  },
+  "contact_sheet": "scratch/contact-sheet.png",
+  "spectrogram": "scratch/spectrogram.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, volumedetect, astats, per-cue peaks); not listened to.",
+  "scope_note": "Scoped checks passed for this file hash; they do not establish universal correctness or teaching quality.",
+  "verified_at": "2026-10-21"
+}

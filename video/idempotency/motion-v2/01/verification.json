@@ -1,0 +1,124 @@
+{
+  "sha256": "07327aaac9a81237d9265269e08bceafe52b0bcdd9a9575f46a679dfbf708010",
+  "size_bytes": 1420767,
+  "duration_s": 43.4,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1302,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 43.4,
+    "max_volume_dB": -4.5,
+    "mean_volume_dB": -34.4,
+    "astats_peak_dB": -4.509,
+    "astats_rms_dB": -34.449,
+    "clipping": false,
+    "cues": 17,
+    "per_cue_peak_dB": {
+      "1.2 ack": -11.3,
+      "3.4 ack": -13.0,
+      "4.8 ack": -14.4,
+      "7.9 send": -15.2,
+      "9.4 arrive": -8.7,
+      "10.4 work": -10.1,
+      "11.1 work": -10.0,
+      "11.8 work": -10.4,
+      "14.5 send": -16.0,
+      "15.7 store": -4.5,
+      "16.6 ack": -13.7,
+      "17.8 clock": -14.2,
+      "24.5 send": -15.2,
+      "26.0 deliver": -6.5,
+      "32.5 ack": -13.0,
+      "33.7 ack": -13.0,
+      "35.0 arrive": -11.1
+    }
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "d73cfa398b939bb4b061a3133913f2b17f2f79d48d882af1b955b6a57d52e5d0",
+    "source_time_s": 38.5,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "f6e8ec1565d90c7b8b658231bf61ab88f11f060f338479a4dfd497aeb50e5686",
+    "engine/flow-engine.js": "90ab23fa941e29ff2dce8bc821c6bb543e2f4e5aa6c1b471fc3f253c5266419a",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "render_command": "node video/idempotency/motion-v2/01/engine/render.mjs video/idempotency/motion-v2/01/scene.js video/idempotency/motion-v2/01/video.mp4 --sheet video/idempotency/motion-v2/01/scratch/contact-sheet.png --wav video/idempotency/motion-v2/01/scratch/sfx.wav (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules); poster: ffmpeg -y -ss 38.5 -i video/idempotency/motion-v2/01/video.mp4 -frames:v 1 -q:v 2 video/idempotency/motion-v2/01/poster.jpg",
+  "frames_inspected": {
+    "source": "final encoded video.mp4",
+    "full_size_dir": "scratch/enc2",
+    "w350_dir": "scratch/w350b",
+    "w350_strips": [
+      "scratch/final0.png",
+      "scratch/final1.png",
+      "scratch/final2.png"
+    ],
+    "times_s": [
+      0,
+      1,
+      1.8,
+      2.8,
+      3.6,
+      5,
+      6.8,
+      7.6,
+      8.6,
+      9.5,
+      11.1,
+      13.6,
+      14.4,
+      15.1,
+      15.8,
+      16.8,
+      18.3,
+      21.5,
+      24.4,
+      24.8,
+      25.4,
+      26,
+      26.1,
+      26.3,
+      27.5,
+      31,
+      32.7,
+      33.9,
+      35.4,
+      38.5,
+      40.9,
+      41.6,
+      42.2,
+      43.36
+    ]
+  },
+  "contact_sheet": "scratch/contact-sheet.png",
+  "spectrogram": "scratch/spectrogram.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, volumedetect, astats, per-cue peaks); not listened to.",
+  "scope_note": "Scoped checks passed for this file hash; they do not establish universal correctness or teaching quality.",
+  "verified_at": "2026-10-21"
+}

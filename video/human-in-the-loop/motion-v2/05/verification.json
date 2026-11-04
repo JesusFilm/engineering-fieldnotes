@@ -1,0 +1,112 @@
+{
+  "sha256": "d453b4bf77bd822f973f3b20894b36fd05b9d15f6c8f7482fe1d162c7dcaca35",
+  "duration_s": 42,
+  "size_bytes": 1404712,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1260,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 42,
+    "cues": 25,
+    "max_volume_dB": -1.6,
+    "mean_volume_dB": -31.8,
+    "astats_peak_dB": -1.625,
+    "astats_rms_dB": -31.8,
+    "peak_below_minus_0_5_dBFS": true,
+    "clipping": false
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0,
+    "full_file": true
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "e4efb4c00683049cf5b0fe3915a0dbfa897b63838396097cd835a91576709c23",
+    "source_time_s": 37.5,
+    "width": 1080,
+    "height": 1920,
+    "command": "ffmpeg -ss 37.5 -i video.mp4 -frames:v 1 -q:v 3 poster.jpg"
+  },
+  "sources": {
+    "scene.js": "d53c60217e02ec661d12e7385daa2cad4a6b5aced32f289ab696637f35f3fbc3",
+    "engine/flow-engine.js": "cba1cda894e4532a7e83dfee77170602d1a5aa3ae3e44e11097febd2c750d206",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "engine_note": "flow-engine.js = human-in-the-loop lesson-04 local engine ([local] panel, txt with hlH/strike, tick check/x, chip size, meta.subtitleSize) plus [local] arrow node; render.mjs, sfx.js, preview.html identical to the skill copy",
+  "render_command": "node video/human-in-the-loop/motion-v2/05/engine/render.mjs video/human-in-the-loop/motion-v2/05/scene.js video/human-in-the-loop/motion-v2/05/video.mp4 --sheet video/human-in-the-loop/motion-v2/05/scratch/contact-sheet.png",
+  "render_cwd": "repository root",
+  "renderer_dependency": "puppeteer-core 25.14.0 (repository package.json devDependency, root node_modules)",
+  "frames_inspected": {
+    "full_dir": "scratch/enc",
+    "native350_dir": "scratch/enc350",
+    "times_s": [
+      0,
+      1,
+      2,
+      2.9,
+      3.8,
+      5,
+      6.5,
+      8.4,
+      9,
+      10,
+      10.6,
+      11.7,
+      12.1,
+      12.6,
+      13.6,
+      14.6,
+      15.8,
+      16.8,
+      17.6,
+      18.2,
+      19.2,
+      19.8,
+      20.6,
+      22.5,
+      24.5,
+      25.2,
+      25.9,
+      26.6,
+      27.6,
+      28.5,
+      30,
+      32.2,
+      33.8,
+      35.2,
+      37.5,
+      40,
+      40.6,
+      41.95
+    ],
+    "native350_sheet": "scratch/enc350-sheet.png (viewed, this encode)",
+    "native350_individual": "scratch/native350-row.png (6.5, 12.6, 14.6, 19.8, 37.5 s; unscaled 350x622 frames side by side)",
+    "full_res_crop": "scratch/full-3000.png (30.0 s, unscaled)"
+  },
+  "contact_sheet": "scratch/contact-sheet.png",
+  "spectrogram": "scratch/spectrogram.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, volumedetect, astats); not listened to.",
+  "scope_note": "Scoped checks on this encode only; not a universal correctness claim. No comparison review or site check performed.",
+  "verified_at": "2026-10-21"
+}

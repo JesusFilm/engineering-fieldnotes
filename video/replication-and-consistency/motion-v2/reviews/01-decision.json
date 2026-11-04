@@ -1,0 +1,10 @@
+{
+  "sha256": "540a5cfe04c63ca54c3a1f51a3654ed3673b624416335ba640a49220a0553bda",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Raise the intro cues for the primary and replica (≈ 1.9–4.2 s, about −20 to −35 dB).",
+    "Enlarge the 'replication' route label, among the smallest text at 350 px.",
+    "Note in the write-up that receiving and applying are separate PostgreSQL stages (lesson 04)."
+  ]
+}

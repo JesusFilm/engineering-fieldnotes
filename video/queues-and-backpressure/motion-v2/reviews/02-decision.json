@@ -1,0 +1,10 @@
+{
+  "sha256": "6a59cef148a5b654630874571a07b059df3fa222d09c2da1b959b82917462fa7",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Move the token to the 'completed' state together with the record's 'complete ✓' (≈ 26.7 s) so the two never disagree for ≈ 1 s.",
+    "Enlarge the state sublabels ('in queue', 'at worker', 'recorded'), the smallest text at 350 px.",
+    "Note in the write-up that acknowledging after saving still allows duplicates on failure, so externally visible effects need idempotency."
+  ]
+}

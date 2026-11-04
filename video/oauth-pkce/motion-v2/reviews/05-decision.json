@@ -1,0 +1,13 @@
+{
+  "sha256": "749f0a36f6148bde270ce72ee6c26140cc7148e2e2bfeae3c34ec37848feeffb",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Shorten the repaired flow (31-47 s) so the cut runs closer to 40 s while keeping Login D's concurrent storage as the contrast.",
+    "Replace the cursor clicking 'Fix client' and 'Start fresh' (27.8-30.3 s) with a direct morph of the shared slot into per-login rows, avoiding a runtime-button metaphor.",
+    "Tie 'B cancelled' (26.3 s) visibly to discarding the old shared state.",
+    "Hold 'PKCE matched · other checks next' about 2.5 s instead of about 1.7 s before the fade (47.3-49.0 s).",
+    "Route in-flight chips around labels to remove the brief text-on-text overlaps at 21.3, 31.3 and 36.3 s.",
+    "If promoted, retime lessons.json item 5 (currently 28 s with beats at 0/7/14/21) to match the 50 s cut."
+  ]
+}

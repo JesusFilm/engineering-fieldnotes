@@ -1,0 +1,10 @@
+{
+  "sha256": "e8c34f550cf9b4aa1d9bb6cea673bc118b9f7383830e068737dbc0d64cd5012f",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Show 'lookup' on req 3 while it sits in A's wait slot, so the viewer sees a quick job stuck behind a slow one.",
+    "Hold the moment when both 'assigned 1' counters are highlighted together (≈ 19–20 s) a little longer before request 3 arrives.",
+    "State in the write-up that the 'work left' bar is a teaching aid; real balancers rarely know request cost and round robin does not see it."
+  ]
+}

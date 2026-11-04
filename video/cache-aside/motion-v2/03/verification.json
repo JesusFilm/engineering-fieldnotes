@@ -1,0 +1,141 @@
+{
+  "video": "video/cache-aside/motion-v2/03/video.mp4",
+  "sha256": "21e5559bd846f9c605bc7f8cee8386910acbe0dcafe2c5f7d67754d7819d4ddd",
+  "size_bytes": 1437800,
+  "duration_s": 42,
+  "video_stream": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1260,
+    "pix_fmt": "yuv420p"
+  },
+  "audio_stream": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 42,
+    "max_volume_dB": -6.7,
+    "mean_volume_dB": -35,
+    "clipping": false,
+    "cues": 24,
+    "miss_cue_peak_dBFS": -16.4,
+    "quietest_cue": "8.7 s and 27.8 s send E6, -20.3 dBFS",
+    "per_cue_peaks": "scratch/cue-peaks.json"
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "9971e59ce594f424881ddd3c2aada741ee4ce8c710dc8bc705f69b3cf9c21b67",
+    "source_time_s": 36,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "2ff6d00bacb045097ab29fef1d2fe761f48a75ab932c49d3081b1af8d33ff1c4",
+    "engine/flow-engine.js": "e604e5567e909d026e616cb19ebe1f2ffdbd537c321802486f3733ba29bfdd17",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "../plans/03-plan-a.md": "2fbab57c918bb9f666c67271752c28cc61362f26b033bb2eacc28f972abdf8a9",
+    "../plans/03-plan-b.md": "07dec65accff153ae234f9c4ddc74ba4f0c6577725ec83ab644d99d0a1e2e483",
+    "../../sequence/lessons.json": "0a1b2e1a4b4acdd929da07747c94d820e80fa82bbe4d573c6623bf713fdf97a1"
+  },
+  "render_command": "node video/cache-aside/motion-v2/03/engine/render.mjs video/cache-aside/motion-v2/03/scene.js video/cache-aside/motion-v2/03/video.mp4 --sheet video/cache-aside/motion-v2/03/scratch/contact-sheet.png (from repo root; pinned puppeteer-core 25.14.0)",
+  "verify_commands": [
+    "python3 scratch/verify.py .",
+    "python3 scratch/frames.py enc 0,1.2,2.4,3.6,4.6,5.6,6.4,7,7.8,9.2,10.1,11.8,12.5,13.6,14.4,15,15.7,17.8,19.2,20,22.1,24.6,25.1,26.2,27,28.3,29,30.8,31.8,36,39.9,41.95 8",
+    "python3 scratch/frames.py transit 5,5.4,5.9,8.7,9.2,9.7,13,13.5,14,18.6,19.1,19.6,25.6,26.1,26.6,27.8,28.3,28.8 6",
+    "ffmpeg -v error -y -i video.mp4 -lavfi showspectrumpic=s=1800x500:fscale=log scratch/spectrogram.png"
+  ],
+  "frames_inspected": {
+    "native_dir": "scratch/enc",
+    "w350_dir": "scratch/enc350",
+    "sheet_350": "scratch/enc-350-sheet.png",
+    "times_s": [
+      0,
+      1.2,
+      2.4,
+      3.6,
+      4.6,
+      5.6,
+      6.4,
+      7,
+      7.8,
+      9.2,
+      10.1,
+      11.8,
+      12.5,
+      13.6,
+      14.4,
+      15,
+      15.7,
+      17.8,
+      19.2,
+      20,
+      22.1,
+      24.6,
+      25.1,
+      26.2,
+      27,
+      28.3,
+      29,
+      30.8,
+      31.8,
+      36,
+      39.9,
+      41.95
+    ],
+    "transit": {
+      "dirs": [
+        "scratch/transit",
+        "scratch/transit350"
+      ],
+      "times_s": [
+        5,
+        5.4,
+        5.9,
+        8.7,
+        9.2,
+        9.7,
+        13,
+        13.5,
+        14,
+        18.6,
+        19.1,
+        19.6,
+        25.6,
+        26.1,
+        26.6,
+        27.8,
+        28.3,
+        28.8
+      ],
+      "sheet_350": "scratch/transit-350-sheet.png",
+      "finding": "all chips stay on their own link and clear labels; no cache-database transfer"
+    },
+    "single_frames": [
+      "scratch/trio350.png (7.8, 22.1, 36.0 s at native 350)"
+    ]
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, per-cue peaks, levels); not listened to.",
+  "scope_note": "Passing these scoped checks does not establish universal correctness or comparative quality.",
+  "verified_at": "2026-10-21",
+  "render": 3
+}

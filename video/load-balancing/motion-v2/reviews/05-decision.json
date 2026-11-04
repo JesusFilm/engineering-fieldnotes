@@ -1,0 +1,10 @@
+{
+  "sha256": "2db361381411c7b3c0b48c6e56edcd92f35f526effeb0b451c15590c55679ed1",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Show 'fewer' at full strength (≈ 13.4–14 s); it is the decision word and currently dim.",
+    "Carry the 'req 2' label on the dot that travels from the balancer to server B.",
+    "Note in the write-up that least-request implementations may sample candidates and that active counts do not measure cost and can be misleading."
+  ]
+}

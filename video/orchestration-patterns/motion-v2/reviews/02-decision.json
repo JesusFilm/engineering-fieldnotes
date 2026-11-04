@@ -1,0 +1,9 @@
+{
+  "sha256": "7945c85482e0bc7c2f515eec7529cff6bd2fbd910ae4e1402aaee63e2209bdb8",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Once a row is selected, rename the empty detail pane from No destination to Awaiting dispatch; this distinguishes selection from arrival more precisely.",
+    "Consider a slightly longer fully populated specialist hold before the request reset, preserving time to read Answer: pending."
+  ]
+}

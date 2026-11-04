@@ -1,0 +1,9 @@
+{
+  "sha256": "6f6a559572ad29fab32c370e361272a044879564d536cdc25e9fd01e6edbc179",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Give the rubric audit more vertical space or temporarily reduce the suite/grader mapping during the examples, allowing larger audit labels at 350px.",
+    "Consider expanding \u201cpw\u201d to \u201cpassword\u201d and identifying the rubric grader as automated/model-based once, reducing terminology inference for beginners."
+  ]
+}

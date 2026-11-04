@@ -1,0 +1,11 @@
+{
+  "sha256": "ca05dc0cd176dd8d276916c70356dd619ccdeb44353a5d691f7d3f0aaa75538b",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "20.3–26.0s: tighten the paused pre-try-2 hold by about 1.5s (seven events in about 5.7s)",
+    "5.5s and 25.5s: launch the request packet as the slowed clock starts, or separate it from the 'animation paused' badge",
+    "2.5s, 22.7s, 38.0s: raise contrast of the grey secondary captions for 350px reading",
+    "33.6–34.0s: add a few pixels of clearance between the playhead and the 'deadline' label"
+  ]
+}

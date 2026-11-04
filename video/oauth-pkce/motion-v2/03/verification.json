@@ -1,0 +1,401 @@
+{
+  "sha256": "4beefffb5fc56d82f817fb0e05469d65a657cad0068d182217d507cd2b1ef3ff",
+  "duration_s": 36.5,
+  "file": "video.mp4",
+  "lesson": {
+    "topic": "oauth-pkce",
+    "index": 3,
+    "title": "Bind code and challenge",
+    "cut": "motion-v2/03"
+  },
+  "source_hashes": {
+    "scene.js": "af1da4f40fcc3483c592251a0860792ea6f4c69b6a52c2b05151a84ca6c80f1f",
+    "engine/flow-engine.js": "f4045094242313ceea9af29d64c012efb5bd59ac5c22d321f466421831e3a464",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "output_hashes": {
+    "video.mp4": "4beefffb5fc56d82f817fb0e05469d65a657cad0068d182217d507cd2b1ef3ff",
+    "poster.jpg": "5e3a3a99ea24da952ef42724ca859c39a5310a33dad8c524911910271530aeb3"
+  },
+  "engine_provenance": {
+    "base": "architecture-flow-video skill scripts copied unchanged into engine/ (flow-engine.js base sha256 af17dffdf846f7d5e17d1efeeb8553953b39f54c098f6aa482030ba0ce31cf6d); render.mjs, sfx.js, preview.html unchanged",
+    "cut_local_extensions": [
+      "node types panel, field, status, button, cursor, link",
+      "label align option",
+      "chip packets: size and inner tag",
+      "keyframed packets (keys: timed anchors with rests, single fade in/out)",
+      "field placeholder/key handoff during fill"
+    ],
+    "shared_skill_modified": false
+  },
+  "reproduction": {
+    "cwd": "video/oauth-pkce/motion-v2/03 (relative to repository root)",
+    "render": "CHROME_PATH=/snap/bin/chromium node engine/render.mjs scene.js video.mp4",
+    "poster": "ffmpeg -v error -y -i video.mp4 -vf \"select='eq(n\\,1000)'\" -vsync 0 -frames:v 1 -q:v 2 poster.jpg",
+    "timing_dry_run": "node -e \"const F=require('./engine/flow-engine.js'); require('./scene.js'); const sc=F.createScene(F.lastScene); console.log(sc.meta.renderDuration, sc.audioCues().length)\"",
+    "dependencies": "puppeteer-core 25.14.0 from the repository's root node_modules (package.json pin), resolved upward from engine/",
+    "environment": {
+      "node": "v22.22.1",
+      "puppeteer_core": "25.14.0",
+      "chromium": "Chromium 156.0.8078.47 snap (/snap/bin/chromium)",
+      "ffmpeg": "8.0.1-3ubuntu2"
+    },
+    "note": "Snap Chromium cannot launch inside this agent's command sandbox; renders ran with a scoped escalation. Byte-identical re-encodes are not claimed; compare against the hashes above."
+  },
+  "encoded_verification": {
+    "ffprobe": {
+      "video": {
+        "codec": "h264",
+        "profile": "High",
+        "width": 1080,
+        "height": 1920,
+        "pix_fmt": "yuv420p",
+        "fps": "30/1",
+        "nb_frames": 1095,
+        "duration_s": 36.5
+      },
+      "audio": {
+        "codec": "aac",
+        "profile": "LC",
+        "sample_rate": 44100,
+        "channels": 2,
+        "duration_s": 36.5
+      },
+      "format_duration_s": 36.5,
+      "size_bytes": 1565550
+    },
+    "full_decode": {
+      "command": "ffmpeg -v error -i video.mp4 -f null -",
+      "errors": 0,
+      "exit_code": 0,
+      "decoded_video_frames": 1095,
+      "video_packets": 1095,
+      "decoded_audio_frames": 1572,
+      "audio_packets": 1573
+    },
+    "streaming_metadata": {
+      "top_level_atoms": [
+        [
+          "ftyp",
+          0,
+          32
+        ],
+        [
+          "moov",
+          32,
+          39436
+        ],
+        [
+          "free",
+          39468,
+          8
+        ],
+        [
+          "mdat",
+          39476,
+          1526074
+        ]
+      ],
+      "moov_before_mdat": true
+    },
+    "audio": {
+      "volumedetect": {
+        "max_volume_db": -7.4,
+        "mean_volume_db": -30.3
+      },
+      "astats_overall_peak_dbfs": -7.45,
+      "decoded_sample_peak_dbfs": {
+        "left": -7.4,
+        "right": -7.4
+      },
+      "peak_limit_dbfs": -0.5,
+      "peak_within_limit": true,
+      "cue_count": 29,
+      "cue_window_peaks_dbfs_0_3s": {
+        "0.6": -11,
+        "1.4": -12.9,
+        "2.6": -17.1,
+        "3.8": -14.5,
+        "5.6": -16.8,
+        "6.6": -8.4,
+        "8.0": -16.8,
+        "8.8": -8.4,
+        "9.0": -15.3,
+        "9.25": -15,
+        "9.5": -14.5,
+        "9.75": -14.5,
+        "10.0": -13.7,
+        "10.2": -13.7,
+        "10.9": -11,
+        "13.0": -16.8,
+        "13.7": -8.5,
+        "16.6": -9.3,
+        "17.6": -16.8,
+        "18.3": -8.6,
+        "20.0": -11,
+        "21.6": -7.4,
+        "24.4": -16.8,
+        "25.1": -8.4,
+        "26.4": -16.9,
+        "27.2": -10.1,
+        "28.8": -17.1,
+        "29.8": -11.4,
+        "31.5": -11.5
+      },
+      "silent_window_peaks_dbfs": {
+        "0.0-0.55": "digital silence",
+        "11.8-12.95": "digital silence",
+        "14.6-16.55": "digital silence",
+        "22.9-24.35": "digital silence",
+        "33.0-36.5": "digital silence"
+      },
+      "spectrogram": "ffmpeg -i video.mp4 -lavfi showspectrumpic=s=1800x500:fscale=log spec.png (scratch, not kept); viewed: an onset at every cue time, quiet holds, the bind cue and arrivals strongest, sends quietest",
+      "heard": false,
+      "heard_note": "Audio was analysed (levels, per-cue peaks, spectrogram) but not listened to."
+    },
+    "frames": {
+      "method": "Exact frame indices extracted with select=eq(n,N) from the encoded MP4 (time = N/30). Each frame viewed individually at native 1080x1920 and at 350x622 (lanczos downscale, viewed at original size).",
+      "inspected": [
+        {
+          "frame": 0,
+          "t_s": 0,
+          "what": "opening state, empty rows"
+        },
+        {
+          "frame": 18,
+          "t_s": 0.6,
+          "what": "verifier row landing glow"
+        },
+        {
+          "frame": 42,
+          "t_s": 1.4,
+          "what": "challenge row landed"
+        },
+        {
+          "frame": 114,
+          "t_s": 3.8,
+          "what": "challenge focus (amber)"
+        },
+        {
+          "frame": 168,
+          "t_s": 5.6,
+          "what": "chip leaving client, sent tag"
+        },
+        {
+          "frame": 183,
+          "t_s": 6.1,
+          "what": "chip resting in browser, Authorize"
+        },
+        {
+          "frame": 198,
+          "t_s": 6.6,
+          "what": "browser hold"
+        },
+        {
+          "frame": 240,
+          "t_s": 8,
+          "what": "chip leaving browser"
+        },
+        {
+          "frame": 255,
+          "t_s": 8.5,
+          "what": "chip at server gate, checks spinner"
+        },
+        {
+          "frame": 264,
+          "t_s": 8.8,
+          "what": "checks running"
+        },
+        {
+          "frame": 285,
+          "t_s": 9.5,
+          "what": "checks done (teal check)"
+        },
+        {
+          "frame": 306,
+          "t_s": 10.2,
+          "what": "chip landing in record row"
+        },
+        {
+          "frame": 318,
+          "t_s": 10.6,
+          "what": "Challenge A + S256 recorded"
+        },
+        {
+          "frame": 327,
+          "t_s": 10.9,
+          "what": "record hold"
+        },
+        {
+          "frame": 330,
+          "t_s": 11,
+          "what": "record hold"
+        },
+        {
+          "frame": 390,
+          "t_s": 13,
+          "what": "page dot server to browser"
+        },
+        {
+          "frame": 411,
+          "t_s": 13.7,
+          "what": "Consent + Approve, approval waiting"
+        },
+        {
+          "frame": 474,
+          "t_s": 15.8,
+          "what": "cursor approaching"
+        },
+        {
+          "frame": 498,
+          "t_s": 16.6,
+          "what": "click frame"
+        },
+        {
+          "frame": 501,
+          "t_s": 16.7,
+          "what": "Approved (ring transient)"
+        },
+        {
+          "frame": 504,
+          "t_s": 16.8,
+          "what": "Approved"
+        },
+        {
+          "frame": 528,
+          "t_s": 17.6,
+          "what": "approval dot travelling"
+        },
+        {
+          "frame": 540,
+          "t_s": 18,
+          "what": "approval dot arriving"
+        },
+        {
+          "frame": 552,
+          "t_s": 18.4,
+          "what": "User approval check"
+        },
+        {
+          "frame": 600,
+          "t_s": 20,
+          "what": "Code A issued (placeholder handoff)"
+        },
+        {
+          "frame": 606,
+          "t_s": 20.2,
+          "what": "Code A landed"
+        },
+        {
+          "frame": 636,
+          "t_s": 21.2,
+          "what": "bound link drawing"
+        },
+        {
+          "frame": 648,
+          "t_s": 21.6,
+          "what": "bound, both rows glow"
+        },
+        {
+          "frame": 732,
+          "t_s": 24.4,
+          "what": "binding hold"
+        },
+        {
+          "frame": 744,
+          "t_s": 24.8,
+          "what": "code copy leaving server"
+        },
+        {
+          "frame": 753,
+          "t_s": 25.1,
+          "what": "code chip in browser, Redirect"
+        },
+        {
+          "frame": 792,
+          "t_s": 26.4,
+          "what": "redirect hold"
+        },
+        {
+          "frame": 804,
+          "t_s": 26.8,
+          "what": "chip into client lane"
+        },
+        {
+          "frame": 812,
+          "t_s": 27.067,
+          "what": "chip landing in client code row"
+        },
+        {
+          "frame": 816,
+          "t_s": 27.2,
+          "what": "client code row filling"
+        },
+        {
+          "frame": 820,
+          "t_s": 27.333,
+          "what": "client code row landed"
+        },
+        {
+          "frame": 864,
+          "t_s": 28.8,
+          "what": "verifier still-here glow"
+        },
+        {
+          "frame": 894,
+          "t_s": 29.8,
+          "what": "not proof alone tag"
+        },
+        {
+          "frame": 942,
+          "t_s": 31.4,
+          "what": "tag hold"
+        },
+        {
+          "frame": 960,
+          "t_s": 32,
+          "what": "Exchange must match drawn"
+        },
+        {
+          "frame": 1000,
+          "t_s": 33.333,
+          "what": "final state (poster frame)"
+        },
+        {
+          "frame": 1094,
+          "t_s": 36.467,
+          "what": "last frame"
+        }
+      ],
+      "alternate_indices_for_suspect_frames": {
+        "click ring vs Approved label": [
+          499,
+          500,
+          501,
+          502
+        ],
+        "client code row placeholder/key handoff": [
+          809,
+          811,
+          812,
+          813,
+          814,
+          816
+        ],
+        "server code row handoff": [
+          600,
+          606
+        ]
+      },
+      "contact_sheet": "render.mjs --sheet output (fps=1, 240 px tiles, 6 columns), viewed",
+      "result": "No overlapping labels at rest, no off-stage elements, no lingering state, verifier never leaves the client, code appears only after approval. One residual transient: the click ring touches the last letter of 'Approved' for about 3 frames (499-502)."
+    }
+  },
+  "review": {
+    "file": "review.md",
+    "type": "self defect and improvement pass; no comparative score",
+    "comparative_review_required_before_recommendation": true
+  }
+}

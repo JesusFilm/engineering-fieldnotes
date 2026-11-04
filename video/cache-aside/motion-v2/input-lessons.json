@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Read the source",
+    "duration": 28,
+    "intro": "The application needs a runbook. The database is the source of record: it holds the saved revision.",
+    "takeaway": "A normal source read asks the database for the current record. The animation uses illustrative times.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The application needs a runbook. The database stores the saved record."
+      },
+      {
+        "time": 7,
+        "text": "It sends a read to the database. The database looks up the key."
+      },
+      {
+        "time": 14,
+        "text": "The database returns revision 1. The application receives the record."
+      },
+      {
+        "time": 21,
+        "text": "Every read can repeat that work. A cache can keep a reusable copy."
+      }
+    ],
+    "src": "lessons/cache-aside/01.mp4",
+    "poster": "lessons/cache-aside/01.jpg"
+  },
+  {
+    "title": "A cache hit",
+    "duration": 28,
+    "intro": "A cache is a separate store for reusable copies. In cache-aside, the application checks it before reading the source.",
+    "takeaway": "A hit means the requested key was found in the cache. It does not establish that the copy is fresh.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "A cache holds a reusable copy. The application checks it first."
+      },
+      {
+        "time": 7,
+        "text": "The requested key is present. This lookup is a cache hit."
+      },
+      {
+        "time": 14,
+        "text": "The cache returns revision 1. No database read is needed here."
+      },
+      {
+        "time": 21,
+        "text": "A hit avoids this source read. But is the copy still current?"
+      }
+    ],
+    "src": "lessons/cache-aside/02.mp4",
+    "poster": "lessons/cache-aside/02.jpg"
+  },
+  {
+    "title": "A cache miss",
+    "duration": 28,
+    "intro": "When the key is absent, the application reads the database and fills the cache. The cache does not fetch the data by itself.",
+    "takeaway": "A miss is an absent key, not a failed database. Application code performs the source read and cache fill.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The application checks the cache. The key is absent: a miss."
+      },
+      {
+        "time": 7,
+        "text": "The application reads the source. The database has revision 1."
+      },
+      {
+        "time": 14,
+        "text": "The database returns the record. The application receives it next."
+      },
+      {
+        "time": 21,
+        "text": "The application fills the cache. A later lookup can find this copy."
+      }
+    ],
+    "src": "lessons/cache-aside/03.mp4",
+    "poster": "lessons/cache-aside/03.jpg"
+  },
+  {
+    "title": "A stale copy",
+    "duration": 28,
+    "intro": "An editor updates the database, but the cached key is not deleted. A later hit can still return the old runbook.",
+    "takeaway": "Source writes and cache changes are separate operations. A successful hit can still return stale data.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "Both stores begin at revision 1. The copies agree for now."
+      },
+      {
+        "time": 7,
+        "text": "An editor saves revision 2. The cached copy is unchanged."
+      },
+      {
+        "time": 14,
+        "text": "The next lookup checks the cache. It still finds revision 1."
+      },
+      {
+        "time": 21,
+        "text": "The old copy returns successfully. A cache hit does not mean fresh."
+      }
+    ],
+    "src": "lessons/cache-aside/04.mp4",
+    "poster": "lessons/cache-aside/04.jpg"
+  },
+  {
+    "title": "Invalidate and refill",
+    "duration": 28,
+    "intro": "Invalidation removes the cached key. The next reader misses, reads revision 2 from the source, and stores it.",
+    "takeaway": "This repairs the illustrated stale key. Failed deletions and concurrent readers or writers need additional handling.",
+    "beats": [
+      {
+        "time": 0,
+        "text": "The source is now at revision 2. Remove its stale cached key."
+      },
+      {
+        "time": 7,
+        "text": "The next cache lookup misses. Read the source again."
+      },
+      {
+        "time": 14,
+        "text": "The source returns revision 2. The application uses the new record."
+      },
+      {
+        "time": 21,
+        "text": "Store the new copy in the cache. Concurrent writes still need care."
+      }
+    ],
+    "src": "lessons/cache-aside/05.mp4",
+    "poster": "lessons/cache-aside/05.jpg"
+  }
+]

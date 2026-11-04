@@ -1,0 +1,14 @@
+{
+  "sha256": "9108c253865984dc2c44b2875d07835846ea42b34851d053ada90b35018f2479",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Rename or drop the record id 'R42' (0-35.5s); it reads like a revision number next to revisions 7 and 8.",
+    "Open with a brief commit of revision 8 to the primary so 'need 8' has a visible cause (0-2s).",
+    "Trim the slow opening (1.5-5.4s) by about 1.5-2s.",
+    "Shorten or drop the recap glows (30-33.4s) and hold about 2s on the match.",
+    "Use the empty lower third of the frame by scaling up or vertically centring the stage.",
+    "Set the title as one phrase; the small-caps 'YOU NEED' line reads as a separate label.",
+    "If promoted, update lessons.json item 3: duration 35.5 and beat times about 0/7.4/16.6/22.6."
+  ]
+}

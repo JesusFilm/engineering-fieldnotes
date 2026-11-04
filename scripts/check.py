@@ -1,3 +1,4 @@
+from sequence_provenance import source_digest as sequence_source_digest
 """Check editorial completeness, local navigation, and initial-load budgets."""
 import argparse
 import hashlib
@@ -44,7 +45,7 @@ def check(draft=False):
         assert chapter_html.count('data-lesson-link=') == len(lessons), key
         for number, lesson in enumerate(lessons, 1):
             assert all(lesson.get(field) for field in ('title', 'intro', 'takeaway', 'beats', 'duration', 'src', 'poster')), key
-            assert all(0 <= beat['time'] < lesson['duration'] for beat in lesson['beats']), key
+            assert all(isinstance(beat, str) and beat or isinstance(beat, dict) and 0 <= beat['time'] < lesson['duration'] for beat in lesson['beats']), key
             for field in ('src', 'poster'):
                 file = ROOT / 'public' / lesson[field]
                 assert file.is_file(), str(file)
@@ -55,9 +56,7 @@ def check(draft=False):
                     assert record[hash_field] == hashlib.sha256(file.read_bytes()).hexdigest(), f'Stale sequence evidence: {file}'
             if not draft:
                 assert record['expectedDuration'] == lesson['duration']
-                scene = ROOT/f'video/{key}/sequence/{number:02}.js'
-                engine = ROOT/('video/load-balancing/sequence/engine' if key == 'load-balancing' else 'video/shared/sequence-engine')
-                source_digest = hashlib.sha256(scene.read_bytes()+b''.join((engine/name).read_bytes() for name in ['flow-engine.js','sfx.js','render.mjs','preview.html'])).hexdigest()
+                source_digest = sequence_source_digest(key, number, lesson)
                 assert record['sourceSha256'] == source_digest, f'Stale sequence source: {key}/{number}'
     concepts = [json.loads((ROOT / f'content/concepts/{key}.json').read_text()) for key in order]
     media_checks = json.loads((ROOT / 'reviews/media-checks.json').read_text()) if not draft else {}

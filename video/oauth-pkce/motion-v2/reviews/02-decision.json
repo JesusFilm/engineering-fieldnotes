@@ -1,0 +1,12 @@
+{
+  "sha256": "a56dd9957c7f2475cda66893e656eec93a5007f10e871e8a2896ce2a085c97f9",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Keep each received challenge visible (dimmed) on the authorization server instead of clearing it at ~20.5-21.5 s and ~37 s, so the ending shows verifiers in the client and challenges at the server together.",
+    "Make the verifier-to-ASCII input link at 10.0-10.5 s (and ~29 s for B) more visible at 350 px, e.g. a copy of the chip pattern entering ASCII while the original stays stored.",
+    "Enlarge or slow the '=' padding-drop glyph at 13.9 s and 32.1 s so it reads at 350 px and falls clear of the S256 group border.",
+    "Consider removing the small 'PKCE · S256' subtitle; the pipeline label already names S256.",
+    "Coordinator: lessons.json item 2 still describes a 28 s video with beats at 0/7/14/21 and token-exchange wording; update duration, beat times and text if this 42.6 s cut is promoted."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "sha256": "49cea6b7c7fb5b4eb7630828a2897ae4bff22b323b21e5971d3d3e8e7243de54",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Update the receipt count in the same beat as each received row, avoiding the brief tally lag around 4 and 21 seconds.",
+    "Consider No blocker reported rather than No blocker to emphasize that the cell summarizes review evidence."
+  ]
+}

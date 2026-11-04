@@ -1,0 +1,422 @@
+{
+ "cut": "timeouts-and-retries / motion-v2 / 04",
+ "lesson": "04 Back off before retrying",
+ "sha256": "dc1b6e4c20bc3c2047a7ef35b2418228621825e2ae0971e4bd17b5b439d1820a",
+ "duration_s": 35.6,
+ "file": "video.mp4",
+ "bytes": 1864614,
+ "poster": {
+  "file": "poster.jpg",
+  "sha256": "072e999eaa1b05330e2220eacc9f1cd07c4e55af46db8019db09781536a775a4",
+  "source_frame_index": 1005,
+  "time_s": 33.5
+ },
+ "reproduction": {
+  "cwd": "repository root",
+  "render": "CHROME_PATH=/snap/bin/chromium node video/timeouts-and-retries/motion-v2/04/engine/render.mjs video/timeouts-and-retries/motion-v2/04/scene.js video/timeouts-and-retries/motion-v2/04/video.mp4 --sheet video/timeouts-and-retries/motion-v2/04/scratch/sheet.png",
+  "poster": "ffmpeg -v error -y -i video/timeouts-and-retries/motion-v2/04/video.mp4 -vf 'select=eq(n\\,1005)' -vsync 0 -frames:v 1 -q:v 2 video/timeouts-and-retries/motion-v2/04/poster.jpg",
+  "verify": "python3 video/timeouts-and-retries/motion-v2/04/verify.py",
+  "timing_dry_run": "cd video/timeouts-and-retries/motion-v2/04 && node -e \"const F=require('./engine/flow-engine.js'); require('./scene.js'); const sc=F.createScene(F.lastScene); console.log(sc.meta.renderDuration, JSON.stringify(globalThis.__ledger))\"",
+  "renderer_dependency": "puppeteer-core 25.14.0 from the repository package.json/node_modules (render.mjs resolves it from the working directory)",
+  "chrome": "/snap/bin/chromium via CHROME_PATH; launching needed a scoped sandbox escalation on this VM",
+  "tools": {
+   "node": "v22.22.1",
+   "ffmpeg": "8.0.1-3ubuntu2"
+  },
+  "notes": "Video frames are deterministic functions of time. The AAC encode is not guaranteed to be byte-identical across ffmpeg builds, so the file hash is bound to this encode."
+ },
+ "sources": {
+  "scene.js": "3a3bf7bee58f44f16cb7359451e2d11db9ec0429e8cbab3d6fd6646f80d8aaf1",
+  "verify.py": "eabda742c2404970ed07b7a4fa1ca0597c0392575640e0d6ce03315f1fca0b61",
+  "engine/flow-engine.js": "3294aac28512a024a944d0e32a8fec0dc739bf6dff230267faa6f22672465a57",
+  "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+  "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+  "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+  "beat-sheet.md": "918632a03cd2248623626598e1189644d8107eb567161fad5212607e14ea0f21",
+  "review.md": "ddd53bda12963147bb6bc882e89b7f42b0d843383464f4f859d8db044c262481"
+ },
+ "engine_provenance": {
+  "copied_from": "personal architecture-flow-video skill scripts/ (render.mjs, sfx.js and preview.html unchanged)",
+  "skill_flow_engine_sha256_at_copy": "af17dffdf846f7d5e17d1efeeb8553953b39f54c098f6aa482030ba0ce31cf6d",
+  "cut_local_changes": [
+   "chip packet size option pk.size",
+   "exports NODES and util so scenes can register generic node types",
+   "s.pt falls back to node.half for custom node types"
+  ],
+  "scene_local_node_types": [
+   "chip",
+   "counter",
+   "interval",
+   "token",
+   "vline",
+   "frame"
+  ]
+ },
+ "event_ledger": {
+  "real_dispatches": 6,
+  "per_caller": {
+   "A": 2,
+   "B": 2,
+   "C": 2
+  },
+  "dispatch_times_s": {
+   "A1": 1.4,
+   "B1": 1.4,
+   "C1": 1.4,
+   "A2": 17.4,
+   "B2": 19.6,
+   "C2": 21.4
+  },
+  "service_receipts": 6,
+  "unavailable_responses": 6,
+  "hypothetical_marks_counted": 0,
+  "illustrative_waits_s": {
+   "A": 1.0,
+   "B": 2.1,
+   "C": 3.0
+  },
+  "service_recovers": false
+ },
+ "encoded_verification": {
+  "video": {
+   "codec": "h264",
+   "width": 1080,
+   "height": 1920,
+   "pix_fmt": "yuv420p",
+   "r_frame_rate": "30/1",
+   "frames_decoded": 1068,
+   "duration_s": 35.6
+  },
+  "audio": {
+   "codec": "aac",
+   "sample_rate": 44100,
+   "channels": 2,
+   "duration_s": 35.6
+  },
+  "full_decode": {
+   "exit_code": 0,
+   "errors": ""
+  },
+  "audio_levels": {
+   "volumedetect_max_db": -5.4,
+   "volumedetect_mean_db": -31.5,
+   "astats_peak_db": -5.387159,
+   "ceiling_db": -0.5,
+   "pass": true
+  },
+  "windowed_peaks_dbfs": {
+   "first sends+arrivals": -7.7,
+   "shared failure": -5.4,
+   "first rejects": -11.0,
+   "hypothetical chord": -12.4,
+   "aligned chord": -12.2,
+   "A retry send+arrive": -9.5,
+   "A failed receipt": -14.9,
+   "B failed receipt": -13.3,
+   "C failed receipt": -15.1,
+   "first-column chord": -7.6,
+   "spread notes": -11.8,
+   "still unavailable": -16.7,
+   "stop notes": -10.6
+  },
+  "loudest_event": "shared failure at 2.5 s (-5.4 dBFS window peak)",
+  "top_level_atoms": [
+   "ftyp",
+   "moov",
+   "free",
+   "mdat"
+  ],
+  "moov_before_mdat": true,
+  "frames_inspected": {
+   "method": "exact frame indices extracted with select=eq(n,i) from the final encode; native 1080x1920 and 350px-wide Lanczos copies; 350px contact sheet; spectrogram",
+   "count": 50,
+   "points": [
+    {
+     "label": "open",
+     "frame": 0,
+     "time_s": 0.0
+    },
+    {
+     "label": "fadein",
+     "frame": 15,
+     "time_s": 0.5
+    },
+    {
+     "label": "send1",
+     "frame": 48,
+     "time_s": 1.6
+    },
+    {
+     "label": "arrive1",
+     "frame": 60,
+     "time_s": 2.0
+    },
+    {
+     "label": "fail",
+     "frame": 76,
+     "time_s": 2.533
+    },
+    {
+     "label": "errors",
+     "frame": 96,
+     "time_s": 3.2
+    },
+    {
+     "label": "errBack",
+     "frame": 106,
+     "time_s": 3.533
+    },
+    {
+     "label": "hold1",
+     "frame": 144,
+     "time_s": 4.8
+    },
+    {
+     "label": "hypHead",
+     "frame": 165,
+     "time_s": 5.5
+    },
+    {
+     "label": "hypMarks",
+     "frame": 183,
+     "time_s": 6.1
+    },
+    {
+     "label": "hypHold",
+     "frame": 225,
+     "time_s": 7.5
+    },
+    {
+     "label": "hypDismiss",
+     "frame": 258,
+     "time_s": 8.6
+    },
+    {
+     "label": "hypGone",
+     "frame": 270,
+     "time_s": 9.0
+    },
+    {
+     "label": "backoffHead",
+     "frame": 279,
+     "time_s": 9.3
+    },
+    {
+     "label": "eqBars",
+     "frame": 300,
+     "time_s": 10.0
+    },
+    {
+     "label": "eqFrame",
+     "frame": 327,
+     "time_s": 10.9
+    },
+    {
+     "label": "eqFrameOff",
+     "frame": 363,
+     "time_s": 12.1
+    },
+    {
+     "label": "jitterHead",
+     "frame": 369,
+     "time_s": 12.3
+    },
+    {
+     "label": "drawA",
+     "frame": 390,
+     "time_s": 13.0
+    },
+    {
+     "label": "drawB",
+     "frame": 402,
+     "time_s": 13.4
+    },
+    {
+     "label": "drawC",
+     "frame": 414,
+     "time_s": 13.8
+    },
+    {
+     "label": "caveat",
+     "frame": 438,
+     "time_s": 14.6
+    },
+    {
+     "label": "waitStart",
+     "frame": 465,
+     "time_s": 15.5
+    },
+    {
+     "label": "waitMid",
+     "frame": 501,
+     "time_s": 16.7
+    },
+    {
+     "label": "relA",
+     "frame": 524,
+     "time_s": 17.467
+    },
+    {
+     "label": "arrA",
+     "frame": 542,
+     "time_s": 18.067
+    },
+    {
+     "label": "errA",
+     "frame": 566,
+     "time_s": 18.867
+    },
+    {
+     "label": "relB",
+     "frame": 590,
+     "time_s": 19.667
+    },
+    {
+     "label": "arrB",
+     "frame": 608,
+     "time_s": 20.267
+    },
+    {
+     "label": "errB",
+     "frame": 632,
+     "time_s": 21.067
+    },
+    {
+     "label": "relC",
+     "frame": 644,
+     "time_s": 21.467
+    },
+    {
+     "label": "arrC",
+     "frame": 662,
+     "time_s": 22.067
+    },
+    {
+     "label": "errC",
+     "frame": 686,
+     "time_s": 22.867
+    },
+    {
+     "label": "cursorOff",
+     "frame": 690,
+     "time_s": 23.0
+    },
+    {
+     "label": "hold4",
+     "frame": 717,
+     "time_s": 23.9
+    },
+    {
+     "label": "spreadHead",
+     "frame": 735,
+     "time_s": 24.5
+    },
+    {
+     "label": "firstPulse",
+     "frame": 750,
+     "time_s": 25.0
+    },
+    {
+     "label": "pulseA",
+     "frame": 782,
+     "time_s": 26.067
+    },
+    {
+     "label": "pulseB",
+     "frame": 814,
+     "time_s": 27.133
+    },
+    {
+     "label": "pulseC",
+     "frame": 842,
+     "time_s": 28.067
+    },
+    {
+     "label": "stillHead",
+     "frame": 861,
+     "time_s": 28.7
+    },
+    {
+     "label": "stillPulse",
+     "frame": 870,
+     "time_s": 29.0
+    },
+    {
+     "label": "hold5",
+     "frame": 900,
+     "time_s": 30.0
+    },
+    {
+     "label": "limitHead",
+     "frame": 921,
+     "time_s": 30.7
+    },
+    {
+     "label": "stopA",
+     "frame": 940,
+     "time_s": 31.333
+    },
+    {
+     "label": "stopB",
+     "frame": 954,
+     "time_s": 31.8
+    },
+    {
+     "label": "stopC",
+     "frame": 969,
+     "time_s": 32.3
+    },
+    {
+     "label": "finalHold",
+     "frame": 1005,
+     "time_s": 33.5
+    },
+    {
+     "label": "fadeMid",
+     "frame": 1047,
+     "time_s": 34.9
+    },
+    {
+     "label": "last",
+     "frame": 1067,
+     "time_s": 35.567
+    }
+   ],
+   "viewed_350px": "all 50 individually (from render 4 and render 5; video frames are identical, see below) plus the final contact sheet",
+   "viewed_native": [
+    "0048",
+    "0076",
+    "0096",
+    "0183",
+    "0225",
+    "0327",
+    "0438",
+    "0542",
+    "0608",
+    "0686",
+    "0750",
+    "0870",
+    "0921",
+    "0954",
+    "0969",
+    "1005",
+    "1067"
+   ],
+   "alternate_indices": {
+    "suspect": "frame 542, A retry mark faint under cursor",
+    "checked": [
+     545,
+     552
+    ],
+    "result": "mark solid; faintness is the 0.12 s pop-in"
+   },
+   "video_identity_across_audio_only_reencode": "frames 545 and 552 have identical decoded MD5 in render 4 (sha256 e14427880805a9f63cf6568c1c4ce3f6144779eabb74c427c20dfc6d5c2a4e47) and the final render"
+  },
+  "audio_heard": false,
+  "audio_note": "Audio analysed only (spectrogram, volumedetect, astats, windowed peaks); not listened to."
+ },
+ "review": {
+  "self_review": "review.md",
+  "independent_comparative_review": "not performed"
+ }
+}

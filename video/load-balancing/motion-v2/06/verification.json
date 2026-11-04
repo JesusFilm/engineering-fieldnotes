@@ -1,0 +1,104 @@
+{
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1161,
+    "pix_fmt": "yuv420p"
+  },
+  "sha256": "6ce62a6ab2ffb94ed077a6e261ccde6d4fcc60f8e7640bfd90e4c25ec85a1b7b",
+  "size_bytes": 1088785,
+  "duration_s": 38.7,
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 38.7,
+    "max_volume_dB": -1.5,
+    "mean_volume_dB": -31.5,
+    "astats_peak_dB": -1.534,
+    "astats_rms_dB": -31.457,
+    "clipping": false,
+    "cues": 30
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true,
+    "command": "python3 scratch/boxes.py video.mp4"
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "b9055e7251ee7ece5ca1828b529c41510ad1e6a26f2c35ec83f1f3322d100230",
+    "source_time_s": 33,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "9fd395b2189fbcc47dd3c38899f220a8fb65e40abceece9b6ba0f9f64e9f0d0c",
+    "engine/flow-engine.js": "fa83e8cd90904615d36a68b4ff2468230d30b3c39d93a03ae3348ccad3466c26",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "render_command": "node video/load-balancing/motion-v2/06/engine/render.mjs video/load-balancing/motion-v2/06/scene.js video/load-balancing/motion-v2/06/video.mp4 --sheet video/load-balancing/motion-v2/06/scratch/contact-sheet.png (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "frames_inspected": {
+    "dir": "scratch/enc1",
+    "times_s": [
+      0.5,
+      1.5,
+      3.3,
+      3.9,
+      4.4,
+      6.5,
+      9.4,
+      10.3,
+      10.6,
+      11,
+      11.8,
+      13.5,
+      15.3,
+      15.8,
+      16.3,
+      17.5,
+      18.9,
+      19.2,
+      19.9,
+      20.6,
+      22,
+      23.3,
+      23.8,
+      24.3,
+      24.8,
+      25.6,
+      27,
+      28.7,
+      29.4,
+      29.9,
+      30.5,
+      31.5,
+      33,
+      36,
+      37.6,
+      38.66
+    ],
+    "native_350": "scratch/native350-enc.png (13.5, 17.5, 24.3, 31.5 at true 350 px width)",
+    "w350_sheet": "scratch/enc1-350-sheet.png",
+    "full_res": "scratch/timeline-full.png (encoded 17.5 and 19.2 s crops)"
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, levels); not listened to.",
+  "scope_note": "Passing these scoped checks does not establish universal correctness or comparative quality.",
+  "verified_at": "2026-10-21"
+}

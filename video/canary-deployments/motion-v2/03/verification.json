@@ -1,0 +1,212 @@
+{
+  "cut": "canary-deployments/motion-v2/03",
+  "lesson": "03 An average hides failure",
+  "sha256": "4706a3fca44d982fa93b0230791464e1d85c9e6e7a52b29a5c8577e5719cd530",
+  "duration_s": 44.2,
+  "files": {
+    "video.mp4": "4706a3fca44d982fa93b0230791464e1d85c9e6e7a52b29a5c8577e5719cd530",
+    "poster.jpg": "a2409c82c4231b0b6774286caf0ef15dba2dc78c25037ac426e7e6f02eb9ff19"
+  },
+  "source_hashes": {
+    "scene.js": "1263b8582c51b6d89d4dc3949a8ce0f040e194745fdd481ed78a731e8d1d145c",
+    "engine/flow-engine.js": "f3c0e0e63a473a0a5a13be590460510ea1e6f0c009e927fb30894491e6546901",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "beat-sheet.md": "b0cc464e0f1cad416aaed17b56cb8b34dbb2315fa91b64ae11f9b15d7289f23f"
+  },
+  "reproduction": {
+    "workdir": "video/canary-deployments/motion-v2/03",
+    "command": "CHROME_PATH=/snap/bin/chromium node engine/render.mjs scene.js video.mp4",
+    "poster": "ffmpeg -v error -y -i video.mp4 -vf \"select='eq(n\\,1245)'\" -frames:v 1 -q:v 2 poster.jpg",
+    "renderer": "cut-local engine/ (copy of the skill scripts plus general caption/grid/line extensions); puppeteer-core 25.14.0 resolved from the repository node_modules; Node v22.22.1; ffmpeg 8.0.1",
+    "note": "The snap Chromium needs to run outside the agent sandbox; it was run with scoped escalation. The renderer is deterministic per frame; the encode hash can differ across ffmpeg/x264 builds."
+  },
+  "fixture": {
+    "all": 10000,
+    "v2_export": 100,
+    "v2_export_fail": 40,
+    "v2_export_ok": 60,
+    "other_ok": 9900,
+    "overall_rate": "0.4%",
+    "slice_rate": "40%",
+    "example_overall_alert": "1%",
+    "asserted_in_scene": true
+  },
+  "encoded_verification": {
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1080,
+          "height": 1920,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1",
+          "duration": "44.200000",
+          "nb_frames": "1326"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "sample_rate": "44100",
+          "channels": 2,
+          "r_frame_rate": "0/0",
+          "duration": "44.200000",
+          "nb_frames": "1905"
+        }
+      ],
+      "format": {
+        "duration": "44.200000",
+        "size": "2841436"
+      }
+    },
+    "full_decode": {
+      "command": "ffmpeg -v error -xerror -i video.mp4 -f null -",
+      "exit_code": 0,
+      "errors": "none",
+      "video_frames_decoded": 1326
+    },
+    "audio": {
+      "astats_overall_peak_dbfs": -4.66,
+      "volumedetect_max_db": -4.7,
+      "mean_volume_db": -32.1,
+      "limit_dbfs": -0.5,
+      "pass": true,
+      "loudest_event": "35.3 s reveal (40%)",
+      "sound_cues": 47,
+      "quiet_holds_s": [
+        [
+          9.75,
+          11.9
+        ],
+        [
+          14.25,
+          16.8
+        ],
+        [
+          22.55,
+          25.2
+        ],
+        [
+          40.55,
+          44.2
+        ]
+      ]
+    },
+    "spectrogram": {
+      "command": "ffmpeg -i video.mp4 -lavfi showspectrumpic=s=1800x500:fscale=log spec.png",
+      "result": "onset on every scheduled cue; silence across the holds; the 35.3 s reveal is the strongest low-frequency event"
+    },
+    "streaming": {
+      "top_level_atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ],
+      "moov_before_mdat": true
+    },
+    "frames": {
+      "method": "exact decoded frame indices via select=eq(n,N); each saved at native 1080x1920 and scaled to an actual 350 px width (flags=area); every frame viewed individually",
+      "indices": [
+        15,
+        72,
+        141,
+        189,
+        210,
+        249,
+        270,
+        315,
+        369,
+        414,
+        456,
+        495,
+        519,
+        564,
+        588,
+        630,
+        660,
+        705,
+        753,
+        759,
+        768,
+        777,
+        789,
+        804,
+        816,
+        837,
+        867,
+        888,
+        915,
+        936,
+        975,
+        1017,
+        1032,
+        1050,
+        1065,
+        1095,
+        1131,
+        1158,
+        1194,
+        1245,
+        1296,
+        1325
+      ],
+      "times_s": [
+        0.5,
+        2.4,
+        4.7,
+        6.3,
+        7.0,
+        8.3,
+        9.0,
+        10.5,
+        12.3,
+        13.8,
+        15.2,
+        16.5,
+        17.3,
+        18.8,
+        19.6,
+        21.0,
+        22.0,
+        23.5,
+        25.1,
+        25.3,
+        25.6,
+        25.9,
+        26.3,
+        26.8,
+        27.2,
+        27.9,
+        28.9,
+        29.6,
+        30.5,
+        31.2,
+        32.5,
+        33.9,
+        34.4,
+        35.0,
+        35.5,
+        36.5,
+        37.7,
+        38.6,
+        39.8,
+        41.5,
+        43.2,
+        44.167
+      ],
+      "native_1080_viewed": true,
+      "actual_350px_viewed": true,
+      "extra_sequence": "frames 770-792 (even) tiled at 350 px to confirm the compaction transition has no overlap",
+      "contact_sheet": "render.mjs --sheet (1 fps, 240 px tiles), viewed",
+      "result": "no clipped, overlapping or sub-legibility labels; no lingering state; first frame shows the title over the empty grid outline, last frame is black (finite ending)"
+    }
+  },
+  "audio_listened": false,
+  "audio_note": "Audio was analysed (spectrogram, peaks, per-cue window levels) and not listened to.",
+  "comparative_review": "not performed; review.md is the author's own defect and improvement pass"
+}

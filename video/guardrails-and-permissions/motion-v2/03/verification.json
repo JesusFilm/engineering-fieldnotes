@@ -1,0 +1,106 @@
+{
+  "sha256": "b54d986866b71893d2a44c0375919b7cc9269de673bc83ceba4543b414966109",
+  "duration_s": 38.4,
+  "size_bytes": 1291262,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1152,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 38.4,
+    "max_volume_dB": -3.6,
+    "mean_volume_dB": -34.6,
+    "astats_peak_dB": -3.611,
+    "astats_rms_dB": -34.604,
+    "peak_below_minus_0_5_dBFS": true,
+    "cues": 28,
+    "window_peaks_dB": {
+      "4.3 (policy arrival)": -6.9,
+      "10.9 (ACCEPTED)": -11,
+      "18.2 (permission arrival)": -7.1,
+      "22.8 (DENIED thump)": -3.6,
+      "25.9 (closed route)": -20.2
+    }
+  },
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue dry-run, spectrogram, volumedetect window peaks, astats); not listened to.",
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "4aad9adec87317ea130cc1d25efc832fe825dabe241b7f76ac4c60b06e93990c",
+    "source_time_s": 33,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "f0127e3f33b89d4fa6edb5a7fc6a6ded379dcfb28f7dfb182fff1a30c0a47873",
+    "engine/flow-engine.js": "93136ea4acf194c2799b43a7812e99740c95bfd2afa2770b8dffb7809aff0379",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717"
+  },
+  "engine_changes": "Cut-local flow-engine.js is a byte-identical copy of lesson 02's local engine (general 'panel', 'matrix', chip size, title sizes); lesson 02 was not edited. Uses the stock 'bar' and 'label' nodes. sfx.js and render.mjs unchanged.",
+  "render_command": "node video/guardrails-and-permissions/motion-v2/03/engine/render.mjs video/guardrails-and-permissions/motion-v2/03/scene.js video/guardrails-and-permissions/motion-v2/03/video.mp4 --sheet video/guardrails-and-permissions/motion-v2/03/scratch/contact-sheet.png --wav video/guardrails-and-permissions/motion-v2/03/scratch/sfx.wav (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "poster_command": "ffmpeg -ss 33 -i video.mp4 -frames:v 1 -q:v 2 poster.jpg (in the cut directory)",
+  "frames_inspected": {
+    "native_dir": "scratch/enc2",
+    "w350_dir": "scratch/enc2-350 (scale=350:-1:flags=area)",
+    "times_s": [
+      0,
+      1.4,
+      2.8,
+      3.9,
+      4.6,
+      5.6,
+      6.8,
+      7.9,
+      9.2,
+      10.4,
+      11.2,
+      12.8,
+      14,
+      16,
+      17.8,
+      18.6,
+      19.4,
+      20.5,
+      21.5,
+      22.1,
+      23.1,
+      24.5,
+      26.2,
+      27.4,
+      28.6,
+      30,
+      31.3,
+      34,
+      36.9,
+      38.35
+    ],
+    "w350_sheet": "scratch/enc2-350-sheet.png",
+    "individual_checks": "Viewed directly from this encode: scratch/trio2.png (native 11.2, 16.0, 38.35). From render 2 (identical except the removed 11.0 s ripple): scratch/trio.png (native 6.8, 20.5, 26.2) and scratch/trio350.png (350px 11.2, 23.1, 34.0)."
+  },
+  "contact_sheet": "scratch/contact-sheet.png",
+  "spectrogram": "scratch/spectrogram.png",
+  "invariants_checked": "A1 unchanged; ACCEPTED never rewritten; calls 0 / not invoked / r41 in every sampled frame; no packet toward the deploy service; only the permission column is wired to execution",
+  "scope_note": "Passing these scoped checks is not universal correctness; a comparison review against other cuts is still required.",
+  "verified_at": "2026-10-20"
+}

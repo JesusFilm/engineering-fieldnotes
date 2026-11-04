@@ -1,5 +1,6 @@
 """Verify complete lesson coverage and encoded media; cache only exact file hashes."""
 from pathlib import Path
+from sequence_provenance import source_digest as sequence_source_digest
 import hashlib, json, re, struct, subprocess
 ROOT = Path(__file__).resolve().parent.parent
 REPORT = ROOT / 'reviews/sequence-media-checks.json'
@@ -22,11 +23,10 @@ def check():
             data = file.read_bytes()
             digest = hashlib.sha256(data).hexdigest()
             poster_digest = hashlib.sha256(poster.read_bytes()).hexdigest()
-            scene = ROOT/f'video/{topic}/sequence/{number:02}.js'
-            engine = ROOT/('video/load-balancing/sequence/engine' if topic == 'load-balancing' else 'video/shared/sequence-engine')
-            source_digest = hashlib.sha256(scene.read_bytes()+b''.join((engine/name).read_bytes() for name in ['flow-engine.js','sfx.js','render.mjs','preview.html'])).hexdigest()
+            source_digest = sequence_source_digest(topic, number, lesson)
             old = evidence.get(key, {})
-            if topic != 'load-balancing':
+            if lesson.get('production') != 'motion-v2' and topic != 'load-balancing':
+                scene = ROOT/f'video/{topic}/sequence/{number:02}.js'
                 stamp_path = scene.parent/f'scratch/{number:02}.render.json'
                 if stamp_path.exists():
                     stamp = json.loads(stamp_path.read_text())

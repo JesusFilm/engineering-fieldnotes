@@ -1,0 +1,10 @@
+{
+  "sha256": "1ec94579979f3bd865872666ac65e24a2eab074749f6b20236861d70ecfc5eef",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Reveal each timeline bar's label only once the bar is wide enough (row B shows a cut 're' at ≈ 13.4 s).",
+    "Label the travelling request dots (e.g. 'req 1', 'req 2') to tie the motion to the app's list.",
+    "Note in the write-up that a second server adds capacity only when requests do not compete for one shared resource."
+  ]
+}

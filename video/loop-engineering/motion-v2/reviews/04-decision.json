@@ -1,0 +1,9 @@
+{
+  "sha256": "9d0284db0f8c0f548f86900b18f80f53dc9946715898188eacc3d81134d012cf",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Keep the 0 failed card neutral throughout, or pair its brief teal emphasis immediately with not a pass, to reduce a possible success-color inference.",
+    "Enlarge the secondary count labels and engineer record slightly at 350px; preserve the existing reading hold."
+  ]
+}

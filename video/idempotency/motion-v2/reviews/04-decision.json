@@ -1,0 +1,10 @@
+{
+  "sha256": "83ce76fd6a892c63056a965c60b552851dc7c1737e848d2b752bad9fe1b247ba",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Shorten the final hold (≈ 30–40 s) to about 6 s.",
+    "Show the lookup answer travelling back from 'operation keys' to the service before 'lookup k7 → 47' appears.",
+    "Note in the write-up that replay depends on key retention and on the service contract."
+  ]
+}

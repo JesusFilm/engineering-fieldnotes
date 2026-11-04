@@ -1,0 +1,109 @@
+{
+  "sha256": "39988cfa1f086b7fb715eaec80ea99b4eec42a305f7730063aac8e2e5423f950",
+  "duration_s": 35.6,
+  "size_bytes": 1428592,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1068,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 35.6,
+    "max_volume_dB": -4.7,
+    "mean_volume_dB": -33.4,
+    "astats_peak_dB": -4.694,
+    "astats_rms_dB": -33.387,
+    "peak_below_minus_0_5_dBFS": true,
+    "cues": 25,
+    "window_peaks_dB": {
+      "1.0 (ledger)": -11.2,
+      "7.5 (request arrives)": -8.4,
+      "11.0 (approval loaded)": -8.2,
+      "12.2 (same)": -14.5,
+      "15.5 (sweep)": -14,
+      "17.8 (BLOCKED)": -4.7,
+      "19.0": -16.2,
+      "20.2 (closed route)": -22,
+      "26.3 (pending review)": -8.5,
+      "27.7": -16.1
+    }
+  },
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue dry-run, spectrogram, volumedetect window peaks, astats); not listened to.",
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "a95b6887cb3b3fee2495ec85e9fd1a2394579067a11e06e28dda8d20e0993509",
+    "source_time_s": 31,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "fa40801918fe2bd9441d361156576cb4c9f63d0ba3cd50d7db11d013476dbc58",
+    "engine/flow-engine.js": "e5140a411c32cf2c174c8467794a1b0df8b6b48a708eee42fc8a4763a0c9855d",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717"
+  },
+  "engine_changes": "Cut-local flow-engine.js: lesson 04's local copy (general 'panel', 'matrix', 'diff', chip size, title sizes; lesson 04 not edited) plus a general 'strcmp' node. sfx.js and render.mjs unchanged.",
+  "render_command": "node video/guardrails-and-permissions/motion-v2/05/engine/render.mjs video/guardrails-and-permissions/motion-v2/05/scene.js video/guardrails-and-permissions/motion-v2/05/video.mp4 --sheet video/guardrails-and-permissions/motion-v2/05/scratch/contact-sheet.png --wav video/guardrails-and-permissions/motion-v2/05/scratch/sfx.wav (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "poster_command": "ffmpeg -ss 31 -i video.mp4 -frames:v 1 -q:v 2 poster.jpg (in the cut directory)",
+  "frames_inspected": {
+    "native_dir": "scratch/enc",
+    "w350_dir": "scratch/enc-350 (scale=350:-1:flags=area)",
+    "times_s": [
+      0,
+      1,
+      1.6,
+      3.2,
+      5.5,
+      7.3,
+      7.9,
+      8.9,
+      10.4,
+      11.4,
+      12.6,
+      14.2,
+      15.4,
+      16.3,
+      17.3,
+      18.1,
+      19.2,
+      20.6,
+      21.7,
+      23.5,
+      25.6,
+      26.6,
+      27.4,
+      28.2,
+      31,
+      33.5,
+      34.8,
+      35.55
+    ],
+    "w350_sheet": "scratch/enc-350-sheet.png",
+    "individual_checks": "Viewed directly from this encode: scratch/trio.png (native 11.4, 16.3, 18.1) and scratch/quint350.png (350px 15.4, 21.7, 27.4, 31.0, 35.55)."
+  },
+  "contact_sheet": "scratch/contact-sheet.png",
+  "spectrogram": "scratch/spectrogram.png",
+  "invariants_checked": "r42 ledger row unchanged in every frame; action/target same; every digest character compared before BLOCKED; production r41 and calls 0 throughout; no packet toward production; r43 ends pending review with no approval",
+  "scope_note": "Passing these scoped checks is not universal correctness; a comparison review against other cuts is still required.",
+  "verified_at": "2026-10-20"
+}

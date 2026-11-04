@@ -1,0 +1,11 @@
+{
+  "sha256": "a6a8fd7d7aa9fb7b5674a904647f2b630a47f3cce24d6d5a514eb56b5f6bc7fe",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Show the header as shortened (e.g. '00-4bf9…-a1…-01') or note it in the write-up, so 'traceparent 00-4bf9-a1-01' is not mistaken for a valid header.",
+    "State in the write-up that an HTTP client span often sits between the agent task and the request and would be the header's parent.",
+    "Place the 'HTTP' label next to the dotted path the request travels.",
+    "Keep a small trace of the propagated header visible after the trace view replaces the request panel, so the final frame shows header, both spans and the trace view together."
+  ]
+}

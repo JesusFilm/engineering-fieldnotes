@@ -1,0 +1,11 @@
+{
+  "sha256": "0a248d604d0c97509bb2602176cb526997e444057f918f789f6893a91cd1f180",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Make the refill ('stored', ≈ 29 s, −9.7 dB) the brightest cue; it is currently quieter than the miss lookup and source return (−7.1 dB).",
+    "Shorten the closing hold (≈ 33–45 s) to about 6–8 s before the fade.",
+    "Make the '·' absent mark between cache and database more visible during 9–29 s.",
+    "Note in the write-up that deletes can fail and should be surfaced, and that leases or versioned writes defend against a stale refill after the delete."
+  ]
+}

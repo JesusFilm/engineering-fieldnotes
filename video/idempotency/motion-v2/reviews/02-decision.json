@@ -1,0 +1,10 @@
+{
+  "sha256": "0277eb8e4d46e0505cb15b09477d9fdccee3c60ed536e20e1f213ad732daa545",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Enlarge the sequence-diagram message labels ('save 47', 'ticket 47', 'reply lost', 'create again?'), the smallest text at 350 px.",
+    "Make the save or the lost reply the loudest cue instead of the request arrival (8.9 s, −3.2 dB).",
+    "Raise the cue for the dashed '48 v1 duplicate?' row (≈ 29–31 s, about −19 to −23 dB) so the risk is audible."
+  ]
+}

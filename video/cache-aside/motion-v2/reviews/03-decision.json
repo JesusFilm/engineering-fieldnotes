@@ -1,0 +1,10 @@
+{
+  "sha256": "21e5559bd846f9c605bc7f8cee8386910acbe0dcafe2c5f7d67754d7819d4ddd",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Raise the MISS cue (≈ 8.7 s, peaks about −18 dB) closer to the routine transfer cues while keeping it soft.",
+    "Shorten the closing hold (≈ 30–42 s) to about 6–8 s before the fade.",
+    "Note in the write-up that cache fills usually set an expiry and that a cache outage is a failure distinct from a miss."
+  ]
+}

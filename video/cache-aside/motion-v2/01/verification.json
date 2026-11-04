@@ -1,0 +1,138 @@
+{
+  "video": "video/cache-aside/motion-v2/01/video.mp4",
+  "sha256": "8abb840985e03276d648e174cad4087550ec98aa51f32333348ebca7be8f9e00",
+  "size_bytes": 1745669,
+  "duration_s": 44.5,
+  "video_stream": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1335,
+    "pix_fmt": "yuv420p"
+  },
+  "audio_stream": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 44.5,
+    "max_volume_dB": -7.1,
+    "mean_volume_dB": -35.5,
+    "clipping": false,
+    "cues": 24,
+    "quietest_cue": "36.3 s ack C4, -19.9 dBFS",
+    "per_cue_peaks": "scratch/cue-peaks.json"
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "4b9b721816d3572962459da806019b38f8d14de606551088418db02725aeb0ae",
+    "source_time_s": 40,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "2d3521cee6ffce5950262e9d0d9333b798bf904bbd4cd5fd2867568c2b22c2f3",
+    "engine/flow-engine.js": "5a3474bfcd5e20ef631a246d4aa43ce2e1b800612d623ade8b2eb4ec53069da5",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "../plans/01-plan-a.md": "63e96c3e7d3ba7729c905a00c158e426822f06f25f373c680e3b30e3719acbdc",
+    "../plans/01-plan-b.md": "d4c02c3ee340c28fbd33e2bf0ebdec962ccc096625fb8ac7a2c578c6dd8fc0d1",
+    "../../sequence/lessons.json": "0a1b2e1a4b4acdd929da07747c94d820e80fa82bbe4d573c6623bf713fdf97a1"
+  },
+  "render_command": "node video/cache-aside/motion-v2/01/engine/render.mjs video/cache-aside/motion-v2/01/scene.js video/cache-aside/motion-v2/01/video.mp4 --sheet video/cache-aside/motion-v2/01/scratch/contact-sheet.png (from repo root; pinned puppeteer-core 25.14.0)",
+  "verify_commands": [
+    "python3 scratch/verify.py .",
+    "python3 scratch/frames.py",
+    "python3 scratch/transit2.py",
+    "ffmpeg -v error -y -i video.mp4 -lavfi showspectrumpic=s=1800x500:fscale=log scratch/spectrogram.png"
+  ],
+  "frames_inspected": {
+    "native_dir": "scratch/enc",
+    "w350_dir": "scratch/enc350",
+    "times_s": [
+      0,
+      1,
+      2.5,
+      4,
+      5.6,
+      7.4,
+      8,
+      8.6,
+      9.25,
+      9.9,
+      10.7,
+      11.5,
+      13,
+      14.3,
+      14.9,
+      15.5,
+      15.9,
+      16.4,
+      18.6,
+      21.5,
+      22.1,
+      24,
+      24.6,
+      25.4,
+      26.1,
+      26.8,
+      27.5,
+      29,
+      30.6,
+      32,
+      32.4,
+      34.5,
+      36.6,
+      40,
+      44.45
+    ],
+    "sheets_350": [
+      "scratch/enc350-sheet-a.png",
+      "scratch/enc350-sheet-b.png"
+    ],
+    "transit": {
+      "dir": "scratch/transit2",
+      "times_s": [
+        13.4,
+        13.7,
+        13.9,
+        14,
+        14.2,
+        14.5,
+        29.6,
+        29.9,
+        30.1,
+        30.4,
+        31.9,
+        32.1,
+        32.4,
+        44.45
+      ],
+      "native_and_350": true,
+      "sheet_350": "scratch/transit2-350-sheet.png",
+      "native_crop": "scratch/native-crop-14.0.png",
+      "finding": "source row rev 1 readable in every frame; copy chip clears the find line and headings; landing ripple crosses 'rev' for ~0.3 s (optional refinement 2)"
+    }
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, per-cue peaks, levels); not listened to.",
+  "scope_note": "Passing these scoped checks does not establish universal correctness or comparative quality.",
+  "verified_at": "2026-10-21",
+  "render": 4
+}

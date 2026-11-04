@@ -1,0 +1,13 @@
+{
+  "sha256": "1f911da6bdfe260d0f1803abb999d63a324c24a7e89500680c91565fd183a777",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Retime lessons.json item 1 (coordinator-owned) if adopted: video is 41.6 s versus the declared 28 s; beats land at about 0, 5.5, 16.6, 20.8 and 25.6 s.",
+    "Enlarge the monospace URL/status labels (auth.example, app.example/cb, issue/check code), which are about 9-10 px at 350 px width.",
+    "Add a brief client-to-browser cue at about 5.5-6.8 s so the client visibly starts the authorization request.",
+    "Consider dropping the 'SIMPLIFIED OAUTH FLOW' subtitle as decorative.",
+    "Listen to the broadband noise burst at about 23.4-23.9 s (analysed, not heard) and consider a tonal cue consistent with the others.",
+    "Shorten or quiet the closing relight of browser/auth server at 37.6-39.0 s so the 403 remains the final emphasis."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "sha256": "c8f2f9cc9a9200050c2adea3a482f614798e8df8bb03afd2e59e114eebf1cc00",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Add the unit 'requests' to '9,000 stay on v1 / 1,000 exposed to v2' (36.5-37.5 s) and the end card '9,000 → v1 / 1,000 → v2' (42.5 s), so 1,000 is not read as users after the Requests ≠ users beat.",
+    "Keep the 18.2-18.7 s emphasis rings (frames 547-562) behind or below the 'v1 · control' / 'v2 · candidate' labels.",
+    "Trim about 2-3 s of slack around 3.3-5.4 s and 18.6-20.3 s; the cut runs 46.8 s against the lesson's 28 s budget.",
+    "Optionally route one of user A's requests to v2 in the Requests ≠ users panel to tie unique users to exposure.",
+    "Coordinator: lessons.json item 2 still declares duration 28 with beats at 0/7/14/21 s; re-time it if this 46.8 s cut is promoted."
+  ]
+}

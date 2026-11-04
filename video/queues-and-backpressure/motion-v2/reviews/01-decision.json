@@ -1,0 +1,10 @@
+{
+  "sha256": "f89b0b0c46e05a801958f3b132243b2bd13aa0b8a0f57dd7fef92e26604a3064",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Brighten the record's unset '—' marks for running and complete so 'not yet' reads from the start.",
+    "Enlarge the 'QUEUES · LESSON 1' subtitle, the smallest text at 350 px.",
+    "Note in the write-up that a delivered but unacknowledged broker message can be redelivered."
+  ]
+}

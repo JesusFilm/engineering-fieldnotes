@@ -1,0 +1,11 @@
+{
+  "sha256": "d453b4bf77bd822f973f3b20894b36fd05b9d15f6c8f7482fe1d162c7dcaca35",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Add the artifact identity (e.g. 'artifact A · 9f3a…') as a record row so the log explicitly identifies reviewer, artifact and target.",
+    "Give the final pulse on the lost 'applied' label (≈ 35.6 s) a quiet sound, or drop the pulse; it is the only highlight without an audio onset.",
+    "Name the key once in plainer terms (e.g. 'request key k7') for viewers unfamiliar with idempotency keys.",
+    "Leave a little more audio headroom on the crash (peaks −1.6 dB, within the −0.5 dB limit)."
+  ]
+}

@@ -1,0 +1,384 @@
+{
+  "sha256": "7730cc56306c379423ed213c6e93b6041442e7cb9b811959b3aac3d961c9a5de",
+  "duration_s": 41.4,
+  "file": "video.mp4",
+  "lesson": {
+    "topic": "oauth-pkce",
+    "index": 4,
+    "title": "Prove the verifier matches",
+    "cut": "motion-v2/04"
+  },
+  "source_hashes": {
+    "scene.js": "814ba9778c28d39a64c6e400ead598e795b3300f88c3b16794530f57a51111ba",
+    "engine/flow-engine.js": "510c09333c3b16f0219d6d74cda8e7b787ad1462138edebbb5fadddaf8b6d947",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "output_hashes": {
+    "video.mp4": "7730cc56306c379423ed213c6e93b6041442e7cb9b811959b3aac3d961c9a5de",
+    "poster.jpg": "5db38a6e7d49bc89590b955f72479138e37e10a9ab237e528ae0b7137eab92b3"
+  },
+  "engine_provenance": {
+    "base": "architecture-flow-video skill scripts copied into engine/ (skill flow-engine.js sha256 af17dffdf846f7d5e17d1efeeb8553953b39f54c098f6aa482030ba0ce31cf6d); render.mjs, sfx.js and preview.html unchanged from the skill",
+    "copied_general_helpers": "panel, field, status, button, cursor, link node types; label align; chip size/tag; keyframed packets — copied from the motion-v2/03 cut-local engine (sha256 f4045094242313ceea9af29d64c012efb5bd59ac5c22d321f466421831e3a464) without modifying that cut",
+    "cut_local_extensions_04": [
+      "status node fail prop (red × mark)",
+      "chip packet tagColor",
+      "label spacing option",
+      "panel labelBottom option",
+      "meta.veilTop for the stage fade"
+    ],
+    "shared_skill_modified": false,
+    "earlier_cuts_modified": false
+  },
+  "reproduction": {
+    "cwd": "video/oauth-pkce/motion-v2/04 (relative to repository root)",
+    "render": "CHROME_PATH=/snap/bin/chromium node engine/render.mjs scene.js video.mp4",
+    "poster": "ffmpeg -v error -y -i video.mp4 -vf \"select='eq(n\\,620)'\" -vsync 0 -frames:v 1 -q:v 2 poster.jpg",
+    "timing_dry_run": "node -e \"const F=require('./engine/flow-engine.js'); require('./scene.js'); const sc=F.createScene(F.lastScene); console.log(sc.meta.renderDuration, sc.audioCues().length)\"",
+    "dependencies": "puppeteer-core 25.14.0 from the repository root node_modules (package.json pin), resolved upward from engine/",
+    "environment": {
+      "node": "v22.22.1",
+      "puppeteer_core": "25.14.0",
+      "chromium": "Chromium snap at /snap/bin/chromium",
+      "ffmpeg": "8.0.1-3ubuntu2"
+    },
+    "note": "Snap Chromium cannot launch inside the agent command sandbox; renders ran with a scoped escalation, one at a time. Byte-identical re-encodes are not claimed."
+  },
+  "encoded_verification": {
+    "ffprobe": {
+      "video": {
+        "codec": "h264",
+        "profile": "High",
+        "width": 1080,
+        "height": 1920,
+        "pix_fmt": "yuv420p",
+        "fps": "30/1",
+        "nb_frames": 1242,
+        "duration_s": 41.4
+      },
+      "audio": {
+        "codec": "aac",
+        "profile": "LC",
+        "sample_rate": 44100,
+        "channels": 2,
+        "duration_s": 41.4
+      },
+      "format_duration_s": 41.4,
+      "size_bytes": 2116240
+    },
+    "full_decode": {
+      "command": "ffmpeg -v error -i video.mp4 -f null -",
+      "error_lines": 0,
+      "exit_code": 0,
+      "decoded_video_frames": 1242,
+      "video_packets": 1242,
+      "decoded_audio_frames": 1783,
+      "audio_packets": 1784
+    },
+    "streaming_metadata": {
+      "top_level_atoms": [
+        [
+          "ftyp",
+          0,
+          32
+        ],
+        [
+          "moov",
+          32,
+          45004
+        ],
+        [
+          "free",
+          45036,
+          8
+        ],
+        [
+          "mdat",
+          45044,
+          2071196
+        ]
+      ],
+      "moov_before_mdat": true
+    },
+    "audio": {
+      "volumedetect": {
+        "max_volume_db": -5.8,
+        "mean_volume_db": -30.1
+      },
+      "astats_overall_peak_dbfs": -5.82,
+      "peak_limit_dbfs": -0.5,
+      "peak_within_limit": true,
+      "cue_count": 27,
+      "cue_window_peaks_dbfs_0_3s": {
+        "1.6": -14.8,
+        "2.5": -5.3,
+        "4.0": -8.7,
+        "6.0": -8.5,
+        "6.95": -8.3,
+        "8.55": -5.6,
+        "10.3": -5.4,
+        "11.7": -5.6,
+        "12.5": -8.5,
+        "13.7": -13.3,
+        "15.55": -8.3,
+        "16.3": -8.2,
+        "17.05": -8.3,
+        "17.6": -6.4,
+        "19.3": -7.1,
+        "24.2": -14.7,
+        "25.1": -5.5,
+        "26.6": -8.7,
+        "28.6": -8.3,
+        "29.55": -8.7,
+        "31.15": -5.6,
+        "32.9": -5.7,
+        "34.3": -2.8,
+        "35.1": -5.3,
+        "35.9": -13.4,
+        "37.5": -6.4
+      },
+      "spectrogram": "showspectrumpic=s=1800x500:fscale=log viewed: an onset at every cue, silent holds 19.5–21.8 and 37.6–41.4, low-frequency energy only at the mismatch/rejection (34.3–35.9) and the error deliver (37.5)",
+      "observations": "mismatch is the loudest event; sends quietest; holds silent",
+      "heard": false,
+      "heard_note": "Audio was analysed (levels, per-cue peaks, spectrogram) but not listened to."
+    },
+    "frames": {
+      "method": "Exact frame indices extracted from the encoded MP4 with select=eq(n,N) (time = N/30). Each frame viewed individually at native 1080x1920 and at 350x622 (lanczos downscale, viewed at original size). Contact sheet from render.mjs --sheet (fps=1, 240 px tiles) viewed.",
+      "inspected": [
+        {
+          "frame": 0,
+          "t_s": 0.0,
+          "what": "opening state"
+        },
+        {
+          "frame": 30,
+          "t_s": 1.0,
+          "what": "client values highlighted"
+        },
+        {
+          "frame": 75,
+          "t_s": 2.5,
+          "what": "request chip arrives at inlet"
+        },
+        {
+          "frame": 82,
+          "t_s": 2.733,
+          "what": "split into code and verifier chips"
+        },
+        {
+          "frame": 120,
+          "t_s": 4.0,
+          "what": "code A selects saved record"
+        },
+        {
+          "frame": 172,
+          "t_s": 5.733,
+          "what": "verifier entering S256"
+        },
+        {
+          "frame": 185,
+          "t_s": 6.167,
+          "what": "SHA-256 step"
+        },
+        {
+          "frame": 210,
+          "t_s": 7.0,
+          "what": "base64url step"
+        },
+        {
+          "frame": 240,
+          "t_s": 8.0,
+          "what": "computed chip travelling"
+        },
+        {
+          "frame": 258,
+          "t_s": 8.6,
+          "what": "computed slot filled"
+        },
+        {
+          "frame": 310,
+          "t_s": 10.333,
+          "what": "saved copy filling slot"
+        },
+        {
+          "frame": 340,
+          "t_s": 11.333,
+          "what": "both slots glow (comparing)"
+        },
+        {
+          "frame": 352,
+          "t_s": 11.733,
+          "what": "= appears"
+        },
+        {
+          "frame": 375,
+          "t_s": 12.5,
+          "what": "PKCE check passes alone"
+        },
+        {
+          "frame": 412,
+          "t_s": 13.733,
+          "what": "not-yet cue: no tokens yet, other checks idle"
+        },
+        {
+          "frame": 470,
+          "t_s": 15.667,
+          "what": "code valid passes"
+        },
+        {
+          "frame": 528,
+          "t_s": 17.6,
+          "what": "all checks passed, token fill starting"
+        },
+        {
+          "frame": 560,
+          "t_s": 18.667,
+          "what": "tokens issued, dot returning"
+        },
+        {
+          "frame": 579,
+          "t_s": 19.3,
+          "what": "client receives tokens"
+        },
+        {
+          "frame": 620,
+          "t_s": 20.667,
+          "what": "resolved hold (poster)"
+        },
+        {
+          "frame": 665,
+          "t_s": 22.167,
+          "what": "fade to reset"
+        },
+        {
+          "frame": 672,
+          "t_s": 22.4,
+          "what": "dark, subtitle swap"
+        },
+        {
+          "frame": 690,
+          "t_s": 23.0,
+          "what": "alternative case returns, all results cleared, verifier B"
+        },
+        {
+          "frame": 708,
+          "t_s": 23.6,
+          "what": "verifier B highlighted"
+        },
+        {
+          "frame": 753,
+          "t_s": 25.1,
+          "what": "request code A + verifier B"
+        },
+        {
+          "frame": 798,
+          "t_s": 26.6,
+          "what": "saved record lookup unchanged"
+        },
+        {
+          "frame": 935,
+          "t_s": 31.167,
+          "what": "computed challenge B"
+        },
+        {
+          "frame": 987,
+          "t_s": 32.9,
+          "what": "saved challenge A copied"
+        },
+        {
+          "frame": 1029,
+          "t_s": 34.3,
+          "what": "mismatch ≠ appears"
+        },
+        {
+          "frame": 1035,
+          "t_s": 34.5,
+          "what": "slots jolt, computed red"
+        },
+        {
+          "frame": 1053,
+          "t_s": 35.1,
+          "what": "PKCE check fails"
+        },
+        {
+          "frame": 1077,
+          "t_s": 35.9,
+          "what": "other checks dimmed, no tokens"
+        },
+        {
+          "frame": 1100,
+          "t_s": 36.667,
+          "what": "invalid_grant dot returning"
+        },
+        {
+          "frame": 1125,
+          "t_s": 37.5,
+          "what": "client shows invalid_grant"
+        },
+        {
+          "frame": 1170,
+          "t_s": 39.0,
+          "what": "failed-state hold"
+        },
+        {
+          "frame": 1212,
+          "t_s": 40.4,
+          "what": "final fade"
+        },
+        {
+          "frame": 1241,
+          "t_s": 41.367,
+          "what": "last frame"
+        }
+      ],
+      "alternate_indices_for_suspect_frames": {
+        "request chip to split chips handoff": [
+          80,
+          83
+        ],
+        "verifier into S256 / bar start": [
+          174,
+          180
+        ],
+        "computed chip landing vs slot key fill (fixed in render 3)": [
+          249,
+          252,
+          254,
+          256,
+          258,
+          262
+        ],
+        "saved copy landing vs slot key fill (fixed in render 3)": [
+          300,
+          303,
+          305,
+          307,
+          309,
+          312
+        ],
+        "comparison glow to = pop": [
+          351,
+          354
+        ],
+        "mismatch jolt": [
+          1031,
+          1036
+        ],
+        "invalid_grant fill": [
+          1123
+        ],
+        "final fade": [
+          1236
+        ]
+      },
+      "result": "Labels are clear of one another at rest and readable at 350 px. Nothing sits off-stage or in the title band. No PKCE/check/token state leaks into the alternative case, and the saved record stays code A / challenge A throughout. The verifier is never shown stored in the server. Tokens appear only after all shown checks pass; none appear in the mismatch case. Remaining transient: slot keys cross-fade in over about 8 frames as the arriving chip fades out."
+    }
+  },
+  "review": {
+    "file": "review.md",
+    "type": "self defect and improvement pass; no comparative score",
+    "comparative_review_required_before_recommendation": true
+  }
+}

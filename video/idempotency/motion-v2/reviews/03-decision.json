@@ -1,0 +1,10 @@
+{
+  "sha256": "d0de6a64dabeb982e0b18735cfdecb410d36a67413d46660f4c9f078599ce8b7",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Leave more headroom on the commit cue (peaks −2.3 dB at 21.4 s; within the limit but close).",
+    "Raise the 'no row for k7' lookup cue (≈ 11.4 s, about −24 dB) so the first-attempt check is audible.",
+    "Enlarge 'saved locally' and 'unique', the smallest text at 350 px."
+  ]
+}

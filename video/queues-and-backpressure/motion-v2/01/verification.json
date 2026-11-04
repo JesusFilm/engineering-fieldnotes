@@ -1,0 +1,98 @@
+{
+  "sha256": "f89b0b0c46e05a801958f3b132243b2bd13aa0b8a0f57dd7fef92e26604a3064",
+  "duration_s": 35.6,
+  "size_bytes": 1155459,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1068,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 35.6,
+    "max_volume_dB": -6.9,
+    "mean_volume_dB": -33.1,
+    "astats_peak_dB": -6.871724,
+    "astats_rms_dB": -33.110623,
+    "clipping": false,
+    "cues": 24
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "e3595d993a412f9d744649edafa0bae94843712ef3b795d63ef0c95d79c06086",
+    "source_time_s": 30.0,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "e61736c0f8b72e3dea1046f202df9df000c55fc56dc5c116aaf9c1be774395a1",
+    "engine/flow-engine.js": "a4b11512ded4bb892c4e6741dff2cfbb9b988f75416aa2965c12c2d98c0343d4",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "render_command": "node video/queues-and-backpressure/motion-v2/01/engine/render.mjs video/queues-and-backpressure/motion-v2/01/scene.js video/queues-and-backpressure/motion-v2/01/video.mp4 --sheet video/queues-and-backpressure/motion-v2/01/scratch/contact-sheet.png (run from repo root; pinned puppeteer-core 25.14.0 resolved from root node_modules)",
+  "poster_command": "ffmpeg -v error -y -ss 30.0 -i video.mp4 -frames:v 1 -q:v 2 poster.jpg (run in this folder)",
+  "inspection_command": "sh scratch/inspect.sh b (run in this folder)",
+  "frames_inspected": {
+    "times_s": [
+      0,
+      1.1,
+      2.5,
+      4.1,
+      5.2,
+      6.5,
+      7.4,
+      7.9,
+      8.4,
+      8.8,
+      9.4,
+      10.0,
+      10.7,
+      11.7,
+      14.0,
+      15.9,
+      16.1,
+      17.4,
+      17.8,
+      18.5,
+      20.0,
+      21.9,
+      22.2,
+      23.0,
+      25.7,
+      26.9,
+      30.0,
+      33.4,
+      34.1,
+      35.5
+    ],
+    "native": "scratch/enc-b/ (individual 1080x1920 PNGs from the encoded MP4; viewed 1.1, 8.8, 17.8 individually at full size; poster at 30.0 viewed)",
+    "w350": "scratch/enc350-b/ individual 350px frames and scratch/enc350-b-sheet.png",
+    "w350_individual_viewed": "scratch/enc350-b/f_13_11.7.png, f_19_18.5.png, f_25_26.9.png (encoded); full 30-frame 350px sheet viewed at native size"
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, volumedetect, astats); not listened to.",
+  "scope_note": "Scoped encoded checks for this cut only; they do not establish universal correctness. check_media.py was not run because this cut is not registered in shared manifests (coordinator scope).",
+  "verified_at": "2026-10-21"
+}

@@ -1,0 +1,9 @@
+{
+  "sha256": "bf8203d8a7a6f6b837a457280ac3e5da4263bfc6c42f1b2975903309f98f18a6",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Use the full lesson title more prominently; the current large Memory heading is less specific than the subtitle.",
+    "Increase the contrast or size of secondary store rows if they are intended to be read; they are not needed for the core mechanism."
+  ]
+}

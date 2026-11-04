@@ -1,0 +1,9 @@
+{
+  "sha256": "26b4f367c671e8e6ce39b446c1508faa15c335523c4b156fc4b80af363906557",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Consider specifying a service as well as prod in the target, provided the comparison remains readable at 350px.",
+    "Identify the illustrative test suite more specifically than tests 12/12 passed; the current evidence row is readable but generic."
+  ]
+}

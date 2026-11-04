@@ -1,0 +1,108 @@
+{
+  "sha256": "72c335286ef9aced6d3b29bed0c49a826266a582a8c8b9e2f8e2fa9d0a642b33",
+  "duration_s": 40,
+  "size_bytes": 1239573,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1200,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 40,
+    "max_volume_dB": -5.8,
+    "mean_volume_dB": -31,
+    "astats_peak_dB": -5.8,
+    "astats_rms_dB": -31.011,
+    "clipping": false,
+    "cues": 26,
+    "window_peaks_dB": {
+      "9.9-10.7 thump": -9.6,
+      "22.6-23.5 span close": -5.8,
+      "32.7-33.5 thump": -8.6,
+      "3.1-3.7 tool arrive": -6.6
+    }
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "ac10f36b5c370df85c8991dd658ccd164f6bbec32cf5dc52782eac92241a8a54",
+    "source_time_s": 26.5,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "74174272af6e373c162ed7d935fa0be99867a78141718e2e9ee620e847d22648",
+    "engine/flow-engine.js": "6902ff471298c103b960e05afff81ff158df8a4f2230f38a58003911c9c7ee58",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "render_command": "node video/observability-and-tracing/motion-v2/01/engine/render.mjs video/observability-and-tracing/motion-v2/01/scene.js video/observability-and-tracing/motion-v2/01/video.mp4 --sheet video/observability-and-tracing/motion-v2/01/scratch/contact-sheet.png (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "poster_command": "ffmpeg -ss 26.5 -i video.mp4 -frames:v 1 -q:v 3 poster.jpg (in the cut folder)",
+  "frames_inspected": {
+    "dir": "scratch/enc",
+    "w350_dir": "scratch/enc350",
+    "times_s": [
+      0,
+      1,
+      2.3,
+      2.75,
+      3.2,
+      5.5,
+      8.3,
+      8.75,
+      9.2,
+      10.1,
+      11.5,
+      12.1,
+      13.3,
+      14.5,
+      15.5,
+      15.65,
+      16.25,
+      16.7,
+      19,
+      21.8,
+      22.25,
+      22.7,
+      22.9,
+      23.8,
+      24.6,
+      26.5,
+      28.1,
+      29.5,
+      30.9,
+      32.9,
+      34.1,
+      36.5,
+      38.5,
+      39.95
+    ],
+    "w350_sheet": "scratch/enc350-sheet.png",
+    "w350_individual_view": "scratch/trio350.png (10.1, 19.0, 26.5 s)",
+    "native_viewed": "scratch/enc/f_22.25.png"
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, levels); not listened to.",
+  "verified_at": "2026-10-21"
+}

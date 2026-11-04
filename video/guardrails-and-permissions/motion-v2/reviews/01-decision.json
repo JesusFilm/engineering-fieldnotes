@@ -1,0 +1,9 @@
+{
+  "sha256": "5c4c07a1ef6794139bc699badf1c8cd075e798a0dbbc018dc17840f96ad77e5f",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Consider a more explicit resource label than prod, such as checkout/prod, if it can fit without reducing phone legibility.",
+    "The secondary labels from session and no grant could gain a little size or contrast; the main identity and DENIED state already communicate the mechanism."
+  ]
+}

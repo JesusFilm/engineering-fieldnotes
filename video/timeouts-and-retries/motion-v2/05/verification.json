@@ -1,0 +1,432 @@
+{
+ "cut": "timeouts-and-retries / motion-v2 / 05",
+ "lesson": "05 Bound the whole operation",
+ "sha256": "ca05dc0cd176dd8d276916c70356dd619ccdeb44353a5d691f7d3f0aaa75538b",
+ "duration_s": 43.4,
+ "file": "video.mp4",
+ "bytes": 1511954,
+ "poster": {
+  "file": "poster.jpg",
+  "sha256": "8fbe582deb4363dd5f878eb65f3152b3e1703c33657a742e8dbffe46599c0e4c",
+  "source_frame_index": 1215,
+  "time_s": 40.5
+ },
+ "reproduction": {
+  "cwd": "repository root",
+  "render": "CHROME_PATH=/snap/bin/chromium node video/timeouts-and-retries/motion-v2/05/engine/render.mjs video/timeouts-and-retries/motion-v2/05/scene.js video/timeouts-and-retries/motion-v2/05/video.mp4 --sheet video/timeouts-and-retries/motion-v2/05/scratch/sheet.png",
+  "poster": "ffmpeg -v error -y -i video/timeouts-and-retries/motion-v2/05/video.mp4 -vf 'select=eq(n\\,1215)' -vsync 0 -frames:v 1 -q:v 2 video/timeouts-and-retries/motion-v2/05/poster.jpg",
+  "verify": "python3 video/timeouts-and-retries/motion-v2/05/verify.py",
+  "timing_dry_run": "cd video/timeouts-and-retries/motion-v2/05 && node -e \"const F=require('./engine/flow-engine.js'); require('./scene.js'); const sc=F.createScene(F.lastScene); console.log(sc.meta.renderDuration, JSON.stringify(globalThis.__ledger))\"",
+  "renderer_dependency": "puppeteer-core 25.14.0 from the repository package.json/node_modules (render.mjs resolves it upward from engine/; checked with require.resolve)",
+  "chrome": "/snap/bin/chromium via CHROME_PATH; launching required a scoped sandbox escalation on this VM",
+  "tools": {
+   "node": "v22.22.1",
+   "ffmpeg": "8.0.1-3ubuntu2"
+  },
+  "notes": "Frames are deterministic functions of time. The AAC encode is not guaranteed byte-identical across ffmpeg builds, so the file hash binds this encode. Renders were run one at a time."
+ },
+ "sources": {
+  "scene.js": "9786f103314446b96c1b0b4906bbca8473083a8660f42cdb37a01acd5e6fb683",
+  "verify.py": "5699031f6c1cbebfacd90b26360b583aecb02369bbb8d7f1e515ddfbe361b760",
+  "engine/flow-engine.js": "a1b5adaa841971bf32275da4222dd2e19cd8f2e7b3b69bb7d810aeed7f7b3cd7",
+  "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+  "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+  "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+  "beat-sheet.md": "c4bb02dcf589d8727b69c745b881bb76c76f7577decac43a67c0e2b3264b11cd",
+  "review.md": "600a1a8e5cd061a9be57df8c8ea656f04f08a7e446baf855ea2817eccba2be7c"
+ },
+ "engine_provenance": {
+  "copied_from": "personal architecture-flow-video skill scripts/ (render.mjs, sfx.js, preview.html unchanged)",
+  "skill_flow_engine_sha256_at_copy": "af17dffdf846f7d5e17d1efeeb8553953b39f54c098f6aa482030ba0ce31cf6d",
+  "cut_local_changes": [
+   "exports NODES and util so scenes can register generic node types",
+   "s.pt falls back to node.half for custom node types"
+  ],
+  "scene_local_node_types": [
+   "draw (generic render callback)"
+  ],
+  "shared_skill_modified": false
+ },
+ "policy_model": {
+  "deadline_s": 12,
+  "per_try_limit_s": 5,
+  "backoff_s": 2,
+  "overhead_s": 0,
+  "playback_s_per_policy_s": 1.6,
+  "runs": [
+   {
+    "t0": 6,
+    "p0": 0,
+    "p1": 5,
+    "t1": 14
+   },
+   {
+    "t0": 16.6,
+    "p0": 5,
+    "p1": 7,
+    "t1": 19.8
+   },
+   {
+    "t0": 26,
+    "p0": 7,
+    "p1": 12,
+    "t1": 34
+   }
+  ],
+  "checks": [
+   {
+    "t": 1.4,
+    "what": "budget set",
+    "policy": 0,
+    "left": 12
+   },
+   {
+    "t": 4.85,
+    "what": "gate allows try 1",
+    "policy": 0,
+    "left": 12
+   },
+   {
+    "t": 14,
+    "what": "try 1 timeout",
+    "policy": 5,
+    "left": 7
+   },
+   {
+    "t": 19.8,
+    "what": "sleep ends",
+    "policy": 7,
+    "left": 5
+   },
+   {
+    "t": 21.85,
+    "what": "gate allows try 2",
+    "policy": 7,
+    "left": 5
+   },
+   {
+    "t": 34,
+    "what": "deadline",
+    "policy": 12,
+    "left": 0
+   },
+   {
+    "t": 36.3,
+    "what": "gate refuses try 3",
+    "policy": 12,
+    "left": 0
+   }
+  ],
+  "sends": [
+   4.4,
+   21.4
+  ],
+  "service_arrivals": [
+   5.6,
+   25.45
+  ],
+  "gate_decisions": [
+   {
+    "t": 4.85,
+    "allow": true
+   },
+   {
+    "t": 21.85,
+    "allow": true
+   },
+   {
+    "t": 36.3,
+    "allow": false
+   }
+  ],
+  "readout_rounding": "remaining shown as ceil, per-try elapsed as floor (sum 12 during try 1)"
+ },
+ "encoded_verification": {
+  "video": {
+   "codec": "h264",
+   "width": 1080,
+   "height": 1920,
+   "pix_fmt": "yuv420p",
+   "r_frame_rate": "30/1",
+   "frames_decoded": 1302,
+   "duration_s": 43.4
+  },
+  "audio": {
+   "codec": "aac",
+   "sample_rate": 44100,
+   "channels": 2,
+   "duration_s": 43.4
+  },
+  "full_decode": {
+   "exit_code": 0,
+   "errors": ""
+  },
+  "audio_levels": {
+   "volumedetect_max_db": -1.9,
+   "volumedetect_mean_db": -32.5,
+   "astats_peak_db": -1.9451,
+   "ceiling_db": -0.5,
+   "pass": true
+  },
+  "top_level_atoms": [
+   "ftyp",
+   "moov",
+   "free",
+   "mdat"
+  ],
+  "moov_before_mdat": true,
+  "frames_inspected": {
+   "method": "exact decoded index via select=eq(n,N); each viewed individually at native 1080x1920 and at 350 px width, plus contact sheet",
+   "frames": [
+    {
+     "label": "open",
+     "frame": 0,
+     "time_s": 0.0
+    },
+    {
+     "label": "laneIn",
+     "frame": 27,
+     "time_s": 0.9
+    },
+    {
+     "label": "budgetIn",
+     "frame": 57,
+     "time_s": 1.9
+    },
+    {
+     "label": "perTry",
+     "frame": 102,
+     "time_s": 3.4
+    },
+    {
+     "label": "send1",
+     "frame": 138,
+     "time_s": 4.6
+    },
+    {
+     "label": "gateGo1",
+     "frame": 150,
+     "time_s": 5.0
+    },
+    {
+     "label": "arrive1",
+     "frame": 171,
+     "time_s": 5.7
+    },
+    {
+     "label": "run1Start",
+     "frame": 180,
+     "time_s": 6.0
+    },
+    {
+     "label": "run1Mid",
+     "frame": 300,
+     "time_s": 10.0
+    },
+    {
+     "label": "preTimeout1",
+     "frame": 419,
+     "time_s": 13.967
+    },
+    {
+     "label": "timeout1",
+     "frame": 420,
+     "time_s": 14.0
+    },
+    {
+     "label": "postTimeout1",
+     "frame": 421,
+     "time_s": 14.033
+    },
+    {
+     "label": "chip7",
+     "frame": 456,
+     "time_s": 15.2
+    },
+    {
+     "label": "sleepIn",
+     "frame": 492,
+     "time_s": 16.4
+    },
+    {
+     "label": "sleepMid",
+     "frame": 546,
+     "time_s": 18.2
+    },
+    {
+     "label": "preWake",
+     "frame": 593,
+     "time_s": 19.767
+    },
+    {
+     "label": "wake",
+     "frame": 594,
+     "time_s": 19.8
+    },
+    {
+     "label": "chip5",
+     "frame": 624,
+     "time_s": 20.8
+    },
+    {
+     "label": "send2",
+     "frame": 648,
+     "time_s": 21.6
+    },
+    {
+     "label": "gateGo2",
+     "frame": 666,
+     "time_s": 22.2
+    },
+    {
+     "label": "overhead",
+     "frame": 696,
+     "time_s": 23.2
+    },
+    {
+     "label": "rearm",
+     "frame": 714,
+     "time_s": 23.8
+    },
+    {
+     "label": "noReset",
+     "frame": 738,
+     "time_s": 24.6
+    },
+    {
+     "label": "arrive2",
+     "frame": 765,
+     "time_s": 25.5
+    },
+    {
+     "label": "run3Start",
+     "frame": 780,
+     "time_s": 26.0
+    },
+    {
+     "label": "run3Mid",
+     "frame": 900,
+     "time_s": 30.0
+    },
+    {
+     "label": "preDeadline",
+     "frame": 1019,
+     "time_s": 33.967
+    },
+    {
+     "label": "deadline",
+     "frame": 1020,
+     "time_s": 34.0
+    },
+    {
+     "label": "postDeadline",
+     "frame": 1023,
+     "time_s": 34.1
+    },
+    {
+     "label": "deadlineHold",
+     "frame": 1050,
+     "time_s": 35.0
+    },
+    {
+     "label": "ghost3",
+     "frame": 1080,
+     "time_s": 36.0
+    },
+    {
+     "label": "refuse3",
+     "frame": 1092,
+     "time_s": 36.4
+    },
+    {
+     "label": "refuseHold",
+     "frame": 1116,
+     "time_s": 37.2
+    },
+    {
+     "label": "result",
+     "frame": 1149,
+     "time_s": 38.3
+    },
+    {
+     "label": "finalHold",
+     "frame": 1215,
+     "time_s": 40.5
+    },
+    {
+     "label": "fadeMid",
+     "frame": 1284,
+     "time_s": 42.8
+    },
+    {
+     "label": "last",
+     "frame": 1301,
+     "time_s": 43.367
+    }
+   ]
+  },
+  "boundary_readings": [
+   {
+    "frame": 419,
+    "reads": "per try 4s, 8s left"
+   },
+   {
+    "frame": 420,
+    "reads": "per try 5s red, 7s left, try 1 timed out"
+   },
+   {
+    "frame": 593,
+    "reads": "6s left, sleep nearly full"
+   },
+   {
+    "frame": 594,
+    "reads": "5s left, animation paused"
+   },
+   {
+    "frame": 714,
+    "reads": "per try 0s (re-armed), 5s left"
+   },
+   {
+    "frame": 1019,
+    "reads": "per try 4s, 1s left"
+   },
+   {
+    "frame": 1020,
+    "reads": "0s left red, try 2 timed out on the deadline line"
+   },
+   {
+    "frame": 1092,
+    "reads": "gate red, 0s left -> stop, try 3 refused"
+   },
+   {
+    "frame": 1215,
+    "reads": "result: unknown, 2 tries both timed out, remote work may continue"
+   }
+  ],
+  "pause_freeze_psnr_db": [
+   "bar 432 vs 480: psnr_avg:72.65",
+   "bar 600 vs 775: psnr_avg:59.98",
+   "bar 1040 vs 1140: psnr_avg:74.91",
+   "readout 432 vs 480: psnr_avg:42.03",
+   "readout 600 vs 725: psnr_avg:62.14",
+   "readout 1040 vs 1140: psnr_avg:62.91",
+   "ring 432 vs 480: psnr_avg:57.35",
+   "ring 1040 vs 1140: psnr_avg:68.50",
+   "bar 300 vs 330: psnr_avg:24.25",
+   "readout 300 vs 330: psnr_avg:19.51"
+  ],
+  "cue_onsets": {
+   "count": 31,
+   "min_onset_rise_db": 5.6,
+   "note": "onset rise = RMS 0-80 ms after cue vs 10-60 ms before; the 34.02 s caller timeout is layered on the deadline sound",
+   "loudest": "deadline at 34.0 s"
+  },
+  "artifacts_scratch": [
+   "scratch/verify/contact-350.png",
+   "scratch/verify/spectrogram.png",
+   "scratch/sheet.png"
+  ],
+  "audio_listening": "not heard; analysed only (spectrogram, volumedetect/astats, onset energy)"
+ },
+ "review": "review.md (author self-review; no comparative scores)"
+}

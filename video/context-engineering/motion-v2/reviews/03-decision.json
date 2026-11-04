@@ -1,0 +1,9 @@
+{
+  "sha256": "5da9277e6d823e301169bcf56608746dbdf1d262ced4d29537775372fb9bec69",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Make the lesson subtitle larger relative to the topic title at 350px.",
+    "Give the opening clients a short expected-field label or stronger visible lookup relationship so the hypothetical rename consequence depends less on red outlines."
+  ]
+}

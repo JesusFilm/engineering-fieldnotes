@@ -1,0 +1,11 @@
+{
+  "sha256": "8fe0278c7d0665832dfbf8ddb45118953580ac288413cc306b0dbff4af3022aa",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Shorten the static success hold at 12.6-16.0 s to about 2 s so the slow case arrives sooner.",
+    "Consider revealing the In time / Too slow case colour at resolution (11 s, 30 s) instead of before each attempt (0 s, 17.3 s).",
+    "Listen to the roughly nine wait ticks at 21.6-29.4 s for repetition fatigue (analysed only, not heard).",
+    "Coordinator: lessons.json item 1 duration (28) and beat times (0/7/14/21) do not match the 39 s candidate (beats at about 0, 4.6, 11, 20-30 s); update them before promotion if the page syncs beats to time."
+  ]
+}

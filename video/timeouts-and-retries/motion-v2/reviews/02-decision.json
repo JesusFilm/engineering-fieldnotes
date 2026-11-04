@@ -1,0 +1,12 @@
+{
+  "sha256": "d662e83e2f1022b5f24d6546010b171009eabd68bffbf04ecb1549d34f05db9f",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Name the continuing remote work consistently (17.3-22.8 s): 'this run: still working' ends in 'lookup done' while CI rows fill like build stages; use one noun so it is clear what kept going and what rollback() would apply to.",
+    "Shorten the 7.6 s silent static end hold (30.7-38.3 s) to about 3-4 s.",
+    "Reach the attempt-timeout deadline about 2-3 s sooner (3.7-12.2 s wait has about eight identical tick cycles).",
+    "Fade further or change to past tense the dim 'this run: still working' label once 'lookup done' lands (22.9 s onward).",
+    "Integration (coordinator, not a video defect): lessons.json item 2 lists 28 s with beats at 0/7/14/21; the candidate runs 38.33 s, with timeout at 12.2 s, unknown at 14.7 s, remote continuation at 17.3-22.8 s and cancel()/rollback() at 28.9-30.2 s. Update beat times and order if promoted."
+  ]
+}

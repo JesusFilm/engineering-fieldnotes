@@ -1,0 +1,9 @@
+{
+  "sha256": "e64ab91f06e0415d9e521b283bdc657ba5a13b4148c3967e4516a60a7e7e257b",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Enlarge secondary revision/line metadata and the lesson subtitle slightly at 350px, preserving the main evidence text size.",
+    "Retain approved/v1 status beside the supplied contract record as well as in the search row, making its authority and applicability easier to inspect in isolation."
+  ]
+}

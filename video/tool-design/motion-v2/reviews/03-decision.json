@@ -1,0 +1,9 @@
+{
+  "sha256": "fd17077cc46339e7d1527c9ce782a0f17a147e29e7f23d6db39d90ca4821e34a",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Optionally add a date or a brief UTC label beside the searched interval for an independently reusable incident example.",
+    "Optionally make the citation transfer highlight each matching ID separately; the current shared answer-row highlight is understandable but less precise."
+  ]
+}

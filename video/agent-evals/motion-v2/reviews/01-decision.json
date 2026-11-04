@@ -1,0 +1,9 @@
+{
+  "sha256": "d24e29b9749da062f97b2155b19a14206d07aaccb3495c70bebe769ebdb8314c",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Increase contrast of the final \u201cT2 not run\u201d row, or use the equally concise \u201c1 trial observed\u201d, to make the future-run limitation easier to notice at 350px.",
+    "Consider retaining the completed evidence table through the last second instead of ending on the title alone."
+  ]
+}

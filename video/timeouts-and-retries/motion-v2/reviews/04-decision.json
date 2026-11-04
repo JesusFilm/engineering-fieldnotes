@@ -1,0 +1,11 @@
+{
+  "sha256": "dc1b6e4c20bc3c2047a7ef35b2418228621825e2ae0971e4bd17b5b439d1820a",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Playhead line crosses the '2.1 s' and '3.0 s' delay labels around 17-20 s (frames 510-540); text stays readable, so drawing the line behind the label or leaving a gap would be cleaner.",
+    "Moving 503 chips briefly overlap the service box top edge and B's box bottom edge (frames 90, 100); an offset path would keep them clear.",
+    "Recap 24.9-28.8 s partly repeats the arrivals already shown at 17.4-23 s; trimming about 1-1.5 s would tighten pacing.",
+    "If adopted, the coordinator should update lessons.json item 4 duration (28 -> 35.6) and beat times to match the candidate's events (about 0, 9.6, 15.4, 28.8 s)."
+  ]
+}

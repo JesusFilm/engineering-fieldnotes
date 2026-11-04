@@ -1,0 +1,9 @@
+{
+  "sha256": "2fa054449d2d5bca591acb8b6a81d81052fef03b9ce7ab834378803c3ceb7d4c",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Give the restart comparison more of the stage by removing or shrinking the inactive earlier diagram, allowing larger labels at 350px.",
+    "Label the restart comparison as two backend examples to make the illustrative configuration change explicit."
+  ]
+}

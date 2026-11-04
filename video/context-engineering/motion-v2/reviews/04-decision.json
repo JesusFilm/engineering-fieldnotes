@@ -1,0 +1,9 @@
+{
+  "sha256": "f39d12ebdf5481da4ac19aeedce6217ec672b1b7673ace5b60072ca1d629f9bd",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Include the source revision in the handoff reference itself; a17 currently appears only in the repository panel.",
+    "Give the lesson subtitle more prominence and consider expanding open timeout? to a clearer short open-question label."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "sha256": "2a6d897ebe4d164518366da8e3cecfec56f5dc308d3bf48617e76c33b929bee8",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Shorten the closing hold on 'current?' (≈ 24–35 s) to about 6–8 s before the fade.",
+    "Keep 'rev N' on the same line as the key in the cache and database rows if the cards can widen, for faster reading at 350 px.",
+    "Note in the write-up that authorization still applies on a cache hit."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "sha256": "87bae9e0ecc9ba095cddeaedee3dcac3be9077f689dbc13584d535f79d67f226",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Make the timeout the clear sound peak at 6.2 s: lower the arrival at 20.4 s, the response at 22.7 s and 'changes build: yes' at 28.8 s (all about -16 dB) by roughly 3 dB.",
+    "Enlarge the CI service #1/#2 badges and the note 'key helps only if service supports it' (31.5 s) so they read comfortably at 350 px width.",
+    "Tighten the pending 'retry ?' stretch at 7.4-9.6 s by pulsing 'contract' sooner or trimming about 1 s.",
+    "Keep attempt #2's bound visibly armed until 'received' (20.5-23.0 s), so the response reads as conditional rather than guaranteed.",
+    "Trim about 1 s from the closing return to the resolved state (34.0-37.6 s), which repeats the 23.5-26.5 s state.",
+    "If this cut is adopted, the coordinator should retime lessons.json item 3 (duration 28 s, beats 0/7/14/21 s) to match its 37.6 s length and beats near 0/7.4/18/22.7 s."
+  ]
+}

@@ -1,0 +1,297 @@
+{
+ "cut": "timeouts-and-retries / motion-v2 / 03",
+ "lesson": "03 Retry only when safe",
+ "sha256": "87bae9e0ecc9ba095cddeaedee3dcac3be9077f689dbc13584d535f79d67f226",
+ "duration_s": 37.6,
+ "file": "video.mp4",
+ "bytes": 1495571,
+ "poster": {
+  "file": "poster.jpg",
+  "sha256": "f3dabc8c8472b1d3fb776bb4af6f2b48f6c6adbb253a262b4e6581eb177f616e",
+  "source_frame_index": 768,
+  "time_s": 25.6
+ },
+ "reproduction": {
+  "cwd": "repository root",
+  "render": "CHROME_PATH=/snap/bin/chromium node video/timeouts-and-retries/motion-v2/03/engine/render.mjs video/timeouts-and-retries/motion-v2/03/scene.js video/timeouts-and-retries/motion-v2/03/video.mp4 --sheet video/timeouts-and-retries/motion-v2/03/scratch/sheet.png",
+  "poster": "ffmpeg -v error -y -i video/timeouts-and-retries/motion-v2/03/video.mp4 -vf 'select=eq(n\\,768)' -vsync 0 -frames:v 1 -q:v 2 video/timeouts-and-retries/motion-v2/03/poster.jpg",
+  "verify": "python3 video/timeouts-and-retries/motion-v2/03/verify.py",
+  "renderer_dependency": "puppeteer-core 25.14.0 from the repository package.json/node_modules (render.mjs resolves it from the working directory)",
+  "chrome": "/snap/bin/chromium via CHROME_PATH; the launch needed a scoped sandbox escalation on this VM",
+  "tools": {
+   "node": "v22.22.1",
+   "ffmpeg": "8.0.1-3ubuntu2"
+  },
+  "notes": "Video frames are deterministic functions of time. The AAC encode is not guaranteed to be byte-identical across ffmpeg builds, so the file hash is bound to this encode."
+ },
+ "sources": {
+  "scene.js": "94fe4e5315952f635e851d2a01c96c60f1ed05ed2e331445d4a66d5911942923",
+  "verify.py": "2ca703783615b9c55f3ee0e4f99f04312f5d916884fdfcf23faf5a51b2fa6cc3",
+  "engine/flow-engine.js": "c17049f39bc12d8488bf528da30d4d1feca038fec6b4187c5de0e07b9a84d696",
+  "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+  "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+  "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+ },
+ "engine_provenance": {
+  "copied_from": "personal architecture-flow-video skill scripts/ (render.mjs, sfx.js and preview.html unchanged)",
+  "skill_flow_engine_sha256_at_copy": "af17dffdf846f7d5e17d1efeeb8553953b39f54c098f6aa482030ba0ce31cf6d",
+  "cut_local_changes": [
+   "chip packet size option pk.size",
+   "meta.titleSize",
+   "exports NODES and util so scenes can register generic node types",
+   "s.pt falls back to node.half for custom node types"
+  ]
+ },
+ "encoded_verification": {
+  "video": {
+   "codec": "h264",
+   "width": 1080,
+   "height": 1920,
+   "pix_fmt": "yuv420p",
+   "r_frame_rate": "30/1",
+   "frames_decoded": 1128,
+   "duration_s": 37.6
+  },
+  "audio": {
+   "codec": "aac",
+   "sample_rate": 44100,
+   "channels": 2,
+   "duration_s": 37.6
+  },
+  "full_decode": {
+   "exit_code": 0,
+   "errors": ""
+  },
+  "audio_levels": {
+   "volumedetect_max_db": -7.3,
+   "volumedetect_mean_db": -32.9,
+   "astats_peak_db": -7.323881,
+   "ceiling_db": -0.5,
+   "pass": true
+  },
+  "top_level_atoms": [
+   "ftyp",
+   "moov",
+   "free",
+   "mdat"
+  ],
+  "moov_before_mdat": true,
+  "frame_extraction": "exact decoded indices via select=eq(n,N), avoiding seek rounding; native 1080x1920 PNG and 350px-wide lanczos PNG for each",
+  "frames_inspected": [
+   {
+    "label": "open",
+    "frame": 0,
+    "time_s": 0.0
+   },
+   {
+    "label": "send1",
+    "frame": 48,
+    "time_s": 1.6
+   },
+   {
+    "label": "wait1",
+    "frame": 135,
+    "time_s": 4.5
+   },
+   {
+    "label": "timeout",
+    "frame": 186,
+    "time_s": 6.2
+   },
+   {
+    "label": "timeout+",
+    "frame": 192,
+    "time_s": 6.4
+   },
+   {
+    "label": "ghost2",
+    "frame": 231,
+    "time_s": 7.7
+   },
+   {
+    "label": "hold1",
+    "frame": 270,
+    "time_s": 9.0
+   },
+   {
+    "label": "cardOpenA",
+    "frame": 300,
+    "time_s": 10.0
+   },
+   {
+    "label": "cardOpenB",
+    "frame": 309,
+    "time_s": 10.3
+   },
+   {
+    "label": "matchOp",
+    "frame": 336,
+    "time_s": 11.2
+   },
+   {
+    "label": "readOnly",
+    "frame": 372,
+    "time_s": 12.4
+   },
+   {
+    "label": "afterTimeout",
+    "frame": 408,
+    "time_s": 13.6
+   },
+   {
+    "label": "enabled",
+    "frame": 450,
+    "time_s": 15.0
+   },
+   {
+    "label": "hold2",
+    "frame": 498,
+    "time_s": 16.6
+   },
+   {
+    "label": "cardCloseA",
+    "frame": 516,
+    "time_s": 17.2
+   },
+   {
+    "label": "cardCloseB",
+    "frame": 525,
+    "time_s": 17.5
+   },
+   {
+    "label": "sameQ",
+    "frame": 561,
+    "time_s": 18.7
+   },
+   {
+    "label": "send2",
+    "frame": 600,
+    "time_s": 20.0
+   },
+   {
+    "label": "wait2",
+    "frame": 636,
+    "time_s": 21.2
+   },
+   {
+    "label": "response",
+    "frame": 669,
+    "time_s": 22.3
+   },
+   {
+    "label": "arrival",
+    "frame": 681,
+    "time_s": 22.7
+   },
+   {
+    "label": "arrival+",
+    "frame": 684,
+    "time_s": 22.8
+   },
+   {
+    "label": "use",
+    "frame": 711,
+    "time_s": 23.7
+   },
+   {
+    "label": "hold3",
+    "frame": 768,
+    "time_s": 25.6
+   },
+   {
+    "label": "writeOpenA",
+    "frame": 802,
+    "time_s": 26.733
+   },
+   {
+    "label": "writeOpenB",
+    "frame": 810,
+    "time_s": 27.0
+   },
+   {
+    "label": "writeChanges",
+    "frame": 837,
+    "time_s": 27.9
+   },
+   {
+    "label": "writeRetry",
+    "frame": 873,
+    "time_s": 29.1
+   },
+   {
+    "label": "key",
+    "frame": 915,
+    "time_s": 30.5
+   },
+   {
+    "label": "keyNote",
+    "frame": 948,
+    "time_s": 31.6
+   },
+   {
+    "label": "hold4",
+    "frame": 1005,
+    "time_s": 33.5
+   },
+   {
+    "label": "writeCloseA",
+    "frame": 1026,
+    "time_s": 34.2
+   },
+   {
+    "label": "writeCloseB",
+    "frame": 1035,
+    "time_s": 34.5
+   },
+   {
+    "label": "finalHold",
+    "frame": 1068,
+    "time_s": 35.6
+   },
+   {
+    "label": "fade",
+    "frame": 1110,
+    "time_s": 37.0
+   },
+   {
+    "label": "last",
+    "frame": 1127,
+    "time_s": 37.567
+   }
+  ],
+  "inspection": {
+   "native_1080": "every listed frame viewed individually",
+   "w350": "every listed frame viewed at actual 350px in the untiled contact sheet; frames 450, 561, 681 and 948 also viewed individually",
+   "contact_sheet": "scratch/verify/contact-350.png (9x4 tile of the exact 350px frames)",
+   "spectrogram": "scratch/verify/spectrogram.png (showspectrumpic, log frequency); a cue is visible at every beat, and the timeout thump is the strongest low-frequency event",
+   "alternate_indices_for_transition_check": [
+    [
+     300,
+     309
+    ],
+    [
+     516,
+     525
+    ],
+    [
+     802,
+     810
+    ],
+    [
+     1026,
+     1035
+    ]
+   ],
+   "scratch_note": "scratch/ is ignored by Git; regenerate it with the verify command"
+  },
+  "result": "pass: full decode clean, 1128 frames, 37.6 s video and audio, peak -7.3 dBFS <= -0.5 dBFS, moov before mdat, no visual defects found in the listed frames"
+ },
+ "audio_listening": {
+  "heard": false,
+  "basis": "analysed only (spectrogram, volumedetect, astats, scene cue list)"
+ },
+ "review": {
+  "file": "review.md",
+  "type": "authoring self-review; a comparative review against the other lesson 03 cuts is still required before any recommendation"
+ }
+}

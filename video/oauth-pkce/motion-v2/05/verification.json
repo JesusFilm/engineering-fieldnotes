@@ -1,0 +1,266 @@
+{
+  "sha256": "749f0a36f6148bde270ce72ee6c26140cc7148e2e2bfeae3c34ec37848feeffb",
+  "duration_s": 50.0,
+  "file": "video.mp4",
+  "lesson": {
+    "topic": "oauth-pkce",
+    "index": 5,
+    "title": "Separate login attempts",
+    "cut": "motion-v2/05"
+  },
+  "source_hashes": {
+    "scene.js": "680554d063e921b56b2ea7134fe322d449ed88198b0ac64d3eb7738d04e72288",
+    "engine/flow-engine.js": "510c09333c3b16f0219d6d74cda8e7b787ad1462138edebbb5fadddaf8b6d947",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "output_hashes": {
+    "video.mp4": "749f0a36f6148bde270ce72ee6c26140cc7148e2e2bfeae3c34ec37848feeffb",
+    "poster.jpg": "4f131f93adcdf5730f81e5e274ee5d6e204c9f6549e6c30943829b3f08534ff1"
+  },
+  "engine_provenance": {
+    "base": "05/engine was pre-populated with the architecture-flow-video skill scripts (flow-engine.js sha256 af17dffdf846f7d5e17d1efeeb8553953b39f54c098f6aa482030ba0ce31cf6d); render.mjs, sfx.js and preview.html remain unchanged from that copy",
+    "copied_general_helpers": "engine/flow-engine.js replaced by a byte-identical copy of the motion-v2/04 cut-local engine (sha256 510c09333c3b16f0219d6d74cda8e7b787ad1462138edebbb5fadddaf8b6d947): panel, field, status, button, cursor, link node types; label align/spacing; chip size/tag; keyframed packets; meta.veilTop. motion-v2/04 was read only, not modified",
+    "cut_local_extensions_05": [],
+    "scene_local": "three scene-defined sounds via s.sound (srv, overwrite, click) and a hold-trimming time wrapper inside scene.js",
+    "shared_skill_modified": false,
+    "earlier_cuts_modified": false
+  },
+  "reproduction": {
+    "cwd": "video/oauth-pkce/motion-v2/05 (relative to repository root)",
+    "render": "CHROME_PATH=/snap/bin/chromium node engine/render.mjs scene.js video.mp4",
+    "poster": "ffmpeg -v error -y -i video.mp4 -vf \"select='eq(n\\,750)'\" -vsync 0 -frames:v 1 -q:v 2 poster.jpg",
+    "timing_dry_run": "node -e \"const F=require('./engine/flow-engine.js'); require('./scene.js'); const sc=F.createScene(F.lastScene); console.log(sc.meta.renderDuration, sc.audioCues().length)\"",
+    "dependencies": "puppeteer-core 25.14.0 from the repository root node_modules (package.json pin), resolved upward from engine/",
+    "environment": {
+      "node": "v22.22.1",
+      "puppeteer_core": "25.14.0",
+      "chromium": "Chromium snap at /snap/bin/chromium (version string not captured)",
+      "ffmpeg": "8.0.1-3ubuntu2"
+    },
+    "note": "Snap Chromium cannot launch inside the agent command sandbox; renders ran with a scoped escalation, one at a time, never overlapping. Byte-identical re-encodes are not claimed."
+  },
+  "encoded_verification": {
+    "ffprobe": {
+      "video": {
+        "codec": "h264",
+        "profile": "High",
+        "width": 1080,
+        "height": 1920,
+        "pix_fmt": "yuv420p",
+        "fps": "30/1",
+        "nb_frames": 1500,
+        "duration_s": 50.0
+      },
+      "audio": {
+        "codec": "aac",
+        "profile": "LC",
+        "sample_rate": 44100,
+        "channels": 2,
+        "duration_s": 50.0
+      },
+      "format_duration_s": 50.0,
+      "size_bytes": 2568366
+    },
+    "full_decode": {
+      "command": "ffmpeg -v error -i video.mp4 -f null -",
+      "error_lines": 0,
+      "exit_code": 0,
+      "decoded_video_frames": 1500,
+      "video_packets": 1500,
+      "decoded_audio_frames": 2154,
+      "audio_packets": 2155,
+      "frame_sequence_decode": "all 1500 frames decoded to numbered PNGs (ffmpeg -vsync 0 -start_number 0) for exact-index inspection"
+    },
+    "streaming_metadata": {
+      "top_level_atoms": [
+        [
+          "ftyp",
+          0,
+          32
+        ],
+        [
+          "moov",
+          32,
+          53920
+        ],
+        [
+          "free",
+          53952,
+          8
+        ],
+        [
+          "mdat",
+          53960,
+          2514406
+        ]
+      ],
+      "moov_before_mdat": true
+    },
+    "audio": {
+      "volumedetect": {
+        "max_volume_db": -3.4,
+        "mean_volume_db": -30.5
+      },
+      "astats_overall_peak_dbfs": -3.38,
+      "peak_limit_dbfs": -0.5,
+      "peak_within_limit": true,
+      "cue_count": 44,
+      "loudest_cue": "23.70 thump (rejection), window peak -3.4 dBFS",
+      "cue_window_peaks_dbfs_0_3s": {
+        "0.50 send": -13.9,
+        "1.60 store": -8.3,
+        "3.00 work": -10.4,
+        "4.20 srv": -8.0,
+        "6.00 arrive": -7.2,
+        "7.90 send": -13.9,
+        "9.30 overwrite": -5.0,
+        "12.80 arrive": -7.3,
+        "14.10 store": -11.8,
+        "14.80 hit": -10.7,
+        "15.90 store": -12.5,
+        "18.10 send": -16.0,
+        "18.90 srv": -7.5,
+        "19.80 work": -11.4,
+        "20.05 work": -12.8,
+        "20.55 srv": -7.0,
+        "21.85 srv": -7.3,
+        "23.10 miss": -20.1,
+        "23.70 thump": -3.4,
+        "26.30 poof": -16.4,
+        "27.80 click": -6.1,
+        "28.55 store": -10.3,
+        "28.75 store": -12.8,
+        "29.60 click": -14.4,
+        "30.30 click": -6.2,
+        "30.70 send": -13.9,
+        "31.70 store": -8.3,
+        "32.70 work": -10.8,
+        "33.60 srv": -8.3,
+        "35.10 arrive": -7.2,
+        "35.60 send": -13.9,
+        "36.60 store": -8.4,
+        "38.40 arrive": -7.3,
+        "39.50 store": -11.8,
+        "40.00 hit": -9.7,
+        "40.90 store": -12.3,
+        "41.50 send": -16.0,
+        "42.30 srv": -7.6,
+        "43.20 work": -12.1,
+        "43.45 work": -13.5,
+        "43.95 srv": -7.1,
+        "45.25 srv": -7.4,
+        "46.50 hit": -9.1,
+        "47.10 ack": -11.3
+      },
+      "spectrogram": "ffmpeg -i video.mp4 -lavfi showspectrumpic=s=1800x500:fscale=log spec.png; one onset per scheduled cue, silent holds 6.3-7.9, 9.9-12.3, 15.9-18.1, 24.1-26.3, 36.9-38.1, 47.5-50.0; low-frequency energy only at the 9.3 s overwrite dip and the 23.7 s rejection thump",
+      "listened": false,
+      "listening_note": "Audio was analysed only (spectrogram, volumedetect, astats, per-cue window peaks). It was not heard."
+    },
+    "frames_inspected": {
+      "method": "exact indices from the full PNG decode; each viewed individually at 1080x1920 and scaled to 350x622; plus 1 fps contact sheet (scale 240, tile 6x9)",
+      "indices": [
+        0,
+        15,
+        51,
+        132,
+        180,
+        225,
+        240,
+        268,
+        272,
+        275,
+        279,
+        283,
+        300,
+        360,
+        385,
+        430,
+        495,
+        560,
+        610,
+        675,
+        705,
+        750,
+        795,
+        840,
+        867,
+        885,
+        912,
+        930,
+        960,
+        1050,
+        1104,
+        1125,
+        1180,
+        1230,
+        1290,
+        1398,
+        1415,
+        1428,
+        1440,
+        1467,
+        1475,
+        1490,
+        1499
+      ],
+      "times_s": [
+        0.0,
+        0.5,
+        1.7,
+        4.4,
+        6.0,
+        7.5,
+        8.0,
+        8.933,
+        9.067,
+        9.167,
+        9.3,
+        9.433,
+        10.0,
+        12.0,
+        12.833,
+        14.333,
+        16.5,
+        18.667,
+        20.333,
+        22.5,
+        23.5,
+        25.0,
+        26.5,
+        28.0,
+        28.9,
+        29.5,
+        30.4,
+        31.0,
+        32.0,
+        35.0,
+        36.8,
+        37.5,
+        39.333,
+        41.0,
+        43.0,
+        46.6,
+        47.167,
+        47.6,
+        48.0,
+        48.9,
+        49.167,
+        49.667,
+        49.967
+      ],
+      "boundary_crops": "frames 1290, 1380, 1398, 1415, 1428 cropped at the Token request top edge to rule out a suspected edge artefact; the edge is continuous",
+      "findings": "no clipped or overlapping labels; only rejected request is code A + verifier B (495, 750); code B never appears; no retry; S256 visible throughout; repair begins only from cursor presses (840, 912); matched request is fresh code C + verifier C (1398); ending shows PKCE matched with other checks next and no token (1440); last frame 1499 shows the title only"
+    }
+  },
+  "review": {
+    "file": "review.md",
+    "type": "author defect and teaching pass; no comparative review or score"
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "frame_index": 750,
+    "time_s": 25.0
+  }
+}

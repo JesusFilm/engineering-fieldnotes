@@ -1,0 +1,9 @@
+{
+  "sha256": "b7f100565be4f633153b9b36e668bcf309b2617ddb770ff705d93e40ef4aabd2",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Enlarge the small lesson subtitle or give the lesson title more prominence than the topic title.",
+    "Keep the expected contract visibly attached to its source filename in the final received-input view, strengthening traceability without adding a caption."
+  ]
+}

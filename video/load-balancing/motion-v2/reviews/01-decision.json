@@ -1,0 +1,10 @@
+{
+  "sha256": "0f9ce915d6b431d509d391acc55ca4e730398f8356120e2205bf65b4b4dcd02a",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Reveal 'GET /users/42' and '200 OK · Maya · pro' with their travelling dots (or on arrival) rather than before the dots move (≈ 5.6 s and ≈ 19.4 s), so the message does not read as already delivered.",
+    "Add chapter context to the subtitle (the public cut shows 'LOAD BALANCING / 1 OF 6').",
+    "Note in the write-up that the processing duration is illustrative pacing, not a measurement."
+  ]
+}

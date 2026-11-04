@@ -1,0 +1,10 @@
+{
+  "sha256": "8abb840985e03276d648e174cad4087550ec98aa51f32333348ebca7be8f9e00",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Include the key on the returning chip (e.g. 'api rev 1') so the record visibly answers the requested key.",
+    "Pulse the 'source reads' counter together with the database's find step so a read is tied to lookup work.",
+    "Note in the write-up that the find step is a teaching view; real databases use indexes rather than stepping through rows."
+  ]
+}

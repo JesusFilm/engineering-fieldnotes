@@ -1,0 +1,608 @@
+{
+  "description": "Promoted motion-v2 lesson videos; original sequence media remains available. Lesson descriptions are retained without old timestamps.",
+  "count": 86,
+  "items": [
+    {
+      "topic": "loop-engineering",
+      "number": 1,
+      "title": "Act, observe, decide",
+      "sha256": "5d048e04353271c92e31981d83a4e228b072cbf9386e28241fc8cc44c1bf3ca1",
+      "duration_s": 38.943991
+    },
+    {
+      "topic": "loop-engineering",
+      "number": 2,
+      "title": "Use a specific failure",
+      "sha256": "73f470b1b3d0f18f0810ae75bfb27d45e8797b9efa714a03176564dcbeeb7ca0",
+      "duration_s": 37.0
+    },
+    {
+      "topic": "loop-engineering",
+      "number": 3,
+      "title": "Stop after verified success",
+      "sha256": "3429ff821f992254b9b34a38c7eacc2014bd5447c344ad76b62a47129bab5d2a",
+      "duration_s": 33.0
+    },
+    {
+      "topic": "loop-engineering",
+      "number": 4,
+      "title": "No tests is not a pass",
+      "sha256": "9d0284db0f8c0f548f86900b18f80f53dc9946715898188eacc3d81134d012cf",
+      "duration_s": 37.2
+    },
+    {
+      "topic": "loop-engineering",
+      "number": 5,
+      "title": "Limit repair attempts",
+      "sha256": "03395088e3d0ab08077696daad4a644b7c1a4a727e5517fbeec5106337b6f544",
+      "duration_s": 44.0
+    },
+    {
+      "topic": "context-engineering",
+      "number": 1,
+      "title": "What the model can see",
+      "sha256": "b7f100565be4f633153b9b36e668bcf309b2617ddb770ff705d93e40ef4aabd2",
+      "duration_s": 44.9
+    },
+    {
+      "topic": "context-engineering",
+      "number": 2,
+      "title": "Retrieve relevant evidence",
+      "sha256": "e64ab91f06e0415d9e521b283bdc657ba5a13b4148c3967e4516a60a7e7e257b",
+      "duration_s": 50.0
+    },
+    {
+      "topic": "context-engineering",
+      "number": 3,
+      "title": "Preserve a constraint",
+      "sha256": "5da9277e6d823e301169bcf56608746dbdf1d262ced4d29537775372fb9bec69",
+      "duration_s": 44.2
+    },
+    {
+      "topic": "context-engineering",
+      "number": 4,
+      "title": "Make a useful handoff",
+      "sha256": "f39d12ebdf5481da4ac19aeedce6217ec672b1b7673ace5b60072ca1d629f9bd",
+      "duration_s": 47.6
+    },
+    {
+      "topic": "context-engineering",
+      "number": 5,
+      "title": "Verify the patch",
+      "sha256": "1cf92b6502afc7a3be5662ec6c36482e97ffbc36fedc948d1c0f424722ccc1c9",
+      "duration_s": 42.8
+    },
+    {
+      "topic": "tool-design",
+      "number": 1,
+      "title": "A callable operation",
+      "sha256": "6ed69a1e3360098e9405ff2b4ee50d6b8717c852c32e67d5c4377cec52ce250d",
+      "duration_s": 37.0
+    },
+    {
+      "topic": "tool-design",
+      "number": 2,
+      "title": "Make inputs explicit",
+      "sha256": "5ba429bfe74a0904f72cf45a919641bfb8ac311ddf607d3561ff70715f7efa49",
+      "duration_s": 44.0
+    },
+    {
+      "topic": "tool-design",
+      "number": 3,
+      "title": "Return usable evidence",
+      "sha256": "fd17077cc46339e7d1527c9ce782a0f17a147e29e7f23d6db39d90ca4821e34a",
+      "duration_s": 42.0
+    },
+    {
+      "topic": "tool-design",
+      "number": 4,
+      "title": "Empty versus failed",
+      "sha256": "a3341577bcb5d6d213b4f0d6ad39fd895e3f90b11e6351b10ed705cf4e08a496",
+      "duration_s": 46.0
+    },
+    {
+      "topic": "tool-design",
+      "number": 5,
+      "title": "Expose more pages",
+      "sha256": "8200705b60adc6a1beab9987adb0917166644dcdf854023fb85c5cf9051c83be",
+      "duration_s": 40.0
+    },
+    {
+      "topic": "memory-architecture",
+      "number": 1,
+      "title": "Current and saved context",
+      "sha256": "bf8203d8a7a6f6b837a457280ac3e5da4263bfc6c42f1b2975903309f98f18a6",
+      "duration_s": 40.8
+    },
+    {
+      "topic": "memory-architecture",
+      "number": 2,
+      "title": "Choose the memory scope",
+      "sha256": "2fa054449d2d5bca591acb8b6a81d81052fef03b9ce7ab834378803c3ceb7d4c",
+      "duration_s": 46.8
+    },
+    {
+      "topic": "memory-architecture",
+      "number": 3,
+      "title": "Save a useful record",
+      "sha256": "3cf048d696ad243427ddc183a76cd2769ce273296334112b0b0d81e8b2468eba",
+      "duration_s": 45.6
+    },
+    {
+      "topic": "memory-architecture",
+      "number": 4,
+      "title": "Check applicability",
+      "sha256": "2333ca1b2e6eac3640aa19fe60da6b4ad5ca478e269e3b6d632cec743382e91c",
+      "duration_s": 45.0
+    },
+    {
+      "topic": "memory-architecture",
+      "number": 5,
+      "title": "Correct outdated memory",
+      "sha256": "fdcd71856dac5de7ea876ed7d30a5f228781ab87813391824819ce7c5060c68f",
+      "duration_s": 40.6
+    },
+    {
+      "topic": "orchestration-patterns",
+      "number": 1,
+      "title": "Follow dependencies",
+      "sha256": "446e4ec8264902a5406dfa98b843952ebc962a5022db7611417c104159d1e65c",
+      "duration_s": 44.0
+    },
+    {
+      "topic": "orchestration-patterns",
+      "number": 2,
+      "title": "Route to one specialist",
+      "sha256": "7945c85482e0bc7c2f515eec7529cff6bd2fbd910ae4e1402aaee63e2209bdb8",
+      "duration_s": 40.0
+    },
+    {
+      "topic": "orchestration-patterns",
+      "number": 3,
+      "title": "Independent parallel work",
+      "sha256": "e30abc58bd92c48cd7b672ce03c966a3cadda0bffc12830efb2f89b910197141",
+      "duration_s": 43.0
+    },
+    {
+      "topic": "orchestration-patterns",
+      "number": 4,
+      "title": "Join before deciding",
+      "sha256": "49cea6b7c7fb5b4eb7630828a2897ae4bff22b323b21e5971d3d3e8e7243de54",
+      "duration_s": 37.0
+    },
+    {
+      "topic": "orchestration-patterns",
+      "number": 5,
+      "title": "Revise against criteria",
+      "sha256": "af67731c73037a42973b465ec3e2d7ff4c6ce489a5cceb0ebdef14584eb8d5ee",
+      "duration_s": 33.5
+    },
+    {
+      "topic": "guardrails-and-permissions",
+      "number": 1,
+      "title": "Intent versus permission",
+      "sha256": "5c4c07a1ef6794139bc699badf1c8cd075e798a0dbbc018dc17840f96ad77e5f",
+      "duration_s": 38.8
+    },
+    {
+      "topic": "guardrails-and-permissions",
+      "number": 2,
+      "title": "Grant only needed access",
+      "sha256": "641610d072384d684501c1cc2d84d8afe5e22b060f83e4d30cda666712fd972a",
+      "duration_s": 47.0
+    },
+    {
+      "topic": "guardrails-and-permissions",
+      "number": 3,
+      "title": "Policy and permission",
+      "sha256": "b54d986866b71893d2a44c0375919b7cc9269de673bc83ceba4543b414966109",
+      "duration_s": 38.4
+    },
+    {
+      "topic": "guardrails-and-permissions",
+      "number": 4,
+      "title": "Review a concrete action",
+      "sha256": "26b4f367c671e8e6ce39b446c1508faa15c335523c4b156fc4b80af363906557",
+      "duration_s": 42.2
+    },
+    {
+      "topic": "guardrails-and-permissions",
+      "number": 5,
+      "title": "Recheck changed actions",
+      "sha256": "39988cfa1f086b7fb715eaec80ea99b4eec42a305f7730063aac8e2e5423f950",
+      "duration_s": 35.6
+    },
+    {
+      "topic": "agent-evals",
+      "number": 1,
+      "title": "Task, trial and grader",
+      "sha256": "d24e29b9749da062f97b2155b19a14206d07aaccb3495c70bebe769ebdb8314c",
+      "duration_s": 42.0
+    },
+    {
+      "topic": "agent-evals",
+      "number": 2,
+      "title": "Check actual behavior",
+      "sha256": "4a4e20d5934f02a81865d01e08ae365f4e4e142e37b7e9610319855207a03eb3",
+      "duration_s": 34.6
+    },
+    {
+      "topic": "agent-evals",
+      "number": 3,
+      "title": "Catch an overbroad fix",
+      "sha256": "826a6ebb7dc9e5cca26387270372c8140ca0a874ebee69a2259d6a0c5e47201a",
+      "duration_s": 42.0
+    },
+    {
+      "topic": "agent-evals",
+      "number": 4,
+      "title": "Repeat trials independently",
+      "sha256": "54f87007a6786bf0f46ddfb5bc7577453379da9becaeaf77157b03914bf0c480",
+      "duration_s": 42.0
+    },
+    {
+      "topic": "agent-evals",
+      "number": 5,
+      "title": "Know the grading limits",
+      "sha256": "6f6a559572ad29fab32c370e361272a044879564d536cdc25e9fd01e6edbc179",
+      "duration_s": 44.7
+    },
+    {
+      "topic": "human-in-the-loop",
+      "number": 1,
+      "title": "Propose, review, execute",
+      "sha256": "5ce494393bca1f90c6732139c846f57623634527f33ef061430f72a21943ae25",
+      "duration_s": 40.0
+    },
+    {
+      "topic": "human-in-the-loop",
+      "number": 2,
+      "title": "Give the reviewer evidence",
+      "sha256": "afb623e3822059bd0d63a963a19504a7afda5977a6bd13eb9a1641512ef643f3",
+      "duration_s": 44.0
+    },
+    {
+      "topic": "human-in-the-loop",
+      "number": 3,
+      "title": "Pause without guessing",
+      "sha256": "8c43114fd8ea64d03b97920d1885cff5220a97a3859f1383e157d5b4166486bb",
+      "duration_s": 49.0
+    },
+    {
+      "topic": "human-in-the-loop",
+      "number": 4,
+      "title": "Reject an approval mismatch",
+      "sha256": "8ab396bace8fcbbe6f62b80b038f40fe22822a5c6cd15f2552ce739908004f5b",
+      "duration_s": 45.0
+    },
+    {
+      "topic": "human-in-the-loop",
+      "number": 5,
+      "title": "Record the outcome",
+      "sha256": "d453b4bf77bd822f973f3b20894b36fd05b9d15f6c8f7482fe1d162c7dcaca35",
+      "duration_s": 42.0
+    },
+    {
+      "topic": "observability-and-tracing",
+      "number": 1,
+      "title": "One operation is a span",
+      "sha256": "72c335286ef9aced6d3b29bed0c49a826266a582a8c8b9e2f8e2fa9d0a642b33",
+      "duration_s": 40.0
+    },
+    {
+      "topic": "observability-and-tracing",
+      "number": 2,
+      "title": "Related spans form a trace",
+      "sha256": "8d16e5eedcd8b71a6739be21f2aaf07f0adccccb54a93e412e9ca7b21f3ccde5",
+      "duration_s": 42.6
+    },
+    {
+      "topic": "observability-and-tracing",
+      "number": 3,
+      "title": "Cross a service boundary",
+      "sha256": "a6a8fd7d7aa9fb7b5674a904647f2b630a47f3cce24d6d5a514eb56b5f6bc7fe",
+      "duration_s": 47.0
+    },
+    {
+      "topic": "observability-and-tracing",
+      "number": 4,
+      "title": "Visibility is not a speedup",
+      "sha256": "ee5650aae56ed4f9cd7b15c3e75efa87c10c7b1b6ddef7c7abccdb7a693ed9b0",
+      "duration_s": 43.0
+    },
+    {
+      "topic": "observability-and-tracing",
+      "number": 5,
+      "title": "Missing and sensitive data",
+      "sha256": "b995ddd95389376d647f78dc8eb8fbd52c5152d86d927b0126647ef0b828f7ff",
+      "duration_s": 42.0
+    },
+    {
+      "topic": "load-balancing",
+      "number": 1,
+      "title": "One request",
+      "sha256": "0f9ce915d6b431d509d391acc55ca4e730398f8356120e2205bf65b4b4dcd02a",
+      "duration_s": 34.1
+    },
+    {
+      "topic": "load-balancing",
+      "number": 2,
+      "title": "Share the work",
+      "sha256": "1ec94579979f3bd865872666ac65e24a2eab074749f6b20236861d70ecfc5eef",
+      "duration_s": 37.7
+    },
+    {
+      "topic": "load-balancing",
+      "number": 3,
+      "title": "Take turns",
+      "sha256": "11c81fff3887c8283069094af91ff3f244f93c2554173fcb8589578e692dccaa",
+      "duration_s": 45.75
+    },
+    {
+      "topic": "load-balancing",
+      "number": 4,
+      "title": "Unequal work",
+      "sha256": "e8c34f550cf9b4aa1d9bb6cea673bc118b9f7383830e068737dbc0d64cd5012f",
+      "duration_s": 47.666667
+    },
+    {
+      "topic": "load-balancing",
+      "number": 5,
+      "title": "Look at active work",
+      "sha256": "2db361381411c7b3c0b48c6e56edcd92f35f526effeb0b451c15590c55679ed1",
+      "duration_s": 36.1
+    },
+    {
+      "topic": "load-balancing",
+      "number": 6,
+      "title": "Avoid a failed server",
+      "sha256": "6ce62a6ab2ffb94ed077a6e261ccde6d4fcc60f8e7640bfd90e4c25ec85a1b7b",
+      "duration_s": 38.7
+    },
+    {
+      "topic": "cache-aside",
+      "number": 1,
+      "title": "Read the source",
+      "sha256": "8abb840985e03276d648e174cad4087550ec98aa51f32333348ebca7be8f9e00",
+      "duration_s": 44.5
+    },
+    {
+      "topic": "cache-aside",
+      "number": 2,
+      "title": "A cache hit",
+      "sha256": "2a6d897ebe4d164518366da8e3cecfec56f5dc308d3bf48617e76c33b929bee8",
+      "duration_s": 35.0
+    },
+    {
+      "topic": "cache-aside",
+      "number": 3,
+      "title": "A cache miss",
+      "sha256": "21e5559bd846f9c605bc7f8cee8386910acbe0dcafe2c5f7d67754d7819d4ddd",
+      "duration_s": 42.0
+    },
+    {
+      "topic": "cache-aside",
+      "number": 4,
+      "title": "A stale copy",
+      "sha256": "bc722b7ab9b7a4a66ca6b4712f83033df5accf8893a2554c64bf2f55779f7340",
+      "duration_s": 43.0
+    },
+    {
+      "topic": "cache-aside",
+      "number": 5,
+      "title": "Invalidate and refill",
+      "sha256": "0a248d604d0c97509bb2602176cb526997e444057f918f789f6893a91cd1f180",
+      "duration_s": 45.0
+    },
+    {
+      "topic": "queues-and-backpressure",
+      "number": 1,
+      "title": "Submit a job",
+      "sha256": "f89b0b0c46e05a801958f3b132243b2bd13aa0b8a0f57dd7fef92e26604a3064",
+      "duration_s": 35.6
+    },
+    {
+      "topic": "queues-and-backpressure",
+      "number": 2,
+      "title": "Finish a job",
+      "sha256": "6a59cef148a5b654630874571a07b059df3fa222d09c2da1b959b82917462fa7",
+      "duration_s": 38.0
+    },
+    {
+      "topic": "queues-and-backpressure",
+      "number": 3,
+      "title": "A backlog grows",
+      "sha256": "c51105bf249893e96eaf99cdd5434b80a00b9c8781da4b7c54c2ca6d0bb90ddd",
+      "duration_s": 39.6
+    },
+    {
+      "topic": "queues-and-backpressure",
+      "number": 4,
+      "title": "A full queue pushes back",
+      "sha256": "c4698882a5eab09af94992aebc43258c72743fcf4773fdebedd74eef24a82c80",
+      "duration_s": 42.0
+    },
+    {
+      "topic": "queues-and-backpressure",
+      "number": 5,
+      "title": "Choose an overload policy",
+      "sha256": "c36a538ba5c6cfafb014439f1580820e89cbb4858d0b89260cdfe3b69bfe9efa",
+      "duration_s": 38.0
+    },
+    {
+      "topic": "idempotency",
+      "number": 1,
+      "title": "One intended operation",
+      "sha256": "07327aaac9a81237d9265269e08bceafe52b0bcdd9a9575f46a679dfbf708010",
+      "duration_s": 43.4
+    },
+    {
+      "topic": "idempotency",
+      "number": 2,
+      "title": "A missing reply",
+      "sha256": "0277eb8e4d46e0505cb15b09477d9fdccee3c60ed536e20e1f213ad732daa545",
+      "duration_s": 43.0
+    },
+    {
+      "topic": "idempotency",
+      "number": 3,
+      "title": "Name the operation",
+      "sha256": "d0de6a64dabeb982e0b18735cfdecb410d36a67413d46660f4c9f078599ce8b7",
+      "duration_s": 46.0
+    },
+    {
+      "topic": "idempotency",
+      "number": 4,
+      "title": "Retry the same key",
+      "sha256": "83ce76fd6a892c63056a965c60b552851dc7c1737e848d2b752bad9fe1b247ba",
+      "duration_s": 40.0
+    },
+    {
+      "topic": "idempotency",
+      "number": 5,
+      "title": "Changed intent, new key",
+      "sha256": "a2b0b9982553f5a2ccbaf79d5bc4829cfa1f276ce28a8c4964ad993ca7ac0b3c",
+      "duration_s": 42.0
+    },
+    {
+      "topic": "replication-and-consistency",
+      "number": 1,
+      "title": "Keep another copy",
+      "sha256": "540a5cfe04c63ca54c3a1f51a3654ed3673b624416335ba640a49220a0553bda",
+      "duration_s": 33.0
+    },
+    {
+      "topic": "replication-and-consistency",
+      "number": 2,
+      "title": "A replica can lag",
+      "sha256": "4230b9ad141a6e28681db1b83b8689a05cae0f17a5dbafe8ba1e8ee30c70da6c",
+      "duration_s": 38.0
+    },
+    {
+      "topic": "replication-and-consistency",
+      "number": 3,
+      "title": "Check the revision you need",
+      "sha256": "9108c253865984dc2c44b2875d07835846ea42b34851d053ada90b35018f2479",
+      "duration_s": 35.5
+    },
+    {
+      "topic": "replication-and-consistency",
+      "number": 4,
+      "title": "Received is not applied",
+      "sha256": "931f5326ff750eeb2c26ea8312b6984b5c2bd00c7de96a061fdb846694e878ba",
+      "duration_s": 34.706009
+    },
+    {
+      "topic": "replication-and-consistency",
+      "number": 5,
+      "title": "Failover can lose data",
+      "sha256": "db2032dcdda8ec6edb843d990b3f06b1de5bc29f5e060514db8aa554632f48cd",
+      "duration_s": 36.0
+    },
+    {
+      "topic": "timeouts-and-retries",
+      "number": 1,
+      "title": "Wait for a response",
+      "sha256": "8fe0278c7d0665832dfbf8ddb45118953580ac288413cc306b0dbff4af3022aa",
+      "duration_s": 39.0
+    },
+    {
+      "topic": "timeouts-and-retries",
+      "number": 2,
+      "title": "A timeout is not a rollback",
+      "sha256": "d662e83e2f1022b5f24d6546010b171009eabd68bffbf04ecb1549d34f05db9f",
+      "duration_s": 38.333333
+    },
+    {
+      "topic": "timeouts-and-retries",
+      "number": 3,
+      "title": "Retry only when safe",
+      "sha256": "87bae9e0ecc9ba095cddeaedee3dcac3be9077f689dbc13584d535f79d67f226",
+      "duration_s": 37.6
+    },
+    {
+      "topic": "timeouts-and-retries",
+      "number": 4,
+      "title": "Back off before retrying",
+      "sha256": "dc1b6e4c20bc3c2047a7ef35b2418228621825e2ae0971e4bd17b5b439d1820a",
+      "duration_s": 35.6
+    },
+    {
+      "topic": "timeouts-and-retries",
+      "number": 5,
+      "title": "Bound the whole operation",
+      "sha256": "ca05dc0cd176dd8d276916c70356dd619ccdeb44353a5d691f7d3f0aaa75538b",
+      "duration_s": 43.4
+    },
+    {
+      "topic": "canary-deployments",
+      "number": 1,
+      "title": "Keep a control version",
+      "sha256": "25b50dd8b358af308682ade891a64869fccc25ede64c3604e1d57917d3e643c8",
+      "duration_s": 47.5
+    },
+    {
+      "topic": "canary-deployments",
+      "number": 2,
+      "title": "Limit the exposure",
+      "sha256": "c8f2f9cc9a9200050c2adea3a482f614798e8df8bb03afd2e59e114eebf1cc00",
+      "duration_s": 46.8
+    },
+    {
+      "topic": "canary-deployments",
+      "number": 3,
+      "title": "An average hides failure",
+      "sha256": "4706a3fca44d982fa93b0230791464e1d85c9e6e7a52b29a5c8577e5719cd530",
+      "duration_s": 44.2
+    },
+    {
+      "topic": "canary-deployments",
+      "number": 4,
+      "title": "Compare the same operation",
+      "sha256": "ab8531f7de72985b8951a65b34a5778e884749be57b9f5beb7f0dc0ddea08a4c",
+      "duration_s": 39.6
+    },
+    {
+      "topic": "canary-deployments",
+      "number": 5,
+      "title": "Abort and verify recovery",
+      "sha256": "d6c4199b389ae298fae0c4c95fbef14508f8808220cad431b6b0b8633d0a5075",
+      "duration_s": 40.5
+    },
+    {
+      "topic": "oauth-pkce",
+      "number": 1,
+      "title": "Delegate access",
+      "sha256": "1f911da6bdfe260d0f1803abb999d63a324c24a7e89500680c91565fd183a777",
+      "duration_s": 41.6
+    },
+    {
+      "topic": "oauth-pkce",
+      "number": 2,
+      "title": "Create a verifier",
+      "sha256": "a56dd9957c7f2475cda66893e656eec93a5007f10e871e8a2896ce2a085c97f9",
+      "duration_s": 42.6
+    },
+    {
+      "topic": "oauth-pkce",
+      "number": 3,
+      "title": "Bind code and challenge",
+      "sha256": "4beefffb5fc56d82f817fb0e05469d65a657cad0068d182217d507cd2b1ef3ff",
+      "duration_s": 36.5
+    },
+    {
+      "topic": "oauth-pkce",
+      "number": 4,
+      "title": "Prove the verifier matches",
+      "sha256": "7730cc56306c379423ed213c6e93b6041442e7cb9b811959b3aac3d961c9a5de",
+      "duration_s": 41.4
+    },
+    {
+      "topic": "oauth-pkce",
+      "number": 5,
+      "title": "Separate login attempts",
+      "sha256": "749f0a36f6148bde270ce72ee6c26140cc7148e2e2bfeae3c34ec37848feeffb",
+      "duration_s": 50.0
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "sha256": "8d16e5eedcd8b71a6739be21f2aaf07f0adccccb54a93e412e9ca7b21f3ccde5",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Give a1, b2 and c3 distinct colours (matching their tree rows) so distinct span IDs read at a glance while 4bf9 stays the shared blue value.",
+    "Show a brief chip from each card's span row to its trace-view row so the grouping step is visibly causal.",
+    "Indicate that 4bf9 and a1/b2/c3 are shortened illustrative IDs (e.g. '4bf9…'), or state it in the write-up.",
+    "Hold the parent-row and connector highlight a little longer in the final beat so 'parent links show how they fit' lands."
+  ]
+}

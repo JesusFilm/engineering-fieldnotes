@@ -1,0 +1,130 @@
+{
+  "video": "video/cache-aside/motion-v2/02/video.mp4",
+  "sha256": "2a6d897ebe4d164518366da8e3cecfec56f5dc308d3bf48617e76c33b929bee8",
+  "size_bytes": 1083577,
+  "duration_s": 35,
+  "video_stream": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1050,
+    "pix_fmt": "yuv420p"
+  },
+  "audio_stream": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 35,
+    "max_volume_dB": -6.6,
+    "mean_volume_dB": -35.7,
+    "clipping": false,
+    "cues": 14,
+    "quietest_cue": "3.3 s ack G5, -20.8 dBFS",
+    "per_cue_peaks": "scratch/cue-peaks.json"
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "db6353f2c37f82f7961c449646ef04db34f24f860af5499780a43f7901ecdc4d",
+    "source_time_s": 28,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "99c6590884d8afee488efa89b8ce1ed3c419ec2e0082a28d232c471c4d24cf1f",
+    "engine/flow-engine.js": "e604e5567e909d026e616cb19ebe1f2ffdbd537c321802486f3733ba29bfdd17",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "../plans/02-plan-a.md": "08cbdb278a4d11f0c5ef37b56c732a5786dbbe016f5f10fb6beb2bc2967a18be",
+    "../plans/02-plan-b.md": "32de56e94cbf08f7dc398945d1ef86543db7933012ed4d92b594a71fbb61194c",
+    "../../sequence/lessons.json": "0a1b2e1a4b4acdd929da07747c94d820e80fa82bbe4d573c6623bf713fdf97a1"
+  },
+  "render_command": "node video/cache-aside/motion-v2/02/engine/render.mjs video/cache-aside/motion-v2/02/scene.js video/cache-aside/motion-v2/02/video.mp4 --sheet video/cache-aside/motion-v2/02/scratch/contact-sheet.png (from repo root; pinned puppeteer-core 25.14.0)",
+  "verify_commands": [
+    "python3 scratch/verify.py .",
+    "python3 scratch/frames.py enc 0,1.2,2.4,3.6,4.6,6.2,8.2,8.5,8.9,9.3,9.75,10.4,11.2,13.5,15.4,15.6,16.0,16.5,16.9,17.4,19.1,21.5,23.9,24.2,28.0,32.9,34.95 9",
+    "python3 scratch/frames.py transit 8.4,8.6,8.8,9.0,9.2,9.5,15.5,15.7,15.9,16.1,16.3,16.6 6",
+    "ffmpeg -v error -y -i video.mp4 -lavfi showspectrumpic=s=1800x500:fscale=log scratch/spectrogram.png"
+  ],
+  "frames_inspected": {
+    "native_dir": "scratch/enc",
+    "w350_dir": "scratch/enc350",
+    "sheet_350": "scratch/enc-350-sheet.png",
+    "times_s": [
+      0,
+      1.2,
+      2.4,
+      3.6,
+      4.6,
+      6.2,
+      8.2,
+      8.5,
+      8.9,
+      9.3,
+      9.75,
+      10.4,
+      11.2,
+      13.5,
+      15.4,
+      15.6,
+      16,
+      16.5,
+      16.9,
+      17.4,
+      19.1,
+      21.5,
+      23.9,
+      24.2,
+      28,
+      32.9,
+      34.95
+    ],
+    "transit": {
+      "dirs": [
+        "scratch/transit",
+        "scratch/transit350"
+      ],
+      "times_s": [
+        8.4,
+        8.6,
+        8.8,
+        9,
+        9.2,
+        9.5,
+        15.5,
+        15.7,
+        15.9,
+        16.1,
+        16.3,
+        16.6
+      ],
+      "sheet_350": "scratch/transit-350-sheet.png",
+      "finding": "request chip clears '1 check'; copy chip clears 'Cache' heading; source path never carries a chip"
+    },
+    "single_frames": [
+      "scratch/pair350.png (11.2 s, 28.0 s at native 350)",
+      "scratch/native-crop-11.2.png"
+    ]
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, per-cue peaks, levels); not listened to.",
+  "scope_note": "Passing these scoped checks does not establish universal correctness or comparative quality.",
+  "verified_at": "2026-10-21",
+  "render": 2
+}

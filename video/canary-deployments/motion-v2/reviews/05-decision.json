@@ -1,0 +1,13 @@
+{
+  "sha256": "d6c4199b389ae298fae0c4c95fbef14508f8808220cad431b6b0b8633d0a5075",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "9.3-39.7 s: the 10% share label stays orange after the bar empties to 0; return it to grey or mark it as the held step.",
+    "9.3-11.1 s: the v2 share bar empties while the router still shows 'applying…'; empty it when the router reports 'observed'.",
+    "14.7-26.85 s and 32.2-39.7 s: trim about 3 s from the observation-window fill and about 2 s from the end hold to bring the 40.5 s file closer to the lesson length.",
+    "Whole video at 350 px: grey 'need …' qualifiers and the footer measure about 10-12 px; increase their size or contrast slightly.",
+    "27.0 s (frames 806-814): the confirmation ring briefly crosses the 'Service OK' heading; centre it on the panel border or the check icons.",
+    "Coordinator note: lessons.json item 5 gives duration 28 with beats at 0/7/14/21, while the candidate runs 40.5 s with beats at about 0/7/14.7/26.85; update the metadata if it is promoted."
+  ]
+}

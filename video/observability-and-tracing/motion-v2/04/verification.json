@@ -1,0 +1,102 @@
+{
+  "sha256": "ee5650aae56ed4f9cd7b15c3e75efa87c10c7b1b6ddef7c7abccdb7a693ed9b0",
+  "duration_s": 43,
+  "size_bytes": 1150212,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1290,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 43,
+    "max_volume_dB": -8,
+    "mean_volume_dB": -32,
+    "astats_peak_dB": -8.026,
+    "astats_rms_dB": -31.972,
+    "clipping": false,
+    "cues": 35
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "16a756c8be322f3d7bb4967663c02d23c2d02287558c15f0b6bb64c7650395fd",
+    "source_time_s": 33.7,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "8ab5bfef8565e4f6a79a91068b497b8ba0d421a5ce659b88be4e46c5c4ba8793",
+    "engine/flow-engine.js": "74fba97976d5863f1409edbc535fb3d9effc62caa5a4ba35b76e5340cec5d3f0",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "render_command": "node video/observability-and-tracing/motion-v2/04/engine/render.mjs video/observability-and-tracing/motion-v2/04/scene.js video/observability-and-tracing/motion-v2/04/video.mp4 --sheet video/observability-and-tracing/motion-v2/04/scratch/contact-sheet.png (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "poster_command": "ffmpeg -ss 33.7 -i video.mp4 -frames:v 1 -q:v 3 poster.jpg (in the cut folder)",
+  "frames_inspected": {
+    "dir": "scratch/enc",
+    "w350_dir": "scratch/enc350",
+    "times_s": [
+      0,
+      1.6,
+      2.7,
+      3,
+      5.5,
+      7.5,
+      7.8,
+      8.5,
+      9.1,
+      9.7,
+      11,
+      12.1,
+      13.3,
+      14.4,
+      17,
+      19.6,
+      20.2,
+      21.1,
+      22.2,
+      22.5,
+      24.5,
+      27,
+      27.4,
+      28.1,
+      30,
+      31.6,
+      32,
+      33.3,
+      33.7,
+      35,
+      35.6,
+      38,
+      41.4,
+      42.95
+    ],
+    "w350_sheet": "scratch/enc350-sheet.png",
+    "w350_individual_view": "scratch/quad350.png (9.1, 14.4, 24.5, 33.7 s)",
+    "native_viewed": "scratch/enc/f_13.30.png"
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, levels); not listened to.",
+  "verified_at": "2026-10-21"
+}

@@ -1,0 +1,9 @@
+{
+  "sha256": "641610d072384d684501c1cc2d84d8afe5e22b060f83e4d30cda666712fd972a",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Consider labelling the returned timeout x3 value as log data to distinguish an observed service timeout from a timeout of the read request.",
+    "Slightly increase secondary annotation contrast if phone testing warrants it; the core request, grid and counters are already readable."
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "cut": "video/canary-deployments/motion-v2/02",
+  "lesson": "canary-deployments 02 Limit the exposure",
+  "sha256": "c8f2f9cc9a9200050c2adea3a482f614798e8df8bb03afd2e59e114eebf1cc00",
+  "duration_s": 46.8,
+  "files": {
+    "video.mp4": {
+      "sha256": "c8f2f9cc9a9200050c2adea3a482f614798e8df8bb03afd2e59e114eebf1cc00",
+      "bytes": 2782196
+    },
+    "poster.jpg": {
+      "sha256": "cce62da817140686f9e99268db709972525c939abb9fe2664c77c098d7c4ca85",
+      "bytes": 163334,
+      "source": "encoded frame n=570 (19.00 s), 1080x1920: settled 9,000 / 1,000 split"
+    }
+  },
+  "source_hashes": {
+    "scene.js": "81cccfaf4b94e0e496eacd7486abdb5fef64bf5d278bd1bd2b7b306f1cc211e1",
+    "beat-sheet.md": "5bd81db56b22061c44d28b1f2a0794df3918849817249a3e93d170a762a69ab5",
+    "review.md": "ab8335c54bba05eabe4edfe2c6c443019a4efbe2ffaaded0aad34bd5ffa963ec",
+    "engine/flow-engine.js": "16a32f73b5c8f9f92aa85d999c800ef26ae2b560f46015d92c5acae4f2c566a3",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "../../../../package.json": "014fa81c090fb0be6a72202d26408e1ea4c4f4a56cc0d19a6558f1042f81d7d4",
+    "../../../../package-lock.json": "b65eaf420e316789835922128d848c59ad74bce7e8db6e741dac70c1330d6c13"
+  },
+  "engine_origin": {
+    "note": "sfx.js, render.mjs and preview.html are byte-identical to the installed architecture-flow-video skill scripts. flow-engine.js starts from the skill engine and adds the general helpers copied from motion-v2/01 (caption and line nodes, square packet, w/h anchor fallback, meta.veilTop). The 01-specific card and list nodes were omitted. It adds a cut-local grid node and dx/dy node offsets. The skill and the 01 cut were not modified.",
+    "skill_flow_engine_sha256": "af17dffdf846f7d5e17d1efeeb8553953b39f54c098f6aa482030ba0ce31cf6d",
+    "motion_v2_01_flow_engine_sha256_read_only": "4ad744e9e2ac27e6781d59adfb0c4554bffd1cca71bbf11fa42262a90b4ebd51"
+  },
+  "reproduction": {
+    "cwd": "video/canary-deployments/motion-v2/02",
+    "prerequisites": "npm ci at repository root (puppeteer-core 25.14.0 pinned in package.json); ffmpeg on PATH; Chromium at /snap/bin/chromium",
+    "video": "CHROME_PATH=/snap/bin/chromium node engine/render.mjs scene.js video.mp4",
+    "poster": "ffmpeg -y -v error -i video.mp4 -vf \"select='eq(n\\,570)'\" -vsync 0 -frames:v 1 -q:v 2 poster.jpg",
+    "environment_used": {
+      "node": "v22.22.1",
+      "puppeteer_core": "25.14.0",
+      "chrome": "/snap/bin/chromium (run outside the workspace sandbox via scoped escalation; renders were sequential, never overlapping)",
+      "ffmpeg": "8.0.1-3ubuntu2"
+    },
+    "renders": "3 full renders; this record describes render 3 only"
+  },
+  "accounting_check": {
+    "method": "Node dry run that records every pending/v1/v2 counter change from scene.js and sums them",
+    "counter_change_times": 100,
+    "invariant": "pending + v1 + v2 = 10,000",
+    "violations": 0,
+    "final": {
+      "pending": 0,
+      "v1": 9000,
+      "v2": 1000
+    },
+    "v1_arrival_cues": 90,
+    "v2_arrival_cues": 10,
+    "total_sound_cues": 136,
+    "candidate_square_indices": [
+      3,
+      14,
+      18,
+      37,
+      41,
+      52,
+      66,
+      71,
+      79,
+      95
+    ],
+    "strip_px": {
+      "total": 900,
+      "v1": 810,
+      "v2": 90
+    }
+  },
+  "encoded_verification": {
+    "ffprobe": {
+      "video": {
+        "codec": "h264",
+        "profile": "High",
+        "pix_fmt": "yuv420p",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "nb_frames": 1404,
+        "frames_read": 1404,
+        "duration_s": 46.8
+      },
+      "audio": {
+        "codec": "aac",
+        "profile": "LC",
+        "sample_rate": 44100,
+        "channels": 2,
+        "frames_read": 2016,
+        "duration_s": 46.8
+      },
+      "format_duration_s": 46.8
+    },
+    "full_decode": {
+      "command": "ffmpeg -v error -i video.mp4 -f null -",
+      "exit_code": 0,
+      "errors": 0
+    },
+    "audio_levels": {
+      "max_volume_db": -6.8,
+      "mean_volume_db": -33.5,
+      "astats_overall_peak_dbfs": -6.78,
+      "limit_dbfs": -0.5,
+      "pass": true,
+      "loudest_100ms_window_mono": {
+        "t_s": 38.5,
+        "peak_db": -7.4,
+        "event": "hypothetical failure cue"
+      }
+    },
+    "streaming": {
+      "top_level_atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ],
+      "moov_before_mdat": true
+    },
+    "spectrogram": {
+      "command": "ffmpeg -i video.mp4 -lavfi showspectrumpic=s=1800x500:fscale=log spec.png",
+      "observed": "a cue on every beat; ten distinct E5 (~659 Hz plus harmonics) candidate notes over a dense low C4 tap band from 9.6 to 18.2 s; broadband swooshes at 8.6 and 24.4 s; the strongest low-frequency energy is the failure sweep at 38.5 s; silence during holds"
+    },
+    "frames": {
+      "extraction": "ffmpeg select='eq(n\\,N)' on exact frame indices from the final encode; each frame viewed individually at native 1080x1920 and as an actual 350 px-wide downscale (flags=area); 1 fps contact sheet viewed",
+      "beat_and_boundary": [
+        {
+          "frame": 48,
+          "t_s": 1.6,
+          "label": "window filling"
+        },
+        {
+          "frame": 80,
+          "t_s": 2.667,
+          "label": "window landed, arrival ripple"
+        },
+        {
+          "frame": 135,
+          "t_s": 4.5,
+          "label": "unit legend hold"
+        },
+        {
+          "frame": 162,
+          "t_s": 5.4,
+          "label": "ownership boundary"
+        },
+        {
+          "frame": 180,
+          "t_s": 6,
+          "label": "cyan sweep"
+        },
+        {
+          "frame": 234,
+          "t_s": 7.8,
+          "label": "ownership hold"
+        },
+        {
+          "frame": 258,
+          "t_s": 8.6,
+          "label": "routing layout boundary"
+        },
+        {
+          "frame": 279,
+          "t_s": 9.3,
+          "label": "layout transition"
+        },
+        {
+          "frame": 330,
+          "t_s": 11,
+          "label": "slow stream"
+        },
+        {
+          "frame": 450,
+          "t_s": 15,
+          "label": "fast stream"
+        },
+        {
+          "frame": 546,
+          "t_s": 18.2,
+          "label": "landing"
+        },
+        {
+          "frame": 585,
+          "t_s": 19.5,
+          "label": "post-landing hold"
+        },
+        {
+          "frame": 600,
+          "t_s": 20,
+          "label": "share-strip boundary"
+        },
+        {
+          "frame": 630,
+          "t_s": 21,
+          "label": "strip filling"
+        },
+        {
+          "frame": 690,
+          "t_s": 23,
+          "label": "strip hold"
+        },
+        {
+          "frame": 726,
+          "t_s": 24.2,
+          "label": "requests≠users boundary"
+        },
+        {
+          "frame": 777,
+          "t_s": 25.9,
+          "label": "request lines"
+        },
+        {
+          "frame": 840,
+          "t_s": 28,
+          "label": "users hold"
+        },
+        {
+          "frame": 888,
+          "t_s": 29.6,
+          "label": "inset clearing"
+        },
+        {
+          "frame": 900,
+          "t_s": 30,
+          "label": "measure boundary"
+        },
+        {
+          "frame": 975,
+          "t_s": 32.5,
+          "label": "panels"
+        },
+        {
+          "frame": 1040,
+          "t_s": 34.667,
+          "label": "measure hold"
+        },
+        {
+          "frame": 1068,
+          "t_s": 35.6,
+          "label": "impact boundary"
+        },
+        {
+          "frame": 1110,
+          "t_s": 37,
+          "label": "impact inset"
+        },
+        {
+          "frame": 1155,
+          "t_s": 38.5,
+          "label": "failure onset"
+        },
+        {
+          "frame": 1161,
+          "t_s": 38.7,
+          "label": "failed response"
+        },
+        {
+          "frame": 1200,
+          "t_s": 40,
+          "label": "impact hold"
+        },
+        {
+          "frame": 1260,
+          "t_s": 42,
+          "label": "summary boundary"
+        },
+        {
+          "frame": 1320,
+          "t_s": 44,
+          "label": "summary"
+        },
+        {
+          "frame": 1365,
+          "t_s": 45.5,
+          "label": "final hold"
+        },
+        {
+          "frame": 1385,
+          "t_s": 46.167,
+          "label": "fade"
+        },
+        {
+          "frame": 1403,
+          "t_s": 46.767,
+          "label": "last frame"
+        }
+      ],
+      "alternate_indices_for_suspect_issues": [
+        {
+          "frames": [
+            73,
+            76,
+            80
+          ],
+          "issue": "arrival ripple vs header chip",
+          "result": "ring stays below the chip; it crosses the 10,000 counter for about 0.6 s as an intended arrival mark, and the digits stay readable"
+        },
+        {
+          "frames": [
+            450,
+            451,
+            452,
+            500
+          ],
+          "issue": "packets vs router label",
+          "result": "packets travel inside the box edges; label unobstructed"
+        },
+        {
+          "frames": [
+            975,
+            976,
+            1040,
+            1046
+          ],
+          "issue": "v2 panel safe edge",
+          "result": "rightmost lit pixel x=994 (bound 996)"
+        }
+      ],
+      "results": "All essential labels readable at 350 px; no stale state across boundaries; counts match at every inspected frame (e.g. frame 451: 5,200 + 4,300 + 500 = 10,000); first frame black before title fade-in; last frame (1403) black after the finite fade."
+    },
+    "audio_listened": false,
+    "audio_note": "Audio was analysed numerically (cue list, spectrogram, volumedetect, astats, windowed peaks) but not heard."
+  },
+  "limits": "Illustrative counts only, not measurements, unique-user counts or a recommended share. The failure is an explicitly hypothetical example. No comparative review against other cuts was performed."
+}

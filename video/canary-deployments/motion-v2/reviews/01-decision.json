@@ -1,0 +1,14 @@
+{
+  "sha256": "25b50dd8b358af308682ade891a64869fccc25ede64c3604e1d57917d3e643c8",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Use a tighter illustrative abort margin than +5 points on a 1% baseline (5.5-12 s, 31-36 s), keeping numbers that clearly exceed it.",
+    "Show that the interim 'v2 under 1,000 -> Pause' status means hold the share while collecting (26.5-30 s).",
+    "Soften the 'No comparison' cue at 22.3 s (about -6.6 dBFS) so the abort match at 34.8 s is clearly the loudest event.",
+    "Trim the 2 s still, silent hold after the rule rows (10.0-12.0 s) by about 0.5-1 s.",
+    "Add a soft cue or cut for the silent split-bar rewind from 40/60 to 90/10 (23.0-24.3 s).",
+    "Remove or explain the orange router chevron, which also disappears 4 frames before the router fades (frame 720, about 24.0 s).",
+    "Integration, not a media fault: lessons.json item 1 lists duration 28 with beats at 0/7/14/21 s; the coordinator must update duration and beat timings for this 47.5 s cut before publishing."
+  ]
+}

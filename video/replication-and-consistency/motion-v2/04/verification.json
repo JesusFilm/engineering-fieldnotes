@@ -1,0 +1,116 @@
+{
+  "sha256": "931f5326ff750eeb2c26ea8312b6984b5c2bd00c7de96a061fdb846694e878ba",
+  "duration_s": 34.706,
+  "size_bytes": 920520,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1041,
+    "pix_fmt": "yuv420p",
+    "duration_s": 34.7
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 34.706,
+    "frames_decoded": 1495,
+    "cues": 20,
+    "max_volume_dB": -9.5,
+    "mean_volume_dB": -38.7,
+    "astats_peak_dB": -9.522038,
+    "peak_at_or_below_minus_0_5_dBFS": true,
+    "window_max_dB": {
+      "arrival_5.41": -12.4,
+      "deliver7_12.59": -14.1,
+      "store_21.88": -9.5,
+      "deliver8_29.06": -14.1
+    },
+    "loudest_cue": "store at 21.88 s (replay changes the visible row)",
+    "spectrogram": {
+      "file": "cut/scratch/spectrogram.png",
+      "sha256": "f9b053e5cd228be16126fa294b7fa0e237de45d8694e3bd91f03dddfaf1b377e",
+      "finding": "one onset at each of the 20 scheduled cues; nothing between them"
+    }
+  },
+  "audio_heard": false,
+  "audio_note": "Audio analysed (volumedetect, astats, per-cue windows, spectrogram, cue dry run); not listened to.",
+  "decode": {
+    "command": "ffmpeg -v error -xerror -i video.mp4 -f null -",
+    "exit_code": 0,
+    "error_lines": 0,
+    "full_decode": true,
+    "video_frames_counted": 1041,
+    "audio_frames_counted": 1495
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "frames_inspected": {
+    "method": "cut/scratch/extract.sh: 41 time-seek frames at 1080 px plus 350 px Lanczos copies (beats, beat boundaries, motion midpoints, fade start/end, last frame 34.60), sheets cut/scratch/enc-1080-sheet.png and enc-350-sheet.png, plus individual full-size views of the busiest frames",
+    "enc_1080_sheet_sha256": "069d6155f880213b5698136fd0e2d76268a42224d20ad2d60a5543df12bed47f",
+    "enc_350_sheet_sha256": "d71ddab96577523c99453dcb30dca76979ca0435cd8d39a76a8befaaef072b48",
+    "contact_sheet_sha256": "9c4e0db08a443ae3651a6e78ea21f71529b665c6ba3dea5515fef131a9d889b2",
+    "alternate_extraction": {
+      "method": "frame-index select (eq(n,N)) compared by PSNR with -ss N/30 seeks; mismatches checked against adjacent indices",
+      "identical": [
+        106,
+        162,
+        303,
+        378,
+        543,
+        618,
+        798,
+        1002
+      ],
+      "seek_rounding_resolved": {
+        "452": "seek == index 453 (inf dB)",
+        "656": "seek == index 657 (inf dB)",
+        "665": "seek == index 666 (inf dB)",
+        "872": "seek == index 873 (inf dB)"
+      },
+      "finding": "no display anomaly; differences are one-frame seek rounding",
+      "script": "cut/scratch/verify.py"
+    }
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "21db2a38362fe52075fe1e5ee861ba7e1bc72390a7f8cef790cc413592c969fe",
+    "source_time_s": 14.5,
+    "width": 1080,
+    "height": 1920,
+    "shows": "received R42→8 while replayed, the row and the returned result are all 7"
+  },
+  "sources": {
+    "scene.js": "f6d0425dbdd2138a8ee5cc49bdffc8e2091d34ffd17fef4490509dff93591436",
+    "engine/flow-engine.js": "9642c16442f50299bc6a7e41cb253a02e57db055e69498edb4005cba2bfc2dee",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "cut/scratch/extract.sh": "79fae068f647e5fb5838c2bf4bee12655ea3ca999df998c7d2b1e7bf4353debf",
+    "cut/scratch/verify.py": "e814fc68137ad4c86626f8f4259a34919f130a53d579acd39f8dc235a4cf2284"
+  },
+  "engine_changes": "engine/flow-engine.js = the general helpers from cut 03's copy (card, arrow, tag, label plate, corners, mtext, rule, meta.titleSize/subtitleSize), copied without editing cut 03, plus cut-local generic nodes strip (cell row with outline/dashed/progress per cell), caret (sliding chevron position marker with tag) and prompt (left-aligned text with blinking caret). sfx.js, render.mjs and preview.html are identical to the skill scripts.",
+  "renderer": {
+    "puppeteer_core": "25.14.0 (repository root node_modules, pinned in package.json)",
+    "chrome": "/snap/bin/chromium via CHROME_PATH (rendered outside the sandbox; snap Chromium cannot start inside it)"
+  },
+  "render_command": "cd video/replication-and-consistency/motion-v2/04 && CHROME_PATH=/snap/bin/chromium node engine/render.mjs scene.js video.mp4 --sheet cut/scratch/contact-sheet.png --wav cut/scratch/sfx.wav",
+  "poster_command": "cd video/replication-and-consistency/motion-v2/04 && ffmpeg -v error -y -ss 14.5 -i video.mp4 -frames:v 1 -q:v 2 poster.jpg",
+  "checks_command": "cd video/replication-and-consistency/motion-v2/04 && bash cut/scratch/extract.sh && python3 cut/scratch/verify.py",
+  "plans_read": [
+    "../plans/04-plan-a.md",
+    "../plans/04-plan-b.md",
+    "../../sequence/lessons.json#4 (index 3)"
+  ],
+  "renders": 4,
+  "status": "cut rendered and self-verified; awaiting comparative review and editorial decision (not production-complete)"
+}

@@ -1,0 +1,8 @@
+{
+  "sha256": "af67731c73037a42973b465ec3e2d7ff4c6ce489a5cceb0ebdef14584eb8d5ee",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Consider labelling the criteria as presence checks, so Criteria met is even less likely to imply that the rollback procedure was operationally validated."
+  ]
+}

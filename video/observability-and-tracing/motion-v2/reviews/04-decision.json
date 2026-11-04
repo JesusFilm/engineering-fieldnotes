@@ -1,0 +1,11 @@
+{
+  "sha256": "ee5650aae56ed4f9cd7b15c3e75efa87c10c7b1b6ddef7c7abccdb7a693ed9b0",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Raise the cue when the '?' gap appears (≈ 12 s, peaks −23.6 dB) so the unexplained-time moment is audible next to the other cues (≈ −8 to −14 dB).",
+    "Brighten the axis tick labels and 'no separate trace', the dimmest text at 350 px.",
+    "State in the write-up that identical 3.0 s totals are idealised; real repeated runs vary.",
+    "State in the write-up that the separate trace starts at its own zero and that aligning separate traces by wall-clock time takes extra work in a real viewer."
+  ]
+}

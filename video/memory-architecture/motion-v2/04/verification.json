@@ -1,0 +1,113 @@
+{
+  "video": {
+    "file": "video.mp4",
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1350,
+    "pix_fmt": "yuv420p"
+  },
+  "sha256": "2333ca1b2e6eac3640aa19fe60da6b4ad5ca478e269e3b6d632cec743382e91c",
+  "size_bytes": 1404115,
+  "duration_s": 45.0,
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 45.0,
+    "max_volume_dB": -7.0,
+    "mean_volume_dB": -34.1,
+    "astats_peak_dB": -6.971,
+    "astats_rms_dB": -34.068,
+    "clipping": false,
+    "peak_below_minus_0_5_dB": true,
+    "cues": 25,
+    "cue_onsets_in_spectrogram": 25
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "17160b7d98ed7d7a7d4d5950d8c14b38cf0fe81d2d20d69ecc993306e04395fa",
+    "source_time_s": 39.5,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "ee517c7807c0786a7b034398f7144c32667c1b443cdc95f4bdffb5bb3d2cfa59",
+    "engine/flow-engine.js": "60fc620ce8c99e3da262aab610f21ad6ae6ac2e206e7df7f4fa419bf28f4bb1b",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "renderer": {
+    "puppeteer_core": "25.14.0 (repository node_modules, pinned in package.json)",
+    "engine": "local copy; unmodified copy of cut 03 local engine"
+  },
+  "render_command": "node video/memory-architecture/motion-v2/04/engine/render.mjs video/memory-architecture/motion-v2/04/scene.js video/memory-architecture/motion-v2/04/video.mp4 --sheet video/memory-architecture/motion-v2/04/scratch/contact-sheet.png (run from repo root)",
+  "poster_command": "ffmpeg -v error -y -ss 39.5 -i video/memory-architecture/motion-v2/04/video.mp4 -frames:v 1 -q:v 3 video/memory-architecture/motion-v2/04/poster.jpg",
+  "frames_inspected": {
+    "dir": "scratch/enc",
+    "native_350_dir": "scratch/enc350",
+    "times_s": [
+      0.3,
+      1,
+      1.8,
+      2.6,
+      3.9,
+      5,
+      7.5,
+      9.3,
+      10.5,
+      11.5,
+      12.5,
+      13.5,
+      14.5,
+      16.5,
+      18.3,
+      19.3,
+      20,
+      20.8,
+      22,
+      23,
+      24.3,
+      26.5,
+      28.3,
+      29,
+      29.6,
+      30.2,
+      30.9,
+      31.7,
+      33,
+      33.9,
+      34.4,
+      35.5,
+      36.8,
+      38.2,
+      40.5,
+      43,
+      43.9,
+      44.9
+    ],
+    "viewed_as": "unscaled 350px strips scratch/strip0-7.png (strip0 small display verified as 1750x622 file); full-size frame 2.6 s",
+    "sheet_350": "scratch/enc-350-sheet.png"
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, levels); not listened to.",
+  "scope_note": "Scoped checks for this encode only; not a browser/site check, comparison review, or proof of universal correctness.",
+  "verified_at": "2026-10-20"
+}

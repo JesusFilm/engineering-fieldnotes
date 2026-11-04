@@ -1,0 +1,150 @@
+{
+  "cut": "video/canary-deployments/motion-v2/01",
+  "lesson": "canary-deployments 01 Keep a control version",
+  "sha256": "25b50dd8b358af308682ade891a64869fccc25ede64c3604e1d57917d3e643c8",
+  "duration_s": 47.5,
+  "files": {
+    "video.mp4": {
+      "sha256": "25b50dd8b358af308682ade891a64869fccc25ede64c3604e1d57917d3e643c8",
+      "bytes": 2349251
+    },
+    "poster.jpg": {
+      "sha256": "3227b83f5ced3c24e327fb74b5c78cd270e3a0a7e7dc47b1622916876d8ed65f",
+      "bytes": 178581,
+      "source": "encoded frame n=1077 (35.90 s), 1080x1920"
+    }
+  },
+  "source_hashes": {
+    "scene.js": "a686ff7b8ae857dc6fe080ef0511ecf2cd992527e5d71dfd94e689c863276fcd",
+    "beat-sheet.md": "4676e0fb60fecfdb769a04a6460b196dd4772ffc677222e4fe1ec597659818f2",
+    "review.md": "6f74e34dde55d94a32375cbc18058e80eb199c6a71ce945fd001c4262cb768d5",
+    "engine/flow-engine.js": "4ad744e9e2ac27e6781d59adfb0c4554bffd1cca71bbf11fa42262a90b4ebd51",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "../../../../package.json": "014fa81c090fb0be6a72202d26408e1ea4c4f4a56cc0d19a6558f1042f81d7d4",
+    "../../../../package-lock.json": "b65eaf420e316789835922128d848c59ad74bce7e8db6e741dac70c1330d6c13"
+  },
+  "engine_origin": {
+    "note": "Copied from the installed architecture-flow-video skill scripts. sfx.js, render.mjs and preview.html are unchanged; flow-engine.js gains cut-local caption, card, list and line nodes, a square packet kind, a w/h anchor fallback and meta.veilTop.",
+    "skill_flow_engine_sha256_before_edit": "af17dffdf846f7d5e17d1efeeb8553953b39f54c098f6aa482030ba0ce31cf6d"
+  },
+  "reproduction": {
+    "cwd": "video/canary-deployments/motion-v2/01",
+    "prerequisites": "npm ci at repository root (puppeteer-core 25.14.0 pinned in package.json); ffmpeg on PATH",
+    "video": "CHROME_PATH=/snap/bin/chromium node engine/render.mjs scene.js video.mp4",
+    "poster": "ffmpeg -y -v error -i video.mp4 -vf \"select='eq(n\\,1077)'\" -vsync 0 -frames:v 1 -q:v 2 poster.jpg",
+    "environment_used": {
+      "node": "v22.22.1",
+      "puppeteer_core": "25.14.0",
+      "chrome": "/snap/bin/chromium (run outside the workspace sandbox via scoped escalation)",
+      "ffmpeg": "8.0.1-3ubuntu2"
+    }
+  },
+  "encoded_verification": {
+    "ffprobe": {
+      "video": {
+        "codec": "h264",
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "frames_read": 1425,
+        "duration_s": 47.5
+      },
+      "audio": {
+        "codec": "aac",
+        "sample_rate": 44100,
+        "channels": 2,
+        "duration_s": 47.5
+      },
+      "format_duration_s": 47.5
+    },
+    "full_decode": {
+      "command": "ffmpeg -v error -i video.mp4 -f null -",
+      "exit_code": 0,
+      "errors": 0
+    },
+    "audio_levels": {
+      "max_volume_db": -4.3,
+      "mean_volume_db": -30.7,
+      "astats_overall_peak_dbfs": -4.29,
+      "limit_dbfs": -0.5,
+      "pass": true
+    },
+    "streaming": {
+      "top_level_atoms": [
+        "ftyp",
+        "moov",
+        "free",
+        "mdat"
+      ],
+      "moov_before_mdat": true
+    },
+    "frames_inspected": {
+      "method": "ffmpeg select=eq(n,N) exact frame indices from the final encode; each viewed individually at native 1080x1920 (1:1 crops where the viewer would downscale) and at actual 350x622",
+      "indices": [
+        0,
+        36,
+        78,
+        99,
+        144,
+        204,
+        252,
+        324,
+        369,
+        399,
+        450,
+        522,
+        588,
+        627,
+        678,
+        711,
+        741,
+        771,
+        828,
+        888,
+        918,
+        954,
+        987,
+        1029,
+        1077,
+        1131,
+        1158,
+        1191,
+        1230,
+        1272,
+        1311,
+        1356,
+        1404,
+        1424
+      ],
+      "alternate_indices_for_suspect_window_end": [
+        864,
+        870,
+        876,
+        879,
+        882,
+        886,
+        890,
+        894
+      ],
+      "morph_boundary_checks": [
+        739,
+        743,
+        886,
+        890,
+        1129,
+        1134
+      ],
+      "finding_fixed": "pause chip overlapped v2 = 1,000 at window end; now fading at 969 and absent at 1,000 (frames 879, 882)"
+    },
+    "final_audio_only_change": "render 5 added 5 sound cues; framemd5 of all 1425 video frames is identical to render 4, whose frames were inspected",
+    "contact_sheet": "1 fps, 240 px tiles; scratch file kept outside the repo",
+    "spectrogram": "showspectrumpic 1800x500 log scale; cue at every beat; thumps at 22.3, 34.8 and 39.3 s strongest",
+    "sound_cues": 84,
+    "audio_heard": false,
+    "audio_note": "Analysed only (spectrogram, volumedetect, astats). Not listened to."
+  },
+  "scope": "Authored and rendered only this cut. No original, public manifest, shared skill, earlier cut, git, site or deployment changes.",
+  "review_status": "Self-review only; independent comparison review still required before recommendation."
+}

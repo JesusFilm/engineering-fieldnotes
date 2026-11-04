@@ -1,0 +1,9 @@
+{
+  "sha256": "3cf048d696ad243427ddc183a76cd2769ce273296334112b0b0d81e8b2468eba",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Label the active policy target more explicitly, especially when evaluating the preference while the saved command remains below.",
+    "Give the preference a brief source or user-preference label before marking it supported; its support is assumed rather than demonstrated."
+  ]
+}

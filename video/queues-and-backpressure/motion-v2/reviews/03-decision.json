@@ -1,0 +1,10 @@
+{
+  "sha256": "c51105bf249893e96eaf99cdd5434b80a00b9c8781da4b7c54c2ca6d0bb90ddd",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Highlight 'arrived 4' together with 'completed 0' at the end so the arrival/completion gap reads in one look.",
+    "Enlarge the 'back' / 'front' queue labels, the smallest text at 350 px.",
+    "Note in the write-up that depth counts jobs, not cost or age; track oldest waiting age and completion rate too."
+  ]
+}

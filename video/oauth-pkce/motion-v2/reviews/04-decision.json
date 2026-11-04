@@ -1,0 +1,11 @@
+{
+  "sha256": "7730cc56306c379423ed213c6e93b6041442e7cb9b811959b3aac3d961c9a5de",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "23.0-24.2 s: Add a motion cue, such as rewinding case 1's tokens or visibly restoring the client, so the verifier B alternative cannot be read as resubmitting an already redeemed code A.",
+    "18.3-19.7 s and 36.7-37.9 s: Make the response dot larger or run it along the connector; it is about 20 px in the right margin and about 6 px at 350 px width.",
+    "25.9-27.1 s and 3.3-4.5 s: End the code A chip's flight before it crosses the 'saved' box label (brief collision at frame 792).",
+    "40.8-41.4 s: Trim the 0.6 s title-only tail after the final fade."
+  ]
+}

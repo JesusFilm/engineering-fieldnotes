@@ -1,0 +1,113 @@
+{
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1500,
+    "pix_fmt": "yuv420p"
+  },
+  "sha256": "e64ab91f06e0415d9e521b283bdc657ba5a13b4148c3967e4516a60a7e7e257b",
+  "size_bytes": 1759911,
+  "duration_s": 50,
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 50,
+    "max_volume_dB": -8.3,
+    "mean_volume_dB": -34.3,
+    "astats_peak_dB": -8.278,
+    "astats_rms_dB": -34.279,
+    "clipping": false,
+    "peak_below_minus_0_5_dB": true,
+    "cues": 35
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true,
+    "command": "python3 scratch/boxes.py"
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "98f734ac897f06dadf64688c8daeb52e76dc8601aadcefac8e42da59e1e7df84",
+    "source_time_s": 44,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "97cd55ef1dc89f7061e36278f8f0c9f0a0a2d613c6b08da494e52c4a285a844b",
+    "engine/flow-engine.js": "1f892c598a633881f0253096fbe6e9135f57a9fcfea0fa2d376b173e572b62dc",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "render_command": "node video/context-engineering/motion-v2/02/engine/render.mjs video/context-engineering/motion-v2/02/scene.js video/context-engineering/motion-v2/02/video.mp4 --sheet video/context-engineering/motion-v2/02/scratch/contact-sheet.png (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "poster_command": "ffmpeg -v error -y -ss 44.0 -i video/context-engineering/motion-v2/02/video.mp4 -frames:v 1 -q:v 3 video/context-engineering/motion-v2/02/poster.jpg",
+  "frames_inspected": {
+    "dir": "scratch/enc",
+    "times_s": [
+      0,
+      1.5,
+      3.6,
+      5.5,
+      7,
+      8.4,
+      8.8,
+      9.4,
+      10.6,
+      12.2,
+      13.4,
+      14,
+      15,
+      16.2,
+      16.6,
+      18.8,
+      20.4,
+      21.4,
+      22.4,
+      23.6,
+      25,
+      25.4,
+      26,
+      26.3,
+      27.6,
+      28.6,
+      29.4,
+      31,
+      33.8,
+      34.2,
+      35.6,
+      37.2,
+      38,
+      39,
+      40,
+      41.5,
+      42.4,
+      44,
+      47,
+      48.6,
+      49.95
+    ],
+    "native_full_size": [
+      "scratch/enc/f_39.00.png"
+    ],
+    "w350": "scratch/enc-350 (individual: 14.00, 29.40, 40.00, 44.00 viewed directly) + scratch/enc-350-sheet.png",
+    "boundaries": "8.4/8.8, 13.4/14.0 (select/collapse), 25.0/25.4, 26.0/26.3 (record 1 insert), 28.6/29.4 (record 2 insert, trace fading), 33.8/34.2, 41.5/42.4, 48.6/49.95 (fade, end)"
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, levels); not listened to.",
+  "scope_note": "Passing these scoped checks does not establish universal correctness or teaching quality; a comparative review is still required.",
+  "verified_at": "2026-10-20"
+}

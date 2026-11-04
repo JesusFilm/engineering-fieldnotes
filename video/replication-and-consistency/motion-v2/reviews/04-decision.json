@@ -1,0 +1,11 @@
+{
+  "sha256": "931f5326ff750eeb2c26ea8312b6984b5c2bd00c7de96a061fdb846694e878ba",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "5.4-6.4s: start the received-pointer slide as the record settles in WAL slot three so arrival and receipt read as one event.",
+    "15.05s: the replayed-chevron glow marking stalled replay is nearly invisible at 350px; pulse the gap between the received and replayed pointers instead.",
+    "23.5-26.6s: trim about 1s before the second query.",
+    "Integration (manifest owner): lessons.json item 4 uses duration 28 and beats 0/7/14/21; this cut is 34.7s with events at about 3.5/10/18/27s, so retime the beats to roughly 0/9/18/26 and set duration 34.7 when promoting it."
+  ]
+}

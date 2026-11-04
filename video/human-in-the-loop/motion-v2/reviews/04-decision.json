@@ -1,0 +1,12 @@
+{
+  "sha256": "8ab396bace8fcbbe6f62b80b038f40fe22822a5c6cd15f2552ce739908004f5b",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Raise the artifact-mismatch sound at ≈ 17.5 s (peaks −20.4 dB, quieter than routine ticks) so the discovery is audible before the block at 20.2 s.",
+    "Replace 'evidence T8 on B' with plainer wording such as 'tests on B'; beginners may not know T8 is a test run.",
+    "Increase compare and review row text size; readable at 350 px but small (roughly 11–12 px).",
+    "Differentiate the visual layout from the lesson 03 candidate, which uses the same stacked dashboard panels.",
+    "Consider shortening the post-block hold (≈ 23.3–28.0 s) if it reads slack."
+  ]
+}

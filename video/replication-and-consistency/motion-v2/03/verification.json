@@ -1,0 +1,182 @@
+{
+  "sha256": "9108c253865984dc2c44b2875d07835846ea42b34851d053ada90b35018f2479",
+  "size_bytes": 759465,
+  "duration_s": 35.5,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1065,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 35.5,
+    "frames_decoded": 1529,
+    "max_volume_dB": -10.1,
+    "mean_volume_dB": -36.3,
+    "astats_peak_dB": -10.116622,
+    "peak_at_or_below_minus_0_5_dBFS": true,
+    "cues": 21,
+    "identical_deliver_cues_s": [
+      7.4,
+      20.8
+    ],
+    "chime_cues_s": [
+      25.4
+    ],
+    "spectrogram": {
+      "file": "scratch/spectrogram.png",
+      "sha256": "77330bf193e7227c21c15047b0a99549a4e1d4458c7692913e12f521c5a34477",
+      "finding": "one onset at each scheduled cue; no sound without a visible event"
+    }
+  },
+  "audio_heard": false,
+  "audio_note": "Audio analysed (volumedetect, astats, spectrogram, cue dry run); not listened to.",
+  "decode": {
+    "command": "ffmpeg -v error -xerror -i video.mp4 -f null -",
+    "exit_code": 0,
+    "error_lines": 0,
+    "full_decode": true,
+    "video_frames_counted": 1065
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "82300b42b5e55d71652a20d324c4555b57fa4910e25178daea1f40ff65bf6f76",
+    "source_time_s": 34.5,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "f501fcea14d36a6409597fcdd0ee1605a65dbafcb93838ee1ca50976695ef270",
+    "engine/flow-engine.js": "f5712bb238bca0303ef38361ddbb34875d68d1e3478c8293c6a64455970b7754",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "engine_changes": "engine/flow-engine.js = prior cut 02 copy (card, arrow, tag nodes, label plate, meta.titleSize/subtitleSize; copied unchanged) plus cut-local generic nodes corners, mtext (with plate option) and rule. sfx.js, render.mjs and preview.html are identical to the skill scripts.",
+  "renderer": {
+    "puppeteer_core": "25.14.0 (repository root node_modules, pinned in package.json)",
+    "chrome": "/snap/bin/chromium via CHROME_PATH"
+  },
+  "plans_read": [
+    "../plans/03-plan-a.md",
+    "../plans/03-plan-b.md",
+    "../../sequence/lessons.json#3"
+  ],
+  "render_command": "CHROME_PATH=/snap/bin/chromium node video/replication-and-consistency/motion-v2/03/engine/render.mjs video/replication-and-consistency/motion-v2/03/scene.js video/replication-and-consistency/motion-v2/03/video.mp4 --sheet video/replication-and-consistency/motion-v2/03/scratch/contact-sheet.png --wav video/replication-and-consistency/motion-v2/03/scratch/sfx.wav (run from repository root)",
+  "poster_command": "ffmpeg -v error -y -ss 34.5 -i video/replication-and-consistency/motion-v2/03/video.mp4 -frames:v 1 -q:v 2 video/replication-and-consistency/motion-v2/03/poster.jpg",
+  "frame_extraction_command": "bash video/replication-and-consistency/motion-v2/03/scratch/extract.sh",
+  "frames_inspected": {
+    "source": "encoded video.mp4 (input seek), every beat and transition boundary",
+    "dir": "scratch/enc2",
+    "w350_dir": "scratch/enc2/350",
+    "times_s": [
+      0,
+      0.6,
+      1,
+      1.2,
+      2.5,
+      3.2,
+      3.4,
+      3.7,
+      4.5,
+      5.4,
+      5.8,
+      6.3,
+      6.6,
+      7,
+      7.4,
+      8.2,
+      9,
+      9.15,
+      9.45,
+      9.85,
+      10.3,
+      10.5,
+      11.2,
+      12,
+      12.2,
+      13.5,
+      14.8,
+      15.1,
+      15.3,
+      16,
+      16.6,
+      16.85,
+      17.2,
+      18,
+      18.8,
+      19.2,
+      19.7,
+      20,
+      20.4,
+      20.8,
+      21.7,
+      22.6,
+      23,
+      23.3,
+      23.65,
+      23.85,
+      24.6,
+      25.4,
+      25.6,
+      26.8,
+      27,
+      28.5,
+      30,
+      30.3,
+      31.1,
+      31.6,
+      31.8,
+      33,
+      34.5,
+      35.45
+    ],
+    "native_1080_viewed": [
+      9.85,
+      34.5
+    ],
+    "w350_viewed_native": [
+      9.85,
+      12.2,
+      17.2,
+      20.8,
+      23.3,
+      35.45
+    ],
+    "sheet_350": "scratch/enc2-350-sheet.png",
+    "contact_sheet": "scratch/contact-sheet.png",
+    "alternate_extraction": {
+      "method": "select=eq(n,N) exact frame numbers vs input seek at N/30",
+      "frames": [
+        296,
+        700,
+        1064
+      ],
+      "dir": "scratch/enc2/alt",
+      "psnr": "inf (identical)",
+      "agrees_with_seek": true
+    }
+  },
+  "defects_fixed": [
+    "dotted binding guide crossed the moving digit at 9.85 s and 23.3 s (render 1, sha256 27abedc69c00857882f6bc298d5973da603a186bbb5ca697518a45fc7a4e02c3); mtext plate in render 2",
+    "query text appeared 0.5 s after the selection cue without its own sound at 3.7 s and 17.2 s (render 1); now appears within the selection event at 3.3 s and 16.8 s",
+    "about 4.3 s silent final freeze (render 1, 36.5 s); duration 35.5 s"
+  ],
+  "defect_pass_clean": true,
+  "repo_media_check": "python3 scripts/check_media.py --concept replication-and-consistency: 3 media files checked against hash-bound evidence (published media only; this cut is not registered)",
+  "production_status": "cut verified; not marked production complete; comparison review pending"
+}

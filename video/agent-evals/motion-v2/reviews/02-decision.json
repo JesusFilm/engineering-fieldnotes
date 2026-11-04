@@ -1,0 +1,9 @@
+{
+  "sha256": "4a4e20d5934f02a81865d01e08ae365f4e4e142e37b7e9610319855207a03eb3",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Raise the contrast of \u201cvalid password not run\u201d during the final hold so the bounded scope is easier to notice at 350px.",
+    "Consider shortening or fading the left-side crossed-out claim route after its point lands; it competes slightly with the active execution/result path."
+  ]
+}

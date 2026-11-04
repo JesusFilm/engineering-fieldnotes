@@ -1,0 +1,9 @@
+{
+  "sha256": "fdcd71856dac5de7ea876ed7d30a5f228781ab87813391824819ce7c5060c68f",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Make the application-enforced write permission explicit beside the owner label; ownership alone does not demonstrate authorization.",
+    "Label the later comparison as an applicability check to clarify what checked means without implying command execution."
+  ]
+}

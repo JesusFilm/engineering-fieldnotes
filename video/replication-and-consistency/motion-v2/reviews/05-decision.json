@@ -1,0 +1,12 @@
+{
+  "sha256": "db2032dcdda8ec6edb843d990b3f06b1de5bc29f5e060514db8aa554632f48cd",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "16.5-20.3 s: trim the 3.8 s no-change hold after the primary goes offline by about 1-1.5 s.",
+    "21.0-22.7 s: make the dotted promotion path from the terminal to the standby brighter; it is faint and runs along the right edge.",
+    "From 15.7 s: keep an 'old primary' identity on the offline node, so its former role is still visible after promotion.",
+    "0-27 s: raise the contrast of the empty 'read' placeholder in the app box, so the read result at 29.7 s has a visible slot to fill.",
+    "0-1.6 s: shorten the dark fade-in before the first event."
+  ]
+}

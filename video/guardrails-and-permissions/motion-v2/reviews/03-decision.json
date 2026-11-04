@@ -1,0 +1,9 @@
+{
+  "sha256": "b54d986866b71893d2a44c0375919b7cc9269de673bc83ceba4543b414966109",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Remove the 0.82 confidence value or label it illustrative; the encode does not establish calibration or a measured probability, and the number is unnecessary to distinguish judgment from authorization.",
+    "Consider tightening the accepted-but-not-yet-checked hold around 11\u201317 seconds while retaining enough time to read both verdict states."
+  ]
+}

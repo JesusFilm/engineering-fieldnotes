@@ -1,0 +1,11 @@
+{
+  "sha256": "6ce62a6ab2ffb94ed077a6e261ccde6d4fcc60f8e7640bfd90e4c25ec85a1b7b",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Leave more audio headroom on server A's failure cue (peaks −1.5 dB at 10.2 s; within the −0.5 dB limit but close).",
+    "Show or note that requests already sent to A during the detection gap can still fail (the public cut states this on screen).",
+    "Note in the write-up that real health checkers usually need several consecutive failures before marking a server unavailable.",
+    "Brighten the 'last check' and 'health checks' headers, the dimmest text at 350 px."
+  ]
+}

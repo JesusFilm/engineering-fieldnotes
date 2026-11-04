@@ -1,0 +1,122 @@
+{
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1290,
+    "pix_fmt": "yuv420p"
+  },
+  "sha256": "e30abc58bd92c48cd7b672ce03c966a3cadda0bffc12830efb2f89b910197141",
+  "size_bytes": 1429427,
+  "duration_s": 43,
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 43,
+    "max_volume_dB": -5.5,
+    "mean_volume_dB": -32.6,
+    "astats_peak_dB": -5.519,
+    "astats_rms_dB": -32.558,
+    "peak_below_minus_0_5_dB": true,
+    "clipping": false,
+    "cues": 22
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "291d0182dcdb6901038949d5667f78f2a6c7984be4e7364ef7dea9f4380a3145",
+    "source_time_s": 24,
+    "width": 1080,
+    "height": 1920,
+    "extraction": "ffmpeg -ss 24 -i video.mp4 -frames:v 1 -q:v 2 poster.jpg"
+  },
+  "sources": {
+    "scene.js": "cbb38faea49aedd66e55f43154c7b4c4f4c2f19965bc2c82571c68a1c448ad18",
+    "engine/flow-engine.js": "0237969b83f4960c5a79b4555b6b366f5ad8b72efde5f03e8678f2fa6f2ad5cf",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "engine_changes": "flow-engine.js = clean engine + local general helpers copied from motion-v2/02 (lane, panel with routing-row extensions, axis; wire solid/arrow; chip size; title sizes) + a cursor node. render.mjs, sfx.js and preview.html are unmodified.",
+  "render_command": "node video/orchestration-patterns/motion-v2/03/engine/render.mjs video/orchestration-patterns/motion-v2/03/scene.js video/orchestration-patterns/motion-v2/03/video.mp4 --sheet video/orchestration-patterns/motion-v2/03/scratch/contact-sheet.png (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "frames_inspected": {
+    "dir": "scratch/enc2",
+    "times_s": [
+      0,
+      0.8,
+      2,
+      2.4,
+      6.8,
+      7.2,
+      8,
+      8.6,
+      9.2,
+      9.8,
+      10.2,
+      10.8,
+      11.2,
+      13.6,
+      15.6,
+      17.6,
+      19.6,
+      21.8,
+      22.2,
+      23,
+      25.8,
+      26.2,
+      26.6,
+      28,
+      29.4,
+      29.9,
+      30.4,
+      31,
+      31.4,
+      31.9,
+      32.4,
+      33,
+      33.6,
+      35,
+      35.4,
+      38,
+      40.6,
+      41.5,
+      42.95
+    ],
+    "full": "scratch/enc2/full/*.png",
+    "native_350": "scratch/enc2/w350/*.png (scale=350:-2:flags=area), scratch/native-c.png, scratch/enc2-350-sheet.png",
+    "earlier_render_faults": "scratch/stills1, scratch/enc1, scratch/native-a.png, scratch/native-b.png"
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "parallel_checks": {
+    "both_traces_start_s": 11,
+    "compat_report_s": 22,
+    "migration_report_s": 26,
+    "overlap_interval_s": [
+      11,
+      22
+    ],
+    "snapshot_id_on_reports": "S7",
+    "dependency_arrow_between_reviewers": false,
+    "snapshot_text_changed": false,
+    "approval_indicator": false
+  },
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, levels); not listened to.",
+  "scope_note": "Passing these scoped checks does not establish universal correctness; a comparison review is still required.",
+  "verified_at": "2026-10-20"
+}

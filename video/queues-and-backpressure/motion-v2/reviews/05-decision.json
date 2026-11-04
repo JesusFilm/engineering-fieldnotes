@@ -1,0 +1,10 @@
+{
+  "sha256": "c36a538ba5c6cfafb014439f1580820e89cbb4858d0b89260cdfe3b69bfe9efa",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Label the small red dot that carries the rejection back to the producer (≈ 15.5–16.8 s) with 'rejected' so the response reads at phone size.",
+    "Use an amber producer border during 'got result' so a handled rejection is not read as a producer failure.",
+    "Note in the write-up that retries after rejection need back-off and a limit, and that RabbitMQ's default overflow drops oldest messages unless a reject policy is set."
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "sha256": "641610d072384d684501c1cc2d84d8afe5e22b060f83e4d30cda666712fd972a",
+  "duration_s": 47,
+  "size_bytes": 1860515,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1410,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 47,
+    "max_volume_dB": -5,
+    "mean_volume_dB": -33.7,
+    "astats_peak_dB": -5.029,
+    "astats_rms_dB": -33.653,
+    "peak_below_minus_0_5_dBFS": true,
+    "cues": 28,
+    "window_peaks_dB": {
+      "8.8": -7.8,
+      "12.2": -10.2,
+      "16.3": -7.9,
+      "19.7": -9.4,
+      "31.3 (denial)": -5,
+      "34.3 (403 arrives)": -16.3,
+      "35.7 (closed route)": -21.6
+    }
+  },
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue dry-run, spectrogram, volumedetect window peaks, astats); not listened to.",
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "32ea88df74f1f4180d5e4e0a882b9f4bc69710ad1813b9a102ec64ebe4c7f5f5",
+    "source_time_s": 41.5,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "2946d249a8e3ad4c82d1fc120ea4bfbff37d144acc202a46f3a1e483f7013df7",
+    "engine/flow-engine.js": "93136ea4acf194c2799b43a7812e99740c95bfd2afa2770b8dffb7809aff0379",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717"
+  },
+  "engine_changes": "Cut-local flow-engine.js: copied lesson 01's local general extensions ('panel' node, chip 'size', meta.titleSize/subtitleSize/subtitleSpacing) without editing lesson 01, and added a general 'matrix' node (row/column headers, bands, per-cell text, outline, mark). sfx.js and render.mjs unchanged.",
+  "render_command": "node video/guardrails-and-permissions/motion-v2/02/engine/render.mjs video/guardrails-and-permissions/motion-v2/02/scene.js video/guardrails-and-permissions/motion-v2/02/video.mp4 --sheet video/guardrails-and-permissions/motion-v2/02/scratch/contact-sheet.png --wav video/guardrails-and-permissions/motion-v2/02/scratch/sfx.wav (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "poster_command": "ffmpeg -ss 41.5 -i video.mp4 -frames:v 1 -q:v 2 poster.jpg (in the cut directory)",
+  "frames_inspected": {
+    "native_dir": "scratch/enc3",
+    "w350_dir": "scratch/enc3-350 (scale=350:-1:flags=area)",
+    "times_s": [
+      0,
+      1.6,
+      3.2,
+      5.6,
+      7.5,
+      8.4,
+      9.3,
+      10.3,
+      11.4,
+      12.6,
+      14.5,
+      15.9,
+      16.7,
+      17.6,
+      18.9,
+      20.3,
+      23.5,
+      24.3,
+      25.2,
+      26.5,
+      27.4,
+      28.4,
+      29.4,
+      30.6,
+      31.8,
+      33,
+      33.8,
+      35,
+      36.2,
+      37.3,
+      39,
+      40.2,
+      43.5,
+      45.8,
+      46.95
+    ],
+    "w350_sheet": "scratch/enc3-350-sheet.png",
+    "individual_checks": "Viewed directly: scratch/quint.png (native 9.3, 24.3, 33.8, 36.2, 46.95) and scratch/quad350.png (350px 12.6, 20.3, 33.0, 40.2) from render 3, whose frames are identical to render 4 (only audio cues changed); poster.jpg from render 4."
+  },
+  "contact_sheet": "scratch/contact-sheet.png",
+  "spectrogram": "scratch/spectrogram.png",
+  "invariants_checked": "single allow cell constant; R2 uses the same read column; payments reads 0 in every sampled frame; no packet reaches the log service during R2; R1 result cleared before R2 written",
+  "scope_note": "Passing these scoped checks is not universal correctness; a comparison review against other cuts is still required.",
+  "verified_at": "2026-10-20"
+}

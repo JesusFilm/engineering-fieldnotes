@@ -1,0 +1,9 @@
+{
+  "sha256": "446e4ec8264902a5406dfa98b843952ebc962a5022db7611417c104159d1e65c",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Expand D1 and F1 once as draft and finding near their handoff labels; the persistent detail panel already supplies their meaning.",
+    "Consider shortening the title-only tail after the final evidence hold; preserve time to read the result and latency recap."
+  ]
+}

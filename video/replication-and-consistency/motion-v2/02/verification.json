@@ -1,0 +1,144 @@
+{
+  "sha256": "4230b9ad141a6e28681db1b83b8689a05cae0f17a5dbafe8ba1e8ee30c70da6c",
+  "size_bytes": 914634,
+  "duration_s": 38.0,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1140,
+    "pix_fmt": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 38.0,
+    "max_volume_dB": -6.6,
+    "mean_volume_dB": -34.9,
+    "astats_peak_dB": -6.593922,
+    "peak_at_or_below_minus_0_5_dBFS": true,
+    "cues": 23,
+    "identical_deliver_cues_s": [
+      9.8,
+      18.4
+    ],
+    "spectrogram": "scratch/spectrogram.png"
+  },
+  "audio_heard": false,
+  "audio_note": "Audio analysed (volumedetect, astats, spectrogram, cue dry run); not listened to.",
+  "decode": {
+    "command": "ffmpeg -v error -xerror -i video.mp4 -f null -",
+    "exit_code": 0,
+    "error_lines": 0,
+    "full_decode": true
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "210dcaba944bccb56e39f7ddce3f7a7e9213fe17bfcd1f96fb0a339515096665",
+    "source_time_s": 37.5,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "8d9a602e80117fecea43c74391a1522845f2984bcf6e94ccf40f4a0aaa935d86",
+    "engine/flow-engine.js": "ae0689c8fd531b0bc3655e47fc44fb5daaa8ddc26ce0bda7512bb238322713e1",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "engine_changes": "engine/flow-engine.js extends the skill copy with card, arrow, tag node types, label plate, meta.titleSize/subtitleSize; sfx.js, render.mjs, preview.html identical to the skill scripts.",
+  "plans_read": [
+    "../plans/02-plan-a.md",
+    "../plans/02-plan-b.md",
+    "../../sequence/lessons.json#1"
+  ],
+  "render_command": "CHROME_PATH=/snap/bin/chromium node video/replication-and-consistency/motion-v2/02/engine/render.mjs video/replication-and-consistency/motion-v2/02/scene.js video/replication-and-consistency/motion-v2/02/video.mp4 --sheet video/replication-and-consistency/motion-v2/02/scratch/contact-sheet.png --wav video/replication-and-consistency/motion-v2/02/scratch/sfx.wav (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "poster_command": "ffmpeg -v error -y -ss 37.5 -i video/replication-and-consistency/motion-v2/02/video.mp4 -frames:v 1 -q:v 2 video/replication-and-consistency/motion-v2/02/poster.jpg",
+  "frames_inspected": {
+    "source": "encoded video.mp4 (input seek)",
+    "dir": "scratch/enc2",
+    "w350_dir": "scratch/enc2/350",
+    "times_s": [
+      0,
+      1,
+      1.6,
+      2.5,
+      3.4,
+      5,
+      5.4,
+      5.8,
+      6.4,
+      7,
+      7.2,
+      7.6,
+      8.2,
+      9.2,
+      9.8,
+      10,
+      10.9,
+      11.3,
+      13,
+      14.4,
+      14.8,
+      15.2,
+      15.8,
+      16,
+      16.3,
+      16.6,
+      17.8,
+      18.4,
+      18.6,
+      21,
+      22.8,
+      23.2,
+      24.6,
+      25,
+      26.4,
+      26.8,
+      27.8,
+      28.2,
+      32,
+      37.9
+    ],
+    "native_1080_viewed": [
+      16.3,
+      37.9
+    ],
+    "w350_viewed_native": [
+      7.0,
+      9.8,
+      16.3,
+      16.6,
+      18.4,
+      37.9
+    ],
+    "sheet_350": "scratch/enc2-350-sheet.png",
+    "contact_sheet": "scratch/contact-sheet.png",
+    "alternate_extraction": {
+      "method": "select=eq(n,N) exact frame numbers",
+      "frames": [
+        210,
+        489,
+        1137
+      ],
+      "dir": "scratch/enc2/alt",
+      "agrees_with_seek": true
+    }
+  },
+  "defects_fixed": [
+    "arrival ripples overlapped resting chips at 7.0 s and 16.3 s (render 1, sha256 48f99332386d3e22f9756b87533ffba407c7103df4a8e8f49832311cc97c95a8); ripple radius 26 and 30 px chip clearance in render 2"
+  ],
+  "defect_pass_clean": true,
+  "production_status": "cut verified; not marked production complete; comparison review pending"
+}

@@ -1,0 +1,104 @@
+{
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1168,
+    "pix_fmt": "yuv420p"
+  },
+  "sha256": "5d048e04353271c92e31981d83a4e228b072cbf9386e28241fc8cc44c1bf3ca1",
+  "size_bytes": 1436817,
+  "duration_s": 38.943991,
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 38.943991,
+    "max_volume_dB": -7.1,
+    "mean_volume_dB": -32.1,
+    "astats_peak_dB": -7.15,
+    "astats_rms_dB": -32.053,
+    "clipping": false,
+    "cues": 37,
+    "per_cue_peak_dB_range": [
+      -18.3,
+      -7.1
+    ],
+    "per_cue_peaks": "scratch/cue-peaks.txt (decoded track, 150 ms window after each cue)"
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "17a4a0fc572383b41aca1359398d6c66834eb036ec963000ef14a4451e6ec635",
+    "source_time_s": 35.0,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "743f80031434992b7c651376e3e631b2a18cac31a3f4b8aa2dc7781532c0a1c1",
+    "engine/flow-engine.js": "90ea1a9f2cd51e308316ba05619ca6ceda0bd99332641293971342baf9a3a2bb",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "render_command": "node video/loop-engineering/motion-v2/01/engine/render.mjs video/loop-engineering/motion-v2/01/scene.js video/loop-engineering/motion-v2/01/video.mp4 --sheet video/loop-engineering/motion-v2/01/scratch/contact-sheet.png --wav video/loop-engineering/motion-v2/01/scratch/sfx.wav (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "poster_command": "ffmpeg -v error -y -ss 35.0 -i video/loop-engineering/motion-v2/01/video.mp4 -frames:v 1 -q:v 2 video/loop-engineering/motion-v2/01/poster.jpg",
+  "frames_inspected": {
+    "dir": "scratch/enc2",
+    "times_s": [
+      0.0,
+      1.4,
+      3.0,
+      3.95,
+      5.05,
+      5.75,
+      5.95,
+      6.6,
+      9.35,
+      10.35,
+      12.9,
+      13.95,
+      16.5,
+      18.05,
+      18.4,
+      19.2,
+      19.6,
+      21.7,
+      22.3,
+      24.1,
+      26.6,
+      27.7,
+      28.35,
+      28.6,
+      29.4,
+      30.6,
+      31.5,
+      32.5,
+      35.0,
+      37.3,
+      38.9
+    ],
+    "native": "individual PNGs in scratch/enc2 (beats and boundaries viewed at full size)",
+    "w350": "scratch/enc2_350 individual frames and scratch/enc2-350-sheet.png"
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "waveform": "scratch/waveform.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "ending": "finite: hold then fade to black; first and last frames intentionally differ",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, waveform, per-cue peaks, levels); not listened to.",
+  "verified_at": "2026-10-20"
+}

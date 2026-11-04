@@ -1,0 +1,207 @@
+{
+  "lesson": "canary-deployments/04 Compare the same operation",
+  "cut": "video/canary-deployments/motion-v2/04",
+  "author_model": "claude-opus-5-5",
+  "verified_at_utc": "2026-11-04 02:51:28 UTC",
+  "sha256": "ab8531f7de72985b8951a65b34a5778e884749be57b9f5beb7f0dc0ddea08a4c",
+  "duration_s": 39.6,
+  "files": {
+    "video": "video.mp4",
+    "poster": "poster.jpg",
+    "scene": "scene.js",
+    "beat_sheet": "beat-sheet.md",
+    "review": "review.md"
+  },
+  "source_hashes": {
+    "scene.js": "f0b991d9471de16c7a04d4b03f64b19f0e8379cc3b9287ac11f5dad90aa2ef3b",
+    "engine/flow-engine.js": "03ecbfae2dbbb0df07209aa9a38aadafd2ead0c6f2ee55bb1fb7bc3e84e2536b",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "poster.jpg": "f3c3556a65a89fa5badc3d6f002d608bdfd43c1adece8f8c1a8421ec09540d72"
+  },
+  "engine_notes": "Cut-local copy of the architecture-flow-video engine. flow-engine.js adds group, caption, panel, line, track and ring nodes, dx/dy offsets and meta.veilTop. render.mjs, sfx.js and preview.html are byte-identical to the skill copy. Shared skill and earlier cuts were not modified.",
+  "reproduction": {
+    "cwd": "repository root",
+    "command": "CHROME_PATH=/snap/bin/chromium node video/canary-deployments/motion-v2/04/engine/render.mjs video/canary-deployments/motion-v2/04/scene.js video/canary-deployments/motion-v2/04/video.mp4",
+    "poster_command": "ffmpeg -y -i video/canary-deployments/motion-v2/04/video.mp4 -vf \"select=eq(n\\,1104)\" -vsync 0 -frames:v 1 -q:v 2 video/canary-deployments/motion-v2/04/poster.jpg",
+    "dependencies": {
+      "puppeteer-core": "25.14.0 (repository node_modules)",
+      "node": "v22.22.1",
+      "ffmpeg": "8.0.1",
+      "chromium": "/snap/bin/chromium"
+    },
+    "notes": "The snap Chromium needed to run outside the workspace sandbox (normal escalation). Video frames are deterministic: a render-3 encode matched the render-2 inspected frames pixel for pixel; the audio is a deterministic synthesis."
+  },
+  "fixture_check": {
+    "v1": {
+      "failed": 0,
+      "exports": 900,
+      "rate_pct": 0
+    },
+    "v2": {
+      "failed": 40,
+      "exports": 100,
+      "rate_pct": 40
+    },
+    "scene_asserts": "scene.js throws unless 0/900*100 === 0 and 40/100*100 === 40; track fill derived from the fixture",
+    "track_fill_v2": 0.4,
+    "track_fill_v1": 0
+  },
+  "encoded_verification": {
+    "ffprobe": {
+      "video": "h264 High yuv420p 1080x1920 30/1, 1188 frames, 39.600 s",
+      "audio": "aac LC 44100 Hz stereo, 39.600 s",
+      "format_duration_s": 39.6,
+      "size_bytes": 1496376
+    },
+    "full_decode": "ffmpeg -xerror -i video.mp4 -f null - completed with no errors; counted 1188 video frames and 1706 audio packets (header lists 1707, the usual AAC priming offset)",
+    "video_framemd5_sha256": "5426111ed12c98e823374a0d02d718c705b946e5df15002b2aa440a5ea61390f",
+    "audio_peak_dbfs": -7.48,
+    "audio_mean_dbfs": -32.6,
+    "audio_peak_requirement": "<= -0.5 dBFS: pass",
+    "loudest_cue": "15.0 s candidate 40-failure thump at -7.5 dBFS (pre-AAC synthesis)",
+    "hold_silence_dbfs": {
+      "11.6-13.2": -80.8,
+      "18.1-19.7": -80.8,
+      "36.8-39.6": "digital silence"
+    },
+    "streaming": {
+      "top_level_atoms": [
+        "ftyp@0",
+        "moov@32",
+        "free@43876",
+        "mdat@43884"
+      ],
+      "moov_before_mdat": true
+    },
+    "spectrogram": {
+      "command": "ffmpeg -i video.mp4 -lavfi showspectrumpic=s=1800x500:fscale=log spectrogram.png",
+      "file": "/tmp/fn04/spectrogram.png (scratch)",
+      "sha256": "35db6a4b9e1385eff8f91c8e78a4812d7b677a8c02d7ae701a6cb543ca7a8d8b",
+      "finding": "an onset at every scheduled cue (34 cues); low-frequency energy strongest at 15.0 s and 28.7 s failure thumps; quiet during reading holds"
+    },
+    "contact_sheet": {
+      "command": "ffmpeg -i video.mp4 -vf fps=1,scale=240:-1,tile=6x7 -frames:v 1 sheet.png",
+      "file": "/tmp/fn04/sheet.png (scratch)",
+      "sha256": "429edba3aa28c8c79afca4ad53ddeb49b92dd446e2a2c6fe91db8c954bad3cb8",
+      "finding": "beat progression reads in order; no stale state"
+    },
+    "frames_inspected": {
+      "method": "Extracted by exact frame index with ffmpeg select=eq(n,N) and -vsync 0; pts confirmed with showinfo. Each frame viewed individually at native 1080x1920 and at an actual 350 px width (lanczos), shown at original resolution in three-frame strips.",
+      "indices": [
+        0,
+        24,
+        78,
+        129,
+        172,
+        173,
+        174,
+        175,
+        176,
+        180,
+        186,
+        207,
+        228,
+        236,
+        246,
+        273,
+        306,
+        336,
+        384,
+        407,
+        417,
+        423,
+        459,
+        492,
+        534,
+        585,
+        612,
+        630,
+        657,
+        690,
+        720,
+        750,
+        771,
+        795,
+        840,
+        870,
+        921,
+        960,
+        990,
+        1047,
+        1104,
+        1152,
+        1167,
+        1179,
+        1187
+      ],
+      "pts_s": [
+        0,
+        0.8,
+        2.6,
+        4.3,
+        5.733,
+        5.767,
+        5.8,
+        5.833,
+        5.867,
+        6,
+        6.2,
+        6.9,
+        7.6,
+        7.867,
+        8.2,
+        9.1,
+        10.2,
+        11.2,
+        12.8,
+        13.567,
+        13.9,
+        14.1,
+        15.3,
+        16.4,
+        17.8,
+        19.5,
+        20.4,
+        21,
+        21.9,
+        23,
+        24,
+        25,
+        25.7,
+        26.5,
+        28,
+        29,
+        30.7,
+        32,
+        33,
+        34.9,
+        36.8,
+        38.4,
+        38.9,
+        39.3,
+        39.567
+      ],
+      "alternate_indices_for_suspect_lock_frame": [
+        172,
+        173,
+        174,
+        175,
+        176,
+        180,
+        186
+      ],
+      "final_encode_identity": "All 45 inspected frames from the final encode are pixel-identical to the inspected render-2 frames (the render-3 change was audio only)."
+    },
+    "defects_fixed": [
+      "track label vs zero ring overlap (stills)",
+      "40% outline touching row edge (stills)",
+      "lock ripple crossing numerals at frame 174 (render 1)",
+      "failure cue not the loudest event (render 2)"
+    ],
+    "audio_heard": false,
+    "audio_note": "Audio was analysed (spectrogram, per-cue peaks, volumedetect, astats). Nobody listened to it."
+  },
+  "claims_limits": "Counts are illustrative, not measured benchmark data. The scene does not claim the release caused the failures, sets no universal threshold, includes no unrelated requests, and shows no automatic rollout or rollback. No comparative review against other lesson 04 cuts has been performed."
+}

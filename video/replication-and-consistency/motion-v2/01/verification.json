@@ -1,0 +1,128 @@
+{
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 990,
+    "pix_fmt": "yuv420p"
+  },
+  "sha256": "540a5cfe04c63ca54c3a1f51a3654ed3673b624416335ba640a49220a0553bda",
+  "size_bytes": 993634,
+  "duration_s": 33,
+  "supersedes_sha256": "fe774ae86de2c3fdd7eb9337be640925c5be81b31d981602b72e81b005de457d",
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 33,
+    "max_volume_dB": -6.9,
+    "mean_volume_dB": -35.6,
+    "astats_peak_dB": -6.945,
+    "astats_rms_dB": -35.638,
+    "clipping": false,
+    "cues": 22
+  },
+  "decode": {
+    "command": "ffmpeg -v error -xerror -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "aebb5b8637bd965f1d3ae358940a3a45e24fe250a2339dc5c28b7a8ddc732296",
+    "source_time_s": 28,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "4fc0a58868c92af121aca4d8ae1e9f3d8b101eb0a4081236f6d3a99a722e619c",
+    "engine/flow-engine.js": "eef83e0dd26ee3096a3baa42d32cd60930a4e6f712d153eff1296adf7aa5c3ba",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "plans_read": [
+    "../plans/01-plan-a.md",
+    "../plans/01-plan-b.md",
+    "../../sequence/lessons.json#0"
+  ],
+  "review_inputs": [
+    "../reviews/01-comparison.md",
+    "../reviews/01-decision.json"
+  ],
+  "blocker_fix": {
+    "finding": "≠ shown while both copies read ready · 8 (≈22.1–25.0 s)",
+    "reproduced_before_edit": {
+      "encode_sha256": "fe774ae86de2c3fdd7eb9337be640925c5be81b31d981602b72e81b005de457d",
+      "frame_selection": "frames 660–800 every 20 → scratch/repro/sel_660_800.png",
+      "seeks_s": [
+        21.8,
+        22.5,
+        23.5,
+        24.5,
+        25.2
+      ],
+      "strip": "scratch/repro/seek_strip.png"
+    },
+    "change": "mark switches to = in the same frame as the replica record (scene rDone, playback 22.06 s); beat-4 glow/chime/note/fade shifted earlier",
+    "verified_after": {
+      "frame_selection": "frames 655–705 every 5 → scratch/repro3/sel_655_705.png (≠ through 660, = from 665)",
+      "seeks_s": [
+        21.9,
+        22.1,
+        22.5,
+        23.5,
+        24.5
+      ],
+      "strip": "scratch/repro3/seek_strip.png"
+    }
+  },
+  "render_command": "node video/replication-and-consistency/motion-v2/01/engine/render.mjs video/replication-and-consistency/motion-v2/01/scene.js video/replication-and-consistency/motion-v2/01/video.mp4 --sheet video/replication-and-consistency/motion-v2/01/scratch/contact-sheet.png --wav video/replication-and-consistency/motion-v2/01/scratch/sfx.wav (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "frames_inspected": {
+    "dir": "scratch/enc3",
+    "times_s": [
+      0,
+      1.9,
+      3.1,
+      4.3,
+      6.5,
+      8.24,
+      9.5,
+      10.3,
+      11.2,
+      12.1,
+      13.2,
+      15.5,
+      17.65,
+      18.5,
+      19.4,
+      20.3,
+      21.1,
+      21.9,
+      22.1,
+      22.5,
+      23.6,
+      25,
+      28,
+      30.9,
+      31.9,
+      32.95
+    ],
+    "w350": "scratch/enc3-350-sheet.png"
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, levels); not listened to.",
+  "scope_note": "Scoped checks on this encode only; not a claim of universal correctness.",
+  "verified_at": "2026-10-22"
+}

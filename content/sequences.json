@@ -7,104 +7,104 @@
   },
   "loop-engineering": {
     "lessons": "video/loop-engineering/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "context-engineering": {
     "lessons": "video/context-engineering/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "tool-design": {
     "lessons": "video/tool-design/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "memory-architecture": {
     "lessons": "video/memory-architecture/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "orchestration-patterns": {
     "lessons": "video/orchestration-patterns/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "guardrails-and-permissions": {
     "lessons": "video/guardrails-and-permissions/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "agent-evals": {
     "lessons": "video/agent-evals/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "human-in-the-loop": {
     "lessons": "video/human-in-the-loop/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "observability-and-tracing": {
     "lessons": "video/observability-and-tracing/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "load-balancing": {
     "lessons": "video/load-balancing/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "load-balancing sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "cache-aside": {
     "lessons": "video/cache-aside/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "queues-and-backpressure": {
     "lessons": "video/queues-and-backpressure/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "idempotency": {
     "lessons": "video/idempotency/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "replication-and-consistency": {
     "lessons": "video/replication-and-consistency/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "timeouts-and-retries": {
     "lessons": "video/timeouts-and-retries/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "canary-deployments": {
     "lessons": "video/canary-deployments/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "oauth-pkce": {
     "lessons": "video/oauth-pkce/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "Independently authored motion-v2 cuts; see each cut and review record",
+    "renderer": "cut-local motion engine",
     "finite": true
   }
 }

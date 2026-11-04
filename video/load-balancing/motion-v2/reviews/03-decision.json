@@ -1,0 +1,10 @@
+{
+  "sha256": "11c81fff3887c8283069094af91ff3f244f93c2554173fcb8589578e692dccaa",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Carry the 'req N' label on the dot that travels from the balancer to the server so it ties to the log cell.",
+    "Colour each picks cell by its server (A vs B) so the alternation reads at a glance; all cells are currently green.",
+    "Note in the write-up that unequal weights, connection-level routing and multiple balancer instances change the observed pattern."
+  ]
+}

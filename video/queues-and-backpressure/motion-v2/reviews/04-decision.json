@@ -1,0 +1,10 @@
+{
+  "sha256": "c4698882a5eab09af94992aebc43258c72743fcf4773fdebedd74eef24a82c80",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Switch the worker state to 'running B' as B lands (≈ 24 s); it briefly still reads 'A done' with B in the worker.",
+    "Enlarge 'not created' / 'next' under F, the smallest text at 350 px.",
+    "Note in the write-up that producers usually need a deadline on put, and that many tasks each awaiting put move the backlog outside the queue."
+  ]
+}

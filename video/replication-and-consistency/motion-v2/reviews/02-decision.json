@@ -1,0 +1,11 @@
+{
+  "sha256": "4230b9ad141a6e28681db1b83b8689a05cae0f17a5dbafe8ba1e8ee30c70da6c",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Shorten the silent 8.4 s final freeze (29.6-38 s) to about 4 s.",
+    "Trim the 4.7 s still hold after the stale result lands (18.3-23.0 s) to 2.5-3 s.",
+    "Give the app box's 'writes' counter meaning in the stale-read beat, for example by showing the last observed revision (v8, then v7).",
+    "Animate the static 'async copy' bracket with a faint pending pulse (no catch-up), or remove it to reduce density."
+  ]
+}

@@ -1,0 +1,221 @@
+{
+ "cut": "timeouts-and-retries/motion-v2/02",
+ "lesson": "02 A timeout is not a rollback",
+ "file": "video.mp4",
+ "sha256": "d662e83e2f1022b5f24d6546010b171009eabd68bffbf04ecb1549d34f05db9f",
+ "duration_s": 38.333333,
+ "poster": {
+  "file": "poster.jpg",
+  "sha256": "37a296e00e5ef50b5a128609ebf10976df6d54916055828210d79ff86de554e3",
+  "source": "video.mp4 frame index 1149 (final hold)"
+ },
+ "source_hashes": {
+  "scene.js": "746634211d920783706498f202578b59b822129ee096671c616090a67e9a46d8",
+  "engine/flow-engine.js": "55fabb27ae823b32f8b91fa63be0cd4a2b5b0723493273743535f238104c7e55",
+  "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+  "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+  "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+  "beat-sheet.md": "6682a20c6c76eef67386b3180e6e059c448f70837238145f69faf86c83d3152b",
+  "review.md": "52fb2100138140efa747b17782e460848ab6b02d01a922e201dccefa6597d7ec"
+ },
+ "input_references_read_only": {
+  "video/timeouts-and-retries/sequence/lessons.json": "7d188fda6e94826f2d687d5186c3ab77edd20cd31422911a322644201666ec35",
+  "video/timeouts-and-retries/motion-v2/plans/02-plan-a.md": "a8c1fc32a3e1bbd6182b9892e97c032097847a93d6886257aea799a299dbdfab",
+  "video/timeouts-and-retries/motion-v2/plans/02-plan-b.md": "e04204e677e94131ddb1af93036baa257f6dce6093ca10e1daba6a5808ad9e3b"
+ },
+ "engine": {
+  "origin": "copy of the installed architecture-flow-video scripts; sfx.js, render.mjs and preview.html are byte-identical to it",
+  "cut_local_changes_in_flow-engine.js": [
+   "EASE.cruise",
+   "packet chip size option (pk.size)",
+   "anchor half-size fallback n.half",
+   "FlowVideo.NODES and FlowVideo.util exported for scene-registered node types"
+  ],
+  "scene_registered_node_types": [
+   "text",
+   "term",
+   "vbar",
+   "hline",
+   "field",
+   "socket",
+   "varrow"
+  ]
+ },
+ "reproduction": {
+  "working_directory": "repository root",
+  "render": "CHROME_PATH=/snap/bin/chromium node video/timeouts-and-retries/motion-v2/02/engine/render.mjs video/timeouts-and-retries/motion-v2/02/scene.js video/timeouts-and-retries/motion-v2/02/video.mp4 --sheet video/timeouts-and-retries/motion-v2/02/scratch/sheet.png",
+  "poster": "ffmpeg -v error -y -i video/timeouts-and-retries/motion-v2/02/video.mp4 -vf \"select=eq(n\\,1149)\" -vsync 0 -frames:v 1 -q:v 2 video/timeouts-and-retries/motion-v2/02/poster.jpg",
+  "timing_dry_run": "cd video/timeouts-and-retries/motion-v2/02 && node -e \"const F=require('./engine/flow-engine.js'); require('./scene.js'); const sc=F.createScene(F.lastScene); console.log(sc.meta.renderDuration, sc.audioCues().length)\"",
+  "dependencies": {
+   "puppeteer-core": "25.14.0 (repository node_modules, resolved from the working directory)",
+   "node": "v22.22.1",
+   "ffmpeg": "8.0.1-3ubuntu2",
+   "chromium": "Chromium 156.0.8078.47 snap"
+  },
+  "notes": "Chromium needed a sandbox escalation to launch. Renders were run one at a time."
+ },
+ "encoded_verification": {
+  "streams": [
+   {
+    "codec_type": "video",
+    "codec_name": "h264",
+    "width": 1080,
+    "height": 1920,
+    "r_frame_rate": "30/1",
+    "duration": "38.333333",
+    "nb_frames": "1150",
+    "sample_rate": null,
+    "channels": null,
+    "pix_fmt": "yuv420p"
+   },
+   {
+    "codec_type": "audio",
+    "codec_name": "aac",
+    "width": null,
+    "height": null,
+    "r_frame_rate": "0/0",
+    "duration": "38.332993",
+    "nb_frames": "1652",
+    "sample_rate": "44100",
+    "channels": 2,
+    "pix_fmt": null
+   }
+  ],
+  "decoded_video_frames": 1150,
+  "full_decode": {
+   "command": "ffmpeg -v error -i video.mp4 -f null -",
+   "returncode": 0,
+   "stderr": ""
+  },
+  "top_level_atoms": [
+   "ftyp",
+   "moov",
+   "free",
+   "mdat"
+  ],
+  "moov_before_mdat": true,
+  "audio_peak_dBFS_decoded": -4.7,
+  "audio_peak_limit_dBFS": -0.5,
+  "audio_peak_within_limit": true,
+  "volumedetect": {
+   "mean_volume": "-33.6 dB",
+   "max_volume": "-4.7 dB"
+  },
+  "cue_window_peaks_dBFS_350ms": {
+   "caller_send_2.89": -12.4,
+   "ci_arrive_3.78": -9.7,
+   "timeout_latch_12.22": -4.7,
+   "unknown_14.67": -8.8,
+   "lookup_done_22.78": -9.6,
+   "field_tick_26.22": -13.9,
+   "cancel_socket_28.89": -12.4,
+   "rollback_socket_30.22": -11.4
+  },
+  "loudest_cue": "timeout_latch_12.22",
+  "caller_clock_ticks_LR_dBFS": [
+   [
+    -13.5,
+    -17.7
+   ],
+   [
+    -14.7,
+    -18.9
+   ],
+   [
+    -13.1,
+    -17.3
+   ]
+  ],
+  "ci_work_ticks_after_timeout_R_dBFS": [
+   -12.0,
+   -12.3,
+   -11.7
+  ],
+  "final_hold_31_to_end_dBFS": -180.0,
+  "scheduled_cues": {
+   "count": 54,
+   "by_name": {
+    "send": 4,
+    "arrive": 4,
+    "clock": 7,
+    "work": 34,
+    "latch": 1,
+    "unresolved": 1,
+    "store": 1,
+    "hollow": 2
+   },
+   "last_caller_clock_s": 11.111,
+   "timeout_s": 12.222,
+   "last_ci_work_s": 22.5,
+   "caller_to_ci_cues_after_request": 0
+  },
+  "spectrogram": {
+   "command": "ffmpeg -i video.mp4 -lavfi showspectrumpic=s=1800x500:fscale=log scratch/spec.png",
+   "observed": "sound at each beat; broadband latch at 12.2 s; high caller clock ticks stop after 11.1 s while low CI work ticks continue to 22.5 s; silence from 30.6 s to end"
+  },
+  "frames": {
+   "method": "exact frame indices decoded with ffmpeg select=eq(n,K) -vsync 0 (no time seeking); each inspected individually at native 1080x1920 and at 350 px width (lanczos), plus the 6-column contact sheet from render.mjs",
+   "indices": [
+    0,
+    1,
+    27,
+    60,
+    87,
+    100,
+    113,
+    150,
+    213,
+    300,
+    333,
+    364,
+    365,
+    366,
+    367,
+    368,
+    370,
+    382,
+    420,
+    438,
+    440,
+    480,
+    520,
+    573,
+    640,
+    683,
+    700,
+    760,
+    787,
+    840,
+    867,
+    907,
+    1000,
+    1149
+   ],
+   "alternate_indices_for_timeout_boundary": [
+    364,
+    365,
+    366,
+    367,
+    368,
+    370
+   ],
+   "final_encode_frames_byte_identical_to_inspected_render2_frames": true,
+   "video_stream_md5": "MD5=6edf54002f07255656ad422ce68d1461",
+   "video_stream_md5_render2": "MD5=6edf54002f07255656ad422ce68d1461",
+   "findings": "no clipped or overlapping text in final encode; labels legible at 350 px; no stale state; frame 0 shows only the title"
+  },
+  "audio_heard": false,
+  "audio_assessment": "analysed only (spectrogram, volumedetect, decoded per-cue peaks); not listened to"
+ },
+ "scope_checks": {
+  "single_request": true,
+  "signal_from_caller_to_ci_after_request": false,
+  "response_reaches_caller": false,
+  "ci_work_rewinds_or_turns_red": false,
+  "build_result_shown": false,
+  "continuation_qualified_as_this_run": true,
+  "cancel_and_rollback_shown_as_separate_code": true,
+  "retry_backoff_or_deadline_shown": false
+ },
+ "comparative_review": "not performed; requires a fresh reviewer against the other cuts"
+}

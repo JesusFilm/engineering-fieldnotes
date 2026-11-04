@@ -1,0 +1,129 @@
+{
+  "sha256": "db2032dcdda8ec6edb843d990b3f06b1de5bc29f5e060514db8aa554632f48cd",
+  "duration_s": 36.0,
+  "size_bytes": 1258521,
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1080,
+    "pix_fmt": "yuv420p",
+    "duration_s": 36.0
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 36.0,
+    "frames_decoded": 1551,
+    "cues": 22,
+    "max_volume_dB": -1.6,
+    "mean_volume_dB": -35.0,
+    "astats_peak_dB": -1.645182,
+    "peak_at_or_below_minus_0_5_dBFS": true,
+    "window_max_dB": {
+      "store_v7_2.53": "-14.7",
+      "deliver_ack8_10.12": "-14.5",
+      "clock_11.18": "-23.8",
+      "crash_15.65": "-1.6",
+      "work_20.35": "-18.2",
+      "arrive_promote_22.59": "-12.6",
+      "deliver_read7_29.65": "-14.5",
+      "miss_30.82": "-21.4",
+      "silence_17.5": "-91.0",
+      "silence_35.3": "-91.0"
+    },
+    "loudest_cue": "crash at 15.65 s (primary fails)",
+    "spectrogram": {
+      "file": "cut/scratch/spectrogram.png",
+      "sha256": "73f63b8ed24cf60c13945743ea6f3eb4b508d70a59225d1e8e9cc9eb32240f95",
+      "finding": "an onset at each of the 22 scheduled cues; crash broadband and loudest; silence in the 16.5-20.2 s tableau and through the fade"
+    }
+  },
+  "audio_heard": false,
+  "audio_note": "Audio analysed (volumedetect, astats, per-cue windows, spectrogram, cue dry run); not listened to.",
+  "decode": {
+    "command": "ffmpeg -v error -xerror -i video.mp4 -f null -",
+    "exit_code": 0,
+    "error_lines": 0,
+    "full_decode": true,
+    "video_frames_counted": 1080,
+    "audio_frames_counted": 1551
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "frames_inspected": {
+    "method": "cut/scratch/extract.sh: 46 time-seek frames at 1080 px plus 350 px Lanczos copies (every beat start, state change, motion midpoint, hold, fade start/end and last frame 35.95 s); sheets enc-1080-sheet.png and enc-350-sheet.png; individual native-350 strips (10.12, 15.80, 22.59, 31.20, 33.00, 5.67, 13.29, 20.90, 24.71, 28.29, 29.65, 30.82, 34.82) and full-size views of 15.80, 21.90, 30.82, 35.95",
+    "enc_1080_sheet_sha256": "dfa9da3a898729ac206be71797345b60f03e4bca0522c435334bfb606dd5dfda",
+    "enc_350_sheet_sha256": "459ccdf74769d1caa5351d8dc8fbbf337792522f6503e369f20671c6fb1eeeb9",
+    "contact_sheet_sha256": "9f9b5a8baaae9e7b2b36ab74329f1be910d11e4d5d24cc2c5dd78975cbd17822",
+    "alternate_extraction": {
+      "method": "frame-index select (eq(n,N)) compared by PSNR with input seek to (N-0.4)/30",
+      "frames": [
+        0,
+        50,
+        76,
+        116,
+        236,
+        304,
+        335,
+        395,
+        470,
+        472,
+        607,
+        642,
+        677,
+        716,
+        783,
+        822,
+        889,
+        925,
+        1079
+      ],
+      "all_identical": true,
+      "finding": "all 19 pairs identical; earlier mismatches came from seeking exactly at n/30 (ffmpeg returns the first frame at or after the target; diagnosed as seek == index n+1), no display anomaly",
+      "script": "cut/scratch/verify.py"
+    }
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "90f65814067c86f0d57bc4be042f89d5581e365f153783d00745ede525f477bb",
+    "source_time_s": 33.0,
+    "width": 1080,
+    "height": 1920,
+    "shows": "ack R42 v8 (green check) above read R42 v7 with an amber not-equal sign; offline old primary with dim last-known v8; new primary with v6, v7 and v8 absent"
+  },
+  "sources": {
+    "scene.js": "e891e36bfeb9765b3a7c403a4496162ad56f02aad732a1cb2ed42c32aae4d048",
+    "engine/flow-engine.js": "530b04d899ac967222887319b961b4ee951fc0ae6f99275442bc372788ec83c9",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf",
+    "cut/scratch/extract.sh": "7bc5a98ddbf9cd6d68f7001a313e33dbec4d639d6b113ee025de0e37eb3bb73c",
+    "cut/scratch/verify.py": "98fc326b969992b4c00cb9509deb36c39370e980bb23c5280ab316af78a70d7b",
+    "beat-sheet.md": "40b04b66511618fabd2fc642f4a22ef18c2a343f26db551c869c7a9266f4942c"
+  },
+  "engine_changes": "engine/flow-engine.js = cut 04's copy (general helpers card, arrow, tag, label plate, corners, mtext, rule, strip, caret, prompt, meta.titleSize/subtitleSize), copied without editing cut 04, plus cut-local generic nodes slot (framed cell, dashed when empty), field (left-aligned key/value line with outline and check glyph) and xmark (circled cross badge with pop-in). sfx.js, render.mjs and preview.html are identical to the skill scripts.",
+  "renderer": {
+    "puppeteer_core": "25.14.0 (repository root node_modules, pinned in package.json)",
+    "chrome": "/snap/bin/chromium via CHROME_PATH (rendered outside the sandbox; snap Chromium cannot start inside it)"
+  },
+  "render_command": "cd video/replication-and-consistency/motion-v2/05 && CHROME_PATH=/snap/bin/chromium node engine/render.mjs scene.js video.mp4 --sheet cut/scratch/contact-sheet.png --wav cut/scratch/sfx.wav",
+  "poster_command": "cd video/replication-and-consistency/motion-v2/05 && ffmpeg -v error -y -ss 33 -i video.mp4 -frames:v 1 -q:v 2 poster.jpg",
+  "checks_command": "cd video/replication-and-consistency/motion-v2/05 && bash cut/scratch/extract.sh && python3 cut/scratch/verify.py > cut/scratch/verify.json",
+  "plans_read": [
+    "../plans/05-plan-a.md",
+    "../plans/05-plan-b.md",
+    "../../sequence/lessons.json#5 (index 4)"
+  ],
+  "renders": 3,
+  "status": "cut rendered and self-verified; awaiting comparative review and editorial decision (not production-complete)"
+}
