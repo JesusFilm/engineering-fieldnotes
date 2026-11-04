@@ -1,0 +1,89 @@
+{
+  "topic": "harness-engineering",
+  "status": "manually_approved_quality_sample",
+  "completed_videos": [
+    {
+      "number": 1,
+      "title": "The model and its runtime",
+      "video": "01/video.mp4",
+      "sha256": "f2ab4e349dca74e00d6b5709fcbc3f7727567348aca9f3f9d1f1e46a6e5074b3",
+      "duration_s": 38.133333,
+      "author_model": "anthropic/claude-opus-5-5",
+      "plans": {
+        "A": "gpt-6-astra",
+        "B": "anthropic/claude-fable-5-1"
+      },
+      "author_received": "Anonymous plan A and plan B; planner identities withheld"
+    },
+    {
+      "number": 2,
+      "title": "Prepare a known workspace",
+      "video": "02/video.mp4",
+      "sha256": "8d4ad71208a54629c9031b472e19a90667009e53f97f8b38d2cae4236e44d7f4",
+      "duration_s": 37.233333,
+      "author_model": "anthropic/claude-opus-5-5",
+      "plans": {
+        "A": "anthropic/claude-fable-5-1",
+        "B": "gpt-6-astra"
+      },
+      "author_received": "Anonymous plan A and plan B; planner identities withheld"
+    },
+    {
+      "number": 3,
+      "title": "Execute and retain evidence",
+      "video": "03/video.mp4",
+      "sha256": "c5f993be7ece5ad7895077c5251a7d09b3a067f61b5c8a4871191700d920b317",
+      "duration_s": 41.110998,
+      "author_model": "anthropic/claude-opus-5-5",
+      "plans": {
+        "A": "gpt-6-astra",
+        "B": "anthropic/claude-fable-5-1"
+      },
+      "author_received": "Anonymous plan A and plan B; planner identities withheld"
+    },
+    {
+      "number": 4,
+      "title": "Turn a failure into feedback",
+      "video": "04/video.mp4",
+      "sha256": "70e0205e1d586d3cc4a81ff740395f12716410e557bbc32520e0f534761f8608",
+      "duration_s": 42.777007,
+      "author_model": "anthropic/claude-opus-5-5",
+      "plans": {
+        "A": "anthropic/claude-fable-5-1",
+        "B": "gpt-6-astra"
+      },
+      "author_received": "Anonymous plan A and plan B; planner identities withheld"
+    },
+    {
+      "number": 5,
+      "title": "Require a passing check",
+      "video": "05/video.mp4",
+      "sha256": "547b41b8c34e4dcdeb6886b964c627d0fe99ed3145262291910e30d972cc3ca3",
+      "duration_s": 35,
+      "author_model": "anthropic/claude-opus-5-5",
+      "plans": {
+        "A": "gpt-6-astra",
+        "B": "anthropic/claude-fable-5-1"
+      },
+      "author_received": "Anonymous plan A and plan B; planner identities withheld"
+    }
+  ],
+  "next_video": null,
+  "resume_only_on_user_continue": false,
+  "published": true,
+  "audio_heard": false,
+  "comparison_notes": "All five encoded candidates compared with original lessons.02/03 repair checks pass;04 false dropout finding withdrawn after reproduction;05 final35s hash reviewed.",
+  "next_topic": "loop-engineering",
+  "next_topic_status": "not_started",
+  "browser_verification": {
+    "desktop": "Five options visible;05 played to32.78s of35s with no media error;selection resets and pauses sameplayer.",
+    "narrow_layout": "390px layout and selector verified previously;singleplayer footprint preserved.",
+    "audio_heard": false
+  },
+  "manual_review": {
+    "approved": true,
+    "date": "2026-10-20",
+    "scope": "Quality-control sample for remaining topic production; publication not requested"
+  },
+  "publication_note": "Promoted as default sequence after user requested all remaining reworked videos."
+}

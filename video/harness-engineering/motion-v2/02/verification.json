@@ -1,0 +1,103 @@
+{
+  "video": "video/harness-engineering/motion-v2/02/video.mp4",
+  "sha256": "8d4ad71208a54629c9031b472e19a90667009e53f97f8b38d2cae4236e44d7f4",
+  "size_bytes": 808492,
+  "duration_s": 37.233333,
+  "video_stream": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1117,
+    "pix_fmt": "yuv420p"
+  },
+  "audio_stream": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 37.221995,
+    "max_volume_dB": -7.7,
+    "mean_volume_dB": -32.9,
+    "clipping": false,
+    "cues": 14,
+    "per_cue_peaks": "scratch/cue-peaks.json"
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "276cb086201dfae5b4306a5bf2bf2336ca7bf38e6a0cf38e99dc6eac4b9726a0",
+    "source_time_s": 31,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "47a207560938bdfa97fb9d65672a7f1f5aee678dd0111855a682b9c8ed8f41a1",
+    "engine/flow-engine.js": "4b3fdc54a3e15b152f7d52f37500fd6d18b36d5fc567198315eda4e2afbdb2e6"
+  },
+  "render_command": "node video/harness-engineering/motion-v2/02/engine/render.mjs video/harness-engineering/motion-v2/02/scene.js video/harness-engineering/motion-v2/02/video.mp4 --sheet video/harness-engineering/motion-v2/02/scratch/contact-sheet.png (from repo root; pinned puppeteer-core 25.14.0)",
+  "frames_inspected": {
+    "dir": "scratch/enc3",
+    "times_s": [
+      0,
+      2.5,
+      5.9,
+      8.4,
+      10.9,
+      14.6,
+      16.0,
+      17.6,
+      19.2,
+      20.7,
+      21.9,
+      23.0,
+      27.5,
+      29.2,
+      31.0,
+      34.0,
+      35.5,
+      37.18
+    ],
+    "w350": "scratch/enc3-350-sheet.png",
+    "copy_window": {
+      "dir": "scratch/copy3",
+      "times_s": [
+        23.5,
+        23.75,
+        24.0,
+        24.25,
+        24.5,
+        24.75,
+        25.0,
+        25.25,
+        25.5,
+        25.75,
+        26.0,
+        26.25,
+        26.5
+      ],
+      "native_and_350": true,
+      "sheet_350": "scratch/copy3-350-sheet.png",
+      "native_crop": "scratch/copy3-native-crop.png",
+      "finding": "source FAIL readable in every frame; chip only crosses empty space"
+    }
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, per-cue peaks, levels); not listened to.",
+  "verified_at": "2026-10-20",
+  "render": 4,
+  "fix": "Render 4: Export FAIL copy moved to x 770 (beside source value, empty right-hand space); destination tag delayed 0.2 s; source row unchanged."
+}

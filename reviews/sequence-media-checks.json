@@ -2122,5 +2122,65 @@
     "faststart": true,
     "audioReview": "analysed, not listened",
     "visualReview": "separate review required"
+  },
+  "lessons-motion-v2/harness-engineering/01.mp4": {
+    "sha256": "f2ab4e349dca74e00d6b5709fcbc3f7727567348aca9f3f9d1f1e46a6e5074b3",
+    "sourceSha256": "655b74c7ef01d8e375ef99dba1cc9e276a28a5cdcf92067030128ae06b1b5ab9",
+    "posterSha256": "0b91e9971fdebf662e9d8cd9e9020e4175cccc7317791d1c6f8fa689d90b4b8e",
+    "expectedDuration": 38.133333,
+    "duration": 38.133333,
+    "audioPeakDbfs": -7.2,
+    "fullDecode": true,
+    "faststart": true,
+    "audioReview": "analysed, not listened",
+    "visualReview": "separate review required"
+  },
+  "lessons-motion-v2/harness-engineering/02.mp4": {
+    "sha256": "8d4ad71208a54629c9031b472e19a90667009e53f97f8b38d2cae4236e44d7f4",
+    "sourceSha256": "ac3419d8ecb3353d027008ca77106cae233f934c8f318e9b3671cc080a50c9e7",
+    "posterSha256": "276cb086201dfae5b4306a5bf2bf2336ca7bf38e6a0cf38e99dc6eac4b9726a0",
+    "expectedDuration": 37.233333,
+    "duration": 37.233333,
+    "audioPeakDbfs": -7.7,
+    "fullDecode": true,
+    "faststart": true,
+    "audioReview": "analysed, not listened",
+    "visualReview": "separate review required"
+  },
+  "lessons-motion-v2/harness-engineering/03.mp4": {
+    "sha256": "c5f993be7ece5ad7895077c5251a7d09b3a067f61b5c8a4871191700d920b317",
+    "sourceSha256": "5f85249b24e769f92c8282ab053b23b2b90254756f543485f059113be775bdea",
+    "posterSha256": "791d00a3e7f6a9d4e88bba30d3a6261fec0f4d20ee20c0f128bf4411d76aeba7",
+    "expectedDuration": 41.110998,
+    "duration": 41.110998,
+    "audioPeakDbfs": -6.2,
+    "fullDecode": true,
+    "faststart": true,
+    "audioReview": "analysed, not listened",
+    "visualReview": "separate review required"
+  },
+  "lessons-motion-v2/harness-engineering/04.mp4": {
+    "sha256": "70e0205e1d586d3cc4a81ff740395f12716410e557bbc32520e0f534761f8608",
+    "sourceSha256": "544bd5a77b8af3d17208f51d8104b941b298f826f626ee2f9be51440eff7e412",
+    "posterSha256": "2472006a3d8d782e91d4882c080c6472d2dce6322752c1a93c30d8681a71dee0",
+    "expectedDuration": 42.777007,
+    "duration": 42.777007,
+    "audioPeakDbfs": -6.4,
+    "fullDecode": true,
+    "faststart": true,
+    "audioReview": "analysed, not listened",
+    "visualReview": "separate review required"
+  },
+  "lessons-motion-v2/harness-engineering/05.mp4": {
+    "sha256": "547b41b8c34e4dcdeb6886b964c627d0fe99ed3145262291910e30d972cc3ca3",
+    "sourceSha256": "812b5b6a3c2309857e25a5e290c1e6911a5269fb6ae188463d1229625579a151",
+    "posterSha256": "938e4975eff0f8467cc7d819535979b635bc75076231c7b447b90458be6f59a3",
+    "expectedDuration": 35,
+    "duration": 35.0,
+    "audioPeakDbfs": -2.0,
+    "fullDecode": true,
+    "faststart": true,
+    "audioReview": "analysed, not listened",
+    "visualReview": "separate review required"
   }
 }

@@ -1,8 +1,8 @@
 {
   "harness-engineering": {
     "lessons": "video/harness-engineering/sequence/lessons.json",
-    "authoring": "Codex assistant",
-    "renderer": "shared sequence engine",
+    "authoring": "anthropic/claude-opus-5-5",
+    "renderer": "cut-local motion engine",
     "finite": true
   },
   "loop-engineering": {

@@ -1,0 +1,116 @@
+{
+  "video": "video/harness-engineering/motion-v2/05/video.mp4",
+  "sha256": "547b41b8c34e4dcdeb6886b964c627d0fe99ed3145262291910e30d972cc3ca3",
+  "size_bytes": 1160421,
+  "duration_s": 35,
+  "render": 4,
+  "video_stream": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1050,
+    "pix_fmt": "yuv420p",
+    "duration_s": 35
+  },
+  "audio_stream": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 35,
+    "max_volume_dB": -2,
+    "mean_volume_dB": -33.1,
+    "clipping": false,
+    "cues": 24,
+    "loudest_cue": "thump at 12.20 s, -2.9 dBFS",
+    "per_cue_peaks": "scratch/cue-peaks.json",
+    "spectrogram": "scratch/spectrogram.png"
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "exit_code": 0,
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "938e4975eff0f8467cc7d819535979b635bc75076231c7b447b90458be6f59a3",
+    "source_time_s": 30.5,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "fd214d3915edab8a25bc8267d63c46929f17bf268aeac116cf95403751eb1c9b",
+    "engine/flow-engine.js": "0424dc8579924a83c059e81d1c7cc9e4c7beed0e2f9bf61b41cbbd57fbe79e99",
+    "engine/sfx.js": "e3fb7e9fb3f44c703a6cab9d518618b23f8732e55fc68bfa1792a751b79b070e",
+    "engine/render.mjs": "6973f64a4f7c924c6970657282519bad41bead9085b194fa08f6ab955726d717",
+    "engine/preview.html": "d8dc098079b502b6c55904be3aec065a348e9e4bed2c1f1c6cf9b8eba47643cf"
+  },
+  "render_command": "node video/harness-engineering/motion-v2/05/engine/render.mjs video/harness-engineering/motion-v2/05/scene.js video/harness-engineering/motion-v2/05/video.mp4 --sheet video/harness-engineering/motion-v2/05/scratch/contact-sheet.png (from repo root; pinned puppeteer-core 25.14.0)",
+  "frames_inspected": {
+    "dir": "scratch/final",
+    "method": "output-seek exact-time extraction from video.mp4",
+    "times_s": [
+      0,
+      1.5,
+      2.6,
+      3.7,
+      6,
+      7.2,
+      8.6,
+      8.95,
+      9.6,
+      11.6,
+      12,
+      12.25,
+      12.5,
+      12.6,
+      13.4,
+      15.6,
+      16.6,
+      17.2,
+      18.5,
+      19.85,
+      21.5,
+      22.85,
+      23.85,
+      25.5,
+      27.6,
+      28.2,
+      28.25,
+      28.5,
+      28.6,
+      30.5,
+      32.5,
+      33.2,
+      34.95
+    ],
+    "w350_sheet": "scratch/final-350-sheet.png",
+    "w350_2fps": "scratch/final-350-2fps.png",
+    "w350_individual": [
+      "scratch/final-350-trio1.png",
+      "scratch/final-350-trio2.png"
+    ],
+    "native": "scratch/final/x12.5.png"
+  },
+  "accuracy": {
+    "required_check": "access",
+    "required_review": "1 approval",
+    "bypass": "maintainers (agent has none)",
+    "evidence": "own tenant and other tenant executed on head d73; passed · d73 at 23.8 s after both cases",
+    "main_tip": "b10 unchanged throughout",
+    "final_state": "1 of 2 met; review pending; rejected · needs review"
+  },
+  "ending": "finite: fade below title 32.6–33.6 s; first frame is the opening state, not black",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, per-cue peaks, levels); not listened to.",
+  "verified_at": "2026-10-20"
+}

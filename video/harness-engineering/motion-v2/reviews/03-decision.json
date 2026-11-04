@@ -1,0 +1,12 @@
+{
+  "sha256": "c5f993be7ece5ad7895077c5251a7d09b3a067f61b5c8a4871191700d920b317",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Cut slack: the empty enlarged run card at 9.7–10.9 s and the 1.4 s card narrowing at 25.2–26.6 s could lose about 2–3 s in total.",
+    "Sound the start of the card narrowing at 25.2 s, or tie it to the patch at 27.8 s; currently the tone arrives only at 26.65 s.",
+    "Route travelling chips around box borders: claim chip at frames 86–94 (2.9–3.1 s), evidence chip at frames 650–654 (21.7 s) and 680–688 (22.8 s) cover border lines only, never text.",
+    "Add a brief motion cue to mark the run card as the test runner (8.9–12.7 s), since the lesson text names a test runner.",
+    "Promotion note (manifest, not media): lessons.json item 3 says duration 28 with beats at 0/7/14/21 s; check_sequences.py requires duration within 0.15 s, so the coordinator must update duration (41.11 s), beat times and hashes when promoting this cut."
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "description": "Promoted motion-v2 lesson videos; original sequence media remains available. Lesson descriptions are retained without old timestamps.",
-  "count": 86,
+  "count": 91,
   "items": [
     {
       "topic": "loop-engineering",
@@ -603,6 +603,41 @@
       "title": "Separate login attempts",
       "sha256": "749f0a36f6148bde270ce72ee6c26140cc7148e2e2bfeae3c34ec37848feeffb",
       "duration_s": 50.0
+    },
+    {
+      "topic": "harness-engineering",
+      "number": 1,
+      "title": "The model and its runtime",
+      "sha256": "f2ab4e349dca74e00d6b5709fcbc3f7727567348aca9f3f9d1f1e46a6e5074b3",
+      "duration_s": 38.133333
+    },
+    {
+      "topic": "harness-engineering",
+      "number": 2,
+      "title": "Prepare a known workspace",
+      "sha256": "8d4ad71208a54629c9031b472e19a90667009e53f97f8b38d2cae4236e44d7f4",
+      "duration_s": 37.233333
+    },
+    {
+      "topic": "harness-engineering",
+      "number": 3,
+      "title": "Execute and retain evidence",
+      "sha256": "c5f993be7ece5ad7895077c5251a7d09b3a067f61b5c8a4871191700d920b317",
+      "duration_s": 41.110998
+    },
+    {
+      "topic": "harness-engineering",
+      "number": 4,
+      "title": "Turn a failure into feedback",
+      "sha256": "70e0205e1d586d3cc4a81ff740395f12716410e557bbc32520e0f534761f8608",
+      "duration_s": 42.777007
+    },
+    {
+      "topic": "harness-engineering",
+      "number": 5,
+      "title": "Require a passing check",
+      "sha256": "547b41b8c34e4dcdeb6886b964c627d0fe99ed3145262291910e30d972cc3ca3",
+      "duration_s": 35
     }
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "sha256": "f2ab4e349dca74e00d6b5709fcbc3f7727567348aca9f3f9d1f1e46a6e5074b3",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [],
+  "basis": "Coordinator recorded the existing independent comparison, which found no reproducible objective blocker; user subsequently authorized publication.",
+  "comparison": "01-comparison.md"
+}

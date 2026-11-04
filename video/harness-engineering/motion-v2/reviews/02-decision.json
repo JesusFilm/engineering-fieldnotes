@@ -1,0 +1,13 @@
+{
+  "sha256": "8d4ad71208a54629c9031b472e19a90667009e53f97f8b38d2cae4236e44d7f4",
+  "status": "pass",
+  "blockers": [],
+  "optional_improvements": [
+    "Make the Export FAIL cue at 20.44 s the loudest cue: it peaks at -10.0 dB, below the revision (-8.3 dB) and save (-7.7 dB) cues.",
+    "Shorten the 29.2-37.2 s ending (about 5.8 s silent hold, then a fade to an empty title frame) to about a 3 s hold, and end on the resolved card.",
+    "Start the revision typing earlier; the opening placeholder sits silent and unchanged for 0-2.2 s.",
+    "Enlarge 'before edits' and 'saved @ a61c9e2'; they are about 6-7 px tall at 350 px width.",
+    "Show the instructions acting as a boundary at 9.0-13 s instead of only marking filenames 'loaded'.",
+    "Promotion requirement outside this media file: update lessons.json item 2 duration (28 -> 37.233) and beat times (about 0/9/14/24), or check_sequences.py's 0.15 s duration assert fails and transcript timestamps misplace beats."
+  ]
+}

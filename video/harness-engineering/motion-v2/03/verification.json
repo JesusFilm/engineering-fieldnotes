@@ -1,0 +1,115 @@
+{
+  "video": "video/harness-engineering/motion-v2/03/video.mp4",
+  "sha256": "c5f993be7ece5ad7895077c5251a7d09b3a067f61b5c8a4871191700d920b317",
+  "size_bytes": 1094037,
+  "duration_s": 41.110998,
+  "video_stream": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1233,
+    "pix_fmt": "yuv420p",
+    "duration_s": 41.1
+  },
+  "audio_stream": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 41.110998,
+    "max_volume_dB": -6.2,
+    "mean_volume_dB": -32.5,
+    "clipping": false,
+    "cues": 19,
+    "per_cue_peaks": "scratch/cue-peaks.json"
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "791d00a3e7f6a9d4e88bba30d3a6261fec0f4d20ee20c0f128bf4411d76aeba7",
+    "source_time_s": 37,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "7b782a5ae991cd47ec050bd2f9122065241391c3f7f0d2343bdd93f1bf49af64",
+    "engine/flow-engine.js": "d917a129e608cbdd2a0c0875ab0b869a656b7900ef8b169efd63116d1dcb3c5a"
+  },
+  "render_command": "node video/harness-engineering/motion-v2/03/engine/render.mjs video/harness-engineering/motion-v2/03/scene.js video/harness-engineering/motion-v2/03/video.mp4 --sheet video/harness-engineering/motion-v2/03/scratch/contact-sheet.png (from repo root; pinned puppeteer-core 25.14.0)",
+  "frames_inspected": {
+    "dir": "scratch/enc3",
+    "times_s": [
+      0,
+      2.4,
+      3.6,
+      4.25,
+      7.0,
+      8.2,
+      9.6,
+      12.0,
+      16.6,
+      18.4,
+      27.6,
+      28.2,
+      29.9,
+      31.4,
+      33.4,
+      35.2,
+      37.5,
+      39.3,
+      41.0
+    ],
+    "w350": "scratch/enc3-350-sheet.png",
+    "handoff_window": {
+      "dir": "scratch/win3",
+      "times_s": [
+        20.5,
+        20.75,
+        21.0,
+        21.25,
+        21.5,
+        21.75,
+        22.0,
+        22.25,
+        22.5,
+        22.75,
+        23.0,
+        23.25,
+        23.5,
+        23.75,
+        24.0,
+        24.25,
+        24.5,
+        24.75,
+        25.0,
+        25.25,
+        25.5,
+        25.75,
+        26.0
+      ],
+      "native_and_350": true,
+      "sheet_350": "scratch/win3-350-sheet.png",
+      "native_crop": "scratch/win3-native-key.png",
+      "finding": "agent shows exit 1 @ a61c9e2 and export: FAIL together, readable at 350 px; no overlaps"
+    }
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, per-cue peaks, levels); not listened to.",
+  "verified_at": "2026-10-20",
+  "render": 5,
+  "fix": "Render 5: return chip carries export: FAIL \u00b7 exit 1; agent strip (two rows) receives exit 1 @ a61c9e2 + export: FAIL intact, tagged observed \u00b7 Run #1; retained record and revision story unchanged."
+}

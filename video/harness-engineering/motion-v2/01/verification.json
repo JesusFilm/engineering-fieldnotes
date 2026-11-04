@@ -1,0 +1,85 @@
+{
+  "video": {
+    "codec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "frames": 1144,
+    "pix_fmt": "yuv420p"
+  },
+  "sha256": "f2ab4e349dca74e00d6b5709fcbc3f7727567348aca9f3f9d1f1e46a6e5074b3",
+  "size_bytes": 1102499,
+  "duration_s": 38.133333,
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 44100,
+    "channels": 2,
+    "duration_s": 38.117007,
+    "max_volume_dB": -7.2,
+    "mean_volume_dB": -33.4,
+    "astats_peak_dB": -7.209,
+    "astats_rms_dB": -33.447,
+    "clipping": false,
+    "cues": 16
+  },
+  "decode": {
+    "command": "ffmpeg -v error -i video.mp4 -f null -",
+    "error_lines": 0
+  },
+  "faststart": {
+    "top_level_boxes": [
+      "ftyp",
+      "moov",
+      "free",
+      "mdat"
+    ],
+    "moov_before_mdat": true
+  },
+  "poster": {
+    "file": "poster.jpg",
+    "sha256": "0b91e9971fdebf662e9d8cd9e9020e4175cccc7317791d1c6f8fa689d90b4b8e",
+    "source_time_s": 33.5,
+    "width": 1080,
+    "height": 1920
+  },
+  "sources": {
+    "scene.js": "7711ee5c7eca96853ae5fec0b8c2f8de521e178298450a117a3852dee05ada13",
+    "engine/flow-engine.js": "185f944b9e0a7468e19dd09c652709be26ca57bb8ddab725ce3653d5d5ec5071"
+  },
+  "render_command": "node video/harness-engineering/motion-v2/01/engine/render.mjs video/harness-engineering/motion-v2/01/scene.js video/harness-engineering/motion-v2/01/video.mp4 --sheet video/harness-engineering/motion-v2/01/scratch/contact-sheet.png (run from repo root; pinned puppeteer-core 25.14.0 from root node_modules)",
+  "frames_inspected": {
+    "dir": "scratch/enc2",
+    "times_s": [
+      0,
+      1.9,
+      3.9,
+      6.2,
+      8,
+      10.8,
+      11.8,
+      13.4,
+      15,
+      17.2,
+      18.6,
+      20.2,
+      21,
+      22.2,
+      25.7,
+      27,
+      29.6,
+      31.2,
+      33.5,
+      35.9,
+      36.6,
+      37.4,
+      38.08
+    ],
+    "native": "scratch/trio2.png (+ individual PNGs)",
+    "w350": "scratch/enc2-350-sheet.png"
+  },
+  "spectrogram": "scratch/spectrogram.png",
+  "contact_sheet": "scratch/contact-sheet.png",
+  "audio_heard": false,
+  "audio_note": "Analysed only (cue list, spectrogram, levels); not listened to.",
+  "verified_at": "2026-10-20"
+}
